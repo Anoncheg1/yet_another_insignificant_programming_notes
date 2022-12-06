@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-16 Wed 21:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd80bce0">1. Lisp</a></li>
+<li><a href="#orga54f562">2. features</a></li>
+<li><a href="#org1d399c3">3. evaluation process and forms</a>
+<ul>
+<li><a href="#org86f94d9">3.1. Special Forms</a></li>
+</ul>
+</li>
+<li><a href="#org37b41cf">4. dialects</a>
+<ul>
+<li><a href="#orgf9dcddb">4.1. <span class="todo TODO">TODO</span> Common lisp vs Emacs Lisp</a></li>
+</ul>
+</li>
+<li><a href="#orga816ea2">5. terms</a></li>
+<li><a href="#org1d92111">6. types</a>
+<ul>
+<li><a href="#org7df34d8">6.1. <span class="todo TODO">TODO</span> symbol type</a></li>
+<li><a href="#org90e423d">6.2. nil and t - special symbols that always evaluate to themselves</a></li>
+</ul>
+</li>
+<li><a href="#org1e86a3b">7. strings</a></li>
+<li><a href="#org483c7d9">8. variables</a></li>
+<li><a href="#org429963f">9. conditions</a>
+<ul>
+<li><a href="#org20706e9">9.1. test-clause</a></li>
+<li><a href="#orgca3720f">9.2. if</a></li>
+</ul>
+</li>
+<li><a href="#org37f66d4">10. functions</a>
+<ul>
+<li><a href="#org6095155">10.1. progn</a></li>
+<li><a href="#org0105b02">10.2. defun</a></li>
+<li><a href="#org7aa47e0">10.3. Function Cell</a></li>
+<li><a href="#orgbf09bee">10.4. lambda</a>
+<ul>
+<li><a href="#org111543d">10.4.1. Inline Functions</a></li>
+<li><a href="#org07721cc">10.4.2. Special Form: function function-object</a></li>
+</ul>
+</li>
+<li><a href="#org249ec60">10.5. Interactive Functions</a></li>
+<li><a href="#org296acc1">10.6. arguments</a></li>
+</ul>
+</li>
+<li><a href="#orgf651f0a">11. special operator</a></li>
+<li><a href="#org2bb500f">12. examples</a></li>
+<li><a href="#org0afa62f">13. USE CASES</a></li>
+<li><a href="#orgfa36561">14. Emacs Lisp</a>
+<ul>
+<li><a href="#org30de326">14.1. Keys:</a></li>
+<li><a href="#orgd904d56">14.2. Commands</a></li>
+<li><a href="#orgedc93a0">14.3. execute shell command</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+<div id="outline-container-orgd80bce0" class="outline-2">
+<h2 id="orgd80bce0"><span class="section-number-2">1</span> Lisp</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+everything is list, space is items separrator
+</p>
+</div>
+</div>
+<div id="outline-container-orga54f562" class="outline-2">
+<h2 id="orga54f562"><span class="section-number-2">2</span> features</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://www.tutorialspoint.com/lisp/index.htm">https://www.tutorialspoint.com/lisp/index.htm</a>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html</a>
+</p>
+
+<p>
+"Lots of Isolated Silly Parentheses"
+1958 by John McCarthy
+</p>
+
+<ul class="org-ul">
+<li>dynamic and strong typing, functional, reflective, meta</li>
+<li>advanced object-oriented programming</li>
+<li>prefix notation - operators are written before their operands</li>
+
+<li>machine-independent, such as word length etc.</li>
+<li>iterative design methodology, (easy extensibility ?)</li>
+<li>allow updating the program dynamically</li>
+<li>high level debugging</li>
+<li>advanced object-oriented programming</li>
+<li>convenient macro system?</li>
+<li>expression-based ?</li>
+<li>object-oriented condition system ?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d399c3" class="outline-2">
+<h2 id="org1d399c3"><span class="section-number-2">3</span> evaluation process and forms</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>file to s-expressions</li>
+<li>defines syntax pf List <b>forms</b> that a built from s-expressions</li>
+<li>determines which s-expressions are LISP forms.</li>
+<li>Eval - Returns the result of evaluating an AutoLisp expression.
+<ul class="org-ul">
+<li>Syntax : (eval expr)</li>
+</ul></li>
+<li>when you evaluate a function call form such as (car x), Emacs first evaluates the argument (the subform
+x). After evaluating the argument, Emacs executes the function (car)</li>
+<li>Two tupes:
+<ul class="org-ul">
+<li>Self-Evaluating Forms '123   ⇒ 123, 123 ⇒ 123, (eval '123) =&gt; 123</li>
+<li>Symbol Forms (setq a 123) (eval 'a) =&gt; 123, a =&gt; 123</li>
+</ul></li>
+</ul>
+
+<p>
+LISP form could be:
+</p>
+<ul class="org-ul">
+<li>An atom</li>
+<li>An empty or non-list</li>
+<li>Any list that has a symbol as its first element</li>
+</ul>
+</div>
+
+<div id="outline-container-org86f94d9" class="outline-3">
+<h3 id="org86f94d9"><span class="section-number-3">3.1</span> Special Forms</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+is a primitive function specially marked so that its arguments are not all evaluated
+</p>
+
+<p>
+and
+</p>
+
+<p>
+    see Combining Conditions
+catch
+</p>
+
+<p>
+    see Catch and Throw
+cond
+</p>
+
+<p>
+    see Conditionals
+condition-case
+</p>
+
+<p>
+    see Handling Errors
+defconst
+</p>
+
+<p>
+    see Defining Variables
+defvar
+</p>
+
+<p>
+    see Defining Variables
+function
+</p>
+
+<p>
+    see Anonymous Functions
+if
+</p>
+
+<p>
+    see Conditionals
+interactive
+</p>
+
+<p>
+    see Interactive Call
+lambda
+</p>
+
+<p>
+    see Lambda Expressions
+let
+let*
+</p>
+
+<p>
+    see Local Variables
+or
+</p>
+
+<p>
+    see Combining Conditions
+prog1
+prog2
+progn
+</p>
+
+<p>
+    see Sequencing
+quote
+</p>
+
+<p>
+    see Quoting
+save-current-buffer
+</p>
+
+<p>
+    see Current Buffer
+save-excursion
+</p>
+
+<p>
+    see Excursions
+save-restriction
+</p>
+
+<p>
+    see Narrowing
+setq
+</p>
+
+<p>
+    see Setting Variables
+setq-default
+</p>
+
+<p>
+    see Creating Buffer-Local
+unwind-protect
+</p>
+
+<p>
+    see Nonlocal Exits
+while
+</p>
+
+<p>
+see Iteration
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37b41cf" class="outline-2">
+<h2 id="org37b41cf"><span class="section-number-2">4</span> dialects</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://en.wikipedia.org/wiki/Emacs_Lisp">https://en.wikipedia.org/wiki/Emacs_Lisp</a>
+</p>
+
+<ul class="org-ul">
+<li>Emacs Lisp or Elisp</li>
+<li>Common Lisp - for javaVM too</li>
+<li>Scheme - simple semantics and few different ways to form expressions. more minimalist design</li>
+<li>Clojure is a recent dialect . mainly the Java virtual machine</li>
+</ul>
+</div>
+<div id="outline-container-orgf9dcddb" class="outline-3">
+<h3 id="orgf9dcddb"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> Common lisp vs Emacs Lisp</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/cl/Porting-Common-Lisp.html">https://www.gnu.org/software/emacs/manual/html_node/cl/Porting-Common-Lisp.html</a>
+</p>
+<ul class="org-ul">
+<li>Case-insensitivity for symbols
+<ul class="org-ul">
+<li>Common LISP expressions are case-insensitive - cos 45 or COS 45 are same</li>
+<li>Emacs lisp - case-sensitive</li>
+</ul></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga816ea2" class="outline-2">
+<h2 id="orga816ea2"><span class="section-number-2">5</span> terms</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+must know:
+</p>
+<ul class="org-ul">
+<li>whitespace and () - separators;</li>
+<li>() = nil = atom and list</li>
+<li>expressions = prefix notation = (+ 1 2)</li>
+<li>special operators = (+, (list, (if. (lambda</li>
+<li>anonymous function (lambda (arg) (+ arg 1) )</li>
+<li>function (defun foo "optional comment" (a b c) (+ a b c))</li>
+<li>function are case-insensitive</li>
+<li>constants = Numbers, letter t, nil</li>
+<li>true = t, false = nil</li>
+<li>certain kinds of atom(arrays) can be separated into parts but not like lists,l</li>
+<li>function names that end with a "p" often means it return true=t of false=nil = predicate</li>
+</ul>
+
+<p>
+terms:
+</p>
+<dl class="org-dl">
+<dt>atom</dt><dd>elemental entities, <b>number</b> <b>symbols</b> and <b>strings</b> (list 2 3), nil, (ab-a#221), ("asd asd")</dd>
+<dt>symbols</dt><dd>+ foo forward-line - atom type</dd>
+<dt>list</dt><dd>sequence of atoms or lists in (), nil</dd>
+<dt>string</dt><dd>"asd"</dd>
+<dt>comment</dt><dd>;</dd>
+<dt>form</dt><dd>any object meant to be evaluated (+ 3 4 1)</dd>
+<dt>symbolic expression</dt><dd>printed representation of both atoms and lists</dd>
+<dt>quote</dt><dd>'(+3 4 1) list without evaluation</dd>
+<dt>function</dt><dd>first symbol in list (call)</dd>
+<dt>variable</dt><dd></dd>
+
+<dt>special form</dt><dd></dd>
+
+<dt>macros</dt><dd>translate lisp expression into another lisp expression</dd>
+</dl>
+
+<p>
+Arithmetic
+</p>
+<ul class="org-ul">
+<li>+-*/%</li>
+<li>(/ 7 2) ;3</li>
+<li>(/7 2.0) ; 3.5</li>
+<li>(expt 2 3) ; 2<sup>3</sup>=8</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1d92111" class="outline-2">
+<h2 id="org1d92111"><span class="section-number-2">6</span> types</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+everything atom or list
+</p>
+
+<p>
+object - instance of type
+</p>
+
+<p>
+Linked lists -  one of Lisp's major data structures
+</p>
+
+<p>
+s-expression - for code and data structure : (x y z) stands for (x . (y . (z . NIL)))
+</p>
+
+<p>
+Constants:
+</p>
+<ul class="org-ul">
+<li>Numbers</li>
+<li>The letter t, that stands for logical true.</li>
+<li>The value nil, that stands for logical false, as well as an empty list.</li>
+</ul>
+
+
+<p>
+atom - is a number or symbol or string in double quotation marks.
+</p>
+
+<p>
+symbol - string of contiguous character - can consist of any number of alphanumeric characters other
+than whitespace, open and closing parentheses, double and single quotes, backslash, comma, colon,
+semicolon and vertical bar. To use these characters in a name, you need to use escape character (\).
+</p>
+<ul class="org-ul">
+<li>hello-from-tutorials-point</li>
+<li>123008907</li>
+<li><b>hello</b></li>
+<li>Block#221</li>
+<li>abc123</li>
+<li>+1</li>
+<li>FOO                 ; A symbol named ‘FOO’, different from ‘foo’  for Emacs Lisp</li>
+</ul>
+
+<p>
+list is a Linked lists is a sequence of atoms and/or other lists enclosed in parentheses.
+</p>
+
+<p>
+A string is a group of characters enclosed in double quotation marks. "Hello world!"
+</p>
+
+<p>
+primitive types:
+</p>
+<ul class="org-ul">
+<li>integer</li>
+<li>float</li>
+<li>cons</li>
+<li>symbol</li>
+<li>string</li>
+<li>vector</li>
+<li>hash-table</li>
+<li>subr</li>
+<li>byte-code function</li>
+<li>record</li>
+<li>plus several special types, such as buffer, that are related to editing</li>
+</ul>
+
+<p>
+single inheritance?
+</p>
+
+<p>
+single quote: (write '(* 2 3)) - atoms or lists literally and don't want them evaluated or treated as function calls.
+</p>
+<ul class="org-ul">
+<li>Quoting - '123, (quote (+ 1 2))</li>
+<li>Self-Evaluating Forms - evaluate to themselves '123 =&gt; 123 (eval '123) =&gt; 123</li>
+</ul>
+</div>
+
+<div id="outline-container-org7df34d8" class="outline-3">
+<h3 id="org7df34d8"><span class="section-number-3">6.1</span> <span class="todo TODO">TODO</span> symbol type</h3>
+</div>
+
+<div id="outline-container-org90e423d" class="outline-3">
+<h3 id="org90e423d"><span class="section-number-3">6.2</span> nil and t - special symbols that always evaluate to themselves</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>symbol nil has three separate meanings:
+<ul class="org-ul">
+<li>it is a symbol with the name ‘nil’;</li>
+<li>it is the logical truth value false;</li>
+<li>it is the empty list—the list of zero elements.</li>
+</ul></li>
+<li>When used as a variable, nil always has the value nil.</li>
+<li>we write () when we wish to emphasize that it means the empty list, and we write nil when we wish to
+emphasize that it means the truth value false.
+<ul class="org-ul">
+<li>(cons 'foo ())                ; Emphasize the empty list</li>
+<li>(setq foo-flag nil)           ; Emphasize the truth value false</li>
+</ul></li>
+<li>non-nil value is considered to be true</li>
+<li><b>t</b> is the preferred way to represent the truth value true</li>
+<li>The symbol t always has the value t.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e86a3b" class="outline-2">
+<h2 id="org1e86a3b"><span class="section-number-2">7</span> strings</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>(format "notify-send &#x2013;expire-time 5000 -i emacs '%s'" msg)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org483c7d9" class="outline-2">
+<h2 id="org483c7d9"><span class="section-number-2">8</span> variables</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>(set 'x '(a b)) - both evaluated first</li>
+<li>(setq x '(a b)) - evaluate only second, set global,  replaces the variable</li>
+<li>defvar symbol [value [doc-string]] - global, announces your intention
+<ul class="org-ul">
+<li>(defvar bar 23 "The normal weight of a bar.")</li>
+<li>defconst symbol value [doc-string] - variant for constants</li>
+</ul></li>
+<li>let (bindings…) forms… - takes effect only within a certain part of a Lisp program
+<ul class="org-ul">
+<li>bindigs - set of symbols</li>
+<li>value-forms - are evaluated in the order they appear and before binding any of the symbols to them.</li>
+<li>ex: (let ((y 1)
+    (z y))
+(list y z)) =&gt; (1 2) ; z is bound to the old value of y, which is 2, not the new value of y, which is 1.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org429963f" class="outline-2">
+<h2 id="org429963f"><span class="section-number-2">9</span> conditions</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>cond (cond   (test1    action1)   (test2    action2) &#x2026; )</li>
+<li>if (if (test-clause) (action1) (action2))</li>
+<li>when (when (test-clause) (&lt;action1))</li>
+<li>case (case  (keyform) ((key1)   (action1   action2 &#x2026;) ((key2)   (action1   action2 &#x2026;) ) &#x2026; )</li>
+</ul>
+</div>
+
+<div id="outline-container-org20706e9" class="outline-3">
+<h3 id="org20706e9"><span class="section-number-3">9.1</span> test-clause</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>(null nil/t)</li>
+<li>Comparison Operations
+<ul class="org-ul">
+<li>= 	Checks if the values of the operands are all equal or not, if yes then condition becomes true. 	(= A B) is not true.</li>
+<li>/= 	Checks if the values of the operands are all different or not, if values are not equal then condition becomes true. 	(/= A B) is true.</li>
+<li>&gt; 	Checks if the values of the operands are monotonically decreasing. 	(&gt; A B) is not true.</li>
+<li>&lt; 	Checks if the values of the operands are monotonically increasing. 	(&lt; A B) is true.</li>
+<li>&gt;= 	Checks if the value of any left operand is greater than or equal to the value of next right operand, if yes then condition becomes true. 	(&gt;= A B) is not true.</li>
+<li>&lt;= 	Checks if the value of any left operand is less than or equal to the value of its right operand, if yes then condition becomes true. 	(&lt;= A B) is true.</li>
+<li>max 	It compares two or more arguments and returns the maximum value. 	(max A B) returns 20</li>
+<li>min 	It compares two or more arguments and returns the minimum value. 	(min A B) returns 10</li>
+</ul></li>
+<li>Logical Operations
+<ul class="org-ul">
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca3720f" class="outline-3">
+<h3 id="orgca3720f"><span class="section-number-3">9.2</span> if</h3>
+<div class="outline-text-3" id="text-9-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">if</span> (&lt; 3 5)
+  <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">if case</span>
+    (foo)
+  <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">else case</span>
+    (bar))
+
+# else if:
+(<span style="color: #8ac6f2; font-weight: bold;">if</span> test-expression1
+    then-expression1
+    (<span style="color: #8ac6f2; font-weight: bold;">if</span> test-expression2
+        then-expression2
+        else-expression2))
+
+# else if 2:
+(<span style="color: #8ac6f2; font-weight: bold;">cond</span> (test-expression1 then-expression1)
+      (test-expression2 then-expression2)
+      (t else-expression2))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org37f66d4" class="outline-2">
+<h2 id="org37f66d4"><span class="section-number-2">10</span> functions</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org6095155" class="outline-3">
+<h3 id="org6095155"><span class="section-number-3">10.1</span> progn</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>(progn BODY&#x2026;) - Eval BODY forms sequentially and return value of last one.</li>
+<li>prog1 for instance evaluates all expressions and returns the value of the first</li>
+<li>prog2 evaluates all expressions and returns the value of the second</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0105b02" class="outline-3">
+<h3 id="org0105b02"><span class="section-number-3">10.2</span> defun</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>defines the symbol name as a function with argument list args</li>
+<li>Neither name nor args should be quoted.</li>
+<li>The return value of defun is undefined.</li>
+<li>Careful! defun redefines even primitive functions such as car without any hesitation or notification.</li>
+<li>fmakunbound - undefine</li>
+</ul>
+
+<p>
+(defun function-name (a &amp;optional b &amp;rest c)
+  "optional-documentation&#x2026;"
+  (interactive argument-passing-info)  ; interactive form
+  (indent indent-spec) ; declare Form
+  body&#x2026;)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7aa47e0" class="outline-3">
+<h3 id="org7aa47e0"><span class="section-number-3">10.3</span> Function Cell</h3>
+<div class="outline-text-3" id="text-10-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">averagenum</span> (n1 n2 n3 n4)
+  (/ ( + n1 n2 n3 n4) 4)
+  )
+(averagenum 2 3 4 10 )
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">4</span>
+
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> f 'list)
+<span style="color: #fa8072;">;;     </span><span style="color: #99968b; font-style: italic;">&#8658; list</span>
+
+(funcall f 'x 'y 'z)
+  <span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">&#8658; (x y z)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">bar</span> (n) (+ n 2))
+(symbol-function 'bar)
+<span style="color: #fa8072;">;;     </span><span style="color: #99968b; font-style: italic;">&#8658; (lambda (n) (+ n 2))</span>
+
+(fset 'baz 'bar)
+  <span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">&#8658; bar</span>
+
+(symbol-function 'baz)
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">&#8658; bar</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbf09bee" class="outline-3">
+<h3 id="orgbf09bee"><span class="section-number-3">10.4</span> lambda</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li>A lambda expression, by itself, has no name; it is an anonymous function.</li>
+<li>result is a closure object</li>
+<li>they are more commonly associated with symbols to make named functions</li>
+<li>A lambda form cannot be evaluated and it must appear only where LISP expects to find a function.</li>
+</ul>
+
+
+<p>
+Macro: lambda args [doc] [interactive] body…
+</p>
+
+<p>
+(lambda (x) (* x x))
+     ⇒ (lambda (x) (* x x))
+</p>
+</div>
+<div id="outline-container-org111543d" class="outline-4">
+<h4 id="org111543d"><span class="section-number-4">10.4.1</span> Inline Functions</h4>
+<div class="outline-text-4" id="text-10-4-1">
+<ul class="org-ul">
+<li>just like an ordinary function, except for one thing: when you byte-compile a call to the function the</li>
+</ul>
+<p>
+function’s definition is expanded into the caller.
+</p>
+<ul class="org-ul">
+<li>calls run faster</li>
+<li>it reduces flexibility; if you change the definition of the function, calls already inlined still use the
+old definition until you recompile them.</li>
+</ul>
+
+<p>
+defsubst name args [doc] [declare] [interactive] body…
+</p>
+</div>
+</div>
+<div id="outline-container-org07721cc" class="outline-4">
+<h4 id="org07721cc"><span class="section-number-4">10.4.2</span> Special Form: function function-object</h4>
+<div class="outline-text-4" id="text-10-4-2">
+<ul class="org-ul">
+<li>returns function-object without evaluating it</li>
+<li>it is similar to quote</li>
+<li>function-object is a valid lambda expression, this has two effects
+<ul class="org-ul">
+<li>When the code is byte-compiled, function-object is compiled into a byte-code function object</li>
+<li>When lexical binding is enabled, function-object is converted into a closure</li>
+</ul></li>
+</ul>
+
+<p>
+All equal:
+(lambda (x) (* x x))
+(function (lambda (x) (* x x)))
+#'(lambda (x) (* x x))
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org249ec60" class="outline-3">
+<h3 id="org249ec60"><span class="section-number-3">10.5</span> Interactive Functions</h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>A Lisp function becomes a command when its body contains, at top level, a form that calls the
+special form `(interactive&#x2026;)’.</li>
+<li>This special form does nothing when executed, but its presence in the function definition
+indicates that interactive calling is permitted.</li>
+<li><p>
+Its argument controls the reading of the function arguments in an interactive call.
+</p>
+
+<p>
+(defun hello ()
+  "Hello World and you can call it via M-x hello."
+  (interactive)
+  (message "Hello World!"))
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org296acc1" class="outline-3">
+<h3 id="org296acc1"><span class="section-number-3">10.6</span> arguments</h3>
+<div class="outline-text-3" id="text-10-6">
+<ul class="org-ul">
+<li>(lambda (a b c) (+ a b c)) - 3 arguments</li>
+<li>keyword &amp;optional before the optional arguments</li>
+<li>To specify a list of zero or more extra arguments, include the keyword &amp;rest before one final argument.</li>
+<li>(a b &amp;optional c d &amp;rest e) - here c and d optional and e is a list</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf651f0a" class="outline-2">
+<h2 id="orgf651f0a"><span class="section-number-2">11</span> special operator</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>get help:
+<ul class="org-ul">
+<li>F1 f</li>
+<li>F1 S</li>
+</ul></li>
+<li id="progn">is used for evaluating zero or more forms</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2bb500f" class="outline-2">
+<h2 id="org2bb500f"><span class="section-number-2">12</span> examples</h2>
+<div class="outline-text-2" id="text-12">
+<div class="org-src-container">
+<pre class="src src-lisp"> (list 1 2 (quote foo))
+ <span style="color: #99968b; font-style: italic;">;=&gt; (1 2 foo)</span>
+ (setq x (+ x 1)) = (incf x)
+
+
+ <span style="color: #fa8072;">;;;; </span><span style="color: #99968b; font-style: italic;">COMMENT-EXAMPLE function</span>
+ <span style="color: #fa8072;">;;; </span><span style="color: #99968b; font-style: italic;">This function is useless</span>
+ <span style="color: #fa8072;">;;; </span><span style="color: #99968b; font-style: italic;">except demonstrate comments.</span>
+
+ (<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">asdas</span> (x y)     <span style="color: #99968b; font-style: italic;">;X is anything</span>
+         <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">X is now not a list</span>
+         ((sumbolp x)
+
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0afa62f" class="outline-2">
+<h2 id="org0afa62f"><span class="section-number-2">13</span> USE CASES</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+sort numbers:
+</p>
+<ul class="org-ul">
+<li>(sort '(1 2 3) '(lambda (a b) (&lt; a b)))</li>
+<li>(sort '(2 4 7 3 9 1 5 4 6 3 8) #'&lt;)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa36561" class="outline-2">
+<h2 id="orgfa36561"><span class="section-number-2">14</span> Emacs Lisp</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>introduction <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html">https://www.gnu.org/software/emacs/manual/html_mono/eintr.html</a></li>
+<li>short <a href="http://ergoemacs.org/emacs/elisp_basics.html">http://ergoemacs.org/emacs/elisp_basics.html</a></li>
+
+<li>function may reference local varibles in the scope it is called from, but not in the scope it was defined.</li>
+<li>REPL mode: M-x ielm</li>
+<li>cl.el</li>
+<li>.elc  - byte compiled code</li>
+<li>(message "hi %d")    ; %d number, %s string %S - lisp expression. - to buffer "<b>Messages</b>" C-h e</li>
+<li>(if nil "yes" "no") ; "no" ; (), '(), (list)</li>
+<li>(if t "yes" "no") ; "yes"; 0, "", [] - vector of 0 elements</li>
+<li>(not (and (or (&lt; (&lt;= (&gt;= (= (/= not equal. Comparing strings: (equal (string-equal</li>
+<li>(equal - if same type and value</li>
+<li>(eq - if same Lisp object</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org30de326" class="outline-3">
+<h3 id="org30de326"><span class="section-number-3">14.1</span> Keys:</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>&lt;TAB&gt;	Indent line</li>
+<li>M-C-\	Indent region</li>
+<li>M-;	Comment</li>
+<li>C-x ;	Set comment column</li>
+<li>&lt;ESC&gt; &lt;TAB&gt; Completion for Symbol Names</li>
+</ul>
+<p>
+Info:
+</p>
+<ul class="org-ul">
+<li>C-h S	Info documentation for symbol</li>
+<li>M-x woman or man   for operation system command, library function or system call.</li>
+<li>C-h f	Emacs Lisp functions</li>
+<li>c-h v	Emacs Lisp variable</li>
+<li>C-x C-e	Evaluate the expression to the left of cursor.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd904d56" class="outline-3">
+<h3 id="orgd904d56"><span class="section-number-3">14.2</span> Commands</h3>
+<div class="outline-text-3" id="text-14-2">
+<p>
+eval-last-sexp		evaluate last symbolic expression
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedc93a0" class="outline-3">
+<h3 id="orgedc93a0"><span class="section-number-3">14.3</span> execute shell command</h3>
+<div class="outline-text-3" id="text-14-3">
+<p>
+<a href="https://www.eigenbahn.com/2020/01/19/painless-emacs-shell-commands">https://www.eigenbahn.com/2020/01/19/painless-emacs-shell-commands</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-16 Wed 21:46</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

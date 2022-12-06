@@ -1,0 +1,4810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-16 Wed 21:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My little document</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My little document</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdedd2e2">1. terms </a></li>
+<li><a href="#org86be5b7">2. Emacs source code</a>
+<ul>
+<li><a href="#orga65807b">2.1. elisp and common lisp</a></li>
+</ul>
+</li>
+<li><a href="#org01b78de">3. PROS</a></li>
+<li><a href="#orge1000b0">4. CONS</a></li>
+<li><a href="#org3c56888">5. encoding</a></li>
+<li><a href="#org6b35f70">6. keys</a>
+<ul>
+<li><a href="#org8161aae">6.1. help</a></li>
+<li><a href="#org1322696">6.2. basic</a></li>
+<li><a href="#orgb241016">6.3. indentation</a></li>
+<li><a href="#org7e0510b">6.4. Copy paste etc</a></li>
+<li><a href="#org4be43cf">6.5. Navigate</a>
+<ul>
+<li><a href="#org9f98bc2">6.5.1. buffers:</a></li>
+</ul>
+</li>
+<li><a href="#orge275685">6.6. Marks</a></li>
+<li><a href="#org199952e">6.7. macros</a></li>
+<li><a href="#orge9a6562">6.8. auto-fill</a></li>
+</ul>
+</li>
+<li><a href="#orgf23bcd4">7. key binding</a>
+<ul>
+<li><a href="#org9e52097">7.1. <span class="todo TODO">TODO</span> colemak</a></li>
+<li><a href="#orga1dc6ff">7.2. Keyboard Translations</a></li>
+<li><a href="#org5697592">7.3. Keymaps</a></li>
+<li><a href="#org0fe334e">7.4. function keys</a></li>
+<li><a href="#org73f20d3">7.5. chords</a></li>
+<li><a href="#org870c300">7.6. hydra</a></li>
+</ul>
+</li>
+<li><a href="#org02fddbb">8. file variables</a>
+<ul>
+<li><a href="#orga06e8ea">8.1. fill column</a></li>
+</ul>
+</li>
+<li><a href="#org6816e9c">9. global variables</a></li>
+<li><a href="#orge670deb">10. package install</a>
+<ul>
+<li><a href="#org18fd2cd">10.1. melpa add</a></li>
+<li><a href="#org5db8d99">10.2. Why use-package?</a></li>
+<li><a href="#org628b309">10.3. autoinstall</a></li>
+<li><a href="#org47a7c56">10.4. upgrade</a></li>
+</ul>
+</li>
+<li><a href="#org5fc99c4">11. cool features</a>
+<ul>
+<li><a href="#org6f1c22a">11.1. M-x artistic mode (draw mode)</a></li>
+<li><a href="#orgfa2bfb8">11.2. Registers</a></li>
+</ul>
+</li>
+<li><a href="#orgba34e9c">12. buffers</a>
+<ul>
+<li><a href="#org2c50046">12.1. iflipb github</a></li>
+<li><a href="#orga01d42d">12.2. buffer-flip Melpa</a></li>
+<li><a href="#org03ccfca">12.3. buffer-expose ELPA</a></li>
+</ul>
+</li>
+<li><a href="#org6d178b1">13. windows</a></li>
+<li><a href="#orgcb55875">14. modes</a>
+<ul>
+<li><a href="#org3c4be4d">14.1. major modes</a></li>
+<li><a href="#orgd936fb9">14.2. hooks</a>
+<ul>
+<li><a href="#orgacbcfc0">14.2.1. eval-after-load vs. mode hook vs require</a></li>
+<li><a href="#orgc63d4e1">14.2.2. ex</a></li>
+<li><a href="#org7a1171d">14.2.3. hooks emacs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org518189a">15. history</a></li>
+<li><a href="#orgd318265">16. Easy Customization Interface</a></li>
+<li><a href="#org032c65a">17. Theme</a></li>
+<li><a href="#org584df51">18. fill column</a></li>
+<li><a href="#org70e2207">19. wrap lines</a></li>
+<li><a href="#org748af92">20. Dvorak</a></li>
+<li><a href="#org7e9aa0c">21. fonts</a></li>
+<li><a href="#orgf0a09fa">22. games</a></li>
+<li><a href="#org8e14cb1">23. backup</a></li>
+<li><a href="#org3fc0b13">24. diff and ediff</a></li>
+<li><a href="#orge32258a">25. Programming</a>
+<ul>
+<li><a href="#orge882501">25.1. emacs-lisp-mode</a></li>
+<li><a href="#org7b944e3">25.2. IDE Theory</a></li>
+<li><a href="#org05500a0">25.3. Project management</a>
+<ul>
+<li><a href="#orgb3309fd">25.3.1. projectile</a></li>
+</ul>
+</li>
+<li><a href="#org99376bf">25.4. common keys</a>
+<ul>
+<li><a href="#orgcefcf6f">25.4.1. copy in terminal</a></li>
+<li><a href="#org6349c2b">25.4.2. Looking Up Identifiers (xref)</a></li>
+</ul>
+</li>
+<li><a href="#orgcf66a1b">25.5. Perl</a></li>
+<li><a href="#orgfad8983">25.6. <span class="todo TODO">TODO</span> company-mode</a></li>
+<li><a href="#org31ca01e">25.7. Python</a>
+<ul>
+<li><a href="#org87f3dca">25.7.1. jedi -  static analysis tool for Python</a></li>
+<li><a href="#org4a38e41">25.7.2. <span class="todo TODO">TODO</span> lsp-pyright vs pyright - type checking</a></li>
+<li><a href="#orgb578a3c">25.7.3. eglot</a></li>
+<li><a href="#org060900f">25.7.4. company-jedi</a></li>
+<li><a href="#orge328520">25.7.5. elpy MELPA</a></li>
+<li><a href="#orgb17a5dd">25.7.6. flymake - erros checking</a></li>
+<li><a href="#org172d8ef">25.7.7. flycheck - errors checking</a></li>
+</ul>
+</li>
+<li><a href="#orga146282">25.8. C/C++</a></li>
+<li><a href="#orgdd1fc82">25.9. php mod</a></li>
+<li><a href="#org7620406">25.10. Ctags or tagging system</a>
+<ul>
+<li><a href="#org2033bf6">25.10.1. GNU Global</a></li>
+<li><a href="#org91131eb">25.10.2. GNU etags, ctags - generate tag file for Emacs, vi</a></li>
+<li><a href="#org541de46">25.10.3. emacs Xref</a></li>
+<li><a href="#orgc4cd2f8">25.10.4. rtags</a></li>
+<li><a href="#org502af78">25.10.5. just search for string alternative</a></li>
+<li><a href="#orga6fd63d">25.10.6. Effeciency:</a></li>
+</ul>
+</li>
+<li><a href="#orgf098fd3">25.11. Flymake and Flycheck</a></li>
+<li><a href="#org294344f">25.12. autocompletion</a>
+<ul>
+<li><a href="#orgdc28d93">25.12.1. semantinc</a></li>
+</ul>
+</li>
+<li><a href="#org73871a0">25.13. <span class="todo TODO">TODO</span> gdm</a></li>
+<li><a href="#org3c741ab">25.14. autoformat</a></li>
+</ul>
+</li>
+<li><a href="#org7ca8e89">26. spell checking</a>
+<ul>
+<li><a href="#org3df0266">26.1. links</a></li>
+</ul>
+</li>
+<li><a href="#org673ae68">27. Math xah-math-input</a></li>
+<li><a href="#orgf0d9da8">28. Terminal</a></li>
+<li><a href="#orgbf20b5b">29. dired</a>
+<ul>
+<li><a href="#orgcfcbd86">29.1. Copy files dired</a></li>
+<li><a href="#org401a19b">29.2. usecase</a></li>
+</ul>
+</li>
+<li><a href="#orgaac314c">30. Org mode </a>
+<ul>
+<li><a href="#org0487125">30.1. navigate keys</a></li>
+<li><a href="#orgcee7018">30.2. <span class="todo TODO">TODO</span> attachments</a></li>
+<li><a href="#orgb554af3">30.3. special symbols (TAB)</a></li>
+<li><a href="#org5e49c4a">30.4. headers</a>
+<ul>
+<li><a href="#orgbba8a4a">30.4.1. TAGS</a></li>
+<li><a href="#org375d6e0">30.4.2. <span class="todo TODO">TODO</span> </a></li>
+</ul>
+</li>
+<li><a href="#org4764352">30.5. lists</a></li>
+<li><a href="#orgad496e2">30.6. Checkboxes</a></li>
+<li><a href="#org54e6210">30.7. Properties</a></li>
+<li><a href="#org2b703b1">30.8. Time Stamp</a></li>
+<li><a href="#org3fd6993">30.9. Tables</a></li>
+<li><a href="#orgf217e20">30.10. links [ [ link][description]]</a></li>
+<li><a href="#org88eccfe">30.11. links images, inline images</a></li>
+<li><a href="#org828c671">30.12. Inline source code babel </a>
+<ul>
+<li><a href="#orgb29d873">30.12.1. commands</a></li>
+<li><a href="#org9051862">30.12.2. template</a></li>
+<li><a href="#org92661f7">30.12.3. python</a></li>
+<li><a href="#org2bfdc5d">30.12.4. output result</a></li>
+</ul>
+</li>
+<li><a href="#org0cac706">30.13. LaTeX</a></li>
+<li><a href="#org458f41c">30.14. archiving</a></li>
+<li><a href="#org6ba6256">30.15. inline images</a></li>
+<li><a href="#org34c1484">30.16. Tables and Spreadsheets</a></li>
+<li><a href="#org12868e1">30.17. indent-mode</a></li>
+<li><a href="#orgc563f8e">30.18. templates for source code</a></li>
+<li><a href="#org5a5698b">30.19. <span class="todo TODO">TODO</span> graphiz</a></li>
+<li><a href="#orgcde3fa2">30.20. <span class="todo TODO">TODO</span> Capture C-c c and templates, notes</a></li>
+<li><a href="#org0168232">30.21. columnar view</a>
+<ul>
+<li><a href="#org05ff328">30.21.1. keys</a></li>
+<li><a href="#org19381ec">30.21.2. org-columns-default-format</a></li>
+<li><a href="#org2fe004e">30.21.3. format</a></li>
+<li><a href="#org60dac66">30.21.4. properties</a></li>
+<li><a href="#org1914a78">30.21.5. links</a></li>
+<li><a href="#orgb8d0e6a">30.21.6. effort template</a></li>
+</ul>
+</li>
+<li><a href="#org9f89f94">30.22. priorities</a>
+<ul>
+<li><a href="#orgb6a4f75">30.22.1. custom priorities:</a></li>
+</ul>
+</li>
+<li><a href="#org779b5d0">30.23. sort</a></li>
+<li><a href="#org69b61d4">30.24. TAGS and TODO</a></li>
+</ul>
+</li>
+<li><a href="#orgba013e0">31. Org agenda</a>
+<ul>
+<li><a href="#orga39fa64">31.1. keys</a>
+<ul>
+<li><a href="#org5e38819">31.1.1. keys in org mode for TODO:</a></li>
+<li><a href="#orgb652bae">31.1.2. in agenda:</a></li>
+</ul>
+</li>
+<li><a href="#org9537124">31.2. time format</a></li>
+<li><a href="#org131bac4">31.3. parser perl</a></li>
+<li><a href="#org6ae8b67">31.4. parser python</a></li>
+<li><a href="#org263766d">31.5. config</a></li>
+<li><a href="#org762be6e">31.6. <span class="todo TODO">TODO</span> russian holidays</a></li>
+<li><a href="#orgba2703e">31.7. links</a></li>
+</ul>
+</li>
+<li><a href="#org4045b5b">32. appt - reminder for diary</a>
+<ul>
+<li><a href="#org2752dfc">32.1. appt reminder</a></li>
+<li><a href="#org61f9ac9">32.2. appt default config</a></li>
+<li><a href="#orgf3dd071">32.3. my reminder:</a>
+<ul>
+<li><a href="#orgee9e645">32.3.1. reminder</a></li>
+</ul>
+</li>
+<li><a href="#org2c201d2">32.4. config reminder server-clients</a></li>
+</ul>
+</li>
+<li><a href="#org2199c08">33. calendar mode and diary</a>
+<ul>
+<li><a href="#orgff92a1d">33.1. calendar keys</a></li>
+<li><a href="#orgaa53725">33.2. diary</a>
+<ul>
+<li><a href="#org6351b4e">33.2.1. file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org95a9ab5">34. ob-http - REST client</a>
+<ul>
+<li><a href="#org3e53fd5">34.1. options</a></li>
+<li><a href="#org69657bb">34.2. examples</a>
+<ul>
+<li><a href="#org2d57c8a">34.2.1. http source block</a></li>
+<li><a href="#org565d482">34.2.2. json source block</a></li>
+<li><a href="#org99eff63">34.2.3. form submit</a></li>
+<li><a href="#org1342bb0">34.2.4. varibale</a></li>
+<li><a href="#org9899ab3">34.2.5. properties</a></li>
+</ul>
+</li>
+<li><a href="#orgbc9a59b">34.3. require</a></li>
+</ul>
+</li>
+<li><a href="#org6fed530">35. Magit</a>
+<ul>
+<li><a href="#org3691391">35.1. conflict resolution:</a></li>
+</ul>
+</li>
+<li><a href="#org97574fb">36. cua-mode</a></li>
+<li><a href="#orgcc7ee60">37. <span class="todo TODO">TODO</span> DoomEmacs</a></li>
+<li><a href="#org3487696">38. <span class="todo TODO">TODO</span> Spacemacs</a></li>
+<li><a href="#org4821dff">39. Rust Emacs</a></li>
+<li><a href="#org38c3622">40. 4coder</a></li>
+<li><a href="#orgda1cf8b">41. neovim</a></li>
+<li><a href="#org2eb46bb">42. VSCode</a></li>
+<li><a href="#org59c7739">43. .emacs</a></li>
+<li><a href="#org58a0091">44. info</a></li>
+<li><a href="#org1ed81c5">45. <span class="todo TODO">TODO</span> AutoEncryption</a></li>
+<li><a href="#org743fd2e">46. <span class="todo TODO">TODO</span> auto-composition-mode</a></li>
+<li><a href="#org57e7e0e">47. USECASES</a>
+<ul>
+<li><a href="#org8bfaf24">47.1. how to add column or form table?</a></li>
+<li><a href="#orgca810b8">47.2. scroll two buffers two files together</a></li>
+<li><a href="#org04d4e43">47.3. line numbers at left</a></li>
+<li><a href="#orgc77dd70">47.4. two files change windows split vertically and horizontally</a></li>
+</ul>
+</li>
+<li><a href="#org96992fa">48. emacsclient</a></li>
+<li><a href="#org5e7c798">49. Very Large Files</a></li>
+<li><a href="#orgdca00a3">50. VoiceEmacs</a></li>
+<li><a href="#org5027f7d">51. QUESTIONS:</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column:120; org-src-fontify-natively:t; buffer-read-only: t;-</b>- or emacs -f view-mode
+</p>
+<p>
+<a href="https://github.com/emacs-tw/awesome-emacs">https://github.com/emacs-tw/awesome-emacs</a>
+</p>
+
+<p>
+example init
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/steelkiwi/emacs.d">https://github.com/steelkiwi/emacs.d</a></li>
+<li><a href="https://github.com/alexott/emacs-configs">https://github.com/alexott/emacs-configs</a></li>
+<li>Org Magit Ivy Evil vterm Eshell Dired lsp-mode-ivy typescript <a href="https://github.com/daviwil/emacs-from-scratch/blob/master/init.el">https://github.com/daviwil/emacs-from-scratch/blob/master/init.el</a></li>
+<li>org and shit <a href="https://susamn.medium.com/ultimate-emacs-setup-with-documentation-in-org-mode-8ed32e2b3487">https://susamn.medium.com/ultimate-emacs-setup-with-documentation-in-org-mode-8ed32e2b3487</a></li>
+<li>Org Magit <a href="https://github.com/org-roam/org-roam">https://github.com/org-roam/org-roam</a></li>
+<li>full <a href="https://emacs.readthedocs.io/en/latest/general.html">https://emacs.readthedocs.io/en/latest/general.html</a></li>
+<li>org notes with mobile orgzly <a href="http://www.howardism.org/Technical/Emacs/getting-more-boxes-done.html">http://www.howardism.org/Technical/Emacs/getting-more-boxes-done.html</a></li>
+<li>agenda <a href="https://github.com/opsnull/emacs">https://github.com/opsnull/emacs</a></li>
+</ul>
+
+<p>
+TODO <a href="https://steelkiwi.com/blog/emacs-configuration-working-python/">https://steelkiwi.com/blog/emacs-configuration-working-python/</a>
+TODO videos <a href="https://www.youtube.com/user/emacsrocks/videos">https://www.youtube.com/user/emacsrocks/videos</a>
+TODO <a href="https://sites.google.com/site/steveyegge2/effective-emacs">https://sites.google.com/site/steveyegge2/effective-emacs</a>
+</p>
+<div id="outline-container-orgdedd2e2" class="outline-2">
+<h2 id="orgdedd2e2"><span class="section-number-2">1</span> terms <a id="orgddea06b"></a></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>yeld - paste from kill ring.
+<ul class="org-ul">
+<li>kill ring - is a list of blocks of text that were previously killed</li>
+</ul></li>
+<li>active region - when set-mark-command is called, the region becomes active. And any other command typically set the
+region status to inactive after it is called.
+<ul class="org-ul">
+<li>mark - set-mark-command</li>
+<li>region - The last marked position to the current cursor position.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org86be5b7" class="outline-2">
+<h2 id="org86be5b7"><span class="section-number-2">2</span> Emacs source code</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Emacs writen in lisp but lisp is writen in C
+</p>
+
+<p>
+Code base is large:
+</p>
+<ul class="org-ul">
+<li>Emacs is meant to be computing environment</li>
+<li>Was created in time when there was no such concept as a package managers - a lot of staff was added to a core to make
+it useful in the box, but this days emacs would use packages if will be rewrited</li>
+<li>a lot of staff here that doesn't need to be here.</li>
+<li>too many feature to maintain with stability</li>
+</ul>
+
+<p>
+forks: Lucid/XEmacs, Guile Emacs, Aquamacs, Mac port, Remacs.
+</p>
+</div>
+<div id="outline-container-orga65807b" class="outline-3">
+<h3 id="orga65807b"><span class="section-number-3">2.1</span> elisp and common lisp</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>there is emulation for common lisp in emacs</li>
+<li>it is too hard to maintain universal interpretator for scripting it is better to enhance elisp and add support for
+other languages</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org01b78de" class="outline-2">
+<h2 id="org01b78de"><span class="section-number-2">3</span> PROS</h2>
+<div class="outline-text-2" id="text-3">
+<dl class="org-dl">
+<dt>introspectable</dt><dd>You can always find out 'what code runs when I press this button?'.</dd>
+<dt>incremental programming environment</dt><dd>There's no edit-compile-run cycle. There isn't even an edit-run cycle. You can
+execute snippets of code and gradually turn them into a finished project. There's no distinction between your editor
+and your interpreter.</dd>
+<dt>mutable environment</dt><dd>You can set variables, tweak functions with advice, or redefine entire functions. Nothing is
+off-limits.</dd>
+<dt>provides functionality without applications</dt><dd>Rather than separate applications, functionality is all integrated into
+your Emacs instance.</dd>
+<dt>infinite clipboard</dt><dd></dd>
+
+<dt>undoing to any historical state</dt><dd></dd>
+
+<dt>reverse variable search</dt><dd>you can find variables with a given value.</dd>
+<dt>structural editing</dt><dd></dd>
+
+<dt>documentation culture</dt><dd>Emacs includes a usage manual, a lisp programming manual, pervasive docstrings and even an
+interactive tutorial.</dd>
+<dt>broad ecosystem</dt><dd><p>
+  In “Emacs is my “favourite Emacs package”” Protesilaos Stavrou talks about the importance of Emacs, the platform. The
+whole becomes greater than the sum of its parts.
+</p>
+
+<p>
+graphical UI was added, lexical scope was implemented, rudimentary networking and concurrency primitives were
+introduced, and more.
+</p></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge1000b0" class="outline-2">
+<h2 id="orge1000b0"><span class="section-number-2">4</span> CONS</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>M-f M-b - you are going to reach next world not the end of the current</li>
+<li>M-v C-v - worst alternative to Page up Page down</li>
+<li>M-&lt;/&gt; - worst alternative to Home, End</li>
+<li>C-u and C-k - not logic with C-h and C-d</li>
+<li>C-w and M-d - not logic with C-h and C-d</li>
+</ul>
+
+<p>
+Emacs:
+</p>
+<ul class="org-ul">
+<li>do not save edit history</li>
+<li>slow major releases - every 1-2 years</li>
+<li>too much emphasise on FSF licensing - barrier to contribute - no rights for you</li>
+<li>project cannot be part of Emacs until all who contributed to project will done copyrigt assiment to FSF</li>
+<li>C is not popular. not many contributors</li>
+<li>it is very easy for packages to interfere with one another, depend on functionality from other packages that get
+deprecated, changed in incompatible ways, or removed. There's currently no way for a package to depend on a specific
+version of another package, or for multiple versions of a single package to be loaded at the same time, for example.</li>
+<li>Emacs packages can be valuable in isolation, combined, they amplify the platform that made them possible</li>
+</ul>
+
+<p>
+Freedom has a price. — Richard Stallman(RMS) in “Re: New maintainer” (2015):
+</p>
+<ul class="org-ul">
+<li>I think freedom is more important than technical progress. Proprietary software offers plenty of technical “progress”,
+but since I won’t surrender my freedom to use it, as far as I’m concerned it is no progress at all.</li>
+<li>If I had valued technical advances over freedom in 1984, instead of developing GNU Emacs and GCC and GDB I would have
+gone to work for AT&amp;T and improved its nonfree software. What a big head start I could have got!</li>
+</ul>
+
+<p>
+Do you want a computing machine that respects your privacy, or a modern, powerful one?
+</p>
+</div>
+</div>
+<div id="outline-container-org3c56888" class="outline-2">
+<h2 id="org3c56888"><span class="section-number-2">5</span> encoding</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>M-x revert-buffer-with-coding-system</li>
+<li>M-x set-buffer-file-coding-system (or C-x C-m f)</li>
+<li>M-x recode-region</li>
+<li>'<b>'  - coding: utf-8 -</b>-</li>
+<li>best way to convert - just copy text from emacs to new created emacs window</li>
+</ul>
+<p>
+or
+</p>
+<ul class="org-ul">
+<li>iconv -f ISO-8859-1 -t UTF-8 input.file -o out.file</li>
+<li>iconv -l</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b35f70" class="outline-2">
+<h2 id="org6b35f70"><span class="section-number-2">6</span> keys</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+C-A-?	autocompletion
+</p>
+</div>
+<div id="outline-container-org8161aae" class="outline-3">
+<h3 id="org8161aae"><span class="section-number-3">6.1</span> help</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+C-h = F1
+C-h ?	i manuals a shutcommands r tutorial
+C-h l	история
+c-h f   lisp function (keyboard-translate ?\C-o  ?\C-h)
+C-h b	keys bindings
+C-h e   message buffer
+C-h F   help for command: org-mode
+</p>
+</div>
+</div>
+<div id="outline-container-org1322696" class="outline-3">
+<h3 id="org1322696"><span class="section-number-3">6.2</span> basic</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+M-x or Esc x - eval-defun - evaluate lisp funcion
+</p>
+
+<p>
+C-x is prefix key for general commands, and C-c is prefix key of current major mode's commands.
+</p>
+
+<p>
+C-x C-=(-) enter zoom mode -out =in
+</p>
+
+<p>
+M-x recover-file &lt;RET&gt; foo.c &lt;RET&gt;
+C-h t tutorial for Emacs
+C-h r read Emacs manual
+</p>
+
+<p>
+Modes
+</p>
+<ul class="org-ul">
+<li>M+x text-mode auto-fill-mode enriched-mode org-mode</li>
+<li>C+x C+q read only/switch mode</li>
+</ul>
+
+<p>
+C-\	сменить раскладку input-method - default-input-method: russian-computer; -*-
+</p>
+<ul class="org-ul">
+<li>M-x set-input-method</li>
+<li>F1 C-\  describe current input method</li>
+</ul>
+
+<p>
+C-x RET r	сменить windows-1251
+</p>
+
+<p>
+C-g or C-] or q		Cancel
+</p>
+
+<p>
+C+u	repeat
+</p>
+
+<p>
+deletion:
+</p>
+<ul class="org-ul">
+<li>C+d delete char</li>
+<li>C+k del to the end of the line</li>
+<li>C+h backspace not working (keyboard-translate ?\C-h ?\C-?)</li>
+</ul>
+
+<p>
+C-o (open-line) - dont move cursor
+C-j (newline-and-indent)
+C-m (newline)
+</p>
+<ul class="org-ul">
+<li>as</li>
+</ul>
+
+<p>
+C-x n d     Narrow the buffer to the contents of the current function (narrow-to-defun). This will narrow to the function as identified to the current function, even if it is nested in an object or another function. The logic to narrow the function is the same as the beginning-of-defun and end-of-defun commands – see Motion, and the mark-defun command – see above.
+C-x n w    Undo any narrowing by widening the buffer again by making the rest of the buffer available (widen).
+</p>
+
+<p>
+C-s C-i		search and highlight for Tabs
+C-s space	search for highlight for spaces
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb241016" class="outline-3">
+<h3 id="orgb241016"><span class="section-number-3">6.3</span> indentation</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>C-M-o	Split the current line at point</li>
+<li>M-^	Merge the previous and the current line</li>
+
+<li>M-i	Indent whitespace at point</li>
+<li>C-M-\    Indent all the lines in the region</li>
+<li>C-x TAB  used to change the indentation of all lines that begin in the region</li>
+<li>indent-sexp (C-M-q)</li>
+<li><p>
+lisp-indent-line (tab key)
+</p>
+
+<p>
+<a href="http://community.schemewiki.org/?emacs-indentation">http://community.schemewiki.org/?emacs-indentation</a>
+<a href="https://dougie.io/emacs/indentation/">https://dougie.io/emacs/indentation/</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7e0510b" class="outline-3">
+<h3 id="org7e0510b"><span class="section-number-3">6.4</span> Copy paste etc</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>C+space start of selecton</li>
+<li>C+q cance</li>
+<li>C+x C+x swap mark</li>
+<li>C+x h 	mark all</li>
+<li>M-h Mark the current function (c-mark-function). Puts the mark at the end and of the function and the point at the
+beginning. Useful if you want to kill the region with C-w or M-w, or indent the region with C-M-\ or C-x TAB (See
+Indentation.).</li>
+<li>S-M-f	select and go by word forward - special for Emacs</li>
+
+<li>C+w  copy</li>
+<li>M+w cut</li>
+<li>C+y   paste (yank)</li>
+<li>M+y  scrooll paste</li>
+<li>C+/  undo and redo</li>
+
+<li>File</li>
+<li>C+x C+f open file</li>
+<li>C+x C+s save</li>
+<li>C+x s save all buffers</li>
+
+<li>EDE Emcas Development Environment</li>
+<li>M+x global-ede-mode</li>
+<li>new project1)visit file in folder 2)M+x ede-new</li>
+<li>target - файл в который строим может состоять из нескольких файлов
+<ul class="org-ul">
+<li>C-c . t создать С-с . a add file C-c . c compile target C-c . C compile all targets</li>
+</ul></li>
+
+<li>ETC.:</li>
+<li>C+d	delete character</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4be43cf" class="outline-3">
+<h3 id="org4be43cf"><span class="section-number-3">6.5</span> Navigate</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>C+f b n p	cursor nav</li>
+<li>C+a		beg of line</li>
+<li>C+e		end</li>
+<li>M+m		to the indentation the begining of text</li>
+<li>M-a		Move back to the beginning of the sentence (backward-sentence).</li>
+<li>M-e 		Move forward to the end of the sentence (forward-sentence).</li>
+<li>M+Shift+{}	backward-paragraph forward-paragraph</li>
+
+<li>C+v M+v	PageDown, PageUp</li>
+<li>C+l		scrool</li>
+<li>M+m		to the indentation</li>
+<li>C+s		search	C+r</li>
+<li>M-x replace-string	search and replace</li>
+<li>M-%			advanced search and replace</li>
+<li>M+g+g			go to line</li>
+<li>C+Home or M+Shift+&lt;	start of the page</li>
+<li>C+End or M+Shift+&gt;	end of the page</li>
+
+<li>Scroll Lock - fixate cursor</li>
+</ul>
+</div>
+
+<div id="outline-container-org9f98bc2" class="outline-4">
+<h4 id="org9f98bc2"><span class="section-number-4">6.5.1</span> buffers:</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<ul class="org-ul">
+<li>C+x C+b list buffers</li>
+<li>C+x+k kill</li>
+<li>C+x+array(left or right) - next or preview buffer in list</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge275685" class="outline-3">
+<h3 id="orge275685"><span class="section-number-3">6.6</span> Marks</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li>A-S-m		set mark</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org199952e" class="outline-3">
+<h3 id="org199952e"><span class="section-number-3">6.7</span> macros</h3>
+<div class="outline-text-3" id="text-6-7">
+<p>
+C-x (	start definition
+C-x )	end definition
+C-x e	Execute
+C-u 20 C-x e
+</p>
+</div>
+</div>
+<div id="outline-container-orge9a6562" class="outline-3">
+<h3 id="orge9a6562"><span class="section-number-3">6.8</span> auto-fill</h3>
+<div class="outline-text-3" id="text-6-8">
+<p>
+M-x auto-fill-mode
+M-q    refill paragraph
+С-u C-x f set column to cursor
+</p>
+
+<p>
+C+x f         set fill column (margin)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf23bcd4" class="outline-2">
+<h2 id="orgf23bcd4"><span class="section-number-2">7</span> key binding</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+<a href="http://ergoemacs.org/emacs/emacs_useful_user_keybinding.html">http://ergoemacs.org/emacs/emacs_useful_user_keybinding.html</a>
+</p>
+
+<p>
+C-h k	check binding for key
+C-h b	all binding
+C-h l   recent keystrokes
+</p>
+</div>
+<div id="outline-container-org9e52097" class="outline-3">
+<h3 id="org9e52097"><span class="section-number-3">7.1</span> <span class="todo TODO">TODO</span> colemak</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+<a href="https://github.com/jmorag/.emacs.d/blob/master/colemak/colemak-mode.el">https://github.com/jmorag/.emacs.d/blob/master/colemak/colemak-mode.el</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga1dc6ff" class="outline-3">
+<h3 id="orga1dc6ff"><span class="section-number-3">7.2</span> Keyboard Translations</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+<a href="https://ftp.gnu.org/old-gnu/Manuals/emacs-20.7/html_node/emacs_457.html">https://ftp.gnu.org/old-gnu/Manuals/emacs-20.7/html_node/emacs_457.html</a>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/General-Escape-Syntax.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/General-Escape-Syntax.html</a>
+<a href="https://ftp.gnu.org/old-gnu/Manuals/elisp-manual-21-2.8/html_node/elisp_693.html">https://ftp.gnu.org/old-gnu/Manuals/elisp-manual-21-2.8/html_node/elisp_693.html</a>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Classifying-Events.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Classifying-Events.html</a>
+   Emacs contains numerous keymaps that apply in different situations, but there is only one set of keyboard
+   translations, and it applies to every character that Emacs reads from the terminal. Keyboard translations take place
+   at the lowest level of input processing; the keys that are looked up in keymaps contain the characters that result
+   from keyboard translation.
+(keyboard-translate ?\C-h ?\C-?)
+</p>
+
+<p>
+(keyboard-translate ?\C-b ?c) - character
+</p>
+</div>
+</div>
+<div id="outline-container-org5697592" class="outline-3">
+<h3 id="org5697592"><span class="section-number-3">7.3</span> Keymaps</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+<a href="https://ftp.gnu.org/old-gnu/Manuals/emacs-20.7/html_node/emacs_446.html#SEC453">https://ftp.gnu.org/old-gnu/Manuals/emacs-20.7/html_node/emacs_446.html#SEC453</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0fe334e" class="outline-3">
+<h3 id="org0fe334e"><span class="section-number-3">7.4</span> function keys</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Function-Keys.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Function-Keys.html</a>
+</p>
+
+<ul class="org-ul">
+<li>‘A-’ The alt modifier.</li>
+<li>‘C-’ The control modifier.</li>
+<li>‘H-’ The hyper modifier.</li>
+<li>‘M-’ The meta modifier.</li>
+<li>‘S-’ The shift modifier.</li>
+<li>‘s-’ The super modifier.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73f20d3" class="outline-3">
+<h3 id="org73f20d3"><span class="section-number-3">7.5</span> chords</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li>order doesn’t matter: ab is the same chord as ba</li>
+<li>two keys pressed simultaneously, or a single key quickly pressed twice</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org870c300" class="outline-3">
+<h3 id="org870c300"><span class="section-number-3">7.6</span> hydra</h3>
+<div class="outline-text-3" id="text-7-6">
+<ul class="org-ul">
+<li>define modes like in vi with keys</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org02fddbb" class="outline-2">
+<h2 id="org02fddbb"><span class="section-number-2">8</span> file variables</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Specifying-File-Variables.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Specifying-File-Variables.html</a>
+<b>File varibles</b>
+-<b>- coding: utf-8; mode: modename; var: value; &#x2026; -</b>-
+;; -<b>- mode: Lisp; fill-column: 75; -</b>-
+M-x add-file-local-varible-prop-line	предлагает доступные переменные
+</p>
+</div>
+
+<div id="outline-container-orga06e8ea" class="outline-3">
+<h3 id="orga06e8ea"><span class="section-number-3">8.1</span> fill column</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+C-? v fill-column - help and get current
+C-x f - set-fill-column
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6816e9c" class="outline-2">
+<h2 id="org6816e9c"><span class="section-number-2">9</span> global variables</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>F1 v  describe global variable</li>
+<li>M-x set-variable</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge670deb" class="outline-2">
+<h2 id="orge670deb"><span class="section-number-2">10</span> package install</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li><a href="http://elpa.gnu.org/">http://elpa.gnu.org/</a></li>
+<li><a href="https://melpa.org/">https://melpa.org/</a></li>
+<li>ELPA - default -  included in GnuEmacs</li>
+<li>MELPA - additional</li>
+<li>(load "package.el") - just load</li>
+<li>require (provide 'foo) - load foo.el and require (provide 'foo) in file</li>
+</ul>
+
+<p>
+M-x list-packages - ELPA
+</p>
+
+<p>
+after install:
+</p>
+<ul class="org-ul">
+<li>add (package-initialize) to ~/.emacs</li>
+<li>(require 'package-name)   - to fully load the package</li>
+<li>it's also recommended that you add (package-initialize) somewhere in your ~/.emacs file - to set up the load-paths and
+autoloads for installed packages.</li>
+<li>(with-eval-after-load "package-name" &#x2026;) or (eval-after-load 'package-name &#x2026;) to run code after a package is
+loaded</li>
+</ul>
+<p>
+to remove: M-x paclage-delete
+</p>
+<ul class="org-ul">
+<li>after remove, to remove dependencies: M-x package-autoremove</li>
+</ul>
+
+<p>
+;; only run this if rtags is installed
+(when (require 'rtags nil :noerror)
+;; something here
+)
+</p>
+</div>
+<div id="outline-container-org18fd2cd" class="outline-3">
+<h3 id="org18fd2cd"><span class="section-number-3">10.1</span> melpa add</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+<a href="https://melpa.org/#/getting-started">https://melpa.org/#/getting-started</a>
+</p>
+
+<p>
+to ensure that Emacs has fetched the MELPA package list before you can install packages with M-x package-install or similar.
+</p>
+<ul class="org-ul">
+<li>M-x package-refresh-contents or M-x package-list-packages</li>
+</ul>
+
+<p>
+Updating Packages:
+</p>
+<ol class="org-ol">
+<li>package-list-packages</li>
+<li>type U (mark Upgradable packages)</li>
+<li>x (eXecute the installs and deletions).</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #8ac6f2; font-weight: bold;">require</span> '<span style="color: #e5786d; font-weight: bold;">package</span>)
+(add-to-list 'package-archives '(<span style="color: #95e454;">"melpa"</span> . <span style="color: #95e454;">"https://melpa.org/packages/"</span>) t)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">and `package-pinned-packages`. Most users will not need or want to do this.</span>
+<span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)</span>
+(package-initialize)
+</pre>
+</div>
+<p>
+OR
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">MELPA</span>
+(setq url-proxy-services
+   '((<span style="color: #95e454;">"no_proxy"</span> . <span style="color: #95e454;">"^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)"</span>)
+     (<span style="color: #95e454;">"http"</span> . <span style="color: #95e454;">"srv-proxy:8080"</span>)
+     (<span style="color: #95e454;">"https"</span> . <span style="color: #95e454;">"srv-proxy:8080"</span>)))
+
+(<span style="color: #8ac6f2; font-weight: bold;">require</span> '<span style="color: #e5786d; font-weight: bold;">package</span>)
+(add-to-list 'package-archives '(<span style="color: #95e454;">"melpa"</span> . <span style="color: #95e454;">"https://melpa.org/packages/"</span>))
+(package-initialize)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5db8d99" class="outline-3">
+<h3 id="org5db8d99"><span class="section-number-3">10.2</span> Why use-package?</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>have to explicitly call (require 'package-name) in your init.el before you could do any configuration.</li>
+<li>any configuration of the package may need to be wrapped in a (with-eval-after-load 'package-name &#x2026;) block, to avoid
+running into undefined variables and functions before your package is fully loaded - to run code after a package is
+loaded,</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org628b309" class="outline-3">
+<h3 id="org628b309"><span class="section-number-3">10.3</span> autoinstall</h3>
+<div class="outline-text-3" id="text-10-3">
+<div class="org-src-container">
+<pre class="src src-lisp">  (package-initialize)
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">list the packages you want</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">package-list</span>)
+  (setq package-list '(async auctex auto-complete autopair clang-format cmake-ide
+                             cmake-mode company company-irony
+                             company-irony-c-headers dash epl flycheck
+                             flycheck-irony flycheck-pyflakes
+                             google-c-style helm helm-core helm-ctest
+                             helm-flycheck helm-flyspell helm-ls-git helm-ls-hg
+                             hungry-delete irony
+                             let-alist levenshtein magit markdown-mode pkg-info
+                             popup rtags seq solarized-theme vlf web-mode
+                             window-numbering writegood-mode yasnippet))
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">fetch the list of packages available</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">unless</span> package-archive-contents
+    (package-refresh-contents))
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">install the missing packages</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">dolist</span> (package package-list)
+    (<span style="color: #8ac6f2; font-weight: bold;">unless</span> (package-installed-p package)
+      (package-install package)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org47a7c56" class="outline-3">
+<h3 id="org47a7c56"><span class="section-number-3">10.4</span> upgrade</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li>M-x package-list</li>
+<li>U</li>
+<li>x</li>
+<li>M-x package-autoremove</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5fc99c4" class="outline-2">
+<h2 id="org5fc99c4"><span class="section-number-2">11</span> cool features</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org6f1c22a" class="outline-3">
+<h3 id="org6f1c22a"><span class="section-number-3">11.1</span> M-x artistic mode (draw mode)</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li><a href="https://www.lysator.liu.se/~tab/artist/">https://www.lysator.liu.se/~tab/artist/</a></li>
+<li><a href="http://dinasis.com/oliver/Learning_GNU_Emacs/gnu3-CHP-7-SECT-6.html">http://dinasis.com/oliver/Learning_GNU_Emacs/gnu3-CHP-7-SECT-6.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa2bfb8" class="outline-3">
+<h3 id="orgfa2bfb8"><span class="section-number-3">11.2</span> Registers</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+Each register has a name that consists of a single character
+</p>
+<ul class="org-ul">
+<li>C-x r s ? - copy-to-register</li>
+<li>C-x r i ? - insert-register</li>
+
+<li>C-x r SPC ? - point-to-register</li>
+<li>C-x r j ? - jump-to-register</li>
+</ul>
+
+<p>
+Bookmarks - persistent registers with long names
+</p>
+<ul class="org-ul">
+<li>C-x r l  List all bookmarks (list-bookmarks).</li>
+<li><p>
+C-x r m RET
+</p>
+
+<p>
+Set the bookmark for the visited file, at point.
+</p></li>
+</ul>
+<p>
+C-x r m bookmark RET
+</p>
+
+<p>
+    Set the bookmark named bookmark at point (bookmark-set).
+C-x r M bookmark RET
+</p>
+
+<p>
+    Like C-x r m, but don’t overwrite an existing bookmark.
+C-x r b bookmark RET
+    Jump to the bookmark named bookmark (bookmark-jump).
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgba34e9c" class="outline-2">
+<h2 id="orgba34e9c"><span class="section-number-2">12</span> buffers</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+C-x	C-LEFT goes to previous buffer
+C-x	C-RIGHT goes to next buffer
+C-x k	kills a buffer
+C-x 4 0	kills a buffer and its window
+C-x b	switches to another buffer, or opens a new buffer
+C-x	left/right - cycle buffers
+</p>
+
+<p>
+cycling:
+</p>
+<ul class="org-ul">
+<li>it is impossible to track key release event</li>
+</ul>
+</div>
+<div id="outline-container-org2c50046" class="outline-3">
+<h3 id="org2c50046"><span class="section-number-3">12.1</span> iflipb github</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+<a href="https://github.com/jrosdahl/iflipb">https://github.com/jrosdahl/iflipb</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga01d42d" class="outline-3">
+<h3 id="orga01d42d"><span class="section-number-3">12.2</span> buffer-flip Melpa</h3>
+</div>
+<div id="outline-container-org03ccfca" class="outline-3">
+<h3 id="org03ccfca"><span class="section-number-3">12.3</span> buffer-expose ELPA</h3>
+</div>
+</div>
+<div id="outline-container-org6d178b1" class="outline-2">
+<h2 id="org6d178b1"><span class="section-number-2">13</span> windows</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>window - part of window</li>
+<li>frame - sepparate window</li>
+<li>C-x o	Switch to other window 	other-window</li>
+<li>C-x 0	Delete selected window 	delete-window</li>
+<li>C-x 1	Delete all windows other than the selected one 	delete-other-windows</li>
+<li>C-x 2	Split selected window horizontally 	split-window-below</li>
+<li>C-x 3	Split selected window vertically 	split-window-right</li>
+<li>C-x 4 C-f open a file in the other window</li>
+<li>C-x 4 0	kills a buffer and its window</li>
+<li>C-x ^	Make selected window taller 	enlarge-window</li>
+<li>Unbound 	Make selected window smaller 	shrink-window</li>
+<li>C-x }	Make selected window wider 	enlarge-window-horizontally</li>
+<li>C-x {	Make selected window narrower 	shrink-window-horizontally</li>
+<li>C-x -	Shrink selected window to fit its buffer 	shrink-window-if-larger-than-buffer</li>
+<li>C-M-v	Scroll the other window forward 	scroll-other-window</li>
+<li>C-M-S-v	Scroll the other window backward 	scroll-other-window-down</li>
+
+<li>C+x C+c quiet emacs</li>
+<li>Esc Esc Esc - close other windows</li>
+</ul>
+
+
+
+
+<p>
+consis of:
+</p>
+<ul class="org-ul">
+<li>mode line  ** mean was changed (editing mode)</li>
+<li>echo area</li>
+</ul>
+
+
+
+<p>
+M+x make-frame delete-frame
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb55875" class="outline-2">
+<h2 id="orgcb55875"><span class="section-number-2">14</span> modes</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>C-h m will reveal major mode and all minor modes that are active.</li>
+<li>C-h v major-mode RET</li>
+<li>M-: major-mode RET</li>
+</ul>
+
+<p>
+to disable global mode:
+M-x customize-option mouse-wheel-mode ; set to nil
+</p>
+</div>
+
+<div id="outline-container-org3c4be4d" class="outline-3">
+<h3 id="org3c4be4d"><span class="section-number-3">14.1</span> major modes</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>Every major mode is associated with a major mode command, whose name should end in ‘-mode’</li>
+<li>unlike minor modes there is no way to “turn off” a major mode, instead the buffer must be switched to a different one</li>
+</ul>
+
+<p>
+types:
+</p>
+<ul class="org-ul">
+<li>buffer-local, and can be turned on (enabled) in certain buffers and off (disabled) in others.</li>
+<li>global: while enabled, they affect everything you do in the Emacs session, in all buffers. Most minor modes are
+disabled by default, but a few are enabled by default.</li>
+</ul>
+
+<p>
+modes:
+</p>
+<dl class="org-dl">
+<dt>fundamental-mode</dt><dd>has no mode-specific definitions or variable settings.</dd>
+<dt>(no term)</dt><dd></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgd936fb9" class="outline-3">
+<h3 id="orgd936fb9"><span class="section-number-3">14.2</span> hooks</h3>
+<div class="outline-text-3" id="text-14-2">
+<ul class="org-ul">
+<li>is a Lisp variable which holds a list of functions</li>
+<li>You can set a hook variable with setq like any other Lisp variable, but the recommended way to add a function with
+add-hook</li>
+<li>two types:  normal hooks
+<ul class="org-ul">
+<li>Every variable whose name ends in ‘-hook’ is a normal hook.</li>
+<li>abnormal hooks -  names end in ‘-functions’, instead of ‘-hook’</li>
+</ul></li>
+<li>Major mode hooks also apply to other major modes derived from the original mode</li>
+<li>M-x eval-last-sexp RET - to test</li>
+</ul>
+</div>
+<div id="outline-container-orgacbcfc0" class="outline-4">
+<h4 id="orgacbcfc0"><span class="section-number-4">14.2.1</span> eval-after-load vs. mode hook vs require</h4>
+<div class="outline-text-4" id="text-14-2-1">
+<p>
+eval-after-load code:
+</p>
+<ul class="org-ul">
+<li>will be executed only once, so it is typically used to perform one-time setup such as setting default global values
+and behaviour. An example might be setting up a default keymap for a particular mode.</li>
+<li>there's no notion of the "current buffer".</li>
+<li>code will always be executed before any functions in the related library are called.</li>
+</ul>
+<p>
+Mode hooks
+</p>
+<ul class="org-ul">
+<li>execute once for every buffer in which the mode is enabled</li>
+<li>run later than eval-after-load code; this lets them take actions based upon such information as whether other modes
+are enabled in the current buffer.</li>
+</ul>
+<p>
+(require 'foo)
+</p>
+<ul class="org-ul">
+<li>load the file only if it hasn’t been loaded already. Expect (provide 'foo) in file</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc63d4e1" class="outline-4">
+<h4 id="orgc63d4e1"><span class="section-number-4">14.2.2</span> ex</h4>
+<div class="outline-text-4" id="text-14-2-2">
+<ul class="org-ul">
+<li>function (add-hook 'text-mode-hook 'auto-fill-mode)</li>
+<li><p>
+lambda (add-hook 'latex-mode-hook (lambda () (auto-fill-mode -1))) ;; disable mods
+</p>
+
+<p>
+(add-hook 'python-mode-hook
+	(lambda ()
+	  (setq python-indent-offset 2)))
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7a1171d" class="outline-4">
+<h4 id="org7a1171d"><span class="section-number-4">14.2.3</span> hooks emacs</h4>
+<div class="outline-text-4" id="text-14-2-3">
+<ul class="org-ul">
+<li>kill-emacs-hook runs just before exiting Emacs</li>
+<li>text-mode-hook -  Text mode and other modes based on Text mode</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org518189a" class="outline-2">
+<h2 id="org518189a"><span class="section-number-2">15</span> history</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+M-x view-lossage - keys (F1 l)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd318265" class="outline-2">
+<h2 id="orgd318265"><span class="section-number-2">16</span> Easy Customization Interface</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>interactive system for altering Emacs settings</li>
+<li>Customize can also interactively change settings for all installed packages</li>
+<li>All of those values are stored together in a single variable called custom-set-variables</li>
+<li>M-x customize RET, or</li>
+<li>M-x customize-group RET &lt;group name&gt; RET - jump you directly into the customization settings for a particular area,
+which is usually the name of a package itself</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org032c65a" class="outline-2">
+<h2 id="org032c65a"><span class="section-number-2">17</span> Theme</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+global:
+</p>
+<ul class="org-ul">
+<li>F10 -&gt; 'options' -&gt; 'customize emacs' -&gt; 'custom-themes'.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org584df51" class="outline-2">
+<h2 id="org584df51"><span class="section-number-2">18</span> fill column</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html</a>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Displaying-Boundaries.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Displaying-Boundaries.html</a>
+</p>
+
+<p>
+C-x f    Set the fill column
+</p>
+
+<p>
+minor modes:
+</p>
+<ul class="org-ul">
+<li>M-x display-fill-column-indicator-mode locally</li>
+<li>M-x global-display-fill-column-indicator-mode globally</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org70e2207" class="outline-2">
+<h2 id="org70e2207"><span class="section-number-2">19</span> wrap lines</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>Hard-Wrap Lines - M-x fill-paragraph or M-q
+<ul class="org-ul">
+<li>AutoFillMode - automatic M-q - insert a line ending after the last word that occurs before the value of option
+‘fill-column’ (a column number).</li>
+<li>RefillMode - it hits M-q automatically after changes to the buffer that might normally trigger auto-filling</li>
+</ul></li>
+<li>Soft-Wrap - visual-line-mode - wraps lines at fill-column</li>
+<li></li>
+
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org748af92" class="outline-2">
+<h2 id="org748af92"><span class="section-number-2">20</span> Dvorak</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+C-x RET C-\ english-dvorak RET
+</p>
+</div>
+</div>
+<div id="outline-container-org7e9aa0c" class="outline-2">
+<h2 id="org7e9aa0c"><span class="section-number-2">21</span> fonts</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>at character : Ctrl+u Ctrl+x =</li>
+<li>chinese: fonts-noto-cjk</li>
+</ul>
+
+<p>
+<a href="https://gist.github.com/coldnew/7398845">https://gist.github.com/coldnew/7398845</a>
+<a href="https://gist.github.com/nukr/420fe13645900a1840ac">https://gist.github.com/nukr/420fe13645900a1840ac</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0a09fa" class="outline-2">
+<h2 id="orgf0a09fa"><span class="section-number-2">22</span> games</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>5x5 - fill in all the squares</li>
+<li>animate - make text dance</li>
+<li>blackbox - find objects by firing beams into a black box</li>
+<li>bubbles - remove as many bubbles as possible in as few moves as possible.</li>
+<li>DecipherMode - help for cracking a simple alphabetic substitution cipher</li>
+<li>DissociatedPress – fun with gibberish</li>
+<li>EmacsDoctor - psychological help from a Rogerian analyst, for when it’s all getting too much for you</li>
+<li>dunnet - text-mode dungeon adventure game</li>
+<li>gomoku - five-in-a-row against the computer</li>
+<li>hanoi - computer solving the towers of hanoi game</li>
+<li>igo - Play Go / Weichi / Baduk or read a game in SGF.</li>
+<li>landmark - neural net robot that learns landmarks; in Emacs 24 it is invoked with landmark; in previous version it is
+invoked with lm <a href="http://www.gnu.org/software/emacs/news/NEWS.24.2">http://www.gnu.org/software/emacs/news/NEWS.24.2</a></li>
+<li>life - John Conway’s game of life</li>
+<li>meese - stop impressionable young minds of America from seeing the etc/sex.6 man page</li>
+<li>MorseCode - convert text to and from morse code</li>
+<li>mpuz - multiplication puzzle (hidden digits)</li>
+<li>pong - two-player computerized ping-pong</li>
+<li>snake - guide a snake around the screen, eat to grow</li>
+<li>solitaire - balls on an 8x8 cross shaped grid</li>
+<li>spook - Generates words to get government’s attention</li>
+<li>studlify-region - convert text to stUdlY caps</li>
+<li>TetrisMode - arrange falling blocks (see also: <a href="https://github.com/skeeto/autotetris-mode">https://github.com/skeeto/autotetris-mode</a>)</li>
+<li>yow - random Zippy quote</li>
+<li>ZoneMode - crazy screen effects when idle</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8e14cb1" class="outline-2">
+<h2 id="org8e14cb1"><span class="section-number-2">23</span> backup</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+~backup<sub>file</sub> - previeous
+#file# - autosave every 300 characters or 30 seconds of idleness.
+</p>
+
+<p>
+Created file~ only the first time the file is saved from a buffer
+</p>
+
+<ul class="org-ul">
+<li>diff-backup - see difference with file~</li>
+</ul>
+
+<p>
+M-x recover-file &lt;RET&gt; foo.c &lt;RET&gt;
+yes &lt;RET&gt;
+C-x C-s
+</p>
+
+
+<p>
+M-x recover-session - to recover if crash
+</p>
+</div>
+</div>
+<div id="outline-container-org3fc0b13" class="outline-2">
+<h2 id="org3fc0b13"><span class="section-number-2">24</span> diff and ediff</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+M-x diff/ ediff
+</p>
+<ul class="org-ul">
+<li>diff -default -u</li>
+</ul>
+
+<p>
+ediff
+</p>
+<ul class="org-ul">
+<li>n/p - next/previous hunk</li>
+<li>a - apply version A's hunk</li>
+<li>b - apply version B's hunk</li>
+<li>r - revert, undo the applying of the A/B hunk.</li>
+<li>q - quit ediff session</li>
+<li>! - update diff</li>
+</ul>
+
+<p>
+submenus:
+</p>
+<ul class="org-ul">
+<li>Compare</li>
+<li>Merge</li>
+<li>Apply Patch.</li>
+</ul>
+<p>
+<code>a</code> b=
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge32258a" class="outline-2">
+<h2 id="orge32258a"><span class="section-number-2">25</span> Programming</h2>
+<div class="outline-text-2" id="text-25">
+</div>
+<div id="outline-container-orge882501" class="outline-3">
+<h3 id="orge882501"><span class="section-number-3">25.1</span> emacs-lisp-mode</h3>
+<div class="outline-text-3" id="text-25-1">
+<ul class="org-ul">
+<li>C-M-x		eval-defun - at any postion</li>
+<li>C-x C-e	eval-last-sexp - only after line</li>
+
+<li>M-x eval-region</li>
+<li>M-x eval-buffer</li>
+
+<li>F1 e	message buffer</li>
+<li>F1 f	describe function</li>
+<li>F1 v  describe global variable</li>
+<li>C-M-v/C-M-S-v		scroll another window</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b944e3" class="outline-3">
+<h3 id="org7b944e3"><span class="section-number-3">25.2</span> IDE Theory</h3>
+<div class="outline-text-3" id="text-25-2">
+<ul class="org-ul">
+<li>highlight syntax</li>
+<li>find includes</li>
+<li>find where used</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05500a0" class="outline-3">
+<h3 id="org05500a0"><span class="section-number-3">25.3</span> Project management</h3>
+<div class="outline-text-3" id="text-25-3">
+<p>
+<a href="https://www.emacswiki.org/emacs/CategoryProject">https://www.emacswiki.org/emacs/CategoryProject</a>
+</p>
+
+<p>
+M-x speedbar - fast navigate between files
+</p>
+</div>
+<div id="outline-container-orgb3309fd" class="outline-4">
+<h4 id="orgb3309fd"><span class="section-number-4">25.3.1</span> projectile</h4>
+<div class="outline-text-4" id="text-25-3-1">
+<ul class="org-ul">
+<li><a href="https://github.com/bbatsov/projectile">https://github.com/bbatsov/projectile</a>
+<ul class="org-ul">
+<li><a href="https://docs.projectile.mx/projectile/index.html">https://docs.projectile.mx/projectile/index.html</a></li>
+</ul></li>
+</ul>
+
+<p>
+Commands
+</p>
+<ul class="org-ul">
+<li>? p p - list of known Projects</li>
+<li>? p m	projectile-commander - ? for help</li>
+<li>? p k		Kills all project buffers.</li>
+<li>? p D		Opens the root of the project in dired</li>
+<li>s-p 4 D	Opens the root of the project in dired in another window.</li>
+<li>s-p 5 D	Opens the root of the project in dired in another frame.</li>
+<li>s-p x t	Start or visit an ansi-term for the project.</li>
+<li>s-p C-h(f1)	Keys</li>
+<li>Grep in project: C-c p g s</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org3a3cf38"></a>install<br />
+<div class="outline-text-5" id="text-25-3-1-1">
+<p>
+M-x package-install [RET] projectile [RET]
+</p>
+
+<p>
+(require 'projectile)
+(with-eval-after-load 'projectile
+  (projectile-mode +1)
+  ;; Recommended keymap prefix on Windows/Linux
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+)
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org99376bf" class="outline-3">
+<h3 id="org99376bf"><span class="section-number-3">25.4</span> common keys</h3>
+<div class="outline-text-3" id="text-25-4">
+<ul class="org-ul">
+<li>C-j		new line and indent</li>
+<li>C-M-q indent C-M-\ indent region or all</li>
+<li>C-i		switch indenation for line</li>
+
+<li>M-x		speedbar</li>
+<li>M-/		expand previous word</li>
+<li>C-M-a|e		begining|end of function</li>
+<li>M-x		delete-trailing-whitespace</li>
+<li>M-x		whitespace-newline-mode</li>
+
+<li>M-;		add comment or un/comment region</li>
+<li>M-j		continue comment at new line</li>
+<li>C-x C-;		un/comment line</li>
+<li>M-s h .	highlight all occurance</li>
+</ul>
+
+<p>
+Navigating over balanced expressions
+</p>
+<ul class="org-ul">
+<li>C-M-n     forward-list  Move forward over a parenthetical group</li>
+<li>C-M-p     backward-list  Move backward over a parenthetical group</li>
+<li>C-M-f     forward-sexp Move up</li>
+<li>C-M-b     backward-sexp  Move down</li>
+<li>C-M-k     kill-sexp  Kill balanced expression forward</li>
+<li>C-M-SPC   mark-sexp  select balanced expression forward</li>
+</ul>
+
+<p>
+indentation кол-во пробелов:
+tab-width (default 8)
+</p>
+
+<ul class="org-ul">
+<li>F1 e	messages</li>
+<li>C-x d	dired</li>
+<li>C-x C-e	debugging</li>
+</ul>
+
+<p>
+C-x TAB		indentation mode with arrows.
+</p>
+
+<p>
+M-x toggle-truncate-lines	Disable lines wrap
+</p>
+</div>
+<div id="outline-container-orgcefcf6f" class="outline-4">
+<h4 id="orgcefcf6f"><span class="section-number-4">25.4.1</span> copy in terminal</h4>
+<div class="outline-text-4" id="text-25-4-1">
+<p>
+Ctrl+W: Cut the word before the cursor
+Ctrl+K: Cut after the cursor
+Ctrl+U: Cut before the cursor
+</p>
+</div>
+</div>
+<div id="outline-container-org6349c2b" class="outline-4">
+<h4 id="org6349c2b"><span class="section-number-4">25.4.2</span> Looking Up Identifiers (xref)</h4>
+<div class="outline-text-4" id="text-25-4-2">
+<ul class="org-ul">
+<li>M-.		go to definition</li>
+<li>C-x 4 . RET	Find definitions of identifier, but display it in another window</li>
+<li>C-x 5 . RET	Find definition of identifier, and display it in a new frame</li>
+<li>M-,		Go back to where you previously invoked M-. and friends</li>
+<li>C-M-. pattern Find all identifiers whose name matches pattern</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcf66a1b" class="outline-3">
+<h3 id="orgcf66a1b"><span class="section-number-3">25.5</span> Perl</h3>
+<div class="outline-text-3" id="text-25-5">
+<p>
+M+x cperl-mode
+help C-h f cperl-mode
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfad8983" class="outline-3">
+<h3 id="orgfad8983"><span class="section-number-3">25.6</span> <span class="todo TODO">TODO</span> company-mode</h3>
+<div class="outline-text-3" id="text-25-6">
+<p>
+<a href="https://www.monolune.com/configuring-company-mode-in-emacs/">https://www.monolune.com/configuring-company-mode-in-emacs/</a>
+<a href="https://readingworldmagazine.com/emacs/2020-07-27-emacs-company-mode/">https://readingworldmagazine.com/emacs/2020-07-27-emacs-company-mode/</a>
+<a href="https://readingworldmagazine.com/emacs/2021-09-01-emacs-company-continued-first-thing-to-do-when-developing-with-emacs/">https://readingworldmagazine.com/emacs/2021-09-01-emacs-company-continued-first-thing-to-do-when-developing-with-emacs/</a>
+</p>
+<ul class="org-ul">
+<li>company</li>
+<li>company-jedi  - company-mode completion back-end for Python JED</li>
+</ul>
+<ul class="org-ul">
+<li>emacs completion framework It comes with several back-ends: Elisp, Clang, Semantic, Ispell, CMake, BBDB,</li>
+</ul>
+<p>
+Yasnippet, Dabbrev, Etags, Gtags, Files, Keywords
+</p>
+<ul class="org-ul">
+<li>Not Python</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org31ca01e" class="outline-3">
+<h3 id="org31ca01e"><span class="section-number-3">25.7</span> Python</h3>
+<div class="outline-text-3" id="text-25-7">
+<ul class="org-ul">
+<li><a href="https://www.emacswiki.org/emacs/PythonProgrammingInEmacs">https://www.emacswiki.org/emacs/PythonProgrammingInEmacs</a></li>
+<li>TODO: <a href="https://realpython.com/emacs-the-best-python-editor/">https://realpython.com/emacs-the-best-python-editor/</a></li>
+</ul>
+<p>
+pip jedi - Python JEDI lib - autocompletion, static analysis and refactoring library for Python
+</p>
+
+<p>
+plugins
+</p>
+<ul class="org-ul">
+<li>elpy - big</li>
+<li>jedi - big</li>
+<li>Eglot</li>
+</ul>
+
+<p>
+completion
+</p>
+<ul class="org-ul">
+<li>CompanyMode  - become more popular</li>
+<li>AutoComplete</li>
+</ul>
+
+<p>
+Code generation
+</p>
+<ul class="org-ul">
+<li>yasnippet</li>
+</ul>
+
+<p>
+Code checker
+</p>
+<ul class="org-ul">
+<li>Flycheck and FlyMake can be used to wrap checkers such as pep8, pyflakes (flake8 includes both), pylint and
+pychecker. Both support multiple checkers per buffer.</li>
+<li>autopep8 - formats Python code to conform to the PEP 8 style guide using the pep8 tool.</li>
+<li>black</li>
+</ul>
+
+<p>
+Viewing generated documentation
+</p>
+<ul class="org-ul">
+<li>pydoc
+<ul class="org-ul">
+<li>helm-pydoc</li>
+</ul></li>
+<li>elpy</li>
+</ul>
+</div>
+<div id="outline-container-org87f3dca" class="outline-4">
+<h4 id="org87f3dca"><span class="section-number-4">25.7.1</span> jedi -  static analysis tool for Python</h4>
+<div class="outline-text-4" id="text-25-7-1">
+<ul class="org-ul">
+<li>refactoring, code search and finding references</li>
+<li>(Jedi.el, company-mode, elpy, anaconda-mode, ycmd)</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7df60c4"></a>jedi-core details<br />
+<div class="outline-text-5" id="text-25-7-1-1">
+<ul class="org-ul">
+<li>Not support v 18</li>
+<li>jedi-core configuration without jedi:install-server:</li>
+<li>info - jedi:show-setup-info</li>
+</ul>
+
+<p>
+dependencies:
+</p>
+<ul class="org-ul">
+<li>python-environment-0.0.2 - virtualenv API for Emacs Lisp
+<ul class="org-ul">
+<li>deferred-0.3.1 - Simple asynchronous functions for emacs lisp</li>
+</ul></li>
+<li>epc-0.1.0</li>
+</ul>
+
+<p>
+jediepcserver.py - located in .emacs.d/elpa/jedi-core-0.2.8/jediepcserver.py
+</p>
+
+
+<p>
+jedi install server:
+</p>
+<ul class="org-ul">
+<li>"pip" "install" "&#x2013;upgrade" ,(convert-standard-filename jedi:source-dir)</li>
+<li>python-environment-default-root-name is used</li>
+<li>jedi:environment-root</li>
+</ul>
+
+<p>
+steps:
+</p>
+<ul class="org-ul">
+<li>pip download jedi</li>
+<li>pip hash &#x2013;algorithm sha512 ./jedi-0.17.1.tar.gz</li>
+<li>requirements.txt
+<ul class="org-ul">
+<li>jedi==0.17.1 &#x2013;hash=sha512:b86297b2fbb212695469b34288836e3346a33c5c6b83337dbe4ceaaeb2b4185dcb6c888336e24f6da3fe22a39c803af5c34ae5a4ed1d177fde1c1d7fc143bf09</li>
+<li>parso==0.7.1 &#x2013;hash=sha512:19c30d07a8982323ffbeba3fa36c8f504f49991c54df595e47defca1b1ba94ab3f5203485e6459012adfd440cc648dd8cfd44c571f02db7ed8e49f372eb3df3a</li>
+<li>epc==0.0.5 &#x2013;hash=sha512:e2b75850e39bb0f3c16f5b84f55dec675a8fe2b61ff5fd55704ef677317d698865a99fc495247cd753a2c8329729f45bc7f81f42dd4c6d27b31810c0aac831e2</li>
+<li>sexpdata==0.0.3 &#x2013;hash=sha512:419fa731fb0b953c404a71f1b5f88777546405618913b1d2e4abab7a876d285d43cd035addffb9d221571214e00151e908e8ef6b99295dacee8ca3f4c8ba942e</li>
+</ul></li>
+<li>pip install &#x2013;no-cache-dir &#x2013;no-binary=:all: &#x2013;require-hashes &#x2013;user -r requirements.txt</li>
+</ul>
+</div>
+</li>
+<li><a id="org9511ae3"></a>emacs-jedi<br />
+<div class="outline-text-5" id="text-25-7-1-2">
+<ul class="org-ul">
+<li><a href="https://github.com/tkf/emacs-jedi">https://github.com/tkf/emacs-jedi</a></li>
+<li><a href="http://tkf.github.io/emacs-jedi/latest/">http://tkf.github.io/emacs-jedi/latest/</a></li>
+</ul>
+
+<p>
+completion framework for jedi
+</p>
+
+<p>
+requirements:
+</p>
+<ul class="org-ul">
+<li>virtualenv</li>
+<li>setuptools</li>
+<li>pip install virtualenv &#x2013;user</li>
+<li>M-x package-install RET jedi</li>
+<li></li>
+</ul>
+<p>
+(with-eval-after-load 'jedi-core
+  ;;standard-jedi-settings
+  (setq jedi:environment-virtualenv (list (expand-file-name "~/.emacs.d/.python-environments/")))
+  ;; (setq jedi:environment-root "jedi")  ; or any other name you like
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+  (setq jedi:use-shortcuts t)
+)
+</p>
+<ol class="org-ol">
+<li>M-x jedi:install-server in Emacs</li>
+</ol>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgb81221c"></a>keys<br />
+<div class="outline-text-6" id="text-25-7-1-2-1">
+<p>
+&lt;C-tab&gt; jedi:complete
+</p>
+
+<p>
+Complete code at point.
+</p>
+
+<p>
+C-c ? jedi:show-doc
+</p>
+
+<p>
+Show the documentation of the object at point.
+</p>
+
+<p>
+C-c . jedi:goto-definition
+</p>
+
+<p>
+Goto the definition of the object at point.
+</p>
+
+<p>
+See jedi:goto-definition-config for how this function works when universal prefix arguments (C-u) are given. If numeric prefix argument(s) (e.g., M-0) are given, goto point of the INDEX-th result. Note that you cannot mix universal and numeric prefixes. It is Emacs’s limitation. If you mix both kinds of prefix, you get numeric prefix.
+</p>
+
+<p>
+When used as a lisp function, popup a buffer when OTHER-WINDOW is non-nil. DEFTYPE must be either assignment (default) or definition. When USE-CACHE is non-nil, use the locations of the last invocation of this command. If INDEX is specified, goto INDEX-th result.
+</p>
+
+<p>
+C-c , jedi:goto-definition-pop-marker
+</p>
+
+<p>
+Goto the last point where jedi:goto-definition was called.
+</p>
+
+<p>
+variable (jedi:use-shortcuts nil)
+</p>
+
+<p>
+If non-nil, enable the following shortcuts:
+M-. jedi:goto-definition
+M-, jedi:goto-definition-pop-marker
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org3af67ab"></a>company-jedi<br />
+<div class="outline-text-5" id="text-25-7-1-3">
+<ul class="org-ul">
+<li><a href="https://github.com/emacsorphanage/company-jedi">https://github.com/emacsorphanage/company-jedi</a></li>
+</ul>
+<p>
+completion back-end of <b>company</b> autocompletion framework for JEDI
+</p>
+<ul class="org-ul">
+<li>M-n/M-p - next/previous candinate</li>
+<li>Tab - Insert the common part of all the candidates</li>
+<li>C-c ? - show doc (jedi)</li>
+<li>M-x company-ispell - english words candidated</li>
+<li>F1 - show doc after menu opens</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'company-mode)
+
+(<span style="color: #8ac6f2; font-weight: bold;">with-eval-after-load</span> 'jedi-core
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:environment-virtualenv (list (expand-file-name <span style="color: #95e454;">"/home/u/.local/lib/python3.10/site-packages"</span>)))
+
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:complete-on-dot t)
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:use-shortcuts t)
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">my</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:get-in-function-call-timeout 0
+    jedi:get-in-function-call-delay   0
+    jedi:goto-definition-config    '((nil definition nil))
+    )
+  (add-to-list 'company-backends 'company-jedi)
+  )
+</pre>
+</div>
+<p>
+old:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">with-eval-after-load</span> <span style="color: #95e454;">"company-jedi"</span>
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">use-package company-jedi             ;;; company-mode completion back-end for Python JEDI</span>
+
+  <span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">standard-jedi-settings</span>
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:complete-on-dot t)
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:use-shortcuts t)
+  <span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">company-jedi-settings</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> jedi:environment-virtualenv (list (expand-file-name <span style="color: #95e454;">"~/.emacs.d/.python-environments/"</span>)))
+  (<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">my/python-mode-hook</span> ()
+    (add-to-list 'company-backends 'company-jedi))
+  (add-hook 'python-mode-hook 'my/python-mode-hook)
+
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">backend-settings</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> elpy-rpc-backend <span style="color: #95e454;">"jedi"</span>)
+
+  )
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org424bc02"></a>anaconda-mode<br />
+<div class="outline-text-5" id="text-25-7-1-4">
+<ul class="org-ul">
+<li>support jedi 18</li>
+<li><p>
+required:
+</p>
+<ul class="org-ul">
+<li>service<sub>factory</sub></li>
+<li>jedi</li>
+</ul>
+<p>
+optional requirements: company-anaconda
+</p></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org4a38e41" class="outline-4">
+<h4 id="org4a38e41"><span class="section-number-4">25.7.2</span> <span class="todo TODO">TODO</span> lsp-pyright vs pyright - type checking</h4>
+</div>
+<div id="outline-container-orgb578a3c" class="outline-4">
+<h4 id="orgb578a3c"><span class="section-number-4">25.7.3</span> eglot</h4>
+<div class="outline-text-4" id="text-25-7-3">
+<p>
+<a href="https://github.com/joaotavora/eglot">https://github.com/joaotavora/eglot</a>
+</p>
+
+<p>
+for go to definition jedi package required
+</p>
+</div>
+</div>
+<div id="outline-container-org060900f" class="outline-4">
+<h4 id="org060900f"><span class="section-number-4">25.7.4</span> company-jedi</h4>
+<div class="outline-text-4" id="text-25-7-4">
+<p>
+requirements:
+pip install sexpdata-0.0.3.tar.gz
+pip install epc-0.0.5.tar.gz
+pip install virtualenv-15.1.0.tar.gz
+</p>
+
+<p>
+M-x jedi:install-server
+</p>
+
+<p>
+jedi required 0.17.2
+</p>
+
+<p>
+C-c ?  - get documentatio for object
+</p>
+</div>
+</div>
+<div id="outline-container-orge328520" class="outline-4">
+<h4 id="orge328520"><span class="section-number-4">25.7.5</span> elpy MELPA</h4>
+<div class="outline-text-4" id="text-25-7-5">
+<ul class="org-ul">
+<li>doc <a href="https://elpy.readthedocs.io/en/latest/">https://elpy.readthedocs.io/en/latest/</a></li>
+</ul>
+
+<p>
+install elpy for MELPA
+</p>
+<ul class="org-ul">
+<li>pip3 install flake8 &#x2013;user</li>
+<li>.bashrc: export PATH=$PATH:~/.local/bin</li>
+<li>M-x elpy-doc - configure doc for C-c C-d</li>
+
+<li>C-c C-p - start python window</li>
+<li>C-c C-c - in text - run all bufer in started python window</li>
+<li>C-c C-r - in text - run region</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgc5f7dfa"></a>setup example<br />
+<div class="outline-text-5" id="text-25-7-5-1">
+<p>
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+</p>
+
+<p>
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+(company-jedi 1)
+</p>
+
+<p>
+(setq elpy-rpc-backend "jedi")
+(add-hook 'python-mode-hook 'jedi:setup)
+</p>
+
+<p>
+(global-set-key "\C-x\C-j" 'jedi:goto-definition)
+(global-set-key "\C-x\C-k" 'jedi:goto-definition-pop-marker)
+</p>
+</div>
+</li>
+
+<li><a id="orgd8f263b"></a><span class="todo TODO">TODO</span> artile<br />
+<div class="outline-text-5" id="text-25-7-5-2">
+<ol class="org-ol">
+<li>install elpy for MELPA</li>
+<li>install:
+<ul class="org-ul">
+<li>dev-python/jedi - wesome autocompletion, static analysis and refactoring library for Python</li>
+<li>dev-python/black - Python code formatter</li>
+<li>dev-python/autopep8 -  automatically formats Python code to conform to the PEP 8 style guide</li>
+<li>dev-python/yapf - ?</li>
+<li>dev-python/flake8 - syntax checker</li>
+<li>dev-python/rope - ?</li>
+</ul></li>
+<li>M-x elpy-config</li>
+<li>M-x pyvenv-activate ( not shure)</li>
+<li>M-x elpy-rpc-reinstall-virtualenv ( not shure)</li>
+<li>(setq elpy-rpc-virtualenv-path 'current) (not shure)</li>
+<li>Enable:
+<ul class="org-ul">
+<li>file variables: # ; -<b>- mode: Python; eval: (elpy-enable); fill-column: 100; -</b>-</li>
+<li>or .emacs</li>
+</ul></li>
+</ol>
+</div>
+
+<ol class="org-ol">
+<li><a id="org1ea4c52"></a>keys:<br />
+<div class="outline-text-7" id="text-25-7-5-2-0-1">
+<ul class="org-ul">
+<li>C-C C-d - get doc</li>
+<li>M-Tab - autocompletion</li>
+<li>C-c C-v - elpy-check syntax (automatic at save)</li>
+<li>M-; - comment</li>
+<li>C-c C-c - send all to python shell</li>
+<li>C-RET - send current line</li>
+<li>C-c C-r - rename varibale</li>
+<li>C-c &lt;		python-indent-shift-left</li>
+<li>C-c &gt;		python-indent-shift-right</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org453a9e7"></a>ERROR line too long<br />
+<div class="outline-text-7" id="text-25-7-5-2-0-2">
+<p>
+<a href="https://emacs.stackexchange.com/questions/23925/how-to-customize-the-line-character-length-in-elpy">https://emacs.stackexchange.com/questions/23925/how-to-customize-the-line-character-length-in-elpy</a>
+</p>
+
+<p>
+create: setup.cfg
+</p>
+<pre class="example">
+[flake8]
+max-line-length = 160
+
+</pre>
+</div>
+</li>
+</ol>
+
+<li><a id="org176317e"></a>in org<br />
+<div class="outline-text-6" id="text-25-7-5-2-1">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html">https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html</a></li>
+<li><a href="https://kotfic.github.io/org-mode-export-of-matplotlib-images-etc.html">https://kotfic.github.io/org-mode-export-of-matplotlib-images-etc.html</a></li>
+</ul>
+
+<p>
+<b>ipython:</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">   (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((python . t)))
+
+   (setq org-babel-python-command <span style="color: #95e454;">"ipython3 --no-banner --classic --no-confirm-exit"</span>)
+</pre>
+</div>
+<p>
+<b>or with shell:</b>
+</p>
+<pre class="example">
+   (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((python . t)))
+
+   (setq shell-command-switch "-ic")
+</pre>
+
+<p>
+<b>execute without ask</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">   <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">all python code be safe</span>
+   (<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">my-org-confirm-babel-evaluate</span> (lang body)
+     (not (string= lang <span style="color: #95e454;">"python"</span>)))
+   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb17a5dd" class="outline-4">
+<h4 id="orgb17a5dd"><span class="section-number-4">25.7.6</span> flymake - erros checking</h4>
+<div class="outline-text-4" id="text-25-7-6">
+<ul class="org-ul">
+<li>require python-pyflakes</li>
+<li>emerge &#x2013;ask dev/python-pyflakes
+(add-hook 'python-mode-hook
+(lambda ()
+  (flymake-mode)
+  ))</li>
+</ul>
+
+<p>
+i am not shure if it is required:
+</p>
+<ul class="org-ul">
+<li>package: flymake-python-pyflakes</li>
+<li>.emacs
+<ul class="org-ul">
+<li>(require 'flymake-python-pyflakes)</li>
+<li>(add-hook 'python-mode-hook 'flymake-python-pyflakes-load)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org172d8ef" class="outline-4">
+<h4 id="org172d8ef"><span class="section-number-4">25.7.7</span> flycheck - errors checking</h4>
+<div class="outline-text-4" id="text-25-7-7">
+<p>
+native supprot for: python-flake8 or python-pylint, and falls back to python-pycompile if neither of those is available
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask dev-python/flake8</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(add-hook 'python-mode-hook
+  (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> ()
+    (flycheck-mode)
+    ))
+</pre>
+</div>
+
+<p>
+(defun my/python-mode-hook ()
+  (local-set-key (kbd "&lt;M-left&gt;") 'python-indent-shift-left )
+  (local-set-key (kbd "&lt;M-right&gt;") 'python-indent-shift-right )
+  ;; (display-line-numbers-mode)
+  ;; indentation
+  (setq python-indent-offset 4)
+  ;; errors checking
+  (flycheck-mode)
+)
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org53eb392"></a>links<br />
+<div class="outline-text-5" id="text-25-7-7-1">
+<p>
+<a href="https://www.flycheck.org/en/latest/languages.html#python">https://www.flycheck.org/en/latest/languages.html#python</a>
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga146282" class="outline-3">
+<h3 id="orga146282"><span class="section-number-3">25.8</span> C/C++</h3>
+<div class="outline-text-3" id="text-25-8">
+<ul class="org-ul">
+<li><a href="https://nilsdeppe.com/posts/emacs-c++-ide2">https://nilsdeppe.com/posts/emacs-c++-ide2</a></li>
+<li><a href="https://www.youtube.com/watch?v=5FQwQ0QWBTU">https://www.youtube.com/watch?v=5FQwQ0QWBTU</a></li>
+<li>rtags irony flycheck <a href="https://martinsosic.com/development/emacs/2017/12/09/emacs-cpp-ide.html">https://martinsosic.com/development/emacs/2017/12/09/emacs-cpp-ide.html</a></li>
+<li>GGTAGS CDET SEMANTIC EDE <a href="http://tuhdo.github.io/c-ide.html">http://tuhdo.github.io/c-ide.html</a></li>
+<li>cwarn - build in</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdd1fc82" class="outline-3">
+<h3 id="orgdd1fc82"><span class="section-number-3">25.9</span> php mod</h3>
+<div class="outline-text-3" id="text-25-9">
+<p>
+C-M-&lt;HOME&gt;     Move point to the beginning of the current function (beginning-of-defun).
+C-M-&lt;END&gt;    Move point to the end of the current function (end-of-defun).
+</p>
+
+<p>
+C-M-\    Properly indent each line of region (indent-region).
+C-c C-q    Properly indent each line of current top-level function or top-level class (c-indent-defun).
+</p>
+
+<p>
+M-;    Insert comment at point (comment-dwim). If comment already exist, indent comment (comment-indent).
+M-j    Insert a newline in a comment on the next line with the comment starting at the same column as the current line (c-indent-new-comment-line).
+C-c C-c    Comment out the current region (comment-region). If region is already commented, the region is uncommented.
+C-u M-;    Kill the comment on the current line (comment-kill called by comment-set-column or comment-dwim).
+C-u n M-;    Kill the next n comments (comment-dwim).
+</p>
+
+<p>
+convert the tabs to spaces:
+</p>
+<ol class="org-ol">
+<li>C-x h</li>
+<li>M-x untabify RET</li>
+</ol>
+
+<p>
+M-? find usages (xref-find-references)
+</p>
+</div>
+</div>
+<div id="outline-container-org7620406" class="outline-3">
+<h3 id="org7620406"><span class="section-number-3">25.10</span> Ctags or tagging system</h3>
+<div class="outline-text-3" id="text-25-10">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Create-Tags-Table.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Create-Tags-Table.html</a>
+<a href="https://www.emacswiki.org/emacs/BuildTags">https://www.emacswiki.org/emacs/BuildTags</a>
+<a href="https://en.wikipedia.org/wiki/Ctags">https://en.wikipedia.org/wiki/Ctags</a>
+<a href="http://blog.binchen.org/posts/how-to-manage-and-use-tags-file-of-third-party-libraries-in-emacs.html">http://blog.binchen.org/posts/how-to-manage-and-use-tags-file-of-third-party-libraries-in-emacs.html</a>
+<a href="https://smanist.github.io/2018/01/17/Emacs-for-Python-Cpp/">https://smanist.github.io/2018/01/17/Emacs-for-Python-Cpp/</a>
+comparision <a href="https://github.com/oracle/opengrok/wiki/Comparison-with-Similar-Tools">https://github.com/oracle/opengrok/wiki/Comparison-with-Similar-Tools</a>
+</p>
+
+<p>
+people usually use ctags to do two things
+</p>
+<ul class="org-ul">
+<li>Code navigation</li>
+<li>Auto-complete/IntelliSense</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org2033bf6" class="outline-4">
+<h4 id="org2033bf6"><span class="section-number-4">25.10.1</span> GNU Global</h4>
+<div class="outline-text-4" id="text-25-10-1">
+<p>
+<a href="https://developpaper.com/use-gnu-global-to-read-code-in-emacs/">https://developpaper.com/use-gnu-global-to-read-code-in-emacs/</a>
+ggtags <a href="https://github.com/leoliu/ggtags">https://github.com/leoliu/ggtags</a>
+</p>
+
+<p>
+Emacs frontends to GNU Global:
+</p>
+
+<ul class="org-ul">
+<li>It is similar to older tagging software such as ctags and etags, but differs in its independence from any specific
+text editor.</li>
+<li>alternative with better functionality for C, C++, Yacc, Java, PHP4 and assembly language.</li>
+<li>ggtags</li>
+<li>helm-gtags</li>
+<li>gtags-mode (global build in)</li>
+</ul>
+
+<p>
+create tags:
+</p>
+<ul class="org-ul">
+<li>M-x ggtags-create-tags RET</li>
+<li>$ gtags</li>
+<li>$ gtags -c    create compact database</li>
+</ul>
+
+<p>
+find
+</p>
+<ul class="org-ul">
+<li>global -T -x string - T search in libs. x - verbose</li>
+</ul>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="org3ddfd02"></a>Libraries:<br />
+<div class="outline-text-5" id="text-25-10-1-1">
+<p>
+<a href="https://emacs.stackexchange.com/questions/13254/find-external-definition-with-gtags-or-ggtags">https://emacs.stackexchange.com/questions/13254/find-external-definition-with-gtags-or-ggtags</a>
+</p>
+<ul class="org-ul">
+<li>If you want to locate symbols that are not defined in the source tree, then you can specify library directories
+with GTAGSLIBPATH environment variable.</li>
+<li>You should execute gtags(1) at each directory in the GTAGSLIBPATH. If ‘GTAGS’ is not found there, global ignores such
+directories.
+
+<ul class="org-ul">
+<li>$ global strlen # strlen() is not found</li>
+<li>$ (cd /usr/src/lib; gtags) # library source</li>
+<li>$ (cd /usr/src/sys; gtags) # kernel source</li>
+<li>$ export GTAGSLIBPATH=/usr/src/lib:/usr/src/sys</li>
+<li>$ global strlen ../../../usr/src/lib/libc/string/strlen.c # found in library $ global access ../../../usr/src/sys/kern/vfs<sub>syscalls.c</sub> # found in kernel</li>
+</ul></li>
+</ul>
+
+<p>
+or
+</p>
+
+<ul class="org-ul">
+<li>$ ln -s /usr/src/lib .</li>
+<li>$ ln -s /usr/src/sys .</li>
+<li>$ gtags</li>
+</ul>
+
+<p>
+locate library
+</p>
+<ul class="org-ul">
+<li>$ gcc -v &#x2013;print-file-name=libc.a</li>
+<li>By default libraries are installed in /usr/lib and header files will be in /usr/include</li>
+<li>Usually extension of the library file is .so(dynamic) .a(static) and corresponding header file will be .h</li>
+<li>$ echo "#include &lt;bogus.h&gt;" &gt; t.c; gcc -v t.c; rm t.c</li>
+<li>echo "#include &lt;bogus.h&gt;" | gcc -v -x c -</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org91131eb" class="outline-4">
+<h4 id="org91131eb"><span class="section-number-4">25.10.2</span> GNU etags, ctags - generate tag file for Emacs, vi</h4>
+<div class="outline-text-4" id="text-25-10-2">
+<ul class="org-ul">
+<li>part of GNU Emacs</li>
+<li>create tag table (defaults: TAGS for etags, tags for ctags)</li>
+<li>The etags  format understood by emacs(1);</li>
+<li>the ctags  format understood by vi(1).</li>
+
+<li>create a tags <b>table file</b>
+<ul class="org-ul">
+<li>M-x compole RET etags *.el RET</li>
+<li>find . -name "*.[chCH]" -print | etags -</li>
+</ul></li>
+<li>Emacs has at any time at most one selected tags table
+<ul class="org-ul">
+<li>- M-x visit-tags-table RET / RET</li>
+<li>(setq tags-table-list '("~/.emacs.d" "/usr/local/lib/emacs/src"))</li>
+<li>Do not set both tags-file-name and tags-table-list.</li>
+</ul></li>
+</ul>
+
+<p>
+to enable table:
+</p>
+<ul class="org-ul">
+<li>M-x visit-tags-table RET / RET</li>
+</ul>
+
+<p>
+simple approach:
+</p>
+<ul class="org-ul">
+<li>(require 'etags-select)</li>
+<li>(require 'etags-table)</li>
+<li>(global-set-key "\M-." 'etags-select-find-tag)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org541de46" class="outline-4">
+<h4 id="org541de46"><span class="section-number-4">25.10.3</span> emacs Xref</h4>
+<div class="outline-text-4" id="text-25-10-3">
+<p>
+Starting with Emacs 25, the default key bindings for tag navigation were mostly given to Xref, but the tags commands
+they were previously bound to are still available.
+</p>
+<ul class="org-ul">
+<li>Xref abstracts over multiple identifier-searching backends (one of them being the <b>tags backend</b>)</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org16cb236"></a>Xref Keys<br />
+<div class="outline-text-5" id="text-25-10-3-1">
+<ul class="org-ul">
+<li>`M-.’ (‘xref-find-definitions’)</li>
+<li>`C-x 4 .’ (‘xref-find-definitions-other-window’) – select the buffer containing a tag’s definition in another window,
+and move point there.</li>
+<li>`M-,’ (‘xref-pop-marker-stack’) – jump back</li>
+<li>`C-M-.’ (‘xref-find-apropos’) – find all meaningful symbols that match a regexp or word list</li>
+<li>`M-?’ (‘xref-find-references’) – find all references to the identifier at point</li>
+</ul>
+</div>
+</li>
+<li><a id="org3111b27"></a>Tags Keys<br />
+<div class="outline-text-5" id="text-25-10-3-2">
+<ul class="org-ul">
+<li>`M-.’ (‘find-tag’) – find a tag, that is, use the Tags file to look up a definition. If there are multiple tags in the project with the same name, use `C-u M-.’ to go to the next match.</li>
+<li>‘M-x find-tag-other-window’ – selects the buffer containing the tag’s definition in another window, and move point there.</li>
+<li>‘M-*’ (‘pop-tag-mark’) – jump back</li>
+<li>‘M-x tags-search’ – regexp-search through the source files indexed by a tags file (a bit like ‘grep’)</li>
+<li>‘M-x tags-query-replace’ – query-replace through the source files indexed by a tags file</li>
+<li>`M-,’ (‘tags-loop-continue’) – resume ‘tags-search’ or ‘tags-query-replace’ starting at point in a source file</li>
+<li>‘M-x tags-apropos’ – list all tags in a tags file that match a regexp</li>
+<li>‘M-x list-tags’ – list all tags defined in a source file</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgc4cd2f8" class="outline-4">
+<h4 id="orgc4cd2f8"><span class="section-number-4">25.10.4</span> rtags</h4>
+<div class="outline-text-4" id="text-25-10-4">
+<p>
+based on LLVM/Clang
+</p>
+
+<p>
+executables
+</p>
+<ul class="org-ul">
+<li>rdm - server application, and monitors all your indexed files for changes, and reindexes
+<ul class="org-ul">
+<li>rp - used by rdm, when a source file or one of its dependencies is modified</li>
+<li>rc -  needs specific information about how your sources are compiled to be able to properly index them</li>
+<li>~/.rdmrc -  to start rdm with specific options</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org502af78" class="outline-4">
+<h4 id="org502af78"><span class="section-number-4">25.10.5</span> just search for string alternative</h4>
+<div class="outline-text-4" id="text-25-10-5">
+<p>
+<a href="http://xahlee.info/emacs/emacs/emacs_grep_find.html">http://xahlee.info/emacs/emacs/emacs_grep_find.html</a>
+<a href="http://xahlee.info/comp/ctags_etags_gtags.html">http://xahlee.info/comp/ctags_etags_gtags.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orga6fd63d" class="outline-4">
+<h4 id="orga6fd63d"><span class="section-number-4">25.10.6</span> Effeciency:</h4>
+<div class="outline-text-4" id="text-25-10-6">
+<ul class="org-ul">
+<li><a href="http://blog.binchen.org/posts/how-to-use-ctags-in-emacs-effectively-3.html">http://blog.binchen.org/posts/how-to-use-ctags-in-emacs-effectively-3.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf098fd3" class="outline-3">
+<h3 id="orgf098fd3"><span class="section-number-3">25.11</span> Flymake and Flycheck</h3>
+<div class="outline-text-3" id="text-25-11">
+<ul class="org-ul">
+<li>Flymake is replacement for the older Flymake</li>
+<li>Flymake is build-in</li>
+</ul>
+
+<p>
+Flycheck uses backend check program <a href="https://www.flycheck.org/en/latest/languages.html#flycheck-languages">https://www.flycheck.org/en/latest/languages.html#flycheck-languages</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org294344f" class="outline-3">
+<h3 id="org294344f"><span class="section-number-3">25.12</span> autocompletion</h3>
+<div class="outline-text-3" id="text-25-12">
+</div>
+<div id="outline-container-orgdc28d93" class="outline-4">
+<h4 id="orgdc28d93"><span class="section-number-4">25.12.1</span> semantinc</h4>
+<div class="outline-text-4" id="text-25-12-1">
+<ul class="org-ul">
+<li>integrated with etags</li>
+<li>build in</li>
+</ul>
+
+<p>
+right mouse button
+</p>
+
+<p>
+supported tools are GNU Global, GNU Idutils, CScope, and Grep (the fallback method). For best results, use GNU Global.
+</p>
+
+<p>
+ (semantic-add-system-include "/usr/include/boost" 'c++-mode)
+(semantic-add-system-include "~/linux/kernel")
+(semantic-add-system-include "~/linux/include")
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org73871a0" class="outline-3">
+<h3 id="org73871a0"><span class="section-number-3">25.13</span> <span class="todo TODO">TODO</span> gdm</h3>
+<div class="outline-text-3" id="text-25-13">
+<p>
+<a href="https://tuhdo.github.io/c-ide.html">https://tuhdo.github.io/c-ide.html</a>
+(setq
+ ;; use gdb-many-windows by default
+ gdb-many-windows t
+</p>
+
+<p>
+;; Non-nil means display source file containing the main routine at startup
+gdb-show-main t
+)
+</p>
+
+<p>
+M-x gdb
+</p>
+
+<p>
+run gdb (like this):gdb -i=mi source<sub>file</sub>
+</p>
+
+<p>
+To use gdb-many-windows, you must always supply the -i=mi argument to gdb, otherwise gdb-many-windows won't work.
+</p>
+</div>
+</div>
+<div id="outline-container-org3c741ab" class="outline-3">
+<h3 id="org3c741ab"><span class="section-number-3">25.14</span> autoformat</h3>
+<div class="outline-text-3" id="text-25-14">
+<ul class="org-ul">
+<li>M-q fill-paragraph</li>
+</ul>
+
+<p>
+You can control such indentation using options lisp-indent-offset and lisp-body-indent, option lisp-indent-function, or symbol property lisp-indent-function. One possible value for option lisp-indent-function is the value of common-lisp-indent-function.
+<a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Indent.html">http://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Indent.html</a>
+<a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Program-Indent.html">http://www.gnu.org/software/emacs/manual/html_node/emacs/Program-Indent.html</a>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7ca8e89" class="outline-2">
+<h2 id="org7ca8e89"><span class="section-number-2">26</span> spell checking</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li>emerge app-text/aspell</li>
+<li>C-M-i   Complete the word before point based on the spelling dictionary (ispell-complete-word).</li>
+<li>M-x ispell-change-dictionary RET dict RET</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(add-to-list 'ispell-skip-region-alist '(<span style="color: #95e454;">":</span><span style="color: #95e454; font-weight: bold;">\\</span><span style="color: #95e454; font-weight: bold;">(</span><span style="color: #95e454;">PROPERTIES</span><span style="color: #95e454; font-weight: bold;">\\</span><span style="color: #95e454; font-weight: bold;">|</span><span style="color: #95e454;">LOGBOOK</span><span style="color: #95e454; font-weight: bold;">\\</span><span style="color: #95e454; font-weight: bold;">)</span><span style="color: #95e454;">:"</span> . <span style="color: #95e454;">":END:"</span>))
+(add-to-list 'ispell-skip-region-alist '(<span style="color: #95e454;">"#\\+BEGIN_SRC"</span> . <span style="color: #95e454;">"#\\+END_SRC"</span>))
+(<span style="color: #8ac6f2; font-weight: bold;">require</span> '<span style="color: #e5786d; font-weight: bold;">flyspell</span>)
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'flyspell-mode)
+(define-key flyspell-mode-map (kbd <span style="color: #95e454;">"C-."</span>) 'helm-flyspell-correct)
+(<span style="color: #8ac6f2; font-weight: bold;">setq-default</span> ispell-program-name <span style="color: #95e454;">"aspell"</span>)
+</pre>
+</div>
+</div>
+<div id="outline-container-org3df0266" class="outline-3">
+<h3 id="org3df0266"><span class="section-number-3">26.1</span> links</h3>
+<div class="outline-text-3" id="text-26-1">
+<ul class="org-ul">
+<li><a href="https://emacs.readthedocs.io/en/latest/writing_in_emacs.html">https://emacs.readthedocs.io/en/latest/writing_in_emacs.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org673ae68" class="outline-2">
+<h2 id="org673ae68"><span class="section-number-2">27</span> Math xah-math-input</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+<a href="http://xahlee.info/emacs/emacs/xmsi-math-symbols-input.html">http://xahlee.info/emacs/emacs/xmsi-math-symbols-input.html</a>
+</p>
+
+<p>
+install:
+</p>
+<ul class="org-ul">
+<li>copy <a href="https://github.com/DiamondBond/xah-math-input">https://github.com/DiamondBond/xah-math-input</a> to "~/.emacs.d/contrib/lisp/"</li>
+<li>.emacs: (add-to-list 'load-path "~/.emacs.d/contrib/lisp/")</li>
+</ul>
+
+<ul class="org-ul">
+<li><a href="http://ergoemacs.org/emacs/xmsi-math-symbols-input.html">http://ergoemacs.org/emacs/xmsi-math-symbols-input.html</a></li>
+<li>;-<b>- mode: Org; mode: xah-math-input; fill-column: 100;-</b>-</li>
+</ul>
+<p>
+Type “inf”, then press 【Shift+Space】 `xah-math-input-change-to-symbol', then it becomes “∞”.
+</p>
+
+<p>
+For the complete up-to-date list:
+<b>Alt+x  xah-math-input-list-math-symbols</b>
+</p>
+
+<p>
+inf		∞
+empty,es ∅
++-		±
+forall	∀
+exist	∃
+isin		∈
+notin	∉
+ni		∋
+sum		∑
+int		∫
+cap		∩
+union,cup ∪
+sim		∼
+asymp	≈
+equiv	≡
+ne		≠
+nsub	⊄
+sube	⊆
+supe	⊇
+sub		⊂
+sup		⊃
+D		Δ
+O		Ω
+q		θ
+nabla	∇
+part		∂
+rt		√
+rp		∘
+cp		⊕
+ct		⊗
+</p>
+
+<p>
+Ancient Greek:
+</p>
+<ul class="org-ul">
+<li>a - α; b-β; g-γ; d-δ; e-ε; z-ζ; h-η; q-θ; i-ι; k-κ; l-λ; m-μ; n-ν; x-ξ; p-π; r-ρ; s-σ; t-τ; v-υ; f-φ; c-χ; y-ψ; o-ω</li>
+<li>A-Α; B-Β; G-Γ; D-Δ; E-Ε; Z-Ζ; H-Η; Q-Θ; I-Ι; K-Κ; L-Λ; M-Μ; N-Ν; X-Ξ; P-Π; R-Ρ; S-Σ; T-Τ; V-Υ; F-Φ; C-Χ; Y-Ψ; O-Ω;</li>
+</ul>
+
+
+<p>
+and <a href="https://github.com/xahlee/xah-math-input/blob/master/xah-math-input.el">https://github.com/xahlee/xah-math-input/blob/master/xah-math-input.el</a>
+</p>
+
+<p>
+install from MELPA: Alt+x list-packages
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0d9da8" class="outline-2">
+<h2 id="orgf0d9da8"><span class="section-number-2">28</span> Terminal</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+emacs -g '80x24' &#x2013;eval '(term "/bin/bash")'
+</p>
+
+<p>
+M-x term
+</p>
+<ul class="org-ul">
+<li>C-c C-k char mode</li>
+<li>C-c C-j line mode
+<ul class="org-ul">
+<li>C-c char = C-x char</li>
+</ul></li>
+
+<li>C-c C-c = C-c (term-interrupt-subjob)</li>
+<li>C-c C-q - page at a time feature
+<ul class="org-ul">
+<li>q - exit - Not working</li>
+</ul></li>
+<li>S-insert - yank in char mode</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbf20b5b" class="outline-2">
+<h2 id="orgbf20b5b"><span class="section-number-2">29</span> dired</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+C-x C-f or M-x dired
+Mark:
+</p>
+<ul class="org-ul">
+<li>m	mark</li>
+<li>u/U	unmark/Unmark all marked</li>
+<li>*	Mark all executable file</li>
+<li>@	Mark all symbolic links</li>
+<li>/	Mark with `*' all files which are actually directories</li>
+
+<li>d	mark for deletion</li>
+<li>x	Delete the files that are flagged for deletion.</li>
+
+<li>% d regexp RET - mark with regex by name</li>
+</ul>
+<p>
+Navigation:
+</p>
+<ul class="org-ul">
+<li>f/o/C-o	visit/visit in other window/dont switch</li>
+<li>v	viw file - read only</li>
+<li>a	visit and kill current buffer</li>
+<li>^	dired-up-directory</li>
+<li>&gt;	next directory</li>
+<li>&lt;	preview directory</li>
+</ul>
+<p>
+Commands:
+</p>
+<ul class="org-ul">
+<li>c	compress to (TODO)</li>
+<li>shift+c	copy file</li>
+<li>shift+r	rename/move</li>
+<li>shuft+d	delete</li>
+<li>+		dired-create-directory</li>
+<li>shift+z	Compress/decompress the file by gzip</li>
+<li>!		shell command on file</li>
+<li>g	Update the entire contents of the Dired buffer</li>
+<li>l	Update the specified files</li>
+</ul>
+
+<p>
+not defined: r
+</p>
+
+<ul class="org-ul">
+<li>RET		dired-find-file</li>
+<li>SPC		moves the cursor down one item.</li>
+<li>(		dired-hide-details-mode</li>
+</ul>
+
+
+<p>
+BKSP moves the cursor up one item.
+</p>
+
+<p>
+g rereads the directory.
+RET opens the item in the current window.
+o (small O) opens the item in the other window.
+</p>
+
+<p>
+Use C-h m or M-x describe-mode to get some help.
+</p>
+</div>
+<div id="outline-container-orgcfcbd86" class="outline-3">
+<h3 id="orgcfcbd86"><span class="section-number-3">29.1</span> Copy files dired</h3>
+<div class="outline-text-3" id="text-29-1">
+<p>
+Mark the files with m or unmark with u.
+Press R.
+Enter the destination directory.
+Press RET.
+</p>
+
+<ol class="org-ol">
+<li>in .emacs: (setq dired-dwim-target t)</li>
+<li>M+x dired - set target</li>
+<li>split windows</li>
+<li>C-x C-v - set source</li>
+<li>shift+c - copy</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org401a19b" class="outline-3">
+<h3 id="org401a19b"><span class="section-number-3">29.2</span> usecase</h3>
+<div class="outline-text-3" id="text-29-2">
+<p>
+I use dired in a "two pane" style (two windows with dired buffers and (setq dired-dwim-target t)) in a separate frame on
+it's own workspace. I use arrow-keys for navigation (see key-bindings below) this way dired buffers accumulate quickly,
+I use helm to switch between them. Never felt the need for something like bookmarks.
+</p>
+
+<p>
+I also use:
+</p>
+
+<p>
+dired-async.el
+</p>
+
+<p>
+trashed
+</p>
+
+<p>
+dired-subtree
+</p>
+
+<p>
+dired-du
+</p>
+
+<p>
+dired-filter
+</p>
+
+<p>
+dired-rifle
+</p>
+
+<p>
+Here is the dired related part of my .emacs
+</p>
+
+<p>
+(defun always-t-p (args)
+  "always returns true"
+  (interactive "P")
+  t
+  )
+(setq dired-isearch-filenames 'dwim
+      dired-listing-switches "-alhv &#x2013;time-style=+%F &#x2013;group-directories-first"
+      dired-no-confirm t ;don't list marked files when performing action, still asks for confirmation
+      dired-deletion-confirmer 'always-t-p ;don't ask for confirmation
+      trashed-action-confirmer 'always-t-p
+      dired-clean-confirm-killing-deleted-buffers nil ;kill dired-buffer when corresponding dir is deleted
+      delete-by-moving-to-trash t ;use systems trash
+      dired-recursive-deletes 'always ;delete dirs even if non-empty
+      dired-dwim-target t ;copy/move to other side
+      dired-filter-revert 'always
+      wdired-allow-to-change-permissions t
+      dired-du-size-format t
+      )
+</p>
+
+<p>
+(add-hook 'dired-mode-hook (setq display-line-numbers 'relative)))
+</p>
+
+<p>
+;; some function-definitions and keybindings for dired
+(defun dired-toggle-details-and-du-mode ()
+  (interactive)
+  """toggles dired-du-mode together with dired-hide-details-mode"""
+  (if dired-hide-details-mode
+      (progn (dired-hide-details-mode 0)
+	     (dired-du-mode 1))
+    (progn (dired-hide-details-mode 1)
+	   (dired-du-mode -1))))
+(define-key dired-mode-map (kbd ".") 'dired-hide-dotfiles-mode)
+(define-key dired-mode-map (kbd "r") 'dired-rifle)
+(define-key dired-mode-map (kbd "b") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd ";") 'dired-subtree-down)
+(define-key dired-mode-map (kbd "'") 'dired-subtree-up)
+(define-key dired-mode-map (kbd "\"") 'dired-subtree-narrow)
+(define-key dired-mode-map (kbd "f") 'dired-filter-mode)
+(define-key dired-mode-map (kbd "z") 'dired-du-mode)
+(define-key dired-mode-map (kbd ",") 'trashed)
+(define-key dired-mode-map (kbd "l") 'dired)
+(define-key dired-mode-map (kbd "\\") dired-filter-mark-map)
+(define-key dired-mode-map (kbd "]") 'dired-rsync)
+(define-key dired-mode-map (kbd "&lt;tab&gt;") 'other-window)
+(define-key dired-mode-map (kbd "&lt;right&gt;") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "&lt;left&gt;") 'dired-up-directory)
+(define-key dired-mode-map (kbd ")") 'dired-toggle-details-and-du-mode)
+(define-key trashed-mode-map (kbd "&lt;tab&gt;") 'other-window)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaac314c" class="outline-2">
+<h2 id="orgaac314c"><span class="section-number-2">30</span> Org mode <a id="org3b4b142"></a></h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li><a href="https://medium.com/@tasshin/implementing-a-second-brain-in-emacs-and-org-mode-ef0e44fb7ca5">https://medium.com/@tasshin/implementing-a-second-brain-in-emacs-and-org-mode-ef0e44fb7ca5</a></li>
+<li>Organize Your Life In Plain Text! <a href="http://doc.norang.ca/org-mode.html">http://doc.norang.ca/org-mode.html</a></li>
+<li>beauty <a href="https://github.com/jonnay/org-beautify-theme">https://github.com/jonnay/org-beautify-theme</a></li>
+<li>tutorials <a href="https://orgmode.org/worg/org-tutorials/">https://orgmode.org/worg/org-tutorials/</a></li>
+<li>agenta magit python web-devel dockerfile-mode <a href="https://edom.github.io/emacs.html#org-mode-autocompletion-using-pcomplete">https://edom.github.io/emacs.html#org-mode-autocompletion-using-pcomplete</a></li>
+<li>config <a href="https://orgmode.org/worg/org-configs/org-customization-guide.html">https://orgmode.org/worg/org-configs/org-customization-guide.html</a></li>
+</ul>
+<pre class="example">
+#+STARTUP: overview
+
+</pre>
+<p>
+overview         top-level headlines only
+content          all headlines
+showall          no folding of any entries
+showeverything   show even drawer contents
+</p>
+
+<p>
+<b>Any trouble:</b> M-x toggle-debug-on-error
+</p>
+</div>
+<div id="outline-container-org0487125" class="outline-3">
+<h3 id="org0487125"><span class="section-number-3">30.1</span> navigate keys</h3>
+<div class="outline-text-3" id="text-30-1">
+<ul class="org-ul">
+<li>C-c C-n/p	next prev heading</li>
+<li>C-c C-f/b	next prev same level heading</li>
+<li>C-c C-u	Backward to higher level heading.</li>
+<li>C-c C-j	jump/goto</li>
+<li>M-{		org-backward-element</li>
+<li>M-}		org-forward-element</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcee7018" class="outline-3">
+<h3 id="orgcee7018"><span class="section-number-3">30.2</span> <span class="todo TODO">TODO</span> attachments</h3>
+<div class="outline-text-3" id="text-30-2">
+<p>
+C-c C-a
+</p>
+</div>
+</div>
+<div id="outline-container-orgb554af3" class="outline-3">
+<h3 id="orgb554af3"><span class="section-number-3">30.3</span> special symbols (TAB)</h3>
+<div class="outline-text-3" id="text-30-3">
+<p>
+C-q TAB		insert TAB
+C-u 4 C-q	insert 4 TABs
+</p>
+
+<ul class="org-ul">
+<li><b>asd</b></li>
+<li><code>asd</code></li>
+<li><code>asd</code></li>
+<li><i>asd</i></li>
+<li><span class="underline">asd</span></li>
+<li><del>df</del></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5e49c4a" class="outline-3">
+<h3 id="org5e49c4a"><span class="section-number-3">30.4</span> headers</h3>
+<div class="outline-text-3" id="text-30-4">
+<p>
+:VISIBILITY: all
+</p>
+<ul class="org-ul">
+<li>property, may be: folded, children, content, and all
+'(org-startup-folded t)</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>TAB S-TAB	hide show</li>
+<li>C-c Tab	hide current header</li>
+<li>C-c C-npfbu	navigate by headers</li>
+</ul>
+
+<p>
+M-S-Left/Right   PROMOTE SUBTREE
+</p>
+
+<p>
+C-RET	   inser HEADER after all text
+C-c *		   text to header
+M-RET		   new list item
+M-S-RET	   TODO
+S-righ, left or C-c C-t        TODO, DONE
+M(-S)-right lieft up down		move and indentation
+</p>
+
+<p>
+C-x n s/w редактировать только один уровень
+</p>
+
+<p>
+C-c /   C-c C-c.	sparse tree
+</p>
+</div>
+
+<div id="outline-container-orgbba8a4a" class="outline-4">
+<h4 id="orgbba8a4a"><span class="section-number-4">30.4.1</span> TAGS</h4>
+<div class="outline-text-4" id="text-30-4-1">
+<p>
+header tags: * header :as:asd:
+subheadings willl accumulate all tags.
+file tags: #+FILETAGS: :Peter:Boss:Secret:
+C-c C-q (C-c C-c)	   insert
+C-c \ search
+</p>
+</div>
+</div>
+
+<div id="outline-container-org375d6e0" class="outline-4">
+<h4 id="org375d6e0"><span class="section-number-4">30.4.2</span> <span class="todo TODO">TODO</span> </h4>
+<div class="outline-text-4" id="text-30-4-2">
+<p>
+S-LEFT/RIGHT - cycle
+S-UP/DOWN - change item priority
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4764352" class="outline-3">
+<h3 id="org4764352"><span class="section-number-3">30.5</span> lists</h3>
+<div class="outline-text-3" id="text-30-5">
+<p>
+ordered lists: 1.1)
+unordired    -,+,*
+description list
+</p>
+<dl class="org-dl">
+<dt>asd</dt><dd>asd</dd>
+<dt class="off"><code>[&#xa0;]</code> (no term)</dt><dd>sss</dd>
+</dl>
+
+<p>
+M-RET		insert new
+S-left,right	cycle bullets -,+,*,1 (C-c -)
+M-left,right	Increase the indentation of an item
+M-S-RIGHT	Increase the indentation of an item with children
+C-C		Toggle check box
+</p>
+
+<p>
+C-c ^		sort
+</p>
+
+<p>
+C-c - Convert lines to lists
+</p>
+
+<p>
+C-x r N and C-u C-x r N - emacs list
+</p>
+</div>
+</div>
+<div id="outline-container-orgad496e2" class="outline-3">
+<h3 id="orgad496e2"><span class="section-number-3">30.6</span> Checkboxes</h3>
+<div class="outline-text-3" id="text-30-6">
+<ul class="org-ul">
+<li>M-S-RET	create at list - cursor at the end of the end of the list item</li>
+<li>C-c C-c	togle</li>
+<li>C-c C-x C-r	toggle-radio-button - switch others ff</li>
+</ul>
+<pre class="example">
+[/]		add parts
+[%]		add percents
+
+</pre>
+
+<p>
+ex:
+</p>
+<ul class="org-ul">
+<li class="trans"><code>[-]</code> percet <code>[1/2]</code> <code>[50%]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 1</li>
+<li class="off"><code>[&#xa0;]</code> 2</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org54e6210" class="outline-3">
+<h3 id="org54e6210"><span class="section-number-3">30.7</span> Properties</h3>
+<div class="outline-text-3" id="text-30-7">
+<p>
+C-c C-x p Set a property.
+C-c C-c d Remove
+</p>
+
+<p>
+see headers.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b703b1" class="outline-3">
+<h3 id="org2b703b1"><span class="section-number-3">30.8</span> Time Stamp</h3>
+<div class="outline-text-3" id="text-30-8">
+<ul class="org-ul">
+<li>C-c .	ins. for agenda</li>
+<li>C-c !	ins. inactive</li>
+<li>S-left/right	by one day</li>
+<li>M-S-LEFT / M-S-RIGHT move selection 1 month backward/forward</li>
+<li>&lt; / &gt; scroll calendar by 1 month</li>
+<li>C-v / M-v scroll calendar by 3 months</li>
+<li>M-S-UP / M-S-DOWN scroll calendar by 1 year</li>
+<li>S-up/down	change at cursor</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3fd6993" class="outline-3">
+<h3 id="org3fd6993"><span class="section-number-3">30.9</span> Tables</h3>
+<div class="outline-text-3" id="text-30-9">
+<p>
+<a href="http://orgmode.org/manual/Built_002din-table-editor.html">http://orgmode.org/manual/Built_002din-table-editor.html</a>
+</p>
+<p>
+C-c |      create table 5x2
+C-c        autoaligh all table
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">asd</td>
+<td class="org-left">asd</td>
+</tr>
+</tbody>
+</table>
+<p>
+M-a/e            move back forward at cells
+M-arrays       move line or row in table
+Tab - autocomplition
+</p>
+</div>
+</div>
+<div id="outline-container-orgf217e20" class="outline-3">
+<h3 id="orgf217e20"><span class="section-number-3">30.10</span> links [ [ link][description]]</h3>
+<div class="outline-text-3" id="text-30-10">
+<ul class="org-ul">
+<li>C-c C-l		edit link</li>
+<li>C-c C-x C-v	show hide image inline</li>
+<li>C-c C-o		open link</li>
+<li>C-u C-u C-c C-o	open not in emacs</li>
+
+<li>M-x org-toggle-link-display</li>
+</ul>
+
+<p>
+[[ ./a.img      - inline image ends with \]\]
+</p>
+
+<p>
+<b>Local links</b> :
+</p>
+<ol class="org-ol">
+<li>[[Target		local link to header <a id="org8b7cd50"></a></li>
+<li>[[My Target         local link to just string #+NAME: My Target</li>
+</ol>
+
+<p>
+example <a href="#org8b7cd50">Mylink to TragetEx</a>
+</p>
+
+<p>
+(setq org-file-apps
+   '(("\\.docx\\'" . default)
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . default)
+     ("\\.pdf\\'" . default)
+     ("\\.png\\'" . default)
+     ("\\.jpg\\'" . default)
+     ("\\.jpeg\\'" . default)
+     (auto-mode . emacs)))
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88eccfe" class="outline-3">
+<h3 id="org88eccfe"><span class="section-number-3">30.11</span> links images, inline images</h3>
+<div class="outline-text-3" id="text-30-11">
+<p width="100px">
+STARTUP(org-startup-with-inline-images) - inlineimages or noinlineimages
+</p>
+<ul class="org-ul">
+<li>C-c C-x C-v (org-toggle-inline-images)</li>
+</ul>
+
+<p>
+example:
+</p>
+<p width="700px">
+[[path to image]
+</p>
+
+<p>
+configuration:
+</p>
+<ul class="org-ul">
+<li>(setq org-startup-with-inline-images "inlineimages")</li>
+<li>(setq org-mode-actual-width)
+<ul class="org-ul">
+<li>t - When non-nil, use the actual width of images when inlining them</li>
+<li>300 - When set to a number, use imagemagick (when available) to set the
+image’s width to this value.</li>
+<li>'(300 200) - use  #+ATTR.* keyword if it matches a width  specification like #+ATTR<sub>HTML</sub>: :width 300px or this number</li>
+<li>nil - use #+ATTR.* or dont resize</li>
+</ul></li>
+</ul>
+
+<p>
+M-x
+</p>
+<ul class="org-ul">
+<li>org-redisplay-inline-images</li>
+<li>org-display-inline-images</li>
+<li>org-toggle-inline-images</li>
+<li>org-remove-inline-images</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org828c671" class="outline-3">
+<h3 id="org828c671"><span class="section-number-3">30.12</span> Inline source code babel <a id="org4766ea5"></a></h3>
+<div class="outline-text-3" id="text-30-12">
+</div>
+<div id="outline-container-orgb29d873" class="outline-4">
+<h4 id="orgb29d873"><span class="section-number-4">30.12.1</span> commands</h4>
+<div class="outline-text-4" id="text-30-12-1">
+<ul class="org-ul">
+<li>C-c '		Edit the source code</li>
+<li>C-c C-v d		create</li>
+<li>C-c C-c 		execute</li>
+<li>C-c C-v e		execute</li>
+<li>org-src-fontify-block  code highlighting</li>
+</ul>
+<p>
+templates:
+</p>
+<ul class="org-ul">
+<li>&lt;s Tab		create</li>
+<li>after #+		autocompletion</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9051862" class="outline-4">
+<h4 id="org9051862"><span class="section-number-4">30.12.2</span> template</h4>
+<div class="outline-text-4" id="text-30-12-2">
+<p>
+Название языка строчными!
+</p>
+
+<ol class="org-ol">
+<li></li>
+</ol>
+<pre class="example">
+Some example from a text file.
+
+</pre>
+<ol class="org-ol">
+<li></li>
+</ol>
+<pre class="example">
+Some example from a text file.
+</pre>
+<ol class="org-ol">
+<li></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-abap" id="orgc6465d9">data p_datum type datum. "15.01.2018
+data p_molga type MOLGA value '33'.
+p_datum = sy-datum.
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org92661f7" class="outline-4">
+<h4 id="org92661f7"><span class="section-number-4">30.12.3</span> python</h4>
+<div class="outline-text-4" id="text-30-12-3">
+<div class="org-src-container">
+<pre class="src src-python" id="org4ed5ab1"><span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">"aasd"</span>
+</pre>
+</div>
+
+<pre class="example">
+aasd
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python" id="orgd8bc1bd"><span style="color: #8ac6f2; font-weight: bold;">print</span>(<span style="color: #95e454;">"aasd"</span>)
+</pre>
+</div>
+
+<pre class="example">
+aasd
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2bfdc5d" class="outline-4">
+<h4 id="org2bfdc5d"><span class="section-number-4">30.12.4</span> output result</h4>
+<div class="outline-text-4" id="text-30-12-4">
+<p>
+<a href="https://orgmode.org/manual/Results-of-Evaluation.html">https://orgmode.org/manual/Results-of-Evaluation.html</a>
+</p>
+<ul class="org-ul">
+<li>:results output raw - do nothing with output</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgdfbe696"></a>example output json<br />
+<div class="outline-text-5" id="text-30-12-4-1">
+<div class="org-src-container">
+<pre class="src src-shell">curl -X GET <span style="color: #95e454;">"http://anonchek.ru/get?id=a43219ce4a4a490d9cd34beb718cb09f"</span> -H  <span style="color: #95e454;">"accept: application/json"</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0cac706" class="outline-3">
+<h3 id="org0cac706"><span class="section-number-3">30.13</span> LaTeX</h3>
+<div class="outline-text-3" id="text-30-13">
+<p>
+<a href="https://orgmode.org/org.html#LaTeX-header-and-sectioning">https://orgmode.org/org.html#LaTeX-header-and-sectioning</a>
+<a href="https://en.wikibooks.org/wiki/LaTeX/Internationalization">https://en.wikibooks.org/wiki/LaTeX/Internationalization</a>
+для русского:
+</p>
+<p>
+статья:
+</p>
+
+
+<p>
+статья:
+[10pt,a4paper,twocolumn]{article}
+широко:
+</p>
+<p>
+очень широко:
+</p>
+\begin{equation}
+x=\sqrt{b}
+\end{equation}
+
+<p>
+\[ a=+\sqrt{2} \] or \[ a=-\sqrt{2} \]
+</p>
+</div>
+</div>
+<div id="outline-container-org458f41c" class="outline-3">
+<h3 id="org458f41c"><span class="section-number-3">30.14</span> archiving</h3>
+<div class="outline-text-3" id="text-30-14">
+<p>
+C-c C-x C-a	archive subtree.
+</p>
+</div>
+</div>
+<div id="outline-container-org6ba6256" class="outline-3">
+<h3 id="org6ba6256"><span class="section-number-3">30.15</span> inline images</h3>
+<div class="outline-text-3" id="text-30-15">
+<p>
+(setq org-startup-with-inline-images t)
+or:
+</p>
+<p>
+[[<img src="org-level-hist.png" alt="org-level-hist.png" />]
+</p>
+</div>
+</div>
+<div id="outline-container-org34c1484" class="outline-3">
+<h3 id="org34c1484"><span class="section-number-3">30.16</span> Tables and Spreadsheets</h3>
+<div class="outline-text-3" id="text-30-16">
+<ul class="org-ul">
+<li>C-c ?	learn about field</li>
+<li>|-		start pattern</li>
+<li>:=vmean($2..$3)	calculate the mean for fields from the second ($2) to the third ($3) field in this row</li>
+<li>C-c C-c	calc table</li>
+<li>#+TBLFM line contains all the formulas for the table above, and you should be careful while editing it manually.</li>
+<li>C-u C-c * (or C-c C-c if you're on the #+TBLFM) 	 reapplying all formulas</li>
+<li>C-c =	editing column formulas</li>
+<li>C-u C-c = 	field formulas</li>
+<li>C-c '	edit formulas more interactively in a dedicated buffer</li>
+<li>S-arrows	swap columns</li>
+<li>C-c { 	Turn the formulas debugger on</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">n</th>
+<th scope="col" class="org-left">n<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org12868e1" class="outline-3">
+<h3 id="org12868e1"><span class="section-number-3">30.17</span> indent-mode</h3>
+<div class="outline-text-3" id="text-30-17">
+<ul class="org-ul">
+<li>M-x org-indent-mode</li>
+<li>(setq org-startup-indented t)</li>
+</ul>
+
+<p>
+use  '(org-hide-leading-stars t) inside
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc563f8e" class="outline-3">
+<h3 id="orgc563f8e"><span class="section-number-3">30.18</span> templates for source code</h3>
+<div class="outline-text-3" id="text-30-18">
+<ul class="org-ul">
+<li>(require 'org-tempo) for &lt;s TAB is old system</li>
+<li>C-c C-, s and it will wrap your selection inside #+begin<sub>src</sub> and #+end<sub>src</sub>.</li>
+</ul>
+
+
+<p>
+(require 'org-tempo)
+</p>
+
+<p>
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+</p>
+</div>
+</div>
+<div id="outline-container-org5a5698b" class="outline-3">
+<h3 id="org5a5698b"><span class="section-number-3">30.19</span> <span class="todo TODO">TODO</span> graphiz</h3>
+<div class="outline-text-3" id="text-30-19">
+<p>
+Diagrams <a href="https://orgmode.org/worg/org-tutorials/org-dot-diagrams.html">https://orgmode.org/worg/org-tutorials/org-dot-diagrams.html</a>
+mind map 3yo <a href="https://github.com/the-ted/org-mind-map">https://github.com/the-ted/org-mind-map</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgcde3fa2" class="outline-3">
+<h3 id="orgcde3fa2"><span class="section-number-3">30.20</span> <span class="todo TODO">TODO</span> Capture C-c c and templates, notes</h3>
+</div>
+<div id="outline-container-org0168232" class="outline-3">
+<h3 id="org0168232"><span class="section-number-3">30.21</span> columnar view</h3>
+<div class="outline-text-3" id="text-30-21">
+</div>
+<div id="outline-container-org05ff328" class="outline-4">
+<h4 id="org05ff328"><span class="section-number-4">30.21.1</span> keys</h4>
+<div class="outline-text-4" id="text-30-21-1">
+<ul class="org-ul">
+<li>C-c C-x C-c 	(org-columns)</li>
+<li>r/g		redo</li>
+<li>C-c C-c or q	quit</li>
+<li>LEFT, RIGHT, UP, DOWN     Move through the column view from field to field.</li>
+<li>S-left/right		cycle throught possible values</li>
+<li>M-left/right		move columns left/right</li>
+<li>e		edit-value</li>
+<li>v		show-value</li>
+<li>a		edit-allowed - possible values</li>
+<li>C-c C-c (org-columns-toggle-or-columns-quit)    When there is a checkbox at point, toggle it.</li>
+
+<li>&lt;/&gt;		columns-widen</li>
+<li>S-M-RIGHT	org-columns-new</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org19381ec" class="outline-4">
+<h4 id="org19381ec"><span class="section-number-4">30.21.2</span> org-columns-default-format</h4>
+<div class="outline-text-4" id="text-30-21-2">
+<p>
+"%25ITEM %TODO %3PRIORITY %TAGS"
+or
+#+COLUMNS %25ITEM %TODO %3PRIORITY %TAGS
+</p>
+</div>
+</div>
+<div id="outline-container-org2fe004e" class="outline-4">
+<h4 id="org2fe004e"><span class="section-number-4">30.21.3</span> format</h4>
+<div class="outline-text-4" id="text-30-21-3">
+<p>
+%[WIDTH]PROPERTY[(TITLE)][{SUMMARY-TYPE}]
+</p>
+</div>
+</div>
+<div id="outline-container-org60dac66" class="outline-4">
+<h4 id="org60dac66"><span class="section-number-4">30.21.4</span> properties</h4>
+<div class="outline-text-4" id="text-30-21-4">
+<ul class="org-ul">
+<li>ITEM         The content of the headline.</li>
+<li>TODO         The TODO keyword of the entry.</li>
+<li>TAGS         The tags defined directly in the headline.</li>
+<li>ALLTAGS      All tags, including inherited ones.</li>
+<li>PRIORITY     The priority of the entry, a string with a single letter.</li>
+<li>DEADLINE     The deadline time string, without the angular brackets.</li>
+<li>SCHEDULED    The scheduling time stamp, without the angular brackets.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1914a78" class="outline-4">
+<h4 id="org1914a78"><span class="section-number-4">30.21.5</span> links</h4>
+<div class="outline-text-4" id="text-30-21-5">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html">https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html</a></li>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-column-screencast.html">https://orgmode.org/worg/org-tutorials/org-column-screencast.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8d0e6a" class="outline-4">
+<h4 id="orgb8d0e6a"><span class="section-number-4">30.21.6</span> effort template</h4>
+<div class="outline-text-4" id="text-30-21-6">
+<pre class="example">
+#+PROPERTY: Effort_ALL 0 0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 7:00
+#+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f89f94" class="outline-3">
+<h3 id="org9f89f94"><span class="section-number-3">30.22</span> priorities</h3>
+<div class="outline-text-3" id="text-30-22">
+</div>
+<div id="outline-container-orgb6a4f75" class="outline-4">
+<h4 id="orgb6a4f75"><span class="section-number-4">30.22.1</span> custom priorities:</h4>
+<div class="outline-text-4" id="text-30-22-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span>
+  org-lowest-priority  1
+  org-highest-priority 10
+  org-default-priority 5
+  )
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org779b5d0" class="outline-3">
+<h3 id="org779b5d0"><span class="section-number-3">30.23</span> sort</h3>
+</div>
+<div id="outline-container-org69b61d4" class="outline-3">
+<h3 id="org69b61d4"><span class="section-number-3">30.24</span> TAGS and TODO</h3>
+<div class="outline-text-3" id="text-30-24">
+<ul class="org-ul">
+<li>!	add timestemp without asking</li>
+<li>@	ask whether to add timestamp or not</li>
+<li>/!	when switching back from it add timestamp to TODO word staying before</li>
+<li>computer @phone - at most one of them  should be selected</li>
+</ul>
+<p>
+keys
+</p>
+<ul class="org-ul">
+<li>C-c C-q (org-set-tags-command)</li>
+<li>C-c C-c (org-set-tags-command)</li>
+</ul>
+
+<p>
+Colours for TODO:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-todo-keyword-faces
+  '((<span style="color: #95e454;">"TODO"</span> . org-warning)
+     (<span style="color: #95e454;">"STARTED"</span> . <span style="color: #95e454;">"red"</span>)
+     (<span style="color: #95e454;">"WAITING"</span> . <span style="color: #95e454;">"yellow"</span>)
+     <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">("CANCELED" . (:foreground "cyan" :weight bold))</span>
+     (<span style="color: #95e454;">"CANCELED"</span> . <span style="color: #95e454;">"cyan"</span>)
+     ))
+</pre>
+</div>
+<p>
+<a href="https://orgmode.org/manual/Tracking-TODO-state-changes.html">https://orgmode.org/manual/Tracking-TODO-state-changes.html</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba013e0" class="outline-2">
+<h2 id="orgba013e0"><span class="section-number-2">31</span> Org agenda</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+provides a convenient way of tracking your projects and managing your calendar.
+</p>
+
+<p>
+terms:
+</p>
+<ul class="org-ul">
+<li>Agenda Dispatcher - view selector</li>
+</ul>
+</div>
+
+<div id="outline-container-orga39fa64" class="outline-3">
+<h3 id="orga39fa64"><span class="section-number-3">31.1</span> keys</h3>
+<div class="outline-text-3" id="text-31-1">
+</div>
+<div id="outline-container-org5e38819" class="outline-4">
+<h4 id="org5e38819"><span class="section-number-4">31.1.1</span> keys in org mode for TODO:</h4>
+<div class="outline-text-4" id="text-31-1-1">
+<ul class="org-ul">
+<li>C-c '[' or ']'	add/remove file to agenda list in .emacs  '(org-agenda-files '("~/tasks.org"))</li>
+<li>shift -&gt; or C-c C-t - change status TODO DONE</li>
+<li>C-c .	insert timestamp</li>
+<li>C-c &gt;	go to calendar</li>
+<li>C-c C-d deadline - is supposed to be finished on that date.</li>
+<li>C-c C-s schedule - you are planning to start working on that task on the given date.
+<ul class="org-ul">
+<li>+n or +1	add days</li>
+<li>+mon/mon	at next monday</li>
+<li>+1w		+7 days</li>
+<li>n		day</li>
+<li>2022-05-22</li>
+<li>05-22</li>
+</ul></li>
+<li>C-c /		sparse tree - filter</li>
+<li>M-x org-agenda</li>
+<li>M-x org-sort-entries - ????????</li>
+<li>M-x org-cyle-agenda-files - open files</li>
+<li>C-c C-x C-s (org-archive-subtree)</li>
+<li>C-c C-t	togle TODO (S-arrow)</li>
+<li>C-c C-x e	(org-set-effort) (e in agenda)</li>
+<li>C-c C-x C-e	(org-clock-modify-effort-estimate)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb652bae" class="outline-4">
+<h4 id="orgb652bae"><span class="section-number-4">31.1.2</span> in agenda:</h4>
+<div class="outline-text-4" id="text-31-1-2">
+<ul class="org-ul">
+<li>f/b/j		navigation</li>
+<li>D		toggle diary</li>
+<li>d/w/l		day/week/log view</li>
+<li>i		insert diary</li>
+<li>SPC/TAB/RET	go to todo line in agenda file</li>
+<li>t		Change the TODO state of the item everywhere</li>
+<li>C-k		kill entry</li>
+<li>$		archive to ~/&lt;original<sub>file</sub>&gt;<sub>archive</sub></li>
+<li>c		calendar</li>
+<li>r/g		recreate</li>
+<li>o		Delete other windows.</li>
+
+<li>notes ~/.notes</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9537124" class="outline-3">
+<h3 id="org9537124"><span class="section-number-3">31.2</span> time format</h3>
+<div class="outline-text-3" id="text-31-2">
+<ul class="org-ul">
+<li>date: &lt;YYYY-MM-DD DAY&gt;</li>
+<li>timestamp: &lt;YYYY-MM-DD DAY HH:MM&gt;
+<ul class="org-ul">
+<li>2022-08-02 Tue 12:05</li>
+</ul></li>
+<li>time range: &lt;YYYY-MM-DD DAY HH:MM-HH:MM&gt;</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2005-10-01 Sat +1w&gt; </span></span> - every Wednesday</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2005-10-01 Sat +1m -3d&gt; </span></span> -  repeater and a special warning period</li>
+<li>​ <span class="timestamp-wrapper"><span class="timestamp">&lt;%%(diary-float t 4 2)&gt; </span></span> Diary-style sexp entries</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2004-08-23 Mon&gt;&#x2013;&lt;2004-08-26 Thu&gt; </span></span> - Time/Date range</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2004-08-23 Mon] </span></span> - inactive timestamp</li>
+<li>DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2008-02-10 Sun ++1w&gt; </span></span> - Marking this DONE shifts the date by at least one week, but also by as many weeks as
+it takes to get this date into the future.</li>
+<li>DEADLINE: <span class="timestamp-wrapper"><span class="timestamp">&lt;2005-11-01 Tue .+1m&gt; </span></span> - Marking this DONE will shift the date to one month after today.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org131bac4" class="outline-3">
+<h3 id="org131bac4"><span class="section-number-3">31.3</span> parser perl</h3>
+<div class="outline-text-3" id="text-31-3">
+<div class="org-src-container">
+<pre class="src src-perl">$<span style="color: #cae682;">cmd</span> = <span style="color: #95e454;">"emacs -batch -l ~/.emacs -eval '(org-batch-agenda \"a\"  org-agenda-span (quote day) org-agenda-include-diary t diary-file \"/home/u/.emacs.d/diary\")'</span>
+<span style="color: #95e454;">2&gt;/dev/null"</span>;
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">run it and capture the output</span>
+$<span style="color: #cae682;">agenda</span> = qx<span style="color: #95e454;">{$cmd 2&gt;/dev/null}</span>;
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">loop over all lines</span>
+<span style="color: #8ac6f2; font-weight: bold;">foreach</span> $<span style="color: #cae682;">line</span> (split(<span style="color: #95e454;">/\n/</span>,$<span style="color: #cae682;">agenda</span>)) {
+    <span style="color: #99968b; font-style: italic;"># get the individual values</span>
+    ($<span style="color: #cae682;">category</span>,$<span style="color: #cae682;">head</span>,$<span style="color: #cae682;">type</span>,$<span style="color: #cae682;">todo</span>,$<span style="color: #cae682;">tags</span>,$<span style="color: #cae682;">date</span>,$<span style="color: #cae682;">time</span>,$<span style="color: #cae682;">extra</span>,
+     $<span style="color: #cae682;">priority_l</span>,$<span style="color: #cae682;">priority_n</span>) = split(<span style="color: #95e454;">/,/</span>,$<span style="color: #cae682;">line</span>);
+    <span style="color: #99968b; font-style: italic;"># process and print</span>
+    print <span style="color: #95e454;">"[ ] $category,$head,$type,$todo,$tags,$date,$time,$extra,</span>
+<span style="color: #95e454;">     $priority_l,$priority_n \n"</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6ae8b67" class="outline-3">
+<h3 id="org6ae8b67"><span class="section-number-3">31.4</span> parser python</h3>
+<div class="outline-text-3" id="text-31-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> os
+<span style="color: #cae682;">cmd</span>=<span style="color: #95e454;">"emacs -batch -l ~/.emacs -eval '(org-batch-agenda \"a\"  org-agenda-span (quote day) org-agenda-include-diary t diary-file \"/home/u/.emacs.d/diary\")' 2&gt;/dev/null"</span>
+<span style="color: #cae682;">cmd</span> = cmd.split(<span style="color: #95e454;">' '</span>)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">run it and capture the output</span>
+<span style="color: #8ac6f2; font-weight: bold;">import</span> subprocess
+<span style="color: #cae682;">child</span> = subprocess.Popen([<span style="color: #95e454;">'cat'</span>, <span style="color: #95e454;">'task.org'</span>], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+<span style="color: #cae682;">agenda</span> = os.system(cmd + <span style="color: #95e454;">" 2&gt;/dev/null"</span>)
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">loop over all lines</span>
+foreach $line (split(/\n/,$agenda)) {
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get the individual values</span>
+    ($category,$head,$<span style="color: #e5786d;">type</span>,$todo,$tags,$date,$time,$extra,
+     $priority_l,$priority_n) = split(/,/,$line);
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">process and print</span>
+    <span style="color: #8ac6f2; font-weight: bold;">print</span> <span style="color: #95e454;">"[ ] $category,$head,$type,$todo,$tags,$date,$time,$extra,</span>
+<span style="color: #95e454;">     $priority_l,$priority_n \n"</span>;
+}
+
+
+<span style="color: #8ac6f2; font-weight: bold;">with</span> <span style="color: #e5786d;">open</span>(<span style="color: #95e454;">'university_records.csv'</span>, <span style="color: #95e454;">'r'</span>) <span style="color: #8ac6f2; font-weight: bold;">as</span> csv_file:
+    <span style="color: #cae682;">reader</span> = csv.reader(csv_file)
+
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> row <span style="color: #8ac6f2; font-weight: bold;">in</span> reader:
+        <span style="color: #8ac6f2; font-weight: bold;">print</span>(row)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org263766d" class="outline-3">
+<h3 id="org263766d"><span class="section-number-3">31.5</span> config</h3>
+<div class="outline-text-3" id="text-31-5">
+<div class="org-src-container">
+<pre class="src src-elisp">(global-set-key (kbd <span style="color: #95e454;">"C-c a"</span>) 'org-agenda)
+(global-set-key <span style="color: #95e454;">"\C-ca"</span> 'org-agenda)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">open agenda every time at start</span>
+(org-agenda nil <span style="color: #95e454;">"a"</span>)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Use a one day agenda view (rather than a seven day view).</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-agenda-ndays 1)
+<span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">(setq diary-mail-addr "geekard@qq.com")</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Times of Sunrise and Sunset</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">https://www.latlong.net/</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-latitude 50.596722)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-longitude 36.587780)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-location-name <span style="color: #95e454;">"Belgorod"</span>)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-time-zone -360)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-standard-time-zone-name <span style="color: #95e454;">"CST"</span>)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-daylight-time-zone-name <span style="color: #95e454;">"CDT"</span>)
+
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> mark-diary-entries-in-calendar t)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-agenda-include-diary t)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">disable holidays</span>
+(diary-show-holidays-flag nil)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> christian-holidays nil
+      hebrew-holidays nil
+      islamic-holidays nil
+      solar-holidays nil
+      bahai-holidays nil)
+(add-hook 'today-visible-calendar-hook 'calendar-mark-today)
+(autoload 'chinese-year <span style="color: #95e454;">"cal-china"</span> <span style="color: #f08080; font-style: italic;">"Chinese year data"</span> t) -?????
+# Monday is the first day of the week
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> calendar-week-start-day 1)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org762be6e" class="outline-3">
+<h3 id="org762be6e"><span class="section-number-3">31.6</span> <span class="todo TODO">TODO</span> russian holidays</h3>
+<div class="outline-text-3" id="text-31-6">
+<p>
+<a href="https://github.com/grafov/russian-holidays">https://github.com/grafov/russian-holidays</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgba2703e" class="outline-3">
+<h3 id="orgba2703e"><span class="section-number-3">31.7</span> links</h3>
+<div class="outline-text-3" id="text-31-7">
+<ul class="org-ul">
+<li><a href="https://orgmode.org/guide/Agenda-Commands.html">https://orgmode.org/guide/Agenda-Commands.html</a></li>
+<li><a href="https://orgmode.org/worg/org-configs/org-customization-guide.html">https://orgmode.org/worg/org-configs/org-customization-guide.html</a></li>
+<li><a href="http://www.emacslife.com/baby-steps-org.html">http://www.emacslife.com/baby-steps-org.html</a></li>
+<li><a href="http://pragmaticemacs.com/emacs/org-mode-basics-vii-a-todo-list-with-schedules-and-deadlines/">http://pragmaticemacs.com/emacs/org-mode-basics-vii-a-todo-list-with-schedules-and-deadlines/</a></li>
+<li><a href="http://www.cachestocaches.com/2016/9/my-workflow-org-agenda/">http://www.cachestocaches.com/2016/9/my-workflow-org-agenda/</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Holiday-Customizing.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Holiday-Customizing.html</a></li>
+<li><a href="https://orgmode.org/worg/org-faq.html">https://orgmode.org/worg/org-faq.html</a></li>
+<li><a href="https://alphaalgorithms.github.io/2019/05/18/date-and-time-in-emacs/">https://alphaalgorithms.github.io/2019/05/18/date-and-time-in-emacs/</a></li>
+</ul>
+<p>
+export
+</p>
+<ul class="org-ul">
+<li>iCalendar export <a href="https://orgmode.org/manual/Exporting-Agenda-Views.html">https://orgmode.org/manual/Exporting-Agenda-Views.html</a></li>
+<li>perl <a href="https://orgmode.org/manual/Extracting-Agenda-Information.html">https://orgmode.org/manual/Extracting-Agenda-Information.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4045b5b" class="outline-2">
+<h2 id="org4045b5b"><span class="section-number-2">32</span> appt - reminder for diary</h2>
+<div class="outline-text-2" id="text-32">
+</div>
+<div id="outline-container-org2752dfc" class="outline-3">
+<h3 id="org2752dfc"><span class="section-number-3">32.1</span> appt reminder</h3>
+<div class="outline-text-3" id="text-32-1">
+<ul class="org-ul">
+<li>M-x appt-activate</li>
+<li>M-x appt-add 		add reminder without diary and todo files</li>
+<li>appt-check - internal func which checks diary and decide show message or not</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org61f9ac9" class="outline-3">
+<h3 id="org61f9ac9"><span class="section-number-3">32.2</span> appt default config</h3>
+<div class="outline-text-3" id="text-32-2">
+<ul class="org-ul">
+<li>start time = appt-message-warning-time or "warntime" in diary</li>
+<li>interval = appt-display-interval</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">-- time</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">appt-display-message interval - minutes</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-display-interval 3)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">before an appointment that the warning begins - minutes</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">can be overriden in diary with "wanrntime 30" - minutes</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-message-warning-time 12)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">display window appointment text after time record duration - seconds</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-display-duration 10
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">enable audio</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-audible nil)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">emacs print diary , I guess controlled by appt-display-interval</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-display-diary t)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">echo, nil</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-display-format 'window)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3dd071" class="outline-3">
+<h3 id="orgf3dd071"><span class="section-number-3">32.3</span> my reminder:</h3>
+<div class="outline-text-3" id="text-32-3">
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">---- my X notification system---</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">notify-send in by first emacs process</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-disp-window-function
+  (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (min-to-app timenow msg)
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">get emacs pids as "123 123 123"</span>
+    (set 'v (shell-command-to-string <span style="color: #95e454;">"pidof emacs"</span>))
+
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">largest of "1 2 3" as number</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">setq</span> val (car <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">get ferst element of a list</span>
+                (last
+                  (sort (mapcar  'string-to-number (split-string v)) #'&gt;))
+                )
+      )
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">do if emacs-pid == val, 5000=5sec</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">if</span> (eq (emacs-pid) val)
+      (shell-command (format <span style="color: #95e454;">"notify-send --expire-time 15000 -i emacs '%s'"</span> msg)
+        ) )
+    ) )
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">update diary from for appt with timeout</span>
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">oo</span> () (appt-check t))
+(run-with-timer 120 120 'oo)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">--&lt;&lt; my X notification system</span>
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgee9e645" class="outline-4">
+<h4 id="orgee9e645"><span class="section-number-4">32.3.1</span> reminder</h4>
+<div class="outline-text-4" id="text-32-3-1">
+<p>
+sudo -u u DISPLAY=:0 notify-send &#x2013;expire-time 3000 -i emacs "hay"
+</p>
+
+<pre class="example">
+emacs -batch -l ~/.emacs -eval '(org-batch-agenda "a" org-agenda-include-diary t diary-file "/home/u/.emacs.d/diary")'
+
+</pre>
+<p>
+2&gt;/dev/null
+</p>
+
+<p>
+appt:
+</p>
+<ul class="org-ul">
+<li>(setq appt-disp-window-function  (function psachin/appt-display))</li>
+</ul>
+
+<p>
+<a href="https://orgmode.org/manual/Extracting-Agenda-Information.html">https://orgmode.org/manual/Extracting-Agenda-Information.html</a>
+</p>
+
+<p>
+appt-disp-window-function <a href="https://psachin.gitlab.io/emacs_diary_desktop_notification.html">https://psachin.gitlab.io/emacs_diary_desktop_notification.html</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c201d2" class="outline-3">
+<h3 id="org2c201d2"><span class="section-number-3">32.4</span> config reminder server-clients</h3>
+<div class="outline-text-3" id="text-32-4">
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">notification</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> appt-disp-window-function
+      (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (min-to-app timenow msg)(
+                                        shell-command (format <span style="color: #95e454;">"notify-send --expire-time 5000 -i emacs '%s'"</span> msg)
+                                                      )
+        )
+)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">activate notification</span>
+(appt-activate t)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2199c08" class="outline-2">
+<h2 id="org2199c08"><span class="section-number-2">33</span> calendar mode and diary</h2>
+<div class="outline-text-2" id="text-33">
+<ul class="org-ul">
+<li>M-x calendar</li>
+</ul>
+</div>
+
+<div id="outline-container-orgff92a1d" class="outline-3">
+<h3 id="orgff92a1d"><span class="section-number-3">33.1</span> calendar keys</h3>
+<div class="outline-text-3" id="text-33-1">
+<p>
+navigation
+</p>
+<ul class="org-ul">
+<li>C-a/e - begin/end of week</li>
+<li>C-b/f - day</li>
+<li>C-n/p - next/previous week</li>
+<li>.	today</li>
+<li>g d	go to date</li>
+<li>o	go to month</li>
+</ul>
+
+<p>
+mark
+</p>
+<ul class="org-ul">
+<li>m/u	mark/unmark</li>
+</ul>
+
+<p>
+diary .emacs.d/diary
+</p>
+<ul class="org-ul">
+<li>s	show all entries</li>
+<li>i d	insert entry</li>
+<li>i b   insert block</li>
+<li>i c	insert cycle</li>
+<li>i m/w/y	insert monthly/weekly/yearly</li>
+<li>D	other diary file</li>
+</ul>
+
+
+<p>
+other
+</p>
+<ul class="org-ul">
+<li>M-=		calendar-count-days-region</li>
+<li>M-x appt-activate	reminder</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa53725" class="outline-3">
+<h3 id="orgaa53725"><span class="section-number-3">33.2</span> diary</h3>
+<div class="outline-text-3" id="text-33-2">
+</div>
+<div id="outline-container-org6351b4e" class="outline-4">
+<h4 id="org6351b4e"><span class="section-number-4">33.2.1</span> file</h4>
+<div class="outline-text-4" id="text-33-2-1">
+<p>
+record:
+</p>
+<ul class="org-ul">
+<li>2011/06/01 12:00 Do something ## warntime 30</li>
+<li>02/23/89 note for day</li>
+<li>\t12:00 message</li>
+<li>\tpart<sub>of</sub><sub>message</sub></li>
+<li>\tpart<sub>of</sub><sub>message</sub></li>
+</ul>
+
+<p>
+here:
+</p>
+<ul class="org-ul">
+<li>2011/06/01 - day record</li>
+<li>12:00 - start of time record</li>
+<li>## - meanth nothing</li>
+<li>warntime 30 - warn before 30 minutes when using appt
+<ul class="org-ul">
+<li>warntime - regex expression in appt-warning-time-regexp in appt</li>
+</ul></li>
+<li>big day - note for day, not passed anywhere</li>
+</ul>
+
+<p>
+other record ex.:
+</p>
+<ul class="org-ul">
+<li>12/22/2015  Twentieth wedding anniversary!</li>
+<li>10/22       Ruth's birthday.</li>
+<li>* 21, *:    Payday</li>
+<li>Tuesday&#x2013;weekly meeting with grad students at 10am
+<ul class="org-ul">
+<li>Supowit, Shen, Bitner, and Kapoor to attend.</li>
+</ul></li>
+<li>1/13/89     Friday the thirteenth!! - month/day/year</li>
+<li>thu 4pm     squash game with Lloyd.</li>
+<li>mar 16      Dad's birthday</li>
+<li>April 15, 2016 Income tax due.</li>
+<li>* 15        time cards due.</li>
+<li>Thursday 11:45am Lunch meeting.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org95a9ab5" class="outline-2">
+<h2 id="org95a9ab5"><span class="section-number-2">34</span> ob-http - REST client</h2>
+<div class="outline-text-2" id="text-34">
+<ul class="org-ul">
+<li>ob-http <a href="https://github.com/zweifisch/ob-http">https://github.com/zweifisch/ob-http</a>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=tGgat6XJ2tk">https://www.youtube.com/watch?v=tGgat6XJ2tk</a></li>
+</ul></li>
+<li>restclient (not installing from MELP) <a href="https://github.com/pashky/restclient.el">https://github.com/pashky/restclient.el</a></li>
+<li>see <a href="#org4766ea5">30.12</a></li>
+</ul>
+</div>
+<div id="outline-container-org3e53fd5" class="outline-3">
+<h3 id="org3e53fd5"><span class="section-number-3">34.1</span> options</h3>
+<div class="outline-text-3" id="text-34-1">
+<p>
+option		curl		example
+</p>
+<ul class="org-ul">
+<li>:proxy -x	:proxy 	localhost:8118</li>
+<li>:noproxy	&#x2013;noproxy *	N/A</li>
+<li>:cookie-jar	&#x2013;cookie-jar	:cookie-jar username</li>
+<li>:cookie	&#x2013;cookie	:cookie username</li>
+<li>:max-time	&#x2013;max-time	default is 10</li>
+<li>:user		&#x2013;user		:user admin:passwd</li>
+<li>:pretty	N/A		:pretty use Content-Type, to overwrite :pretty json</li>
+<li>:select	N/A		:select path path will be passed to jq for json or pup for html or xmlstarlet for xml</li>
+<li>:get-header	N/A		:get-header X-Subject-Token</li>
+<li>:curl		N/A		:curl &#x2013;insecure &#x2013;compressed additional arguments for curl</li>
+<li>:resolve	&#x2013;resolve	:resolve example.com:80:127.0.0.1,example.com:443:127.0.0.1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org69657bb" class="outline-3">
+<h3 id="org69657bb"><span class="section-number-3">34.2</span> examples</h3>
+<div class="outline-text-3" id="text-34-2">
+</div>
+<div id="outline-container-org2d57c8a" class="outline-4">
+<h4 id="org2d57c8a"><span class="section-number-4">34.2.1</span> http source block</h4>
+<div class="outline-text-4" id="text-34-2-1">
+<div class="org-src-container">
+<pre class="src src-http"><span style="color: #e5786d; font-weight: bold;">GET</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">https://api.github.com/repos/zweifisch/ob-http/languages</span>
+<span style="color: #cae682;">Accept</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">application/vnd.github.moondragon+json</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org565d482" class="outline-4">
+<h4 id="org565d482"><span class="section-number-4">34.2.2</span> json source block</h4>
+<div class="outline-text-4" id="text-34-2-2">
+<div class="org-src-container">
+<pre class="src src-http">#+BEGIN_SRC http <span style="color: #99968b; font-style: italic;">:</span>pretty
+<span style="color: #e5786d; font-weight: bold;">POST</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">http://httpbin.org/post</span>
+<span style="color: #cae682;">Content-Type</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">application/json</span>
+
+<span style="color: #99968b; font-style: italic;">{</span>
+  <span style="color: #95e454;">"key"</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">"value"</span>
+<span style="color: #99968b; font-style: italic;">}</span>
+</pre>
+</div>
+<p>
+#+end<sub>src</sub>
+</p>
+</div>
+</div>
+<div id="outline-container-org99eff63" class="outline-4">
+<h4 id="org99eff63"><span class="section-number-4">34.2.3</span> form submit</h4>
+<div class="outline-text-4" id="text-34-2-3">
+<div class="org-src-container">
+<pre class="src src-http"><span style="color: #e5786d; font-weight: bold;">PATCH</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">http://httpbin.org/patch</span>
+
+<span style="color: #cae682;">key</span><span style="color: #99968b; font-style: italic;">=</span><span style="color: #95e454;">value</span><span style="color: #99968b; font-style: italic;">&amp;</span><span style="color: #cae682;">foo</span><span style="color: #99968b; font-style: italic;">=</span><span style="color: #95e454;">value</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1342bb0" class="outline-4">
+<h4 id="org1342bb0"><span class="section-number-4">34.2.4</span> varibale</h4>
+<div class="outline-text-4" id="text-34-2-4">
+<div class="org-src-container">
+<pre class="src src-http"><span style="color: #e5786d; font-weight: bold;">POST</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">http://httpbin.org/post</span>
+<span style="color: #cae682;">Content-Type</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">application/json</span>
+
+<span style="color: #99968b; font-style: italic;">{</span>
+    <span style="color: #95e454;">"auth"</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #99968b; font-style: italic;">{</span>
+        <span style="color: #95e454;">"name"</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">"${name}"</span><span style="color: #99968b; font-style: italic;">,</span>
+        <span style="color: #95e454;">"password"</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">"${password}"</span>
+    <span style="color: #99968b; font-style: italic;">}</span>
+<span style="color: #99968b; font-style: italic;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9899ab3" class="outline-4">
+<h4 id="org9899ab3"><span class="section-number-4">34.2.5</span> properties</h4>
+<div class="outline-text-4" id="text-34-2-5">
+<div class="org-src-container">
+<pre class="src src-http"><span style="color: #e5786d; font-weight: bold;">POST</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">/post</span>
+<span style="color: #cae682;">Content-Type</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">application/json</span>
+<span style="color: #cae682;">X-Auth-Token</span><span style="color: #99968b; font-style: italic;">:</span> <span style="color: #95e454;">${token}</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc9a59b" class="outline-3">
+<h3 id="orgbc9a59b"><span class="section-number-3">34.3</span> require</h3>
+<div class="outline-text-3" id="text-34-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (http . t)))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6fed530" class="outline-2">
+<h2 id="org6fed530"><span class="section-number-2">35</span> Magit</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+Magit really is “Git at the speed of thought”
+</p>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=INTu30BHZGk">https://www.youtube.com/watch?v=INTu30BHZGk</a></li>
+
+<li>C-x g - main screen</li>
+<li>? - keys help</li>
+<li>q - change buffer</li>
+</ul>
+</div>
+
+<div id="outline-container-org3691391" class="outline-3">
+<h3 id="org3691391"><span class="section-number-3">35.1</span> conflict resolution:</h3>
+<div class="outline-text-3" id="text-35-1">
+<ol class="org-ol">
+<li>select file listed in the "Unstaged changes" and/or "Staged changes" sections. They are prefixed with the word
+"unmerged", which in this context essentially is a synonym for "unresolved".</li>
+<li>smerge-mode -
+<ul class="org-ul">
+<li>C-c ^ C-h - for keys</li>
+<li>C-c ^ m - choose head</li>
+<li>C-c ^ o - keep the version that follows "|||||||"</li>
+<li>C-c ^ n to move to the next conflicting area in the same file.</li>
+</ul></li>
+</ol>
+
+<p>
+To resolve conflicts in a file using Ediff press e while point is on such a file in the status buffer.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org97574fb" class="outline-2">
+<h2 id="org97574fb"><span class="section-number-2">36</span> cua-mode</h2>
+<div class="outline-text-2" id="text-36">
+<ul class="org-ul">
+<li>C-x, C-c, C-v, and C-z - copy, undo</li>
+<li>C-x C-c still work</li>
+
+<li>activates Delete-Selection mode (to disable cua-delete-selection to nil):
+<ul class="org-ul">
+<li>when there is active region (see <a href="#orgddea06b">1</a>) - any key will erase region</li>
+</ul></li>
+<li>CUA mode provides enhanced rectangle support
+<ul class="org-ul">
+<li>C-RET to start a rectangle (shadow C-c RET		org-ctrl-c-ret)</li>
+</ul></li>
+<li>it adds ability to save to copy and yank to registers.
+<ul class="org-ul">
+<li>C-1 C-c copies the region into register 1</li>
+<li>C-2 C-v yanks the contents of register 2</li>
+</ul></li>
+<li>C-S-SPC global mark feature - all text inserted at the global mark</li>
+</ul>
+
+
+<p>
+If you really need to perform a command which starts with one of
+the prefix keys even when the region is active, you have three
+options:
+</p>
+<ul class="org-ul">
+<li>press the prefix key twice very quickly (within 0.2 seconds),</li>
+<li>press the prefix key and the following key within 0.2 seconds, or</li>
+<li>use the SHIFT key with the prefix key, i.e. C-S-x or C-S-c.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcc7ee60" class="outline-2">
+<h2 id="orgcc7ee60"><span class="section-number-2">37</span> <span class="todo TODO">TODO</span> DoomEmacs</h2>
+<div class="outline-text-2" id="text-37">
+<p>
+<a href="https://github.com/hlissner/doom-emacs">https://github.com/hlissner/doom-emacs</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3487696" class="outline-2">
+<h2 id="org3487696"><span class="section-number-2">38</span> <span class="todo TODO">TODO</span> Spacemacs</h2>
+<div class="outline-text-2" id="text-38">
+<p>
+extension of a popular text editor called Emacs
+</p>
+
+<ul class="org-ul">
+<li>These projects bring approachability and integration to Emacs, and are in my view, along with LSP, Magit, and Org, the</li>
+</ul>
+<p>
+biggest reasons drawing people to Emacs nowadays.
+</p>
+<ul class="org-ul">
+<li>It is however clear from looking at their issue trackers just how difficult it is to provide this cohesive experience
+by combining parts from the ecosystem.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4821dff" class="outline-2">
+<h2 id="org4821dff"><span class="section-number-2">39</span> Rust Emacs</h2>
+<div class="outline-text-2" id="text-39">
+<dl class="org-dl">
+<dt>Remacs</dt><dd>DEAD <a href="https://github.com/remacs/remacs">https://github.com/remacs/remacs</a></dd>
+<dt>(no term)</dt><dd>Emacs-ng A new approach to Emacs - Including TypeScript, Threading, Async I/O, and WebRender.
+<a href="https://github.com/emacs-ng/emacs-ng">https://github.com/emacs-ng/emacs-ng</a></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org38c3622" class="outline-2">
+<h2 id="org38c3622"><span class="section-number-2">40</span> 4coder</h2>
+<div class="outline-text-2" id="text-40">
+<ul class="org-ul">
+<li>loosely based on Emacs</li>
+</ul>
+<p>
+Data oriented programming
+</p>
+</div>
+</div>
+<div id="outline-container-orgda1cf8b" class="outline-2">
+<h2 id="orgda1cf8b"><span class="section-number-2">41</span> neovim</h2>
+<div class="outline-text-2" id="text-41">
+<p>
+<a href="https://www.murilopereira.com/the-values-of-emacs-the-neovim-revolution-and-the-vscode-gorilla/">https://www.murilopereira.com/the-values-of-emacs-the-neovim-revolution-and-the-vscode-gorilla/</a>
+Apache License   Version 2.0
+</p>
+<ul class="org-ul">
+<li>testing, CI, agressive refactoring, reduce contributor friction</li>
+<li>decouple code from UI, make possible to embed vim core into browsers or IDE</li>
+<li>embedding a Lua runtime  and providing concurrency primitives for plugins</li>
+<li>bringing C code to modern standarts, libuv for IO code, automatic formatting</li>
+<li>create scriptable terminal emulator</li>
+<li>non-mailing list driven development, automation builds, public roadmap, recurrent funding, frequent stable, automated
+releases</li>
+<li>Separate UI with API</li>
+</ul>
+
+<p>
+ideas:
+</p>
+<ul class="org-ul">
+<li>approachability -</li>
+<li>editing efficiency</li>
+<li>keyboard centrism - focus on keyboard interactions</li>
+<li>Progressivenes - a measure of eagerness to make progress and leaverage modern technology</li>
+<li>text centrism - text as universal interface</li>
+<li>Velocity - short and focused release cycles, aligned personpower, leveraging the community effectively</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2eb46bb" class="outline-2">
+<h2 id="org2eb46bb"><span class="section-number-2">42</span> VSCode</h2>
+<div class="outline-text-2" id="text-42">
+<ul class="org-ul">
+<li>Approachability - mainly</li>
+<li>Integration - Cohesive core and concerted third-party functionality</li>
+<li>Maintainability</li>
+<li>Progressiveness</li>
+<li>Velocity</li>
+</ul>
+<p>
+cons
+</p>
+<ul class="org-ul">
+<li>It is somewhat extensible and very configurable</li>
+<li>It can be mostly driven from a keyboard</li>
+<li>It has a great extension language, TypeScript (which is in my opinion superior to Emacs Lisp in terms of maintainability for non-trivial projects)</li>
+<li><p>
+It even has a libre variant
+</p>
+
+<p>
+It also shines in areas where Emacs doesn’t: if you’re a programmer working on typical contemporary projects, mostly
+just wanting to get stuff done, things usually… just work. You install VSCode, open a source code file, get asked to
+install the extension for that particular language, and that’s it.
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org59c7739" class="outline-2">
+<h2 id="org59c7739"><span class="section-number-2">43</span> .emacs</h2>
+<div class="outline-text-2" id="text-43">
+<p>
+<b>file in window title</b>
+</p>
+<ul class="org-ul">
+<li>file<sub>name</sub>, mode, path (setq-default frame-title-format '("%b [%m] %f"))</li>
+</ul>
+<p>
+<b>window width</b>
+</p>
+<ul class="org-ul">
+<li>(setq initial-frame-alist '( (width . 125)))</li>
+</ul>
+
+<p>
+<b>backups dir</b>
+</p>
+<ul class="org-ul">
+<li>(setq backup-directory-alist '(("." . "~/.MyEmacsBackups")))</li>
+</ul>
+
+<p>
+<b>fill column</b>
+</p>
+<ul class="org-ul">
+<li>(setq-default fill-column 110)</li>
+</ul>
+
+<p>
+<b>default mode</b>
+</p>
+<ul class="org-ul">
+<li>(setq-default major-mode (quote org-mode))</li>
+</ul>
+
+<p>
+<b>org-mode</b>
+</p>
+<ul class="org-ul">
+<li>(setq-default org-src-fontify-natively t)</li>
+</ul>
+
+<p>
+<b>russian with Ctrl+\</b>
+</p>
+<ul class="org-ul">
+<li>(setq-default default-input-method "russian-computer")</li>
+</ul>
+
+<p>
+<b>math-symbols input activate</b>
+</p>
+<ul class="org-ul">
+<li>(global-xah-math-input-mode 1)</li>
+</ul>
+
+<p>
+<b>dired</b> fast copy
+</p>
+<ul class="org-ul">
+<li>(setq dired-dwim-target t)</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org58a0091" class="outline-2">
+<h2 id="org58a0091"><span class="section-number-2">44</span> info</h2>
+<div class="outline-text-2" id="text-44">
+<p>
+S-h - commands
+</p>
+
+
+<p>
+Backspace or ] - back and up level
+space or [ - forward and down
+</p>
+
+<p>
+b - top of buffer
+1-9 - pick node in menu
+</p>
+
+<p>
+n - next
+p - previews
+u - up level
+&lt; - top page
+&gt; - bottom page
+</p>
+
+<p>
+l - go back at history
+r - go forward at history
+</p>
+
+<p>
+i - search for topoc and go to the index
+</p>
+
+<p>
+Cross reference - link to another topic
+Follow cross reference - just RET or f name<sub>of</sub><sub>reference</sub>
+f? - get list of references
+Tab - scroll references at page (very useful)
+l - go back
+</p>
+
+<p>
+d - directory
+</p>
+
+<p>
+q - quit
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org1ed81c5" class="outline-2">
+<h2 id="org1ed81c5"><span class="section-number-2">45</span> <span class="todo TODO">TODO</span> AutoEncryption</h2>
+<div class="outline-text-2" id="text-45">
+<p>
+edit encrypted files from inside Emacs
+</p>
+
+
+<p>
+<a href="https://www.emacswiki.org/emacs/AutoEncryption">https://www.emacswiki.org/emacs/AutoEncryption</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org743fd2e" class="outline-2">
+<h2 id="org743fd2e"><span class="section-number-2">46</span> <span class="todo TODO">TODO</span> auto-composition-mode</h2>
+<div class="outline-text-2" id="text-46">
+<p>
+<a href="https://github.com/emacs-mirror/emacs/blob/master/lisp/composite.el">https://github.com/emacs-mirror/emacs/blob/master/lisp/composite.el</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org57e7e0e" class="outline-2">
+<h2 id="org57e7e0e"><span class="section-number-2">47</span> USECASES</h2>
+<div class="outline-text-2" id="text-47">
+</div>
+<div id="outline-container-org8bfaf24" class="outline-3">
+<h3 id="org8bfaf24"><span class="section-number-3">47.1</span> how to add column or form table?</h3>
+<div class="outline-text-3" id="text-47-1">
+<ul class="org-ul">
+<li>rectangles:
+<ol class="org-ol">
+<li>select lines 'C-x space'</li>
+<li>copy lines C/M-w</li>
+<li>M-x yank-rectangle or ‘C-x r y’</li>
+</ol></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Text-Based-Tables.html</a></li>
+</ul>
+
+<p>
+Kill a rectangle: kill-rectangle ‘C-x r k’
+Yank the last killed rectangle: yank-rectangle ‘C-x r y’
+Toggle Rectangle Mark mode C-x SPC
+</p>
+</div>
+</div>
+<div id="outline-container-orgca810b8" class="outline-3">
+<h3 id="orgca810b8"><span class="section-number-3">47.2</span> scroll two buffers two files together</h3>
+<div class="outline-text-3" id="text-47-2">
+<p>
+M-x scroll-all-mode
+</p>
+</div>
+</div>
+<div id="outline-container-org04d4e43" class="outline-3">
+<h3 id="org04d4e43"><span class="section-number-3">47.3</span> line numbers at left</h3>
+<div class="outline-text-3" id="text-47-3">
+<ul class="org-ul">
+<li>(setq linum-format " %d ")</li>
+<li>(global-linum-mode t)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc77dd70" class="outline-3">
+<h3 id="orgc77dd70"><span class="section-number-3">47.4</span> two files change windows split vertically and horizontally</h3>
+<div class="outline-text-3" id="text-47-4">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">window-split-toggle</span> ()
+  <span style="color: #f08080; font-style: italic;">"Toggle between horizontal and vertical split with two windows."</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">interactive</span>)
+  (<span style="color: #8ac6f2; font-weight: bold;">if</span> (&gt; (length (window-list)) 2)
+      (<span style="color: #ccaa8f; font-weight: bold;">error</span> <span style="color: #95e454;">"Can't toggle with more than 2 windows!"</span>)
+    (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((func (<span style="color: #8ac6f2; font-weight: bold;">if</span> (window-full-height-p)
+                    #'split-window-vertically
+                  #'split-window-horizontally)))
+      (delete-other-windows)
+      (funcall func)
+      (<span style="color: #8ac6f2; font-weight: bold;">save-selected-window</span>
+        (other-window 1)
+        (switch-to-buffer (other-buffer))))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org96992fa" class="outline-2">
+<h2 id="org96992fa"><span class="section-number-2">48</span> emacsclient</h2>
+<div class="outline-text-2" id="text-48">
+<ul class="org-ul">
+<li>emacs &#x2013;daemon &amp;</li>
+<li>emacsclient -c -a "emacs"</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5e7c798" class="outline-2">
+<h2 id="org5e7c798"><span class="section-number-2">49</span> Very Large Files</h2>
+<div class="outline-text-2" id="text-49">
+<ul class="org-ul">
+<li>combination of cat, tail, grep, sed, awk, etc.</li>
+<li>vim - LargFile plugin</li>
+<li>emacs - GNU ELPA VLF package <a href="https://github.com/m00natic/vlfi">https://github.com/m00natic/vlfi</a>
+<ul class="org-ul">
+<li>M-x vlf</li>
+</ul></li>
+<li>JOE Text Editor</li>
+</ul>
+
+<p>
+for logs:
+</p>
+<ul class="org-ul">
+<li>tail -F</li>
+<li>emacs M-x auto-revert-tail-mode</li>
+<li>large-file-warning-threshold - emacs warning when open big file</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdca00a3" class="outline-2">
+<h2 id="orgdca00a3"><span class="section-number-2">50</span> VoiceEmacs</h2>
+<div class="outline-text-2" id="text-50">
+<p>
+<a href="https://github.com/jcaw">https://github.com/jcaw</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5027f7d" class="outline-2">
+<h2 id="org5027f7d"><span class="section-number-2">51</span> QUESTIONS:</h2>
+<div class="outline-text-2" id="text-51">
+<ul class="org-ul">
+<li>what is Auto-Composition minor mode?</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+asd
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-16 Wed 21:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

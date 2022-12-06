@@ -1,0 +1,2702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-16 Wed 19:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1afdc5e">1. gentoo</a></li>
+<li><a href="#org6882864">2. China Russia Japan</a></li>
+<li><a href="#orgdc6c0eb">3. диалекты, transcriptions</a>
+<ul>
+<li><a href="#orgcb31158">3.1. dialects</a></li>
+<li><a href="#orgaba529f">3.2. transcriptions Транскрипционная система</a></li>
+</ul>
+</li>
+<li><a href="#orgae9a2d3">4. 拼音 pīnyīn</a>
+<ul>
+<li><a href="#orgb4b9b72">4.1. tones pīnyīn</a></li>
+<li><a href="#orge22ace8">4.2. finals</a></li>
+<li><a href="#org50e3224">4.3. hard to remember</a></li>
+</ul>
+</li>
+<li><a href="#orgba8bf77">5. hieroglyhs 象形文字</a>
+<ul>
+<li><a href="#org459169f">5.1. strokes and their order</a>
+<ul>
+<li><a href="#org59995db">5.1.1. strokes</a></li>
+</ul>
+</li>
+<li><a href="#org60ccc3b">5.2. Chinese character classification</a></li>
+<li><a href="#org277c23e">5.3. special characters</a></li>
+</ul>
+</li>
+<li><a href="#orgea9a4f1">6. radicals</a>
+<ul>
+<li><a href="#org4a2dd9a">6.1. book</a></li>
+<li><a href="#orgdd6e5e0">6.2. Kangxi radical (Канси)</a></li>
+<li><a href="#org4a4f496">6.3. Shuowen Jiezi</a></li>
+<li><a href="#orga1a87b5">6.4. The Table of Indexing Chinese Character Components (GF 0011-2009 汉字部首表)</a></li>
+<li><a href="#org4a465c0">6.5. most popular radicals</a></li>
+<li><a href="#org93b2e81">6.6. не</a></li>
+<li><a href="#org8506fc4">6.7. Yes</a></li>
+</ul>
+</li>
+<li><a href="#org17aaf28">7. я ты он она это то</a></li>
+<li><a href="#org339b1d6">8. hello and Self-Introduction</a>
+<ul>
+<li><a href="#orge75e986">8.1. hello</a></li>
+<li><a href="#orgd63f7ae">8.2. name</a></li>
+</ul>
+</li>
+<li><a href="#orgc49c33c">9. thank you &amp; i love you</a></li>
+<li><a href="#orgb478d8b">10. questions</a>
+<ul>
+<li><a href="#orgbf6a3bb">10.1. what how who</a>
+<ul>
+<li><a href="#orgf9df122">10.1.1. ex</a></li>
+<li><a href="#org5a1aee0">10.1.2. advanced</a></li>
+</ul>
+</li>
+<li><a href="#org61a5261">10.2. 吗 (ma) and 呢 (ne)</a></li>
+</ul>
+</li>
+<li><a href="#org9b87d76">11. частые слова</a></li>
+<li><a href="#org3e0aeed">12. и или</a></li>
+<li><a href="#org336cbbf">13. numbers 数字 Shùzì - Шуцзы</a></li>
+<li><a href="#org5d8f85f">14. math 数学 Shùxué - Шу Сюэ</a>
+<ul>
+<li><a href="#orga84c5dc">14.1. operators</a></li>
+</ul>
+</li>
+<li><a href="#orgab77b1c">15. money 钱 qián тьен</a></li>
+<li><a href="#org3edf631">16. plural</a>
+<ul>
+<li><a href="#org266f976">16.1. Number + Measure Word + Noun</a></li>
+<li><a href="#orgdd5f4b7">16.2. Ambiguous Plural + Noun</a></li>
+<li><a href="#org1ac10b6">16.3. links</a></li>
+</ul>
+</li>
+<li><a href="#org90a58b3">17. множественне число</a></li>
+<li><a href="#orgaf9d8b9">18. units of measurement</a>
+<ul>
+<li><a href="#org7982686">18.1. date, time</a>
+<ul>
+<li><a href="#org9c5708b">18.1.1. date 号 hào</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org058889e">19. IT programming</a>
+<ul>
+<li><a href="#org3e5d2dc">19.1. devices 设备 - shè bèi</a></li>
+<li><a href="#orgf3bc1ef">19.2. Internet</a>
+<ul>
+<li><a href="#orge537552">19.2.1. site</a></li>
+<li><a href="#org61711dc">19.2.2. types of sites</a></li>
+</ul>
+</li>
+<li><a href="#org15df60a">19.3. Mobile Device Related</a></li>
+<li><a href="#org87ae628">19.4. persons</a></li>
+<li><a href="#org6b8f432">19.5. UI</a></li>
+<li><a href="#orge9c09a0">19.6. UI firefox</a></li>
+<li><a href="#orgb7ff9f2">19.7. UI web</a></li>
+<li><a href="#orge7ef1d8">19.8. AI, data</a></li>
+<li><a href="#org86ef2dc">19.9. other</a></li>
+</ul>
+</li>
+<li><a href="#org5850a7b">20. https://www.youtube.com/watch?v=-TE7ghlEdPw</a></li>
+<li><a href="#orgab1e47a">21. true false, bad good</a></li>
+<li><a href="#org99af3b6">22. grammer</a>
+<ul>
+<li><a href="#orgd29862e">22.1. 的 (de)</a></li>
+</ul>
+</li>
+<li><a href="#orgbfd5a64">23. наречия</a></li>
+<li><a href="#org8d99e42">24. предлоги</a></li>
+<li><a href="#org67c060c">25. Прилагательные</a></li>
+<li><a href="#org8f88260">26. приставки</a></li>
+<li><a href="#orgb435442">27. эллементы</a></li>
+<li><a href="#orgc9faec6">28. geography</a></li>
+<li><a href="#org23102d9">29. кулютура</a>
+<ul>
+<li><a href="#org98e6856">29.1. Цигун 气功 qìgōng (тигон)</a>
+<ul>
+<li><a href="#org3780e44">29.1.1. theory</a></li>
+<li><a href="#org9b49ba8">29.1.2. направления</a></li>
+<li><a href="#orgde94ca7">29.1.3. <span class="todo TODO">TODO</span> Ушу (武术) Wǔshù, уи (武艺), гошу (国术), кунфу/гунфу (功夫) gōngfu</a></li>
+</ul>
+</li>
+<li><a href="#org189a697">29.2. people</a></li>
+<li><a href="#orge6c23b2">29.3. <span class="todo TODO">TODO</span> Лаошань Láo Shān 崂山, 牢山, 勞山</a></li>
+<li><a href="#orgfe0948c">29.4. Made in China</a></li>
+<li><a href="#org6ceff95">29.5. history of China</a></li>
+<li><a href="#org4ff0e6e">29.6. BC AD</a></li>
+<li><a href="#org23f482e">29.7. палочки куайцзы 筷子 kuàiz</a></li>
+</ul>
+</li>
+<li><a href="#org9509df4">30. links</a>
+<ul>
+<li><a href="#orgfae9640">30.1. TV and movies</a>
+<ul>
+<li><a href="#orgbe0a8f1">30.1.1. 163.com</a></li>
+<li><a href="#orgb5c014a">30.1.2. movies 电影 Diànyǐng</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org02b7502">31. Chinese Buddy</a>
+<ul>
+<li><a href="#org2d268d3">31.1. Bào qià</a></li>
+<li><a href="#org9b793f3">31.2. School Subjects</a></li>
+</ul>
+</li>
+<li><a href="#org9672dde">32. музыка Yīnyuè 音乐 и культура</a>
+<ul>
+<li><a href="#orga060c31">32.1. wushu Ушу</a></li>
+</ul>
+</li>
+<li><a href="#orga9b0eb8">33. games</a></li>
+<li><a href="#org9455537">34. bad words</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; eval: (text-scale-increase 2); fill-column: 85; default-input-method: chinese-py -</b>-
+</p>
+
+<ul class="org-ul">
+<li>translate.yandex.com</li>
+<li>Палладий транскрипция <a href="https://palladius.ru/">https://palladius.ru/</a></li>
+<li>иероглифы <a href="https://www.mdbg.net/chinese/dictionary">https://www.mdbg.net/chinese/dictionary</a></li>
+<li>chinese yandex <a href="https://fanyi.youdao.com/">https://fanyi.youdao.com/</a></li>
+</ul>
+
+<p>
+best learn videos
+</p>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/c/EverydayChinese/videos">https://www.youtube.com/c/EverydayChinese/videos</a></li>
+<li><a href="https://www.learn-chinese.com/">https://www.learn-chinese.com/</a> -&gt; Courses</li>
+</ul>
+
+<div id="outline-container-org1afdc5e" class="outline-2">
+<h2 id="org1afdc5e"><span class="section-number-2">1</span> gentoo</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+fonts
+</p>
+<ul class="org-ul">
+<li>gentoo media-fonts/noto-cjk; eselect fontconfig list</li>
+</ul>
+<p>
+input method emacs:
+</p>
+<ul class="org-ul">
+<li>per file: ;-<b>- default-input-method: chinese-py -</b>-</li>
+<li>C-\ to switch</li>
+<li>chinese-py - basic pinyin input system</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6882864" class="outline-2">
+<h2 id="org6882864"><span class="section-number-2">2</span> China Russia Japan</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>中文 - Zhōng wén (Chinese language)
+<ul class="org-ul">
+<li>中 - China / Chinese</li>
+<li>文 - language / culture / writing</li>
+</ul></li>
+<li>语言 - yǔyán - spoken language</li>
+<li>汉语 - HànYǔ - Chinese language</li>
+<li>汉字 - Hànzì - китайский иероглиф</li>
+<li>简体中文 - Jiǎn tǐ Zhōng wén - Simplified Chinese
+<ul class="org-ul">
+<li>简 - jiǎn - simple - Цзянь</li>
+<li>体 - tǐ - body - Ти</li>
+</ul></li>
+</ul>
+
+<p>
+People's Republic of China
+</p>
+<ul class="org-ul">
+<li>中华人民共和国 (Chinese)</li>
+<li>Zhōnghuá Rénmín Gònghéguó (Pinyin)</li>
+</ul>
+
+<p>
+russia
+</p>
+<ul class="org-ul">
+<li>俄国 - Éguó - russia</li>
+<li>俄语/俄文 - Èyǔ/Èwén - russian language</li>
+</ul>
+
+<p>
+japan
+</p>
+<ul class="org-ul">
+<li>日本語 - RìběnYǔ - Nihonjin(jp) - Японский язык</li>
+<li>日本 - Rìběn - Nihon(jp) - япония</li>
+</ul>
+
+<p>
+english
+</p>
+<ul class="org-ul">
+<li>英语 - Yīng yǔ - English - Ин Юй</li>
+<li>美国 - Měi guó - United States</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>我是中国人 - wǒ shì zhōng guó rén -  I am Chinese</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdc6c0eb" class="outline-2">
+<h2 id="orgdc6c0eb"><span class="section-number-2">3</span> диалекты, transcriptions</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgcb31158" class="outline-3">
+<h3 id="orgcb31158"><span class="section-number-3">3.1</span> dialects</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Sinitic languages - often synonymous with "Chinese languages", Branches (dialects):
+</p>
+<ul class="org-ul">
+<li>Mandarin</li>
+<li>Yue (includes Cantonese)</li>
+<li>Wu</li>
+<li>Min</li>
+<li>Jin - (north of chinese)</li>
+</ul>
+
+<p>
+简体字 - jiǎn tǐ zì - Simplified Chinese
+</p>
+<ul class="org-ul">
+<li>简 - простой</li>
+<li>体 - тело, организм</li>
+<li>字 - иероглиф - zì , 子(zǐ)</li>
+</ul>
+
+<p>
+Mandarin Chinese <i>ˈmændərɪn</i> - Dialect group Mandarin (65.7%)
+</p>
+<ul class="org-ul">
+<li>普通话 (普通話; Pǔtōnghuà; 'common speech') in the People's Republic of China, as well as Hong Kong and Macau;</li>
+</ul>
+
+<p>
+大陆简体 - Dàlù jiǎntǐ - Mainland Simplified
+</p>
+
+<p>
+Cantonese
+</p>
+</div>
+</div>
+<div id="outline-container-orgaba529f" class="outline-3">
+<h3 id="orgaba529f"><span class="section-number-3">3.2</span> transcriptions Транскрипционная система</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+汉语拼音 - hànyǔ pīnyīn - Пиньи́нь
+</p>
+<ul class="org-ul">
+<li>汉语 - hànyǔ - literally means "Han language"</li>
+<li>拼 - pīn - spell - Пинь</li>
+<li>音 - Yīn - sound ("spelled sounds") - Инь</li>
+<li>hànyǔ - literally means "Han language" (i.e. Chinese language)</li>
+<li>Diacritic - tone symbols</li>
+</ul>
+
+<p>
+Палладий
+</p>
+<ul class="org-ul">
+<li><a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D0%B4%D0%B8%D1%8F">https://ru.wikipedia.org/wiki/Транскрипционная_система_Палладия</a></li>
+<li><a href="https://palladius.ru/">https://palladius.ru/</a></li>
+</ul>
+
+<p>
+Gwoyeu Romatzyh -
+</p>
+
+<p>
+Wade-Giles -
+</p>
+
+<p>
+Yale
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae9a2d3" class="outline-2">
+<h2 id="orgae9a2d3"><span class="section-number-2">4</span> 拼音 pīnyīn</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgb4b9b72" class="outline-3">
+<h3 id="orgb4b9b72"><span class="section-number-3">4.1</span> tones pīnyīn</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li>mā 	high level		'mother'</li>
+<li>má 	high rising		'hemp' конопля</li>
+<li>mǎ 	low falling-rising 	'horse'</li>
+<li>mà 	high falling		'scold' ругать-бранить</li>
+<li>ma 	neutral 	 	question particle</li>
+</ol>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Chinese_language#Tones">https://en.wikipedia.org/wiki/Chinese_language#Tones</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orge22ace8" class="outline-3">
+<h3 id="orge22ace8"><span class="section-number-3">4.2</span> finals</h3>
+<div class="outline-text-3" id="text-4-2">
+<dl class="org-dl">
+<dt>-i</dt><dd>-ы; -и</dd>
+<dt>yi; -i</dt><dd>и</dd>
+<dt>wu; -u</dt><dd>у</dd>
+<dt>yu; -ü</dt><dd>юй</dd>
+<dt>e</dt><dd>э</dd>
+<dt>ye; -ie</dt><dd>е</dd>
+<dt>wo; -uo/-o</dt><dd>во; -о</dd>
+<dt>yue; -üe</dt><dd>юэ</dd>
+<dt>a</dt><dd>а</dd>
+<dt>ya; -ia</dt><dd>я</dd>
+<dt>wa; -ua</dt><dd>ва; -уа</dd>
+<dt>ei</dt><dd>эй</dd>
+<dt>wei; -ui</dt><dd>вэй; -уй, -уэй</dd>
+<dt>ai</dt><dd>ай</dd>
+<dt>wai; -uai</dt><dd>вай; -уай</dd>
+<dt>ou</dt><dd>оу</dd>
+<dt>you; -iu</dt><dd>ю</dd>
+<dt>ao</dt><dd>ао</dd>
+<dt>yao; -iao</dt><dd>яо</dd>
+<dt>en</dt><dd>энь</dd>
+<dt>yin; -in</dt><dd>инь</dd>
+<dt>wen; -un</dt><dd>вэнь; унь</dd>
+<dt>yun; -ün</dt><dd>юнь</dd>
+<dt>an</dt><dd>ань</dd>
+<dt>yan; -ian</dt><dd>янь</dd>
+<dt>wan; -uan</dt><dd>вань; -уань</dd>
+<dt>yuan; -üan</dt><dd>юань</dd>
+<dt>-ong</dt><dd>-ун</dd>
+<dt>yong; -iong</dt><dd>юн</dd>
+<dt>eng</dt><dd>эн</dd>
+<dt>ying; -ing</dt><dd>ин</dd>
+<dt>weng</dt><dd>вэн</dd>
+<dt>ang</dt><dd>ан</dd>
+<dt>yang; -iang</dt><dd>ян</dd>
+<dt>wang; -uang</dt><dd>ван; -уан</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org50e3224" class="outline-3">
+<h3 id="org50e3224"><span class="section-number-3">4.3</span> hard to remember</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>z - цз</li>
+<li>zh - чж</li>
+<li>j - цз(ь)</li>
+<li>q - ц(ь)</li>
+<li>x - с(ь)</li>
+<li>r - ж</li>
+<li>y - я/ю/е</li>
+<li>yu; -ü - юй</li>
+<li>ye; -ie - е</li>
+<li>-ong - -ун</li>
+<li>yuan; -üan - юань</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba8bf77" class="outline-2">
+<h2 id="orgba8bf77"><span class="section-number-2">5</span> hieroglyhs 象形文字</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+иероглифы делятся на простые - вэнь 文 и составные цзы 字
+</p>
+
+<ul class="org-ul">
+<li>из внешнего вида иероглифа нельзя в большинстве случаев ничего узнать о его чтении</li>
+<li>Иероглиф пишется сверху вних.</li>
+<li>Точка справа пишется в последнюю очередь</li>
+<li>вертикаль, пересекающая горизонтали, пишется после них</li>
+<li>нижняя горизонталь непересекающая, пишется последней</li>
+<li>Лигатуры - объединённое в один иероглиф благожелательное словосочетание</li>
+<li>каллиграфия - придание изящной формы</li>
+</ul>
+</div>
+<div id="outline-container-org459169f" class="outline-3">
+<h3 id="org459169f"><span class="section-number-3">5.1</span> strokes and their order</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+principle: writing characters should be economical, with the fewest
+hand movements to write the most strokes possible
+rules:
+</p>
+<ol class="org-ol">
+<li>Write from top to bottom, and left to right.</li>
+<li>Horizontal before vertical</li>
+<li>Character-spanning strokes last
+<ul class="org-ul">
+<li>Vertical strokes that pass
+through many other strokes are written after the strokes through
+which they pass  聿 and 弗.</li>
+<li>Horizontal strokes that pass through many other strokes are
+written last 毋 and 舟</li>
+</ul></li>
+<li>Diagonals right-to-left before diagonals left-to-right 又, 文</li>
+<li>Center before outside in vertically symmetrical characters 水, 兜,
+承.</li>
+<li>Enclosures before contents
+<ul class="org-ul">
+<li>bottom strokes in the enclosure are written last if present, as
+in 日 and 口 ("Put people inside first, then close the door.")</li>
+</ul></li>
+<li>Left vertical before enclosing 日 and 口</li>
+</ol>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Stroke_order">https://en.wikipedia.org/wiki/Stroke_order</a>
+</p>
+</div>
+<div id="outline-container-org59995db" class="outline-4">
+<h4 id="org59995db"><span class="section-number-4">5.1.1</span> strokes</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<ol class="org-ol">
+<li>-</li>
+<li>|</li>
+<li>. - сверху вниз и снизу вверх</li>
+<li>/</li>
+<li>j - крюк</li>
+<li>\</li>
+<li>производные эллементы</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org60ccc3b" class="outline-3">
+<h3 id="org60ccc3b"><span class="section-number-3">5.2</span> Chinese character classification</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>Simple ideograms</li>
+<li>Compound ideographs - also called associative compounds or logical
+aggregates</li>
+<li>Rebus (phonetic loan) characters - by sound</li>
+<li>Phono-semantic compound characters
+<ul class="org-ul">
+<li>90% of Chinese characters by combining two components:
+<ul class="org-ul">
+<li>phonetic component</li>
+<li>semantic component, also called a determinative - In most cases
+this is also the radical</li>
+</ul></li>
+</ul></li>
+<li>Derivative cognates - smallest</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org277c23e" class="outline-3">
+<h3 id="org277c23e"><span class="section-number-3">5.3</span> special characters</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+pause:
+</p>
+<ul class="org-ul">
+<li>(Full stop) "。" - 句號 jùhào, 句 - sentence, 號 - mark</li>
+<li>"、" Перечисление запятая 頓號 dùnhào, 頓 - pause</li>
+<li>ancient 兮</li>
+</ul>
+
+<p>
+Others (其他 Qítā ти ха):
+</p>
+<ul class="org-ul">
+<li>Middle dot ( ‧ ) - separate characters in non-Han personal names "Leonardo da Vinci" - 李奧納多‧達‧文西</li>
+<li>Title marks ( 《…》, 〈…〉, ﹏﹏﹏ ) - titles of books, films, and so on</li>
+<li>Em dash ( —— )</li>
+<li>En dash ( — )    e.g. 1月—7月 "January to July"</li>
+<li>Táitóu 抬頭 - space для уважения: The Late President (space) Honorable Chiang</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgea9a4f1" class="outline-2">
+<h2 id="orgea9a4f1"><span class="section-number-2">6</span> radicals</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>偏旁 radical piānpáng  - component of a Chinese character under which the character
+is traditionally listed in a Chinese dictionary - indicator of the
+meaning of the character</li>
+<li>部首 indexing component</li>
+</ul>
+</div>
+<div id="outline-container-org4a2dd9a" class="outline-3">
+<h3 id="org4a2dd9a"><span class="section-number-3">6.1</span> book</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>人(亻) rén person; people</li>
+<li>刀(刂) dāo knife</li>
+<li>力 lì power; strength</li>
+<li>又 yòu right hand; again</li>
+<li>口 kǒu mouth; entrance</li>
+<li>囗 wéi enclose</li>
+<li>土 tǔ earth</li>
+<li>夕 xī sunset; evening</li>
+<li>大 dà big; great</li>
+<li>女 nǚ female; woman</li>
+<li>子 zǐ baby; child</li>
+<li>寸 cùn inch or thumb</li>
+<li>小 xiǎo little; small</li>
+<li>工 gōng tool; work; labor</li>
+<li>幺 yāo tiny; small</li>
+<li>弓 gōng bow натянутый</li>
+<li>心(忄) xīn heart - синь</li>
+<li>戈 gē dagger-axe - гэ</li>
+<li>手(扌) shǒu hand - шоу</li>
+<li>日 rì sun; day - жи</li>
+<li>月 yuè moon; month - юэ</li>
+<li>木 mù wood - му</li>
+<li>水(氵) shuǐ water - Шуй</li>
+<li>火(灬) huǒ fire - Хо</li>
+<li>田 tián field; (surname)</li>
+<li>目 mù eye - Му</li>
+<li>示(礻) shì to show</li>
+<li>糸/纟 mì silk</li>
+<li>耳 ěr ear</li>
+<li>衣(衤) yī clothing</li>
+<li>言（讠） yán word; speech</li>
+<li>貝/贝 bèi cowry shell</li>
+<li>走 zǒu to walk</li>
+<li>足 zú foot; enough</li>
+<li>金 jīn metal; gold; (surname)</li>
+<li>門/门 mén door; gate</li>
+<li>隹 zhuī short-tailed bird</li>
+<li>雨 yǔ rain</li>
+<li>食 shí to eat</li>
+<li>馬/马 mǎ horse</li>
+</ul>
+
+<p>
+囗 口
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdd6e5e0" class="outline-3">
+<h3 id="orgdd6e5e0"><span class="section-number-3">6.2</span> Kangxi radical (Канси)</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+traditional set of Kangxi Radicals became unsuitable for indexing
+Simplified Chinese characters
+</p>
+<ol class="org-ol">
+<li>一 yī - one - и - <b>ONE STROKE</b></li>
+<li>丨 gǔn - line, вертикальная черта - гунь</li>
+<li>丶 zhǔ - dot, запятая - чжу</li>
+<li>丿 piě - откидная влево - пье</li>
+<li>乙 (乛、⺄、乚、乙、乀)  yǐ - second - ий</li>
+<li>亅 jué - hook - цзюэ</li>
+<li>二 èr - two - ар (эр) - <b>TWO STROKES</b></li>
+<li>亠 tóu - lid, верхушка - тоу</li>
+<li>人 (亻) - rén - мужчина, человек -  жень</li>
+<li>儿 - ér - son, legs, ноги, ребенок - эр</li>
+<li>入 rù - v.enter, join, входить - жу</li>
+<li>八(丷) bā - eight, all - ба</li>
+<li>冂 jiōng - wide, пограничные пустынные земли - цзюн(тьён)</li>
+<li>冖 mì - cover or cloth cover, крышка - ми</li>
+<li>冫bīng - ice - бин - 冬,</li>
+<li>几 jī - table, how many?, few, some, almost - столик, несколько - цзи(ци)</li>
+<li>凵 kǎn - receptacle, вместилище, открытый рот - цянь, кань</li>
+<li>刀 (刂、⺈) dāo - knife - дао</li>
+<li>力 lì - power сила, движение - ли</li>
+<li>勹 bāo - n.wrap - бао</li>
+<li>匕 bǐ - spoon кинжал, ложка - би</li>
+<li>匚 fāng - box - фан</li>
+<li>匸 xǐ/xì - hiding enclosure - си</li>
+<li>十 shí - ten - ши</li>
+<li>卜 bǔ - divination гадание - бу</li>
+<li>卩(㔾) jié - печать (device) печать, власть - цзе(тье)</li>
+<li>厂 chǎng,hǎn - cliff обрыв утес - чан, хань</li>
+<li>厶 sī - private - сы</li>
+<li>又 yòu - again, and, righ hand - ю (ёу)</li>
+<li>口 kǒu - mouth, hole - коу <b>THREE STROKES</b></li>
+<li>囗 wéi - enclosure граница, ограда - вэй</li>
+<li>土 tǔ - earth земля, почва, необработанный - ту</li>
+<li>士 shì - scholar ученый воен - ши</li>
+<li>夂 zhǐ - go шагать вперед, продвигаться, следовать, бродить - чжи</li>
+<li>夊 suī - go slowly - суй(свей)</li>
+<li>夕 xī - evening вечер, закат - си</li>
+<li>大 dà - big большой, огонь - да</li>
+<li>女 nǚ - woman, female - нюй(ню)</li>
+<li>子 zǐ - child сын, семья - цзы(цзи)</li>
+<li>宀 mián - roof крышка - мянь</li>
+<li>寸 cùn - Chinese inch, вершко, дюйм, 32 mm - цунь</li>
+<li>小(⺌、⺍) xiǎo - small маленький, незначительный - Сяо</li>
+<li>尢 (尣‚𡯂) wāng - lame убогий, хромой - ван</li>
+<li>尸 shī - corpse туловище, труп - ши</li>
+<li>屮 chè - sprout, росток - чэ</li>
+<li>山 shān - mountain, гора - шань</li>
+<li>巛 (川, 巜) chuān - river поток, река - чуань</li>
+<li>工 gōng - n.work, труд, работа - гун</li>
+<li>己,巳,已 jǐ - oneself, self, already, свой, сам - Цзи</li>
+<li>巾 jīn - turban, платок, шарф - Цзинь</li>
+<li>干 gān - n.dry, сухой, щит - Гань</li>
+<li>幺 (么) yāo - short thread, крохотный, короткий - Яо</li>
+<li>广 yǎn(guǎng) - house on cliff, кров, убежище, навес - янь(Гуан)</li>
+<li>廴 yǐn - long stride, тянуть, широкий шаг - инь</li>
+<li>廾 gǒng - arch - арка, вместе, двадцать - гун</li>
+<li>弋 yì - shoot - охотиться, стрелять - и</li>
+<li>弓 gōng - bow - гунь</li>
+<li>彐(彑) jì - snout морда - цзи</li>
+<li>彡 shān - bristle - щетина, пух, шерсть - шань</li>
+<li>彳chì - step - шаг левой, ходьба - чи</li>
+<li>心(忄,⺗‚㣺) xīn - heart - сердце, чувство -  синь <b>4 STROKES</b></li>
+<li>戈 gē - алебарда - гэ</li>
+<li>戶(户、戸) hù - door, дверной проем, двор, семья - ху</li>
+<li>手(扌、龵) shǒu - hand, рука, держать в руке - шоу</li>
+<li>支 zhī - branch, ветка, поддержка - чжи</li>
+<li>攴 (攵) pū - tap - бить, ударять, хлыст - пу</li>
+<li>文 wén - знак иероглиф - вынь - script  文学 - литература, 文件 - документ, 文化 - культура</li>
+<li>斗 dǒu - dipper - борьба, черпак, ковш - доу</li>
+<li>斤 jīn - axe - топор - цзинь</li>
+<li>方 fāng - square - квадрат, сторона - фан</li>
+<li>无 (旡) mó(wú) - not - исчезать, отсутствие - мо</li>
+<li>日(⺜) rì - sun - солнце, день - жи</li>
+<li>曰 yuē - say - говорить - юэй</li>
+<li>月(⺝) yuè - moon луна,месяц - юэй</li>
+<li>木 mù - tree - му</li>
+<li>欠 qiàn - lack, недостаток, недоставать, зевать - цянь</li>
+<li>止(龰) zhǐ - stop - стопа, останавливаться - чжи</li>
+<li>歹(歺) - dǎi death,злой,плохой,разлагаться - дай</li>
+<li>殳 shū - weapon,пика,оружие - шу</li>
+<li>毋 (母,⺟‚毌) mú(wú) - do not,мать,нет - му</li>
+<li>比 bǐ - compare,сравнивать - би</li>
+<li>毛 máo - fur,мех,шерсть,волосы - мао</li>
+<li>氏 shì - clan,род,клан,фамилия - ши</li>
+<li>气（気）qì (ци) - пар,воздух,газ,дыхание</li>
+<li>水 (氵,氺) shuǐ (шуй) - вода</li>
+<li>火 (灬) huǒ (хо) - огонь</li>
+<li>爪(⺥‚⺤) zhǎo (чжао) - когти</li>
+<li>父 fù (фу) - отец</li>
+<li>爻 yáo (яо) - воздействие, влияние, смешать, перекрестить</li>
+<li>爿 qiáng (цян) - лавка, кровать, доска, колоть дрова (всегда слева)</li>
+<li>片 piàn (пянь) - карточка; ломтик, щепка (всегда слева)</li>
+<li>牙 yá (я) - зуб, клык</li>
+<li>牛 (牜‚⺧) niú (ню) - вол, корова</li>
+<li>犬 (犭) quǎn (цюань) - собака</li>
+<li>玄 xuán (сюань) - тёмный, глубокий</li>
+<li>王 (玉‚玊‚𤣩) wáng‚ yù (ван‚ юй) - государь‚ нефрит</li>
+<li>瓜 guā (гуа) - тыква, дыня, огурец</li>
+<li>瓦  	wǎ (ва) 	черепица 	174 		瓧 邷 瓮 甄 <b>5 STROKES</b></li>
+<li>甘  	gān (гань) 	сладкий, вкусный 	22 		某 柑 甜 酣</li>
+<li>生  	shēng (шэн) 	жить, родиться; производить; сырой 	22 		牲 甡 笙 甥</li>
+<li>用  	yòng (юн) 	использовать 	10 		佣 甬 甯 勇</li>
+<li>田  	tián (тянь) 	рисовое поле 	192 		町 㽗 思 留 壨</li>
+<li>疋 (⺪) 	pǐ (пи) 	рулон ткани 	15 		𤴓 蛋 楚 胥 疏</li>
+<li>疒  	chuáng (чуан) 	болезнь 	526 		病 症 痛 癌 癖</li>
+<li>癶  	bō (бо) 	шаг; ноги врозь 	15 		癷 発 登 發</li>
+<li>白  	bái (бай) 	белый 	109 		的 㿟 皆 皛</li>
+<li>皮  	pí (пи) 	кожа 	94 		披 彼 波 玻</li>
+<li>皿  	mǐn (минь) 	миска, сосуд, блюдо; посуда 	129 		盂 盉 盍 監 蘯</li>
+<li>目  	mù (му) 	глаз 	647 		見 具 省 眠 眼 観 覧</li>
+<li>矛  	máo (мао) 	копьё 	65 		𡛺 柔 矜 矞</li>
+<li>矢  	shǐ (ши) 	стрела 	64 		族 矩 短 雉</li>
+<li>石  	shí (ши) 	камень 	499 		岩 砂 破 砳 磊</li>
+<li>示 (礻‚⺬‚𥘅) 	shì (ши) 	указывать, демонстрировать, предки, поклоняться, алтарь 	213 		礼 社 奈 神 祭 視 禁 福</li>
+<li>禸  	róu (жоу) 	след [зверя] 	12 		禹 禺 禽</li>
+<li>禾  	hé (хэ) 	зерно, злак; хлеб на корню 	431 		利 私 季 和 科 秂 秏</li>
+<li>穴  	xué (сюэ) 	пещера, отверстие 	298 		空 突 窅 窘 窩 窶 竇</li>
+<li>立  	lì (ли) 	стоять, воздвигать 	101 		咅 音 産 竝 意 新 端 競 竸</li>
+<li>竹 (⺮) 	6 	zhú (чжу) 	бамбук 	953 		竺 笁 第 等 簡</li>
+<li>米 	6 	mǐ (ми) 	рис 	318 		料 断 䊏 奥 麟</li>
+<li>糸 (糹) 	6 	mì (ми) 	нить, шёлк 	823 	⺰ 	系 級 紙 素 細 組 終 絵</li>
+<li>缶 	6 	fǒu (фоу) 	кувшин, глиняная посуда, керамика 	77 		缸 缺 㓡 窑</li>
+<li>网 (罒‚罓‚⺳‚𦉪‚冈‚𠔿‚⺵‚𦉰‚罔‚㒺) 	6 	wǎng (ван) 	сеть 	163 		刚 罕 䍑 䍞 𦋐 羅</li>
+<li>羊 (⺶‚⺷‚⺸) 	6 	yáng (ян) 	овца, баран; коза 	156 		着 羞 羚 翔</li>
+<li>羽 	6 	yǔ (юй) 	перья; крылья 	220 		習 翀 翁 翔</li>
+<li>老 (耂) 	6 	lǎo (лао) 	старый 	22 		孝 者 耇 㐗 耋</li>
+<li>而 	6 	ér (эр) 	и, а, но 	22 		耎 耍 耐 耑</li>
+<li>耒 	6 	lěi (лэй) 	соха, плуг 	84 		耔 耝 耨 耰</li>
+<li>耳 	6 	ěr (эр) 	ухо 	172 		取 聞 職 聶</li>
+<li>聿 (⺻, 肀) 	6 	yù (юй) 	кисть для письма 	19 		𦘒 律 書 衋</li>
+<li>肉 (⺼) 	6 	ròu (жоу) 	мясо 	674 		肏 𦞳 𦞴 腅 脤</li>
+<li>臣 	6 	chén (чэнь) 	чиновник, служащий 	16 		臥 宦 臦 蔵</li>
+<li>自 	6 	zì (цзы) 	сам, от, из 	34 		臫 息 臬 臲</li>
+<li>至 	6 	zhì (чжи) 	достигать; прибывать 	24 		到 致 臸 臺</li>
+<li>臼(𦥑) 	6 	jiù (цзю) 	ступка 	71 		桕 舅 舂 插</li>
+<li>舌 	6 	shé (ше) 	язык 	31 		乱 舍 适 話</li>
+<li>舛 	6 	chuǎn (чуань) 	противоречивый; ошибка, неудача 	10 		舛 舜 桀 舞</li>
+<li>舟 	6 	zhōu (чжоу) 	лодка, корабль 	197 		航 船 艉 艦</li>
+<li>艮 	6 	gēn (гэнь) 	преграда; твёрдый, крепкий 	5 		良 垦 很 䬶</li>
+<li>色 	6 	sè (сэ) 	цвет, привлекательность 	21 		色 艴 艷</li>
+<li>艸 (艹‚⺿‚⻀) 	6 	cǎo (цао) 	трава 	1902 		花 英 苦 草 茶 落 幕 薬</li>
+<li>虍 	6 	hū (ху) 	тигр, тигровые полоски 	114 		虎 虐 彪 虒</li>
+<li>虫 	6 	chóng (чун) 	насекомое 	1067 		蚯 蚓 強 触 䖵 蟲</li>
+<li>血 	6 	xuè (сюэ) 	кровь 	60 		洫 衁 衅 衆</li>
+<li>行 	6 	xíng (син) 	идти, делать 	53 		衍 術 䡓 衝</li>
+<li>衣 (衤) 	6 	yī (и) 	одежда 	607 		初 被 装 裁 複</li>
+<li>西 (襾,覀) 	6 	xī (си) 	покрывать; крышка 	29 		栗 要 䙳 票 覊</li>
+<li>見 	7 	jiàn (цянь) 	видеть 	161 	见 	覞 親 覺 觀</li>
+<li>角(𧢲) 	7 	jiǎo (цзяо) 	рог; угол 	158 		觚 解 觕 觥 觸</li>
+<li>言 (訁) 	7 	yán (янь) 	слово, речь 	861 	讠 	䚰 訌 詔 評 詗 詥 誩 譶</li>
+<li>谷 	7 	gǔ (гу) 	долина 	54 		谿 豀 卻 焀</li>
+<li>豆 	7 	dòu (доу) 	бобы, жертвенный сосуд 	68 		豈 豇 豎 豐</li>
+<li>豕 	7 	shǐ (ши) 	свинья 	148 		豖 豚 豩 燹</li>
+<li>廌 (豸) 	7 	zhì (чжи) 	пресмыкающееся, кот, единорог, барсук 	140 		豹 貌 貓 貈 貉</li>
+<li>貝 	7 	bèi (бэй) 	раковина 	277 	贝 	財 賊 賜 贛 貧 貨 賏 贔</li>
+<li>赤 	7 	chì (чи) 	красный, киноварь, голый 	31 		赫 赧 赭 赬</li>
+<li>走 (赱) 	7 	zǒu (цзоу) 	ходить, уходить 	285 		赴 起 超 趲</li>
+<li>足 (⻊) 	7 	zú (цзу) 	ступня 	580 		䟔 䟖 跀 跖 踀</li>
+<li>身 	7 	shēn (шэнь) 	тело (человека) 	97 		躬 射 躲 軀</li>
+<li>車 	7 	chē (чэ) 	телега, машина 	361 	车 	軌 軟 較 䡛 轟</li>
+<li>辛 	7 	xīn (синь) 	горький, острый, твёрдый, жёсткий 	36 		辜 辟 辣 辦 辡</li>
+<li>辰 	7 	chén (чэнь) 	утро 	15 		辱 唇 脣 農</li>
+<li>辵 (辶,⻌,⻍) 	7 	chuò / zouzhi (чо, цзоучжи) 	гулять, быстро идти 	381 		巡 𨑨 𨑬 追 逃 迎 進</li>
+<li>邑 (阝) 	7 	yì (и) 	город (в виде 阝 ставится справа) 	350 		那 邦 郎 部 郭 都 鄉</li>
+<li>酉 	7 	yǒu (ю) 	вино, алкоголь, уксус 	290 		酊 酗 酒 醒 酸</li>
+<li>釆 	7 	biàn (бянь) 	разделять, различать, выбирать, сортировать 	14 		番 悉 釉 釋</li>
+<li>里 	7 	lǐ (ли) 	деревня, ли (мера длины) 	14 		野</li>
+<li>金 (釒) 	8 	jīn (цзинь) 	металл, золото 	806 	钅 	釓 釔 釞 釗 釙 釘 釥 鍂 鑫 𨰻</li>
+<li>長, 镸 	8 	cháng (чан) 	длинный, расти; старший 	55 	长 	髟 肆 镽 镾</li>
+<li>門 	8 	mén (мэнь) 	ворота 	246 	门 	閃 閄 閊 𨳍 問 闁 𨶹</li>
+<li>阜 (阝‚𨸏) 	8 	fù (фу) 	холм (в виде 阝ставится слева) 	348 		阪 防 阻 陆 陘 院 险 陳</li>
+<li>隶 	8 	lì (ли) 	захват, поймать; раб; достигать 	12 		隸 隺 逮</li>
+<li>隹 	8 	zhuī (чжуй) 	пичуга, короткохвостая птица 	233 		倠 集 雙 雔 雥 雦</li>
+<li>雨(⻗) 	8 	yǔ (юй) 	дождь 	298 		雪 電 霝 霜 靐 䨻</li>
+<li>青, 靑 	8 	qīng (цин) 	зелёный, голубой, синий 	17 		靕 靖 靚 靜</li>
+<li>非 	8 	fēi (фэй) 	неверный, ложный; не-…; не быть; отрицать 	25 		剕 靟 靠 輩</li>
+<li>面 (靣) 	9 	miàn (мянь) 	лицо 	66 		勔 靦 靧 靨</li>
+<li>革 	9 	gé (гэ) 	сыромятная кожа, отменять 	305 		靴 鞍 鞅 鞍 鞭</li>
+<li>韋 	9 	wéi (вэй) 	дублёная кожа 	100 	韦 	韌 韓 韜 韞</li>
+<li>韭 	9 	jiǔ (цзю) 	лук-порей 	20 		韱 䪤 韲</li>
+<li>音 	9 	yīn (инь) 	звук 	43 		歆 韶 𩐠 䪭</li>
+<li>頁 	9 	yè (е) 	лист, страница; голова 	372 	页 	項 順 須 領 頭 頩 頂 顨</li>
+<li>風 	9 	fēng (фэн) 	ветер 	182 	风 	颱 飄 颩 䬕 飍</li>
+<li>飛 	9 	fēi (фэй) 	летать 	92 	飞 	𢝵 𢞵 飜 飝</li>
+<li>食 (飠‚⻞) 	9 	shí (ши) 	еда, пища 	403 	饣 	飯 飲 餓 餘 餐 養</li>
+<li>首 	9 	shǒu (шоу) 	главный, глава; голова 	20 		馗 道 馘</li>
+<li>香 	9 	xiāng (сян) 	благоухание, аромат 	37 		䭯 馥 馨 馫</li>
+<li>馬 	10 	mǎ (ма) 	лошадь 	472 	马 	馰 馴 馽 駐 騳 驫</li>
+<li>骨（⻣) 	10 	gǔ (гу) 	кость 	185 		骼 髒 髀 骿 骾</li>
+<li>高 (髙) 	10 	gāo (гао) 	высокий, колокол 	34 		㪣 髚 髛 髜</li>
+<li>髟 	10 	biāo (бяо) 	длинные волосы 	243 		髮 鬚 鬆 鬍 髦</li>
+<li>鬥 	10 	dòu (доу) 	бой, битва 	23 		鬧 鬪 鬬 鬮</li>
+<li>鬯 	10 	chàng (чан) 	травы, ритуальное вино 	8 		鬰 鬱</li>
+<li>鬲 	10 	lì (ли) 	котелок-треножник, штатив 	73 		䰙 鬶 鬷 鬸</li>
+<li>鬼 	10 	guǐ (гуй) 	призрак 	141 		魂 魁 鬽 魄</li>
+<li>魚 	11 	yú (юй) 	рыба 	571 	鱼 	魜 魞 䰲 魝 𩵚 䲆 鱻 䲜</li>
+<li>鳥 	11 	niǎo (няо) 	птица 	750 	鸟 	鳫 鳮 鳱 鳳 鳴 鳿 雞 鳴 鴻 鴛</li>
+<li>鹵 	11 	lǔ (лу) 	соль 	44 	卤 	卥 卣 鹼 鹽 䴝</li>
+<li>鹿 	11 	lù (лу) 	олень 	104 		塵 麃 麋 麉 麟</li>
+<li>麥 	11 	mài (май) 	пшеница 	131 	麦 	麴 麵 麱 麨 麺</li>
+<li>麻 	11 	má (ма) 	конопля, лён 	34 		麽 麼 魔 㸏</li>
+<li>黃 	12 	huáng (хуан) 	жёлтый 	42 	黄 	黊 黌</li>
+<li>黍 	12 	shǔ (шу) 	просо 	46 		黏 黎 䵚 黐</li>
+<li>黑（黒） 	12 	hēi (хэй) 	чёрный 	172 		䵝 默 點 黛</li>
+<li>黹 	12 	zhǐ (чжи) 	вышивка, рукоделие 	8 		黺 黼 黻</li>
+<li>黽 	13 	mǐn (минь) 	лягушка, жаба, земноводное 	40 	黾 	鄳 鼈 黿 鼆</li>
+<li>鼎 	13 	dǐng (дин) 	треножник 	14 		鼏 鼒 䵻</li>
+<li>鼓 	13 	gǔ (гу) 	барабан 	46 		鼕 瞽 鼗 鼘</li>
+<li>鼠(䑕) 	13 	shǔ (шу) 	крыса, мышь 	92 		鼢 鼣 鼤 鼺</li>
+<li>鼻 	14 	bí (би) 	нос 	49 		鼼 劓 鼽 鼿</li>
+<li>齊(斉) 	14 	qí (ци) 	равномерный, одинаковый 	18 	齐 	齋 齏 齎 齏</li>
+<li>齒（歯） 	15 	chǐ (чи) 	зуб 	162 	齿 	䶚 齡 齠 齗</li>
+<li>龍(竜) 	16 	lóng (лун) 	дракон 	14 	龙 	龑 聾 龖 龘</li>
+<li>龜(亀) 	16 	guī (гуй) 	черепаха 	24 	龟 	龝 䶰</li>
+<li>龠 	17 	yuè (юэ) 	свирель, бамбуковая флейта (с тремя, шестью или семью отверстиями) 	19 		䶳 𦒈 龥 龤</li>
+</ol>
+<p>
+<a href="https://en.wikipedia.org/wiki/Kangxi_radical#Table_of_radicals">https://en.wikipedia.org/wiki/Kangxi_radical#Table_of_radicals</a>
+<a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9_%D0%9A%D0%B0%D0%BD%D1%81%D0%B8">https://ru.wikipedia.org/wiki/Список_ключей_Канси</a>
+<a href="https://en.wiktionary.org/wiki/%E5%85%A5">https://en.wiktionary.org/wiki/入</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4a4f496" class="outline-3">
+<h3 id="org4a4f496"><span class="section-number-3">6.3</span> Shuowen Jiezi</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+ancient Chinese dictionary from the Han dynasty
+</p>
+</div>
+</div>
+<div id="outline-container-orga1a87b5" class="outline-3">
+<h3 id="orga1a87b5"><span class="section-number-3">6.4</span> The Table of Indexing Chinese Character Components (GF 0011-2009 汉字部首表)</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+lexicographic tool used to order the Chinese characters in mainland
+China. used in dictionaries: Xinhua Zidian and Xiandai Hanyu Cidian
+</p>
+<ul class="org-ul">
+<li>1 stroke: 一 丨 丿 丶 乛</li>
+<li>2 strokes: 十 厂 匚 卜 冂 八 人 勹 儿 匕 几 亠 冫 冖 凵 卩 刀 力 又 厶 廴</li>
+<li>3 strokes: 干 工 土 艹 寸 廾 大 尢 弋 小 口 囗 山 巾 彳 彡 夕 夂 丬 广 门 宀 辶 彐 尸 己 弓 子 屮 女 飞 马 么 巛</li>
+<li>4 strokes: 王 无 韦 木 支 犬 歹 车 牙 戈 比 瓦 止 攴 日 贝 水 见 牛 手 气 毛 长 片 斤 爪 父 月 氏 欠 风 殳 文 方 火 斗 户 心 毋</li>
+<li>5 strokes: 示 甘 石 龙 业 目 田 罒 皿 生 矢 禾 白 瓜 鸟 疒 立 穴 疋 皮 癶 矛</li>
+<li>6 strokes: 耒 老 耳 臣 覀 而 页 至 虍 虫 肉 缶 舌 竹 臼 自 血 舟 色 齐 衣 羊 米 聿 艮 羽 糸</li>
+<li>7 strokes: 麦 走 赤 豆 酉 辰 豕 卤 里 足 邑 身 釆 谷 豸 龟 角 言 辛</li>
+<li>8 strokes: 青 龺 雨 非 齿 黾 隹 阜 金 鱼 隶</li>
+<li>9 strokes: 革 面 韭 骨 香 鬼 食 音 首</li>
+<li>10 strokes: 髟 鬲 鬥 高</li>
+<li>11 strokes: 黄 麻 鹿</li>
+<li>12 strokes: 鼎 黑 黍</li>
+<li>13 strokes: 鼓 鼠</li>
+<li>14 strokes: 鼻</li>
+<li>17 strokes: 龠</li>
+</ul>
+
+<p>
+htps://en.wikipedia.org/wiki/Table<sub>of</sub><sub>Indexing</sub><sub>Chinese</sub><sub>Character</sub><sub>Components</sub>
+</p>
+</div>
+</div>
+<div id="outline-container-org4a465c0" class="outline-3">
+<h3 id="org4a465c0"><span class="section-number-3">6.5</span> most popular radicals</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>艸 grass</li>
+<li>水 water</li>
+<li>木 tree</li>
+<li>手 hand</li>
+<li>口 mouth</li>
+<li>心 heart</li>
+<li>虫 insect</li>
+<li>竹 bamboo - бамбук</li>
+<li>言 speech</li>
+<li>糸 silk
+
+<ul class="org-ul">
+<li>не нет да</li>
+</ul></li>
+<li>取消 - Qǔxiāo -  cancel</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93b2e81" class="outline-3">
+<h3 id="org93b2e81"><span class="section-number-3">6.6</span> не</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li>不 Bù</li>
+<li>沒 méi</li>
+<li>没 méi - не так</li>
+<li>不是 bùshì - не есть</li>
+<li>无 wú - не быть, не иметь, никакой, никто, ничего</li>
+<li>無 wú - никакой, никто, ничего</li>
+<li>未 wèi - еще не</li>
+<li>唔 wú</li>
+<li>不带 bù dài - without</li>
+<li>冇 mǎo</li>
+</ul>
+
+<p>
+Ответ:
+</p>
+<ul class="org-ul">
+<li>不是(Bú Shì)</li>
+<li>不 (Bù)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8506fc4" class="outline-3">
+<h3 id="org8506fc4"><span class="section-number-3">6.7</span> Yes</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li>是 (Shì)</li>
+<li>是的 (Shì de)</li>
+<li>好的 - Hǎo de</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org17aaf28" class="outline-2">
+<h2 id="org17aaf28"><span class="section-number-2">7</span> я ты он она это то</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>我 – wǒ – я</li>
+<li>你 - nǐ - ты</li>
+<li>您 - nín – Вы (вежливое обращение к одному человеку)</li>
+<li>他 - tā – он</li>
+<li>她 - tā – она</li>
+</ul>
+
+<p>
+this
+</p>
+<ul class="org-ul">
+<li>这 - zhè - Чжэ - this, these</li>
+<li>那 - nà - That</li>
+<li>哪 - nǎ - Which</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org339b1d6" class="outline-2">
+<h2 id="org339b1d6"><span class="section-number-2">8</span> hello and Self-Introduction</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orge75e986" class="outline-3">
+<h3 id="orge75e986"><span class="section-number-3">8.1</span> hello</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>你好 nǐ hǎo or níhǎo - Цзайцзянь - for regular</li>
+<li>你们好 - Nǐmen hǎo - for more than one person</li>
+<li>您好 - Nín hǎo - for respect</li>
+<li>大家好 (Dàjiā hǎo) - Hello everybody!
+<ul class="org-ul">
+<li>大家 does mean 'everyone'</li>
+</ul></li>
+<li>各位家长、同学们好。 (gè wèi jiā zhǎng, tóng xué men hǎo.) — Hello/Dear parents and
+teachers.</li>
+<li>哈啰 - ha1 lo5 - Hello</li>
+<li>Let’s get started!  我们开始吧(wǒmen kāishǐ ba)</li>
+<li>你 好 吗?</li>
+
+<li>再见 - Zài jiàn - пока
+<ul class="org-ul">
+<li>再 again</li>
+<li>见 see, meet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd63f7ae" class="outline-3">
+<h3 id="orgd63f7ae"><span class="section-number-3">8.2</span> name</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>我叫 Tim - меня зовут Тим
+<ul class="org-ul">
+<li>叫 Jiào - call</li>
+</ul></li>
+<li>你叫什么名字？Как тебя зовут Nǐ jiào shénme míngzì - Ницзяошэньмэминцзы
+<ul class="org-ul">
+<li>你 - Nǐ - Ни - ты -</li>
+<li>叫 -  jiào - цзяо - зовут</li>
+<li>什么 - Shénme - шэньмэ - what</li>
+<li>名字 - Míngzì - минцзы - first name</li>
+</ul></li>
+</ul>
+
+
+<p>
+last name (go first) (one character)
+</p>
+<ul class="org-ul">
+<li>Lee 李 Lǐ</li>
+<li>Chan 戈 chǎn</li>
+</ul>
+<p>
+first name (second) (two or one)
+</p>
+<ul class="org-ul">
+<li>Bruce 小龙 xiǎo Lóng</li>
+<li>Jackie 龙 lóng</li>
+</ul>
+
+<p>
+Into
+</p>
+<ul class="org-ul">
+<li>wǒ 我 xìng 姓 &#x2026; (my last name or family name) (син)</li>
+<li>wǒ 我 jiào 叫 &#x2026; (my first name(if two characters) or full name) (тьао)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc49c33c" class="outline-2">
+<h2 id="orgc49c33c"><span class="section-number-2">9</span> thank you &amp; i love you</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>xiè xiè - 谢谢 - Сесе</li>
+<li>nǎlǐ nǎlǐ - 哪里哪里 - Нали ньали - you’re too kind</li>
+<li>bù, bù, bù - 不 - A rough pronunciation would be bhoo bhoo bhoo.</li>
+<li>Duō xiè - 多謝 - Thanks a lot (multi-thanks)</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>我爱你 Во ай ни Wǒ ài nǐ</li>
+<li>我 - я Wǒ</li>
+<li>爱 - люблю ài</li>
+<li>你 - тебя nǐ</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb478d8b" class="outline-2">
+<h2 id="orgb478d8b"><span class="section-number-2">10</span> questions</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-orgbf6a3bb" class="outline-3">
+<h3 id="orgbf6a3bb"><span class="section-number-3">10.1</span> what how who</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>how? - rú hé？  - 如何？ - Жу Хэ - as what?</li>
+<li>what? - shén mē？  - 什么？ - шень мэ
+<ul class="org-ul">
+<li>多么 - Duōme - how/what (wonderful etc)</li>
+<li>孰 - shú - who; which; what</li>
+</ul></li>
+<li>who? - shì shuí？  - 是谁？ - Ши Шуй</li>
+<li>why? - wèi shén me？  - 为什么？ - для чего?</li>
+<li>where? - zài nǎ lǐ？  - 在哪里？ - около какой район?</li>
+<li>Which? - nǎ - 哪?</li>
+</ul>
+</div>
+<div id="outline-container-orgf9df122" class="outline-4">
+<h4 id="orgf9df122"><span class="section-number-4">10.1.1</span> ex</h4>
+<div class="outline-text-4" id="text-10-1-1">
+<ul class="org-ul">
+<li>where do you live? - nǐ zhù  zài nǎ lǐ？  - 你住在哪里？</li>
+<li>what is this? - zhè shì  shén mē？  - 这是什么？</li>
+<li>孰真孰假 - shú zhēn shú jiǎ - what is true and what is fake</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5a1aee0" class="outline-4">
+<h4 id="org5a1aee0"><span class="section-number-4">10.1.2</span> advanced</h4>
+<div class="outline-text-4" id="text-10-1-2">
+<ul class="org-ul">
+<li>where is he?	tā;tuó zài  nǎ er？  - 他在哪儿？</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org61a5261" class="outline-3">
+<h3 id="org61a5261"><span class="section-number-3">10.2</span> 吗 (ma) and 呢 (ne)</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>Both go at the end of a sentence.</li>
+<li>Both of them can form questions.</li>
+<li>Both of them are pronounced in neutral tone.</li>
+<li>吗 is used to turn statements into yes-no questions.</li>
+<li>呢 is mostly used to turn statements into queries (amongst other
+things).</li>
+</ul>
+
+<p>
+吗 (ma)
+</p>
+<ul class="org-ul">
+<li>你是李先生吗？
+<ul class="org-ul">
+<li>Nǐ shì Lǐ Xiānshēng ma?</li>
+<li>Are you Mr Li?</li>
+</ul></li>
+<li>你会中文吗？
+<ul class="org-ul">
+<li>Nǐ huì Zhōngwén ma?</li>
+<li>Do you speak Chinese?</li>
+</ul></li>
+<li>这里有洗手间吗？
+<ul class="org-ul">
+<li>Zhèli yǒu xǐshǒujiān ma?</li>
+<li>Is there a toilet here?</li>
+</ul></li>
+<li><p>
+这是你的吗？
+</p>
+<ul class="org-ul">
+<li>Zhè shì nǐ de ma?</li>
+<li>Is this yours?</li>
+</ul>
+
+<p>
+呢 (ne)
+</p></li>
+<li>你呢？</li>
+<li>Nǐ ne?</li>
+<li>And you?</li>
+<li>我呢？</li>
+<li>Wǒ ne?</li>
+<li>What about me?</li>
+<li>这些东西呢？</li>
+<li>Zhèxiē dōngxi ne?</li>
+<li>What about these things?</li>
+<li>你为什么不去呢？</li>
+<li>Nǐ wèishénme bù qù ne?</li>
+<li>Why aren't you going?</li>
+<li>他有什么不喜欢吃的呢？</li>
+<li>Tā yǒu shénme bù xǐhuan chī de ne?</li>
+<li>What is there that he doesn't like to eat?</li>
+</ul>
+<p>
+<a href="https://www.howtosayinchinese.com/asking-questions-in-chinese-ma/">https://www.howtosayinchinese.com/asking-questions-in-chinese-ma/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b87d76" class="outline-2">
+<h2 id="org9b87d76"><span class="section-number-2">11</span> частые слова</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>上 Shàng шан «верх» на</li>
+</ul>
+<p>
+下 Xià ся  - «низ» ниже
+</p>
+<ul class="org-ul">
+<li>口 Kǒu «рот»</li>
+<li>雨 Yǔ юй «дождь»</li>
+<li>立 Lì «стоять»</li>
+<li>人 Rén жэнь «человек»</li>
+<li>戈 Gē гэ «копьё»</li>
+<li>伐 Fá фа - рубить</li>
+<li>甘 Gān гань «сладкий»</li>
+<li>非 Fēi фэй «дурной, плохой, зло»</li>
+<li>言 янь «слово»</li>
+<li>來 lái «приходить»</li>
+<li>麥 mài «пшеница»</li>
+<li>又 yòu «снова, ещё раз»</li>
+<li>男人 - nánrén мужчина</li>
+<li>女人 - nǚrén женщина</li>
+<li>田  Tián - поле</li>
+<li>狗  gǒu - собака</li>
+<li>猫  māo - кошка</li>
+<li>用 Yòng - использовать</li>
+<li>神 Shén - бог</li>
+<li>买 Mǎi - buy</li>
+<li>卖 Mài - sell</li>
+<li>东西 Dōngxī - staff, thing</li>
+<li>头 Tóu - head</li>
+<li>牛 Niú - cow</li>
+<li>门 Mén - door</li>
+<li>了 Le -
+<ul class="org-ul">
+<li>Used after a verb to indicate perfective aspect (action completion).</li>
+<li>Used at the end of a sentence to indicate a change of state/beginning of an
+action.. - like a now word
+<ul class="org-ul">
+<li>你吃了以后叫我。Nǐ chī le yǐhòu jiào wǒ.  ― Call me when you are done eating.
+<ul class="org-ul">
+<li>以后 - Yǐhòu - after</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3e0aeed" class="outline-2">
+<h2 id="org3e0aeed"><span class="section-number-2">12</span> и или</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+И
+</p>
+<ul class="org-ul">
+<li>和 Hé</li>
+<li>并  Bìng</li>
+<li>与 Yǔ(и) 		问题与方法 Проблемы и методы</li>
+<li>或	Huò		or, either</li>
+<li>于	Yú(и)	on, to	Focus on business 专注于商业</li>
+</ul>
+
+<p>
+Союзы
+</p>
+<ul class="org-ul">
+<li>为了 Wèile - чтобы (вила)</li>
+<li>并 - Bìng but</li>
+<li>而 - Ér and</li>
+<li>也 - yě also (ие)</li>
+<li>终 - zhōng at the end</li>
+<li>依然 - yīrán still</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org336cbbf" class="outline-2">
+<h2 id="org336cbbf"><span class="section-number-2">13</span> numbers 数字 Shùzì - Шуцзы</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+数字 - shùzì - number/count(rice woman tap) word/letter - Шуцзы
+</p>
+
+<ul class="org-ul">
+<li>零/〇	líng	0 линг</li>
+<li>一		yī	1 и	one</li>
+<li>二		èr	2 ар	two</li>
+<li>三		sān	3	three</li>
+<li>四		sì	4 сы	four</li>
+<li>五		wǔ	5 у	five</li>
+
+<li>六		liù	6 лиоу	six</li>
+<li>七		qī	7 тьи	seven</li>
+<li>八		bā	8	eigth</li>
+<li>九		jiǔ	9 тьоу	nine</li>
+<li>十		shí	10	ten</li>
+
+<li>百		bǎi	100	a hundred</li>
+<li>千		qiān	1000 тиен	thousand</li>
+
+<li>二十	20</li>
+<li>三十	30</li>
+<li>十一	11</li>
+<li>二十一	21</li>
+<li>三十三	33</li>
+<li>一百	100</li>
+</ul>
+
+<p>
+Количественные числительные:
+</p>
+<ul class="org-ul">
+<li>раз		yī cì	  一次</li>
+<li>дважды	liǎng cì  两次</li>
+<li>трижды	sān cì	  三次</li>
+</ul>
+
+<p>
+First:
+</p>
+<ul class="org-ul">
+<li>第一 Dì yī - first</li>
+<li>第二 Dì èr - second</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5d8f85f" class="outline-2">
+<h2 id="org5d8f85f"><span class="section-number-2">14</span> math 数学 Shùxué - Шу Сюэ</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>学 - to learn</li>
+<li>奇数 ji shù - Odd number</li>
+<li>偶数 ǒu shù - even number</li>
+<li>正数 zhèng shù - positive numbers - Чжэн</li>
+<li>负数 fùshù - negative numbers</li>
+</ul>
+<p>
+<a href="https://chinese4kids.net/simple-math-vocabulary-in-chinese/">https://chinese4kids.net/simple-math-vocabulary-in-chinese/</a>
+</p>
+</div>
+<div id="outline-container-orga84c5dc" class="outline-3">
+<h3 id="orga84c5dc"><span class="section-number-3">14.1</span> operators</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>加 jiā - add, plus, addition</li>
+</ul>
+<p>
+–  减 jiǎn - subtract, minus, subtraction
+</p>
+<ul class="org-ul">
+<li>乘 chéng - multiply, multiplication</li>
+</ul>
+<p>
+/ 除 chú - divide, division
+= 等于 děngyú equal to
+</p>
+
+<p>
+7-4=3 七减四等于三 Qī jiǎn sì děngyú sān
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgab77b1c" class="outline-2">
+<h2 id="orgab77b1c"><span class="section-number-2">15</span> money 钱 qián тьен</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>货币 - Huòbì - currency - goods/procurts(change/convert sea<sub>shell</sub>) coin - Хо Би</li>
+<li>人民币 rénmínbì - literally: 'people's currency'</li>
+<li>元/¥ - symbol; code: CNY</li>
+<li>元 Yuán(Юань) - primary unit. equal to 10 jiao or 100 fen
+<ul class="org-ul">
+<li>块 kuài(Куай) - разговорный 元</li>
+</ul></li>
+<li>角 Jiǎo(Цзяо) - 1/10 元
+<ul class="org-ul">
+<li>毛 máo - разговорный</li>
+</ul></li>
+<li>Фэнь fēn - 1/100 元</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3edf631" class="outline-2">
+<h2 id="org3edf631"><span class="section-number-2">16</span> plural</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>各位 (gè wèi) for “everybody”</li>
+<li>女士们先生们 (nǚ shì men xiān shēng men) for “ladies and gentlemen,”</li>
+<li>大家 (dà jiā) informal way of addressing “everyone.”</li>
+</ul>
+</div>
+<div id="outline-container-org266f976" class="outline-3">
+<h3 id="org266f976"><span class="section-number-3">16.1</span> Number + Measure Word + Noun</h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>Number
+<ul class="org-ul">
+<li>两 (liǎng) instead of 二 (èr).</li>
+</ul></li>
+<li>Measure Words(classifiers):
+<ul class="org-ul">
+<li>个 (gè) - of - I’ll have two of everything.
+<ul class="org-ul">
+<li>我有两个兄弟。(wǒ yǒu liǎng gè xiōng dì.) — I have two brothers.</li>
+</ul></li>
+<li>杯 (bēi) — cup [of coffee and tea] - “two cups of coffee” &gt; “two of coffee.”
+<ul class="org-ul">
+<li>两杯咖啡 (liǎng bēi kā fēi) — two cups of coffee</li>
+</ul></li>
+<li>本 (bĕn) — unit for books and magazines</li>
+<li>份 (fèn) — share, portion, order [of food], unit for newspapers</li>
+<li>间 (jiān) — unit for any kind of room</li>
+<li>辆 (liàng) — unit for vehicles</li>
+<li>瓶 (píng) — bottle</li>
+<li>条 (tiáo) — unit for long, winding objects, like roads, rivers, snakes, fish</li>
+<li>张 (zhāng) — sheet [of paper or bedsheets], unit for rectangular objects like
+beds, tables</li>
+<li>只 (zhī) — unit for animals and one of a pair of hands, feet, ears, eyes</li>
+<li>支 (zhī) — unit for long, thin objects like pencils, pens, cigarettes</li>
+<li>multiple of multiple:
+<ul class="org-ul">
+<li>双 (shuāng) — pair, for items that always come in pairs</li>
+<li>对 (duì) — couple, for nouns that don’t necessarily come in pairs</li>
+<li>打 (dǎ) — dozen</li>
+<li>包 (bāo) — pack or packet</li>
+<li>群 (qún) — group of people or animals like crowds, flocks, herds, swarms</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdd5f4b7" class="outline-3">
+<h3 id="orgdd5f4b7"><span class="section-number-3">16.2</span> Ambiguous Plural + Noun</h3>
+<div class="outline-text-3" id="text-16-2">
+<ul class="org-ul">
+<li>几 (jǐ) — some, several
+<ul class="org-ul">
+<li>几道菜 (jǐ dào cài) — some dishes</li>
+</ul></li>
+<li>一些 (yī xiē) —a few, some (, no one would ever say, “two fews.”)
+<ul class="org-ul">
+<li>一些错误 (yī xiē cuò wù) — a few mistakes</li>
+</ul></li>
+<li>数 (shù) — several
+<ul class="org-ul">
+<li>数星期 (shù xīng qí) — several weeks</li>
+</ul></li>
+<li>不少 (bù shǎo) — quite a few</li>
+<li>很多 (hěn duō) — a lot, very many</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ac10b6" class="outline-3">
+<h3 id="org1ac10b6"><span class="section-number-3">16.3</span> links</h3>
+<div class="outline-text-3" id="text-16-3">
+<p>
+<a href="https://www.fluentu.com/blog/chinese/plural-in-chinese/">https://www.fluentu.com/blog/chinese/plural-in-chinese/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org90a58b3" class="outline-2">
+<h2 id="org90a58b3"><span class="section-number-2">17</span> множественне число</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>счётное слово (можно в сочетании с 一 yī "единица"): 他是个老师。Он учитель. 这是一只猫。Это кошка.</li>
+<li>суффикс для лиц 们 - 老师们，先生们。</li>
+<li>конкретно число + счётное слово: 三个人，四把椅子。</li>
+<li>показатель множественного числа "несколько" 几 (обычно не больше десяти) плюс счётное слово： 几个人，几只狗。</li>
+<li>показатели множественного числа типа "некоторые", "немало", "много": 些人，不少东西，很多书。</li>
+<li>удваивание существительного: 人人，事事。</li>
+<li>добавить местоимение xiē (些);</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaf9d8b9" class="outline-2">
+<h2 id="orgaf9d8b9"><span class="section-number-2">18</span> units of measurement</h2>
+<div class="outline-text-2" id="text-18">
+</div>
+<div id="outline-container-org7982686" class="outline-3">
+<h3 id="org7982686"><span class="section-number-3">18.1</span> date, time</h3>
+<div class="outline-text-3" id="text-18-1">
+<ul class="org-ul">
+<li>天 tiān - day</li>
+<li>小时 xiǎoshí - 1 hour</li>
+<li>分 fēn - 1 minute</li>
+<li>秒 miǎo - 1 second</li>
+</ul>
+</div>
+<div id="outline-container-org9c5708b" class="outline-4">
+<h4 id="org9c5708b"><span class="section-number-4">18.1.1</span> date 号 hào</h4>
+<div class="outline-text-4" id="text-18-1-1">
+<ul class="org-ul">
+<li>日 Rì - day</li>
+<li>月 yuè - month</li>
+<li>周 Zhōu - week</li>
+<li>年 Nián - year</li>
+<li>号 hào - date</li>
+
+<li>1992г. - говорится по числу, год месяц число</li>
+<li>2018年10月4日</li>
+
+<li>明天 míngtiān - tomorrow</li>
+<li>今天 jīntiān - today</li>
+<li>昨天 zuótiān - yesterday</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org058889e" class="outline-2">
+<h2 id="org058889e"><span class="section-number-2">19</span> IT programming</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li><a href="https://www.fluentu.com/blog/chinese/2011/10/10/chinese-vocabulary-word-list-computer-internet/">https://www.fluentu.com/blog/chinese/2011/10/10/chinese-vocabulary-word-list-computer-internet/</a></li>
+<li>代码 Dàimǎ - code (generation/replace numbers)</li>
+<li>software —— 软件 —— ruăn jiàn - soft ware - Жуань Цзянь</li>
+<li>hardware - 硬件 - Yìng jiàn - hard ware - Ин Цзянь</li>
+<li>system —— 系统 —— xì tŏng</li>
+<li>network —— 网络 —— wăng luò - network small<sub>net</sub>(silk each)</li>
+<li>firewall —— 防火墙 —— fáng huŏ qiáng - fireproof(defend fire) wall</li>
+<li>cloud computing —— 云计算 —— yún jì suàn</li>
+<li>digital —— y数码的 —— shù mă de</li>
+<li>computer program
+<ul class="org-ul">
+<li>计算机程序 - Jìsuànjī chéngxù - computer program(Procedure(rice<sub>plant</sub>
+submit/appear(entrance royal)) sequence(extensive to<sub>give</sub>))</li>
+<li>电脑程序 - diànnǎo chéngxù - electricity brain(moon cruel) program</li>
+<li>电脑编程 —— diàn năo biān chéng - electricity brain programming</li>
+</ul></li>
+<li>memory —— 内存 —— nèi cún - inner keep</li>
+<li>meg (short for megabyte) —— 兆 (short for 兆字节) —— zhào (short zhào for zì jié)</li>
+<li>gig (short for gigabyte) —— 千 (short for 千兆字节)  —— qiān (short for qiān zhào zì jié)</li>
+</ul>
+</div>
+<div id="outline-container-org3e5d2dc" class="outline-3">
+<h3 id="org3e5d2dc"><span class="section-number-3">19.1</span> devices 设备 - shè bèi</h3>
+<div class="outline-text-3" id="text-19-1">
+<ul class="org-ul">
+<li>computer —— 电脑 —— diàn năo - electricity brain(moon cruel)
+<ul class="org-ul">
+<li>计算机 - Jìsuànjī - calculate(plan/count in<sub>the</sub><sub>end</sub>) machine(tree table) - Цзи
+Суань Цзи</li>
+</ul></li>
+<li>laptop —— 笔记本 —— bǐ jì běn - notes(pen remember) book</li>
+<li>device —— 设备 —— shè bèi - establish/assume equipment
+<ul class="org-ul">
+<li>器 - Qì - device</li>
+<li>具 - Jù - thing</li>
+</ul></li>
+<li>disc —— 碟 —— dié - stone/mineral, flat pieces of wood</li>
+<li>mouse —— 鼠标 —— shŭ biāo - mouse sign</li>
+<li>key (on a keyboard) —— 键 —— jiàn - bolt/key go pencil</li>
+<li>keyboard - 键盘 - Jiànpán - key plate</li>
+<li>cellphone - 手机 - Shǒujī - hand machine</li>
+<li>smartphone - 智能手机 - Zhìnéng Shǒujī - wisdom(arrow mouth daytime) can hand machine -
+Чжи Нэн Шоу Цзи</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf3bc1ef" class="outline-3">
+<h3 id="orgf3bc1ef"><span class="section-number-3">19.2</span> Internet</h3>
+<div class="outline-text-3" id="text-19-2">
+<ul class="org-ul">
+<li>the internet —— 互联网 —— hù lián wăng - mutual united network</li>
+<li>web site - 网站 - Wǎngzhàn - Чжань</li>
+<li>web page - 网页 - wǎng yè - вань е</li>
+<li>web browser - 网页浏览器 - Wǎngyè liúlǎn qì - web<sub>page</sub> browse device
+<ul class="org-ul">
+<li>浏览 - browse</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orge537552" class="outline-4">
+<h4 id="orge537552"><span class="section-number-4">19.2.1</span> site</h4>
+<div class="outline-text-4" id="text-19-2-1">
+<p>
+Shǒuyè - 首页 - home
+Liànjiē - 链接 - lin - лиан дзе
+</p>
+</div>
+</div>
+<div id="outline-container-org61711dc" class="outline-4">
+<h4 id="org61711dc"><span class="section-number-4">19.2.2</span> types of sites</h4>
+<div class="outline-text-4" id="text-19-2-2">
+<ul class="org-ul">
+<li>webpage —— 网页 —— wăng yè</li>
+<li>social network —— 社交网络 —— shè jiāo wăng luò</li>
+<li>internet shopping —— 网购（网上购物）—— wǎng gòu</li>
+<li>movies website - 电影网 - Diànyǐng wǎng</li>
+<li>search engine —— 搜索引擎 —— sōu suŏ yĭn qíng</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org15df60a" class="outline-3">
+<h3 id="org15df60a"><span class="section-number-3">19.3</span> Mobile Device Related</h3>
+<div class="outline-text-3" id="text-19-3">
+<p>
+text message —— 短信 —— duǎnxìn
+to send a text message —— 发短信— fā duǎnxìn
+signal —— 信号 —— xìn hào
+power —— 电源 —— diàn yuán
+wireless —— 无线 —— wú xiàn
+data —— 数据 —— shù jù
+wifi —— 无线局域网 —— wú xiàn jú yù wăng
+bluetooth —— 蓝牙 —— lán yá
+</p>
+</div>
+</div>
+<div id="outline-container-org87ae628" class="outline-3">
+<h3 id="org87ae628"><span class="section-number-3">19.4</span> persons</h3>
+<div class="outline-text-3" id="text-19-4">
+<ul class="org-ul">
+<li>hacker —— 黑客 —— hēi kè - dark guest(roof every(go entrance))</li>
+<li>user —— 用户 —— yòng hù - to<sub>use</sub> family/house</li>
+<li>administrator —— 管理员 —— guăn lĭ yuán - to<sub>care</sub> manage member</li>
+<li>moderator – 版主 – bǎn zhǔ - version master/owner</li>
+<li>programmer —— 程序设计师 —— chéng xù shè jì shī - program (procedure
+sequence/order) designer (set<sub>up</sub> plan division)</li>
+<li>computer programming - 计算机编程 - Jìsuànjī biānchéng - computer programming(write procedure)</li>
+<li>developer —— 开发人员 —— kāi fā rén yuán - develop/exploitation(open send) personel
+(person member)</li>
+<li>noob, script kiddie - 小白 - Xiǎo bái - little white/blank</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b8f432" class="outline-3">
+<h3 id="org6b8f432"><span class="section-number-3">19.5</span> UI</h3>
+<div class="outline-text-3" id="text-19-5">
+<ul class="org-ul">
+<li>install - 安装 - sefe dress - Ānz huāng - Ань Чжуан</li>
+<li>open - 打开 - Dǎkāi - beat(hand strong) open/start</li>
+<li>uninstall - 卸载 - Xièzài - unload(jar seal)  to<sub>carry</sub>(to cut, cart)</li>
+<li>menu - 菜单 Càidān - vegatables bill/list</li>
+<li>cut - 剪切 - Jiǎn qiè - scissors(forward knife) to<sub>cut</sub>(seven knife) - Цзянь Це</li>
+<li>copy - 复制 - Fùzhì - duplicate(slowly+6) system/make</li>
+<li>paste - 粘贴 - Zhāntiē - stick (rice observe) paste (sea<sub>shell</sub>/money observe)</li>
+<li>properties - 属性 - Shǔxìng - dependent(corpse dynasty<sub>founder</sub>) quality (heart life)</li>
+<li>ok - OK / 好的 - Hǎo de</li>
+<li>cancel - 取消 - Qǔxiāo - take eliminate</li>
+<li>back - 返回 - Fǎnhuí - return</li>
+<li>refresh - 刷新</li>
+<li>save - 保存 - Bǎocún - insurance keep</li>
+
+<li>online —— 上线 —— shàng xiàn</li>
+<li>offline —— 离线 —— lí xiàn</li>
+<li>comment —— 评论 —— píng lùn</li>
+<li>reply —— 回复 —— huí fù</li>
+<li>accept —— 接收 —— jiē shōu</li>
+<li>decline —— 拒绝 —— jù jué</li>
+<li>register —— 注册 —— zhù cè</li>
+<li>login /signin —— 登录 —— dēng lù</li>
+<li>download —— 下载 —— xià zăi</li>
+<li>upload —— 上传 —— shàng chuán</li>
+<li>click —— 点击 —— diăn jī</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9c09a0" class="outline-3">
+<h3 id="orge9c09a0"><span class="section-number-3">19.6</span> UI firefox</h3>
+<div class="outline-text-3" id="text-19-6">
+<ul class="org-ul">
+<li>file - 文件 - Wénjiàn - writing item
+<ul class="org-ul">
+<li>(create) new tab - 新建标签页 - Xīnjiàn biāoqiān yè - new establish sign/to<sub>mark</sub> sign/note
+page - Синь Цзянь Бяо Цянь E
+<ul class="org-ul">
+<li>new tab - 新标签页</li>
+</ul></li>
+<li>new container tab - 新建??标签页</li>
+<li>new private window - 新 建 隐私 窗口 - Xīnjiàn yǐnsī chuāngkǒu - new establish
+privacy window - Синь Цзянь Инь Сы Чуан Коу</li>
+<li>open file - 打开文件 - Dǎkāi Wénjiàn</li>
+<li>save page as - 另存 页面 为 - ìngcún yèmiàn wèi - save(other keep) page(page/leaf
+surface) as</li>
+<li>email link - ?邮件??链接</li>
+<li>print - 打印 - Dǎyìn - beat print/seal</li>
+<li>import from Another Browser -</li>
+<li>work offline - 脱机工作 - Tuō jī gōngzuò - take<sub>off</sub> machine work make</li>
+<li>quit - 退出 - Tuìchū - step<sub>back</sub> to<sub>go</sub><sub>out</sub> - Туй Чу</li>
+</ul></li>
+<li>edit - 编辑 - Biānjí - write(silk flat) gather<sub>up</sub>(cart to<sub>whisper</sub>)
+<ul class="org-ul">
+<li>Undo</li>
+<li>Redo</li>
+<li>Cut</li>
+<li>Copy</li>
+<li>Paste</li>
+<li>Delete</li>
+<li>Select All</li>
+<li>Find in Page</li>
+<li>Settings</li>
+</ul></li>
+<li>view - 查看 - Chákàn - investigate(tree evening/morning/day) to see(hand eye)</li>
+<li>history - 历史 - Lìshǐ - calendar/exp. history</li>
+<li>bookmarks - 书签 - Shūqiān - book note - Шу Цянь</li>
+<li>tools -工具 - Gōngjù - work equipment</li>
+<li>help - 帮助 - Bāngzhù
+<ul class="org-ul">
+<li>about - 关于 Firefox - Guānyú - Гуань Шу</li>
+</ul></li>
+</ul>
+
+<p>
+settings
+</p>
+<ul class="org-ul">
+<li>重启 Firefox 以应用这些更改 - Restart Firefox to apply these changes</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb7ff9f2" class="outline-3">
+<h3 id="orgb7ff9f2"><span class="section-number-3">19.7</span> UI web</h3>
+<div class="outline-text-3" id="text-19-7">
+<ul class="org-ul">
+<li>登录 - login</li>
+<li>注册 - signup</li>
+<li>完成注册 - завершить регистрацию
+<ul class="org-ul">
+<li>注册 - регистрация</li>
+</ul></li>
+<li>立即登录 - login now</li>
+<li>注册成功 or 已经注册成功！ - регистрация прошла успешно</li>
+<li>填写帐号密码 - Введите пароль учетной записи</li>
+<li>验证手机号码 - Проверка номера мобильного телефона</li>
+<li>完成注册 - Завершение регистрации</li>
+<li>安全 - security</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge7ef1d8" class="outline-3">
+<h3 id="orge7ef1d8"><span class="section-number-3">19.8</span> AI, data</h3>
+<div class="outline-text-3" id="text-19-8">
+<p>
+人工能智 - <b>Artificial intelligence</b>
+</p>
+<ul class="org-ul">
+<li>人 Rén - people, man, human being</li>
+<li>工 Gōng - work</li>
+<li>智 Zhì  - wisdom, knowledge (чи)</li>
+<li>能 Néng - can, able (нан)</li>
+</ul>
+
+<p>
+机器学习 - <b>Machine learning</b>
+</p>
+<ul class="org-ul">
+<li>机器 - machine
+<ul class="org-ul">
+<li>机 Jī - machine Цзи</li>
+<li>器 Qì - implement (тьси)</li>
+</ul></li>
+<li>学习 learning
+<ul class="org-ul">
+<li>学 Xué - learn, study (сюе)</li>
+<li>习 Xí - study, practice  (cи)</li>
+</ul></li>
+</ul>
+
+<p>
+大数据 - <b>Big Data</b>
+</p>
+<ul class="org-ul">
+<li>大 Dà - big</li>
+<li>数据 - data
+<ul class="org-ul">
+<li>数 Shù - number, count (шу)</li>
+<li>据 Jù - according to (чи)</li>
+</ul></li>
+</ul>
+
+<p>
+data science - 数据科学 - Shùjù kēxué
+</p>
+
+<p>
+昵称 - <b>Nickname</b>
+</p>
+<ul class="org-ul">
+<li>昵 Nì - familiar</li>
+<li>称 Chēng - (verb)say, call, state, name</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org86ef2dc" class="outline-3">
+<h3 id="org86ef2dc"><span class="section-number-3">19.9</span> other</h3>
+<div class="outline-text-3" id="text-19-9">
+<ul class="org-ul">
+<li>当前版本号：20-04-22-12-00 - текущий номер версии</li>
+<li>版本大小： 78.9GB - размер версии</li>
+<li>更新日期：2020/04/23 - дата обновления</li>
+
+<li>客户服务器架构 - client-server architecture
+<ul class="org-ul">
+<li>Kèhù - 客户 - client - кы ху (гость дверь)</li>
+<li>Fúwùqì - 服务器 - server - фу ву ти
+<ul class="org-ul">
+<li>Fú - 服 - форма, подчиняться</li>
+<li>Wù - 务  - business, affair, be sure
+<ul class="org-ul">
+<li>夂 zhǐ - go шагать вперед, продвигаться, следовать, бродить - чжи</li>
+<li>力 lì - power сила, движение - ли</li>
+</ul></li>
+<li>qì - 器 - device</li>
+</ul></li>
+<li>Jiàgòu - 架构 - architecture</li>
+</ul></li>
+</ul>
+
+<p>
+函数 内 的 代码 依次 运行。- функции внутри код запускается последовтельно
+</p>
+<ul class="org-ul">
+<li>函数 - Hánshù - function</li>
+<li>内的 - Nèi de - inside of</li>
+<li>代码 - Dàimǎ - code</li>
+<li>依次 - Yīcì - in turn</li>
+<li>运行 - Yùnxíng - run</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5850a7b" class="outline-2">
+<h2 id="org5850a7b"><span class="section-number-2">20</span> <a href="https://www.youtube.com/watch?v=-TE7ghlEdPw">https://www.youtube.com/watch?v=-TE7ghlEdPw</a></h2>
+<div class="outline-text-2" id="text-20">
+<p>
+<a href="https://www.youtube.com/watch?time_continue=188&amp;v=-TE7ghlEdPw">https://www.youtube.com/watch?time_continue=188&amp;v=-TE7ghlEdPw</a>
+</p>
+<ul class="org-ul">
+<li>孔子 Kǒngzǐ -конфуций</li>
+<li>太阳 Tàiyáng -солнце тайян</li>
+<li>月亮 Yuèliàng -луна юелян</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgab1e47a" class="outline-2">
+<h2 id="orgab1e47a"><span class="section-number-2">21</span> true false, bad good</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+true
+</p>
+<ul class="org-ul">
+<li>真的 - Zhēn de - real of - Чжэнь</li>
+<li>真实 - Zhēn Shí - real fact - Чжэнь</li>
+</ul>
+<p>
+false
+</p>
+<ul class="org-ul">
+<li>假 - Jiǎ - fake - Цзя
+<ul class="org-ul">
+<li>假的 - Jiǎ de - fake of</li>
+</ul></li>
+<li>伪 - Wěi - fake/to fake</li>
+<li>虚假/虚伪 - Xūjiǎ - пустота/virtual fake - Сюй Цзя/Wěi</li>
+</ul>
+
+<p>
+bad
+</p>
+<ul class="org-ul">
+<li>坏 - Huài - sucks - Сюй</li>
+<li>恶/惡 - È - evil, to hate - Э</li>
+<li>歹 - Dǎi - wicked - Дай</li>
+<li>邪 - Xié - evil - Се</li>
+<li>烂 - Làn - rotten - Лань</li>
+</ul>
+
+<p>
+good
+</p>
+<ul class="org-ul">
+<li>好 - Hǎo</li>
+<li>优良 - Yōu liáng - excellent - Ю Лян</li>
+<li>善 - Shàn - kind</li>
+<li>佳 - Jiā - beautiful</li>
+<li>良 - Liáng - beautiful, very</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org99af3b6" class="outline-2">
+<h2 id="org99af3b6"><span class="section-number-2">22</span> grammer</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+(время)Подлежащее(время) +(наречия) Сказуемое + (определение) Дополнение (
+</p>
+</div>
+<div id="outline-container-orgd29862e" class="outline-3">
+<h3 id="orgd29862e"><span class="section-number-3">22.1</span> 的 (de)</h3>
+<div class="outline-text-3" id="text-22-1">
+<ul class="org-ul">
+<li><a href="https://studychinese.ru/grammar/14/">https://studychinese.ru/grammar/14/</a></li>
+<li>принадлежность: 我的词典 – wǒ de cídiǎn - мой словарь</li>
+<li>всегда ставится после прилагательного с наречием степени: 很好的朋友 hěn hǎo de
+péngyǒu очень хороший друг</li>
+<li>после определения, выраженного двухсложным прилагательным:
+<ul class="org-ul">
+<li>这个年轻的姑娘很漂亮</li>
+<li>zhè ge niánqīng de gūniáng hěn piàoliang</li>
+<li>Эта молодая девушка очень красивая (слово 年轻 – молодой, двусложное)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbfd5a64" class="outline-2">
+<h2 id="orgbfd5a64"><span class="section-number-2">23</span> наречия</h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>где-то 在 zài - at</li>
+<li>откуда-то 从 cóng - from / through</li>
+<li>кого-то</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d99e42" class="outline-2">
+<h2 id="org8d99e42"><span class="section-number-2">24</span> предлоги</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li><a href="https://mylanguages.org/ru/chinese_prepositions.php">https://mylanguages.org/ru/chinese_prepositions.php</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org67c060c" class="outline-2">
+<h2 id="org67c060c"><span class="section-number-2">25</span> Прилагательные</h2>
+<div class="outline-text-2" id="text-25">
+<ul class="org-ul">
+<li><a href="https://mylanguages.org/ru/chinese_adjectives.php">https://mylanguages.org/ru/chinese_adjectives.php</a></li>
+</ul>
+
+<p>
+Всегда: прил + существительное
+</p>
+<ul class="org-ul">
+<li>старый красный дом	lǎo hóng  [fáng zi]  - 老红房子</li>
+<li>a green tree Yī kē lǜsè de shù 一棵绿色的树</li>
+</ul>
+
+<p>
+Colour 颜色 Yán sè:
+</p>
+<ul class="org-ul">
+<li>черный	hēi sè  - 黑色</li>
+<li>синий	lán sè  - 蓝色</li>
+<li>зеленый	lǜ sè  - 绿色</li>
+<li>красный	hóng sè  - 红色</li>
+<li>белый	bái sè  - 白色</li>
+<li>желтый	huáng sè  - 黄色</li>
+</ul>
+
+<p>
+size 尺寸 Chǐ cùn:
+</p>
+<ul class="org-ul">
+<li>большой	dà  - 大</li>
+<li>глубокий	shēn  - 深</li>
+<li>длинный	cháng;zhǎng  - 长</li>
+<li>узкий	zhǎi  - 窄</li>
+<li>короткий	duǎn;duān  - 短</li>
+<li>небольшой	xiǎo  - 小</li>
+<li>высокий	gāo  - 高</li>
+<li>толстый	hòu  - 厚</li>
+<li>тонкий	bò;báo;bó  - 薄</li>
+<li>широкий	kuān  - 宽</li>
+</ul>
+
+<p>
+Качества:
+</p>
+<ul class="org-ul">
+<li>坏 huài плохой</li>
+<li>好 Hǎo хороший</li>
+<li>干净 gān jìng - чистый</li>
+<li>古 Gǔ - древний</li>
+<li>新 Xīn - новый</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f88260" class="outline-2">
+<h2 id="org8f88260"><span class="section-number-2">26</span> приставки</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li>Bù 不 - не</li>
+<li>Yīgè 一个 - an</li>
+<li>安 - часть слов в значении an - 安全 safety, 安装 installation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb435442" class="outline-2">
+<h2 id="orgb435442"><span class="section-number-2">27</span> эллементы</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+流水 - Liú shuǐ - текущая вода
+</p>
+
+<ul class="org-ul">
+<li>木 mù  Wood</li>
+<li>火 huǒ Fire</li>
+<li>土 tǔ Earth</li>
+<li>金 jīn Metal</li>
+<li>水 - shuǐ - вода</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc9faec6" class="outline-2">
+<h2 id="orgc9faec6"><span class="section-number-2">28</span> geography</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+Běijīng shì - 北京 市 - Peking city "Northern Capital"
+за хе - 上海 - Shanghai (on sea)
+</p>
+
+<p>
+Mainland China - 中国大陆 - Zhōnggúo Dàlù - Continental China
+</p>
+<ul class="org-ul">
+<li>Xiānggǎng - 香港 - Hong Kong [hœ́ːŋ.kɔ̌ːŋ]</li>
+<li>Àomén - 澳門 - Macau (<i>məˈkaʊ</i>)  [ōu.mǔːn]</li>
+<li>Zhōnghuá mínguó - 中華民國 - Taiwan</li>
+</ul>
+
+<p>
+中国人 - китаец Chinaman
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23102d9" class="outline-2">
+<h2 id="org23102d9"><span class="section-number-2">29</span> кулютура</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+人 (жэнь, человек) — 大 (да, большой) — 天 (тянь, небо).
+</p>
+</div>
+<div id="outline-container-org98e6856" class="outline-3">
+<h3 id="org98e6856"><span class="section-number-3">29.1</span> Цигун 气功 qìgōng (тигон)</h3>
+<div class="outline-text-3" id="text-29-1">
+<ul class="org-ul">
+<li>qi - primarily means air, gas or breath; often 'vital energy'</li>
+<li>gōng - cultivation or work</li>
+</ul>
+
+<p>
+coordinate
+</p>
+<ul class="org-ul">
+<li>body (調身)</li>
+<li>breath (調息)</li>
+<li>mind (調心)</li>
+</ul>
+</div>
+<div id="outline-container-org3780e44" class="outline-4">
+<h4 id="org3780e44"><span class="section-number-4">29.1.1</span> theory</h4>
+<div class="outline-text-4" id="text-29-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org1b732d9"></a>Traditional Chinese medicine 中医 Zhōngyī Чжунъи<br />
+<div class="outline-text-5" id="text-29-1-1-1">
+<ul class="org-ul">
+<li>focuses on tracing and correcting underlying disharmony, in terms of</li>
+</ul>
+<p>
+deficiency and excess, using the complementary and opposing forces of
+yin and yang (陰陽), to create a balanced flow of qi.
+</p>
+<ul class="org-ul">
+<li>Health is believed to be returned by rebuilding qi, eliminating qi blockages, and correcting qi imbalances.</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgec58345"></a>Concepts<br /></li>
+<li><a id="orgb8dbc73"></a>Yin-Yang yīnyáng 	阴暗的杨<br />
+<div class="outline-text-6" id="text-29-1-1-1-2">
+<p>
+"dark-light"
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">yin</td>
+<td class="org-left">yang</td>
+</tr>
+
+<tr>
+<td class="org-left">moon</td>
+<td class="org-left">sun</td>
+</tr>
+
+<tr>
+<td class="org-left">water</td>
+<td class="org-left">fire</td>
+</tr>
+
+<tr>
+<td class="org-left">inside</td>
+<td class="org-left">outside</td>
+</tr>
+
+<tr>
+<td class="org-left">downward</td>
+<td class="org-left">upward</td>
+</tr>
+
+<tr>
+<td class="org-left">female</td>
+<td class="org-left">male</td>
+</tr>
+
+<tr>
+<td class="org-left">damp/moist</td>
+<td class="org-left">dry</td>
+</tr>
+
+<tr>
+<td class="org-left">eath</td>
+<td class="org-left">sky</td>
+</tr>
+
+<tr>
+<td class="org-left">negativity</td>
+<td class="org-left">positivity</td>
+</tr>
+
+<tr>
+<td class="org-left">destructiveness</td>
+<td class="org-left">creativeness</td>
+</tr>
+
+<tr>
+<td class="org-left">soft</td>
+<td class="org-left">hard</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+/
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">yin</td>
+<td class="org-left">yang</td>
+</tr>
+
+<tr>
+<td class="org-left">lower part of the body</td>
+<td class="org-left">the upper part of the body and the back</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Five Phases Theory</li>
+<li>Essence-Qi-Spirit Theory</li>
+<li>Zang-Xiang Theory</li>
+<li>Meridians</li>
+<li>Qi-Blood Theory</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orga7447db"></a><span class="todo TODO">TODO</span> Daoism<br /></li>
+<li><a id="org21db077"></a><span class="todo TODO">TODO</span> Buddhism<br /></li>
+<li><a id="org9607c84"></a><span class="todo TODO">TODO</span> Confucianism<br /></li>
+</ol>
+</div>
+<div id="outline-container-org9b49ba8" class="outline-4">
+<h4 id="org9b49ba8"><span class="section-number-4">29.1.2</span> направления</h4>
+<div class="outline-text-4" id="text-29-1-2">
+<ul class="org-ul">
+<li>dynamic or active (dong gong)</li>
+<li>meditative or passive (jing gong)</li>
+</ul>
+
+
+<p>
+направление Чжун Юань — самое древнее из известных. Оно было открыто
+миру лишь в 70-е гг. XX в.
+</p>
+
+<p>
+Среди техник цигун особое место занимают две:
+</p>
+<ul class="org-ul">
+<li>«Восемь врат», или «Восемь отрезков парчи».</li>
+<li>«Перемещение пилюли Тайцзи в полдень и в полночь»- По сути, этот
+фундаментальный комплекс соответствует второй ступени, так как
+предназначен для накопления энергии и ее трансформации в Шэнь (дух)</li>
+</ul>
+
+<p>
+Дыхательно-двигательный цигун:
+</p>
+<ul class="org-ul">
+<li>«Ицзиньцзин»</li>
+<li>«Бадуаньцзинь» - с обязательной концентрацией внимания</li>
+</ul>
+
+<p>
+Медитативный цигун:
+</p>
+<ul class="org-ul">
+<li>«Чжан-чжуань» — статические упражнения</li>
+<li>«Даосская алхимия» — базируется на понятиях естественность и
+непреднамеренности.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde94ca7" class="outline-4">
+<h4 id="orgde94ca7"><span class="section-number-4">29.1.3</span> <span class="todo TODO">TODO</span> Ушу (武术) Wǔshù, уи (武艺), гошу (国术), кунфу/гунфу (功夫) gōngfu</h4>
+</div>
+</div>
+<div id="outline-container-org189a697" class="outline-3">
+<h3 id="org189a697"><span class="section-number-3">29.2</span> people</h3>
+<div class="outline-text-3" id="text-29-2">
+<p>
+习近平 - Си Цзиньпин
+</p>
+</div>
+</div>
+<div id="outline-container-orge6c23b2" class="outline-3">
+<h3 id="orge6c23b2"><span class="section-number-3">29.3</span> <span class="todo TODO">TODO</span> Лаошань Láo Shān 崂山, 牢山, 勞山</h3>
+</div>
+<div id="outline-container-orgfe0948c" class="outline-3">
+<h3 id="orgfe0948c"><span class="section-number-3">29.4</span> Made in China</h3>
+<div class="outline-text-3" id="text-29-4">
+<p>
+中国制造 - Made in China
+</p>
+<ul class="org-ul">
+<li>中国 China</li>
+<li>制造 Manufacture</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ceff95" class="outline-3">
+<h3 id="org6ceff95"><span class="section-number-3">29.5</span> history of China</h3>
+<div class="outline-text-3" id="text-29-5">
+<p>
+中国朝代 -
+</p>
+<ul class="org-ul">
+<li>朝代 - Cháodài - dynasty</li>
+<li>ANCIENT
+<ul class="org-ul">
+<li>Neolithic c. 8500 – c. 2070 BC</li>
+<li>Xia c. 2070 – c. 1600 BC</li>
+<li>Shang c. 1600 – c. 1046 BC</li>
+<li>Zhou c. 1046 – 256 BC</li>
+</ul></li>
+<li>IMPERIAL
+<ul class="org-ul">
+<li>Qin 秦 221–207 BC</li>
+<li>Han 漢 dynasty 202 BC – 220 AD
+<ul class="org-ul">
+<li>Western Han</li>
+<li>Xin 新 dynasty  from 9 to 23 AD</li>
+<li>Eastern Han</li>
+</ul></li>
+<li>Three Kingdoms 220–280 - 三國時代
+<ul class="org-ul">
+<li>Wei, Shu and Wu</li>
+</ul></li>
+<li>Jin 晉 266–420
+<ul class="org-ul">
+<li>Western Jin</li>
+<li>Eastern Jin</li>
+<li>Sixteen Kingdoms</li>
+</ul></li>
+<li>Northern and Southern dynasties 420–589</li>
+<li>Sui 581–618</li>
+<li>Tang 618–907</li>
+<li>Five Dynasties and Ten Kingdoms 907–979</li>
+<li>Liao 916–1125</li>
+<li>Song 960–1279</li>
+<li>Yuan 1271–1368</li>
+<li>Ming 大明 1368–1644</li>
+<li>Qing 大清 1636–1912</li>
+</ul></li>
+<li>MODERN
+<ul class="org-ul">
+<li>Republic of China on the mainland 1912–1949</li>
+<li>People's Republic of China 1949–present</li>
+<li>Republic of China in Taiwan 1949–present</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4ff0e6e" class="outline-3">
+<h3 id="org4ff0e6e"><span class="section-number-3">29.6</span> BC AD</h3>
+<div class="outline-text-3" id="text-29-6">
+<p>
+“before Christ” and A.D. stands for
+  “after death.” (Anno Domini" meaning "in the year of our Lord (Jesus
+  Christ).  B.C.E and C.E., meaning “before common era” and “common
+  era,”
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23f482e" class="outline-3">
+<h3 id="org23f482e"><span class="section-number-3">29.7</span> палочки куайцзы 筷子 kuàiz</h3>
+<div class="outline-text-3" id="text-29-7">
+<ul class="org-ul">
+<li>одноразовые деревянные - вэйшэн куайцзы (кит. трад. 衛生筷子, упр. 卫生筷子, пиньинь</li>
+</ul>
+<p>
+wèishēng kuàizi)
+</p>
+<ul class="org-ul">
+<li>только брать сверху и ложить в рот</li>
+<li>При взятии еды палочками ладони всегда должны быть направлены вниз</li>
+<li>По отношению к старшим считается знаком уважения передать им еду первым, ещё до
+начала трапезы (что соответствует конфуцианской традиции уважения старших).</li>
+<li>Закончив еду, палочки следует положить поперёк миски, концами влево — это знак
+того, что трапеза завершена и добавки не требуется.</li>
+</ul>
+
+<p>
+Нельзя
+</p>
+<ul class="org-ul">
+<li>поворачивать ладонь вверх</li>
+<li>копаться палочками в миске в поисках лучшего куска — нужно брать еду сверху.</li>
+<li>Нельзя трясти палочки, чтобы остудить кусок.</li>
+<li>Некрасиво облизывать палочки</li>
+<li>Нельзя указывать палочками, не следует размахивать ими в воздухе.</li>
+<li>Прежде чем попросить ещё риса, палочки нужно положить на стол.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9509df4" class="outline-2">
+<h2 id="org9509df4"><span class="section-number-2">30</span> links</h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li>Chinese Software Developer Network <a href="http://csdn.net/">http://csdn.net/</a></li>
+<li>chinese github <a href="https://gitee.com/">https://gitee.com/</a></li>
+</ul>
+</div>
+<div id="outline-container-orgfae9640" class="outline-3">
+<h3 id="orgfae9640"><span class="section-number-3">30.1</span> TV and movies</h3>
+<div class="outline-text-3" id="text-30-1">
+<p>
+本文的中文翻译 - Běnwén de zhōngwén fānyì - Этот текст в китайском переводе
+</p>
+<ul class="org-ul">
+<li>翻译 - Fānyì - translation</li>
+<li>翻译自 - Fānyì zì - Translated from</li>
+</ul>
+</div>
+<div id="outline-container-orgbe0a8f1" class="outline-4">
+<h4 id="orgbe0a8f1"><span class="section-number-4">30.1.1</span> 163.com</h4>
+<div class="outline-text-4" id="text-30-1-1">
+<p>
+registration
+<a href="https://zc.reg.163.com/regInitialized?onlyNetease=1">https://zc.reg.163.com/regInitialized?onlyNetease=1</a>
+masha231@163.com
+00mortal
+</p>
+</div>
+</div>
+<div id="outline-container-orgb5c014a" class="outline-4">
+<h4 id="orgb5c014a"><span class="section-number-4">30.1.2</span> movies 电影 Diànyǐng</h4>
+<div class="outline-text-4" id="text-30-1-2">
+<ul class="org-ul">
+<li>Diànyǐng - 电影 -  movie (electic shadow)</li>
+<li>Diànyǐng wǎng - 电影网 - movies website</li>
+<li>高清 - HD</li>
+<li>标清 - SD</li>
+<li>Zìmù 字幕 - subtitles</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org02b7502" class="outline-2">
+<h2 id="org02b7502"><span class="section-number-2">31</span> Chinese Buddy</h2>
+<div class="outline-text-2" id="text-31">
+<ul class="org-ul">
+<li>你会不会 说中文? Nǐ huì bù huì Shuō zhōngwén? Ты умеешь говорить по китайски?</li>
+<li>你会不会? Ты знаешь как?</li>
+<li>Answer (答 Dá):  不会 or 会会!</li>
+</ul>
+</div>
+<div id="outline-container-org2d268d3" class="outline-3">
+<h3 id="org2d268d3"><span class="section-number-3">31.1</span> Bào qià</h3>
+<div class="outline-text-3" id="text-31-1">
+<ul class="org-ul">
+<li>对不起 Duì bù qǐ - Извини!
+<ul class="org-ul">
+<li>Duì для с к</li>
+<li>bù</li>
+<li>qǐ начало</li>
+</ul></li>
+<li>没问题 Méi wèn tí - No problem!
+<ul class="org-ul">
+<li>Méi не</li>
+<li>wèn спрашивать</li>
+<li>tí вопрос</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9b793f3" class="outline-3">
+<h3 id="org9b793f3"><span class="section-number-3">31.2</span> School Subjects</h3>
+<div class="outline-text-3" id="text-31-2">
+<ul class="org-ul">
+<li>科学 Kēxué ке сьуе - science - 科 branch, 学 learn</li>
+<li>数学 Shùxué - math  - 数 number</li>
+<li>美术 Měishù - art - 美 beautiful, 术 - art, technique</li>
+<li></li>
+</ul>
+
+<p>
+学习 Xuéxí шуэ си - to learn
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9672dde" class="outline-2">
+<h2 id="org9672dde"><span class="section-number-2">32</span> музыка Yīnyuè 音乐 и культура</h2>
+<div class="outline-text-2" id="text-32">
+<ul class="org-ul">
+<li>七絃琴 Цисяньци́нь или gǔqín 古琴 гуцинь
+<ul class="org-ul">
+<li>ци «семь»</li>
+<li>сянь «струны»</li>
+<li>цинь «~струнный инструмент~»</li>
+</ul></li>
+<li>摇滚音乐 - Yáogǔn yīnyuè - rock music</li>
+</ul>
+</div>
+<div id="outline-container-orga060c31" class="outline-3">
+<h3 id="orga060c31"><span class="section-number-3">32.1</span> wushu Ушу</h3>
+<div class="outline-text-3" id="text-32-1">
+<p>
+武术 - Wǔshù - (военный, боевой) (техника)
+氣功, упр. 气功 - qìgōng - цигун
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga9b0eb8" class="outline-2">
+<h2 id="orga9b0eb8"><span class="section-number-2">33</span> games</h2>
+<div class="outline-text-2" id="text-33">
+<ul class="org-ul">
+<li>电子游戏 - video game
+<ul class="org-ul">
+<li>电子 - electoronic</li>
+<li>游戏 - Yóuxì- game - йоу си
+<ul class="org-ul">
+<li>戏 - xì - play -</li>
+</ul></li>
+</ul></li>
+<li>电脑游戏 - PC game
+<ul class="org-ul">
+<li>电脑 - computer (Diànnǎo)</li>
+</ul></li>
+<li>开始 - Kāishǐ - start (game)</li>
+<li>玩家 - Wánjiā - player</li>
+<li>角色 - Juésè - character</li>
+
+<li>生 - Shēng - liveness</li>
+<li>活命 - Huómìng - live amount</li>
+<li>创建 - Chuàngjiàn - create</li>
+<li>设置 - Shèzhì - settings</li>
+<li>请插入名字 - Qǐng chārù-  please insert your name
+<ul class="org-ul">
+<li>插入 - chārù - insert</li>
+<li>名字 - Míngzì - your name</li>
+</ul></li>
+
+<li>15 米 - Mǐ - 15 метров</li>
+<li>10 秒 - Miǎo - 10 seconds</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9455537" class="outline-2">
+<h2 id="org9455537"><span class="section-number-2">34</span> bad words</h2>
+<div class="outline-text-2" id="text-34">
+<ul class="org-ul">
+<li>老外 - lǎo wài - foreigner</li>
+<li>哥们儿 – gē men er - dude</li>
+<li>白酒 – bái jiǔ - white wine(40-60%)</li>
+<li>干 – gān bēi - “Bottoms up!”, “cheers” literally means “dry glass"</li>
+<li>xiao bi zaizi - little bastard</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-16 Wed 19:26</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

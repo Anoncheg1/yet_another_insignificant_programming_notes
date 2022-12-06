@@ -1,0 +1,568 @@
+;-*- mode: Org; fill-column: 100;-*-
+https://github.com/Anoncheg1/x-set-keys.git
+- > git clone ssh://git@github.com/<user>/<repository name>.git
+- > git clone ssh://git@github.com/Anoncheg1/x-set-keys.git
+* revisions
+*man gitrevisions*
+- <rev> - revision - commit or blobs ("files") or trees ("directories of files") whis is conteined in commit.
+  - <sha1> - extended SHA-1 syntax
+- <describeOutput> Output from git describe; i.e. a closest tag, optionally followed by a dash and a number of commits,
+- <refname>, e.g. master, heads/master, refs/heads/master
+- [<refname>]@{<date>}
+- <refname>@{<n>}, e.g. master@{1}
+  - n-th prior value of that ref.
+- @{<n>}, e.g. @{1}
+- <rev>^[<n>], e.g. HEAD^, v1.5.1^0 - n-th parent
+  - A suffix ^ to a revision parameter means the first parent up to tree of that commit object. <rev>^ is equivalent to <rev>^1
+  - A^<n> - mean <n> parent where a commit has *more than one parent*
+  - A^0 = A
+- <rev>~[<n>], e.g. HEAD~, master~3
+  - A~2 - seond parent up to branch = A^^
+- r1 .. r2 - revision range
+  - r1..r3 = r2 r3 = r3 ^r1
+  - r1^..r3 = r1 r2 r3
+- r1 ... r2 - all parents of both
+* Definitions
+http://www.vogella.com/tutorials/Git/article.html
+https://www.tutorialspoint.com/git/git_basic_concepts.htm
+
+*Version Control System* (VCS) [ˈvɜːʃən] is a software that helps software developers to work together and
+maintain a complete history of their work.
+
+Git - distributed version control system.
+
+Repository - software storage local or remote. contains the history and branches.
+- Bare repository - git init --bare For sharing in collaborating. repository without working
+  tree. Not allow tocreate new versions. (commit i guess)
+- Local Repository - .git folder at local machine
+
+Working tree - folder for the repository (tracked and untracked).
+*staging area* (Index) - *git add* list of files with sha1 of content - tracked files.
+*Stagging or cached* - changes that will be included in next commit. (after git add)
+
+Checkout - Updates files(remove changes) in the working tree to match the version in the index or the specified branch.
+
+Commit
+1)commit the staged changes into Git repository
+2)commit object - uniquely identifies(SHA-1 hash) a revision(state) of the repository(content). Has pointer to parent commit.
+
+If commit has miltiple parent commits - was created by merging.
+- First parent commit is the branch you were on when you merged A^, A^2 - second parent
+
+
+Version graph formed by all commits in the repository
+
+HEAD - symbolic reference. If you switch branches, the HEAD pointer points to
+the branch pointer which in turn points to a commit. If you checkout a specific
+commit, the HEAD points to this commit directly.
+
+.gitignore the root directory of your project, the ignore settings will be applied to all sub-directories automatically.
+
+Detached HEAD mode - If you checkout a commit or a tag
+
+ref - symbolic references (symrefs)
+
+Upstream branch - branch tracked on remote repository by your local remote "tracking" branches.
+- Local remote "tracking" branches - local branches that has remote associatied in .git/config
+- remote tracking branches - branches on remote version of local repository
+- "remotes" - remote repository, configured in git remote. ex. origin
+** Pull
+from remote repository instance to local one.
+** Push
+from local to remote
+** Branch
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
+Branch - are local for the repository. A branch is a named pointer to a commit.
+
+Remote-tracking branches - there are remote branches. Looks like origin/master. not stored localy. but may be checkout.
+
+local branches - looks like master. they are stored in local repository.
+
+To have an upstream branch(tracking branches) - --track This configuration will
+tell git to show the relationship between the two branches in git status and git
+branch -v. If you clone a Git repository, your local master branch is created as
+a tracking branch for the master branch of the origin repository
+(short:_origin/master_) by Git. Always local.
+
+upstream branch - the branch which tracking branch tracks. Always Remote-tracking branches.
+
+Default branch - named _master
+
+** TAG
+Tag - points to a commit.
+
+Lightweight tag - without properties,  annotated tag - with additional info
+
+Release tags - common applying of tag.
+
+** .git/config, remote
+Fetchurl, Pushurl - the location of the repository
+
+Remote - remote repository pointer with properties e.g. URL, branches to fetch or branches to push.
+
+Origin - default name for remote. after clone
+
+** Submodule
+Git-submodule - via a .gitmodules file located at the root of the parent
+repository.  They’re too intrusive, requiring submodules to be initialised and
+updated. And switching between branches, which is where Git really shines,
+suddenly becomes painful because submodules don’t do what you expect.
+
+git merge
+git rebase - like merge but add current branch commits at the top of rebase branch
+
+git fetch - move local Remote-tracking branche to what at remote repository. it may add commits not existing in another local branches.
+
+By default you can only push to bare repositories.
+
+release tags are labeled based on the [major].[minor].[patch] naming scheme, for example "1.0.0". Several projects also use the "v" prefix.
+the minor version is incremented if new, backwards compatible functionality is introduced to the public API and the major version is incremented if any backwards incompatible changes are introduced to the public API.
+
+To get submodules for project:
+- git checkout --recurse-submodules
+- git submodule update --depth 1 --init --checkout --recursive
+
+** cherry-pick
+act of picking a commit from a branch and applying it to another.
+
+most of this can be made with git merge
+* commands
+- git init/clone
+
+- git stash - save working directory state and allow list saves
+- git rm [file] - remove files from the index and maybe(--cached) working tree
+- git mv - move file, directory symlink, index updated, but changes must be commited
+- git add - update the Index = add files and update check-sum.
+- git clean - Remove untracked files from the working tree
+
+- git log
+- git reflog - local actions history - git reset HEAD@{index}
+- git show
+- git diff
+  - git diff HEAD - between Staging Area and HEAD commit (git diff "s" HEAD - "s"=a, HEAD=b)
+  - git diff --staged/cached HEAD - between Stagging and HEAD
+- git branch
+- git switch - switch branches
+- git checkout -switch
+- git commit
+  - --amend - replace last commit of current branch
+- git merge - combines branches
+  - git merge --abort
+
+- git revert - revert one commit and record new one
+- git reset - sets HEAD to comment (and reset index and/or working tree)
+  - --mixed - reset index but not working tree
+  - --soft - do not touch index and working tree
+  - --hard - index and working, changes are lost
+  - --merge - reset index and update files in working if they different in past commit
+  - --keep - reset index and update files in working if they dont have local changes
+- git reset file - reset file to HEAD
+
+- git remote - manage remote repositories
+- git fetch - harmless download changes
+- git pull - download changes and change working tree
+
+* remote branches, upstream braches and symrefs
+- git remote - show "remotes" whose branches you track
+- git branch -r - remote tracking branches (branches on remote version of local repository)
+  - * - currently viewing
+  - origin/HEAD -> origin/master - default branch and current commit of origin. may be changed with: git remote set-head origin <remote> <branch>
+  - origin/master - remote branch
+- cat .git/config
+  - remote = origin - remote associated with branch (upstream configuration)
+  - merge = refs/heads/master - branch and HEAD on remote
+** kinds of symrefs
+git symbolic-ref
+- .git/HEAD, pointing at somewhere under refs/heads/ hierarchy;
+- .git/refs/remotes/{some remote name}/HEAD, pointing at somewhere under refs/remotes/{the same remote name}/ hierarchy.
+
+* Author identity unknown
+.git/config [user] section:
+- git config user.email ""
+- git config user.name "(none)"
+
+~/.gitconfig
+git config --global --list
+git config --list    - repository config
+* User/Password locally for repository (save password in repository)
+- git config credential.helper store
+- after next push credentials will be saved
+* log
+git log
+- --oneline -
+- --graph
+- --decorate[=short|full|auto|no] lenght of ref name - default short
+
+
+git log HEAD~4..HEAD
+git log HEAD~4     - the same
+git log testing..master   - list all commints in master but not in testing
+git log master...testing   - commits reached by master or testing but not both
+# seeing the git log for the HEAD reference
+git log HEAD --
+git log -1 -- HEAD   - one last commit for HEAD file
+git log HEAD^  - one parent commit for HEAD
+* TODO merge
+merge branch
+- git checkout master
+- git merge development
+
+if CONFLICT
+1) undo
+   - git merge --abort
+   - git merge --continue
+2) resolve
+   - open conflicted file to see
+   - remove <<<<<, ==== amd >>> lines to resolve conflict
+   - git add ./path/file ( if new)
+   - git commt -m "Merge development fixed conflict"
+* ingore files
+- .gitignore - will be added to repository
+- .git/info/exclude - without adding .gitignore to repo
+- ~/.gitignore_global - global for all repositories
+* pages
+repo -> Settings ->pages
+
+Preview:
+- https://htmlpreview.github.io/?https://github.com/Anoncheg1/awesome-chinese/blob/main/index.html
+
+HTML:
+- touch .nojekyll
+- /_site/index.html
+  - Settings -> pages https://anoncheg1.github.io/awesome-chinese/
+
+* decentralized share
+/etc/conf.d/git-daemon
+- GIT_USER="t"
+- GIT_GROUP="t"
+- GITDAEMON_OPTS="--syslog --export-all --enable=receive-pack --base-path=/home/t/share"
+  - If desired to accept git push and allow access all direct, it needs two options
+    --enable=receive-pack and --export-all in GITDAEMON_OPTS
+
+or use sshfs to directly access folder
+* branch metodology (rus)
+- Central Workflow - one master branch
+- Forking Workflow - 1) original or main branch 2) fork branch owned by another contributor which going to suggest merges to main
+- Developer Branch Workflow - one main and every developer has one or more own branches. finally forks will be merged to main.
+- Github Flow - (good for agile teams)
+  - main branch - code works and ready to deploy at any time
+  - all brancches (features) - checked by leader of the team + one more specialist then merged to main
+- Feature Branch Workflow -
+  - main - stable
+  - dev -
+  - features branches - created from dev. finally merged to dev
+- Git Flow - big projects
+  - main branch or production - stable
+  - develop - may be not stable
+  - release1-9 branches - stabilization work take place here and merged to develop and master
+  - hotfix1-9 branches - for fast solving of critical problem of production branch. merged to develop and master.
+- Issue Branch Workflow - like a "Feature Branch Workflow" but with for issues
+** link
+https://view.genial.ly/633ae76d9e26ed001866821c/interactive-content-dst-30-bonus-mdnandgitunit8
+
+* commit metodology
+consist of
+- action
+- subject
+- comments
+
+vocabulary:
+- init — инициализация;
+- add — добавление;
+- delete — удаление;
+- update — изменение;
+- fix — исправление;
+- refactor — рефакторинг кода приложения;
+- style — исправление опечаток, форматирования;
+- docs — всё, что касается документации;
+- test — всё, что связано с тестированием;
+- merged, fix conflict — слияние, решение конфликта.
+* EXAPLES
+** branch
+# switch
+git checkout origin/another_branch
+
+# merge - to master
+git checkout master
+git merge hotfix
+
+** misstake
+# remove all except untracked files
+git reset --hard
+
+# rework the changes of the last commit ONLY before commit was pushed
+git commit --amend -m "asd"
+
+# remove last commits from remote repository
+git reset --hard a43e2d13
+git push origin development --force
+
+# undo last commits
+** tags
+# create tag for HEAD
+git tag 1.6.1 -m 'Release 1.6.1'
+# push a tag or branch called tagname
+git push origin [tagname]
+# to explicitly push a tag and not a branch
+git push origin tag <tagname>
+# push all tags
+git push --tags
+
+# delete tag locally
+git tag -d 1.7.0
+# delete tag in remote repository
+git push origin :refs/tags/1.7.0
+
+# show the tag
+git show 1.6.1
+git chechout <tag_name>
+** all
+ref~ is shorthand for ref~1 and means the commit's first parent
+ref^1 ref^2 - two parents for merge commit
+
+# Show list of changed files
+git diff-tree --name-only -r <commit_id>
+git diff HEAD^ HEAD
+
+# only show line 1 and 2 in git blame. -w parameter to ignore white spaces
+git blame -w -L 1,2 [filename]
+
+# gives a summary of the changes by author
+git shortlog
+git shortlog -s    - only users
+
+git pull = git fetch + git merge
+git pull --rebase = git fetch + git rebase - clear changes
+
+git checkout  - reset file to latest commit or stagged state
+
+git status - Displays paths that have any differences
+
+
+git config --global --list
+git config --list    - repository config
+
+
+
+git clone git://github.com/vogella/gitbook.git			git - default protocol 9148 port
+git clone http://github.com/vogella/gitbook.git			clone via HTTP
+git clone ssh://git@github.com/vogella/gitbook.git      git - name for ssh
+URL for remote: git@github.com/vogella/gitbook.git
+
+# show the details of the remote repo called origin
+git remote show origin      - get a full list of Remote references are references (pointers) in your remote repositories, including branches, tags, and so on.
+git ls-remote origin   - like above
+git remote -v
+
+			###  BRANCHES  ###
+git branch    - local branches
+git branch -a      - lists all branches including the remote branches
+git branch -r      - lists branches in the remote repositories
+git branch -v		- info of tracking branches
+git branch <name> <hash>    - <hash> is optional to which the branch pointer original points
+git checkout [[-b|-B|--orphan] <new_branch>] [<start_point>]
+git checkout -b develop      - new branch and start at the start poing
+--orphan		- no parents, totally disconnected. no commits before first
+git branch -d testing     - delete local branch
+git push [remote] --delete [branch]        - delete branch in a remote repository
+# tracking branches
+git checkout -b newbranch origin/newbranch - setup a tracking branch called newbrach which tracks origin/newbranch
+git branch [new_branch] origin/master
+git remote show origin     - show all remote and tracking branches for origin
+git checkout --track origin/serverfix   - create local serverfix branch tracking remote one if remote exist.
+git checkout serverfix   - the same
+git branch -vv        - to see local tracking branches.
+
+
+
+
+
+     ###  Stagging area  ###
+git add [path] -add to staging area
+git reset [path] -remove staging area
+git diff --cached         -shows the differences between the staging area and the last commit
+git add -n .              - on’t actually add the file(s), just show if they exist and/or will be ignored.
+
+#clean
+git reset --hard     - clean stagging area but do not touch untracked files
+git clean -fdx    - remove untracked files -f force -d directories -x hidden files
+
+#reset to origin
+git fetch origin
+git reset --hard origin/master
+git checkout master
+
+
+git reset HEAD~1  - move HEAD and branch pointer - do nothing with untracked files
+Reset			Branch pointer		Working tree		Staging area
+soft			Yes					No					No
+mixed (default)	Yes					No					Yes
+hard			Yes					Yes					Yes
+
+
+git reflog - show HEAD movements and found reseted commits
+
+git show HEAD:./pom.xml   -show file
+
+
+Create patch:
+# change some content in an existing file
+echo "new content for test01" >test01
+# commit this to the branch
+git add .
+git commit -m "first commit in the branch"
+# creates a patch --> git format-patch master
+# this creates the file:
+# patch 0001-First-commit-in-the-branch.patch
+git format-patch origin/master              or git format-patch -3 HEAD - for last 3 commits
+Apply patch:
+# switch to the master branch
+git checkout master
+# apply the patch
+git apply 0001-First-commit-in-the-branch.patch
+# change can be committed
+git add .
+git commit -m "apply patch"
+# delete the patch file
+rm 0001-First-commit-in-the-branch.patch
+#short
+git am *.patch   -order in which the patches are applied by specifying them on the command line.
+
+
+#remove last commit
+git reset --hard HEAD~
+git commit --amend
+git push -f origin master
+
+
+#fix detached HEAD
+git checkout master
+
+
+#Subtree  https://help.github.com/articles/about-git-subtree-merges/
+git remote add -f test-subtree git@github.com:Anoncheg1/test-subtree.git
+#--no-commit perform the merge but pretend the merge failed and  do not autocommit
+# If you prefer you can squash all the commits into a single one by using the –squash switch when issuing the split command above.
+git merge -s ours --squash --no-commit --allow-unrelated-histories test-subtree/master
+	git read-tree --prefix=test-subtree/ -u test-subtree/master
+
+#pull changed subtree in parent
+git pull --allow-unrelated-histories --squash -s subtree test-subtree master
+
+#push subtree from parent
+???
+
+
+# Submodule http://www.vogella.com/tutorials/GitSubmodules/article.html
+# https://blogs.atlassian.com/2013/03/git-submodules-workflows-tips/
+# 1) always publish the submodule change before publishing the change to the superproject that references it.
+# 2) remember to commit all your changes before running git submodule update
+git submodule add [URL to Git repo]
+git submodule init
+git submodule update --remote   -remote if you need branches. updates the working tree to the commit described by the branch
+cd [submodule directory]
+git checkout master
+git pull
+# and commit parrent.
+
+# Cloning
+git clone --recursive
+
+#push submodule from parent
+#cd submodule
+git status        - check that we on master
+git checkout master      - if detached HEAD mode
+commit submodule
+cd parent
+commit parent
+git submodule update
+
+#commit main
+git submodule update
+git commit
+
+* USE CASE
+** see changes
+- git diff myfile.txt			#  haven't git added yet
+- git diff --cached myfile.txt	#  already added
+
+** branches
+remove commits to another branch
+- git checkout -b new
+- git checkout old
+- git reset --hard commit
+- git push origin --force
+
+remove commits from remote branch
+-
+
+merge range of commits
+- cherry-pick
+  - git checkout old_or_master
+  - git checkout -b new_branch
+  - git cherry-pick a..e # from development
+** explore unknown repo
+- git branch -a  (all or -r remote)
+- git log --graph --oneline
+- git remote -v
+- git branch -r -a
+** pull forced
+git reset --hard
+git pull
+
+** delete all hisotry / remove all commits
+git checkout --orphan latest_branch
+git add -A
+git commit -am "commit message"
+git branch -D master
+git branch -m master      -rename current branch to master
+git push -f origin master
+git branch -u origin/master master   - to track remote
+
+# apply changes on clints:
+git --work-tree="." pull --allow-unrelated-histories
+git merge
+git rebase
+** delete commits affter
+- git reset --hard commit
+- git push origin HEAD --force ??????
+- git push origin +HEAD:development
+
+** check if working tree has local changes
+one of:
+- git status -s
+- git diff --name-only
+
+git diff HEAD
+
+git status -u - display untacked files
+** seach
+*in files*
+git grep WHAT
+- -n add line number
+- --count print only sum occurances
+- --heading --break  - more readable
+
+*in content of commits*
+git log -S WHAT --oneline
+
+** merge changes in big priject - instruction
+1. Create a new dev branch
+2. Do your work on local dev branch
+3. Push dev branch from your local to central git repository
+4. Once your work is done, merge dev branch to master
+5. Finally, delete the dev branch from both local and central git repository
+
+s
+1. git checkout -b my_branch
+2. git commit -m " "
+3. git push --set-upstream origin my_branch
+4. git checkout development
+5. git merge my_branch
+6. git branch -d dev
+7. git branch -d -r origin/dev
+8. git push
+
+** restore file to HEAD
+   git reset file

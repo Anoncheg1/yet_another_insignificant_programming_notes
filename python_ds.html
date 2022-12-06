@@ -1,0 +1,2052 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-22 Tue 12:25 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6d3bcee">1. NumPy</a>
+<ul>
+<li><a href="#org80789a2">1.1. basic</a></li>
+<li><a href="#org3ee488a">1.2. round округление</a></li>
+<li><a href="#org4c47025">1.3. image to batch</a></li>
+<li><a href="#orgaff2d81">1.4. keras.utils.to<sub>categorical</sub></a>
+<ul>
+<li><a href="#org9bbd0ee">1.4.1. basic</a></li>
+<li><a href="#orga268d7f">1.4.2. add sum category</a></li>
+</ul>
+</li>
+<li><a href="#orgb8f3292">1.5. save and saves</a></li>
+</ul>
+</li>
+<li><a href="#orgcfd723d">2. pandas</a>
+<ul>
+<li><a href="#org3ce6804">2.1. read csv</a></li>
+<li><a href="#orge1fe165">2.2. sort</a></li>
+<li><a href="#orgeaa83a3">2.3. row number by group - добавить сложную номерацию по группам</a></li>
+<li><a href="#orgc6df60e">2.4. <b>analysis</b></a></li>
+<li><a href="#org4217375">2.5. Series</a></li>
+<li><a href="#org6a49148">2.6. DataFrame</a></li>
+<li><a href="#orgec7976f">2.7. index and levels</a></li>
+<li><a href="#org62aeef1">2.8. DISTICT groupby</a></li>
+<li><a href="#orgc9ee581">2.9. WHERE AND FILTERS</a>
+<ul>
+<li><a href="#orgfb60eac">2.9.1. filter by date</a></li>
+</ul>
+</li>
+<li><a href="#org04ff418">2.10. COUNT</a>
+<ul>
+<li><a href="#org754962d">2.10.1. get unique rows with count</a></li>
+<li><a href="#orgd89a94f">2.10.2. count example</a></li>
+<li><a href="#orgbbca3c9">2.10.3. most frequent</a></li>
+</ul>
+</li>
+<li><a href="#org1cafb5e">2.11. Merge, join, and concatenate</a></li>
+<li><a href="#org2a581a7">2.12. Map, Apply, Applymap</a>
+<ul>
+<li><a href="#org73a5f87">2.12.1. Comparing map, applymap and apply: Context Matters</a></li>
+<li><a href="#org3c36a6e">2.12.2. apply to column</a></li>
+<li><a href="#org8548795">2.12.3. return multiple rows</a></li>
+<li><a href="#orgc12a31d">2.12.4. example</a></li>
+</ul>
+</li>
+<li><a href="#org4b74671">2.13. save and load</a>
+<ul>
+<li><a href="#orgb594fc5">2.13.1. read<sub>csv</sub></a></li>
+<li><a href="#org860c0b3">2.13.2. json</a></li>
+</ul>
+</li>
+<li><a href="#org60de405">2.14. NaN</a>
+<ul>
+<li><a href="#org7c66b74">2.14.1. check</a></li>
+<li><a href="#orga3b4e12">2.14.2. replace</a></li>
+<li><a href="#orga73592f">2.14.3. drop</a></li>
+<li><a href="#org3425748">2.14.4. get not na</a></li>
+<li><a href="#orgac46d30">2.14.5. other</a></li>
+</ul>
+</li>
+<li><a href="#org414b7e9">2.15. Categorical encoding</a>
+<ul>
+<li><a href="#org730c279">2.15.1. replace values</a></li>
+<li><a href="#orgd689883">2.15.2. label encoding</a></li>
+<li><a href="#orgd66a2a5">2.15.3. encode binary</a></li>
+<li><a href="#orgad93436">2.15.4. onehot encode</a></li>
+</ul>
+</li>
+<li><a href="#orgb5503d2">2.16. mem usage</a></li>
+<li><a href="#orgedda488">2.17. Resample for timeseries</a></li>
+<li><a href="#org261c9ec">2.18. rename column</a></li>
+<li><a href="#orgc800b08">2.19. delete column</a></li>
+<li><a href="#org0b288b2">2.20. delete row</a></li>
+<li><a href="#org72268af">2.21. type</a>
+<ul>
+<li><a href="#org713c1bb">2.21.1. types https://numpy.org/doc/stable/reference/arrays.scalars.html</a></li>
+<li><a href="#orgce62a73">2.21.2. Display types</a></li>
+<li><a href="#orgd53b7bd">2.21.3. float to int</a></li>
+<li><a href="#orge571e72">2.21.4. string to date</a></li>
+<li><a href="#orgf8e299a">2.21.5. Category type</a></li>
+</ul>
+</li>
+<li><a href="#org268c95d">2.22. if a&gt;5 c = True else False</a></li>
+<li><a href="#org7885ab9">2.23. pivot tables</a></li>
+<li><a href="#org0135d98">2.24. OTHER USE CASES</a>
+<ul>
+<li><a href="#orgf742797">2.24.1. dictionary for panda</a></li>
+<li><a href="#org1689399">2.24.2. Example from dictionary to onehot</a></li>
+<li><a href="#orgcc4af02">2.24.3. remove meanless columns</a></li>
+<li><a href="#org0600942">2.24.4. Sum two columns containing NaN values</a></li>
+<li><a href="#orgf8672c9">2.24.5. reorder columns</a></li>
+<li><a href="#org216ea42">2.24.6. <span class="todo TODO">TODO</span> remove duplicates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org96b1e06">3. matplotlib</a>
+<ul>
+<li><a href="#org8e01594">3.1. x axis labels range</a></li>
+<li><a href="#org947ac8d">3.2. Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.</a>
+<ul>
+<li><a href="#org8878765">3.2.1. TkAgg</a></li>
+<li><a href="#orgc4f7c3c">3.2.2. GTK3Agg</a></li>
+</ul>
+</li>
+<li><a href="#orgf617287">3.3. usage</a></li>
+<li><a href="#org5cdb882">3.4. do not close</a></li>
+<li><a href="#orgd634fcd">3.5. Multiple Curves</a></li>
+<li><a href="#org549c2b3">3.6. separate legend</a></li>
+<li><a href="#orga2f990c">3.7. custom histogram</a></li>
+<li><a href="#org209b70c">3.8. rotate x ticks</a></li>
+<li><a href="#org0a8337e">3.9. CASES</a>
+<ul>
+<li><a href="#orgd7ca594">3.9.1. <span class="todo TODO">TODO</span> bar plot with two y axes</a></li>
+<li><a href="#orge1e1989">3.9.2. varible in time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org65c3c6f">4. SciPy</a></li>
+<li><a href="#orgd33160d">5. Scikit-learn</a>
+<ul>
+<li><a href="#orgd6d8fa8">5.1. sklearn.tree.DecisionTreeClassifier</a>
+<ul>
+<li><a href="#org2ab19c8">5.1.1. usage</a></li>
+</ul>
+</li>
+<li><a href="#org9b2b4fb">5.2. Tuning the hyper-parameters https://scikit-learn.org/stable/modules/grid_search.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- mode: Org; fill-column: 110; coding: utf-8; -</b>-
+#+TITLE  Python for data science
+</p>
+<div id="outline-container-org6d3bcee" class="outline-2">
+<h2 id="org6d3bcee"><span class="section-number-2">1</span> NumPy</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="https://docs.scipy.org/doc/numpy/reference/">https://docs.scipy.org/doc/numpy/reference/</a></li>
+<li><a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html</a></li>
+</ul>
+
+<p>
+[ˈnʌmpaɪ] large, multi-dimensional arrays and matrices.  BSD-new license.  multi-dimensional container of
+generic data
+</p>
+<ul class="org-ul">
+<li>a powerful N-dimensional array object</li>
+<li>sophisticated (broadcasting) functions</li>
+<li>useful linear algebra, Fourier transform, and random number capabilities</li>
+</ul>
+
+<p>
+<b>ndarray</b> - n-dimensional array
+</p>
+<ul class="org-ul">
+<li>homogeneously typed: all elements of a single array must be of the same type</li>
+<li>np.pad(&#x2026;) routine to extend arrays actually creates new arrays of the desired shape and padding values,
+copies the given array into the new one and returns it</li>
+</ul>
+
+<p>
+Type hint
+</p>
+<pre class="example">
+def f(x: np.ndarray) -&gt; np.ndarray
+
+</pre>
+
+<p>
+properties:
+</p>
+<ul class="org-ul">
+<li>ndarray.shape</li>
+<li>ndarray.size - произведение чисел в shape</li>
+<li>ndarray.dtype - bool_, character, int8, int16, int32, int64, float8, float16, float32, float64, complex64, object_</li>
+<li>ndarray.itemsize - размер элемента в байтах</li>
+<li>ndarray.data - обратно в python - не рекомендуется пользоваться</li>
+</ul>
+
+<p>
+&#x2026; = : - Ellipse ones[:,5] - пятый слобец
+</p>
+</div>
+<div id="outline-container-org80789a2" class="outline-3">
+<h3 id="org80789a2"><span class="section-number-3">1.1</span> basic</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #cae682;">a</span> = np.array([1, 2, 3])
+a[[1,2]] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">array([2, 3])</span>
+
+<span style="color: #cae682;">x</span> = np.arange(12).reshape((2,2,3))
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">array([[[ 0,  1,  2],</span>
+<span style="color: #fa8072;">#        </span><span style="color: #99968b; font-style: italic;">[ 3,  4,  5]],</span>
+
+<span style="color: #fa8072;">#       </span><span style="color: #99968b; font-style: italic;">[[ 6,  7,  8],</span>
+<span style="color: #fa8072;">#        </span><span style="color: #99968b; font-style: italic;">[ 9, 10, 11]]])</span>
+x.<span style="color: #e5786d;">sum</span>(axis=0)
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">array([[ 6,  8, 10],</span>
+<span style="color: #fa8072;">#       </span><span style="color: #99968b; font-style: italic;">[12, 14, 16]])</span>
+x.<span style="color: #e5786d;">sum</span>(axis=1)
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">array([[ 3,  5,  7],</span>
+<span style="color: #fa8072;">#       </span><span style="color: #99968b; font-style: italic;">[15, 17, 19]])</span>
+x.<span style="color: #e5786d;">sum</span>(axis=2)
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">array([[ 3, 12],</span>
+<span style="color: #fa8072;">#       </span><span style="color: #99968b; font-style: italic;">[21, 30]])</span>
+<span style="color: #cae682;">x</span> = np.array([[1,2],[3,4]])
+x[:,0] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">array([1, 3])</span>
+
+np.zeros((3, 5), dtype=<span style="color: #e5786d;">float</span>) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">dtype - &#1087;&#1086; &#1091;&#1084;&#1086;&#1083;&#1095;&#1072;&#1085;&#1080;&#1102; float</span>
+np.ones((2, 2, 2))
+np.eye(5) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1077;&#1076;&#1080;&#1085;&#1080;&#1094;&#1099; &#1085;&#1072; &#1076;&#1080;&#1072;&#1075;&#1086;&#1085;&#1072;&#1083;&#1080;</span>
+np.empty((3, 3)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1089;&#1083;&#1091;&#1095;&#1072;&#1081;&#1085;&#1086;&#1077; &#1082;&#1072;&#1082;&#1072;&#1103; &#1073;&#1099;&#1083;&#1072; &#1087;&#1072;&#1084;&#1103;&#1090;&#1100; &#1090;&#1072;&#1082; &#1080; &#1079;&#1072;&#1087;&#1086;&#1083;&#1085;&#1080;&#1083;&#1072;&#1089;&#1100;</span>
+np.arange(10, 30, 5) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">range</span>
+np.linspace(0, 2, 9) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1086;&#1090; 0 &#1076;&#1086; 2 - &#1089;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100; 9 &#1096;&#1090;&#1091;&#1082;</span>
+np.logspace(start, stop, num=50, endpoint=<span style="color: #e5786d; font-weight: bold;">True</span>, base=10.0) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">base**start - base ** stop &#1089; &#1091;&#1089;&#1082;&#1086;&#1088;&#1077;&#1085;&#1080;&#1077;&#1084;</span>
+
+np.amax(nparray) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">max element</span>
+np.amin(nparray) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">min element</span>
+np.nanmin(data[:, 1]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">max element at column 1</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">self</span>.img[:] = 255 <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">replace every element with single value</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter None elements:</span>
+<span style="color: #8ac6f2; font-weight: bold;">self</span>.contours = np.array(<span style="color: #e5786d;">list</span>(<span style="color: #e5786d;">filter</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x:x <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #8ac6f2; font-weight: bold;">not</span> <span style="color: #e5786d; font-weight: bold;">None</span>, <span style="color: #8ac6f2; font-weight: bold;">self</span>.contours)))
+
+<span style="color: #fa8072;">#</span>
+<span style="color: #cae682;">a</span> = np.linspace(-np.pi, np.pi, 100)
+<span style="color: #cae682;">b</span> = np.sin(a)
+<span style="color: #cae682;">c</span> = np.cos(a)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Linear algebra</span>
+<span style="color: #8ac6f2; font-weight: bold;">from</span> numpy.random <span style="color: #8ac6f2; font-weight: bold;">import</span> rand
+<span style="color: #8ac6f2; font-weight: bold;">from</span> numpy.linalg <span style="color: #8ac6f2; font-weight: bold;">import</span> solve, inv
+<span style="color: #cae682;">a</span> = np.array([[1, 2, 3], [3, 4, 6.7], [5, 9.0, 5]])
+a.transpose()
+array([[ 1. ,  3. ,  5. ],
+       [ 2. ,  4. ,  9. ],
+       [ 3. ,  6.7,  5. ]])
+inv(a)
+array([[-2.27683616,  0.96045198,  0.07909605],
+       [ 1.04519774, -0.56497175,  0.1299435 ],
+       [ 0.39548023,  0.05649718, -0.11299435]])
+<span style="color: #cae682;">b</span> =  np.array([3, 2, 1])
+solve(a, b)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">solve the equation ax = b</span>
+array([-4.83050847,  2.13559322,  1.18644068])
+
+<span style="color: #cae682;">c</span> = rand(3, 3) * 20  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">create a 3x3 random matrix of values within [0,1] scaled by 20</span>
+array([[  3.98732789,   2.47702609,   4.71167924],
+       [  9.24410671,   5.5240412 ,  10.6468792 ],
+       [ 10.38136661,   8.44968437,  15.17639591]])
+np.dot(a, c)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">matrix multiplication</span>
+a @ c <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Starting with Python 3.5 and NumPy 1.10</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">per column operations</span>
+<span style="color: #cae682;">data</span>[:, 1] = (data[:, 1] - data_min)
+<span style="color: #cae682;">data</span>[:,1] +=1
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Add dimension</span>
+<span style="color: #cae682;">x</span> = np.expand_dims(x, axis=0)
+<span style="color: #cae682;">x</span> = x[np.newaxis, :]
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ee488a" class="outline-3">
+<h3 id="org3ee488a"><span class="section-number-3">1.2</span> round округление</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">a</span> = np.array([1.1, 1.5, 1.9], <span style="color: #e5786d;">float</span>)
+&gt;&gt;&gt; np.floor(a)
+array([ 1.,  1.,  1.])
+&gt;&gt;&gt; np.ceil(a)
+array([ 2.,  2.,  2.])
+&gt;&gt;&gt; np.rint(a)
+array([ 1.,  2.,  2.])
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4c47025" class="outline-3">
+<h3 id="org4c47025"><span class="section-number-3">1.3</span> image to batch</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+<pre class="src src-python">    <span style="color: #cae682;">im</span> = cv.imread(<span style="color: #95e454;">'./train/passport_ranee/_0_353.png'</span>)
+    <span style="color: #cae682;">im</span> = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
+    <span style="color: #cae682;">im</span> = im.reshape(im.shape + (1,))  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">channels</span>
+    <span style="color: #cae682;">im</span> = im.reshape((1,) + im.shape)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">batches</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaff2d81" class="outline-3">
+<h3 id="orgaff2d81"><span class="section-number-3">1.4</span> keras.utils.to<sub>categorical</sub></h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org9bbd0ee" class="outline-4">
+<h4 id="org9bbd0ee"><span class="section-number-4">1.4.1</span> basic</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">y_classes</span> = keras.utils.to_categorical(<span style="color: #e5786d;">range</span>(<span style="color: #e5786d;">len</span>(paths))) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">classes array in one-hot</span>
+train_y.append(y_classes[i]) <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">to set</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">back</span>
+<span style="color: #cae682;">out</span> = model.predict
+<span style="color: #cae682;">i</span> = np.argmax(out, axis=-1)[0] <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">id</span>
+paths[i] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">original</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga268d7f" class="outline-4">
+<h4 id="orga268d7f"><span class="section-number-4">1.4.2</span> add sum category</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; c
+array([[1., 0.],
+       [0., 1.]], dtype=float32)
+np.append(c, [c[0]+c[1]], axis=0)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">result:</span>
+array([[1., 0.],
+       [0., 1.],
+       [1., 1.]], dtype=float32)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb8f3292" class="outline-3">
+<h3 id="orgb8f3292"><span class="section-number-3">1.5</span> save and saves</h3>
+<div class="outline-text-3" id="text-1-5">
+<pre class="example">
+np.save('123', data) # 123.npy
+data = np.load('../123.npy', mmap_mode=None)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcfd723d" class="outline-2">
+<h2 id="orgcfd723d"><span class="section-number-2">2</span> pandas</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org3ce6804" class="outline-3">
+<h3 id="org3ce6804"><span class="section-number-3">2.1</span> read csv</h3>
+<div class="outline-text-3" id="text-2-1">
+<pre class="example">
+pd.read_csv(p, index_col=0, sep='\t')
+
+</pre>
+<ul class="org-ul">
+<li>sep='\t' иногда встречается разделение столбцов по \t. обычно запятой</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge1fe165" class="outline-3">
+<h3 id="orge1fe165"><span class="section-number-3">2.2</span> sort</h3>
+<div class="outline-text-3" id="text-2-2">
+<pre class="example">
+df.sort_values(by=df['Клиент'], axis=1) # 0 we gave columns, 1 we gave row indexes and sort columns
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgeaa83a3" class="outline-3">
+<h3 id="orgeaa83a3"><span class="section-number-3">2.3</span> row number by group - добавить сложную номерацию по группам</h3>
+<div class="outline-text-3" id="text-2-3">
+<pre class="example">
+df['Номер_контракта'] = df.groupby(['Клиент'])['Дата_заключения_контракта'].cumcount()+1
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc6df60e" class="outline-3">
+<h3 id="orgc6df60e"><span class="section-number-3">2.4</span> <b>analysis</b></h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> pandas <span style="color: #8ac6f2; font-weight: bold;">as</span> pd
+<span style="color: #cae682;">AH</span> = pd.read_csv(<span style="color: #95e454;">'a.csv'</span>, header=0, index_col = <span style="color: #e5786d; font-weight: bold;">False</span>)
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.head()) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">first 5 lines</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.shape)
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.dtypes.to_string()) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1090;&#1080;&#1087;&#1099; &#1074;&#1089;&#1077;&#1093;! &#1089;&#1090;&#1086;&#1083;&#1073;&#1094;&#1086;&#1074;</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.columns) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1074;&#1089;&#1077;&#1093;! &#1089;&#1090;&#1086;&#1083;&#1073;&#1094;&#1086;&#1074;</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.iloc[:]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1074;&#1089;&#1077;&#1093;! &#1089;&#1090;&#1086;&#1083;&#1073;&#1094;&#1086;&#1074;</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df[<span style="color: #95e454;">'birth_date'</span>]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">one column values</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.isnull().values.<span style="color: #e5786d;">any</span>()) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">any NaN?</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.describe(include=<span style="color: #95e454;">'all'</span>)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">pre column: unique, mean, std, min, &#1082;&#1074;&#1072;&#1085;&#1090;&#1080;&#1083;&#1100;</span>
+df.iloc[1, :].value_counts() <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">100    1  400    1  300    1  200    1</span>
+df.iloc[1, :].value_counts(normalize=<span style="color: #e5786d; font-weight: bold;">True</span>) <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">100    0.25  400    0.25  300    0.25 200    0.25</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Categories and Uniques</span>
+Categorial <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #8ac6f2; font-weight: bold;">not</span>. Unique Values
+<span style="color: #cae682;">categorial_columns</span> = [c <span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> data.columns <span style="color: #8ac6f2; font-weight: bold;">if</span> data[c].dtype.name == <span style="color: #95e454;">'object'</span>]
+<span style="color: #cae682;">categorial_columns</span> = df.select_dtypes(include=[<span style="color: #95e454;">"object"</span>]).columns <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">or</span>
+<span style="color: #cae682;">numerical_columns</span> = [c <span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> data.columns <span style="color: #8ac6f2; font-weight: bold;">if</span> data[c].dtype.name != <span style="color: #95e454;">'object'</span>]
+<span style="color: #cae682;">numerical_columns</span> = df.select_dtypes(exclude=[<span style="color: #95e454;">"object"</span>]).columns <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">or</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(data[categorial_columns].describe())
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">unique</span>
+: <span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> categorial_columns:
+:    <span style="color: #8ac6f2; font-weight: bold;">print</span>(c, data[c].unique())
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">histogram</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib
+matplotlib.use(<span style="color: #95e454;">'TkAgg'</span>)
+<span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+AH[<span style="color: #95e454;">'SalePrice'</span>].hist(bins = 60, normed=1) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">calls matplotlib.pyplot.hist</span>
+plt.show()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">plot &#1089;&#1090;&#1086;&#1083;&#1073;&#1077;&#1094;</span>
+
+sales.iloc[:,1].plot()
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4217375" class="outline-3">
+<h3 id="org4217375"><span class="section-number-3">2.5</span> Series</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+One-dimensional ndarray with axis labels
+</p>
+
+<p>
+combine along index
+</p>
+<ul class="org-ul">
+<li>pd.concat([s1,s2], axis=1)</li>
+</ul>
+
+<p>
+for dataframes merge:
+</p>
+<ul class="org-ul">
+<li>df1.reset<sub>index</sub>()</li>
+<li>df2.reset<sub>index</sub>()</li>
+<li>df1.merge(df2)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">mydict</span> = [{<span style="color: #95e454;">'a'</span>: 1, <span style="color: #95e454;">'b'</span>: 2, <span style="color: #95e454;">'c'</span>: 3, <span style="color: #95e454;">'d'</span>: 4},
+          {<span style="color: #95e454;">'a'</span>: 100, <span style="color: #95e454;">'b'</span>: 200, <span style="color: #95e454;">'c'</span>: 300, <span style="color: #95e454;">'d'</span>: 400},
+          {<span style="color: #95e454;">'a'</span>: 1000, <span style="color: #95e454;">'b'</span>: 2000, <span style="color: #95e454;">'c'</span>: 3000, <span style="color: #95e454;">'d'</span>: 4000 }]
+<span style="color: #cae682;">df</span> = pd.DataFrame(mydict)
+
+df.iloc[0] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">{'a': 1, 'b': 2, 'c': 3, 'd': 4}</span>
+<span style="color: #e5786d;">type</span>(df.iloc[0]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&lt;class 'pandas.core.series.Series'&gt;</span>
+df.iloc[[0,1,2]] == df == df.iloc[:3]
+df.iloc[0, 1] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">2</span>
+df.values <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">convert to numpy</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6a49148" class="outline-3">
+<h3 id="org6a49148"><span class="section-number-3">2.6</span> DataFrame</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Two-dimensional, size-mutable data. Container for Series objects
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">1) way</span>
+<span style="color: #cae682;">d</span> = {<span style="color: #95e454;">'col1'</span>: [1, 2], <span style="color: #95e454;">'col2'</span>: [3, 4]}
+<span style="color: #cae682;">s1</span> = pd.DataFrame(data=d)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">2) way</span>
+<span style="color: #cae682;">staff</span> = [(col, melb_df[col].nunique(),melb_df[col].dtypes)]
+<span style="color: #cae682;">unique_counts</span> = pd.DataFrame(
+    staff,
+    columns=[<span style="color: #95e454;">'Column_Name'</span>, <span style="color: #95e454;">'Num_Unique'</span>, <span style="color: #95e454;">'Type'</span>]
+).sort_values(by=<span style="color: #95e454;">'Num_Unique'</span>,  ignore_index=<span style="color: #e5786d; font-weight: bold;">True</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgec7976f" class="outline-3">
+<h3 id="orgec7976f"><span class="section-number-3">2.7</span> index and levels</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>default - created autoincrement int</li>
+<li>df.set<sub>index</sub>('c')</li>
+<li>df.reset<sub>index</sub>() - index to column, create new index</li>
+<li>df.index = Series - ad hoc index</li>
+<li>df.index.name - index column name</li>
+</ul>
+
+<p>
+index and columns may have multiple levels
+</p>
+<ul class="org-ul">
+<li>multilevel index reated by groupby</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>df.loc[index, (column|:)] - get values at index</li>
+<li>df.iloc[integer] - get values at position</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org62aeef1" class="outline-3">
+<h3 id="org62aeef1"><span class="section-number-3">2.8</span> DISTICT groupby</h3>
+<div class="outline-text-3" id="text-2-8">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">print</span>(df.groupby(<span style="color: #95e454;">'shop_id'</span>).item_id.value_counts())
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(df.groupby(<span style="color: #95e454;">'shop_id'</span>).item_id.nunique())
+
+<span style="color: #cae682;">dfg</span> = df[[<span style="color: #95e454;">'shop_id'</span>, <span style="color: #95e454;">'item_id'</span>] ].groupby(<span style="color: #95e454;">'shop_id'</span>)
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(dfg.agg([<span style="color: #95e454;">'mean'</span>, <span style="color: #95e454;">'count'</span>, <span style="color: #95e454;">'min'</span>]))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9ee581" class="outline-3">
+<h3 id="orgc9ee581"><span class="section-number-3">2.9</span> WHERE AND FILTERS</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing">https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing</a>
+methods
+</p>
+<div class="org-src-container">
+<pre class="src src-python">- loc - df.loc[(df[<span style="color: #95e454;">'Salary_in_1000'</span>]&gt;=100) &amp; (df[<span style="color: #95e454;">'Age'</span>]&lt; 60) &amp; (df[<span style="color: #95e454;">'FT_Team'</span>].<span style="color: #e5786d;">str</span>.startswith(<span style="color: #95e454;">'S'</span>)),[<span style="color: #95e454;">'Name'</span>,<span style="color: #95e454;">'FT_Team'</span>]]
+- df.index[(df[<span style="color: #95e454;">'Salary_in_1000'</span>]&gt;=100) &amp; (df[<span style="color: #95e454;">'Age'</span>]&lt; 60)]
+- numpy where
+  - <span style="color: #cae682;">idx</span> = np.where((df[<span style="color: #95e454;">'Salary_in_1000'</span>]&gt;=100) &amp; (df[<span style="color: #95e454;">'Age'</span>]&lt; 60) &amp; (df[<span style="color: #95e454;">'FT_Team'</span>].<span style="color: #e5786d;">str</span>.startswith(<span style="color: #95e454;">'S'</span>)))
+  - df.loc[idx]
+- Query - df.query(<span style="color: #95e454;">'Salary_in_1000 &gt;= 100 &amp; Age &lt; 60 &amp; FT_Team.str.startswith("S").values'</span>)
+- Boolean Indexing - df[(df[<span style="color: #95e454;">'Salary_in_1000'</span>]&gt;=100) &amp; (df[<span style="color: #95e454;">'Age'</span>]&lt;60) &amp; df[<span style="color: #95e454;">'FT_Team'</span>].<span style="color: #e5786d;">str</span>.startswith(<span style="color: #95e454;">'S'</span>)][[<span style="color: #95e454;">'Name'</span>,<span style="color: #95e454;">'Age'</span>,<span style="color: #95e454;">'Salary_in_1000'</span>]]
+- <span style="color: #e5786d;">eval</span> - df[df.<span style="color: #e5786d;">eval</span>(<span style="color: #95e454;">"Salary_in_1000&gt;=100 &amp; (Age &lt;60) &amp; FT_Team.str.startswith('S').values"</span>)]
+</pre>
+</div>
+
+<p>
+bool - | or, &amp; and, ~ not
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">DAT&#913;FRAME --------</span>
+df.shop_id.nunique()
+
+df[df&gt;100] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">nan, nan, 101</span>
+df[df.shop_id &gt; 20] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter works!</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">making boolean series for a team name</span>
+<span style="color: #cae682;">filter1</span> = data[<span style="color: #95e454;">"Team"</span>]==<span style="color: #95e454;">"Atlanta Hawks"</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">making boolean series for age</span>
+<span style="color: #cae682;">filter2</span> = data[<span style="color: #95e454;">"Age"</span>]&gt;24
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filtering data on basis of both filters</span>
+data.where(filter1 &amp; filter2, inplace = <span style="color: #e5786d; font-weight: bold;">True</span>)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">SERIES -------------</span>
+<span style="color: #cae682;">s</span> = pd.Series(<span style="color: #e5786d;">range</span>(5)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">0,1,2,3,4</span>
+s.where(s&gt;1,-1)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-1, -1, 2, 3, 4</span>
+s.mask(s&gt;1, -1)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">0, 1, -1, -1, -1</span>
+
+s[s&gt;2] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">3, 4</span>
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgfb60eac" class="outline-4">
+<h4 id="orgfb60eac"><span class="section-number-4">2.9.1</span> filter by date</h4>
+<div class="outline-text-4" id="text-2-9-1">
+<div class="org-src-container">
+<pre class="src src-python"> <span style="color: #cae682;">df</span> = df.dropna(subset=[<span style="color: #95e454;">'&#1044;&#1072;&#1090;&#1072;_&#1079;&#1072;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1080;&#1103;_&#1082;&#1086;&#1085;&#1090;&#1088;&#1072;&#1082;&#1090;&#1072;_d'</span>])
+ <span style="color: #cae682;">d0101</span> = pd.to_datetime(<span style="color: #95e454;">'20190101'</span>, <span style="color: #e5786d;">format</span>=<span style="color: #95e454;">'%Y%m%d'</span>, errors=<span style="color: #95e454;">'ignore'</span>)
+ <span style="color: #cae682;">d0731</span> = pd.to_datetime(<span style="color: #95e454;">'20190731'</span>, <span style="color: #e5786d;">format</span>=<span style="color: #95e454;">'%Y%m%d'</span>, errors=<span style="color: #95e454;">'ignore'</span>)
+ <span style="color: #cae682;">df</span> = df[d0101 &gt;= df[<span style="color: #95e454;">'&#1044;&#1072;&#1090;&#1072;_&#1079;&#1072;&#1082;&#1083;&#1102;&#1095;&#1077;&#1085;&#1080;&#1103;_&#1082;&#1086;&#1085;&#1090;&#1088;&#1072;&#1082;&#1090;&#1072;_d'</span>] &gt;= d0731]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org04ff418" class="outline-3">
+<h3 id="org04ff418"><span class="section-number-3">2.10</span> COUNT</h3>
+<div class="outline-text-3" id="text-2-10">
+</div>
+<div id="outline-container-org754962d" class="outline-4">
+<h4 id="org754962d"><span class="section-number-4">2.10.1</span> get unique rows with count</h4>
+<div class="outline-text-4" id="text-2-10-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">a</span> = pd.DataFrame(a.groupby([<span style="color: #95e454;">'&#1050;&#1086;&#1076;&#1099; &#1086;&#1090;&#1082;&#1072;&#1079;&#1072;'</span>, <span style="color: #95e454;">'&#1054;&#1087;&#1080;&#1089;&#1072;&#1085;&#1080;&#1077; &#1082;&#1086;&#1076;&#1086;&#1074; &#1086;&#1090;&#1082;&#1072;&#1079;&#1072;'</span>]).size().reset_index(name=<span style="color: #95e454;">"count"</span>))
+<span style="color: #cae682;">a</span> = pd.DataFrame(a)
+<span style="color: #cae682;">c_row</span> = a.pop(<span style="color: #95e454;">'count'</span>)
+a.insert(0, <span style="color: #95e454;">'count'</span>, c_row)
+a.sort_values(by=[<span style="color: #95e454;">'count'</span>], ascending=<span style="color: #e5786d; font-weight: bold;">False</span>).to_csv(<span style="color: #95e454;">'kod_otkaza.csv'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd89a94f" class="outline-4">
+<h4 id="orgd89a94f"><span class="section-number-4">2.10.2</span> count example</h4>
+<div class="outline-text-4" id="text-2-10-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Person   Age  Single</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">0    John  24.0   False</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">1    Myla   NaN    True</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">2   Lewis  21.0    True</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">3    John  33.0    True</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">4    Myla  26.0   False</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">create multiindex and count</span>
+df.set_index([<span style="color: #95e454;">"Person"</span>, <span style="color: #95e454;">"Single"</span>]).count(level=<span style="color: #95e454;">"Person"</span>)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">John      2</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Lewis     1</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Myla      1</span>
+
+df.set_index([<span style="color: #95e454;">"Person"</span>, <span style="color: #95e454;">"Single"</span>]).count(level=<span style="color: #95e454;">"Single"</span>)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">False     2</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">True      2</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbbca3c9" class="outline-4">
+<h4 id="orgbbca3c9"><span class="section-number-4">2.10.3</span> most frequent</h4>
+<div class="outline-text-4" id="text-2-10-3">
+<pre class="example">
+pd.Series([2,3,4,5,6].value_counts().idxmax()
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1cafb5e" class="outline-3">
+<h3 id="org1cafb5e"><span class="section-number-3">2.11</span> Merge, join, and concatenate</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html</a>
+</p>
+
+<p>
+Одну таблицу разделенную на две части:
+</p>
+<ul class="org-ul">
+<li>верх и низ: pd.concat([s1, s2], ignore<sub>index</sub>=True)</li>
+<li>лево и право ?</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>concatenate - по умолчанию добавляются строки, default axis=0, join='outer', ignore<sub>index</sub> = False
+<ul class="org-ul">
+<li>pd.concat([df1, df4], axis=1, sort=False)  - подбираются столбцы с одинаковым значением, добавляются NaN-s</li>
+<li>join='outer' -  NaN-s не добавляются</li>
+</ul></li>
+</ul>
+
+<p>
+SQL style
+</p>
+<ol class="org-ol">
+<li>merge - ignore index, uses specified column
+<ul class="org-ul">
+<li>pd.merge(playdata,genetic<sub>train</sub>, on="SK<sub>ID</sub><sub>CURR</sub>",how="left" ) - если есть дупликаты справа, то они все
+войдут даже справа</li>
+<li>"on" must be found in both DataFrames</li>
+<li>indicator=True - adds _merge field with ['left<sub>only</sub>', 'right<sub>only</sub>', 'both']</li>
+</ul></li>
+<li>join - uses index column
+<ul class="org-ul">
+<li>first you should set index to joined columns</li>
+<li>table1.join(table2, lsuffix='<sub>table1</sub>', rsuffix='<sub>table2</sub>',how="left")</li>
+</ul></li>
+</ol>
+
+
+<p>
+new column:
+</p>
+<pre class="example">
+df['asd'] = list
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org2a581a7" class="outline-3">
+<h3 id="org2a581a7"><span class="section-number-3">2.12</span> Map, Apply, Applymap</h3>
+<div class="outline-text-3" id="text-2-12">
+<ul class="org-ul">
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html</a></li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.applymap.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.applymap.html</a></li>
+</ul>
+</div>
+<div id="outline-container-org73a5f87" class="outline-4">
+<h4 id="org73a5f87"><span class="section-number-4">2.12.1</span> Comparing map, applymap and apply: Context Matters</h4>
+<div class="outline-text-4" id="text-2-12-1">
+<p>
+First major difference: DEFINITION
+</p>
+<ul class="org-ul">
+<li>map is defined on Series ONLY</li>
+<li>applymap is defined on DataFrames ONLY</li>
+<li>apply is defined on BOTH</li>
+</ul>
+
+<p>
+Second major difference: INPUT ARGUMENT
+</p>
+<ul class="org-ul">
+<li>map accepts dicts, Series, or callable</li>
+<li>applymap and apply accept callables only</li>
+</ul>
+
+<p>
+Third major difference: BEHAVIOR
+</p>
+<ul class="org-ul">
+<li>map is elementwise for Series</li>
+<li>applymap is elementwise for DataFrames</li>
+<li>apply also works elementwise but is suited to more complex operations and aggregation. The behaviour and return value depends on the function.</li>
+</ul>
+
+<p>
+Fourth major difference (the most important one): USE CASE
+</p>
+<pre class="example">
+map is meant for mapping values from one domain to another, so is optimised for performance (e.g., df['A'].map({1:'a', 2:'b', 3:'c'}))
+applymap is good for elementwise transformations across multiple rows/columns (e.g., df[['A', 'B', 'C']].applymap(str.strip))
+apply is for applying any function that cannot be vectorised (e.g., df['sentences'].apply(nltk.sent_tokenize))
+
+</pre>
+
+<p>
+Footnotes
+</p>
+<ul class="org-ul">
+<li><b>map</b> when passed a dictionary/Series will map elements based on the keys in that
+dictionary/Series. Missing values will be recorded as NaN in the output.</li>
+<li><b>applymap</b> in more recent versions has been optimised for some operations. You will find applymap
+slightly faster than apply in some cases. My suggestion is to test them both and use whatever
+works better.</li>
+<li><b>map</b> is optimised for elementwise mappings and transformation. Operations that involve
+dictionaries or Series will enable pandas to use faster code paths for better performance.</li>
+<li><b>Series.apply</b> returns a scalar for aggregating operations, Series otherwise. Similarly for
+DataFrame.apply. Note that apply also has fastpaths when called with certain NumPy functions such
+as mean, sum, etc.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c36a6e" class="outline-4">
+<h4 id="org3c36a6e"><span class="section-number-4">2.12.2</span> apply to column</h4>
+<div class="outline-text-4" id="text-2-12-2">
+<pre class="example">
+df['A'] = df['A'].apply(lambda x: str.strip(x) if pd.notna(x) else x)
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org8548795" class="outline-4">
+<h4 id="org8548795"><span class="section-number-4">2.12.3</span> return multiple rows</h4>
+<div class="outline-text-4" id="text-2-12-3">
+<ol class="org-ol">
+<li></li>
+</ol>
+<pre class="example">
+return pd.Series([1,2,3]) ; df['a'].apply(f).to_numpy()[:,1] - time 13 sec
+
+</pre>
+<ol class="org-ol">
+<li></li>
+</ol>
+<pre class="example">
+return [1,2,3] ; list(zip(*df['a'].apply(f).to_list()) - time 28.6 sec
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgc12a31d" class="outline-4">
+<h4 id="orgc12a31d"><span class="section-number-4">2.12.4</span> example</h4>
+<div class="outline-text-4" id="text-2-12-4">
+<div class="org-src-container">
+<pre class="src src-python">s.<span style="color: #e5786d;">map</span>(<span style="color: #95e454;">'I am a {}'</span>.<span style="color: #e5786d;">format</span>)
+s.<span style="color: #e5786d;">map</span>({<span style="color: #95e454;">' &lt;=50K.'</span>: 0, <span style="color: #95e454;">' &gt;50K.'</span>: 1})
+s.<span style="color: #e5786d;">map</span>({<span style="color: #95e454;">'fox'</span>: <span style="color: #95e454;">'cub'</span>, <span style="color: #95e454;">'cow'</span>: <span style="color: #95e454;">'calf'</span>})
+<span style="color: #cae682;">df</span>[<span style="color: #95e454;">'result'</span>] = df[<span style="color: #95e454;">'result'</span>].<span style="color: #e5786d;">map</span>({b<span style="color: #95e454;">'OK'</span>: 1, b<span style="color: #95e454;">'STOP'</span>: 0})
+<span style="color: #cae682;">df.iloc</span>[:, 0] = df.iloc[:, 0].<span style="color: #e5786d;">map</span>({b<span style="color: #95e454;">'OK'</span>: 1, b<span style="color: #95e454;">'STOP'</span>: 0})
+
+DataFrame.applymap(<span style="color: #8ac6f2; font-weight: bold;">self</span>, func) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">to whole dataFrame</span>
+
+DataFrame.<span style="color: #e5786d;">apply</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, func, axis=0, raw=<span style="color: #e5786d; font-weight: bold;">False</span>, result_type=<span style="color: #e5786d; font-weight: bold;">None</span>, args=(), **kwds)
+
+Series.<span style="color: #e5786d;">map</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, arg, na_action=<span style="color: #e5786d; font-weight: bold;">None</span>) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">argfunction, collections.abc.Mapping subclass or Series</span>
+
+df.iloc[:, 2].<span style="color: #e5786d;">map</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x*x) == df.iloc[:, 2].<span style="color: #e5786d;">apply</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x*x)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b74671" class="outline-3">
+<h3 id="org4b74671"><span class="section-number-3">2.13</span> save and load</h3>
+<div class="outline-text-3" id="text-2-13">
+<pre class="example">
+df.to_pickle('b')
+df: pandas.DataFrame = pandas.read_pickle('b')
+
+</pre>
+</div>
+<div id="outline-container-orgb594fc5" class="outline-4">
+<h4 id="orgb594fc5"><span class="section-number-4">2.13.1</span> read<sub>csv</sub></h4>
+<div class="outline-text-4" id="text-2-13-1">
+<div class="org-src-container">
+<pre class="src src-python"> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1048;&#1084;&#1077;&#1085;&#1072; &#1087;&#1077;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1099;&#1093;</span>
+ <span style="color: #cae682;">columns</span> = [<span style="color: #95e454;">'age'</span>, <span style="color: #95e454;">'workclass'</span>, <span style="color: #95e454;">'fnlwgt'</span>, <span style="color: #95e454;">'education'</span>, <span style="color: #95e454;">'education-num'</span>,
+            <span style="color: #95e454;">'marital-status'</span>, <span style="color: #95e454;">'occupation'</span>, <span style="color: #95e454;">'relationship'</span>, <span style="color: #95e454;">'race'</span>, <span style="color: #95e454;">'sex'</span>,
+            <span style="color: #95e454;">'capital-gain'</span>, <span style="color: #95e454;">'capital-loss'</span>, <span style="color: #95e454;">'hours-per-week'</span>, <span style="color: #95e454;">'native-country'</span>, <span style="color: #95e454;">'income'</span>]
+ <span style="color: #cae682;">df</span> = pd.read_csv(<span style="color: #95e454;">'adult.data'</span>, header=<span style="color: #e5786d; font-weight: bold;">None</span>, names=columns, na_values=<span style="color: #95e454;">' ?'</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org860c0b3" class="outline-4">
+<h4 id="org860c0b3"><span class="section-number-4">2.13.2</span> json</h4>
+<div class="outline-text-4" id="text-2-13-2">
+<pre class="example">
+pd.read_json('test_data.txt') - {"Клиент":"customer_3567","Дата_заключения_контракта":"2018-05-12","Дата_закрытия_контракта":"2018-06-13","Плановая_дата_закрытия_контракта":"2018-06-13","Сумма_выдачи_по_контракту":21891},{"Клиент":"customer_39200","Дата_заключения_контракта":"2019-03-29","Дата_закрытия_контракта":"2019-04-05","Плановая_дата_закрытия_контракта":"2019-04-05","Сумма_выдачи_по_контракту":11480},{"Клиент":"customer_26509","Дата_заключения_контракта":"2019-03-29","Дата_закрытия_контракта":"2019-04-30","Плановая_дата_закрытия_контракта":"2019-04-28","Сумма_выдачи_по_контракту":2640},{"Клиент":"customer_26623","Дата_заключения_контракта":"2019-03-06","Дата_закрытия_контракта":"2019-03-29","Плановая_дата_закрытия_контракта":"2019-04-06","Сумма_выдачи_по_контракту":25038},{"Клиент":"customer_14647","Дата_заключения_контракта":"2019-03-29","Дата_закрытия_контракта":"2019-04-15","Плановая_дата_закрытия_контракта":"2019-04-15","Сумма_выдачи_по_контракту":6369},{"Клиент":"customer_29658","Дата_заключения_контракта":"2019-12-05","Плановая_дата_закрытия_контракта":"2019-12-27","Сумма_выдачи_по_контракту":24172},{"Клиент":"customer_37798","Дата_заключения_контракта":"2019-11-18","Дата_закрытия_контракта":"2019-12-05","Плановая_дата_закрытия_контракта":"2019-12-18","Сумма_выдачи_по_контракту":9867},
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org60de405" class="outline-3">
+<h3 id="org60de405"><span class="section-number-3">2.14</span> NaN</h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+выбрать
+</p>
+<ul class="org-ul">
+<li>df.loc[df.index.isnull()]</li>
+</ul>
+</div>
+<div id="outline-container-org7c66b74" class="outline-4">
+<h4 id="org7c66b74"><span class="section-number-4">2.14.1</span> check</h4>
+<div class="outline-text-4" id="text-2-14-1">
+<ul class="org-ul">
+<li>df.isnull().values.any() # true or false</li>
+<li>df.isnull().sum() # кол-во по столбцам</li>
+<li>df.hasna - # true or false</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3b4e12" class="outline-4">
+<h4 id="orga3b4e12"><span class="section-number-4">2.14.2</span> replace</h4>
+<div class="outline-text-4" id="text-2-14-2">
+<ul class="org-ul">
+<li>df.dropna(subset=['column<sub>name</sub>'], inplace=True)</li>
+<li>df['col'].fillna(0, inplace=True)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga73592f" class="outline-4">
+<h4 id="orga73592f"><span class="section-number-4">2.14.3</span> drop</h4>
+<div class="outline-text-4" id="text-2-14-3">
+<pre class="example">
+df.dropna(subset=['col1', 'col2'],inplace=True) # remove rows if NaN in col1 or col2 column
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org3425748" class="outline-4">
+<h4 id="org3425748"><span class="section-number-4">2.14.4</span> get not na</h4>
+<div class="outline-text-4" id="text-2-14-4">
+<pre class="example">
+df = df[~df['col'].isna()]
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgac46d30" class="outline-4">
+<h4 id="orgac46d30"><span class="section-number-4">2.14.5</span> other</h4>
+<div class="outline-text-4" id="text-2-14-5">
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">MEAN</span>
+<span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.preprocessing <span style="color: #8ac6f2; font-weight: bold;">import</span> Imputer
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Define the values to replce and the strategy of choosing the replacement value</span>
+<span style="color: #cae682;">imp</span> = Imputer(missing_values=<span style="color: #95e454;">"NaN"</span>, strategy=<span style="color: #95e454;">"mean"</span>)
+<span style="color: #cae682;">cols</span> = [1, 13]
+<span style="color: #cae682;">df</span>[cols] = imp.fit_transform(applicants[cols])
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">REMOVE string -&gt; NaN</span>
+<span style="color: #cae682;">applicants</span>[cols] = applicants[cols].<span style="color: #e5786d;">apply</span>(pd.to_numeric, errors=<span style="color: #95e454;">'coerce'</span>)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org414b7e9" class="outline-3">
+<h3 id="org414b7e9"><span class="section-number-3">2.15</span> Categorical encoding</h3>
+<div class="outline-text-3" id="text-2-15">
+</div>
+<div id="outline-container-org730c279" class="outline-4">
+<h4 id="org730c279"><span class="section-number-4">2.15.1</span> replace values</h4>
+<div class="outline-text-4" id="text-2-15-1">
+<pre class="example">
+df['a'] = df['a'].map({b'OK': 1, b'STOP': 0})
+
+</pre>
+
+<p>
+replace date:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">repl_date</span>(df_in: DataFrame):
+    <span style="color: #cae682;">df</span> = df_in.copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">no side effect</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> i, x <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">enumerate</span>(df.iloc[0, :]):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(x, date):
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(i, type(x))</span>
+            <span style="color: #cae682;">cname</span> = df.columns[i]
+            <span style="color: #cae682;">df</span>[cname] = df[cname].<span style="color: #e5786d;">map</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x.year)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> df
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd689883" class="outline-4">
+<h4 id="orgd689883"><span class="section-number-4">2.15.2</span> label encoding</h4>
+<div class="outline-text-4" id="text-2-15-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> label_e_columns:
+    <span style="color: #cae682;">df</span>[c] = df[c].astype(<span style="color: #95e454;">'category'</span>).cat.codes
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get  velues before encoding</span>
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(<span style="color: #e5786d;">dict</span>(<span style="color: #e5786d;">enumerate</span>(df[c].astype(<span style="color: #95e454;">'category'</span>).cat.categories)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd66a2a5" class="outline-4">
+<h4 id="orgd66a2a5"><span class="section-number-4">2.15.3</span> encode binary</h4>
+<div class="outline-text-4" id="text-2-15-3">
+<pre class="example">
+df['income'] = df['income'].map({' &lt;=50K': 0, ' &gt;50K': 1})
+df['income'] = df['income'].notnull().astype(int)
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgad93436" class="outline-4">
+<h4 id="orgad93436"><span class="section-number-4">2.15.4</span> onehot encode</h4>
+<div class="outline-text-4" id="text-2-15-4">
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #cae682;">df</span> = pd.get_dummies(df, dummy_na=<span style="color: #e5786d; font-weight: bold;">False</span>)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">dummy_na=True for debug</span>
+
+<span style="color: #cae682;">s</span> = pd.Series(<span style="color: #e5786d;">list</span>(<span style="color: #95e454;">'abca'</span>))
+pd.get_dummies(s)
+   a  b  c
+0  1  0  0
+1  0  1  0
+2  0  0  1
+3  1  0  0
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5503d2" class="outline-3">
+<h3 id="orgb5503d2"><span class="section-number-3">2.16</span> mem usage</h3>
+<div class="outline-text-3" id="text-2-16">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">Great snippet from https://www.kaggle.com/gemartin/load-data-reduce-memory-usage</span>
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">reduce_mem_usage</span>(df):
+    <span style="color: #f08080; font-style: italic;">""" iterate through all the columns of a dataframe and modify the data type</span>
+<span style="color: #f08080; font-style: italic;">        to reduce memory usage.</span>
+<span style="color: #f08080; font-style: italic;">    """</span>
+    <span style="color: #cae682;">start_mem</span> = df.memory_usage().<span style="color: #e5786d;">sum</span>() / 1024**2
+    <span style="color: #8ac6f2; font-weight: bold;">print</span>(<span style="color: #95e454;">'Memory usage of dataframe is {:.2f} MB'</span>.<span style="color: #e5786d;">format</span>(start_mem))
+
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> col <span style="color: #8ac6f2; font-weight: bold;">in</span> df.columns:
+        <span style="color: #cae682;">col_type</span> = df[col].dtype
+
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> col_type != <span style="color: #e5786d;">object</span>:
+            <span style="color: #cae682;">c_min</span> = df[col].<span style="color: #e5786d;">min</span>()
+            <span style="color: #cae682;">c_max</span> = df[col].<span style="color: #e5786d;">max</span>()
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">str</span>(col_type)[:3] == <span style="color: #95e454;">'int'</span>:
+                <span style="color: #8ac6f2; font-weight: bold;">if</span> c_min &gt; np.iinfo(np.int8).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.iinfo(np.int8).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.int8)
+                <span style="color: #8ac6f2; font-weight: bold;">elif</span> c_min &gt; np.iinfo(np.int16).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.iinfo(np.int16).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.int16)
+                <span style="color: #8ac6f2; font-weight: bold;">elif</span> c_min &gt; np.iinfo(np.int32).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.iinfo(np.int32).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.int32)
+                <span style="color: #8ac6f2; font-weight: bold;">elif</span> c_min &gt; np.iinfo(np.int64).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.iinfo(np.int64).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.int64)
+            <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+                <span style="color: #8ac6f2; font-weight: bold;">if</span> c_min &gt; np.finfo(np.float16).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.finfo(np.float16).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.float16)
+                <span style="color: #8ac6f2; font-weight: bold;">elif</span> c_min &gt; np.finfo(np.float32).<span style="color: #e5786d;">min</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> c_max &lt; np.finfo(np.float32).<span style="color: #e5786d;">max</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.float32)
+                <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+                    <span style="color: #cae682;">df</span>[col] = df[col].astype(np.float64)
+        <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">else:</span>
+        <span style="color: #fa8072;">#    </span><span style="color: #99968b; font-style: italic;">df[col] = df[col].astype('category')</span>
+
+    <span style="color: #cae682;">end_mem</span> = df.memory_usage().<span style="color: #e5786d;">sum</span>() / 1024**2
+    <span style="color: #8ac6f2; font-weight: bold;">print</span>(<span style="color: #95e454;">'Memory usage after optimization is: {:.2f} MB'</span>.<span style="color: #e5786d;">format</span>(end_mem))
+    <span style="color: #8ac6f2; font-weight: bold;">print</span>(<span style="color: #95e454;">'Decreased by {:.1f}%'</span>.<span style="color: #e5786d;">format</span>(100 * (start_mem - end_mem) / start_mem))
+
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> df
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgedda488" class="outline-3">
+<h3 id="orgedda488"><span class="section-number-3">2.17</span> Resample for timeseries</h3>
+<div class="outline-text-3" id="text-2-17">
+<ul class="org-ul">
+<li>'M' - month boundary</li>
+<li>'A' - annual</li>
+</ul>
+
+<pre class="example">
+loan_rev_data=data['Loan Amount']
+loan_rev_data['date'] = pd.DatetimeIndex(data['Created Date'])
+loan_rev_data = loan_rev_data.set_index('date')
+monthly_loan_rev_data= loan_rev_data.resample('M').sum()
+
+</pre>
+
+<pre class="example">
+            Loan Amount
+date
+2014-10-31  13039283.00
+2014-11-30  16097733.00
+2014-12-31  29077334.00
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org261c9ec" class="outline-3">
+<h3 id="org261c9ec"><span class="section-number-3">2.18</span> rename column</h3>
+<div class="outline-text-3" id="text-2-18">
+<pre class="example">
+df.columns.str.replace("original_column", "APP_SRC_REF")
+
+</pre>
+<p>
+may rename several columns!
+</p>
+<ul class="org-ul">
+<li>('doggod', 'god')</li>
+<li>df.columns.str.replace("god", "war")</li>
+<li>('dogwar', 'war')</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc800b08" class="outline-3">
+<h3 id="orgc800b08"><span class="section-number-3">2.19</span> delete column</h3>
+<div class="outline-text-3" id="text-2-19">
+<ol class="org-ol">
+<li></li>
+
+<li>df.drop('education', axis=1, inplace=True)</li>
+<li>df.drop(['education', 'fabrication'], axis=1, inplace=True)</li>
+</ol>
+<p>
+or
+</p>
+<ul class="org-ul">
+<li>df.drop(columns=['education', 'fabrication'], inplace=True)</li>
+<li>df.drop(df.iloc[:,1:3], axis=1)</li>
+<li></li>
+
+<li>del df['education']</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org0b288b2" class="outline-3">
+<h3 id="org0b288b2"><span class="section-number-3">2.20</span> delete row</h3>
+<div class="outline-text-3" id="text-2-20">
+<p>
+delete NA
+</p>
+<pre class="example">
+df.dropna(axis='index', subset=['column1'])
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">for</span> x <span style="color: #8ac6f2; font-weight: bold;">in</span> [<span style="color: #95e454;">'sd'</span>, <span style="color: #95e454;">'a2'</span>]:
+  <span style="color: #cae682;">ids</span> = df.index[(df[<span style="color: #95e454;">"code"</span>] == x) &amp; (df[<span style="color: #95e454;">"something"</span>] == 1)]
+  <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(ids) != 0:
+     df.drop(ids, inplace=<span style="color: #e5786d; font-weight: bold;">True</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72268af" class="outline-3">
+<h3 id="org72268af"><span class="section-number-3">2.21</span> type</h3>
+<div class="outline-text-3" id="text-2-21">
+<p>
+automatic types
+</p>
+
+<p>
+error= {‘ignore’, ‘raise’, ‘coerce’}, default ‘raise’
+</p>
+<ul class="org-ul">
+<li>ignore - invalid parsing will return the input</li>
+<li>coerce - invalid parsing will be set as NaN.</li>
+</ul>
+</div>
+
+<div id="outline-container-org713c1bb" class="outline-4">
+<h4 id="org713c1bb"><span class="section-number-4">2.21.1</span> types <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html">https://numpy.org/doc/stable/reference/arrays.scalars.html</a></h4>
+<div class="outline-text-4" id="text-2-21-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Pandas dtype</th>
+<th scope="col" class="org-left">Python type</th>
+<th scope="col" class="org-left">NumPy type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">object</td>
+<td class="org-left">str or mixed</td>
+<td class="org-left">string_, unicode_, mixed types</td>
+</tr>
+
+<tr>
+<td class="org-left">Int64/Int32</td>
+<td class="org-left">int</td>
+<td class="org-left">int_, int8, int16, int32, int64, uint8, uint16, uint32, uint64</td>
+</tr>
+
+<tr>
+<td class="org-left">float64</td>
+<td class="org-left">float</td>
+<td class="org-left">float_, float16, float32, float64</td>
+</tr>
+
+<tr>
+<td class="org-left">bool</td>
+<td class="org-left">bool</td>
+<td class="org-left">bool_</td>
+</tr>
+
+<tr>
+<td class="org-left">boolean</td>
+<td class="org-left">allow NaN</td>
+<td class="org-left">?</td>
+</tr>
+
+<tr>
+<td class="org-left">datetime64</td>
+<td class="org-left">NA</td>
+<td class="org-left">datetime64[ns]</td>
+</tr>
+
+<tr>
+<td class="org-left">timedelta[ns]</td>
+<td class="org-left">NA</td>
+<td class="org-left">NA</td>
+</tr>
+
+<tr>
+<td class="org-left">category</td>
+<td class="org-left">NA</td>
+<td class="org-left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgce62a73" class="outline-4">
+<h4 id="orgce62a73"><span class="section-number-4">2.21.2</span> Display types</h4>
+<div class="outline-text-4" id="text-2-21-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">print</span>(df1.dtypes)
+<span style="color: #cae682;">categorial_columns</span> = df.select_dtypes(include=[<span style="color: #95e454;">"object"</span>]).columns
+<span style="color: #cae682;">numerical_columns</span> = df.select_dtypes(exclude=[<span style="color: #95e454;">"object"</span>]).columns
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(data[categorial_columns].describe())
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">unique</span>
+<span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> categorial_columns:
+   <span style="color: #8ac6f2; font-weight: bold;">print</span>(c, data[c].unique())
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd53b7bd" class="outline-4">
+<h4 id="orgd53b7bd"><span class="section-number-4">2.21.3</span> float to int</h4>
+<div class="outline-text-4" id="text-2-21-3">
+<p>
+with NaN
+</p>
+<pre class="example">
+df['col'] = df['col'].round().astype('Int32')
+
+</pre>
+
+<p>
+without NaN
+</p>
+<ol class="org-ol">
+<li>drop or fill NaN</li>
+<li>df['col'] = df['col'].round().astype(int)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge571e72" class="outline-4">
+<h4 id="orge571e72"><span class="section-number-4">2.21.4</span> string to date</h4>
+<div class="outline-text-4" id="text-2-21-4">
+<pre class="example">
+df['col1'] = pd.to_datetime(df['col1'])
+df['Дата рождения клиента'] = pd.to_numeric(2021 - pd.to_datetime(df['Дата рождения клиента']).dt.year).astype('Int32')
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgf8e299a" class="outline-4">
+<h4 id="orgf8e299a"><span class="section-number-4">2.21.5</span> Category type</h4>
+<div class="outline-text-4" id="text-2-21-5">
+<p>
+object string to category:
+</p>
+<ul class="org-ul">
+<li>.astype("category")</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org268c95d" class="outline-3">
+<h3 id="org268c95d"><span class="section-number-3">2.22</span> if a&gt;5 c = True else False</h3>
+<div class="outline-text-3" id="text-2-22">
+<p>
+<a href="https://datatofish.com/if-condition-in-pandas-dataframe/">https://datatofish.com/if-condition-in-pandas-dataframe/</a>
+</p>
+<pre class="example">
+df.loc[df['set_of_numbers'] &lt;= 4, 'flag'] = 'True'
+df['flag'].fillna(False,inplace=True)
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org7885ab9" class="outline-3">
+<h3 id="org7885ab9"><span class="section-number-3">2.23</span> pivot tables</h3>
+<div class="outline-text-3" id="text-2-23">
+<div class="org-src-container">
+<pre class="src src-python">melb_df.groupby([<span style="color: #95e454;">'Rooms'</span>, <span style="color: #95e454;">'Type'</span>])[<span style="color: #95e454;">'Price'</span>].mean() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1080;&#1077;&#1088;&#1072;&#1088;&#1093;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1080;&#1085;&#1076;&#1077;&#1082;&#1089;&#1099;</span>
+melb_df.groupby([<span style="color: #95e454;">'Rooms'</span>, <span style="color: #95e454;">'Type'</span>])[<span style="color: #95e454;">'Price'</span>].mean().unstack() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1088;&#1072;&#1089;&#1082;&#1083;&#1072;&#1076;&#1099;&#1074;&#1072;&#1077;&#1090; &#1090;&#1072;&#1073;&#1083;&#1080;&#1094;&#1091; &#1074; &#1089;&#1090;&#1086;&#1083;&#1073;&#1094;&#1099;</span>
+melb_df.pivot_table(
+    values=<span style="color: #95e454;">'Price'</span>,
+    index=<span style="color: #95e454;">'Rooms'</span>,
+    columns=<span style="color: #95e454;">'Type'</span>,
+    fill_value=0
+).<span style="color: #e5786d;">round</span>() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1072;&#1085;&#1072;&#1083;&#1086;&#1075;&#1080;&#1095;&#1085;&#1086; &#1074;&#1090;&#1086;&#1088;&#1086;&#1084;&#1091;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0135d98" class="outline-3">
+<h3 id="org0135d98"><span class="section-number-3">2.24</span> OTHER USE CASES</h3>
+<div class="outline-text-3" id="text-2-24">
+</div>
+<div id="outline-container-orgf742797" class="outline-4">
+<h4 id="orgf742797"><span class="section-number-4">2.24.1</span> dictionary for panda</h4>
+<div class="outline-text-4" id="text-2-24-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">list_to_dict</span>(dicts: <span style="color: #e5786d;">list</span>) -&gt; <span style="color: #e5786d;">dict</span>:
+    <span style="color: #f08080; font-style: italic;">"""</span>
+<span style="color: #f08080; font-style: italic;">    from [{col1':1, col2':3},</span>
+<span style="color: #f08080; font-style: italic;">            {col1':2, col2':4}]</span>
+<span style="color: #f08080; font-style: italic;">    to {'col1': [1, 2], 'col2': [3, 4]}</span>
+
+<span style="color: #f08080; font-style: italic;">    :param dicts: list of dicts</span>
+<span style="color: #f08080; font-style: italic;">    :return: dictionary for pandas</span>
+<span style="color: #f08080; font-style: italic;">    """</span>
+
+    <span style="color: #cae682;">d</span> = {}  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">target {'col1': [1, 2], 'col2': [3, 4]}</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> k <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts[0].keys():
+        <span style="color: #cae682;">d</span>[k] = []
+
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> x <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> k <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts[0].keys():
+            d[k].append(x[k])
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> d
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1689399" class="outline-4">
+<h4 id="org1689399"><span class="section-number-4">2.24.2</span> Example from dictionary to onehot</h4>
+<div class="outline-text-4" id="text-2-24-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">list_to_dict</span>(dicts: <span style="color: #e5786d;">list</span>) -&gt; <span style="color: #e5786d;">dict</span>:
+    <span style="color: #f08080; font-style: italic;">"""</span>
+<span style="color: #f08080; font-style: italic;">    from [{col1':1, col2':3},</span>
+<span style="color: #f08080; font-style: italic;">            {col1':2, col2':4}]</span>
+<span style="color: #f08080; font-style: italic;">    to {'col1': [1, 2], 'col2': [3, 4]}</span>
+
+<span style="color: #f08080; font-style: italic;">    :param dicts: list of dicts</span>
+<span style="color: #f08080; font-style: italic;">    :return: dictionary for pandas</span>
+<span style="color: #f08080; font-style: italic;">    """</span>
+
+    <span style="color: #cae682;">d</span> = {}  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">target {'col1': [1, 2], 'col2': [3, 4]}</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> k <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts[0].keys():
+        <span style="color: #cae682;">d</span>[k] = []
+
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> x <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> k <span style="color: #8ac6f2; font-weight: bold;">in</span> dicts[0].keys():
+            d[k].append(x[k])
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> d
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">repl_date</span>(df_in: DataFrame):
+    <span style="color: #cae682;">df</span> = df_in.copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">no side effect</span>
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> i, x <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">enumerate</span>(df.iloc[0, :]):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(x, date):
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(i, type(x))</span>
+            <span style="color: #cae682;">cname</span> = df.columns[i]
+            <span style="color: #cae682;">df</span>[cname] = df[cname].<span style="color: #e5786d;">map</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x.year)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> df
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">one_hot_p</span>(dicts: <span style="color: #e5786d;">list</span>):
+    <span style="color: #cae682;">d</span> = list_to_dict(dicts)
+    <span style="color: #cae682;">df</span> = pd.DataFrame(d)
+    <span style="color: #cae682;">df.iloc</span>[:, 0] = df.iloc[:, 0].<span style="color: #e5786d;">map</span>({b<span style="color: #95e454;">'OK'</span>: 1, b<span style="color: #95e454;">'STOP'</span>: 0})
+    <span style="color: #cae682;">df</span> = repl_date(df)
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(df.to_string())</span>
+    <span style="color: #cae682;">df2</span> = pd.get_dummies(df)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> df2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc4af02" class="outline-4">
+<h4 id="orgcc4af02"><span class="section-number-4">2.24.3</span> remove meanless columns</h4>
+<div class="outline-text-4" id="text-2-24-3">
+<div class="org-src-container">
+<pre class="src src-python">df.fillna(0)
+<span style="color: #8ac6f2; font-weight: bold;">for</span> x <span style="color: #8ac6f2; font-weight: bold;">in</span> df.iloc[:]:
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> df[x].<span style="color: #e5786d;">min</span>() == df[x].<span style="color: #e5786d;">max</span>():
+        <span style="color: #8ac6f2; font-weight: bold;">del</span> df[x]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0600942" class="outline-4">
+<h4 id="org0600942"><span class="section-number-4">2.24.4</span> Sum two columns containing NaN values</h4>
+<div class="outline-text-4" id="text-2-24-4">
+<pre class="example">
+total = df['Jan'] + df['Feb'].fillna(0)
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgf8672c9" class="outline-4">
+<h4 id="orgf8672c9"><span class="section-number-4">2.24.5</span> reorder columns</h4>
+<div class="outline-text-4" id="text-2-24-5">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">firest</span>
+<span style="color: #cae682;">target</span> = df.pop(<span style="color: #95e454;">'first_decision_state'</span>)
+df.insert(1, <span style="color: #95e454;">'first_decision_state'</span>, target)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">second</span>
+<span style="color: #cae682;">cols</span> = df.columns.tolist()
+<span style="color: #cae682;">cols</span> = cols[-1:] + cols[:-1] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">last to first</span>
+<span style="color: #cae682;">df</span> = df[cols]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org216ea42" class="outline-4">
+<h4 id="org216ea42"><span class="section-number-4">2.24.6</span> <span class="todo TODO">TODO</span> remove duplicates</h4>
+<div class="outline-text-4" id="text-2-24-6">
+<ul class="org-ul">
+<li>df.sort<sub>values</sub>(by=['id', 'completed<sub>at</sub>'], na<sub>position</sub>='first')</li>
+<li>df.drop<sub>duplicates</sub>('id', keep='last')</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org96b1e06" class="outline-2">
+<h2 id="org96b1e06"><span class="section-number-2">3</span> matplotlib</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><a href="https://matplotlib.org/3.1.0/tutorials/introductory/pyplot.html">https://matplotlib.org/3.1.0/tutorials/introductory/pyplot.html</a></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python">ax: <span style="color: #cae682;">Axes</span> = <span style="color: #e5786d; font-weight: bold;">None</span>
+<span style="color: #cae682;">fig</span>, <span style="color: #cae682;">ax</span> = plt.subplots(1,1, figsize=(19,10))
+plt.subplots_adjust(left=0.076, right=0.96, bottom=0.04, top=0.96, wspace=0.30, hspace=0.7) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">if more than one</span>
+plt.plot(.., legend=<span style="color: #95e454;">'line1'</span>)
+<span style="color: #cae682;">title</span>=<span style="color: #95e454;">"graph"</span>
+fig.suptitle(<span style="color: #95e454;">'test title'</span>, fontsize=20)
+plt.suptitle(<span style="color: #95e454;">'test title'</span>, fontsize=20) <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">?</span>
+plt.title(<span style="color: #95e454;">''</span>, {<span style="color: #95e454;">'fontsize'</span>:20})
+plt.rc(<span style="color: #95e454;">'font'</span>, size=6) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">set font size</span>
+plt.legend() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">add line descriptions</span>
+fig.subplots_adjust(left=0.4, bottom=0.4)
+plt.tight_layout() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">corret top, left, bottom, right automatic</span>
+plt.show() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">or plt.savefig('name')</span>
+plt.savefig(title)
+plt.close()
+
+plt.yticks(<span style="color: #e5786d;">range</span>(1,10)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1096;&#1082;&#1072;&#1083;&#1072; &#1089;&#1083;&#1077;&#1074;&#1072;</span>
+<span style="color: #8ac6f2; font-weight: bold;">as</span>.set_xlim(left=3) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1096;&#1082;&#1072;&#1083;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100; &#1086;&#1090; 3</span>
+</pre>
+</div>
+</div>
+<div id="outline-container-org8e01594" class="outline-3">
+<h3 id="org8e01594"><span class="section-number-3">3.1</span> x axis labels range</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib.ticker <span style="color: #8ac6f2; font-weight: bold;">as</span> plticker
+<span style="color: #cae682;">loc</span> = plticker.MultipleLocator(base=50)
+ax.xaxis.set_major_locator(loc)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org947ac8d" class="outline-3">
+<h3 id="org947ac8d"><span class="section-number-3">3.2</span> Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+matplotlib.use
+</p>
+</div>
+<div id="outline-container-org8878765" class="outline-4">
+<h4 id="org8878765"><span class="section-number-4">3.2.1</span> TkAgg</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<pre class="example">
+import matplotlib
+matplotlib.use('TkAgg')
+
+</pre>
+
+<p>
+Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to the Tk GUI
+toolkit, and is Python's de facto standard GUI.
+</p>
+
+<p>
+Gentoo: included with standard Linux
+</p>
+
+<p>
+Gentoo: USE="tk"
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4f7c3c" class="outline-4">
+<h4 id="orgc4f7c3c"><span class="section-number-4">3.2.2</span> GTK3Agg</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Xfce4 - GTK-based
+</p>
+<ul class="org-ul">
+<li>find out GTK version: dpkg -l libgtk* | grep -e '<sup>i</sup>' | grep -e 'libgtk-*[0-9]'</li>
+<li>find out glib version: ldd &#x2013;version</li>
+<li>apt install libglib2.0-dev</li>
+<li>apt install libgirepository1.0-dev</li>
+<li>apt install libcairo2-dev</li>
+<li>apt install python3-dev</li>
+<li>pip install pycairo</li>
+<li>apt-get install libgtk-3-dev</li>
+<li>pip3 install PyGObject &#x2013;user</li>
+</ul>
+
+<pre class="example">
+import matplotlib
+matplotlib.use('GTK3Agg')
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf617287" class="outline-3">
+<h3 id="orgf617287"><span class="section-number-3">3.3</span> usage</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">time sequence</span>
+plt.plot(<span style="color: #e5786d;">range</span>(<span style="color: #e5786d;">len</span>(a)), a)
+plt.show()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">time sequence - &#1075;&#1086;&#1083;&#1091;&#1073;&#1099;&#1084;&#1080; &#1058;&#1086;&#1095;&#1082;&#1072;&#1084;&#1080;</span>
+plt.plot(<span style="color: #e5786d;">range</span>(<span style="color: #e5786d;">len</span>(a)), a, <span style="color: #95e454;">'bo'</span>)
+plt.show()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Histogram - distribution of numerical data</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1073;&#1072;&#1082;&#1077;&#1090; - &#1076;&#1080;&#1089;&#1082;&#1088;&#1077;&#1090;&#1085;&#1099;&#1081; &#1080;&#1085;&#1090;&#1077;&#1088;&#1074;&#1072;&#1083; &#1088;&#1072;&#1079;&#1073;&#1080;&#1077;&#1085;&#1080;&#1103;</span>
+<span style="color: #cae682;">N</span> = 100
+<span style="color: #cae682;">noise</span> = np.random.normal(loc=0.0, scale=1.0, size=(N, 1))
+plt.hist(noise, bins=<span style="color: #95e454;">'auto'</span>, density=<span style="color: #e5786d; font-weight: bold;">True</span>)
+plt.show()
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Scatter - y=f(x) &#1074; &#1074;&#1080;&#1076;&#1077; &#1090;&#1086;&#1095;&#1077;&#1082;, &#1075;&#1076;&#1077; x &#1085;&#1077; &#1087;&#1086; &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1091;.</span>
+plt.scatter(x_np, y_rows)
+plt.show()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1042; &#1074;&#1080;&#1076;&#1077; &#1083;&#1080;&#1085;&#1080;&#1080;</span>
+<span style="color: #cae682;">res</span> = <span style="color: #e5786d;">sorted</span>(<span style="color: #e5786d;">zip</span>(x_np,y_rows) , key=<span style="color: #8ac6f2; font-weight: bold;">lambda</span> k: k[0]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1089;&#1086;&#1088;&#1090;&#1080;&#1088;&#1091;&#1077;&#1084; &#1087;&#1086; x</span>
+<span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span> = <span style="color: #e5786d;">zip</span>(*res) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">unzip</span>
+plt.plot(x, y)
+plt.show()
+
+
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">matr_my - shape=(50,512) - value=[0;1] &#1074; &#1074;&#1080;&#1076;&#1077; &#1089;&#1087;&#1077;&#1082;&#1090;&#1088;&#1072;.</span>
+
+plt.pcolormesh(matr_my, cmap=<span style="color: #95e454;">'RdBu'</span>)
+plt.xlabel(<span style="color: #95e454;">'Depth'</span>)
+plt.xlim((0, 512))
+plt.ylabel(<span style="color: #95e454;">'Position'</span>)
+plt.colorbar()
+plt.show()
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5cdb882" class="outline-3">
+<h3 id="org5cdb882"><span class="section-number-3">3.4</span> do not close</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-python">plt.close()
+plt.plot()
+plt.draw()
+plt.pause(0.0001)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd634fcd" class="outline-3">
+<h3 id="orgd634fcd"><span class="section-number-3">3.5</span> Multiple Curves</h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+<span style="color: #cae682;">x</span> = [0,1,2,3,4]
+<span style="color: #cae682;">y1</span> = [2,3,5,7,8]
+<span style="color: #cae682;">y2</span> = [2, 3, 7, 7, 8]
+plt.plot(x, y1, label = <span style="color: #95e454;">"1"</span>)
+plt.plot(x, y2, label = <span style="color: #95e454;">"2"</span>)
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org549c2b3" class="outline-3">
+<h3 id="org549c2b3"><span class="section-number-3">3.6</span> separate legend</h3>
+<div class="outline-text-3" id="text-3-6">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">x</span> = [0, 1, 2, 3, 4]
+<span style="color: #cae682;">y1</span> = [2, 3, 5, 7, 5]
+<span style="color: #cae682;">y2</span> = [2, 3, 7, 7, 8]
+
+<span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+plt.figure()
+<span style="color: #cae682;">ax</span> = plt.gca()
+plt.plot(x, y1, label=<span style="color: #95e454;">"1"</span>)
+plt.plot(x, y2, label=<span style="color: #95e454;">"2"</span>)
+
+plt.figure()
+plt.plot(x
+plt.figlegend(*ax.get_legend_handles_labels(), loc=<span style="color: #95e454;">'upper left'</span>)
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga2f990c" class="outline-3">
+<h3 id="orga2f990c"><span class="section-number-3">3.7</span> custom histogram</h3>
+<div class="outline-text-3" id="text-3-7">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get hist</span>
+<span style="color: #cae682;">counts</span>, <span style="color: #cae682;">edges</span> = np.histogram(A, bins=10, <span style="color: #e5786d;">range</span>=(0,10))
+
+<span style="color: #cae682;">bincenters</span> = 0.5 * (edges[1:] + edges[:-1])
+<span style="color: #cae682;">spline</span> = make_interp_spline(bincenters, counts, k=k)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">that is how to loop edges</span>
+<span style="color: #8ac6f2; font-weight: bold;">for</span> pair <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">zip</span>(binEdges[:-1], binEdges[1:]):
+        <span style="color: #cae682;">low</span>, <span style="color: #cae682;">high</span> = pair
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">back to data</span>
+<span style="color: #cae682;">A</span> = np.repeat(edges[:-1], counts)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org209b70c" class="outline-3">
+<h3 id="org209b70c"><span class="section-number-3">3.8</span> rotate x ticks</h3>
+<div class="outline-text-3" id="text-3-8">
+<pre class="example">
+plt.xticks(rotation=10)
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org0a8337e" class="outline-3">
+<h3 id="org0a8337e"><span class="section-number-3">3.9</span> CASES</h3>
+<div class="outline-text-3" id="text-3-9">
+</div>
+<div id="outline-container-orgd7ca594" class="outline-4">
+<h4 id="orgd7ca594"><span class="section-number-4">3.9.1</span> <span class="todo TODO">TODO</span> bar plot with two y axes</h4>
+</div>
+<div id="outline-container-orge1e1989" class="outline-4">
+<h4 id="orge1e1989"><span class="section-number-4">3.9.2</span> varible in time</h4>
+<div class="outline-text-4" id="text-3-9-2">
+<pre class="example">
+plt.plot_date(df['date'],df['x])
+plt.show
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org65c3c6f" class="outline-2">
+<h2 id="org65c3c6f"><span class="section-number-2">4</span> SciPy</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+adds more MATLAB-like functionality and Matplotlib is a plotting package that provides MATLAB-like plotting functionality
+</p>
+</div>
+</div>
+<div id="outline-container-orgd33160d" class="outline-2">
+<h2 id="orgd33160d"><span class="section-number-2">5</span> Scikit-learn</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>based on numpy and SciPy</li>
+<li>scikit-learn can be classified as a tool in the "Machine Learning Tools" category, while SciPy is grouped
+under "Data Science Tools".</li>
+</ul>
+</div>
+<div id="outline-container-orgd6d8fa8" class="outline-3">
+<h3 id="orgd6d8fa8"><span class="section-number-3">5.1</span> sklearn.tree.DecisionTreeClassifier</h3>
+<div class="outline-text-3" id="text-5-1">
+<ol class="org-ol">
+<li>the algorithm chooses a feature and makes a split</li>
+<li>looks at the subsets and measures their impurity using the (gini,entropy) score (impurity)</li>
+<li>for multiple thresholds and determines that the best split for the given feature</li>
+<li>repeat for all features and nodes</li>
+<li>from root to leaves</li>
+</ol>
+</div>
+<div id="outline-container-org2ab19c8" class="outline-4">
+<h4 id="org2ab19c8"><span class="section-number-4">5.1.1</span> usage</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">test</span> = 0  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">matrix.shape[0] // 3</span>
+<span style="color: #cae682;">train</span> = <span style="color: #e5786d;">int</span>(matrix.shape[0] - test)
+
+<span style="color: #cae682;">data_train</span> = matrix[:train, 1:].copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">11 column - labels</span>
+<span style="color: #cae682;">labels_train</span> = matrix[:train, 0].copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">11 column - labels</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(labels_train)</span>
+<span style="color: #cae682;">data_test</span> = matrix[train:, 1:].copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">11 column - labels</span>
+<span style="color: #cae682;">labels_test</span> = matrix[train:, 0].copy()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">11 column - labels</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(data_train.shape)
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(data_test.shape)
+<span style="color: #8ac6f2; font-weight: bold;">print</span>(labels_train.shape)
+
+<span style="color: #cae682;">models</span> = []
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">DecisionTreeClassifier ------------------------------</span>
+<span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.tree <span style="color: #8ac6f2; font-weight: bold;">import</span> DecisionTreeClassifier
+
+<span style="color: #cae682;">data_train</span>[np.isnan(data_train)] = -1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">replace nan</span>
+<span style="color: #cae682;">data_train_orig</span> = data_train.copy()
+
+<span style="color: #cae682;">model</span> = DecisionTreeClassifier(random_state=42,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1092;&#1091;&#1085;&#1082;&#1094;&#1080;&#1103; &#1076;&#1083;&#1103; impurity ('gini' &#1080;&#1083;&#1080; 'entropy')</span>
+                                   criterion=<span style="color: #95e454;">'gini'</span>,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1084;&#1072;&#1082;&#1089;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; &#1075;&#1083;&#1091;&#1073;&#1080;&#1085;&#1072; &#1076;&#1077;&#1088;&#1077;&#1074;&#1072;</span>
+                                   max_depth=3,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1084;&#1080;&#1085;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1086;&#1077; &#1095;&#1080;&#1089;&#1083;&#1086; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074; &#1074; &#1091;&#1079;&#1083;&#1077; &#1076;&#1083;&#1103; &#1088;&#1072;&#1079;&#1073;&#1080;&#1077;&#1085;&#1080;&#1103; (&#1084;&#1086;&#1078;&#1077;&#1090; &#1073;&#1099;&#1090;&#1100; &#1076;&#1086;&#1083;&#1077;&#1081;)</span>
+                                   min_samples_split=5,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1084;&#1080;&#1085;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1086;&#1077; &#1095;&#1080;&#1089;&#1083;&#1086; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074; &#1074; &#1083;&#1080;&#1089;&#1090;&#1077; (&#1084;&#1086;&#1078;&#1077;&#1090; &#1073;&#1099;&#1090;&#1100; &#1076;&#1086;&#1083;&#1077;&#1081;)</span>
+                                   min_samples_leaf=2,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1084;&#1080;&#1085;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1086;&#1077; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077; &#1076;&#1077;&#1083;&#1100;&#1090;&#1099; impurity</span>
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">min_impurity_decrease=0,</span>
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1074;&#1077;&#1089;&#1072; &#1076;&#1083;&#1103; &#1082;&#1083;&#1072;&#1089;&#1089;&#1086;&#1074; (&#1084;&#1086;&#1078;&#1085;&#1086; &#1076;&#1086;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086; &#1096;&#1090;&#1088;&#1072;&#1092;&#1086;&#1074;&#1072;&#1090;&#1100; &#1079;&#1072; &#1086;&#1096;&#1080;&#1073;&#1082;&#1091; &#1074; &#1085;&#1091;&#1078;&#1085;&#1099;&#1093; &#1082;&#1083;&#1072;&#1089;&#1089;&#1072;&#1093;).</span>
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1080;&#1074;&#1072;&#1077;&#1090; &#1086;&#1087;&#1094;&#1080;&#1102; 'balanced'.</span>
+                                   class_weight=<span style="color: #e5786d; font-weight: bold;">None</span>,
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1088;&#1077;&#1076;&#1074;&#1072;&#1088;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1072;&#1103; &#1089;&#1086;&#1088;&#1090;&#1080;&#1088;&#1086;&#1074;&#1082;&#1072;.</span>
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1091;&#1089;&#1082;&#1086;&#1088;&#1103;&#1077;&#1090; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1077; &#1085;&#1072; &#1076;&#1072;&#1085;&#1085;&#1099;&#1093; &#1085;&#1077;&#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1075;&#1086; &#1088;&#1072;&#1079;&#1084;&#1077;&#1088;&#1072; &#1080;&#1083;&#1080; &#1089; &#1086;&#1075;&#1088;&#1072;&#1085;&#1080;&#1095;&#1077;&#1085;&#1085;&#1086;&#1081; &#1075;&#1083;&#1091;&#1073;&#1080;&#1085;&#1086;&#1081; &#1076;&#1077;&#1088;&#1077;&#1074;&#1072;.</span>
+                                   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1080;&#1085;&#1072;&#1095;&#1077; &#1079;&#1072;&#1084;&#1077;&#1076;&#1083;&#1103;&#1077;&#1090; &#1086;&#1073;&#1091;&#1095;&#1077;&#1085;&#1080;&#1077;.</span>
+                                   presort=<span style="color: #e5786d; font-weight: bold;">False</span>
+                                   )
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1054;&#1073;&#1091;&#1095;&#1072;&#1077;&#1084; &#1084;&#1086;&#1076;&#1077;&#1083;&#1100;</span>
+    <span style="color: #cae682;">data_train</span>[np.isnan(data_train)] = -1
+    model.fit(data_train, labels_train)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">delete feature</span>
+    <span style="color: #cae682;">parent_feature</span> = model.feature_importances_.argmax()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">0...</span>
+    <span style="color: #8ac6f2; font-weight: bold;">print</span>(parent_feature)
+    <span style="color: #cae682;">data_train</span>[:, parent_feature] = np.zeros(data_train.shape[0])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">(0...</span>
+
+    <span style="color: #8ac6f2; font-weight: bold;">from</span> IPython.display <span style="color: #8ac6f2; font-weight: bold;">import</span> Image
+    <span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.tree <span style="color: #8ac6f2; font-weight: bold;">import</span> export_graphviz
+    <span style="color: #8ac6f2; font-weight: bold;">from</span> subprocess <span style="color: #8ac6f2; font-weight: bold;">import</span> call
+
+    export_graphviz(model,
+                    out_file=<span style="color: #95e454;">'tree.dot'</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1079;&#1072;&#1076;&#1072;&#1090;&#1100; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1092;&#1080;&#1095;</span>
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">feature_names=X.columns,</span>
+                    class_names=<span style="color: #e5786d; font-weight: bold;">None</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1090;&#1100; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1087;&#1086;&#1083;&#1077;&#1081; &#1091; &#1095;&#1080;&#1089;&#1083;&#1077;&#1085;&#1085;&#1099;&#1093; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1081; &#1074;&#1085;&#1091;&#1090;&#1088;&#1080; &#1091;&#1079;&#1083;&#1072;</span>
+                    label=<span style="color: #95e454;">'all'</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1088;&#1072;&#1089;&#1082;&#1088;&#1072;&#1096;&#1080;&#1074;&#1072;&#1090;&#1100; &#1091;&#1079;&#1083;&#1099; &#1074; &#1094;&#1074;&#1077;&#1090; &#1087;&#1088;&#1077;&#1086;&#1073;&#1083;&#1072;&#1076;&#1072;&#1102;&#1097;&#1077;&#1075;&#1086; &#1082;&#1083;&#1072;&#1089;&#1089;&#1072;</span>
+                    filled=<span style="color: #e5786d; font-weight: bold;">True</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1090;&#1100; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077; impurity &#1076;&#1083;&#1103; &#1082;&#1072;&#1078;&#1076;&#1086;&#1075;&#1086; &#1091;&#1079;&#1083;&#1072;</span>
+                    impurity=<span style="color: #e5786d; font-weight: bold;">True</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1090;&#1100; &#1085;&#1086;&#1084;&#1077;&#1088;&#1072; &#1091;&#1079;&#1083;&#1086;&#1074;</span>
+                    node_ids=<span style="color: #e5786d; font-weight: bold;">True</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1055;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1090;&#1100; &#1076;&#1086;&#1083;&#1080; &#1082;&#1072;&#1078;&#1076;&#1086;&#1075;&#1086; &#1082;&#1083;&#1072;&#1089;&#1089;&#1072; &#1074; &#1091;&#1079;&#1083;&#1072;&#1093; (&#1072; &#1085;&#1077; &#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086;)</span>
+                    proportion=<span style="color: #e5786d; font-weight: bold;">True</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1055;&#1086;&#1074;&#1077;&#1088;&#1085;&#1091;&#1090;&#1100; &#1076;&#1077;&#1088;&#1077;&#1074;&#1086; &#1085;&#1072; 90 &#1075;&#1088;&#1072;&#1076;&#1091;&#1089;&#1086;&#1074; (&#1074;&#1077;&#1088;&#1090;&#1080;&#1082;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; &#1086;&#1088;&#1080;&#1077;&#1085;&#1090;&#1072;&#1094;&#1080;&#1103;)</span>
+                    rotate=<span style="color: #e5786d; font-weight: bold;">False</span>,
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1063;&#1080;&#1089;&#1083;&#1086; &#1090;&#1086;&#1095;&#1077;&#1082; &#1087;&#1086;&#1089;&#1083;&#1077; &#1079;&#1072;&#1087;&#1103;&#1090;&#1086;&#1081; &#1076;&#1083;&#1103; &#1086;&#1090;&#1086;&#1073;&#1088;&#1072;&#1078;&#1072;&#1077;&#1084;&#1099;&#1093; &#1076;&#1088;&#1086;&#1073;&#1077;&#1081;</span>
+                    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">precision=3</span>
+                    )
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1055;&#1088;&#1077;&#1086;&#1073;&#1088;&#1072;&#1079;&#1091;&#1077;&#1084; &#1092;&#1072;&#1081;&#1083; tree.dot &#1074; tree.png</span>
+    call([<span style="color: #95e454;">'dot'</span>, <span style="color: #95e454;">'-Tpng'</span>, <span style="color: #95e454;">'tree.dot'</span>, <span style="color: #95e454;">'-o'</span>, <span style="color: #95e454;">'tree.png'</span>])
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1042;&#1089;&#1090;&#1072;&#1074;&#1083;&#1103;&#1077;&#1084; &#1082;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1091; &#1074; &#1073;&#1083;&#1086;&#1082;&#1085;&#1086;&#1090;</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Image("tree.png")</span>
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">data_test[np.isnan(data_test)] = -1</span>
+    <span style="color: #cae682;">test_result</span> = model.predict(data_train_orig)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">RESULT</span>
+    <span style="color: #cae682;">auc</span> = sklearn.metrics.roc_auc_score(labels_test, test_result)
+
+    <span style="color: #cae682;">gini</span> = 2 * auc - 1
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9b2b4fb" class="outline-3">
+<h3 id="org9b2b4fb"><span class="section-number-3">5.2</span> Tuning the hyper-parameters <a href="https://scikit-learn.org/stable/modules/grid_search.html">https://scikit-learn.org/stable/modules/grid_search.html</a></h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>GridSearchCV - Exhaustive Grid Search</li>
+<li>RandomizedSearchCV - <a href="https://analyticsindiamag.com/why-is-random-search-better-than-grid-search-for-machine-learning/">https://analyticsindiamag.com/why-is-random-search-better-than-grid-search-for-machine-learning/</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #8ac6f2; font-weight: bold;">import</span> ShuffleSplit** train test split
+   <span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #8ac6f2; font-weight: bold;">import</span> ShuffleSplit
+<span style="color: #cae682;">X_train</span>, <span style="color: #cae682;">X_test</span>, <span style="color: #cae682;">y_train</span>, <span style="color: #cae682;">y_test</span> = train_test_split(X, y, test_size=0.33, random_state=42)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-22 Tue 12:25</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

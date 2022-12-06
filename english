@@ -1,0 +1,768 @@
+-*- mode: Org; fill-column: 100; coding: utf-8; -*-
+
+* common
+ (франц. comme il faut - как должно
+
+software solutions 	[ˈsɒftweər] [səˈluːʃn]
+in the cloud	(klaʊd)
+on-premise	[ˈprɛmɪs] - традиционно
+On-Demand	[ɔn-dɪˈmɑːnd] - cloud SaaS
+
+
+premise /ˈpremis/ предпосылка The premise of something is that.
+hybrid scenario /ˈhaɪbrɪd/ /sɪˈnɑːrɪˌəʊ/
+while (<condition does not hold>) :: условие не выполняется
+arity ::  function of indefinite arity
+
+- figuratively 	[ˈfɪgjərətɪvlɪ] образно, фигурально
+- literally 		[ˈlɪtərəlɪ]	прямо, буквально
+
+customizing [ˈkʌstəmaɪzɪŋ]
+personalization [pɜːsənəlɪˈzeɪʃn]
+modification [mɔdɪfɪˈkeɪʃn]
+
+customer [ˈkʌstəmə]
+report [rɪˈpɔːt]
+dialog [ˈdaɪəlɒg]
+reuse [rɪˈjuːz]
+user [ˈjuːzə] dialog [ˈdaɪəlɒg]
+functionality /ˌfʌŋkʃəˈnæləti/
+possibility /ˌpɒsəˈbɪləti/
+upgrade /ˈʌpɡreɪd/
+group /ɡruːp/
+multi-layer /ˈmʌlti//ˈleɪə(r)/
+template [ˈtemplət]
+
+to profile [ˈprəʊfaɪl] обрабатывать по шаблону
+сonsolidate [kənˈsɒlɪˌdeɪt] объединять, хранить в одном месте
+data governance [ˈɡʌvənəns] управление данными
+persistence [pəˈsɪstəsn] постоянсво persistent classes
+query [ˈkwɪərɪ] запрос
+
+
+To achieve overall system reliability in the presence of a number of faulty processes. Достичь общей
+достоверности при наличии нескольких неисправных процессов.
+- overall :: [ˈəʊvərˌɔːl] общей [ˌəʊvərˈɔːl] в общем и целом Overall accuracy
+
+non
+- procedure [prəˈsiːʤə] :: .
+- array [əˈreɪ] :: .
+- tuple[ˈtjʊpəl] :: finite ordered list (как правило одного типа) например: relat. database - records(rows),
+                    list in Lisp
+- sequence [ˈsiːkwəns] :: .
+- function [ˈfʌŋkʃən] :: функционировать. it functions as something.
+- variable [ˈvɛərɪəbəl] :: переменная
+- value [ˈvæljuː] :: значение
+- embedded [ɪmˈbɛdɪd] :: embedded systems
+- facilitate changes [fəˈsɪlɪˌteɪt] :: обеспечивать изменение. в react programming.
+- decimal :: [ˈdɛsɪməl] десятичная дробь
+- assignment [əˈsaɪnmənt] :: назначение
+- architecture [ˈɑːkɪˌtɛktʃə] :: .
+- interpreter [ɪnˈtɜːprɪtə] :: истолкователь.
+- throughput [ˈθruːˌpʊt] :: пропускная способность
+- latency, latence [ˈleɪtəns] :: просто задержка, скрытая задержка, delay время вызова
+- queue [kjuː] :: очередь
+- ack [ˈæk] :: подтверждение получения (message will be acked or failed)
+- suspension [səˈspɛnʃən] :: приостановка
+- monitoring [ˈmɒnɪtərɪŋ] :: .
+- enhancement [ɪn'hɑːnsmənt] :: усовершенствование to enhance [ɪnˈhɑːns]
+- layer [ˈleɪə] :: . microservices layer
+- process [ˈprəʊsɛs] :: .
+- notation [nəʊˈteɪʃən] :: Business Process Model and Notation
+- workflow [ˈwɜːkˌfləʊ] :: рабочий процесс, документооборот.
+- overloading [ˈəʊvəˌləʊd] v [ˌəʊvəˈləʊd] :: .
+- overriding [ˌəʊvəˈraɪdɪŋ] :: .
+- multithreading [ˌmʌltɪˈθrɛdɪŋ] :: многопоточность
+- processing  [ˈprəʊsesɪŋ] :: обработка
+- recap [ˈriːkæp] :: резюме о чем-то Let us quickly do a recap about Kafka
+- keyword [ˈkiːwɜːd] :: ключевое слово
+- machine [məˈʃiːn] :: .
+- workshop [ˈwɜːkʃɔp] :: семинар, мастерская
+- workbench [ˈwɜːkbenʧ] :: инструментальные средства, рабочее место
+- storage [ˈstɔːrɪʤ] :: .
+OOP
+- descendant  [dɪˈsendənt] :: потомок.  these and their descendants - они и их потомки
+Data
+- clause [klɔːz] :: SQL clause
+- column [ˈkɒləm] :: колонка
+- query [ˈkwɪərɪ] :: запрос
+- volume [ˈvɒljuːm] :: объем данных
+- variety [vəˈraɪɪtɪ] :: разнообразие типов и источников данных
+- velocity [vɪˈlɒsɪtɪ] :: скорость поступления и обработки
+- veracity [vɛˈræsɪtɪ] :: достоверность данных
+- noise [nɔɪz] :: .
+- batch [bætʃ] :: партия, пакет
+- commit [kəˈmɪt] :: .
+- subscript [ˈsʌbskrɪpt] :: index
+- discrepancy  [dɪsˈkrepənsɪ] :: несоответствие, разница discrepancy between the expected and
+- accuracy [ˈækjʊrəsɪ]  :: точность = num of correct classification/ total num of predicates
+
+adj
+- abstract [ˈæbstrækt] :: .
+- compiled [kəmˈpaɪl] :: .
+- compulsory /kəmˈpʌlsərɪ/ :: обязательнный
+- obligatory /ɔˈblɪgətərɪ/ :: обязательный
+- mandatory [ˈmændətərɪ] :: обязательны mandatory access control
+- discretionary [dɪˈskrɛʃənərɪ] :: Discretionary access control у объекта
+- coherent :: [kəʊˈhɪərənt] последовательный
+- error prone :: [prəʊn] склонный к ошибкам. error prone behavior, solution
+- explicit /ɪkˈsplɪsɪt/ :: явный
+- robust [rəʊˈbʌst] :: надежный Java is a strong programming language as it uses strong memory management. The
+     concepts like Automatic garbage collection, Exception handling, etc. make it more robust.
+- composite [ˈkɔmpəzɪt] :: составной
+- obsolete [ˈɒbsəˌliːt] eng [äbsəˈlēt]  :: устарелый
+- resilient [rɪˈzɪlɪənt] :: устойчивый к , resilient to architecture erosion
+- loosely coupled [luːs]-ly [kʌpəld] :: loosely coupled services.
+- fault tolerant [fɔːlt] [ˈtɒlərənt] :: отказоусточивый see Reliability
+- failover [ˈfeɪləʊvər] ::  failover software - a method of protecting computer systems from _failure_, in
+    which _standby equipment_ automatically _takes over_ when the main system _fails_. will _reschedule_ its
+    task to the _standby server_.
+- standby :: резервный
+- fail-fast :: systems are usually designed to stop normal operation rather than attempt to continue
+- unwarranted [ʌnˈwɒrəntɪd] :: необоснованный
+- distributed [dɪˈstrɪbjuːtɪd] :: распределенные системы решающие одну проблему SOA-based systems to massively
+     multiplayer online games to peer-to-peer applications.
+- decentralise [diːˈsɛntrəˌlaɪz] :: decentralization
+- Swarm intelligence [swɔːm] ::  коллективное поведение децентрализованной самоорганизующейся системы
+- faulty [ˈfɔːltɪ] :: неисправный
+- virtual [ˈvɜːtʃʊəl] :: Java Virtual Machine
+- lightweight [ˈlaɪtˌweɪt] :: облегченный, меньше кода
+- versatile [ˈvɜːsətaɪl] :: универсальный, многоцелевой, многофункциональный,
+- arbitrary [ˈɑːbɪtrərɪ] :: произвольный arbitrary value - произвольное значение
+- supersede [sjuːpəˈsiːd] superseded :: замененный
+- precede [prɪˈsiːd] :: предшествующий
+- salient [ˈseɪljənt] ::  salient features существенные фичи
+- Boilerplate [ˈbɔɪləpleɪt] :: шаблон, шаблонный
+- graceful [ˈgreɪsf(ə)l] :: изящный
+- refused [rɪˈfjuːzd] :: connection refused отклоненный, отвергнутый
+- opt-in options, rather than an opt-out options - opting-in - выбрать-в, opting-out выбрать-вон
+Data
+- periodic [ˌpɪərɪˈɒdɪk] :: периодический
+- dense [dens] :: without gaps - плотный
+- sparse [spɑːs] :: with gaps - разреженный
+
+non
+- timeliness :: своевременность
+- accuracy [ˈækjʊrəsɪ] :: точность
+- completeness [kəmˈpliːt] :: завершенность, законченность, полнота
+- meaning [ˈmiːnɪŋ] :: значащий
+- granularity [ˌɡrænjʊˈlærɪtɪ] :: величина зерен и их количество - зернистость
+  - fine-grained [ɡreɪn] :: выверенно зернистый
+- fault-tolerant [fɔːlt] [ˈtɒlərənt] :: отказоустойчивость. Если часть системы откажет, то ничего
+- scalability [ˌskeɪləˈbɪlɪtɪ] ::  масштабируемость scalable [ˈskeɪləbəl] масштабируемый
+- reliability [rɪˈlaɪəbəl] :: надежность, достоверность  reliably [rɪˈlaɪəbəl]
+- performance [pəˈfɔːməns] :: производит-ность
+- serviceability [ˈsɜːvɪsəbəl] :: бесперебойность
+- reliability :: надежность
+
+verb
+- invocation [ˌɪnvəˈkeɪʃən] :: вызов decouples method execution from method invocation
+- execute [ˈɛksɪˌkjuːt] :: выполнять
+- evaluate [ɪˈvæljʊˌeɪt] :: вычислять
+- interpret [ɪnˈtɜːprɪt] :: .
+- extend [ɪkˈstɛnd] :: .
+- implement [ˈɪmplɪmənt] verb [ˈɪmplɪˌmɛnt] ::
+- to set-up :: the set-up. устанавить
+- cite [saɪt] :: цитировать he cited "" он цитировал
+- acquire [əˈkwaɪə] :: приобретать
+- emit :: emits the data to
+- deplay [dɪˈplɔɪ] deployment [dɪˈplɔɪmənt] :: развертывать
+- detection [dɪˈtekʃn] :: обнаружение
+- yield [jiːld] :: уступать, дает, It did not yield much.
+- bootstrap [ˈbuːtstræp] :: self-starting process
+- infer [ɪnˈfɜː] :: догадываться. сompiler in situations where it cannot infer the type automatically
+- prediction [prɪˈdɪkʃn] ::  REST API that serves up predictions
+- estimate [ˈestɪmɪt] :: probability estimate - оценка вероятности
+adv
+- succinctly [səkˈsɪŋktlɪ] :: кратко, лаконично can be coded succinctly
+
+phrases:
+- I hope in hindsight *[ɪn ˈhaɪndsaɪt]* надеюсь задним числом
+- indivisible atom *[ˌɪndɪˈvɪzəbəl] [ˈætəm]* - неделимый атом
+- you are outnumbered [ˌaʊtˈnʌmbə] - ты в меньшинстве
+- de-emphasizes explicit dick manupulation - не акцентирует внимание на явном манипулировании членом
+- Clean and fluent English - Чистый и свободный английский язык
+- You Are encouraged [ɪnˈkʌrɪʤd] to fill out the value to list - Вам предлагается заполнить список значений
+- is an instance of the argument or of a subclass thereof (из этого) (или их подкласса)
+- Jack of all trades - мастер на все руки
+- *State-of-the-art* (cutting edge) (SOTA) - highest level of general development, as of a device, technique, or
+  scientific field achieved at a particular time.
+- all are species of a common genus - все есть виды общего рода
+- In its substance, ... - По своей сути, что-то такое-то...
+- used to provide an *unbiased evaluation* - непредвзятая оценка
+* slang
+- lame :: boring
+- rad :: radical - cool
+- Aima :: most beautiful girl/boy
+- homie :: сосед чувак
+- homeboy
+- street cat
+- boomer :: фанатик прошлого
+- wishbone :: рэпер с повторяющимися стихами
+- jacking off :: дрочить
+- PITA :: pain in the ass
+- wigger :: white like a nigger
+- 보추 literally means "pussy + dick" and it really means a trap, an otokonoko, a male cross-dresser.
+- Normie :: normal zombie
+- Sperg :: obsessive on subject of interest
+- Derailment :: wrong to anal hole
+- Janitor :: genius failed by the education system
+- janny :: Short for janitor. less authority than a moderator. He's a
+  janny on an anime imageboard. He does it for free. a girl with the
+  emotional capacity of a rock.
+- Glowie :: hence they "glow in the dark." - CIA fails "here's how to
+  get cheap guns illegally", "we should shoot first ", and " Stop
+  larping kill the blank now "
+- glownigger :: governmental agent (FBI, NSA, CIA, ATF) making bait posts
+- Jagger ::  boy with lots of wonderful thoughts that will share anything with you
+- Weeaboo :: person who retains an unhealthy obsession with Japan and
+  Japanese culture
+- redpills :: one side of truth propoganda, example IOTBW
+- Vanned :: to be fucked by the FBI
+- oinkies :: police
+- binging  on things :: увлечья чем-то
+- rulecuck :: чувак помешанный на правилах, затворник
+- heck :: hell - She has a heck of a lot of money. Thats a heck of a bug.
+- Dread:: группа диллеров
+- lay off :: отвали, отложить что-то за ненадобностью
+- ginger :: расса огня Прометея с красными волосами и виснушками
+- cuteness :: act of being cute
+- Lookit :: Abbreviation of "look at that/this
+- splort :: Head-exploding cuteness.
+- 94 :: everything and anything you want it to mean.
+- dox :: Personal information
+- trick :: man who lets women use him
+- yankass :: a person whose only hobby is to insult people and/or push their buttons.
+- Duh :: Of course you idiot, obviously, Duh Dad
+- imposter/Impostor :: пхохой чел в команде котоырй использует чужое имя.
+- phatass :: Female with a nice rounded buttocks
+- Sheesh :: Dammmmmn
+- Reds ::  secanol--a barbituate/downer.
+- Sussy balls :: подозрительный человек, коп на вечеринке
+- dip into :: To remove a portion of a stash of drugs for the purpose of consumption.
+- mosey :: slow forward movement of the legs
+- fuck up, screw up, mess up ::  1. To make a mistake 2. shut the fuck up
+- dissing :: showing disrespect
+- run up on :: to confront someone with hostility
+- shill :: зазывала, проплаченный критик
+- Clyde :: smart assholes that know how to get their way around things
+- Yummu :: an adjective describing someone who is soo great that theyre yummy. An expression of
+  enjoyment and joy.
+why hapas - what happends
+rope - rape
+** shorts
+- tho - Though.[ðəʊ] - хотя, однако
+- im - I am
+- awhile - for a while
+- Nah - no
+- Henlo - Hello
+- Fren - frend
+- ngl - Not Gonna Lie
+- tbh - to be honest
+- for ya: for you
+- ftfy :: fixed that for you
+- tryna :: trying to
+- sugi or shawty :: young teen - pretty and knew it
+- ya :: you
+- yo :: hello
+- gun show :: выставление мускулатуры
+- Douchebag :: дюшбэг
+- Nuts :: testicles
+- chu :: nigga version of you
+- sus :: suspishos  [səsˈpɪʃəs]
+
+** - Kinda,” “wanna,” “whatcha,” “hafta,” “gimme,” “lemme,” and “gonna
+- Kinda = Kind of
+- wanna - Want to/a
+- Whatcha = What are you
+- hafta
+- gimme
+- lemme
+- gonna
+- Outta = Out of.  ex. I’m outta here. -  я ухожу отсюда
+
+Ain’t = Has not/have not
+Ain’t = Am not/are not/is not
+
+* ideoms
+- opt for :: I opt for it - it fresher. people opt for English
+- in search of ::
+- steer clear :: держаться подальше
+- therefore
+- “I can relate.” / “I can’t relate.” / “to relate to something”  - to understand feelings
+- make use of :: использовать то, что не было использовано
+- it should be taken to mean a :: это следует понимать как означающее
+- Get a load of something :: зацени это
+- case in point :: наглядный пример
+- hold up :: подожди секундочку, держись!, держать высоко
+- nigga hush :: нигер заткнись
+- token gesture [ˈʤesʧə] :: символический жест
+- queue the boo/hisses :: очередь на бу и шипение
+- Desire path :: тропинка game trail, social trail, fishermen trail, bootleg trail, etc.
+- In a nutshell :: в двух словах
+- wind up :: кончить как-то, wind up dead - сдохнуть.
+- All the more reason :: тем более, нужно что-то
+- on your own :: по своей воле
+- is not just :: неправильно
+- run-of-the-mill :: заурядный (пробег мельницы)
+- in one go :: закодировать в одном месте, сделать за один раз
+** fillers, crutches
+- like
+- so
+- totally
+- exactly
+- roughly - примерно
+
+beginig:
+- i mean
+- well
+- okay
+- you see
+- by the way
+- i just
+
+* old
+thou shalt not kill
+- thou, ye [jiː] - you
+- shalt - form of shall for you
+
+неформальные:
+thee -  тебя
+thy/thine - твой
+theirs
+
+thou knowest, thou knewest - ты знаешь, ты знал
+
+exceptions:
+- thou dost, thou didst
+- thou art, thou wast, thou wert  - are,was, were
+- thou shalt
+- thou hast, thou hadst - have
+- thou wilt - will
+- thou must
+* meeting speach
+- Docker [ˈdɒkə]
+- python [ˈpaɪθən]
+- Jupyter (/ˈdʒuːpɪtər/
+- analysis [əˈnælɪsɪs]
+- random [ˈrændəm]
+- gradient boosting [ˈgreɪdɪənt] [ˈbuːstɪŋ]
+- feature [ˈfiːʧə]  [ɪmˈpɔːtəns]
+- estimator [ˈestɪmeɪtə]
+- classificator [ˈklæsɪfɪkeɪtər]
+- diagram [ˈdaɪəgræm]
+- confusion [kənˈfjuːʒən] matrix - table layout for supervized learning with predicted errors
+  - it
+- please remind me
+- what took the most time
+- что вызывает боьше сложностей
+- what will you do tomorrow
+- извините если отнял у вас мног овремени
+- как это сказать на английском How do they say it in French?
+- если пытаться будет получаться лучше и лучше
+  - if you try it will get better and better
+- why english is important?
+it is pronounced as [prəˈnaʊnst] [æz]
+
+
+Good morning.
+(yandex) Yesterday [ˈjestədɪ]. I was working on finding the best model
+(google translate) I worked on the best model yesterday
+Well, there's one other thing I've been working on you might find somewhat more interesting.
+I fixed several bugs
+
+I have found that
+I was looking for
+
+I am going
+
+what will you do tomorrow
+
+I am finished.
+
+
+
+
+have a nice day
+see you at the next morting meeting tomorrow
+** what yearsterday
+what have you been up to lately
+
+** did
+- I have done everything she told me.
+- I've done it.
+- I did everything you wanted.
+- I didn’t do much yesterday  [ˈjestədɪ] since the majority of my day consisted of meetings.
+- I made this lock.
+
+i made a big effort - приложил большие усилия
+Most of the time I have to answer email.
+
+forget
+- I did not forget that I did that.
+- I forgot to make it.
+
+
+* Banks [bæŋks]
+- Financial institutions [faɪˈnænʃəl] [ɪnstɪˈtjuːʃn] :: banking institutions
+- deposit [dɪˈpɔzɪt] :: вклад, Depository institutions - кредитная организация
+- fraud  [frɔːd] :: мошенничество
+- swipe [swaɪp] :: Swipe your card, please. Paid $300,000 on swipe fees. swipe machines - проводя черной
+                   полосой карты
+- retail stores [ˈriːteɪl] [stɔːz]  :: розничные магазины.
+- pricing [ˈpraɪsɪŋ] :: ценообразование
+- Interest rate [ˈɪntrɪst reɪt] :: Процентная ставка
+  - variable interest rate (ARM) Adjustable-rate mortgage ::
+  - fixed rates ::
+** investment
+- investment [ɪnˈvestmənt] ::
+- Home equity [həʊm ˈekwɪtɪ] :: Собственный капитал
+- Treasury Yield  [jiːld] :: доходность казначейских облигаций Debt obligations
+  - Treasury Rate  [ˈtreʒ(ə)rɪ] :: то же, 10 Years US Treasury Rate
+- debt obligations  [det ɒblɪˈgeɪʃn] ::  долговые обязательства - treasury bill, treasury note, treasury bond
+- investor confidance [ˈkɒnfɪdəns]  :: уверенность
+- savings [ˈseɪvɪŋz] :: сбережения
+- net worth :: балансовая стоимость - собаственный капитал
+- book value :: чистые активы - собаственный капитал
+** credit, loan
+- credit :: кредит, кредитование
+- credit obligation [ɒblɪˈgeɪʃn] ::  кредитное обязательство
+- Credit bureau [bjʊəˈrəʊ] :: кредитное бюро
+- credit report [rɪˈpɔːt] :: кредитная история
+- credit term [tɜːm] :: срок кредитования, credit terms - условия предоставления кредита
+- borrow [ˈbɒrəʊ] :: одолжить
+- borrower [ˈbɔrəuə] :: заемщик, должник
+- lend  [lend] :: одалживать
+- lender [ˈlendə] :: кредитор, кредитодатель
+- loan [ləʊn] :: кредит, ссуда, заем, заимствование borrowing, lending
+  - Loan origination [ərɪʤɪˈneɪʃn] :: Оформление кредита - Mortgage origination :: Ипотечное кредитование
+  - loan issue :: выдача кредита
+- Revolving credit :: не имеющий рассрочки
+- home equity loan :: кредит под залог имущества type of loan in which the borrower uses the equity of his or
+     her home as collateral
+** repayment
+- repayment[rɪˈpeɪmənt] :: выплата, возмещение
+- installment loan or credit :: рассрочка, scheduled payments
+- amortization schedule  [əmɔːtəˈzeɪʃən] :: график погашения
+- delinquency [dɪˈlɪŋkwənsɪ] :: просрочка
+- charge-off :: written off as uncollectable, the debt is still legally valid and will be collected.
+- to default  [dɪˈfɔːlt] :: невыполнение обязательств
+- delinquent [dɪˈlɪŋkwənt] :: неплательщик
+- amount due [əˈmaʊnt djuː] :: сумма задолженности
+** mortage
+- mortgage  [ˈmɔːgɪʤ] :: заклад
+  - mortgage loan - ипотечный кредит
+  - real estate mortgage - ипотека, залог недвижимости
+  - mortgage application - заявка ни ипотеку
+- collateral [kəˈlatrəl] :: залог
+- lien [lɪən] :: залог
+- pledge [pleʤ] :: залог
+- House Price Index or Home Supply Index :: Индекс Цен На Жилье
+* neural networks
+- successive [səkˈsesɪv] :: последующий
+- neural [ˈnjʊərəl] :: нейронный
+- downsampling [daʊnˈsɑːmplɪŋ] :: approximation at a lower rate or density without filter
+- recurrent [rɪˈkʌrənt] :: повторяющийся
+- learning [ˈlɜːnɪŋ] :: самообучение
+- training [ˈtreɪnɪŋ] :: обучение с подкрепление
+- threshold [ˈθreʃhəʊld] :: пороговая величина
+- estimate [ˈestɪmeɪtə] :: оценка
+- oscillations [ɒsɪˈleɪʃnz] ::  колебания
+- augment  [ˈɔːgment] :: увеличение, увеличивать
+* IDE features
+- syntax highlighting
+- smart and not smart autocompletion
+- code folding
+- indentation
+- next occurrence
+- Source navigation
+- code generation
+- integrated code debugger
+- Project wizards and templates
+* Latin and Greek
+- e.g. 		/iːˈdʒiː/.		From Latin exempli gratia ‘for the sake of example’
+- ad hoc 	/ˌæd ˈhɒk/	from Latin :"for this"
+- and vice versa и наоборот
+- nullipotent - nullus (“not any”) +‎ potent (“having power”) – literally, “having no power” - no side effect on reading data
+- Idempotence -  idem + potence (same + power) - multiple request have same result.
+- Pros and cons -  a shortening of the Latin expression "pro et contra" (for and against)
+- ca. 1800 BCE - приблизительно до нашей эры 2019CE Before the Common or Current Era
+- AD 2019  (anno Domini, "[the] year of [the] Lord")
+- 400 BC ("before Christ")
+- c., ca., or ca (and less frequently circ. or cca.) *Circa [ˈsɜːkə]* (from Latin, meaning 'around, about')
+- Curriculum vitae  *[kəˈrɪkjʊləm ˈviːtaɪ, -ˈwiːtaɪ, -ˈvaɪtiː]*  -  [the] course of [my] life - резюмэ
+- Tabula rasa  лат.«Чистая доска» -  индивид рождается без врождённого или встроенного умственного содержания
+* Mobile [ˈməʊbaɪl]
+- mobile phone [ˈməʊbaɪl fəʊn] :: .
+- tablet [ˈtæblɪt] :: дощечка, таблетка
+- pin :: прикреплять app к dock at bottom of the screen
+- tap :: нажать на notification to open its corresponding app
+- Internal accelerometers [ɪnˈtɜːnl] [ækˌsɛləˈrɒmɪtə] :: акселерометр- shaking and rotation detection.
+* Союзы
+- though :: хотя...
+- although [ɔːlˈðəʊ] :: несмотря на то что,
+- as though :: как-будто
+- provided [prəvaɪdɪd] ::  при условии They will help you provided you tell them the truth.
+- either here or there :: или тут или там
+- neither here nor there :: ни тут ни там
+- She is both beautiful and intelligent. :: И красива и умна.
+- So tired that can not talk. :: Настолько уставший, что не может говорить.
+- Sick as he was, he worked diligently. :: Хоть болел, но работал прилежно
+- We started early so as to finish it all in time. :: чтобы успеть
+- Do it now lest you change your mind. :: Сделай сейчас пока не передумал
+
+* Morphological derivation
+
+derivational patterns
+- adjective-to-noun: -ness (slow → slowness)
+- adjective-to-verb: -en (weak → weaken)
+- adjective-to-adjective: -ish (red → reddish)
+- adjective-to-adverb: -ly (personal → personally); (slow → slowly
+- noun-to-adjective: -al (recreation → recreational)
+- noun-to-verb: -fy (glory → glorify)
+- verb-to-adjective: -able (drink → drinkable)
+- verb-to-noun (abstract): -ance (deliver → deliverance)
+- verb-to-noun (agent): -er (write → writer)
+
+prefix
+- write → re-write;
+- lord → over-lord
+- (healthy → unhealthy ; do → undo
+- circle (verb) → encircle (verb); rich (adj) → enrich (verb), large (adj) → enlarge (verb), rapture
+  (noun) → enrapture (verb), slave (noun) → enslave (verb).
+https://en.wikipedia.org/wiki/Morphological_derivation
+* math
+- math [mæθ] :: математический
+- mathematics [ˌmæθəˈmætɪks] :: математика
+- mathematician [ˌmæθəməˈtɪʃən] :: математик
+- odd [ɒd] :: нечетное нечетный
+- even [ˈiːvən] :: четное
+- formula [ˈfɔːmjʊlə] :: формула
+- parentheses ( ) [pəˈrɛnθəsiːz] :: .
+- brackets [ ] [ˈbrækɪt] ::
+- braces { } [ˈbreɪsɪz] :: фигурные скобки
+- trivial [ˈtrɪvɪəl] :: .
+- Arithmetic [əˈrɪθmətɪk] :: искуство чисел  - Number theory - более новая ветвь.
+- addition [əˈdɪʃən] :: добавление add [æd]
+- subtraction [səbˈtrækʃən] :: , subtract вычесть
+- multiplication [ˌmʌltɪplɪˈkeɪʃən] :: умножение
+- multiply [ˈmʌltɪˌplaɪ] :: умножить
+- product [ˈprɒdʌkt] :: произведение
+- division [dɪˈvɪʒən] :: divide [dɪˈvaɪd] diviser [dɪˈvaɪzə].
+- exponentiation [ˌɛkspəˌnɛnʃɪˈeɪʃən] :: возведение в степень b^n b-base n-
+- exponent [ɪkˈspəʊnənt] :: степень
+- power :: When we multiply two powers we add their exponents. "b raised to the n-th power", "b raised to the
+           power of n", or "the n-th power of b"
+- factor [ˈfæktə] :: множитель
+- coordinate system [kəʊˈɔːdɪnɪt] :: .
+- x-axis [ˈæksɪs] plural axes [ˈæksiːz] :: ось оси
+- origin(0.0) [ˈɒrɪdʒɪn] :: начало координат
+- Inequalities [ˌɪnɪˈkwɒlɪtɪ] :: неравенства = < >= != Equality and Relational Operators (java)
+- equation [ɪˈkweɪʒən] :: уравнение
+- absolute value [ˈæbsəˌluːt] :: |x|
+- zero [ˈzɪərəʊ] :: .
+- negative [ˈnɛɡətɪv]  positive number [ˈpɒzɪtɪv] :: .
+- plus sign [plʌs] [saɪn] minus [ˈmaɪnəs] :: .
+- numerator [ˈnjuːməˌreɪtə] dividend [ˈdɪvɪˌdɛnd] :: числитель
+- denominator [dɪˈnɒmɪˌneɪtə] divisor [dɪˈvaɪzə] :: знаменатель
+- quotient [ˈkwəʊʃənt] :: частное 20/3 = the quotient = 6 and two thirds 2/3 (also ratio of a dividend to
+     its divisor)
+- remainder [rɪˈmeɪndə] :: остаток  (Remainder operator %)
+- ratio [ˈreɪʃɪˌəʊ] :: отношение 2:3
+- monomial [mɒˈnəʊmɪəl] :: одночлен
+- reciprocal [riˈsiprəkəl] :: or  multiplicative inverse. for x = 1/x or x^-1
+- degree [dɪˈɡriː] :: уровень
+- polynomial [ˌpɒlɪˈnəʊmɪəl] :: многочлен. сумма одночленов
+- coefficient [ˌkəʊɪˈfɪʃənt] :: содействующий фактор
+- set :: множество
+- commutativity[kəˈmjuːtətɪvɪtɪ] :: zg = gz
+- Bijection [bɪˈʤekʃn] :: биекция
+- injection [ɪnˈʤekʃn] :: как биекция, только не на все элементы
+- distributivity [dɪˈstrɪbjʊtɪvɪtɪ] :: дистрибутивость with respect to addition - правая и левая.
+- Intersection [ɪntəˈsekʃn] :: пересечение
+- Cartesian Product [kɑːˈtiːzjən ˈprɔdʌkt] :: декартово произведение
+- intersept [ˈɪntəsept] :: y-intercept y-пересечения
+- logarithm [ˈlɔgərɪðəm] :: .
+- quantify [ˈkwɔntɪfaɪ] :: количественно оценить Probability quantifies as a number between 0 and 1x
+- derivative [dɪˈrɪvətɪv] :: производная
+- Gradient [ˈgreɪdjənt] :: градиент
+- logistic [ləˈʤɪstɪk] :: логистический
+- Hyperbolic [haɪpɜːˈbɔlɪk] :: функции выраженные экспоненту и тесно связанных с тригонометрическими функциями
+- converge [kənˈvɜːʤ] :: сходиться
+
+frases:
+- A variable is a letter, for example x, y or z
+- To evaluate an algebraic expression
+- arithmetic operations + - /
+- solve equation 6*x=12. solution x =2
+- sides of an equation
+- This kind of diagram is called a number line ----|-1-----|0----|+1------
+- whole numbers 0,1,2,3 ...
+* -s ending pronunciation
+- To create a plural noun (cats)
+- To conjugate a verb (snows)
+- To show possession (coach's, coaches')
+- To create a contraction (coach's meaning coach is or coach has) - сокращение
+
+Three posibilities  [pɔsəˈbɪlɪtɪs]:
+1. /s/ 's sound': hats /hæts/
+2. /z/ 'z sound': loves /lʌvz/
+3. /ɪz/ 'short i'+'z sound': misses /'mɪ sɪz/
+
+/ɪz/  final sound:
+- /s/	misses
+- /z/	causes
+- /ʧ/	watches
+- /ʤ/	changes
+- /ʃ/	wishes
+- /ʒ/	garages
+
+/s/
+- /p/	stops
+- /k/	looks
+- /t/	cats
+- /θ/	Earth's
+
+/z/
+- /b/	describes
+- /g/	begs
+- /d/	words
+- /ð/	bathes
+- /v/	loves
+- /l/	calls
+- /r/	cures
+- /m/	dreams
+- /n/	rains
+- /ŋ/	belongs
+* grammer
+- https://i.pinimg.com/originals/59/b3/16/59b316adbf77914fc62fdedcab42894f.gif
+- https://englishtexts.ru/misc/poliglot-angliyskiy-za-16-chasov/urok-11
+- https://www.ego4u.com/en/cram-up/grammar/tenses
+
+[[./english_images/englishtimes.gif]]
+
+Continuous (be -ing)
+|   | Present – настоящее | Past – прошедшее                   | Future – будущее        |
+|---+---------------------+------------------------------------+-------------------------|
+| + | It is raining.      | It was raining. промежуток времени | It will be raining.     |
+| – | It is not raining.  | It wasn’t raining.                 | It will not be raining. |
+| ? | Is it raining?      | Was it raining? промежуток времени | Will it be raining?     |
+Perfect (have/has)
+|   | Present – have/has                  | Past – had                  | Future – have     by, in a week              |
+|---+-------------------------------------+-----------------------------+----------------------------------------------|
+| + | I have seen you.имеем результат     | I had seen you.перед чем-то | I will have finished this project by Friday. |
+| – | I have not seen you.уже мимо прошел | I hadn’t seen you.          | I will have not V(3) …                       |
+| ? | Has he seen her?                    | Had he seen her?            | Will I have V(3) … ?                         |
+
+Irregular verbs
+| beat       | /bi:t/        | beat       | /bi:t/       | beaten     | /'bi:tn/      |
+| become     | /bɪ'kʌm/      | became     | /bɪ'keɪm/    | become     | /bɪ'kʌm/      |
+| begin      | /bɪ'gɪn/      | began      | /bɪ'gæn/     | begun      | /bɪ'gʌn/      |
+| bend       | /bend/        | bent       | /bent/       | bent       | /bent/        |
+| bind       | /baɪnd/       | bound      | /baʊnd/      | bound      | /baʊnd/       |
+| bite       | /baɪt/        | bit        | /bɪt/        | bitten     | /'bɪtn/       |
+| bleed      | /bli:d/       | bled       | /bled/       | bled       | /bled/        |
+| blow       | /blou/        | blew       | /blu:/       | blown      | /bloun/       |
+| break      | /breɪk/       | broke      | /brouk/      | broken     | /'broukən/    |
+| bring      | /brɪŋ/        | brought    | /brɔ:t/      | brought    | /brɔ:t/       |
+| build      | /bɪld/        | built      | /bɪlt/       | built      | /bɪlt/        |
+| burn       | /bɜ:rn/       | burnt      | /bɜ:rnt/     | burnt      | /bɜ:rnt/      |
+| burn       | /bɜ:rn/       | burned     | /bɜ:rnd/     | burned     | /bɜ:rnd/      |
+| buy        | /baɪ/         | bought     | /bɔ:t/       | bought     | /bɔ:t/        |
+| catch      | /kætʃ/        | caught     | /kɔ:t/       | caught     | /kɔ:t/        |
+| choose     | /tʃu:z/       | chose      | /tʃouz/      | chosen     | /'tʃouzən/    |
+| come       | /kʌm/         | came       | /keɪm/       | come       | /kʌm/         |
+| cost       | /kɒst/        | cost       | /kɒst/       | cost       | /kɒst/        |
+| cut        | /kʌt/         | cut        | /kʌt/        | cut        | /kʌt/         |
+| dig        | /dɪg/         | dug        | /dʌg/        | dug        | /dʌg/         |
+| do         | /du:/         | did        | /dɪd/        | done       | /dʌn/         |
+| draw       | /drɔ:/        | drew       | /dru:/       | drawn      | /drɔ:n/       |
+| dream      | /dri:m/       | dreamt     | /dremt/      | dreamt     | /dremt/       |
+| dream      | /dri:m/       | dreamed    | /dri:md/     | dreamed    | /dri:md/      |
+| drink      | /drɪŋk/       | drank      | /dræŋk/      | drunk      | /drʌŋk/       |
+| drive      | /draɪv/       | drove      | /drouv/      | driven     | /'drɪvən/     |
+| eat        | /i:t/         | ate        | /eɪt,et/     | eaten      | /'i:tn/       |
+| fall       | /fɔ:l/        | fell       | /fel/        | fallen     | /'fɔ:lən/     |
+| feed       | /fi:d/        | fed        | /fed/        | fed        | /fed/         |
+| feel       | /fi:l/        | felt       | /felt/       | felt       | /felt/        |
+| fight      | /faɪt/        | fought     | /fɔ:t/       | fought     | /fɔ:t/        |
+| find       | /faɪnd/       | found      | /faʊnd/      | found      | /faʊnd/       |
+| fly        | /flaɪ/        | flew       | /flu:/       | flown      | /floun/       |
+| forget     | /fər'get/     | forgot     | /fər'gɒt/    | forgotten  | /fər'gɒtn/    |
+| forgive    | /fər'gɪv/     | forgave    | /fər'geɪv/   | forgiven   | /fər'gɪvən/   |
+| freeze     | /fri:z/       | froze      | /frouz/      | frozen     | /'frouzən/    |
+| get        | /get/         | got        | /gɒt/        | got        | /gɒt/         |
+| get        | /get/         | got        | /gɒt/        | gotten     | /'gɒtn/       |
+| give       | /gɪv/         | gave       | /geɪv/       | given      | /'gɪvən/      |
+| go         | /gou/         | went       | /went/       | gone       | /gɒn/         |
+| grow       | /grou/        | grew       | /gru:/       | grown      | /groun/       |
+| hang       | /hæŋ/         | hung       | /hʌŋ/        | hung       | /hʌŋ/         |
+| have       | /hæv/         | had        | /hæd/        | had        | /hæd/         |
+| hear       | /hɪər/        | heard      | /hɜ:rd/      | heard      | /hɜ:rd/       |
+| hide       | /haɪd/        | hid        | /hɪd/        | hidden     | /'hɪdn/       |
+| hit        | /hɪt/         | hit        | /hɪt/        | hit        | /hɪt/         |
+| hold       | /hould/       | held       | /held/       | held       | /held/        |
+| hurt       | /hɜ:rt/       | hurt       | /hɜ:rt/      | hurt       | /hɜ:rt/       |
+| keep       | /ki:p/        | kept       | /kept/       | kept       | /kept/        |
+| know       | /nou/         | knew       | /nu:/        | known      | /noun/        |
+| lay        | /leɪ/         | laid       | /leɪd/       | laid       | /leɪd/        |
+| lead       | /li:d/        | led        | /led/        | led        | /led/         |
+| learn      | /lɜ:rn/       | learnt     | /lɜ:rnt/     | learnt     | /lɜ:rnt/      |
+| learn      | /lɜ:rn/       | learned    | /lɜ:rnd/     | learned    | /lɜ:rnd/      |
+| leave      | /li:v/        | left       | /left/       | left       | /left/        |
+| lend       | /lend/        | lent       | /lent/       | lent       | /lent/        |
+| let        | /let/         | let        | /let/        | let        | /let/         |
+| lie        | /laɪ/         | lay        | /leɪ/        | lain       | /leɪn/        |
+| lose       | /lu:z/        | lost       | /lɒst/       | lost       | /lɒst/        |
+| make       | /meɪk/        | made       | /meɪd/       | made       | /meɪd/        |
+| mean       | /mi:n/        | meant      | /ment/       | meant      | /ment/        |
+| meet       | /mi:t/        | met        | /met/        | met        | /met/         |
+| pay        | /peɪ/         | paid       | /peɪd/       | paid       | /peɪd/        |
+| put        | /pʊt/         | put        | /pʊt/        | put        | /pʊt/         |
+| read       | /ri:d/        | read       | /red/        | read       | /red/         |
+| ride       | /raɪd/        | rode       | /roud/       | ridden     | /'rɪdn/       |
+| ring       | /rɪŋ/         | rang       | /ræŋ/        | rung       | /rʌŋ/         |
+| rise       | /raɪz/        | rose       | /rouz/       | risen      | /'rɪzən/      |
+| run        | /rʌn/         | ran        | /ræn/        | run        | /rʌn/         |
+| say        | /seɪ/         | said       | /sed/        | said       | /sed/         |
+| see        | /si:/         | saw        | /sɔ:/        | seen       | /si:n/        |
+| sell       | /sel/         | sold       | /sould/      | sold       | /sould/       |
+| send       | /send/        | sent       | /sent/       | sent       | /sent/        |
+| set        | /set/         | set        | /set/        | set        | /set/         |
+| shake      | /ʃeɪk/        | shook      | /ʃʊk/        | shaken     | /'ʃeɪkən/     |
+| shine      | /ʃaɪn/        | shone      | /ʃoun,ʃɒn/   | shone      | /ʃoun, ʃɒn/   |
+| shoot      | /ʃu:t/        | shot       | /ʃɒt/        | shot       | /ʃɒt/         |
+| show       | /ʃou/         | showed     | /ʃoud/       | shown      | /ʃoun/        |
+| shut       | /ʃʌt/         | shut       | /ʃʌt/        | shut       | /ʃʌt/         |
+| sing       | /sɪŋ/         | sang       | /sæŋ/        | sung       | /sʌŋ/         |
+| sink       | /sɪŋk/        | sank       | /sæŋk/       | sunk       | /sʌŋk/        |
+| sit        | /sɪt/         | sat        | /sæt/        | sat        | /sæt/         |
+| sleep      | /sli:p/       | slept      | /slept/      | slept      | /slept/       |
+| smell      | /smel/        | smelt      | /smelt/      | smelt      | /smelt/       |
+| smell      | /smel/        | smelled    | /smeld/      | smelled    | /smeld/       |
+| speak      | /spi:k/       | spoke      | /spouk/      | spoken     | /'spoukən/    |
+| spell      | /spel/        | spelt      | /spelt/      | spelt      | /spelt/       |
+| spell      | /spel/        | spelled    | /speld/      | spelled    | /speld/       |
+| spend      | /spend/       | spent      | /spent/      | spent      | /spent/       |
+| spill      | /spɪl/        | spilt      | /spɪlt/      | spilt      | /spɪlt/       |
+| spill      | /spɪl/        | spilled    | /spɪld/      | spilled    | /spɪld/       |
+| spit       | /spɪt/        | spat       | /spæt/       | spat       | /spæt/        |
+| spit       | /spɪt/        | spit       | /spɪt/       | spit       | /spɪt/        |
+| split      | /splɪt/       | split      | /splɪt/      | split      | /splɪt/       |
+| spoil      | /spoɪl/       | spoilt     | /spoɪlt/     | spoilt     | /spoɪlt/      |
+| spoil      | /spoɪl/       | spoiled    | /spoɪld/     | spoiled    | /spoɪld/      |
+| stand      | /stænd/       | stood      | /stʊd/       | stood      | /stʊd/        |
+| steal      | /sti:l/       | stole      | /stoul/      | stolen     | /'stoulən/    |
+| strike     | /straɪk/      | struck     | /strʌk/      | struck     | /strʌk/       |
+| swim       | /swɪm/        | swam       | /swæm/       | swum       | /swʌm/        |
+| take       | /teɪk/        | took       | /tʊk/        | taken      | /'teɪkən/     |
+| teach      | /ti:tʃ/       | taught     | /tɔ:t/       | taught     | /tɔ:t/        |
+| tear       | /teər/        | tore       | /tɔr/        | torn       | /tɔrn/        |
+| tell       | /tel/         | told       | /tould/      | told       | /tould/       |
+| think      | /θɪŋk/        | thought    | /θɔ:t/       | thought    | /θɔ:t/        |
+| throw      | /θrou/        | threw      | /θru:/       | thrown     | /θroun/       |
+| understand | /ʌndər'stænd/ | understood | /ʌndər'stʊd/ | understood | /ʌndər 'stʊd/ |
+| wake       | /weɪk/        | woke       | /wouk/       | woken      | /'woukən/     |
+| wear       | /weər/        | wore       | /wɔr/        | worn       | /wɔrn/        |
+| win        | /wɪn/         | won        | /wʌn/        | won        | /wʌn/         |
+| write      | /raɪt/        | wrote      | /rout/       | written    | /'rɪtn/       |

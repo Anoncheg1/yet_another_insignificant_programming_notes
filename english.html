@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-16 Wed 21:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org807383c">1. common</a></li>
+<li><a href="#org47f446b">2. slang</a>
+<ul>
+<li><a href="#org37e09a4">2.1. shorts</a></li>
+<li><a href="#org020dc2d">2.2. - Kinda,” “wanna,” “whatcha,” “hafta,” “gimme,” “lemme,” and “gonna</a></li>
+</ul>
+</li>
+<li><a href="#org507bd2b">3. ideoms</a>
+<ul>
+<li><a href="#org199b1b3">3.1. fillers, crutches</a></li>
+</ul>
+</li>
+<li><a href="#org461c3b4">4. old</a></li>
+<li><a href="#orge5b3d27">5. meeting speach</a>
+<ul>
+<li><a href="#orgf05c8e6">5.1. what yearsterday</a></li>
+<li><a href="#orgb58a7cb">5.2. did</a></li>
+</ul>
+</li>
+<li><a href="#orgfa3d841">6. Banks [bæŋks]</a>
+<ul>
+<li><a href="#orgb137ed2">6.1. investment</a></li>
+<li><a href="#org4ae3520">6.2. credit, loan</a></li>
+<li><a href="#org7c069c2">6.3. repayment</a></li>
+<li><a href="#orgedeee9b">6.4. mortage</a></li>
+</ul>
+</li>
+<li><a href="#orgae4b885">7. neural networks</a></li>
+<li><a href="#org190927a">8. IDE features</a></li>
+<li><a href="#org9cddf35">9. Latin and Greek</a></li>
+<li><a href="#org5cd84b7">10. Mobile [ˈməʊbaɪl]</a></li>
+<li><a href="#org5ebddf0">11. Союзы</a></li>
+<li><a href="#org05eeb80">12. Morphological derivation</a></li>
+<li><a href="#orgcd355eb">13. math</a></li>
+<li><a href="#org1f26763">14. -s ending pronunciation</a></li>
+<li><a href="#org8fee5aa">15. grammer</a></li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- mode: Org; fill-column: 100; coding: utf-8; -</b>-
+</p>
+
+<div id="outline-container-org807383c" class="outline-2">
+<h2 id="org807383c"><span class="section-number-2">1</span> common</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+(франц. comme il faut - как должно
+</p>
+
+<p>
+software solutions 	[ˈsɒftweər] [səˈluːʃn]
+in the cloud	(klaʊd)
+on-premise	[ˈprɛmɪs] - традиционно
+On-Demand	[ɔn-dɪˈmɑːnd] - cloud SaaS
+</p>
+
+
+<p>
+premise <i>ˈpremis</i> предпосылка The premise of something is that.
+hybrid scenario <i>ˈhaɪbrɪd</i> <i>sɪˈnɑːrɪˌəʊ</i>
+while (&lt;condition does not hold&gt;) :: условие не выполняется
+arity ::  function of indefinite arity
+</p>
+
+<ul class="org-ul">
+<li>figuratively 	[ˈfɪgjərətɪvlɪ] образно, фигурально</li>
+<li>literally 		[ˈlɪtərəlɪ]	прямо, буквально</li>
+</ul>
+
+<p>
+customizing [ˈkʌstəmaɪzɪŋ]
+personalization [pɜːsənəlɪˈzeɪʃn]
+modification [mɔdɪfɪˈkeɪʃn]
+</p>
+
+<p>
+customer [ˈkʌstəmə]
+report [rɪˈpɔːt]
+dialog [ˈdaɪəlɒg]
+reuse [rɪˈjuːz]
+user [ˈjuːzə] dialog [ˈdaɪəlɒg]
+functionality <i>ˌfʌŋkʃəˈnæləti</i>
+possibility <i>ˌpɒsəˈbɪləti</i>
+upgrade <i>ˈʌpɡreɪd</i>
+group <i>ɡruːp</i>
+multi-layer <i>ˈmʌlti//ˈleɪə(r)</i>
+template [ˈtemplət]
+</p>
+
+<p>
+to profile [ˈprəʊfaɪl] обрабатывать по шаблону
+сonsolidate [kənˈsɒlɪˌdeɪt] объединять, хранить в одном месте
+data governance [ˈɡʌvənəns] управление данными
+persistence [pəˈsɪstəsn] постоянсво persistent classes
+query [ˈkwɪərɪ] запрос
+</p>
+
+
+<p>
+To achieve overall system reliability in the presence of a number of faulty processes. Достичь общей
+достоверности при наличии нескольких неисправных процессов.
+</p>
+<dl class="org-dl">
+<dt>overall</dt><dd>[ˈəʊvərˌɔːl] общей [ˌəʊvərˈɔːl] в общем и целом Overall accuracy</dd>
+</dl>
+
+<p>
+non
+</p>
+<dl class="org-dl">
+<dt>procedure [prəˈsiːʤə]</dt><dd>.</dd>
+<dt>array [əˈreɪ]</dt><dd>.</dd>
+<dt>tuple[ˈtjʊpəl]</dt><dd>finite ordered list (как правило одного типа) например: relat. database - records(rows),
+list in Lisp</dd>
+<dt>sequence [ˈsiːkwəns]</dt><dd>.</dd>
+<dt>function [ˈfʌŋkʃən]</dt><dd>функционировать. it functions as something.</dd>
+<dt>variable [ˈvɛərɪəbəl]</dt><dd>переменная</dd>
+<dt>value [ˈvæljuː]</dt><dd>значение</dd>
+<dt>embedded [ɪmˈbɛdɪd]</dt><dd>embedded systems</dd>
+<dt>facilitate changes [fəˈsɪlɪˌteɪt]</dt><dd>обеспечивать изменение. в react programming.</dd>
+<dt>decimal</dt><dd>[ˈdɛsɪməl] десятичная дробь</dd>
+<dt>assignment [əˈsaɪnmənt]</dt><dd>назначение</dd>
+<dt>architecture [ˈɑːkɪˌtɛktʃə]</dt><dd>.</dd>
+<dt>interpreter [ɪnˈtɜːprɪtə]</dt><dd>истолкователь.</dd>
+<dt>throughput [ˈθruːˌpʊt]</dt><dd>пропускная способность</dd>
+<dt>latency, latence [ˈleɪtəns]</dt><dd>просто задержка, скрытая задержка, delay время вызова</dd>
+<dt>queue [kjuː]</dt><dd>очередь</dd>
+<dt>ack [ˈæk]</dt><dd>подтверждение получения (message will be acked or failed)</dd>
+<dt>suspension [səˈspɛnʃən]</dt><dd>приостановка</dd>
+<dt>monitoring [ˈmɒnɪtərɪŋ]</dt><dd>.</dd>
+<dt>enhancement [ɪn'hɑːnsmənt]</dt><dd>усовершенствование to enhance [ɪnˈhɑːns]</dd>
+<dt>layer [ˈleɪə]</dt><dd>. microservices layer</dd>
+<dt>process [ˈprəʊsɛs]</dt><dd>.</dd>
+<dt>notation [nəʊˈteɪʃən]</dt><dd>Business Process Model and Notation</dd>
+<dt>workflow [ˈwɜːkˌfləʊ]</dt><dd>рабочий процесс, документооборот.</dd>
+<dt>overloading [ˈəʊvəˌləʊd] v [ˌəʊvəˈləʊd]</dt><dd>.</dd>
+<dt>overriding [ˌəʊvəˈraɪdɪŋ]</dt><dd>.</dd>
+<dt>multithreading [ˌmʌltɪˈθrɛdɪŋ]</dt><dd>многопоточность</dd>
+<dt>processing  [ˈprəʊsesɪŋ]</dt><dd>обработка</dd>
+<dt>recap [ˈriːkæp]</dt><dd>резюме о чем-то Let us quickly do a recap about Kafka</dd>
+<dt>keyword [ˈkiːwɜːd]</dt><dd>ключевое слово</dd>
+<dt>machine [məˈʃiːn]</dt><dd>.</dd>
+<dt>workshop [ˈwɜːkʃɔp]</dt><dd>семинар, мастерская</dd>
+<dt>workbench [ˈwɜːkbenʧ]</dt><dd>инструментальные средства, рабочее место</dd>
+<dt>storage [ˈstɔːrɪʤ]</dt><dd>.</dd>
+</dl>
+<p>
+OOP
+</p>
+<dl class="org-dl">
+<dt>descendant  [dɪˈsendənt]</dt><dd>потомок.  these and their descendants - они и их потомки</dd>
+</dl>
+<p>
+Data
+</p>
+<dl class="org-dl">
+<dt>clause [klɔːz]</dt><dd>SQL clause</dd>
+<dt>column [ˈkɒləm]</dt><dd>колонка</dd>
+<dt>query [ˈkwɪərɪ]</dt><dd>запрос</dd>
+<dt>volume [ˈvɒljuːm]</dt><dd>объем данных</dd>
+<dt>variety [vəˈraɪɪtɪ]</dt><dd>разнообразие типов и источников данных</dd>
+<dt>velocity [vɪˈlɒsɪtɪ]</dt><dd>скорость поступления и обработки</dd>
+<dt>veracity [vɛˈræsɪtɪ]</dt><dd>достоверность данных</dd>
+<dt>noise [nɔɪz]</dt><dd>.</dd>
+<dt>batch [bætʃ]</dt><dd>партия, пакет</dd>
+<dt>commit [kəˈmɪt]</dt><dd>.</dd>
+<dt>subscript [ˈsʌbskrɪpt]</dt><dd>index</dd>
+<dt>discrepancy  [dɪsˈkrepənsɪ]</dt><dd>несоответствие, разница discrepancy between the expected and</dd>
+<dt>accuracy [ˈækjʊrəsɪ] </dt><dd>точность = num of correct classification/ total num of predicates</dd>
+</dl>
+
+<p>
+adj
+</p>
+<dl class="org-dl">
+<dt>abstract [ˈæbstrækt]</dt><dd>.</dd>
+<dt>compiled [kəmˈpaɪl]</dt><dd>.</dd>
+<dt>compulsory <i>kəmˈpʌlsərɪ</i></dt><dd>обязательнный</dd>
+<dt>obligatory <i>ɔˈblɪgətərɪ</i></dt><dd>обязательный</dd>
+<dt>mandatory [ˈmændətərɪ]</dt><dd>обязательны mandatory access control</dd>
+<dt>discretionary [dɪˈskrɛʃənərɪ]</dt><dd>Discretionary access control у объекта</dd>
+<dt>coherent</dt><dd>[kəʊˈhɪərənt] последовательный</dd>
+<dt>error prone</dt><dd>[prəʊn] склонный к ошибкам. error prone behavior, solution</dd>
+<dt>explicit <i>ɪkˈsplɪsɪt</i></dt><dd>явный</dd>
+<dt>robust [rəʊˈbʌst]</dt><dd>надежный Java is a strong programming language as it uses strong memory management. The
+concepts like Automatic garbage collection, Exception handling, etc. make it more robust.</dd>
+<dt>composite [ˈkɔmpəzɪt]</dt><dd>составной</dd>
+<dt>obsolete [ˈɒbsəˌliːt] eng [äbsəˈlēt] </dt><dd>устарелый</dd>
+<dt>resilient [rɪˈzɪlɪənt]</dt><dd>устойчивый к , resilient to architecture erosion</dd>
+<dt>loosely coupled [luːs]-ly [kʌpəld]</dt><dd>loosely coupled services.</dd>
+<dt>fault tolerant [fɔːlt] [ˈtɒlərənt]</dt><dd>отказоусточивый see Reliability</dd>
+<dt>failover [ˈfeɪləʊvər]</dt><dd>failover software - a method of protecting computer systems from <span class="underline">failure</span>, in
+which <span class="underline">standby equipment</span> automatically <span class="underline">takes over</span> when the main system <span class="underline">fails</span>. will <span class="underline">reschedule</span> its
+task to the <span class="underline">standby server</span>.</dd>
+<dt>standby</dt><dd>резервный</dd>
+<dt>fail-fast</dt><dd>systems are usually designed to stop normal operation rather than attempt to continue</dd>
+<dt>unwarranted [ʌnˈwɒrəntɪd]</dt><dd>необоснованный</dd>
+<dt>distributed [dɪˈstrɪbjuːtɪd]</dt><dd>распределенные системы решающие одну проблему SOA-based systems to massively
+multiplayer online games to peer-to-peer applications.</dd>
+<dt>decentralise [diːˈsɛntrəˌlaɪz]</dt><dd>decentralization</dd>
+<dt>Swarm intelligence [swɔːm]</dt><dd>коллективное поведение децентрализованной самоорганизующейся системы</dd>
+<dt>faulty [ˈfɔːltɪ]</dt><dd>неисправный</dd>
+<dt>virtual [ˈvɜːtʃʊəl]</dt><dd>Java Virtual Machine</dd>
+<dt>lightweight [ˈlaɪtˌweɪt]</dt><dd>облегченный, меньше кода</dd>
+<dt>versatile [ˈvɜːsətaɪl]</dt><dd>универсальный, многоцелевой, многофункциональный,</dd>
+<dt>arbitrary [ˈɑːbɪtrərɪ]</dt><dd>произвольный arbitrary value - произвольное значение</dd>
+<dt>supersede [sjuːpəˈsiːd] superseded</dt><dd>замененный</dd>
+<dt>precede [prɪˈsiːd]</dt><dd>предшествующий</dd>
+<dt>salient [ˈseɪljənt]</dt><dd>salient features существенные фичи</dd>
+<dt>Boilerplate [ˈbɔɪləpleɪt]</dt><dd>шаблон, шаблонный</dd>
+<dt>graceful [ˈgreɪsf(ə)l]</dt><dd>изящный</dd>
+<dt>refused [rɪˈfjuːzd]</dt><dd>connection refused отклоненный, отвергнутый</dd>
+<dt>(no term)</dt><dd>opt-in options, rather than an opt-out options - opting-in - выбрать-в, opting-out выбрать-вон</dd>
+</dl>
+<p>
+Data
+</p>
+<dl class="org-dl">
+<dt>periodic [ˌpɪərɪˈɒdɪk]</dt><dd>периодический</dd>
+<dt>dense [dens]</dt><dd>without gaps - плотный</dd>
+<dt>sparse [spɑːs]</dt><dd>with gaps - разреженный</dd>
+</dl>
+
+<p>
+non
+</p>
+<dl class="org-dl">
+<dt>timeliness</dt><dd>своевременность</dd>
+<dt>accuracy [ˈækjʊrəsɪ]</dt><dd>точность</dd>
+<dt>completeness [kəmˈpliːt]</dt><dd>завершенность, законченность, полнота</dd>
+<dt>meaning [ˈmiːnɪŋ]</dt><dd>значащий</dd>
+<dt>granularity [ˌɡrænjʊˈlærɪtɪ]</dt><dd>величина зерен и их количество - зернистость
+<dl class="org-dl">
+<dt>fine-grained [ɡreɪn]</dt><dd>выверенно зернистый</dd>
+</dl></dd>
+<dt>fault-tolerant [fɔːlt] [ˈtɒlərənt]</dt><dd>отказоустойчивость. Если часть системы откажет, то ничего</dd>
+<dt>scalability [ˌskeɪləˈbɪlɪtɪ]</dt><dd>масштабируемость scalable [ˈskeɪləbəl] масштабируемый</dd>
+<dt>reliability [rɪˈlaɪəbəl]</dt><dd>надежность, достоверность  reliably [rɪˈlaɪəbəl]</dd>
+<dt>performance [pəˈfɔːməns]</dt><dd>производит-ность</dd>
+<dt>serviceability [ˈsɜːvɪsəbəl]</dt><dd>бесперебойность</dd>
+<dt>reliability</dt><dd>надежность</dd>
+</dl>
+
+<p>
+verb
+</p>
+<dl class="org-dl">
+<dt>invocation [ˌɪnvəˈkeɪʃən]</dt><dd>вызов decouples method execution from method invocation</dd>
+<dt>execute [ˈɛksɪˌkjuːt]</dt><dd>выполнять</dd>
+<dt>evaluate [ɪˈvæljʊˌeɪt]</dt><dd>вычислять</dd>
+<dt>interpret [ɪnˈtɜːprɪt]</dt><dd>.</dd>
+<dt>extend [ɪkˈstɛnd]</dt><dd>.</dd>
+<dt>implement [ˈɪmplɪmənt] verb [ˈɪmplɪˌmɛnt]</dt><dd></dd>
+
+<dt>to set-up</dt><dd>the set-up. устанавить</dd>
+<dt>cite [saɪt]</dt><dd>цитировать he cited "" он цитировал</dd>
+<dt>acquire [əˈkwaɪə]</dt><dd>приобретать</dd>
+<dt>emit</dt><dd>emits the data to</dd>
+<dt>deplay [dɪˈplɔɪ] deployment [dɪˈplɔɪmənt]</dt><dd>развертывать</dd>
+<dt>detection [dɪˈtekʃn]</dt><dd>обнаружение</dd>
+<dt>yield [jiːld]</dt><dd>уступать, дает, It did not yield much.</dd>
+<dt>bootstrap [ˈbuːtstræp]</dt><dd>self-starting process</dd>
+<dt>infer [ɪnˈfɜː]</dt><dd>догадываться. сompiler in situations where it cannot infer the type automatically</dd>
+<dt>prediction [prɪˈdɪkʃn]</dt><dd>REST API that serves up predictions</dd>
+<dt>estimate [ˈestɪmɪt]</dt><dd>probability estimate - оценка вероятности</dd>
+</dl>
+<p>
+adv
+</p>
+<dl class="org-dl">
+<dt>succinctly [səkˈsɪŋktlɪ]</dt><dd>кратко, лаконично can be coded succinctly</dd>
+</dl>
+
+<p>
+phrases:
+</p>
+<ul class="org-ul">
+<li>I hope in hindsight <b>[ɪn ˈhaɪndsaɪt]</b> надеюсь задним числом</li>
+<li>indivisible atom <b>[ˌɪndɪˈvɪzəbəl] [ˈætəm]</b> - неделимый атом</li>
+<li>you are outnumbered [ˌaʊtˈnʌmbə] - ты в меньшинстве</li>
+<li>de-emphasizes explicit dick manupulation - не акцентирует внимание на явном манипулировании членом</li>
+<li>Clean and fluent English - Чистый и свободный английский язык</li>
+<li>You Are encouraged [ɪnˈkʌrɪʤd] to fill out the value to list - Вам предлагается заполнить список значений</li>
+<li>is an instance of the argument or of a subclass thereof (из этого) (или их подкласса)</li>
+<li>Jack of all trades - мастер на все руки</li>
+<li><b>State-of-the-art</b> (cutting edge) (SOTA) - highest level of general development, as of a device, technique, or
+scientific field achieved at a particular time.</li>
+<li>all are species of a common genus - все есть виды общего рода</li>
+<li>In its substance, &#x2026; - По своей сути, что-то такое-то&#x2026;</li>
+<li>used to provide an <b>unbiased evaluation</b> - непредвзятая оценка</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47f446b" class="outline-2">
+<h2 id="org47f446b"><span class="section-number-2">2</span> slang</h2>
+<div class="outline-text-2" id="text-2">
+<dl class="org-dl">
+<dt>lame</dt><dd>boring</dd>
+<dt>rad</dt><dd>radical - cool</dd>
+<dt>Aima</dt><dd>most beautiful girl/boy</dd>
+<dt>homie</dt><dd>сосед чувак</dd>
+<dt>(no term)</dt><dd>homeboy</dd>
+<dt>(no term)</dt><dd>street cat</dd>
+<dt>boomer</dt><dd>фанатик прошлого</dd>
+<dt>wishbone</dt><dd>рэпер с повторяющимися стихами</dd>
+<dt>jacking off</dt><dd>дрочить</dd>
+<dt>PITA</dt><dd>pain in the ass</dd>
+<dt>wigger</dt><dd>white like a nigger</dd>
+<dt>(no term)</dt><dd>보추 literally means "pussy + dick" and it really means a trap, an otokonoko, a male cross-dresser.</dd>
+<dt>Normie</dt><dd>normal zombie</dd>
+<dt>Sperg</dt><dd>obsessive on subject of interest</dd>
+<dt>Derailment</dt><dd>wrong to anal hole</dd>
+<dt>Janitor</dt><dd>genius failed by the education system</dd>
+<dt>janny</dt><dd>Short for janitor. less authority than a moderator. He's a
+janny on an anime imageboard. He does it for free. a girl with the
+emotional capacity of a rock.</dd>
+<dt>Glowie</dt><dd>hence they "glow in the dark." - CIA fails "here's how to
+get cheap guns illegally", "we should shoot first ", and " Stop
+larping kill the blank now "</dd>
+<dt>glownigger</dt><dd>governmental agent (FBI, NSA, CIA, ATF) making bait posts</dd>
+<dt>Jagger</dt><dd>boy with lots of wonderful thoughts that will share anything with you</dd>
+<dt>Weeaboo</dt><dd>person who retains an unhealthy obsession with Japan and
+Japanese culture</dd>
+<dt>redpills</dt><dd>one side of truth propoganda, example IOTBW</dd>
+<dt>Vanned</dt><dd>to be fucked by the FBI</dd>
+<dt>oinkies</dt><dd>police</dd>
+<dt>binging  on things</dt><dd>увлечья чем-то</dd>
+<dt>rulecuck</dt><dd>чувак помешанный на правилах, затворник</dd>
+<dt>heck</dt><dd>hell - She has a heck of a lot of money. Thats a heck of a bug.</dd>
+<dt>(no term)</dt><dd>Dread:: группа диллеров</dd>
+<dt>lay off</dt><dd>отвали, отложить что-то за ненадобностью</dd>
+<dt>ginger</dt><dd>расса огня Прометея с красными волосами и виснушками</dd>
+<dt>cuteness</dt><dd>act of being cute</dd>
+<dt>Lookit</dt><dd>Abbreviation of "look at that/this</dd>
+<dt>splort</dt><dd>Head-exploding cuteness.</dd>
+<dt>94</dt><dd>everything and anything you want it to mean.</dd>
+<dt>dox</dt><dd>Personal information</dd>
+<dt>trick</dt><dd>man who lets women use him</dd>
+<dt>yankass</dt><dd>a person whose only hobby is to insult people and/or push their buttons.</dd>
+<dt>Duh</dt><dd>Of course you idiot, obviously, Duh Dad</dd>
+<dt>imposter/Impostor</dt><dd>пхохой чел в команде котоырй использует чужое имя.</dd>
+<dt>phatass</dt><dd>Female with a nice rounded buttocks</dd>
+<dt>Sheesh</dt><dd>Dammmmmn</dd>
+<dt>Reds</dt><dd>secanol&#x2013;a barbituate/downer.</dd>
+<dt>Sussy balls</dt><dd>подозрительный человек, коп на вечеринке</dd>
+<dt>dip into</dt><dd>To remove a portion of a stash of drugs for the purpose of consumption.</dd>
+<dt>mosey</dt><dd>slow forward movement of the legs</dd>
+<dt>fuck up, screw up, mess up</dt><dd>1. To make a mistake 2. shut the fuck up</dd>
+<dt>dissing</dt><dd>showing disrespect</dd>
+<dt>run up on</dt><dd>to confront someone with hostility</dd>
+<dt>shill</dt><dd>зазывала, проплаченный критик</dd>
+<dt>Clyde</dt><dd>smart assholes that know how to get their way around things</dd>
+<dt>Yummu</dt><dd>an adjective describing someone who is soo great that theyre yummy. An expression of
+enjoyment and joy.</dd>
+</dl>
+<p>
+why hapas - what happends
+rope - rape
+</p>
+</div>
+<div id="outline-container-org37e09a4" class="outline-3">
+<h3 id="org37e09a4"><span class="section-number-3">2.1</span> shorts</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>tho - Though.[ðəʊ] - хотя, однако</li>
+<li>im - I am</li>
+<li>awhile - for a while</li>
+<li>Nah - no</li>
+<li>Henlo - Hello</li>
+<li>Fren - frend</li>
+<li>ngl - Not Gonna Lie</li>
+<li>tbh - to be honest</li>
+<li>for ya: for you</li>
+<li id="ftfy">fixed that for you</li>
+<li id="tryna">trying to</li>
+<li id="sugi or shawty">young teen - pretty and knew it</li>
+<li id="ya">you</li>
+<li id="yo">hello</li>
+<li id="gun show">выставление мускулатуры</li>
+<li id="Douchebag">дюшбэг</li>
+<li id="Nuts">testicles</li>
+<li id="chu">nigga version of you</li>
+<li id="sus">suspishos  [səsˈpɪʃəs]</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org020dc2d" class="outline-3">
+<h3 id="org020dc2d"><span class="section-number-3">2.2</span> - Kinda,” “wanna,” “whatcha,” “hafta,” “gimme,” “lemme,” and “gonna</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Kinda = Kind of</li>
+<li>wanna - Want to/a</li>
+<li>Whatcha = What are you</li>
+<li>hafta</li>
+<li>gimme</li>
+<li>lemme</li>
+<li>gonna</li>
+<li>Outta = Out of.  ex. I’m outta here. -  я ухожу отсюда</li>
+</ul>
+
+<p>
+Ain’t = Has not/have not
+Ain’t = Am not/are not/is not
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org507bd2b" class="outline-2">
+<h2 id="org507bd2b"><span class="section-number-2">3</span> ideoms</h2>
+<div class="outline-text-2" id="text-3">
+<dl class="org-dl">
+<dt>opt for</dt><dd>I opt for it - it fresher. people opt for English</dd>
+<dt>in search of</dt><dd></dd>
+
+<dt>steer clear</dt><dd>держаться подальше</dd>
+<dt>(no term)</dt><dd>therefore</dd>
+<dt>(no term)</dt><dd>“I can relate.” / “I can’t relate.” / “to relate to something”  - to understand feelings</dd>
+<dt>make use of</dt><dd>использовать то, что не было использовано</dd>
+<dt>it should be taken to mean a</dt><dd>это следует понимать как означающее</dd>
+<dt>Get a load of something</dt><dd>зацени это</dd>
+<dt>case in point</dt><dd>наглядный пример</dd>
+<dt>hold up</dt><dd>подожди секундочку, держись!, держать высоко</dd>
+<dt>nigga hush</dt><dd>нигер заткнись</dd>
+<dt>token gesture [ˈʤesʧə]</dt><dd>символический жест</dd>
+<dt>queue the boo/hisses</dt><dd>очередь на бу и шипение</dd>
+<dt>Desire path</dt><dd>тропинка game trail, social trail, fishermen trail, bootleg trail, etc.</dd>
+<dt>In a nutshell</dt><dd>в двух словах</dd>
+<dt>wind up</dt><dd>кончить как-то, wind up dead - сдохнуть.</dd>
+<dt>All the more reason</dt><dd>тем более, нужно что-то</dd>
+<dt>on your own</dt><dd>по своей воле</dd>
+<dt>is not just</dt><dd>неправильно</dd>
+<dt>run-of-the-mill</dt><dd>заурядный (пробег мельницы)</dd>
+<dt>in one go</dt><dd>закодировать в одном месте, сделать за один раз</dd>
+</dl>
+</div>
+<div id="outline-container-org199b1b3" class="outline-3">
+<h3 id="org199b1b3"><span class="section-number-3">3.1</span> fillers, crutches</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>like</li>
+<li>so</li>
+<li>totally</li>
+<li>exactly</li>
+<li>roughly - примерно</li>
+</ul>
+
+<p>
+beginig:
+</p>
+<ul class="org-ul">
+<li>i mean</li>
+<li>well</li>
+<li>okay</li>
+<li>you see</li>
+<li>by the way</li>
+<li>i just</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org461c3b4" class="outline-2">
+<h2 id="org461c3b4"><span class="section-number-2">4</span> old</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+thou shalt not kill
+</p>
+<ul class="org-ul">
+<li>thou, ye [jiː] - you</li>
+<li>shalt - form of shall for you</li>
+</ul>
+
+<p>
+неформальные:
+thee -  тебя
+thy/thine - твой
+theirs
+</p>
+
+<p>
+thou knowest, thou knewest - ты знаешь, ты знал
+</p>
+
+<p>
+exceptions:
+</p>
+<ul class="org-ul">
+<li>thou dost, thou didst</li>
+<li>thou art, thou wast, thou wert  - are,was, were</li>
+<li>thou shalt</li>
+<li>thou hast, thou hadst - have</li>
+<li>thou wilt - will</li>
+<li>thou must</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge5b3d27" class="outline-2">
+<h2 id="orge5b3d27"><span class="section-number-2">5</span> meeting speach</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Docker [ˈdɒkə]</li>
+<li>python [ˈpaɪθən]</li>
+<li>Jupyter (<i>ˈdʒuːpɪtər</i></li>
+<li>analysis [əˈnælɪsɪs]</li>
+<li>random [ˈrændəm]</li>
+<li>gradient boosting [ˈgreɪdɪənt] [ˈbuːstɪŋ]</li>
+<li>feature [ˈfiːʧə]  [ɪmˈpɔːtəns]</li>
+<li>estimator [ˈestɪmeɪtə]</li>
+<li>classificator [ˈklæsɪfɪkeɪtər]</li>
+<li>diagram [ˈdaɪəgræm]</li>
+<li>confusion [kənˈfjuːʒən] matrix - table layout for supervized learning with predicted errors
+<ul class="org-ul">
+<li>it</li>
+</ul></li>
+<li>please remind me</li>
+<li>what took the most time</li>
+<li>что вызывает боьше сложностей</li>
+<li>what will you do tomorrow</li>
+<li>извините если отнял у вас мног овремени</li>
+<li>как это сказать на английском How do they say it in French?</li>
+<li>если пытаться будет получаться лучше и лучше
+<ul class="org-ul">
+<li>if you try it will get better and better</li>
+</ul></li>
+<li>why english is important?</li>
+</ul>
+<p>
+it is pronounced as [prəˈnaʊnst] [æz]
+</p>
+
+
+<p>
+Good morning.
+(yandex) Yesterday [ˈjestədɪ]. I was working on finding the best model
+(google translate) I worked on the best model yesterday
+Well, there's one other thing I've been working on you might find somewhat more interesting.
+I fixed several bugs
+</p>
+
+<p>
+I have found that
+I was looking for
+</p>
+
+<p>
+I am going
+</p>
+
+<p>
+what will you do tomorrow
+</p>
+
+<p>
+I am finished.
+</p>
+
+
+
+
+<p>
+have a nice day
+see you at the next morting meeting tomorrow
+</p>
+</div>
+<div id="outline-container-orgf05c8e6" class="outline-3">
+<h3 id="orgf05c8e6"><span class="section-number-3">5.1</span> what yearsterday</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+what have you been up to lately
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb58a7cb" class="outline-3">
+<h3 id="orgb58a7cb"><span class="section-number-3">5.2</span> did</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>I have done everything she told me.</li>
+<li>I've done it.</li>
+<li>I did everything you wanted.</li>
+<li>I didn’t do much yesterday  [ˈjestədɪ] since the majority of my day consisted of meetings.</li>
+<li>I made this lock.</li>
+</ul>
+
+<p>
+i made a big effort - приложил большие усилия
+Most of the time I have to answer email.
+</p>
+
+<p>
+forget
+</p>
+<ul class="org-ul">
+<li>I did not forget that I did that.</li>
+<li>I forgot to make it.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfa3d841" class="outline-2">
+<h2 id="orgfa3d841"><span class="section-number-2">6</span> Banks [bæŋks]</h2>
+<div class="outline-text-2" id="text-6">
+<dl class="org-dl">
+<dt>Financial institutions [faɪˈnænʃəl] [ɪnstɪˈtjuːʃn]</dt><dd>banking institutions</dd>
+<dt>deposit [dɪˈpɔzɪt]</dt><dd>вклад, Depository institutions - кредитная организация</dd>
+<dt>fraud  [frɔːd]</dt><dd>мошенничество</dd>
+<dt>swipe [swaɪp]</dt><dd>Swipe your card, please. Paid $300,000 on swipe fees. swipe machines - проводя черной
+полосой карты</dd>
+<dt>retail stores [ˈriːteɪl] [stɔːz] </dt><dd>розничные магазины.</dd>
+<dt>pricing [ˈpraɪsɪŋ]</dt><dd>ценообразование</dd>
+<dt>Interest rate [ˈɪntrɪst reɪt]</dt><dd>Процентная ставка
+<dl class="org-dl">
+<dt>variable interest rate (ARM) Adjustable-rate mortgage</dt><dd></dd>
+
+<dt>fixed rates</dt><dd></dd>
+</dl></dd>
+</dl>
+</div>
+<div id="outline-container-orgb137ed2" class="outline-3">
+<h3 id="orgb137ed2"><span class="section-number-3">6.1</span> investment</h3>
+<div class="outline-text-3" id="text-6-1">
+<dl class="org-dl">
+<dt>investment [ɪnˈvestmənt]</dt><dd></dd>
+
+<dt>Home equity [həʊm ˈekwɪtɪ]</dt><dd>Собственный капитал</dd>
+<dt>Treasury Yield  [jiːld]</dt><dd>доходность казначейских облигаций Debt obligations
+<dl class="org-dl">
+<dt>Treasury Rate  [ˈtreʒ(ə)rɪ]</dt><dd>то же, 10 Years US Treasury Rate</dd>
+</dl></dd>
+<dt>debt obligations  [det ɒblɪˈgeɪʃn]</dt><dd>долговые обязательства - treasury bill, treasury note, treasury bond</dd>
+<dt>investor confidance [ˈkɒnfɪdəns] </dt><dd>уверенность</dd>
+<dt>savings [ˈseɪvɪŋz]</dt><dd>сбережения</dd>
+<dt>net worth</dt><dd>балансовая стоимость - собаственный капитал</dd>
+<dt>book value</dt><dd>чистые активы - собаственный капитал</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org4ae3520" class="outline-3">
+<h3 id="org4ae3520"><span class="section-number-3">6.2</span> credit, loan</h3>
+<div class="outline-text-3" id="text-6-2">
+<dl class="org-dl">
+<dt>credit</dt><dd>кредит, кредитование</dd>
+<dt>credit obligation [ɒblɪˈgeɪʃn]</dt><dd>кредитное обязательство</dd>
+<dt>Credit bureau [bjʊəˈrəʊ]</dt><dd>кредитное бюро</dd>
+<dt>credit report [rɪˈpɔːt]</dt><dd>кредитная история</dd>
+<dt>credit term [tɜːm]</dt><dd>срок кредитования, credit terms - условия предоставления кредита</dd>
+<dt>borrow [ˈbɒrəʊ]</dt><dd>одолжить</dd>
+<dt>borrower [ˈbɔrəuə]</dt><dd>заемщик, должник</dd>
+<dt>lend  [lend]</dt><dd>одалживать</dd>
+<dt>lender [ˈlendə]</dt><dd>кредитор, кредитодатель</dd>
+<dt>loan [ləʊn]</dt><dd>кредит, ссуда, заем, заимствование borrowing, lending
+<dl class="org-dl">
+<dt>Loan origination [ərɪʤɪˈneɪʃn] :: Оформление кредита - Mortgage origination</dt><dd>Ипотечное кредитование</dd>
+<dt>loan issue</dt><dd>выдача кредита</dd>
+</dl></dd>
+<dt>Revolving credit</dt><dd>не имеющий рассрочки</dd>
+<dt>home equity loan</dt><dd>кредит под залог имущества type of loan in which the borrower uses the equity of his or
+her home as collateral</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org7c069c2" class="outline-3">
+<h3 id="org7c069c2"><span class="section-number-3">6.3</span> repayment</h3>
+<div class="outline-text-3" id="text-6-3">
+<dl class="org-dl">
+<dt>repayment[rɪˈpeɪmənt]</dt><dd>выплата, возмещение</dd>
+<dt>installment loan or credit</dt><dd>рассрочка, scheduled payments</dd>
+<dt>amortization schedule  [əmɔːtəˈzeɪʃən]</dt><dd>график погашения</dd>
+<dt>delinquency [dɪˈlɪŋkwənsɪ]</dt><dd>просрочка</dd>
+<dt>charge-off</dt><dd>written off as uncollectable, the debt is still legally valid and will be collected.</dd>
+<dt>to default  [dɪˈfɔːlt]</dt><dd>невыполнение обязательств</dd>
+<dt>delinquent [dɪˈlɪŋkwənt]</dt><dd>неплательщик</dd>
+<dt>amount due [əˈmaʊnt djuː]</dt><dd>сумма задолженности</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgedeee9b" class="outline-3">
+<h3 id="orgedeee9b"><span class="section-number-3">6.4</span> mortage</h3>
+<div class="outline-text-3" id="text-6-4">
+<dl class="org-dl">
+<dt>mortgage  [ˈmɔːgɪʤ]</dt><dd>заклад
+<ul class="org-ul">
+<li>mortgage loan - ипотечный кредит</li>
+<li>real estate mortgage - ипотека, залог недвижимости</li>
+<li>mortgage application - заявка ни ипотеку</li>
+</ul></dd>
+<dt>collateral [kəˈlatrəl]</dt><dd>залог</dd>
+<dt>lien [lɪən]</dt><dd>залог</dd>
+<dt>pledge [pleʤ]</dt><dd>залог</dd>
+<dt>House Price Index or Home Supply Index</dt><dd>Индекс Цен На Жилье</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-orgae4b885" class="outline-2">
+<h2 id="orgae4b885"><span class="section-number-2">7</span> neural networks</h2>
+<div class="outline-text-2" id="text-7">
+<dl class="org-dl">
+<dt>successive [səkˈsesɪv]</dt><dd>последующий</dd>
+<dt>neural [ˈnjʊərəl]</dt><dd>нейронный</dd>
+<dt>downsampling [daʊnˈsɑːmplɪŋ]</dt><dd>approximation at a lower rate or density without filter</dd>
+<dt>recurrent [rɪˈkʌrənt]</dt><dd>повторяющийся</dd>
+<dt>learning [ˈlɜːnɪŋ]</dt><dd>самообучение</dd>
+<dt>training [ˈtreɪnɪŋ]</dt><dd>обучение с подкрепление</dd>
+<dt>threshold [ˈθreʃhəʊld]</dt><dd>пороговая величина</dd>
+<dt>estimate [ˈestɪmeɪtə]</dt><dd>оценка</dd>
+<dt>oscillations [ɒsɪˈleɪʃnz]</dt><dd>колебания</dd>
+<dt>augment  [ˈɔːgment]</dt><dd>увеличение, увеличивать</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org190927a" class="outline-2">
+<h2 id="org190927a"><span class="section-number-2">8</span> IDE features</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>syntax highlighting</li>
+<li>smart and not smart autocompletion</li>
+<li>code folding</li>
+<li>indentation</li>
+<li>next occurrence</li>
+<li>Source navigation</li>
+<li>code generation</li>
+<li>integrated code debugger</li>
+<li>Project wizards and templates</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9cddf35" class="outline-2">
+<h2 id="org9cddf35"><span class="section-number-2">9</span> Latin and Greek</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>e.g. 		<i>iːˈdʒiː</i>.		From Latin exempli gratia ‘for the sake of example’</li>
+<li>ad hoc 	<i>ˌæd ˈhɒk</i> from Latin :"for this"</li>
+<li>and vice versa и наоборот</li>
+<li>nullipotent - nullus (“not any”) +‎ potent (“having power”) – literally, “having no power” - no side effect on reading data</li>
+<li>Idempotence -  idem + potence (same + power) - multiple request have same result.</li>
+<li>Pros and cons -  a shortening of the Latin expression "pro et contra" (for and against)</li>
+<li>ca. 1800 BCE - приблизительно до нашей эры 2019CE Before the Common or Current Era</li>
+<li>AD 2019  (anno Domini, "[the] year of [the] Lord")</li>
+<li>400 BC ("before Christ")</li>
+<li>c., ca., or ca (and less frequently circ. or cca.) <b>Circa [ˈsɜːkə]</b> (from Latin, meaning 'around, about')</li>
+<li>Curriculum vitae  <b>[kəˈrɪkjʊləm ˈviːtaɪ, -ˈwiːtaɪ, -ˈvaɪtiː]</b>  -  [the] course of [my] life - резюмэ</li>
+<li>Tabula rasa  лат.«Чистая доска» -  индивид рождается без врождённого или встроенного умственного содержания</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5cd84b7" class="outline-2">
+<h2 id="org5cd84b7"><span class="section-number-2">10</span> Mobile [ˈməʊbaɪl]</h2>
+<div class="outline-text-2" id="text-10">
+<dl class="org-dl">
+<dt>mobile phone [ˈməʊbaɪl fəʊn]</dt><dd>.</dd>
+<dt>tablet [ˈtæblɪt]</dt><dd>дощечка, таблетка</dd>
+<dt>pin</dt><dd>прикреплять app к dock at bottom of the screen</dd>
+<dt>tap</dt><dd>нажать на notification to open its corresponding app</dd>
+<dt>Internal accelerometers [ɪnˈtɜːnl] [ækˌsɛləˈrɒmɪtə]</dt><dd>акселерометр- shaking and rotation detection.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org5ebddf0" class="outline-2">
+<h2 id="org5ebddf0"><span class="section-number-2">11</span> Союзы</h2>
+<div class="outline-text-2" id="text-11">
+<dl class="org-dl">
+<dt>though</dt><dd>хотя&#x2026;</dd>
+<dt>although [ɔːlˈðəʊ]</dt><dd>несмотря на то что,</dd>
+<dt>as though</dt><dd>как-будто</dd>
+<dt>provided [prəvaɪdɪd]</dt><dd>при условии They will help you provided you tell them the truth.</dd>
+<dt>either here or there</dt><dd>или тут или там</dd>
+<dt>neither here nor there</dt><dd>ни тут ни там</dd>
+<dt>She is both beautiful and intelligent.</dt><dd>И красива и умна.</dd>
+<dt>So tired that can not talk.</dt><dd>Настолько уставший, что не может говорить.</dd>
+<dt>Sick as he was, he worked diligently.</dt><dd>Хоть болел, но работал прилежно</dd>
+<dt>We started early so as to finish it all in time.</dt><dd>чтобы успеть</dd>
+<dt>Do it now lest you change your mind.</dt><dd>Сделай сейчас пока не передумал</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org05eeb80" class="outline-2">
+<h2 id="org05eeb80"><span class="section-number-2">12</span> Morphological derivation</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+derivational patterns
+</p>
+<ul class="org-ul">
+<li>adjective-to-noun: -ness (slow → slowness)</li>
+<li>adjective-to-verb: -en (weak → weaken)</li>
+<li>adjective-to-adjective: -ish (red → reddish)</li>
+<li>adjective-to-adverb: -ly (personal → personally); (slow → slowly</li>
+<li>noun-to-adjective: -al (recreation → recreational)</li>
+<li>noun-to-verb: -fy (glory → glorify)</li>
+<li>verb-to-adjective: -able (drink → drinkable)</li>
+<li>verb-to-noun (abstract): -ance (deliver → deliverance)</li>
+<li>verb-to-noun (agent): -er (write → writer)</li>
+</ul>
+
+<p>
+prefix
+</p>
+<ul class="org-ul">
+<li>write → re-write;</li>
+<li>lord → over-lord</li>
+<li>(healthy → unhealthy ; do → undo</li>
+<li>circle (verb) → encircle (verb); rich (adj) → enrich (verb), large (adj) → enlarge (verb), rapture
+(noun) → enrapture (verb), slave (noun) → enslave (verb).</li>
+</ul>
+<p>
+<a href="https://en.wikipedia.org/wiki/Morphological_derivation">https://en.wikipedia.org/wiki/Morphological_derivation</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd355eb" class="outline-2">
+<h2 id="orgcd355eb"><span class="section-number-2">13</span> math</h2>
+<div class="outline-text-2" id="text-13">
+<dl class="org-dl">
+<dt>math [mæθ]</dt><dd>математический</dd>
+<dt>mathematics [ˌmæθəˈmætɪks]</dt><dd>математика</dd>
+<dt>mathematician [ˌmæθəməˈtɪʃən]</dt><dd>математик</dd>
+<dt>odd [ɒd]</dt><dd>нечетное нечетный</dd>
+<dt>even [ˈiːvən]</dt><dd>четное</dd>
+<dt>formula [ˈfɔːmjʊlə]</dt><dd>формула</dd>
+<dt>parentheses ( ) [pəˈrɛnθəsiːz]</dt><dd>.</dd>
+<dt>brackets [ ] [ˈbrækɪt]</dt><dd></dd>
+
+<dt>braces { } [ˈbreɪsɪz]</dt><dd>фигурные скобки</dd>
+<dt>trivial [ˈtrɪvɪəl]</dt><dd>.</dd>
+<dt>Arithmetic [əˈrɪθmətɪk]</dt><dd>искуство чисел  - Number theory - более новая ветвь.</dd>
+<dt>addition [əˈdɪʃən]</dt><dd>добавление add [æd]</dd>
+<dt>subtraction [səbˈtrækʃən]</dt><dd>, subtract вычесть</dd>
+<dt>multiplication [ˌmʌltɪplɪˈkeɪʃən]</dt><dd>умножение</dd>
+<dt>multiply [ˈmʌltɪˌplaɪ]</dt><dd>умножить</dd>
+<dt>product [ˈprɒdʌkt]</dt><dd>произведение</dd>
+<dt>division [dɪˈvɪʒən]</dt><dd>divide [dɪˈvaɪd] diviser [dɪˈvaɪzə].</dd>
+<dt>exponentiation [ˌɛkspəˌnɛnʃɪˈeɪʃən]</dt><dd>возведение в степень b<sup>n</sup> b-base n-</dd>
+<dt>exponent [ɪkˈspəʊnənt]</dt><dd>степень</dd>
+<dt>power</dt><dd>When we multiply two powers we add their exponents. "b raised to the n-th power", "b raised to the
+power of n", or "the n-th power of b"</dd>
+<dt>factor [ˈfæktə]</dt><dd>множитель</dd>
+<dt>coordinate system [kəʊˈɔːdɪnɪt]</dt><dd>.</dd>
+<dt>x-axis [ˈæksɪs] plural axes [ˈæksiːz]</dt><dd>ось оси</dd>
+<dt>origin(0.0) [ˈɒrɪdʒɪn]</dt><dd>начало координат</dd>
+<dt>Inequalities [ˌɪnɪˈkwɒlɪtɪ]</dt><dd>неравенства = &lt; &gt;= != Equality and Relational Operators (java)</dd>
+<dt>equation [ɪˈkweɪʒən]</dt><dd>уравнение</dd>
+<dt>absolute value [ˈæbsəˌluːt]</dt><dd>|x|</dd>
+<dt>zero [ˈzɪərəʊ]</dt><dd>.</dd>
+<dt>negative [ˈnɛɡətɪv]  positive number [ˈpɒzɪtɪv]</dt><dd>.</dd>
+<dt>plus sign [plʌs] [saɪn] minus [ˈmaɪnəs]</dt><dd>.</dd>
+<dt>numerator [ˈnjuːməˌreɪtə] dividend [ˈdɪvɪˌdɛnd]</dt><dd>числитель</dd>
+<dt>denominator [dɪˈnɒmɪˌneɪtə] divisor [dɪˈvaɪzə]</dt><dd>знаменатель</dd>
+<dt>quotient [ˈkwəʊʃənt]</dt><dd>частное 20/3 = the quotient = 6 and two thirds 2/3 (also ratio of a dividend to
+its divisor)</dd>
+<dt>remainder [rɪˈmeɪndə]</dt><dd>остаток  (Remainder operator %)</dd>
+<dt>ratio [ˈreɪʃɪˌəʊ]</dt><dd>отношение 2:3</dd>
+<dt>monomial [mɒˈnəʊmɪəl]</dt><dd>одночлен</dd>
+<dt>reciprocal [riˈsiprəkəl]</dt><dd>or  multiplicative inverse. for x = 1/x or x<sup>-1</sup></dd>
+<dt>degree [dɪˈɡriː]</dt><dd>уровень</dd>
+<dt>polynomial [ˌpɒlɪˈnəʊmɪəl]</dt><dd>многочлен. сумма одночленов</dd>
+<dt>coefficient [ˌkəʊɪˈfɪʃənt]</dt><dd>содействующий фактор</dd>
+<dt>set</dt><dd>множество</dd>
+<dt>commutativity[kəˈmjuːtətɪvɪtɪ]</dt><dd>zg = gz</dd>
+<dt>Bijection [bɪˈʤekʃn]</dt><dd>биекция</dd>
+<dt>injection [ɪnˈʤekʃn]</dt><dd>как биекция, только не на все элементы</dd>
+<dt>distributivity [dɪˈstrɪbjʊtɪvɪtɪ]</dt><dd>дистрибутивость with respect to addition - правая и левая.</dd>
+<dt>Intersection [ɪntəˈsekʃn]</dt><dd>пересечение</dd>
+<dt>Cartesian Product [kɑːˈtiːzjən ˈprɔdʌkt]</dt><dd>декартово произведение</dd>
+<dt>intersept [ˈɪntəsept]</dt><dd>y-intercept y-пересечения</dd>
+<dt>logarithm [ˈlɔgərɪðəm]</dt><dd>.</dd>
+<dt>quantify [ˈkwɔntɪfaɪ]</dt><dd>количественно оценить Probability quantifies as a number between 0 and 1x</dd>
+<dt>derivative [dɪˈrɪvətɪv]</dt><dd>производная</dd>
+<dt>Gradient [ˈgreɪdjənt]</dt><dd>градиент</dd>
+<dt>logistic [ləˈʤɪstɪk]</dt><dd>логистический</dd>
+<dt>Hyperbolic [haɪpɜːˈbɔlɪk]</dt><dd>функции выраженные экспоненту и тесно связанных с тригонометрическими функциями</dd>
+<dt>converge [kənˈvɜːʤ]</dt><dd>сходиться</dd>
+</dl>
+
+<p>
+frases:
+</p>
+<ul class="org-ul">
+<li>A variable is a letter, for example x, y or z</li>
+<li>To evaluate an algebraic expression</li>
+<li>arithmetic operations + - /</li>
+<li>solve equation 6*x=12. solution x =2</li>
+<li>sides of an equation</li>
+<li>This kind of diagram is called a number line -&#x2014;|-1&#x2013;&#x2014;|0-&#x2014;|+1-&#x2013;&#x2014;</li>
+<li>whole numbers 0,1,2,3 &#x2026;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f26763" class="outline-2">
+<h2 id="org1f26763"><span class="section-number-2">14</span> -s ending pronunciation</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>To create a plural noun (cats)</li>
+<li>To conjugate a verb (snows)</li>
+<li>To show possession (coach's, coaches')</li>
+<li>To create a contraction (coach's meaning coach is or coach has) - сокращение</li>
+</ul>
+
+<p>
+Three posibilities  [pɔsəˈbɪlɪtɪs]:
+</p>
+<ol class="org-ol">
+<li><i>s</i> 's sound': hats <i>hæts</i></li>
+<li><i>z</i> 'z sound': loves <i>lʌvz</i></li>
+<li><i>ɪz</i> 'short i'+'z sound': misses <i>'mɪ sɪz</i></li>
+</ol>
+
+<p>
+<i>ɪz</i>  final sound:
+</p>
+<ul class="org-ul">
+<li><i>s</i> misses</li>
+<li><i>z</i> causes</li>
+<li><i>ʧ</i> watches</li>
+<li><i>ʤ</i> changes</li>
+<li><i>ʃ</i> wishes</li>
+<li><i>ʒ</i> garages</li>
+</ul>
+
+<p>
+<i>s</i>
+</p>
+<ul class="org-ul">
+<li><i>p</i> stops</li>
+<li><i>k</i> looks</li>
+<li><i>t</i> cats</li>
+<li><i>θ</i> Earth's</li>
+</ul>
+
+<p>
+<i>z</i>
+</p>
+<ul class="org-ul">
+<li><i>b</i> describes</li>
+<li><i>g</i> begs</li>
+<li><i>d</i> words</li>
+<li><i>ð</i> bathes</li>
+<li><i>v</i> loves</li>
+<li><i>l</i> calls</li>
+<li><i>r</i> cures</li>
+<li><i>m</i> dreams</li>
+<li><i>n</i> rains</li>
+<li><i>ŋ</i> belongs</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8fee5aa" class="outline-2">
+<h2 id="org8fee5aa"><span class="section-number-2">15</span> grammer</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li><img src="https://i.pinimg.com/originals/59/b3/16/59b316adbf77914fc62fdedcab42894f.gif" alt="59b316adbf77914fc62fdedcab42894f.gif" /></li>
+<li><a href="https://englishtexts.ru/misc/poliglot-angliyskiy-za-16-chasov/urok-11">https://englishtexts.ru/misc/poliglot-angliyskiy-za-16-chasov/urok-11</a></li>
+<li><a href="https://www.ego4u.com/en/cram-up/grammar/tenses">https://www.ego4u.com/en/cram-up/grammar/tenses</a></li>
+</ul>
+
+
+<div class="figure">
+<p><img src="./english_images/englishtimes.gif" alt="englishtimes.gif" />
+</p>
+</div>
+
+<p>
+Continuous (be -ing)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Present – настоящее</th>
+<th scope="col" class="org-left">Past – прошедшее</th>
+<th scope="col" class="org-left">Future – будущее</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">It is raining.</td>
+<td class="org-left">It was raining. промежуток времени</td>
+<td class="org-left">It will be raining.</td>
+</tr>
+
+<tr>
+<td class="org-left">–</td>
+<td class="org-left">It is not raining.</td>
+<td class="org-left">It wasn’t raining.</td>
+<td class="org-left">It will not be raining.</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Is it raining?</td>
+<td class="org-left">Was it raining? промежуток времени</td>
+<td class="org-left">Will it be raining?</td>
+</tr>
+</tbody>
+</table>
+<p>
+Perfect (have/has)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Present – have/has</th>
+<th scope="col" class="org-left">Past – had</th>
+<th scope="col" class="org-left">Future – have     by, in a week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">I have seen you.имеем результат</td>
+<td class="org-left">I had seen you.перед чем-то</td>
+<td class="org-left">I will have finished this project by Friday.</td>
+</tr>
+
+<tr>
+<td class="org-left">–</td>
+<td class="org-left">I have not seen you.уже мимо прошел</td>
+<td class="org-left">I hadn’t seen you.</td>
+<td class="org-left">I will have not V(3) …</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Has he seen her?</td>
+<td class="org-left">Had he seen her?</td>
+<td class="org-left">Will I have V(3) … ?</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Irregular verbs
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">beat</td>
+<td class="org-left"><i>bi:t</i></td>
+<td class="org-left">beat</td>
+<td class="org-left"><i>bi:t</i></td>
+<td class="org-left">beaten</td>
+<td class="org-left"><i>'bi:tn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">become</td>
+<td class="org-left"><i>bɪ'kʌm</i></td>
+<td class="org-left">became</td>
+<td class="org-left"><i>bɪ'keɪm</i></td>
+<td class="org-left">become</td>
+<td class="org-left"><i>bɪ'kʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">begin</td>
+<td class="org-left"><i>bɪ'gɪn</i></td>
+<td class="org-left">began</td>
+<td class="org-left"><i>bɪ'gæn</i></td>
+<td class="org-left">begun</td>
+<td class="org-left"><i>bɪ'gʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bend</td>
+<td class="org-left"><i>bend</i></td>
+<td class="org-left">bent</td>
+<td class="org-left"><i>bent</i></td>
+<td class="org-left">bent</td>
+<td class="org-left"><i>bent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bind</td>
+<td class="org-left"><i>baɪnd</i></td>
+<td class="org-left">bound</td>
+<td class="org-left"><i>baʊnd</i></td>
+<td class="org-left">bound</td>
+<td class="org-left"><i>baʊnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bite</td>
+<td class="org-left"><i>baɪt</i></td>
+<td class="org-left">bit</td>
+<td class="org-left"><i>bɪt</i></td>
+<td class="org-left">bitten</td>
+<td class="org-left"><i>'bɪtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bleed</td>
+<td class="org-left"><i>bli:d</i></td>
+<td class="org-left">bled</td>
+<td class="org-left"><i>bled</i></td>
+<td class="org-left">bled</td>
+<td class="org-left"><i>bled</i></td>
+</tr>
+
+<tr>
+<td class="org-left">blow</td>
+<td class="org-left"><i>blou</i></td>
+<td class="org-left">blew</td>
+<td class="org-left"><i>blu:</i></td>
+<td class="org-left">blown</td>
+<td class="org-left"><i>bloun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">break</td>
+<td class="org-left"><i>breɪk</i></td>
+<td class="org-left">broke</td>
+<td class="org-left"><i>brouk</i></td>
+<td class="org-left">broken</td>
+<td class="org-left"><i>'broukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bring</td>
+<td class="org-left"><i>brɪŋ</i></td>
+<td class="org-left">brought</td>
+<td class="org-left"><i>brɔ:t</i></td>
+<td class="org-left">brought</td>
+<td class="org-left"><i>brɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">build</td>
+<td class="org-left"><i>bɪld</i></td>
+<td class="org-left">built</td>
+<td class="org-left"><i>bɪlt</i></td>
+<td class="org-left">built</td>
+<td class="org-left"><i>bɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">burn</td>
+<td class="org-left"><i>bɜ:rn</i></td>
+<td class="org-left">burnt</td>
+<td class="org-left"><i>bɜ:rnt</i></td>
+<td class="org-left">burnt</td>
+<td class="org-left"><i>bɜ:rnt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">burn</td>
+<td class="org-left"><i>bɜ:rn</i></td>
+<td class="org-left">burned</td>
+<td class="org-left"><i>bɜ:rnd</i></td>
+<td class="org-left">burned</td>
+<td class="org-left"><i>bɜ:rnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">buy</td>
+<td class="org-left"><i>baɪ</i></td>
+<td class="org-left">bought</td>
+<td class="org-left"><i>bɔ:t</i></td>
+<td class="org-left">bought</td>
+<td class="org-left"><i>bɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">catch</td>
+<td class="org-left"><i>kætʃ</i></td>
+<td class="org-left">caught</td>
+<td class="org-left"><i>kɔ:t</i></td>
+<td class="org-left">caught</td>
+<td class="org-left"><i>kɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">choose</td>
+<td class="org-left"><i>tʃu:z</i></td>
+<td class="org-left">chose</td>
+<td class="org-left"><i>tʃouz</i></td>
+<td class="org-left">chosen</td>
+<td class="org-left"><i>'tʃouzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">come</td>
+<td class="org-left"><i>kʌm</i></td>
+<td class="org-left">came</td>
+<td class="org-left"><i>keɪm</i></td>
+<td class="org-left">come</td>
+<td class="org-left"><i>kʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+</tr>
+
+<tr>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dig</td>
+<td class="org-left"><i>dɪg</i></td>
+<td class="org-left">dug</td>
+<td class="org-left"><i>dʌg</i></td>
+<td class="org-left">dug</td>
+<td class="org-left"><i>dʌg</i></td>
+</tr>
+
+<tr>
+<td class="org-left">do</td>
+<td class="org-left"><i>du:</i></td>
+<td class="org-left">did</td>
+<td class="org-left"><i>dɪd</i></td>
+<td class="org-left">done</td>
+<td class="org-left"><i>dʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">draw</td>
+<td class="org-left"><i>drɔ:</i></td>
+<td class="org-left">drew</td>
+<td class="org-left"><i>dru:</i></td>
+<td class="org-left">drawn</td>
+<td class="org-left"><i>drɔ:n</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dream</td>
+<td class="org-left"><i>dri:m</i></td>
+<td class="org-left">dreamt</td>
+<td class="org-left"><i>dremt</i></td>
+<td class="org-left">dreamt</td>
+<td class="org-left"><i>dremt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dream</td>
+<td class="org-left"><i>dri:m</i></td>
+<td class="org-left">dreamed</td>
+<td class="org-left"><i>dri:md</i></td>
+<td class="org-left">dreamed</td>
+<td class="org-left"><i>dri:md</i></td>
+</tr>
+
+<tr>
+<td class="org-left">drink</td>
+<td class="org-left"><i>drɪŋk</i></td>
+<td class="org-left">drank</td>
+<td class="org-left"><i>dræŋk</i></td>
+<td class="org-left">drunk</td>
+<td class="org-left"><i>drʌŋk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">drive</td>
+<td class="org-left"><i>draɪv</i></td>
+<td class="org-left">drove</td>
+<td class="org-left"><i>drouv</i></td>
+<td class="org-left">driven</td>
+<td class="org-left"><i>'drɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">eat</td>
+<td class="org-left"><i>i:t</i></td>
+<td class="org-left">ate</td>
+<td class="org-left"><i>eɪt,et</i></td>
+<td class="org-left">eaten</td>
+<td class="org-left"><i>'i:tn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fall</td>
+<td class="org-left"><i>fɔ:l</i></td>
+<td class="org-left">fell</td>
+<td class="org-left"><i>fel</i></td>
+<td class="org-left">fallen</td>
+<td class="org-left"><i>'fɔ:lən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">feed</td>
+<td class="org-left"><i>fi:d</i></td>
+<td class="org-left">fed</td>
+<td class="org-left"><i>fed</i></td>
+<td class="org-left">fed</td>
+<td class="org-left"><i>fed</i></td>
+</tr>
+
+<tr>
+<td class="org-left">feel</td>
+<td class="org-left"><i>fi:l</i></td>
+<td class="org-left">felt</td>
+<td class="org-left"><i>felt</i></td>
+<td class="org-left">felt</td>
+<td class="org-left"><i>felt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fight</td>
+<td class="org-left"><i>faɪt</i></td>
+<td class="org-left">fought</td>
+<td class="org-left"><i>fɔ:t</i></td>
+<td class="org-left">fought</td>
+<td class="org-left"><i>fɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">find</td>
+<td class="org-left"><i>faɪnd</i></td>
+<td class="org-left">found</td>
+<td class="org-left"><i>faʊnd</i></td>
+<td class="org-left">found</td>
+<td class="org-left"><i>faʊnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fly</td>
+<td class="org-left"><i>flaɪ</i></td>
+<td class="org-left">flew</td>
+<td class="org-left"><i>flu:</i></td>
+<td class="org-left">flown</td>
+<td class="org-left"><i>floun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">forget</td>
+<td class="org-left"><i>fər'get</i></td>
+<td class="org-left">forgot</td>
+<td class="org-left"><i>fər'gɒt</i></td>
+<td class="org-left">forgotten</td>
+<td class="org-left"><i>fər'gɒtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">forgive</td>
+<td class="org-left"><i>fər'gɪv</i></td>
+<td class="org-left">forgave</td>
+<td class="org-left"><i>fər'geɪv</i></td>
+<td class="org-left">forgiven</td>
+<td class="org-left"><i>fər'gɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">freeze</td>
+<td class="org-left"><i>fri:z</i></td>
+<td class="org-left">froze</td>
+<td class="org-left"><i>frouz</i></td>
+<td class="org-left">frozen</td>
+<td class="org-left"><i>'frouzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">get</td>
+<td class="org-left"><i>get</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">get</td>
+<td class="org-left"><i>get</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+<td class="org-left">gotten</td>
+<td class="org-left"><i>'gɒtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">give</td>
+<td class="org-left"><i>gɪv</i></td>
+<td class="org-left">gave</td>
+<td class="org-left"><i>geɪv</i></td>
+<td class="org-left">given</td>
+<td class="org-left"><i>'gɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">go</td>
+<td class="org-left"><i>gou</i></td>
+<td class="org-left">went</td>
+<td class="org-left"><i>went</i></td>
+<td class="org-left">gone</td>
+<td class="org-left"><i>gɒn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">grow</td>
+<td class="org-left"><i>grou</i></td>
+<td class="org-left">grew</td>
+<td class="org-left"><i>gru:</i></td>
+<td class="org-left">grown</td>
+<td class="org-left"><i>groun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hang</td>
+<td class="org-left"><i>hæŋ</i></td>
+<td class="org-left">hung</td>
+<td class="org-left"><i>hʌŋ</i></td>
+<td class="org-left">hung</td>
+<td class="org-left"><i>hʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">have</td>
+<td class="org-left"><i>hæv</i></td>
+<td class="org-left">had</td>
+<td class="org-left"><i>hæd</i></td>
+<td class="org-left">had</td>
+<td class="org-left"><i>hæd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hear</td>
+<td class="org-left"><i>hɪər</i></td>
+<td class="org-left">heard</td>
+<td class="org-left"><i>hɜ:rd</i></td>
+<td class="org-left">heard</td>
+<td class="org-left"><i>hɜ:rd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hide</td>
+<td class="org-left"><i>haɪd</i></td>
+<td class="org-left">hid</td>
+<td class="org-left"><i>hɪd</i></td>
+<td class="org-left">hidden</td>
+<td class="org-left"><i>'hɪdn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hold</td>
+<td class="org-left"><i>hould</i></td>
+<td class="org-left">held</td>
+<td class="org-left"><i>held</i></td>
+<td class="org-left">held</td>
+<td class="org-left"><i>held</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">keep</td>
+<td class="org-left"><i>ki:p</i></td>
+<td class="org-left">kept</td>
+<td class="org-left"><i>kept</i></td>
+<td class="org-left">kept</td>
+<td class="org-left"><i>kept</i></td>
+</tr>
+
+<tr>
+<td class="org-left">know</td>
+<td class="org-left"><i>nou</i></td>
+<td class="org-left">knew</td>
+<td class="org-left"><i>nu:</i></td>
+<td class="org-left">known</td>
+<td class="org-left"><i>noun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lay</td>
+<td class="org-left"><i>leɪ</i></td>
+<td class="org-left">laid</td>
+<td class="org-left"><i>leɪd</i></td>
+<td class="org-left">laid</td>
+<td class="org-left"><i>leɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lead</td>
+<td class="org-left"><i>li:d</i></td>
+<td class="org-left">led</td>
+<td class="org-left"><i>led</i></td>
+<td class="org-left">led</td>
+<td class="org-left"><i>led</i></td>
+</tr>
+
+<tr>
+<td class="org-left">learn</td>
+<td class="org-left"><i>lɜ:rn</i></td>
+<td class="org-left">learnt</td>
+<td class="org-left"><i>lɜ:rnt</i></td>
+<td class="org-left">learnt</td>
+<td class="org-left"><i>lɜ:rnt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">learn</td>
+<td class="org-left"><i>lɜ:rn</i></td>
+<td class="org-left">learned</td>
+<td class="org-left"><i>lɜ:rnd</i></td>
+<td class="org-left">learned</td>
+<td class="org-left"><i>lɜ:rnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">leave</td>
+<td class="org-left"><i>li:v</i></td>
+<td class="org-left">left</td>
+<td class="org-left"><i>left</i></td>
+<td class="org-left">left</td>
+<td class="org-left"><i>left</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lend</td>
+<td class="org-left"><i>lend</i></td>
+<td class="org-left">lent</td>
+<td class="org-left"><i>lent</i></td>
+<td class="org-left">lent</td>
+<td class="org-left"><i>lent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lie</td>
+<td class="org-left"><i>laɪ</i></td>
+<td class="org-left">lay</td>
+<td class="org-left"><i>leɪ</i></td>
+<td class="org-left">lain</td>
+<td class="org-left"><i>leɪn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lose</td>
+<td class="org-left"><i>lu:z</i></td>
+<td class="org-left">lost</td>
+<td class="org-left"><i>lɒst</i></td>
+<td class="org-left">lost</td>
+<td class="org-left"><i>lɒst</i></td>
+</tr>
+
+<tr>
+<td class="org-left">make</td>
+<td class="org-left"><i>meɪk</i></td>
+<td class="org-left">made</td>
+<td class="org-left"><i>meɪd</i></td>
+<td class="org-left">made</td>
+<td class="org-left"><i>meɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">mean</td>
+<td class="org-left"><i>mi:n</i></td>
+<td class="org-left">meant</td>
+<td class="org-left"><i>ment</i></td>
+<td class="org-left">meant</td>
+<td class="org-left"><i>ment</i></td>
+</tr>
+
+<tr>
+<td class="org-left">meet</td>
+<td class="org-left"><i>mi:t</i></td>
+<td class="org-left">met</td>
+<td class="org-left"><i>met</i></td>
+<td class="org-left">met</td>
+<td class="org-left"><i>met</i></td>
+</tr>
+
+<tr>
+<td class="org-left">pay</td>
+<td class="org-left"><i>peɪ</i></td>
+<td class="org-left">paid</td>
+<td class="org-left"><i>peɪd</i></td>
+<td class="org-left">paid</td>
+<td class="org-left"><i>peɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">read</td>
+<td class="org-left"><i>ri:d</i></td>
+<td class="org-left">read</td>
+<td class="org-left"><i>red</i></td>
+<td class="org-left">read</td>
+<td class="org-left"><i>red</i></td>
+</tr>
+
+<tr>
+<td class="org-left">ride</td>
+<td class="org-left"><i>raɪd</i></td>
+<td class="org-left">rode</td>
+<td class="org-left"><i>roud</i></td>
+<td class="org-left">ridden</td>
+<td class="org-left"><i>'rɪdn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">ring</td>
+<td class="org-left"><i>rɪŋ</i></td>
+<td class="org-left">rang</td>
+<td class="org-left"><i>ræŋ</i></td>
+<td class="org-left">rung</td>
+<td class="org-left"><i>rʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">rise</td>
+<td class="org-left"><i>raɪz</i></td>
+<td class="org-left">rose</td>
+<td class="org-left"><i>rouz</i></td>
+<td class="org-left">risen</td>
+<td class="org-left"><i>'rɪzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">run</td>
+<td class="org-left"><i>rʌn</i></td>
+<td class="org-left">ran</td>
+<td class="org-left"><i>ræn</i></td>
+<td class="org-left">run</td>
+<td class="org-left"><i>rʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">say</td>
+<td class="org-left"><i>seɪ</i></td>
+<td class="org-left">said</td>
+<td class="org-left"><i>sed</i></td>
+<td class="org-left">said</td>
+<td class="org-left"><i>sed</i></td>
+</tr>
+
+<tr>
+<td class="org-left">see</td>
+<td class="org-left"><i>si:</i></td>
+<td class="org-left">saw</td>
+<td class="org-left"><i>sɔ:</i></td>
+<td class="org-left">seen</td>
+<td class="org-left"><i>si:n</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sell</td>
+<td class="org-left"><i>sel</i></td>
+<td class="org-left">sold</td>
+<td class="org-left"><i>sould</i></td>
+<td class="org-left">sold</td>
+<td class="org-left"><i>sould</i></td>
+</tr>
+
+<tr>
+<td class="org-left">send</td>
+<td class="org-left"><i>send</i></td>
+<td class="org-left">sent</td>
+<td class="org-left"><i>sent</i></td>
+<td class="org-left">sent</td>
+<td class="org-left"><i>sent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shake</td>
+<td class="org-left"><i>ʃeɪk</i></td>
+<td class="org-left">shook</td>
+<td class="org-left"><i>ʃʊk</i></td>
+<td class="org-left">shaken</td>
+<td class="org-left"><i>'ʃeɪkən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shine</td>
+<td class="org-left"><i>ʃaɪn</i></td>
+<td class="org-left">shone</td>
+<td class="org-left"><i>ʃoun,ʃɒn</i></td>
+<td class="org-left">shone</td>
+<td class="org-left"><i>ʃoun, ʃɒn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shoot</td>
+<td class="org-left"><i>ʃu:t</i></td>
+<td class="org-left">shot</td>
+<td class="org-left"><i>ʃɒt</i></td>
+<td class="org-left">shot</td>
+<td class="org-left"><i>ʃɒt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">show</td>
+<td class="org-left"><i>ʃou</i></td>
+<td class="org-left">showed</td>
+<td class="org-left"><i>ʃoud</i></td>
+<td class="org-left">shown</td>
+<td class="org-left"><i>ʃoun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sing</td>
+<td class="org-left"><i>sɪŋ</i></td>
+<td class="org-left">sang</td>
+<td class="org-left"><i>sæŋ</i></td>
+<td class="org-left">sung</td>
+<td class="org-left"><i>sʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sink</td>
+<td class="org-left"><i>sɪŋk</i></td>
+<td class="org-left">sank</td>
+<td class="org-left"><i>sæŋk</i></td>
+<td class="org-left">sunk</td>
+<td class="org-left"><i>sʌŋk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sit</td>
+<td class="org-left"><i>sɪt</i></td>
+<td class="org-left">sat</td>
+<td class="org-left"><i>sæt</i></td>
+<td class="org-left">sat</td>
+<td class="org-left"><i>sæt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sleep</td>
+<td class="org-left"><i>sli:p</i></td>
+<td class="org-left">slept</td>
+<td class="org-left"><i>slept</i></td>
+<td class="org-left">slept</td>
+<td class="org-left"><i>slept</i></td>
+</tr>
+
+<tr>
+<td class="org-left">smell</td>
+<td class="org-left"><i>smel</i></td>
+<td class="org-left">smelt</td>
+<td class="org-left"><i>smelt</i></td>
+<td class="org-left">smelt</td>
+<td class="org-left"><i>smelt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">smell</td>
+<td class="org-left"><i>smel</i></td>
+<td class="org-left">smelled</td>
+<td class="org-left"><i>smeld</i></td>
+<td class="org-left">smelled</td>
+<td class="org-left"><i>smeld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">speak</td>
+<td class="org-left"><i>spi:k</i></td>
+<td class="org-left">spoke</td>
+<td class="org-left"><i>spouk</i></td>
+<td class="org-left">spoken</td>
+<td class="org-left"><i>'spoukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spell</td>
+<td class="org-left"><i>spel</i></td>
+<td class="org-left">spelt</td>
+<td class="org-left"><i>spelt</i></td>
+<td class="org-left">spelt</td>
+<td class="org-left"><i>spelt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spell</td>
+<td class="org-left"><i>spel</i></td>
+<td class="org-left">spelled</td>
+<td class="org-left"><i>speld</i></td>
+<td class="org-left">spelled</td>
+<td class="org-left"><i>speld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spend</td>
+<td class="org-left"><i>spend</i></td>
+<td class="org-left">spent</td>
+<td class="org-left"><i>spent</i></td>
+<td class="org-left">spent</td>
+<td class="org-left"><i>spent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spill</td>
+<td class="org-left"><i>spɪl</i></td>
+<td class="org-left">spilt</td>
+<td class="org-left"><i>spɪlt</i></td>
+<td class="org-left">spilt</td>
+<td class="org-left"><i>spɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spill</td>
+<td class="org-left"><i>spɪl</i></td>
+<td class="org-left">spilled</td>
+<td class="org-left"><i>spɪld</i></td>
+<td class="org-left">spilled</td>
+<td class="org-left"><i>spɪld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spat</td>
+<td class="org-left"><i>spæt</i></td>
+<td class="org-left">spat</td>
+<td class="org-left"><i>spæt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spoil</td>
+<td class="org-left"><i>spoɪl</i></td>
+<td class="org-left">spoilt</td>
+<td class="org-left"><i>spoɪlt</i></td>
+<td class="org-left">spoilt</td>
+<td class="org-left"><i>spoɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spoil</td>
+<td class="org-left"><i>spoɪl</i></td>
+<td class="org-left">spoiled</td>
+<td class="org-left"><i>spoɪld</i></td>
+<td class="org-left">spoiled</td>
+<td class="org-left"><i>spoɪld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">stand</td>
+<td class="org-left"><i>stænd</i></td>
+<td class="org-left">stood</td>
+<td class="org-left"><i>stʊd</i></td>
+<td class="org-left">stood</td>
+<td class="org-left"><i>stʊd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">steal</td>
+<td class="org-left"><i>sti:l</i></td>
+<td class="org-left">stole</td>
+<td class="org-left"><i>stoul</i></td>
+<td class="org-left">stolen</td>
+<td class="org-left"><i>'stoulən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">strike</td>
+<td class="org-left"><i>straɪk</i></td>
+<td class="org-left">struck</td>
+<td class="org-left"><i>strʌk</i></td>
+<td class="org-left">struck</td>
+<td class="org-left"><i>strʌk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">swim</td>
+<td class="org-left"><i>swɪm</i></td>
+<td class="org-left">swam</td>
+<td class="org-left"><i>swæm</i></td>
+<td class="org-left">swum</td>
+<td class="org-left"><i>swʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">take</td>
+<td class="org-left"><i>teɪk</i></td>
+<td class="org-left">took</td>
+<td class="org-left"><i>tʊk</i></td>
+<td class="org-left">taken</td>
+<td class="org-left"><i>'teɪkən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">teach</td>
+<td class="org-left"><i>ti:tʃ</i></td>
+<td class="org-left">taught</td>
+<td class="org-left"><i>tɔ:t</i></td>
+<td class="org-left">taught</td>
+<td class="org-left"><i>tɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">tear</td>
+<td class="org-left"><i>teər</i></td>
+<td class="org-left">tore</td>
+<td class="org-left"><i>tɔr</i></td>
+<td class="org-left">torn</td>
+<td class="org-left"><i>tɔrn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">tell</td>
+<td class="org-left"><i>tel</i></td>
+<td class="org-left">told</td>
+<td class="org-left"><i>tould</i></td>
+<td class="org-left">told</td>
+<td class="org-left"><i>tould</i></td>
+</tr>
+
+<tr>
+<td class="org-left">think</td>
+<td class="org-left"><i>θɪŋk</i></td>
+<td class="org-left">thought</td>
+<td class="org-left"><i>θɔ:t</i></td>
+<td class="org-left">thought</td>
+<td class="org-left"><i>θɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">throw</td>
+<td class="org-left"><i>θrou</i></td>
+<td class="org-left">threw</td>
+<td class="org-left"><i>θru:</i></td>
+<td class="org-left">thrown</td>
+<td class="org-left"><i>θroun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">understand</td>
+<td class="org-left"><i>ʌndər'stænd</i></td>
+<td class="org-left">understood</td>
+<td class="org-left"><i>ʌndər'stʊd</i></td>
+<td class="org-left">understood</td>
+<td class="org-left"><i>ʌndər 'stʊd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">wake</td>
+<td class="org-left"><i>weɪk</i></td>
+<td class="org-left">woke</td>
+<td class="org-left"><i>wouk</i></td>
+<td class="org-left">woken</td>
+<td class="org-left"><i>'woukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">wear</td>
+<td class="org-left"><i>weər</i></td>
+<td class="org-left">wore</td>
+<td class="org-left"><i>wɔr</i></td>
+<td class="org-left">worn</td>
+<td class="org-left"><i>wɔrn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">win</td>
+<td class="org-left"><i>wɪn</i></td>
+<td class="org-left">won</td>
+<td class="org-left"><i>wʌn</i></td>
+<td class="org-left">won</td>
+<td class="org-left"><i>wʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">write</td>
+<td class="org-left"><i>raɪt</i></td>
+<td class="org-left">wrote</td>
+<td class="org-left"><i>rout</i></td>
+<td class="org-left">written</td>
+<td class="org-left"><i>'rɪtn</i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-16 Wed 21:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

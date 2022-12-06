@@ -1,0 +1,2521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-11-17 Thu 20:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org132a52d">1. Docker</a>
+<ul>
+<li><a href="#org0e81705">1.1. terms</a></li>
+<li><a href="#org1ffad0e">1.2. theory</a>
+<ul>
+<li><a href="#org4f8e199">1.2.1. network</a></li>
+</ul>
+</li>
+<li><a href="#orga623722">1.3. usage</a></li>
+<li><a href="#org11ff965">1.4. use cases:</a>
+<ul>
+<li><a href="#orgc9191df">1.4.1. containers</a></li>
+<li><a href="#orgd525988">1.4.2. Exploring Docker container's file system</a></li>
+<li><a href="#orge46c886">1.4.3. Block internet</a></li>
+<li><a href="#org5010bf1">1.4.4. Block access to LAN and out:</a></li>
+<li><a href="#org8a7a74e">1.4.5. Block access to other containers:</a></li>
+<li><a href="#org0134c8d">1.4.6. Block any external access:</a></li>
+<li><a href="#org521c70f">1.4.7. backup</a></li>
+<li><a href="#orge99aea5">1.4.8. volume sizes</a></li>
+</ul>
+</li>
+<li><a href="#org3685d3c">1.5. admin usage</a></li>
+<li><a href="#orgb535561">1.6. ARG and ENV</a></li>
+<li><a href="#org030f163">1.7. links</a></li>
+<li><a href="#org6f3e242">1.8. install</a>
+<ul>
+<li><a href="#org4bfd340">1.8.1. Docker CE</a></li>
+</ul>
+</li>
+<li><a href="#org4a3a63b">1.9. proxy</a></li>
+<li><a href="#orgbb9116b">1.10. storage</a></li>
+<li><a href="#org7118ac8">1.11. images</a></li>
+<li><a href="#org5abe993">1.12. containers</a></li>
+<li><a href="#org55ee522">1.13. reuse layers</a></li>
+<li><a href="#org356d269">1.14. ENV</a></li>
+<li><a href="#org81113ce">1.15. multi-stage builds</a></li>
+<li><a href="#org8ad1697">1.16. clear</a></li>
+<li><a href="#org31fe150">1.17. tmpfs</a></li>
+<li><a href="#org2656b7a">1.18. Dokerfile</a></li>
+<li><a href="#org2c9b0bf">1.19. health check for container</a></li>
+</ul>
+</li>
+<li><a href="#orgeaa961f">2. docker-compose</a>
+<ul>
+<li><a href="#org8378a5b">2.1. <span class="todo TODO">TODO</span> multi-stage builds</a></li>
+<li><a href="#org1779778">2.2. swarm</a></li>
+<li><a href="#orgf50f0d6">2.3. docker-compose.yml</a></li>
+<li><a href="#org4848da3">2.4. Environment variables</a></li>
+<li><a href="#org72bb07d">2.5. Network</a></li>
+<li><a href="#org0532547">2.6. errors</a></li>
+<li><a href="#orgd980ccb">2.7. usage</a></li>
+<li><a href="#org74fdb07">2.8. add folder (volumes)</a></li>
+</ul>
+</li>
+<li><a href="#orgc5d347e">3. hub.docker.com</a></li>
+<li><a href="#orgaa086d7">4. kubernetes (K8S)</a>
+<ul>
+<li><a href="#org09eacca">4.1. definition</a>
+<ul>
+<li><a href="#org1f5cd4d">4.1.1. Контейнер</a></li>
+<li><a href="#org3a9688a">4.1.2. main features</a></li>
+</ul>
+</li>
+<li><a href="#orgd946b89">4.2. history</a></li>
+<li><a href="#orge0bdf12">4.3. architecture</a></li>
+<li><a href="#orga2812e9">4.4. ЦФТ обучение</a></li>
+<li><a href="#orga3f1101">4.5. Control Plane Components - master</a></li>
+<li><a href="#orgddc2e5e">4.6. master and worker node</a>
+<ul>
+<li><a href="#org9f03621">4.6.1. kubelet</a></li>
+</ul>
+</li>
+<li><a href="#orga9acc55">4.7. Kubernetes Objects</a>
+<ul>
+<li><a href="#org8eab264">4.7.1. high-level abstractions</a></li>
+<li><a href="#orgbf07845">4.7.2. object spec</a></li>
+</ul>
+</li>
+<li><a href="#org76aa76e">4.8. Ansible</a></li>
+<li><a href="#org9e6767b">4.9. есть</a></li>
+<li><a href="#org20c4027">4.10. from image to pod:</a></li>
+<li><a href="#org89867dd">4.11. primary/replica architecture (Master/slave):</a></li>
+<li><a href="#org84d5712">4.12. CAP theorem</a></li>
+<li><a href="#org0e0096f">4.13. runC</a></li>
+<li><a href="#orgdcf2937">4.14. commands</a></li>
+<li><a href="#org6f9b513">4.15. ReplicationControllerо</a></li>
+<li><a href="#orga3fa0e2">4.16. app logs</a></li>
+<li><a href="#org3ca07dc">4.17. Helm - Пакетный менеджер</a>
+<ul>
+<li><a href="#org0801f39">4.17.1. .helm</a></li>
+</ul>
+</li>
+<li><a href="#org50f721c">4.18. cluster management software</a></li>
+<li><a href="#orgb657ed9">4.19. как могут поды иметь свои IP ведь они на одной ноде</a></li>
+<li><a href="#orgf70c892">4.20. kubectl</a>
+<ul>
+<li><a href="#org62930a1">4.20.1. kubectl get</a></li>
+</ul>
+</li>
+<li><a href="#org5fd7299">4.21. USAGE (max prokopenko)</a></li>
+<li><a href="#org01376fd">4.22. Обновление ресурсов</a></li>
+<li><a href="#orgd0f1dd2">4.23. удаление ресурсов</a></li>
+<li><a href="#org26c8299">4.24. работа с подами, логами</a></li>
+<li><a href="#org4ae2e61">4.25. Работа с кластером</a></li>
+</ul>
+</li>
+<li><a href="#org48be69e">5. REST API Documentation UIs</a>
+<ul>
+<li><a href="#orgec6d4a9">5.1. generate OpenAPI from Flask</a></li>
+<li><a href="#org08e7740">5.2. Swagger - развязность</a>
+<ul>
+<li><a href="#org0765648">5.2.1. swagger offline</a></li>
+<li><a href="#org8046125">5.2.2. Specification 2.0</a></li>
+<li><a href="#orgcc3b60c">5.2.3. JSON Schema</a></li>
+</ul>
+</li>
+<li><a href="#org658cce8">5.3. links</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; coding: utf-8; fill-column: 100 -</b>-
+</p>
+
+
+<div id="outline-container-org132a52d" class="outline-2">
+<h2 id="org132a52d"><span class="section-number-2">1</span> Docker</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>guide <a href="https://docker-curriculum.com/">https://docker-curriculum.com/</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org0e81705" class="outline-3">
+<h3 id="org0e81705"><span class="section-number-3">1.1</span> terms</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>Image</b> -docker run&gt; <b>Running Container</b> -&gt; <b>Stopped Container</b> -docker commit&gt; <b>New Image</b>
+</p>
+
+<p>
+Состоит:
+</p>
+<ul class="org-ul">
+<li><b>Docker daemon</b>- manages Docker containers and handles container objects - <b>Docker client program</b> -
+provides a command-line interface</li>
+<li><b>Container</b> - состоит из <b>слоев</b> - слепков состояний файловой системы из image + read-write layer on
+top. Images become containers when they run on Docker Engine. при перезапуске возвращается к image
+<ul class="org-ul">
+<li>UUID short and long</li>
+<li>name - by user or random</li>
+</ul></li>
+<li><b>Image</b> - read-only template used to build containers - to store and ship applications - series of
+read-only layers</li>
+<li><b>Docker service</b> - allows containers to be scaled across multiple Docker daemons - result is "swarm"</li>
+<li><b>Docker registr</b> - repository for Docker images - download ("pull") - upload ("push").  Registries can be
+public or private</li>
+<li><b>Docker Hub</b> - default registry where Docker looks for images <a href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+<li><b>volumes</b> -</li>
+<li>Dockerfile - Docker can build images automatically by reading the instructions from a Dockerfile by "$docker build ."</li>
+<li><b>task</b> - container running in a service</li>
+<li><b>replicas</b> - containers or task in one service defined in docker-compose.yml</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org1ffad0e" class="outline-3">
+<h3 id="org1ffad0e"><span class="section-number-3">1.2</span> theory</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org4f8e199" class="outline-4">
+<h4 id="org4f8e199"><span class="section-number-4">1.2.1</span> network</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Docker’s networking subsystem is pluggable, using drivers.
+</p>
+<ul class="org-ul">
+<li>bridge: The default network driver.</li>
+<li>host</li>
+<li>overlay</li>
+<li>ipvlan</li>
+<li>macvlan</li>
+<li>none</li>
+<li>network plugins</li>
+</ul>
+
+<p>
+all networs - user defined bridges
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga623722" class="outline-3">
+<h3 id="orga623722"><span class="section-number-3">1.3</span> usage</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>docker pull busybox - download image</li>
+<li>docker images - list images and layers
+<ul class="org-ul">
+<li>docker images | grep superset | awk '{print $1}' | xargs docker image rm</li>
+</ul></li>
+<li>docker build -t fedora/jboss:1.0 . # &#x2013;tag to give a name to the image
+<ul class="org-ul">
+<li>docker build image &#x2013;build-args HTTPS<sub>PROXY</sub>=172.0.0.1:8888</li>
+<li>docker build -t aa -f Dockerfile.app .</li>
+</ul></li>
+<li>docker run -it debian<sub>my</sub> bash - create container based on image and attach to tty</li>
+<li>docker exec -it debian<sub>my</sub> bash - connect to running
+<ul class="org-ul">
+<li>docker exec -it debian<sub>my</sub> bash -c "command ; command"</li>
+</ul></li>
+<li>docker ps - containers currently running
+<ul class="org-ul">
+<li>docker ps -a - was ran</li>
+</ul></li>
+<li>docker logs image</li>
+<li>docker rename ngin nginx</li>
+<li>docker start/stop/kill/restart/rm nginx</li>
+<li>docker events/top/stats/diff nginx</li>
+<li>docker -it superset<sub>db</sub> pg<sub>dump</sub> -U superset superset &gt; backups.sql - бэкап БД из контейнера в папку</li>
+</ul>
+<p>
+networks
+</p>
+<ul class="org-ul">
+<li>docker network create my-net</li>
+<li>docker create &#x2013;name my-nginx &#x2013;network my-net &#x2013;publish 8080:80 nginx:latest</li>
+<li>docker networks ls # show networs</li>
+<li>docker network inspect NAME</li>
+<li>docker network create -d bridge MyBridgeNetwork</li>
+<li>docker network rm</li>
+<li>docker connect MyOverlayNerwork nginx - подключение работающего контейнера к сети</li>
+<li>docker run -it -d &#x2013;network=MyOverlayNetwork ngixn - подключение к сети при его запуске</li>
+<li>docker network disconnect MyOverlayNerwork nginx</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org11ff965" class="outline-3">
+<h3 id="org11ff965"><span class="section-number-3">1.4</span> use cases:</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgc9191df" class="outline-4">
+<h4 id="orgc9191df"><span class="section-number-4">1.4.1</span> containers</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>docker build -t container<sub>name</sub> .</li>
+<li>docker run -d CONTAINER<sub>ID</sub><sub>REPOSITORY</sub> # execute and deattach
+<ul class="org-ul">
+<li>-p, &#x2013;publish ip:[hostPort]:containerPort | [hostPort:]containerPort Publish a container's port,
+or range of ports, to the host.
+<ul class="org-ul">
+<li>docker run -p 80:5000 -d web<sub>alone</sub> # 80 - host port, 5000 - container port</li>
+</ul></li>
+</ul></li>
+<li>docker stop container
+<ul class="org-ul">
+<li>docker ps -q | xargs docker stop  # stop all containers</li>
+</ul></li>
+<li>docker pull [IMAGE] # from repository</li>
+<li>docker import [URL/FILE] # Create an image from a tarball:</li>
+<li>docker rm $(docker ps -a -q) - удалить все контейнеры</li>
+<li>docker commit NAME REPOSITORY</li>
+<li>docker logs CONTAINER<sub>ID</sub><sub>REPOSITORY</sub></li>
+<li>docker inspect logs CONTAINER<sub>ID</sub><sub>R</sub> | grep -E "LogPath" - где лог</li>
+<li>docker logs containername &gt;&amp; ~/a
+<ul class="org-ul">
+<li>nano ~/a</li>
+</ul></li>
+<li>docker exec -u root -it 1db047ccc674 bash     - подключиться к уже запущенному</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd525988" class="outline-4">
+<h4 id="orgd525988"><span class="section-number-4">1.4.2</span> Exploring Docker container's file system</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system">https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system</a></li>
+
+<li>docker commit CONTAINER ID mysnapshot</li>
+<li>docker run -it mysnapshot /bin/sh     - запускает процесс в контейнере</li>
+<li>docker exec -u root -it 1db047ccc674 bash     - подключиться к уже запущенному
+<ul class="org-ul">
+<li>i - stdin</li>
+<li>t - virtual tty</li>
+<li>1db047ccc674 - running container</li>
+</ul></li>
+<li>export http<sub>proxy</sub>='http://Pakhomov<sub>KA</sub>@192.168.2.252:8080'</li>
+<li>export https<sub>proxy</sub>='http://Pakhomov<sub>KA</sub>@192.168.2.252:8080'</li>
+<li>apt-get update</li>
+<li>apt-get install emacs-nox</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge46c886" class="outline-4">
+<h4 id="orge46c886"><span class="section-number-4">1.4.3</span> Block internet</h4>
+<div class="outline-text-4" id="text-1-4-3">
+</div>
+<ol class="org-ol">
+<li><a id="org044b069"></a>1<br />
+<div class="outline-text-5" id="text-1-4-3-1">
+<p>
+service:
+  one:
+    networks:
+</p>
+<ul class="org-ul">
+<li>internal</li>
+<li>external</li>
+</ul>
+<p>
+two:
+  networks:
+</p>
+<ul class="org-ul">
+<li>internal</li>
+</ul>
+<p>
+networks:
+  internal:
+    internal: true
+  external:
+</p>
+</div>
+</li>
+<li><a id="org3ae91ff"></a>2<br />
+<div class="outline-text-5" id="text-1-4-3-2">
+<p>
+COPY entrypoint.sh /entrypoint.sh
+</p>
+
+<p>
+ENTRYPOINT ["/entrypoint.sh", "&#x2013;"]
+</p>
+
+<p>
+ACCEPT<sub>CIDR</sub>=${ALLOWED<sub>CIDR</sub>:-192.168.0.0/24}
+</p>
+
+<p>
+iptables -A INPUT -s $ACCEPT<sub>CIDR</sub> -j ACCEPT
+iptables -A INPUT -j DROP
+iptables -A OUTPUT -d $ACCEPT<sub>CIDR</sub> -j ACCEPT
+iptables -A OUTPUT -j DROP
+</p>
+
+<p>
+sudo -u app sh -c "$@"
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org5010bf1" class="outline-4">
+<h4 id="org5010bf1"><span class="section-number-4">1.4.4</span> Block access to LAN and out:</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<ul class="org-ul">
+<li>docker network create -o "com.docker.network.bridge.enable<sub>ip</sub><sub>masquerade</sub>"="false" lan-restricted</li>
+<li>Blocks
+<ul class="org-ul">
+<li>Local LAN</li>
+<li>Internet</li>
+</ul></li>
+<li>Does not block
+<ul class="org-ul">
+<li>Host running docker daemon (example access to 10.0.1.10:22)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a7a74e" class="outline-4">
+<h4 id="org8a7a74e"><span class="section-number-4">1.4.5</span> Block access to other containers:</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<ul class="org-ul">
+<li>docker network create -o "com.docker.network.bridge.enable<sub>icc</sub>"="false" icc-restricted</li>
+<li>Blocks
+<ul class="org-ul">
+<li>Containers accessing other containers on the same icc-restricted network.</li>
+</ul></li>
+<li>Does not block
+<ul class="org-ul">
+<li>Access to host running docker daemon</li>
+<li>Local LAN</li>
+<li>Internet</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0134c8d" class="outline-4">
+<h4 id="org0134c8d"><span class="section-number-4">1.4.6</span> Block any external access:</h4>
+<div class="outline-text-4" id="text-1-4-6">
+<p>
+networks:
+  yournetwork:
+     internal: true
+</p>
+</div>
+</div>
+<div id="outline-container-org521c70f" class="outline-4">
+<h4 id="org521c70f"><span class="section-number-4">1.4.7</span> backup</h4>
+<div class="outline-text-4" id="text-1-4-7">
+<ul class="org-ul">
+<li>volumes: tar -cvzf a.tar.gz /var/lib/docker/volumes/&lt;volume<sub>name</sub>&gt;</li>
+<li>docker save -o ubuntu.tar ubuntu:lucid</li>
+<li>docker save myimage:latest | gzip &gt; myimage<sub>latest.tar.gz</sub></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge99aea5" class="outline-4">
+<h4 id="orge99aea5"><span class="section-number-4">1.4.8</span> volume sizes</h4>
+<div class="outline-text-4" id="text-1-4-8">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">!/bin/</span><span style="color: #8ac6f2; font-weight: bold;">bash</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">for</span> v<span style="color: #8ac6f2; font-weight: bold;"> in</span> $(<span style="color: #fa8072;">docker</span> volume ls | grep -v DRIVER | awk <span style="color: #95e454;">'{print $2}'</span>) ; <span style="color: #8ac6f2; font-weight: bold;">do</span>
+   <span style="color: #cae682;">p</span>=$(<span style="color: #fa8072;">docker</span> volume inspect $<span style="color: #cae682;">v</span> | jq <span style="color: #95e454;">'.[].Mountpoint'</span> | tr -d <span style="color: #95e454;">'"'</span>)
+   du -sh $<span style="color: #cae682;">p</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3685d3c" class="outline-3">
+<h3 id="org3685d3c"><span class="section-number-3">1.5</span> admin usage</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Комманды
+</p>
+<ul class="org-ul">
+<li>docker ps -a - все контейнеры</li>
+<li>docker image ls - все images</li>
+<li>docker load -i file.tar - Load saved image</li>
+<li>docker pull debian:testing</li>
+<li>docker inspect [CONTAINER ID] &#x2013;  "Config": { "Entrypoint": ["/pause"],</li>
+<li>docker pull storm:TAG &#x2013; download image</li>
+<li>docker ps &#x2013;no-trunc &#x2013; full command</li>
+<li>docker system prune &#x2013;volumes - clean unused everything</li>
+</ul>
+
+<p>
+docker run [OPTIONS] IMAGE [COMMAND] [ARG&#x2026;]
+</p>
+
+<p>
+Commit a container’s file changes or settings into a new image: docker commit CONTAINER ID mysnapshot
+</p>
+
+<p>
+Build image and run:
+</p>
+<ul class="org-ul">
+<li>docker build &#x2013;tag=friendlyhello .</li>
+<li>docker run -p 4000:80 friendlyhello -d  - execute CMD in Dockerfile, background</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb535561" class="outline-3">
+<h3 id="orgb535561"><span class="section-number-3">1.6</span> ARG and ENV</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>ARG is only available during the build of a Docker imag</li>
+<li>ENV values are available to containers, but also RUN-style commands during the Docker build
+starting with the line where they are introduced. If you set an environment variable in an
+intermediate container using bash (RUN export VARI=5 &amp;&amp; …) it will not persist in the next
+command.</li>
+</ul>
+
+<p>
+docker build . &#x2013;build-arg -t foo
+</p>
+
+<p>
+FROM debian:bullseye-slim
+ARG WTF
+ENV WTF=$WTF
+CMD echo $WTF
+</p>
+</div>
+</div>
+
+<div id="outline-container-org030f163" class="outline-3">
+<h3 id="org030f163"><span class="section-number-3">1.7</span> links</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>ANTIFAQ <a href="https://habr.com/ru/company/southbridge/blog/452108/">https://habr.com/ru/company/southbridge/blog/452108/</a></li>
+<li><a href="https://docs.docker.com/get-started/part2/">https://docs.docker.com/get-started/part2/</a></li>
+<li>for java <a href="https://github.com/docker/labs/tree/master/developer-tools/java/">https://github.com/docker/labs/tree/master/developer-tools/java/</a></li>
+<li>Linux virtualization <object type="image/svg+xml" data="https://upload.wikimedia.org/wikipedia/commons/0/09/Docker-linux-interfaces.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object></li>
+<li>building project inside docker <a href="https://mikulskibartosz.name/how-to-build-a-project-inside-a-docker-container-fd575058bf4a">https://mikulskibartosz.name/how-to-build-a-project-inside-a-docker-container-fd575058bf4a</a>
+operating-system-level virtualization</li>
+<li>Dockerfile reference <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a>
+tool that can package an application and its dependencies in a lightweight! virtual <b>container</b>
+<ul class="org-ul">
+<li>Сontainers may simplify the creation of highly distributed systems.</li>
+<li>Containers are created from "images" - read-only template</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6f3e242" class="outline-3">
+<h3 id="org6f3e242"><span class="section-number-3">1.8</span> install</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+<a href="https://docs-stage.docker.com/engine/install/ubuntu/">https://docs-stage.docker.com/engine/install/ubuntu/</a>
+<b>from deb</b>
+<a href="https://download.docker.com/linux/ubuntu/dists/focal/stable/binary-amd64/Packages">https://download.docker.com/linux/ubuntu/dists/focal/stable/binary-amd64/Packages</a>
+</p>
+<ul class="org-ul">
+<li><a href="https://download.docker.com/linux/ubuntu/dists/focal/stable/binary-amd64/">https://download.docker.com/linux/ubuntu/dists/focal/stable/binary-amd64/</a></li>
+<li>pool/stable</li>
+<li>wget docker-ce, docker-ce-cli and containerd.io</li>
+<li>compare hashes from Package.</li>
+<li>apt-get install</li>
+</ul>
+<p>
+<b>from Dcoker Repository</b>
+<a href="https://docs-stage.docker.com/engine/install/ubuntu/">https://docs-stage.docker.com/engine/install/ubuntu/</a>
+</p>
+
+<p>
+<b>Installing Docker CE using Docker Installation Script</b>
+</p>
+
+<p>
+Проверка:
+</p>
+<ul class="org-ul">
+<li>docker run hello-world</li>
+</ul>
+
+<p>
+Запускать без sudo <a href="https://docs-stage.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">https://docs-stage.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user</a>
+</p>
+</div>
+<div id="outline-container-org4bfd340" class="outline-4">
+<h4 id="org4bfd340"><span class="section-number-4">1.8.1</span> Docker CE</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+<a href="https://kifarunix.com/install-docker-ce-on-ubuntu-20-04/">https://kifarunix.com/install-docker-ce-on-ubuntu-20-04/</a>
+</p>
+<ul class="org-ul">
+<li>Docker CE (Community Edition) is the open-source, community supported version of Docker and is available for free.</li>
+<li>Docker EE (Enterprise Edition) is a commercial/premium version of Docker CE and is support by Docker Inc.
+<ul class="org-ul">
+<li>docker or docker-engine or docker-io</li>
+<li>$ sudo apt-get remove docker docker-engine docker.io containerd runc</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a3a63b" class="outline-3">
+<h3 id="org4a3a63b"><span class="section-number-3">1.9</span> proxy</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>~/.docker/config.json</li>
+<li>192.168.2.252 это srv-proxy</li>
+</ul>
+<p>
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "<a href="http://192.168.2.252:8080">http://192.168.2.252:8080</a>",
+     "httpsProxy": "<a href="http://192.168.2.252:8080">http://192.168.2.252:8080</a>"
+   }
+ }
+}
+</p>
+</div>
+</div>
+<div id="outline-container-orgbb9116b" class="outline-3">
+<h3 id="orgbb9116b"><span class="section-number-3">1.10</span> storage</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li><a href="https://docs.docker.com/storage/">https://docs.docker.com/storage/</a></li>
+</ul>
+<p>
+by default a writable container layer.
+</p>
+<ul class="org-ul">
+<li>volumes - on Docker <i>var/lib/docker/volumes</i> - best way - cannot be modified externaly - When you mount the
+volume into a container, this directory is what is mounted into the container</li>
+<li>bind mounts - can be modified externaly</li>
+</ul>
+
+<p>
+kebenrenets - The Docker image is at the root of the filesystem hierarchy, and any volumes are mounted at the
+specified paths within the image.
+</p>
+</div>
+</div>
+<div id="outline-container-org7118ac8" class="outline-3">
+<h3 id="org7118ac8"><span class="section-number-3">1.11</span> images</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Хранятся в <i>var/lib/docker</i>
+</p>
+<ul class="org-ul">
+<li>REPOSITORY - откуда был скачен или имя, &lt;none&gt; - локально</li>
+</ul>
+
+<p>
+image is built up from a series of layers. Each layer except the very last one is read-only.
+</p>
+
+<p>
+commands:
+</p>
+<ul class="org-ul">
+<li>docker image ls - все images</li>
+<li>docker rmi $(docker images -q) - удалить все images</li>
+<li>docker run PARAMETERS repository<sub>or</sub><sub>name</sub> - запускает image и делает его контенером, если его нет, то скачивает из публичного репозитория
+<ul class="org-ul">
+<li>-d - deattached in background</li>
+<li>-p &lt;host<sub>port</sub>&gt;:&lt;container<sub>port</sub>&gt;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5abe993" class="outline-3">
+<h3 id="org5abe993"><span class="section-number-3">1.12</span> containers</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+Container has:
+read only layers:
+1 writable layer - сохраняется только если завершается нормально, в случае сбоя теряется.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55ee522" class="outline-3">
+<h3 id="org55ee522"><span class="section-number-3">1.13</span> reuse layers</h3>
+<div class="outline-text-3" id="text-1-13">
+<ol class="org-ol">
+<li>docker build &#x2013;cache-from image0 -t image1</li>
+<li><a href="https://stackoverflow.com/questions/48449326/how-to-docker-reuse-layers-with-different-base-images">https://stackoverflow.com/questions/48449326/how-to-docker-reuse-layers-with-different-base-images</a></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org356d269" class="outline-3">
+<h3 id="org356d269"><span class="section-number-3">1.14</span> ENV</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+<a href="https://medium.com/google-cloud/kubernetes-configmaps-and-secrets-68d061f7ab5b">https://medium.com/google-cloud/kubernetes-configmaps-and-secrets-68d061f7ab5b</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org81113ce" class="outline-3">
+<h3 id="org81113ce"><span class="section-number-3">1.15</span> multi-stage builds</h3>
+<div class="outline-text-3" id="text-1-15">
+<p>
+<b>builder pattern</b> - one Dockerfile to use for development, and a slimmed-down one to use for
+ production, which only contained your application and exactly what was needed to run it.
+</p>
+<ul class="org-ul">
+<li>FROM - starts new stage</li>
+<li>FROM golang:1.16 AS builder; COPY &#x2013;from=builder /go/a ./a # if stages will be reoreded</li>
+<li>COPY &#x2013;from=nginx:latest /etc/nginx/nginx.conf /nginx.conf # copy from separate image</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8ad1697" class="outline-3">
+<h3 id="org8ad1697"><span class="section-number-3">1.16</span> clear</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+nnterms:
+</p>
+<ul class="org-ul">
+<li>dangling - not associated with container</li>
+</ul>
+
+<p>
+remove parts not connected to running contatinters:
+</p>
+<ul class="org-ul">
+<li>docker system/image/container/network prune -a</li>
+</ul>
+
+<p>
+remove images:
+</p>
+<ul class="org-ul">
+<li>docker image prune # dangling</li>
+<li>docker image prune -a # remove all images which are not used by containers</li>
+<li>docker image prune -a &#x2013;filter "until=24h" # removes older than 24 hours</li>
+<li>docker rmi $(docker images -f "dangling=true" -q)</li>
+<li>remove images by pattern
+<ul class="org-ul">
+<li>docker images -a | grep “some<sub>pattern</sub>” | awk ‘{print $3}’ | xargs docker rmi</li>
+</ul></li>
+</ul>
+
+<p>
+remove containers:
+</p>
+<ul class="org-ul">
+<li>docker container prune # stopped containers</li>
+<li>docker rm $(docker ps -q -f status=exited) # remove all the containers that are not running (exited).</li>
+<li>docker rm $(docker ps -a -q)  # wipe all containers</li>
+<li>remove container by pattern
+<ul class="org-ul">
+<li>docker ps -a | grep “some<sub>pattern</sub>” | awk ‘{print $3}’ | xargs docker rm</li>
+</ul></li>
+</ul>
+
+<p>
+remove volumes (Volumes are never removed automatically):
+</p>
+<ul class="org-ul">
+<li>docker volume prune # remove all volumes not used by at least one container</li>
+<li>docker volume prune &#x2013;filter "label!=keep" # only removes volumes which are not labelled with the keep label</li>
+<li>docker volume ls -f name=syst</li>
+<li>docker volume rm volume1<sub>name</sub> volume2<sub>name</sub></li>
+</ul>
+
+<p>
+remove networks:
+</p>
+<ul class="org-ul">
+<li>docker network prune # networks which aren’t used by any containers</li>
+</ul>
+
+<p>
+Prune everything:
+</p>
+<ul class="org-ul">
+<li>docker system prune #  shortcut that prunes images, containers, and networks</li>
+<li>docker system prune &#x2013;volumes # and volumes too</li>
+</ul>
+
+<p>
+docker builder prune - удаление кэша сборки
+</p>
+</div>
+</div>
+<div id="outline-container-org31fe150" class="outline-3">
+<h3 id="org31fe150"><span class="section-number-3">1.17</span> tmpfs</h3>
+<div class="outline-text-3" id="text-1-17">
+<ul class="org-ul">
+<li>sudo mount -t tmpfs tmpfs /var/lib/docker</li>
+<li>systemctl restart docker</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2656b7a" class="outline-3">
+<h3 id="org2656b7a"><span class="section-number-3">1.18</span> Dokerfile</h3>
+<div class="outline-text-3" id="text-1-18">
+<ul class="org-ul">
+<li>COPY local.conf . # to current directory # preffered # stripped-down version of ADD</li>
+<li>ADD . /code # Too Much Magic
+<ul class="org-ul">
+<li>ADD <i>foo.tar.gz /tmp</i> # autounpack</li>
+</ul></li>
+<li>WORKDIR /code</li>
+<li>ENV FLASK<sub>APP</sub> app.py # set env variable inside of running container</li>
+<li>RUN pip3 install &#x2013;upgrade pip # run command to build image</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2c9b0bf" class="outline-3">
+<h3 id="org2c9b0bf"><span class="section-number-3">1.19</span> health check for container</h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+can be baked into the image definition
+</p>
+<ul class="org-ul">
+<li>HEALTHCHECK &#x2013;interval=5s &#x2013;timeout=3s CMD curl &#x2013;fail <a href="http://localhost:8091/pools">http://localhost:8091/pools</a> || exit 1
+<ul class="org-ul">
+<li>&#x2013;interval=DURATION (default 30s)</li>
+<li>&#x2013;timeout=DURATION (default 30s)</li>
+<li>&#x2013;retries=N (default 3)</li>
+</ul></li>
+</ul>
+
+<p>
+If health check is enabled, then the container can have three states:
+</p>
+<ul class="org-ul">
+<li>starting</li>
+<li>healthy</li>
+<li>unhealthy</li>
+</ul>
+
+<p>
+docker-compose.yml:
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml">services:
+        webapp:
+                image: your-repo-name/webapp:1.0.1-nginx
+                container_name: webapp
+                network_mode: host
+                healthcheck:
+                        test: mysql airflowdb -u $MYSQL_USER --password=$MYSQL_PASSWORD -e 'SELECT 1;'
+                        interval: 20s
+                        timeout: 60s
+                        start_period: 15s
+                restart: always
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeaa961f" class="outline-2">
+<h2 id="orgeaa961f"><span class="section-number-2">2</span> docker-compose</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+multi-container Docker applications - for scaling - docker-compose
+</p>
+<ul class="org-ul">
+<li><a href="https://docs.docker.com/get-started/part3/">https://docs.docker.com/get-started/part3/</a></li>
+<li><b>Docker Compouse</b> - run commands on multiple containers at once</li>
+<li><b>Docker Swarm</b> - provides native clustering functionality for Docker containers. require docker-machine tool
+and VM</li>
+</ul>
+<p>
+docker-compose.yml - несоклько инстанцев - балансировщик нагрузки работает внутри, но не снаружи.
+</p>
+
+<dl class="org-dl">
+<dt>service</dt><dd>conteiner in swarm - what ports it should use, how many replicas of the container should run</dd>
+</dl>
+
+<p>
+build 5 images-services from Docker Hub image "redis:alpine" and directories:
+</p>
+<ul class="org-ul">
+<li>docker-compose build &amp;&amp; docker-compose up -d</li>
+<li>docker-compose up &#x2013;force-recreate &#x2013;build -d</li>
+</ul>
+</div>
+<div id="outline-container-org8378a5b" class="outline-3">
+<h3 id="org8378a5b"><span class="section-number-3">2.1</span> <span class="todo TODO">TODO</span> multi-stage builds</h3>
+</div>
+<div id="outline-container-org1779778" class="outline-3">
+<h3 id="org1779778"><span class="section-number-3">2.2</span> swarm</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>docker swarm init - to enable swarm mode and make your current machine a swarm manage</li>
+<li>docker-machine - инструмент который работает на базе виртуальных машин. ХЗ как что</li>
+<li>docekr swarm leave</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf50f0d6" class="outline-3">
+<h3 id="orgf50f0d6"><span class="section-number-3">2.3</span> docker-compose.yml</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><a href="https://docs.docker.com/compose/compose-file/">https://docs.docker.com/compose/compose-file/</a></li>
+<li>2 chars indentation</li>
+</ul>
+
+<p>
+structure:
+</p>
+<ol class="org-ol">
+<li>docker-compose.yaml</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-python">version: <span style="color: #95e454;">"3.9"</span>  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">optional since v1.27.0</span>
+services:
+  web:
+    build: path_to_Dockerfile
+    ports:
+      - <span style="color: #95e454;">"8000:5000"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">host port : container port</span>
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Dockerfile</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org4848da3" class="outline-3">
+<h3 id="org4848da3"><span class="section-number-3">2.4</span> Environment variables</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+default environment variable file named .env (or &#x2013;env-file command line option):
+</p>
+<ul class="org-ul">
+<li>TAG=v1.5</li>
+</ul>
+
+<p>
+var
+</p>
+<ul class="org-ul">
+<li>${VARIABLE:?err} exits with an error message containing err if VARIABLE is unset or empty in the
+environment.</li>
+<li>${VARIABLE?err} exits with an error message containing err if VARIABLE is unset in the
+environment.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org72bb07d" class="outline-3">
+<h3 id="org72bb07d"><span class="section-number-3">2.5</span> Network</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+network per application
+</p>
+<ul class="org-ul">
+<li>network name based on the “project name”, which is based on the name of the directory it lives in
+(You can override the project name with either the &#x2013;project-name flag or the COMPOSE<sub>PROJECT</sub><sub>NAME</sub>
+environment variable.)
+<ul class="org-ul">
+<li>myapp<sub>default</sub></li>
+</ul></li>
+<li>container join the network under own name
+<ul class="org-ul">
+<li>URL <a href="http://web">http://web</a></li>
+</ul></li>
+<li>standalone containers can connect default network (attachable=true)</li>
+<li>ports: - "8001:5432" - distinction between HOST<sub>PORT</sub> and CONTAINER<sub>PORT</sub></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0532547" class="outline-3">
+<h3 id="org0532547"><span class="section-number-3">2.6</span> errors</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+<b>error: for webb  No such image: sha256</b>
+</p>
+<ul class="org-ul">
+<li>docker-compose -f docker-compose-filename.yml down</li>
+<li>docker-compose -f docker-compose-filename.yml up</li>
+</ul>
+
+<p>
+<b>Credentials store error: StoreError</b>
+</p>
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/56267890/docker-compose-unable-to-start">https://stackoverflow.com/questions/56267890/docker-compose-unable-to-start</a></li>
+<li>sudo rm ~/.docker/config.json</li>
+<li>Create login at <a href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+<li>docker login</li>
+<li>docker-compose up</li>
+</ul>
+<p>
+OR remove "credsStore wincredis" from  ~/.docker/config.json
+</p>
+
+<p>
+<b>infinity restarts</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-yaml">version: '3'
+services:
+  my-service:
+    restart: on-failure:5
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd980ccb" class="outline-3">
+<h3 id="orgd980ccb"><span class="section-number-3">2.7</span> usage</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li></li>
+
+<li>docker-compose -f docker-compose.yml up</li>
+<li>docker-compose up -d</li>
+<li>docker-compose down</li>
+<li>docker-compose down &#x2013;volumes # and remove volumes</li>
+<li>docker-compose up &#x2013;no-deps &#x2013;build &lt;service<sub>name</sub>&gt; - rebuild</li>
+<li>docker-compose build ServiceName+1</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org74fdb07" class="outline-3">
+<h3 id="org74fdb07"><span class="section-number-3">2.8</span> add folder (volumes)</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+services:
+</p>
+<ul class="org-ul">
+<li>xxx<sub>service</sub>: volumes: - ./local:/root/container:ro</li>
+</ul>
+
+<p>
+The imperative way (Docker client):
+</p>
+<ul class="org-ul">
+<li>docker volume create [OPTIONS] [VOLUME]</li>
+</ul>
+
+<p>
+Types of volumes in Docker:
+</p>
+<ul class="org-ul">
+<li>Docker host-mounted volumes
+<ul class="org-ul">
+<li>/host/path:/container/path</li>
+</ul></li>
+<li>Docker named volumes
+<ul class="org-ul">
+<li>named<sub>volume</sub><sub>name</sub>:/container/path</li>
+<li>types:
+<ul class="org-ul">
+<li>internal - used only inside docker-compose (app)</li>
+<li>external - can be used across docker installation - must be created by the user</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+docker external named volume:
+</p>
+<ol class="org-ol">
+<li>docker volume create &#x2013;driver local &#x2013;opt type=none &#x2013;opt device=/var/opt/my<sub>website</sub>/dist &#x2013;opt
+o=bind web<sub>data</sub></li>
+<li></li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-yml">volumes:
+  web_data:
+    external: true
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc5d347e" class="outline-2">
+<h2 id="orgc5d347e"><span class="section-number-2">3</span> hub.docker.com</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+docker image history &#x2013;no-trunc image<sub>name</sub> &gt; image<sub>history</sub>
+</p>
+<ul class="org-ul">
+<li>docker search</li>
+<li>docker pull/push</li>
+</ul>
+
+<p>
+repository
+</p>
+<ul class="org-ul">
+<li>docker login</li>
+<li>docker logout</li>
+<li>docker push aa/nginx localhost:5000/myadmin/nginx</li>
+<li>docker pull myregistry/nginx:master</li>
+<li>docker pull eon01/nginx localhost:5000/myadmin/nginx</li>
+
+<li>docker image history nginx</li>
+<li>docker image history &#x2013;no-trunc image<sub>name</sub> &gt; image<sub>history</sub></li>
+<li>docker inspect nginx</li>
+
+<li>docker rmi nginx</li>
+
+<li>docker rmi $(docker images | grep "^&lt;none&gt;" | awk "{print $3}") - удаление всех образов без тега (none)</li>
+<li>docker commit nginx - создание образа из контейнера</li>
+<li>docker tag nginx my/nginx</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgaa086d7" class="outline-2">
+<h2 id="orgaa086d7"><span class="section-number-2">4</span> kubernetes (K8S)</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Основы <a href="https://habr.com/ru/post/258443/">https://habr.com/ru/post/258443/</a></li>
+<li>Concepts <a href="https://kubernetes.io/docs/concepts/">https://kubernetes.io/docs/concepts/</a></li>
+</ul>
+
+<p>
+Процесс в K8S не может создавать под-процессы.
+</p>
+
+<p>
+На мастере размещаются служемные поды
+</p>
+<ul class="org-ul">
+<li>taind - ограничение</li>
+<li></li>
+</ul>
+
+<p>
+config maps - ?
+</p>
+
+<p>
+bootstraping
+</p>
+
+<p>
+Модули реализованы через API
+</p>
+<ul class="org-ul">
+<li>in-tree</li>
+<li>out of tree - addons - вне кодовой базы</li>
+</ul>
+</div>
+
+<div id="outline-container-org09eacca" class="outline-3">
+<h3 id="org09eacca"><span class="section-number-3">4.1</span> definition</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>container-orchestration system for automating application deployment, scaling, and management.</li>
+</ul>
+<p>
+container orchestration system for automating application deployment, scaling, and management.  It
+aims to provide a "platform for automating deployment, scaling, and operations of application
+containers across clusters of hosts".
+</p>
+
+<p>
+It eliminates the need for orchestration - continuously drive the
+current state towards the provided desired state.
+</p>
+</div>
+<div id="outline-container-org1f5cd4d" class="outline-4">
+<h4 id="org1f5cd4d"><span class="section-number-4">4.1.1</span> Контейнер</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<ul class="org-ul">
+<li>Это стандартизированный метод упаковки приложения</li>
+<li>процесс повязанный к namespaces и контролируемый через cgroups</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3a9688a" class="outline-4">
+<h4 id="org3a9688a"><span class="section-number-4">4.1.2</span> main features</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<ul class="org-ul">
+<li>service discovery and load balancing</li>
+<li>storage orchistration (local storage, public cloud providers, etc)</li>
+<li>automated rollouts and rollbacks (just tell the desired state) (развертывание и откат)</li>
+<li>automatic bin packing (CPU and memory needs =&gt; a particular node)</li>
+<li>Self-healing (liveness &amp; readiness probes)</li>
+<li>Secret and configuration management (deploy &amp; update secrets and configuration without rebuilding
+container images)</li>
+</ul>
+
+<p>
+probes
+</p>
+<ul class="org-ul">
+<li><b>liveness</b> - deadlock - application is running, but unable to make progress</li>
+<li><b>readiness</b> - when app is start to accept traffic. Pod is considered ready when all of its
+containers are ready.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd946b89" class="outline-3">
+<h3 id="orgd946b89"><span class="section-number-3">4.2</span> history</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Go Google - from Google’s Borg</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge0bdf12" class="outline-3">
+<h3 id="orge0bdf12"><span class="section-number-3">4.3</span> architecture</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Node and pods <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/">https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/</a></li>
+
+<li>node - виртуальные машины в VMware</li>
+<li>controller - высшая обстрация над pods - CRI specification</li>
+<li>pods - ip adress, volumes - not durable by default. (has hidden default container)</li>
+<li>contrainer</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2812e9" class="outline-3">
+<h3 id="orga2812e9"><span class="section-number-3">4.4</span> ЦФТ обучение</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>\\srv-file\Share\DEV\Обучение\AML</li>
+
+<li>k create deployment nginx &#x2013;image=nginx - создать pod c одной репликой</li>
+<li>k scale deployment nginx &#x2013;replicas 3  - реплики 3</li>
+</ul>
+
+<p>
+pod name - nginx-(HashOfConfiguration)-randomValue
+</p>
+
+<p>
+Deployments
+</p>
+<ul class="org-ul">
+<li>случайные имена</li>
+<li>чтобы мы не делали сервис будет работать</li>
+</ul>
+
+<p>
+StatefulSet
+DaemonSets
+Job - при инициализации приложения
+</p>
+
+<p>
+Services &amp; Endpoinds &amp; probes
+</p>
+</div>
+</div>
+<div id="outline-container-orga3f1101" class="outline-3">
+<h3 id="orga3f1101"><span class="section-number-3">4.5</span> Control Plane Components - master</h3>
+<div class="outline-text-3" id="text-4-5">
+<ol class="org-ol">
+<li>API server - управление все к нему обращается</li>
+<li>controller-master</li>
+<li>scheduler - планирование размещения pods and workloads</li>
+<li>etcd - ключ-значение хранилище - состояние кластера</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgddc2e5e" class="outline-3">
+<h3 id="orgddc2e5e"><span class="section-number-3">4.6</span> master and worker node</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>linux
+<ul class="org-ul">
+<li>kubelet - node and master - взаимодействуют с API-сервером и подписываются на выставленные
+данных scheduler-oм</li>
+<li>kube-proxy - отвечает за настройку iptables</li>
+<li>Kubernetes CRI Container Runtime Interface
+<ul class="org-ul">
+<li>на dev - docker CRI shim</li>
+<li>prod - CRI-O</li>
+</ul></li>
+<li>Addons дополнительные компоненты worker - kubectl -n kube-system get pods
+<ul class="org-ul">
+<li>fluent-d - logging - Cluster-level Logging</li>
+<li>weave addon - creates a virtual network that connects containers across multiple hosts and enables their
+automatic discovery</li>
+<li>coredns addon</li>
+<li>ambasador API gateway</li>
+</ul></li>
+</ul></li>
+<li>master
+<ul class="org-ul">
+<li>kube-apiserver - API Server - все взаимодействие с k8s</li>
+<li>kube-controller-manager - Controller manager - reconsilation loop</li>
+<li>kube-scheduler - Scheduler - оценить на какой ноде должен быть запущен контейнер</li>
+<li>etcd - distributed key-value store, у значений есть версия. Optimistic concurrency control</li>
+</ul></li>
+</ul>
+
+<p>
+<b>reconsilation loop</b> - user-declared desired state -&gt; observed current state (action, observe)
+</p>
+</div>
+<div id="outline-container-org9f03621" class="outline-4">
+<h4 id="org9f03621"><span class="section-number-4">4.6.1</span> kubelet</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<p>
+<a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/">https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/</a>
+</p>
+
+<p>
+сервис запускается в самой хостовой системе через systemd
+</p>
+
+<p>
+мониторит pods
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga9acc55" class="outline-3">
+<h3 id="orga9acc55"><span class="section-number-3">4.7</span> Kubernetes Objects</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>node - Master and Workers. Master - служебный, Worker - для установки</li>
+<li>pods - one or more containers share the same resources and local network - used as the unit of replication
+<ul class="org-ul">
+<li>pods are scaled up and down as a unit, all containers in a pod must scale together</li>
+<li>pods should remain as small as possible, , typically holding only a main process and its tightly-coupled helper containers (side-cars)</li>
+</ul></li>
+<li>Ingress -  exposes HTTP and HTTPS routes from outside the cluster to services</li>
+</ul>
+
+<p>
+Once you create the object, the Kubernetes system will constantly work to ensure that object exists
+</p>
+<ul class="org-ul">
+<li>object spec - desired state</li>
+<li>object status - actual state of the object</li>
+</ul>
+
+<p>
+Objects:
+</p>
+<ul class="org-ul">
+<li><b>Node</b> - phisical instance for kubernetes
+<ul class="org-ul">
+<li>Kubelet -  process responsible for communication between the Kubernetes Master and the Node</li>
+<li>Kube-Proxy - proxy-балансировщик, простейшее перенаправление потоков TCP и UDP (round robin) между набором бэкендов</li>
+<li>A container runtime (like Docker, rkt)</li>
+</ul></li>
+<li><b>Pod</b> - has unique IP, one or more application containers(tightly coupled) (such as Docker or rkt), and some shared
+resources for those containers:
+<ul class="org-ul">
+<li>Volumes - Shared storage for containers</li>
+<li>Networking, as a unique cluster IP address</li>
+<li>configmap - kubectl -n aml get configmap provodki-app-cm-env -o yaml</li>
+</ul></li>
+<li><b>service</b> - абстракция которая определяет логический объединённый набор pod и политику доступа к ним.</li>
+<li><b>Namespaces</b> - разделить кластер K8S на несколько логических - с квотами не влияя на другие</li>
+</ul>
+
+<p>
+kubectl get all:
+</p>
+<ul class="org-ul">
+<li>pod</li>
+<li>service</li>
+<li>deployment.apps</li>
+<li>replicaset.apps</li>
+<li>statefulset.apps</li>
+<li>job.batch</li>
+</ul>
+</div>
+
+<div id="outline-container-org8eab264" class="outline-4">
+<h4 id="org8eab264"><span class="section-number-4">4.7.1</span> high-level abstractions</h4>
+<div class="outline-text-4" id="text-4-7-1">
+<ul class="org-ul">
+<li>Deployment - wrapper for ReplicaSet (rolling updates (versioning)) (default?)</li>
+<li>DaemonSet</li>
+<li>StatefulSet</li>
+<li>ReplicaSet - pods scaling (deprecated)</li>
+<li>Job</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbf07845" class="outline-4">
+<h4 id="orgbf07845"><span class="section-number-4">4.7.2</span> object spec</h4>
+<div class="outline-text-4" id="text-4-7-2">
+<p>
+apiVersion: apps/v1  # default  version of the Kubernetes API
+kind: Deployment
+metadata: 		# uniquely identify the object - name, UID, namespace
+	name: nginx-deployment
+spec: 			# state you desire for the object
+	replicas: 2	# tells deployment to run 2 pods matching the template
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org76aa76e" class="outline-3">
+<h3 id="org76aa76e"><span class="section-number-3">4.8</span> Ansible</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+Используется для развертывания подов на виртуалках. Kubernetes cluster on bare-metal or VMs.
+</p>
+
+<p>
+Использует Vagrant?
+</p>
+
+<p>
+Playbooks are Ansible’s configuration, deployment, and orchestration language.  playbooks are your instruction manuals
+</p>
+</div>
+</div>
+<div id="outline-container-org9e6767b" class="outline-3">
+<h3 id="org9e6767b"><span class="section-number-3">4.9</span> есть</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+кластеры:
+</p>
+<ol class="org-ol">
+<li>AML dev</li>
+<li>AML prod</li>
+<li>norma2 test 2 masters</li>
+<li>norma2 prod 3 masters</li>
+</ol>
+
+<p>
+Grafana, Prometeus - мониторинг кубернетиса
+</p>
+</div>
+</div>
+<div id="outline-container-org20c4027" class="outline-3">
+<h3 id="org20c4027"><span class="section-number-3">4.10</span> from image to pod:</h3>
+<div class="outline-text-3" id="text-4-10">
+<ul class="org-ul">
+<li>web server - gitlab registry</li>
+<li>Scheduler - command to kubelet</li>
+<li>kubelet use cri (Container Runtime Interface) to pull nodes</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org89867dd" class="outline-3">
+<h3 id="org89867dd"><span class="section-number-3">4.11</span> primary/replica architecture (Master/slave):</h3>
+<div class="outline-text-3" id="text-4-11">
+<ul class="org-ul">
+<li>master - one or many nodes - control plane
+<ul class="org-ul">
+<li>etcd - distributed key-value data store stores the configuration (like Apache ZooKeeper)</li>
+<li>API server - internal and external interface - REST JSON over HTTP</li>
+<li>Scheduler - запускает pods на node based on resource availability - match resource "supply" to workload "demand"</li>
+<li>Controller manager - communicating with the API server to create, update, and delete the resources it
+manages (pods, service endpoints, etc.).
+<ul class="org-ul">
+<li>Replication Controller - handles replication and scaling</li>
+<li>Autosclaer - use metrics from Prometheus чтобы подстроить количество репли к количеству запросов</li>
+</ul></li>
+</ul></li>
+<li>node or Worker -
+<ul class="org-ul">
+<li>Kubelet - starting, stopping, and maintaining application containers organized into pods</li>
+<li>Kube-proxy (network proxy and a load balancer) - routing traffic to the appropriate container</li>
+<li>Container runtime - must implement Container Runtime Interface (CRI) - Most container runtime environments
+use <b>runc</b>
+<ul class="org-ul">
+<li>Docker</li>
+<li>CRI-O</li>
+<li>Containerd</li>
+<li>Other CRI runtimes: frakti</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org84d5712" class="outline-3">
+<h3 id="org84d5712"><span class="section-number-3">4.12</span> CAP theorem</h3>
+<div class="outline-text-3" id="text-4-12">
+<p>
+<b>it is impossible for a distributed data store to simultaneously provide more than two out of the following
+ three guarantees:</b>
+</p>
+<ul class="org-ul">
+<li>Consistency: Every read receives the most recent write or an error</li>
+<li>Availability: Every request receives a (non-error) response, without the guarantee that it contains the most recent write</li>
+<li>Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0e0096f" class="outline-3">
+<h3 id="org0e0096f"><span class="section-number-3">4.13</span> runC</h3>
+<div class="outline-text-3" id="text-4-13">
+<ul class="org-ul">
+<li><a href="https://habr.com/ru/company/selectel/blog/316258/">https://habr.com/ru/company/selectel/blog/316258/</a></li>
+<li>libcontainer, которая по сути является частью runc, используется в Docker вместо LXC</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdcf2937" class="outline-3">
+<h3 id="orgdcf2937"><span class="section-number-3">4.14</span> commands</h3>
+<div class="outline-text-3" id="text-4-14">
+<ul class="org-ul">
+<li>get ns &#x2013; все неймспейсы</li>
+<li>-n aml get all &#x2013; все в неймспейсе</li>
+<li>-n aml exec -it front-77d466758c-ttpfj &#x2013; sh</li>
+<li>-n aml describe pods &#x2013; detailed information about a resource</li>
+<li>-n aml get configmap provodki-app-cm-env -o yaml &#x2013; configmap for pod - Labels - ключ значение</li>
+<li>exec &#x2013; как docker exec</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f9b513" class="outline-3">
+<h3 id="org6f9b513"><span class="section-number-3">4.15</span> ReplicationControllerо</h3>
+<div class="outline-text-3" id="text-4-15">
+<p>
+homogeneous ˌhōməˈjēnēəs - однородная система
+heterogeneous <i>ˌhɛt(ə)rə(ʊ)ˈdʒiːnɪəs</i> - неоднородная система
+</p>
+</div>
+</div>
+<div id="outline-container-orga3fa0e2" class="outline-3">
+<h3 id="orga3fa0e2"><span class="section-number-3">4.16</span> app logs</h3>
+<div class="outline-text-3" id="text-4-16">
+<ul class="org-ul">
+<li><a href="https://vzurczak.wordpress.com/2019/02/13/using-graylog-for-centralized-logs-in-k8s-platforms-and-permissions-management/">https://vzurczak.wordpress.com/2019/02/13/using-graylog-for-centralized-logs-in-k8s-platforms-and-permissions-management/</a></li>
+</ul>
+<p>
+3 variants:
+</p>
+<ul class="org-ul">
+<li>letting applications directly output their traces in other systems</li>
+<li>collector per pod</li>
+<li>collector per node - this</li>
+</ul>
+
+<p>
+Two architectures for log managements:
+</p>
+<ol class="org-ol">
+<li>"Elastic Stack" (formerly the "ELK stack") (products for Elastic Search):
+<ul class="org-ul">
+<li>Logstash - data collection and log-parsing engine</li>
+<li>Kibana - visualisation platform</li>
+<li>?</li>
+<li>?</li>
+</ul></li>
+<li>Graylog - three-tier architecture and scalable storage (based on Elasticsearch - its backend)</li>
+</ol>
+
+<p>
+Collecting logs per node - Logstash or (FileBeat, Fluentd, Fluent Bit…)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3ca07dc" class="outline-3">
+<h3 id="org3ca07dc"><span class="section-number-3">4.17</span> Helm - Пакетный менеджер</h3>
+<div class="outline-text-3" id="text-4-17">
+<p>
+<a href="https://www.baeldung.com/kubernetes-helm">https://www.baeldung.com/kubernetes-helm</a>
+</p>
+
+<ul class="org-ul">
+<li>Container: Container refers to operating system level virtualization</li>
+<li>Docker: Docker is a popular program to create and run containers</li>
+<li>Kubernetes: Kubernetes is a popular container orchestration program.</li>
+</ul>
+
+<p>
+Helm cnsist of:
+</p>
+<ul class="org-ul">
+<li>Tiller Server: installed within a Kubernates cluster - interacts with the Kubernetes API server to install,
+upgrade, query and remove Kubernetes resources</li>
+<li>Client: command-line interface - install, upgrade and rollback charts</li>
+</ul>
+
+<p>
+Charts - Kubernetes resources package
+</p>
+<ul class="org-ul">
+<li>collection of files</li>
+<li>configuration</li>
+</ul>
+
+<p>
+Release - running instance of a chart
+</p>
+</div>
+
+<div id="outline-container-org0801f39" class="outline-4">
+<h4 id="org0801f39"><span class="section-number-4">4.17.1</span> .helm</h4>
+<div class="outline-text-4" id="text-4-17-1">
+<ul class="org-ul">
+<li>Chart.yaml : This is the main file that contains the description of our chart</li>
+<li>values.yaml : this is the file that contains the default values for our chart</li>
+<li>templates/ : This is the directory where Kubernetes resources are defined as templates</li>
+<li>.helmignore: patterns to ignore when packaging (similar in concept to .gitignore)</li>
+</ul>
+
+<p>
+Template:
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org50f721c" class="outline-3">
+<h3 id="org50f721c"><span class="section-number-3">4.18</span> cluster management software</h3>
+<div class="outline-text-3" id="text-4-18">
+<p>
+<a href="https://en.wikipedia.org/wiki/List_of_cluster_management_software">https://en.wikipedia.org/wiki/List_of_cluster_management_software</a>
+</p>
+<ul class="org-ul">
+<li>Kubernetes - google</li>
+<li>Docker Swarm</li>
+<li>CoreOS</li>
+<li>Mesos – Apache</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb657ed9" class="outline-3">
+<h3 id="orgb657ed9"><span class="section-number-3">4.19</span> как могут поды иметь свои IP ведь они на одной ноде</h3>
+<div class="outline-text-3" id="text-4-19">
+<p>
+оверлейная сеть
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf70c892" class="outline-3">
+<h3 id="orgf70c892"><span class="section-number-3">4.20</span> kubectl</h3>
+<div class="outline-text-3" id="text-4-20">
+</div>
+<div id="outline-container-org62930a1" class="outline-4">
+<h4 id="org62930a1"><span class="section-number-4">4.20.1</span> kubectl get</h4>
+<div class="outline-text-4" id="text-4-20-1">
+<ul class="org-ul">
+<li><b>all</b></li>
+</ul>
+<p>
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   307d
+</p>
+<ul class="org-ul">
+<li><b>namespaces</b></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5fd7299" class="outline-3">
+<h3 id="org5fd7299"><span class="section-number-3">4.21</span> USAGE (max prokopenko)</h3>
+<div class="outline-text-3" id="text-4-21">
+<p>
+kubectl get services # Вывести все сервисы в пространстве имён
+kubectl get pods &#x2013;all-namespaces # Вывести все поды во всех пространств имён
+kubectl get pods -o wide # Вывести все поды в текущем пространстве имён с
+подробностями
+kubectl get deployment my-dep # Вывести определённое развёртывание
+kubectl get pods # Вывести все поды в пространстве имён
+kubectl get pod my-pod -o yaml # Получить информацию по поду в формате YAML
+</p>
+
+<p>
+kubectl describe nodes my-node
+kubectl describe pods my-pod
+</p>
+
+<p>
+kubectl get services &#x2013;sort-by=.metadata.name
+</p>
+
+<p>
+kubectl get pods &#x2013;sort-by='.status.containerStatuses[0].restartCount'
+</p>
+
+<p>
+kubectl get pv &#x2013;sort-by=.spec.capacity.storage
+</p>
+
+<p>
+kubectl get pods &#x2013;selector=app=cassandra -o \
+jsonpath='{.items[*].metadata.labels.version}'
+</p>
+
+<p>
+role.kubernetes.io/master')
+kubectl get node &#x2013;selector='!node-role.kubernetes.io/master'
+</p>
+
+<p>
+kubectl get pods &#x2013;field-selector=status.phase=Running
+</p>
+
+<p>
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+</p>
+
+<p>
+сайте <a href="https://stedolan.github.io/jq/">https://stedolan.github.io/jq/</a>
+sel=\({\)(kubectl get rc my-rc &#x2013;output=json | jq -j '.spec.selector | to<sub>entries</sub> | .[] | "\(.key)=\(.value),"' )%? }
+echo $(kubectl get pods &#x2013;selector=$sel &#x2013;output=jsonpath={.items..metadata.name})
+</p>
+
+<p>
+kubectl get pods &#x2013;show-labels
+</p>
+
+<p>
+JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}
+{@.type}={@.status};{end}{end}' \
+&amp;&amp; kubectl get nodes -o jsonpath="$JSONPATH" | grep "Ready=True"
+</p>
+
+<p>
+kubectl get secret my-secret -o go-template='{{range $k,$v := .data}}{{"### "}}{{$k}}{{"\n"}}
+{{$v|base64decode}}{{"\n\n"}}{{end}}'
+</p>
+
+<p>
+kubectl get pods -o json | jq '.items[].spec.containers[].env[]?.valueFrom.secretKeyRef.name' | grep -
+v null | sort | uniq
+</p>
+
+<p>
+всех подах.
+</p>
+
+<p>
+инициализации.
+</p>
+
+<p>
+kubectl get pods &#x2013;all-namespaces -o jsonpath='{range .items[*].status.initContainerStatuses[*]}
+{.containerID}{"\n"}{end}' | cut -d/ -f3
+</p>
+
+<p>
+kubectl get events &#x2013;sort-by=.metadata.creationTimestamp
+</p>
+
+<p>
+случае применения манифеста.
+</p>
+
+<p>
+kubectl diff -f ./my-manifest.yaml
+</p>
+</div>
+</div>
+<div id="outline-container-org01376fd" class="outline-3">
+<h3 id="org01376fd"><span class="section-number-3">4.22</span> Обновление ресурсов</h3>
+<div class="outline-text-3" id="text-4-22">
+<p>
+kubectl set image deployment/frontend www=image:v2 # Плавающее обновление
+контейнеров "www" развёртывания "frontend", обновление образа
+kubectl rollout history deployment/frontend # Проверить историю развёртывания, включая ревизии.
+</p>
+
+<p>
+kubectl rollout undo deployment/frontend # Откатиться к предыдущему
+развёртыванию
+kubectl rollout undo deployment/frontend &#x2013;to-revision=2 # Откатиться к определённой ревизии
+kubectl rollout status -w deployment/frontend # Отслеживать статус плавающего
+развёртывания "frontend" до его завершения
+kubectl rollout restart deployment/frontend # Перезапуск плавающего развёртывания
+"frontend"
+</p>
+
+<p>
+kubectl get pod mypod -o yaml | sed 's/\(image: myimage\):.*$/\1:v4/' | kubectl replace -f -
+kubectl label pods my-pod new-label=awesome # Добавить метку
+kubectl annotate pods my-pod icon-url=<a href="http://goo.gl/XXBTWq">http://goo.gl/XXBTWq</a> # Добавить аннотацию
+kubectl autoscale deployment foo &#x2013;min=2 &#x2013;max=10 # Автоматически масштабировать развёртывание "foo" в диапазоне от 2 до 10 подов
+</p>
+</div>
+</div>
+<div id="outline-container-orgd0f1dd2" class="outline-3">
+<h3 id="orgd0f1dd2"><span class="section-number-3">4.23</span> удаление ресурсов</h3>
+<div class="outline-text-3" id="text-4-23">
+<p>
+kubectl delete -f ./pod.json # Удалить под по типу и имени в pod.json kubectl delete pod,service baz foo # Удалить поды и сервисы с одноимёнными
+именам "baz" и "foo"
+kubectl delete pods,services -l name=myLabel # Удалить поды и сервисы с именем
+метки myLabel
+kubectl -n my-ns delete pod,svc &#x2013;all # Удалить все поды и сервисы в
+пространстве имен my-ns
+</p>
+
+<p>
+kubectl get pods -n mynamespace &#x2013;no-headers=true | awk '/pattern1|pattern2/{print $1}' | xargs kubectl delete -n mynamespace pod
+</p>
+</div>
+</div>
+<div id="outline-container-org26c8299" class="outline-3">
+<h3 id="org26c8299"><span class="section-number-3">4.24</span> работа с подами, логами</h3>
+<div class="outline-text-3" id="text-4-24">
+<p>
+kubectl logs my-pod # вывести логи пода (в stdout)
+kubectl logs -l name=myLabel # вывести логи пода с меткой myLabel (в stdout) kubectl logs my-pod &#x2013;previous # вывести логи пода (в stdout) по предыдущему
+экземпляру контейнера
+kubectl logs my-pod -c my-container # вывести логи контейнера пода (в stdout, при работе
+с несколькими контейнерами)
+kubectl logs -l name=myLabel -c my-container # вывести логи пода с меткой myLabel (в stdout) kubectl logs my-pod -c my-container &#x2013;previous # вывести логи контейнера пода (в stdout, при
+работе с несколькими контейнерами) по предыдущему экземпляру контейнера
+kubectl logs -f my-pod # вывести логи пода в режиме реального времени (в stdout) kubectl logs -f my-pod -c my-container # вывести логи контейнера пода в режиме реального
+времени (в stdout, при работе с несколькими контейнерами)
+kubectl logs -f -l name=myLabel &#x2013;all-containers # вывести логи всех подов с меткой myLabel (в
+stdout)
+kubectl run -i &#x2013;tty busybox &#x2013;image=busybox &#x2013; sh # запустить под как интерактивную оболочку
+kubectl run nginx &#x2013;image=nginx &#x2013;restart=Never -n
+mynamespace # Запустить под nginx в заданном пространстве имён
+kubectl run nginx &#x2013;image=nginx &#x2013;restart=Never # Запустить под nginx и записать его
+спецификацию в файл pod.yaml
+&#x2013;dry-run -o yaml &gt; pod.yaml
+kubectl attach my-pod -i # Прикрепить к запущенному контейнеру
+kubectl port-forward my-pod 5000:6000 # Переадресовать порт 5000 в локальной машине
+на порт 6000 в поде my-pod
+kubectl exec my-pod &#x2013; ls / # Выполнить команду в существующем поде (в случае
+одного контейнера).
+</p>
+
+<p>
+kubectl exec my-pod -c my-container &#x2013; ls / # Выполнить команду в существующем поде (в
+случае нескольких контейнеров)
+kubectl top pod POD<sub>NAME</sub> &#x2013;containers # Показать метрики по заданному поду вместе с
+его контейнерами
+</p>
+</div>
+</div>
+<div id="outline-container-org4ae2e61" class="outline-3">
+<h3 id="org4ae2e61"><span class="section-number-3">4.25</span> Работа с кластером</h3>
+<div class="outline-text-3" id="text-4-25">
+<p>
+kubectl config view # показать объединённые настройки kubeconfig
+</p>
+
+<p>
+конфигурацию из этих файлов
+KUBECONFIG=~/.kube/config:~/.kube/kubconfig2
+kubectl config view
+</p>
+
+<p>
+kubectl config view -o jsonpath='{.users[?(@.name <code>= "e2e")].user.password}'
+kubectl config view -o jsonpath</code>'{.users[].name}' # показать первого пользователя
+kubectl config view -o jsonpath='{.users[*].name}' # получить список пользователей
+kubectl config get-contexts # показать список контекстов
+kubectl config current-context # показать текущий контекст (current-context) kubectl config use-context my-cluster-name # установить my-cluster-name как контекст по
+умолчанию
+</p>
+
+<p>
+kubectl config set-credentials kubeuser/foo.kubernetes.com &#x2013;username=kubeuser &#x2013;
+password=kubepassword
+</p>
+
+<p>
+kubectl config set-context &#x2013;current &#x2013;namespace=ggckad-s2
+</p>
+
+<p>
+kubectl config set-context gce &#x2013;user=cluster-admin &#x2013;namespace=foo \
+&amp;&amp; kubectl config use-context gce
+kubectl config unset users.foo # удалить пользователя foo
+kubectl cordon my-node # Отметить узел my-node как неназначаемый
+kubectl drain my-node # Вытеснить узел my-node, чтобы подготовиться
+к эксплуатации
+kubectl uncordon my-node # Отметить узел my-node как назначаемый
+kubectl top node my-node # Показать метрики по заданному узлу
+kubectl cluster-info # Показать адреса главного узла и сервисов
+kubectl cluster-info dump # Вывести состояние текущего кластера в stdout kubectl cluster-info dump &#x2013;output-directory=/path/to/cluster-state # Вывести состояние текущего
+кластера в /path/to/cluster-state
+</p>
+
+<p>
+заменено указанным
+kubectl taint nodes foo dedicated=special-user:NoSchedule
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org48be69e" class="outline-2">
+<h2 id="org48be69e"><span class="section-number-2">5</span> REST API Documentation UIs</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+In 2015, the Swagger standard changed its name to OpenAPI. Your API documentation will be displayed
+through the Swagger UI.
+</p>
+<ul class="org-ul">
+<li>DapperDox -</li>
+<li>ReDoc</li>
+<li>RAML 2 HTML -</li>
+</ul>
+</div>
+<div id="outline-container-orgec6d4a9" class="outline-3">
+<h3 id="orgec6d4a9"><span class="section-number-3">5.1</span> generate OpenAPI from Flask</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><a href="https://donofden.com/blog/2020/06/14/Python-Flask-automatically-generated-Swagger-3-0-openapi-Document">https://donofden.com/blog/2020/06/14/Python-Flask-automatically-generated-Swagger-3-0-openapi-Document</a></li>
+<li><a href="https://apispec.readthedocs.io/en/latest/install.html">https://apispec.readthedocs.io/en/latest/install.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08e7740" class="outline-3">
+<h3 id="org08e7740"><span class="section-number-3">5.2</span> Swagger - развязность</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+OpenAPI Specification (formerly Swagger Specification) is an API description format for REST APIs.
+</p>
+
+<p>
+YAML, being a superset of JSON
+</p>
+
+<p>
+Consist off
+</p>
+<ul class="org-ul">
+<li>Swagger Editor – browser-based editor where you can write OpenAPI specs.</li>
+<li>Swagger UI – renders OpenAPI specs as interactive API documentation.</li>
+<li>Swagger Codegen – generates server stubs and client libraries from an OpenAPI spec.</li>
+</ul>
+</div>
+
+<div id="outline-container-org0765648" class="outline-4">
+<h4 id="org0765648"><span class="section-number-4">5.2.1</span> swagger offline</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<ul class="org-ul">
+<li><a href="https://github.com/swagger-api/swagger-editor">https://github.com/swagger-api/swagger-editor</a></li>
+<li>index.html</li>
+<li>dist/*</li>
+<li><a href="https://stackoverflow.com/questions/57677424/disable-generate-server-client-inside-swagger-editor">https://stackoverflow.com/questions/57677424/disable-generate-server-client-inside-swagger-editor</a></li>
+<li><a href="https://issue.life/questions/49515713">https://issue.life/questions/49515713</a></li>
+<li>show only <a href="https://github.com/swagger-api/swagger-editor/issues/719">https://github.com/swagger-api/swagger-editor/issues/719</a></li>
+</ul>
+
+
+<p>
+<b>Create spec.js file containg Swagger JSON</b>  <a href="https://stackoverflow.com/questions/30400477/how-to-open-local-files-in-swagger-ui">https://stackoverflow.com/questions/30400477/how-to-open-local-files-in-swagger-ui</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-html">
+  &lt;<span style="color: #cae682; font-size: 110%; font-weight: bold;">script</span> <span style="color: #cae682;">src</span>=<span style="color: #95e454;">'spec.js'</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text/javascript"</span>&gt;&lt;/<span style="color: #cae682; font-size: 110%; font-weight: bold;">script</span>&gt;
+  &lt;<span style="color: #cae682; font-size: 110%; font-weight: bold;">script</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text/javascript"</span>&gt;
+
+      var url = window.location.search.match(/url=([^&amp;]+)/);
+      if (url &amp;&amp; url.length &gt; 1) {
+        url = decodeURIComponent(url[1]);
+      } else {
+        url = <span style="color: #95e454;">"http://petstore.swagger.io/v2/swagger.json"</span>;
+      }
+
+  window.onload = function() {
+    // Build a system
+  const editor = SwaggerEditorBundle({
+     // url: url,
+      spec: spec,
+</pre>
+</div>
+
+<p>
+<b>Hide editor</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"> <span style="color: #fa8072;">/**</span>
+
+<span style="color: #99968b; font-style: italic;">    Styling for printing out of the editor</span>
+
+<span style="color: #99968b; font-style: italic;"> </span><span style="color: #fa8072;">*/</span>
+<span style="color: #b0c4de;">.Pane1,</span>
+<span style="color: #b0c4de;">.topbar </span>{
+<span style="color: #20b2aa;">display</span>: none;
+}
+<span style="color: #b0c4de;">.SplitPane </span>{
+<span style="color: #20b2aa;">position</span>: relative <span style="color: #e5786d;">!important</span>;
+<span style="color: #20b2aa;">display</span>: block <span style="color: #e5786d;">!important</span>;
+}
+<span style="color: #b0c4de;">.Pane2 </span>{
+<span style="color: #20b2aa;">overflow-y</span>: auto;
+<span style="color: #20b2aa;">width</span>: 100% <span style="color: #e5786d;">!important</span>;
+}
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8046125" class="outline-4">
+<h4 id="org8046125"><span class="section-number-4">5.2.2</span> Specification 2.0</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<p>
+<a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md</a>
+</p>
+<ul class="org-ul">
+<li>Field Names are case sensitive:
+<ul class="org-ul">
+<li>Fixed fields, which have a declared name</li>
+<li>Patterned fields, which declare a regex pattern for the field name</li>
+</ul></li>
+<li># Comment</li>
+<li>list - [] or - with \n</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgcf8fc83"></a>Data Types<br />
+<div class="outline-text-5" id="text-5-2-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">integer</td>
+<td class="org-left">integer</td>
+<td class="org-left">int32</td>
+<td class="org-left">signed 32 bits</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">long</td>
+<td class="org-left">integer</td>
+<td class="org-left">int64</td>
+<td class="org-left">signed 64 bits</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">float</td>
+<td class="org-left">number</td>
+<td class="org-left">float</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">10.1</td>
+</tr>
+
+<tr>
+<td class="org-left">double</td>
+<td class="org-left">number</td>
+<td class="org-left">double</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">string</td>
+<td class="org-left">string</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">"blabla"</td>
+</tr>
+
+<tr>
+<td class="org-left">byte</td>
+<td class="org-left">string</td>
+<td class="org-left">byte</td>
+<td class="org-left">base64 encoded characters</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">binary</td>
+<td class="org-left">string</td>
+<td class="org-left">binary</td>
+<td class="org-left">any sequence of octets</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">boolean</td>
+<td class="org-left">boolean</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">true false</td>
+</tr>
+
+<tr>
+<td class="org-left">date</td>
+<td class="org-left">string</td>
+<td class="org-left">date</td>
+<td class="org-left">As defined by full-date - RFC3339</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">dateTime</td>
+<td class="org-left">string</td>
+<td class="org-left">date-time</td>
+<td class="org-left">As defined by date-time - RFC3339</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">password</td>
+<td class="org-left">string</td>
+<td class="org-left">password</td>
+<td class="org-left">Used to hint UIs the input needs to be obscured.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+"file" - used by the Parameter Object and the Response Object to set the parameter type or the response as
+being a file
+</p>
+
+<p>
+<b>formats</b> -  to more finely define the data (accompanied by property)
+</p>
+<ul class="org-ul">
+<li>"email", "uuid", etc.,</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgc0bf472"></a>Hierarchy<br />
+<div class="outline-text-5" id="text-5-2-2-2">
+<p>
+Swagger Object - root. Required subobjects:
+</p>
+<ul class="org-ul">
+<li>swagger: "2.0"</li>
+<li>info
+<ul class="org-ul">
+<li>version: string - application API version</li>
+</ul></li>
+<li>paths - The available paths and operations for the API.</li>
+</ul>
+
+<p>
+not required:
+</p>
+<ul class="org-ul">
+<li>definitions Definitions Object - data types produced and consumed by operations - used by schema: \n $ref:
+"#/definitions/Order"</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org2f458bf"></a>Paths Object<br />
+<div class="outline-text-6" id="text-5-2-2-2-1">
+<p>
+/{path} 	Path Item Object
+</p>
+<ul class="org-ul">
+<li>get</li>
+<li>put</li>
+<li>post</li>
+<li>delete</li>
+<li>options</li>
+<li>head</li>
+<li>patch</li>
+<li>parameters - общие для всех операций на этом Path. Могут быть overriden на уровне операции</li>
+</ul>
+
+<p>
+<b>Operation Object</b>
+</p>
+<ul class="org-ul">
+<li>tags [] - for logical grouping</li>
+<li>summary - what the operation does</li>
+<li>description - GFM syntax can be used for rich text representation</li>
+<li>externalDocs</li>
+<li>operationId: "addPet" - MUST be unique among all operations described in the API - recommended to follow common
+programming naming conventions</li>
+<li>consumes: - for all parameters
+<ul class="org-ul">
+<li>"application/json"</li>
+<li>"application/xml"</li>
+</ul></li>
+<li>produces: - for all responses
+<ul class="org-ul">
+<li>"application/xml"</li>
+<li>"application/json"</li>
+</ul></li>
+<li>parameters - [Parameter Object]</li>
+<li>responses -  	Responses Object 	REQUIRED list of sub</li>
+<li>schemes ["http", "https"]</li>
+<li>deprecated 	boolean</li>
+<li>security - [Security Requirement Object]</li>
+</ul>
+
+<p>
+<b>Parameter Object</b>
+parameter types:
+</p>
+<ul class="org-ul">
+<li>/pet/{petId}: - from path petId</li>
+<li>query   (/items?id=###)</li>
+<li>header - Custom headers that are expected as part of the request.</li>
+<li>body  - payload of an HTTP - can only be one body parameter</li>
+<li>form - payload of an HTTP request when either application/x-www-form-urlencoded, multipart/form-data or both
+are used as the content type - only parameter type that can be used to send files - cannot be declared
+together with a body parameter</li>
+</ul>
+
+<p>
+fields:
+</p>
+<ul class="org-ul">
+<li>name string - case sensitive REQUIRED</li>
+<li>in string - parameter type "query", "header", "path", "formData" or "body" REQUIRED</li>
+<li>description - string</li>
+<li>required boolean - for path must be true</li>
+<li>schema - Schema Object - for body only</li>
+</ul>
+<p>
+not for body:
+</p>
+<ul class="org-ul">
+<li>type - REQUIRED - "string", "number", "integer", "boolean", "array" (or "file" for "formData")</li>
+<li>format - string see Data Type Formats</li>
+<li>allowEmptyValue boolean - Default false</li>
+<li>items ItemsObject - Required if type is "array"</li>
+<li>default any - MUST conform to type</li>
+</ul>
+
+<p>
+<b>Responses Object</b>
+</p>
+<ul class="org-ul">
+<li>status code
+<ul class="org-ul">
+<li>description 	string REQUIRED</li>
+<li>schema</li>
+<li>headers</li>
+<li>examples</li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+
+<li><a id="org6348089"></a>Schema<br />
+<div class="outline-text-6" id="text-5-2-2-2-2">
+<div class="org-src-container">
+<pre class="src src-yml">definitions:
+  Id:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+    xml:
+      name: "Id"
+  Exception:
+    type: "object"
+    properties:
+      status:
+        type: "string"
+        example: "exception"
+      description:
+        type: "string"
+    xml:
+      name: "Exception"
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgcc3b60c" class="outline-4">
+<h4 id="orgcc3b60c"><span class="section-number-4">5.2.3</span> JSON Schema</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<p>
+<a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=75977264">https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=75977264</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org658cce8" class="outline-3">
+<h3 id="org658cce8"><span class="section-number-3">5.3</span> links</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/36634281/list-of-swagger-ui-alternatives">https://stackoverflow.com/questions/36634281/list-of-swagger-ui-alternatives</a></li>
+<li>article <a href="https://pronovix.com/blog/free-and-open-source-api-documentation-tools?platform=hootsuite">https://pronovix.com/blog/free-and-open-source-api-documentation-tools?platform=hootsuite</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-11-17 Thu 20:39</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
