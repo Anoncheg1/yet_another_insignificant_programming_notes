@@ -1673,7 +1673,110 @@ The problem is :
    very confusing, and can lead you to believe that your program fails earlier than it actually does.
 
 
+* Documentation
+Sphinx - documentation tool used in Linux kernel (make htmldocs), uses reStructuredText as markup language
 
+one space line between of items
+** header
+#+begin_src c
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+/* audit -- definition of audit_context structure and supporting types
+ *
+ * Copyright 2003-2004 Red Hat, Inc.
+ * Copyright 2005 Hewlett-Packard Development Company, L.P.
+ * Copyright 2005 IBM Corporation
+ */
+
+/*
+ ,* blk_mq_map_queue_type() - map (hctx_type,cpu) to hardware queue
+ ,* @q: request queue
+ ,* @type: the hctx type index
+ ,* @cpu: CPU
+ ,*/
+static inline struct blk_mq_hw_ctx *blk_mq_map_queue_type(struct request_queue *q,
+							  enum hctx_type type,
+							  unsigned int cpu)
+{
+	return q->queue_hw_ctx[q->tag_set->map[type].mq_map[cpu]];
+}
+
+/* At task start time, the audit_state is set in the audit_context using
+   a per-task filter.  At syscall entry, the audit_state is augmented by
+   the syscall filter. */
+enum audit_state {
+	AUDIT_STATE_DISABLED,	/* Do not create per-task audit_context.
+				 ,* No syscall-specific audit records can
+				 ,* be generated. */
+	AUDIT_STATE_BUILD,	/* Create the per-task audit_context,
+				 ,* and fill it in at syscall
+				 ,* entry time.  This makes a full
+				 ,* syscall record available if some
+				 ,* other part of the kernel decides it
+				 ,* should be recorded. */
+	AUDIT_STATE_RECORD	/* Create the per-task audit_context,
+				 ,* always fill it in at syscall entry
+				 ,* time, and always write out the audit
+				 ,* record at syscall exit time.  */
+};
+
+
+/*
+ ,* blk_mq_plug() - Get caller context plug
+ ,* @q: request queue
+ ,* @bio : the bio being submitted by the caller context
+ ,*
+ ,* Plugging, by design, may delay the insertion of BIOs into the elevator in
+ ,* order to increase BIO merging opportunities. This however can cause BIO
+ ,* insertion order to change from the order in which submit_bio() is being
+ ,* executed in the case of multiple contexts concurrently issuing BIOs to a
+ ,* device, even if these context are synchronized to tightly control BIO issuing
+ ,* order. While this is not a problem with regular block devices, this ordering
+ ,* change can cause write BIO failures with zoned block devices as these
+ ,* require sequential write patterns to zones. Prevent this from happening by
+ ,* ignoring the plug state of a BIO issuing context if the target request queue
+ ,* is for a zoned block device and the BIO to plug is a write operation.
+ ,*
+ ,* Return current->plug if the bio can be plugged and NULL otherwise
+ ,*/
+static inline struct blk_plug *blk_mq_plug(struct request_queue *q,
+					   struct bio *bio)
+{
+	/*
+	 ,* For regular block devices or read operations, use the context plug
+	 ,* which may be NULL if blk_start_plug() was not executed.
+	 ,*/
+	if (!blk_queue_is_zoned(q) || !op_is_write(bio_op(bio)))
+		return current->plug;
+
+	/* Zoned block device write operation case: do not plug the BIO */
+	return NULL;
+}
+
+#+end_src
+** .c
+/usr/src/linux-5.15.80-gentoo/kernel/audit.c
+#+begin_src c
+/**
+ * auditd_test_task - Check to see if a given task is an audit daemon
+ * @task: the task to check
+ *
+ * Description:
+ * Return 1 if the task is a registered audit daemon, 0 otherwise.
+ */
+int auditd_test_task(struct task_struct *task)
+{
+	int rc;
+	struct auditd_connection *ac;
+
+	rcu_read_lock();
+	ac = rcu_dereference(auditd_conn);
+	rc = (ac && ac->pid == task_tgid(task) ? 1 : 0);
+	rcu_read_unlock();
+
+	return rc;
+}
+
+#+end_src
 * install /usr/local/bin
 copy files
 

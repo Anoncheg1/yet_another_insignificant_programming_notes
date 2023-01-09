@@ -1168,38 +1168,37 @@ C-_ or C-x C-u  Undo the last editing command. You can undo all the way back to 
             To return to it later enter fg 'process name' (foreground).
 *** Moving the cursor:
 
-  Ctrl + a   Go to the beginning of the line (Home)
-  Ctrl + e   Go to the End of the line (End)
-  Ctrl + p   Previous command (Up arrow)
-  Ctrl + n   Next command (Down arrow)
-   Alt + b   Back (left) one word
-   Alt + f   Forward (right) one word
-  Ctrl + f   Forward one character
-  Ctrl + b   Backward one character
-  Ctrl + xx  Toggle between the start of line and current cursor position
+| Ctrl + a  | Go to the beginning of the line (Home)                       |
+| Ctrl + e  | Go to the End of the line (End)                              |
+| Ctrl + p  | Previous command (Up arrow)                                  |
+| Ctrl + n  | Next command (Down arrow)                                    |
+| Alt + b   | Back (left) one word                                         |
+| Alt + f   | Forward (right) one word                                     |
+| Ctrl + f  | Forward one character                                        |
+| Ctrl + b  | Backward one character                                       |
+| Ctrl + xx | Toggle between the start of line and current cursor position |
+
 *** Editing:
-
- Ctrl + L   Clear the Screen, similar to the clear command
-
-  Alt + Del Delete the Word before the cursor.
-  Alt + d   Delete the Word after the cursor.
- Ctrl + d   Delete character under the cursor
- Ctrl + h   Delete character before the cursor (Backspace)
-
- Ctrl + w   Cut the Word before the cursor to the clipboard.
- Ctrl + k   Cut the Line after the cursor to the clipboard.
- Ctrl + u   Cut/delete the Line before the cursor to the clipboard.
-
-  Alt + t   Swap current word with previous
- Ctrl + t   Swap the last two characters before the cursor (typo).
- Esc  + t   Swap the last two words before the cursor.
-
- ctrl + y   Paste the last thing to be cut (yank)
-  Alt + u   UPPER capitalize every character from the cursor to the end of the current word.
-  Alt + l   Lower the case of every character from the cursor to the end of the current word.
-  Alt + c   Capitalize the character under the cursor and move to the end of the word.
-  Alt + r   Cancel the changes and put back the line as it was in the history (revert).
- ctrl + _   Undo
+| Ctrl + L   | Clear the Screen, similar to the clear command                                    |
+| Alt + Del  | Delete the Word before the cursor.                                                |
+|            |                                                                                   |
+| Alt + d    | Delete the Word after the cursor.                                                 |
+| Ctrl + d   | Delete character under the cursor                                                 |
+| Ctrl + h   | Delete character before the cursor (Backspace)                                    |
+|            |                                                                                   |
+| Ctrl + w   | Cut the Word before the cursor to the clipboard.                                  |
+| Ctrl + k/u | Cut the Line after/before the cursor to the clipboard.                            |
+|            |                                                                                   |
+| Alt + t    | Swap current word with previous                                                   |
+| Ctrl + t   | Swap the last two characters before the cursor (typo).                            |
+| Esc  + t   | Swap the last two words before the cursor.                                        |
+|            |                                                                                   |
+| ctrl + y   | Paste the last thing to be cut (yank)                                             |
+| Alt + u    | UPPER capitalize every character from the cursor to the end of the current word.  |
+| Alt + l    | Lower the case of every character from the cursor to the end of the current word. |
+| Alt + c    | Capitalize the character under the cursor and move to the end of the word.        |
+| Alt + r    | Cancel the changes and put back the line as it was in the history (revert).       |
+| ctrl + _   | Undo                                                                              |
 ** how it works
 https://unix.stackexchange.com/questions/4126/what-is-the-exact-difference-between-a-terminal-a-shell-a-tty-and-a-con
 https://dev.to/napicella/linux-terminals-tty-pty-and-shell-192e
@@ -1265,7 +1264,7 @@ Terminal emulator(get keys and draw gui) -> PTY master -> tty driver(with line d
 The escape codes received from the terminal signify things such as function key, arrow key, and
 other special keystrokes (home key, end key, help key, PgUp key, PgDn key, insert key, delete key,
 and so forth)
-** POSIX terminal interface
+** TODO POSIX terminal interface
 ** pseudo-teletypes (PTS)
 The multiplexor is the master, and the PTS are the slaves. The multiplexor is addressed by the
 kernel through the device file located at /dev/ptmx.
@@ -1323,7 +1322,7 @@ Copy/paste
 **** configure
 tmux show-options -g | grep status
 
-* bash / commands
+* shell
 You may indent or not indent however you like
 ** variables
 ${ varname } is general syntax for $variable
@@ -1608,6 +1607,10 @@ special
 - fold
 - shuf		get random lines
 - for item in list; do command $item done
+- expand and unexpand: convert between tabs and spaces
+- cut 		print part of each line of file separated by TAB or delimiter
+- paste and join: read two files into one
+- fmt, pr, fold, column, nl : text formatting
 *** sort
 sort by column:
 : sort -t, -nk3 user.csv
@@ -1625,6 +1628,8 @@ cut -c [(k)-(n)/(k),(n)/(n)] filename
 - n denotes the ending position of the character in each line
 - if k and n are separated by “-” otherwise they are only the position of character in each line from the file
   taken as an input.
+
+: ps -aux | tr -s ' ' | cut -d ' ' -f 2
 *** sed
 Default only change the first occurrence of the word on a line.
 
@@ -1661,7 +1666,8 @@ split paragraphs:
 bad try:
 - echo "aavbb" | perl -e '@a=<>; print( (split(/v/, join "", @a))[0] )' => "aa"
 *** awk
-- echo -e "a\navbb" | awk -v RS='v' NR==1' => a\na
+- echo -e "a\navbb" | awk -v RS='v' 'NR==1' - get a\na
+- ps ux | awk '{if($8=="Z") print}' - get column 8 == "Z"
 *** uniq
 MUST BE USED AFTER *sort*
 - -s n - skip n first characters
@@ -1678,6 +1684,10 @@ background
 - nohup command & - even after exiting the shell
 - timeout 15 command &
 
+Which process block file/folder?
+- ls -l /proc/*/fd/* | grep ~/Downloads
+- lsof -l ~/Downloads
+- fuser Downloads
 
 ** Programming
 *** Hello World.sh
@@ -1853,10 +1863,10 @@ do
     echo $line
 done
 
-while read line;
-do
-    echo $line
-done < $lines
+# while read line;
+# do
+#     echo $line
+# done < $lines
 
 echo -e "$a" | while IFS=":" read f v; do
     echo "$f _ $v" # f - first column v - all others
@@ -1888,6 +1898,8 @@ do
    esac
 done
 
+# loop files in current directory
+for filename in *; do echo "put ${filename}"; done
 #+end_src
 *** debug
 https://www.cyberciti.biz/tips/debugging-shell-script.html
@@ -2015,7 +2027,9 @@ ex
   - -P n - Run up to max-procs processes at a time
 - cat lines | xargs | tr ' ' ',' => line1,line2,line3,line4
 ** USECASES
-- print column: awk '{print $2}'
+- print column:
+  - ps | awk '{print $2}'
+  - ps | tr -s ' ' | cut -d ' ' -f 3
 - find duplicated files:
   - find ./ -type f -exec md5sum '{}' ';' > dupl
   - cat dupl  | sort | uniq --all-repeated=separate -w 15 | grep '\.\/' | uniq -w 15 | cut -c 35- | xargs rm
@@ -2329,9 +2343,11 @@ mkfs.ext4 tdisk.img
 
 ** tar
 tar.gz:
-- crate: tar -cvzf a.tar.gz /
-- extract: tar xpzf  "$1" --xattrs-include=' *.*' --numeric-owner
-- inspect: tar ztvf/tvf m.tar.gz/m.tar
+- crate: tar -czf a.tar.gz /
+- extract: tar xpzf  --xattrs-include=' *.*' --numeric-owner a.tar.gz
+  - -p, --preserve-permissions (default for supe ruser)
+- inspect: tar ztf/tf m.tar.gz/m.tar
+- create from files: tar --totals -cvf a.tar file1 file2 file3
 ** zip chunks/multi-part/split
 to chunks:
 - zip -r -s <size in megabytes>M <new_file>.zip <folder>/*
@@ -2348,6 +2364,22 @@ mimic browser request:
 SOCKS5 proxy
 - curl -x socks5h://localhost:8080 api.ipify.org
 
+POST file:
+- curl -X POST -F file1=@/art.jpg http://site.com/api/upload
+- curl -i -X POST host:port/post-file  -H "Content-Type: text/xml" --data-binary "@path/to/file"
+-
+
+GET
+- curl -X GET "http://anonchek.ru/get?id=a43219ce4a4a490d9cd34beb718cb09f" -H  "accept: application/json"
+- curl -Gv 'https://geocode-maps.yandex.ru/1.x/?apikey=ba47e54a-61a5-49af-9c84-558d92b35a33&format=json' --data-urlencode 'geocode=Тверская 6'
+
+you cannot really use the -d/--data option if this is not a POST request. But this is still possible if you
+ use the -G option.
+- curl -X DELETE -G 'http://localhost:5000/locations' -d 'id=3'
+-
+
+** du
+du -h -x -s -- * | sort -r -h | head -20 - biggest files
 ** links
 - https://learnbyexample.gitbooks.io/linux-command-line/content/Shell.html
 * install tarball - (from source, install sources)
@@ -2399,6 +2431,10 @@ interoperable with GnuPG
 - Luc
 - McEliece
 - Криптосистема Уильямса
+
+In public key cryptography, a key is actually a pair: a public key, and a private key. You use the private key
+to digitally sign files, and others use the public key to verify the signature. Or, others use the public key
+to encrypt something, and you use the private key to decrypt it.
 *** Цифровая подпись Digital signature
 - authentication - who sent
 - integrity - was not altered
@@ -2432,6 +2468,21 @@ hkps:// (HKP over TLS)
 
 Чтобы ключи не залеживались на почту приходит запрос об актуальности ключа
 *** TODO signing keys
+*** subkeys
+When generating an OpenPGP key with GnuPG, per default a primary key (pair), also called master-key, and a
+sub-key (pair) are created. The primary key, also called master-key, contains one or more user-IDs (name,
+email-address) and is used for for signing. The sub-key, signed by the primary key and thus confirmed to
+belong to its user-IDs, is used for encryption/decryption.
+
+Why?
+- for security: The primary key pair is quite important
+- primary key pair - on your main computer
+- You publish the subkeys on the normal keyservers, and everyone else will use them instead of the primary
+  keys for encrypting messages or verifying your message signatures
+- You will need to use the primary keys only in exceptional circumstances, namely when you want to modify your
+  own or someone else's key.
+
+https://wiki.debian.org/Subkeys
 ** therms
 uid - USER-ID - string after: uid [ultimate]
 
@@ -2463,6 +2514,7 @@ two key pairs: (1, 3) and (2, 4):
 - supported algorithms: gpg --version
 - gpg --list-keys: List all keys from the public keyrings, or just the keys given on the command line.
 - gpg --list-secret-keys: List all keys from the secret keyrings or just the ones given on the command line
+- gpg --list-public-keys
 - gpg --list-sigs: Same as --list-keys, but the signatures are listed too.
 - --list-keys --with-colons
 -  --keyid-format {none|short|0xshort|long|0xlong}
@@ -2475,11 +2527,30 @@ pub   dsa1024/17072058 2004-07-20 [SC] [expires: 2022-01-01]
 - SC primary and E subordinate keyparis ? algoritm and key size
 - key-id SHORT - last part of fingerprint.
 - created date
-- flag
+- usage flags:
   - SC - signing and certification.
   - E - used for encryption.
+  - 0x01 	“C” 	Key Certification
+  - 0x02 	“S” 	Sign Data
+  - 0x04 	“E” 	Encrypt Communications
+  - 0x08 	“E” 	Encrypt Storage
+  - 0x10 	  	Split key
+  - 0x20 	“A” 	Authentication
+  - 0x80 	  	Held by more than one person
 - expires
 
+
+sections:
+- pub - public, followed by fingerprint
+- sec - secret, followed by fingerprint
+- uid -
+- ssb - Secret subkey
+- sub - public subkey - (used for encryption)
+
+When generating an OpenPGP key with GnuPG, per default a primary key (pair), also called master-key, and a
+sub-key (pair) are created.
+
+https://davesteele.github.io/gpg/2014/09/20/anatomy-of-a-gpg-key/
 ** Correct way to replace a GPG key
 The original idea was that people with keys would get together in person-to-person meet-ups called
 *key signing parties* to sign each other's keys and build a *web of trust*.
@@ -2494,6 +2565,13 @@ The original idea was that people with keys would get together in person-to-pers
   - 4096
 - gpg --gen-revoke --armor --output=revocation_certificate.asc user-id
   - armor - ASCII output suitable for copy. default - binary format
+
+valid for
+- 0 = key does not expire
+- <n> = key expires in n days
+- <n>w = key expires in n weeks
+- <n>m = key expires in n months
+- <n>y = key expires in n years
 
 Export:
 - gpg --output public.key --armor --export user-id/fingerprint - generage ASCII version of a user's public key
@@ -2572,7 +2650,7 @@ backup the GPG trust database
   1. rm ~/.gnupg/trustdb.gpg
   2. gpg --import-ownertrust < /path/to/trustdb-backup.txt
 
-*** sign keys
+*** sign keys (after importing)
 If you don’t do this, you can still use it to encrypt and decrypt messages from and to that
 person. But gpg will ask you every time whether you wish to proceed because the key is unsigned.
 
@@ -2947,13 +3025,20 @@ cat /tmp/user1.js | grep -e dom.security.https_only_mode \
 By default your browser trusts 100's of Certificate Authorities (CAs)
 
 Settings -> Privacy & Security -> Certificates
+
+*allow self signed*:
+- network.stricttransportsecurity.preloadlist to False
 ** User-Agent
 Random User-Agent by Paramtamtam
 
 require privacy.resistFingerprinting to be disabled
 
-latest:
-- http://www.whatuseragent.com/
+Plugins:
+- User-Agent Switcher (GPLv3) https://gitlab.com/ntninja/user-agent-switcher
+- MIT http://www.whatuseragent.com/ - github.com -  alert(window.navigator.userAgent) - not hide
+
+*check User-Agent inside of JavaScript*
+- alert(window.navigator.userAgent)
 ** images loading
 permissions.default.image
 - 1 -- Always load the images
@@ -3351,6 +3436,25 @@ up:
 down:
 - chmod -R g+rwx /mnt/share/* # allow at target to write
 - fusermount -u /mnt/share # umount
+** TODO 6) VPS
+Viriant 1 - tun - man ssh
+- https://www.copahost.com/blog/openvpn-in-ubuntu-tun-tap/
+- # cat /dev/net/tun
+  - cat: /dev/net/tun: File descriptor in bad state
+  - If the output shows “File descriptor in bad state”, then it means it is working correctly.
+
+Variant 2 - proxychains
+- ssh -fNTD 127.0.0.1:<local port> username@sshserver
+  - -f go backgroound
+  - -N Do not execute a remote command.  This is useful for just for warding ports.
+  - -T Disable pseudo-terminal allocation.
+- edit /etc/proxychains.conf :
+  - socks5 127.0.0.1 <localport>
+  - proxy_dns
+- proxychains <program name>
+
+
+Variant 2 - tsocks
 ** ssh-agent
 - key manager for SSH. It holds your keys and certificates in memory, unencrypted, and ready for use by ssh
 - runs in the background on your system
@@ -3533,6 +3637,12 @@ ssh will act as SOCKS4/5 proxy (Port 1080 is the IANA registered port for SOCKS)
 
 localhost 1080 is now SOCKS proxy to bastion.securecorp.io which is work as SOCKS proxy
 
+*** examples
+vps double socks
+- ssh -D 1080 local_user@localhost # create socks proxy on localhost
+- ssh -R 1080:localhost:1080 root@vps.com # allow access local 1080 port
+- ssh -L 1080:localhost:1080 -p 49382 root@cps.com # crate local 1080 which will be forwarded to remote 1080
+-
 ** Reverse SSH Tunnel
 Require: GatewayPorts yes in sshd_config ???
 
@@ -4061,10 +4171,12 @@ network={
 
 microphone
 - SND_USB_AUDIO - kernel
+- alsamixer => internal
 - arecord -l # list capture hardware
 - arecord -f S16_LE -d 3 -r 44100 --device="hw:0,0" -c 2 /tmp/test.wav
+- arecord arecord -f S16_LE -d 3 -f dat -V stereo -r 44100 --device="hw:0,0" -c 2 /tmp/test.wav
 - aplat /tmp/test.wav
--
+
 *** links
 - https://wiki.gentoo.org/wiki/ALSA
 - https://wiki.debian.org/ALSA#Troubleshooting
@@ -4167,6 +4279,28 @@ search installed packages and output formatted:
 - eselect repository enable N
 - emerge --sync
 - emerge ??
+*** socks proxy
+- net-proxy/sshuttle - to create VPN connection over ssh
+
+for portage: https://forums.gentoo.org/viewtopic-t-52442-start-0.html
+- net-proxy/tsocks
+- in /etc/make.conf
+  - SYNC="rsync://rsync.us.gentoo.org/gentoo-portage"
+  - FTP_PROXY="ftp://192.168.0.1:8000"
+  - HTTP_PROXY="http://192.168.0.1:80"
+  - #RSYNC_PROXY="192.168.0.1:873"
+- in /etc/socks/tsocks.conf
+  - # We can access 192.168.0.* directly
+  - local = 192.168.0.0/255.255.255.0
+  - # Otherwise we use the server
+  - path {
+  - reaches = 0.0.0.0/0
+  - server = 192.168.0.1
+  - server_type = 5
+  - default_user = test
+  - default_pass = test
+  - }
+
 *** issue solving
 - emerge --info
 - eselect profile show
@@ -4254,6 +4388,16 @@ strace glxinfo
 *** fps
 games-fps/doomsday - modern engine for Doom, Heretic, and Hexen
 -
+*** mednafen
+mednafen.github.io/documentation
+*no sound*
+- mednafen -sounddevice sexyal-literal-default
+
+*scaller*
+- mednafen -md.special hq2x/nn2x/super2xsai/2xsai/nny2x
+
+*destination resolution*
+- mednafen -md.stretch full/aspect
 ** hdmi mirroring
 xarndr --output HDMI-0 --auto --same-as LVDS
 ** opencl
@@ -4298,8 +4442,8 @@ operator (<) as a prefix if it is a newer one:
 https://wiki.gentoo.org/wiki/User:SwifT/Complete_Handbook
 https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet
 * Debian
- - list installed packages :: dpkg-query -l
- - list all packages :: dpkg-query -l '*' | less
+ - list installed packages :: dpkg-query -l, apt list --installed
+ - list all packages :: apt search keyword or apt-cache search keyword
  - list file of package :: dpkg-query -L packagename
  - install :: apt-get -s install emacs
  - apt-cache search package :: available package
@@ -4322,6 +4466,7 @@ List packages by criteria	apt list
 | Update the package repository                        | apt-get update       | apt update       |
 | Upgrade packages                                     | apt-get upgrade      | apt upgrade      |
 | Upgrade packages and remove unnecessary dependencies | apt-get dist-upgrade | apt full-upgrade |
+| Disable update for packages                          | apt-mark hold ...    |                  |
 
 ** tigervnc
 under user
@@ -4459,7 +4604,65 @@ connect:
 - отключить PHP Language Features - стандартные возможности убоги
 - установить например: PHP Intelephense,
 
+** systemctl
+main component - init system
+- device management
+- login management
+- network connection management
+- event logging
 
+
+*** VIEWING-SYSTEMD-INFORMATION
+- systemctl list-dependencies ==> Show a unit’s dependencies
+- systemctl list-sockets ==> List sockets and what activates
+- systemctl list-jobs ==> View active systemd jobs
+- systemctl list-unit-files ==> See unit files and their states
+- systemctl list-units ==> Show if units are loaded/active
+- systemctl get – default ==> List default target (like run level)
+-  ls /etc/systemd/system/*.wants/SERVICE_NAME.service ==> TO-LIST-WHAT-LEVELS-THIS-SERVICE-IS-CONFIGURED-ON-OR-OFF
+*** WORKING WITH SERVICES
+- systemctl stop service ===> Stop a running service
+- systemctl start service ===> Start a service
+- systemctl restart service ===> Restart a running service
+- systemctl reload service ===> Reload all config files in service
+- systemctl status service ===>See if service is running/enabled
+- systemctl enable service ===> Enable a service to start on boot
+- systemctl disable service ===> Disable service–won’t start at boot
+- systemctl show service ===> Show properties of a service (or other unit)
+- systemctl -H host status network ===> Run any systemctl command remotely
+- systemctl condrestart SERVICE_NAME ==> RESTARTS-IF-THE-SERVICE-IS-ALREADY-RUNNING.
+- systemctl is-enabled SERVICE_NAME ==> CHECK-IF-THE-SERVICEIS-CONFIGURED-TO-START-OR-NOT-IN-THE-CURRENT-ENVIRONMENT.
+- systemctl daemon-reload ==> USED-WHEN-YOU-CREATE-A-NEW-SERVICE-FILE-OR-MODIFY-ANY-CONFIGURATION.
+- systemctl isolate multi-user.target (OR systemctl isolate runlevel3.target OR telinit 3) ==> CHANGING-RUNLEVELS ==> Change to multi-user run level.
+-  ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target ==> SET-TO-USE-MULTI-USER-RUNLEVEL-ON-THE-NEXT-REBOOT.
+*** run levels
+- runlevel0.target, poweroff.target ==> HALT-THE-SYSTEM
+- runlevel1.target, rescue.target ==> SINGLE-USER-MODE
+- User-defined/Site-specific runlevels. By default, identical to 3. ==> Sysvinit: 2, 4
+- Multi-user, non-graphical. Users can usually login via multiple consoles or via the network. ==> 3
+- runlevel5.target, graphical.target ==> Multi-user, graphical. Usually has all the services of runlevel 3 plus a graphical login.MULTI-USER,GRAPHICAL.
+-  runlevel6.target, reboot.target ==> reboot
+-  emergency.target ==>emergency-shell
+*** Changing-System-States
+- systemctl reboot ===> Reboot the system (reboot.target)
+- systemctl poweroff ===> Power off the system (poweroff.target)
+- systemctl emergency ===> Put in emergency mode (emergency.target)
+- systemctl default ===> Back to default target (multi-user.target)
+*** Viewing-log-messages
+- journalctl ===> Show all collected log messages
+- journalctl -u network.service ===> See network service messages
+- journalctl -f ===> Follow messages as they appear
+- journalctl -k ===> Show only kernel messages
+*** SYSVINIT
+- service SERVICE_NAME start
+- service SERVICE_NAME stop
+- service SERVICE_NAME restart
+- service SERVICE_NAME reload
+- service SERVICE_NAME condrestart # restart if service already running
+- service SERVICE_NAME status
+- chkconfig SERVICE_NAME on # TURN-THE-SERVICE-SERVICE-ON-FOR-START-AT-NEXT-BOOT-OR-OTHER-TRIGGER.
+- chkconfig SERVICE_NAME off # TURN-THE-SERVICE-SERVICE-OFF-FOR-THE-NEXT-REBOOT-OR-OTHER-TRIGGERS.
+***
 * TODO Haskell
 ** comparision
 
@@ -4843,6 +5046,18 @@ vectors:
 
 https://wiki.gentoo.org/wiki/Allow_only_known_usb_devices
 
+** telegram
+    - Phone Number → Who can see my phone number — Nobody.
+    - Data and Storage → Auto Download Media → Toggle off
+    - Phone Number → Who can find me by my number — My Contacts.
+    - Last Seen & Online → Who can see my timestamp — Nobody.
+    - Profile photo → Who can see my profile photo — My Contacts.
+    - Calls → Who can call me — My Contacts (or Nobody, if you prefer).
+    - Calls→ Peer-to-peer — My contacts (or Nobody, if you prefer not to share your IP address with chat partners).
+    - Forwarded Messages → Who can add a link to my account when forwarding my messages — My Contacts.
+    - Groups & Channels → Who can add me — My Contacts.
+
+Disable P2P calls for everyone - IP address of the user’s call object will appear on the Telegram control log
 * Darknet
 Deep web - parts of the World Wide Web whose contents are not indexed by standard web search-engines
 ** TOR
@@ -4997,6 +5212,7 @@ Another (?) Torch - http://xmh57jrknzkhv6y3ls3ubitzfqnkrwxhopf5aygthi7d6rplyvk3n
 Haystak - http://haystak5njsmn2hqkewecpaxetahtwhsbsa64jom2k22z5afxhnpxfid.onion/
 Onionland - http://3bbad7fauom4d6sgppalyqddsqbf5u5p56b5k5uk2zxsy3d6ey2jobad.onion/
 *** proxies
+1) torsocks
 emerge --ask net-proxy/torsocks
 - $ torsocks application
 - DNS handled
@@ -5004,9 +5220,13 @@ emerge --ask net-proxy/torsocks
 - WRNING It uses the LD_PRELOAD mechanism (man ld.so.8) which means that if the application is not using the
   libc or for instance uses raw syscalls, torsocks will be useless and the traffic will not go through Tor.
 
+2) curl --socks5-hostname 127.0.0.1:9050 onion
 
 redirect ALL non-tor outgoing trafic to a Tor transparent proxy:
 - iptables -t nat -A OUTPUT -p TCP -m owner ! --uid-owner tor -j DNAT --to-destination 127.0.0.1:9040
+*** fstab logging to tmpfs
+- tmpfs  /var/logtor  tmpfs uid=43,rw,nosuid,noatime,nodev,noexec,size=20M,mode=1705 0 0
+- Log notice file /var/logtor/tor_notices.log
 ** TODO i2p
 - i2p doesn't store other people stuff on your hdd
 ** TODO lokinet
@@ -5105,6 +5325,8 @@ Address Resolution Protocol (ARP)
 | netstat          | ss, ip route     | Show various networking statistics  |
 | brctl            | bridge           | Handle bridge addresses and devices |
 *** ip route
+route -n - show numerical addresses instead of trying to determine symbolic host names.
+
 - Assign an IP Address to a Specific Interface:  ip addr add 192.168.50.5 dev eth1
 - add static route: ip route add 10.10.20.0/24 via 192.168.50.100 dev eth0
   - persistent /etc/sysconfig/network-scripts/route-eth0:
@@ -5121,7 +5343,7 @@ incoming connections - when source port are listening. (But It is possible to re
 - ss state established - filter by state
 - ss '( sport = :443 or dport = :443 )' - filter by port
 - ss dst 127.0.0.1 - filter by remote ip
-
+- ss -plat list all listening
 *** USE CASES
 - ip link set up eth1 - Activate or Deactivate a Network Interface
 - ip addr add 10.0.0.1/24 broadcast 10.0.0.255 dev eth1 - Assign IPv4 address(es) to a Network Interface
@@ -5200,6 +5422,20 @@ netstat -l - socket statistic
 - bridge
 *** ifstat
 
+
+** lsof
+LiSts all Open Files
+- lsof -iTCP -sTCP:LISTEN -P -n
+  - -P подавляет, для сетевых файлов, преобразование номеров портов в имена портов.
+  - -i позволяет вывести сведения о файлах, интернет-адреса которых соответствуют заданному адресу.
+- lsof -u cindy | wc -l - список файлов, открытых конкретным пользователем.
+- lsof -u^cindy | wc -l -  количество файлов на компьютере, которые открыты всеми пользователями за исключением cindy
+- -c сведения о файлах, которые держат открытыми процессы, выполняющие команды, имена которых начинаются с заданных символов.
+- lsof -cpython | head -15 -  первые 15 файлов, открытых всеми процессами Python, выполняющимися на компьютере.
+- lsof +d /usr/bin | head -4 - какие папки и файлы открыты в некоей директории
+- lsof -p вывести все файлы, открытые процессом с указанным при вызове команды PID.
+- Опция -t подавляет вывод всей информации за исключением ID процессов.
+- lsof -l dir - сведения обо всех процессах, имеющих открытые дескрипторы файлов в директории
 
 ** dig
 DNS lookups and displays the answers
@@ -5375,8 +5611,54 @@ table inet local {
 ** net-dns/bind-tools
 - https://www.isc.org/bind/
 - https://gitlab.isc.org/isc-projects/bind9/-/blob/main/doc/dnssec-guide/getting-started.rst
+
 ** nmap - network exploration
-** proxy
+** OpenVPN
+*** OpenVPN over Tor
+- add socks-proxy 127.0.0.1 9150
+- after connection tor will be router through VPN, that is why: You also need to tell the routing to reach
+  your Tor entry node outside of the VPN:
+  - sudo route add -net E.E.E.E netmask 255.255.255.255 gw G.G.G.G
+    - E.E.E.E is your Tor entry node (either a bridge or a guard node) and G.G.G.G is your default gateway.
+**** realization
+***** /usr/local/bin/
+#+BEGIN_SRC shell
+#!/bin/sh
+cp "/home/ff/Downloads/file.ovpn" /etc/openvpn/openvpn.conf
+echo >> /etc/openvpn/openvpn.conf
+echo "auth-user-pass /etc/openvpn/auth_vpnfile" >> /etc/openvpn/openvpn.conf
+echo "socks-proxy 127.0.0.1 9050" >> /etc/openvpn/openvpn.conf
+echo "up /etc/openvpn/openvpn-up.sh" >> /etc/openvpn/openvpn.conf
+
+
+#+END_SRC
+***** /etc/openvpn/openvpn-up.sh
+#+BEGIN_SRC shell
+#!/usr/bin/env bash
+
+interface=wlan0
+
+if [ "$script_type" == "up" ]; then
+    torbridges=$(cat /etc/tor/torrc | grep ^bridge | cut -d ' ' -f 3 | cut -d ':' -f 1)
+    defaultroute=$(ip route | grep default | cut -d ' ' -f 3)
+    echo "$torbridges" | while read line
+    do
+	ip route add $line via $defaultroute dev $interface
+    done
+elif [ "$script_type" == "down" ]; then
+    torbridges=$(cat /etc/tor/torrc | grep ^bridge | cut -d ' ' -f 3 | cut -d ':' -f 1)
+    defaultroute=$(ip route | grep default | cut -d ' ' -f 3)
+    while read line
+    do
+	ip route del $line via $defaultroute dev $interface
+    done < $torbridges
+fi
+#+END_SRC
+**** links
+- https://kiljan.org/2017/11/15/routing-traffic-through-openvpn-using-a-local-socks-proxy/
+- https://www.oilandfish.com/posts/tor-openvpn.html
+
+** get my ip
 *** wget
 - wget --quiet --output-document=- https://ip.oxylabs.io
 ** USECASES
@@ -5414,6 +5696,7 @@ finally, you can run the process you want to analyze in the new namespace, and w
 
 ip netns exec test thebinarytotest
 ip netns exec test wireshark
+
 
 * wifi
 - wifi phy /sys/bus/usb/driver/mt7601u/*/ieee80211/
@@ -6286,6 +6569,13 @@ send message:
 
 * cloud
 open source consoles - OpenShift
+* openssl
+- openssl s_client -showcerts -connect pecl.php.net:443 просмотр сертификатов при соединении схостом
+- openssl s_client -tls1 -debug -msg -state -showcerts -connect php.net:443 - более подробный вывод
+- openssl ciphers|tr ':' '\n'|grep GOST
+- openssl engine
+- openssl s_client -connect pecl.php.net:443 -CAfile RCA.crt - указать свой сертификат
+- curl --trace - https://gost.cryptopro.ru/
 * decentralazied storage
 *** know
 - Git

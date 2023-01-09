@@ -371,6 +371,42 @@ OR
 ** M-x artistic mode (draw mode)
  - https://www.lysator.liu.se/~tab/artist/
  - http://dinasis.com/oliver/Learning_GNU_Emacs/gnu3-CHP-7-SECT-6.html
+
+- C-c C-c 	artist-mode-off 	Exit artist mode.
+- C-c C-r 	draw rectangle
+
+
+
+                     C-c `
+                      \   C-c ^ C-c '
+                       \   |    /
+                        \  |   /
+                         \ |  /
+                          \| /
+           C-c < ----------/-------------C-c >
+                          /|\
+                         / | \
+                        /  |  \
+                       /   |   \
+                      /    |    C-c \
+                     /   C-c .
+                 C-c /
+*** draw shapes
+- C-c C-a f  artist-select-op-flood-fill  Select flood fill as the operation.
+- C-c C-a C-k  artist-select-op-cut-rectangle  Draw a rectangle around an area, then cut.
+- C-c C-a M-w  artist-select-op-copy-rectangle Draw a rectangle around an area, then copy.
+- C-c C-a C-y artist-select-op-paste Paste what you copied wherever you click the mouse.
+- C-c C-a v  artist-select-op-vaporize-line Erase a line you select (literal line; not a line in the file).
+- C-c C-a C-d artist-select-op-erase-char Set operation to erase (use the mouse as your eraser).
+- C-c C-a S  artist-select-op-spray-can Set operation to spray can.
+- C-c C-a e artist-select-op-ellipse Draw ellipses.
+- C-c C-a p artist-select-op-poly-line Draws poly-lines
+- C-c C-a r artist-select-op-rectangle Draw rectangles.
+- C-c C-a l artist-select-op-line Draw lines.
+- C-c C-a C-r artist-toggle-rubber-banding If on (the default), show shape while stretching; if not, mark end-points.
+- C-c C-a C-l artist-select-line-char Select character to use when drawing lines (- is the default).
+- C-c C-a C-f  artist-select-fill-char Select character to fill shapes with (Space is the default).
+
 ** Registers
 Each register has a name that consists of a single character
 - C-x r s ? - copy-to-register
@@ -1193,7 +1229,8 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Program-Indent.html
 ** links
 - https://emacs.readthedocs.io/en/latest/writing_in_emacs.html
 - https://www.gnu.org/software/emacs/manual/html_node/emacs/Spelling.html
-* Math xah-math-input
+* Math symbols
+** xah-math-input
 http://xahlee.info/emacs/emacs/xmsi-math-symbols-input.html
 
 install:
@@ -1248,6 +1285,14 @@ Ancient Greek:
 and https://github.com/xahlee/xah-math-input/blob/master/xah-math-input.el
 
 install from MELPA: Alt+x list-packages
+** company-math
+Start math completion by typing the prefix \ key.
+
+- math latex tags	company-math-symbols-latex
+- math unicode symbols	company-math-symbols-unicode
+- latex commands	company-latex-commands
+
+
 * Terminal
 emacs -g '80x24' --eval '(term "/bin/bash")'
 
@@ -1423,7 +1468,7 @@ C-u 4 C-q	insert 4 TABs
 ** headers
 :VISIBILITY: all
 - property, may be: folded, children, content, and all
- '(org-startup-folded t)
+- (custom-set-variables '(org-startup-folded t) - every headers will start folded
 
 
 - TAB S-TAB	hide show
@@ -1501,9 +1546,9 @@ see headers.
 
 ** Footnotes
   text [fn:1]
-  [fn:1] пояснение в конце
   C-c C-c	jump
-[fn:1] asd
+
+[fn:1] пояснение в конце
 ** Tables
 http://orgmode.org/manual/Built_002din-table-editor.html
  #+STARTUP: align
@@ -1524,11 +1569,25 @@ Tab - autocomplition
 
 - M-x org-toggle-link-display
 
+[[LINK][DESCRIPTION] ]
 [[ ./a.img      - inline image ends with \]\]
 
 *Local links* :
 1) [[Target		local link to header <<TargetEx>>
 2) [[My Target         local link to just string #+NAME: My Target
+3) [[./papers/last.pdf’]
+4) file:projects.org::some words
+5) file:papers/last.pdf
+6) file:sometextfile::NNN (jump to line number)
+7) ‘file:projects.org::some words’ (text search)27
+8) ‘file:projects.org::*task title’ (headline search)
+9) ‘file:projects.org::#custom-id’ (headline search)
+10) shell:ls
+11) help:org-store-link
+12) info:org#External
+13) https://orgmode.org/
+14) file:java:Active
+
 
 example [[TargetEx][Mylink to TragetEx]]
 
@@ -1785,6 +1844,26 @@ Colours for TODO:
 #+end_src
 https://orgmode.org/manual/Tracking-TODO-state-changes.html
 
+** export to markdown
+to activate:
+- M-x customize-variable <Ret> org-export-backends <Ret>
+- C-c C-e m m (org-md-export-to-markdown) Export to a text file with Markdown syntax
+- C-c C-e m M (org-md-export-as-markdown) Export to a temporary buffer. Does not create a file.
+- C-c C-e m o Export as a text file with Markdown syntax, then open it.
+- supported export formats: https://orgmode.org/worg/exporters/ox-overview.html
+
+#+BEGIN_SRC shell
+#!/bin/sh
+
+for filename in $(find . -maxdepth 1 -type f \
+		       -not -name '*.html' -not -name '.nojekyll' \
+		       -not -name '*.md' -not -name '*.png' -not -name 'export.sh' \
+		       -not -name '.*.sh'); do
+    echo "put ${filename}";
+    emacs "${filename}" --eval "(progn (org-md-export-to-markdown) (save-buffers-kill-emacs))"
+done
+
+#+END_SRC
 * Org agenda
 provides a convenient way of tracking your projects and managing your calendar.
 
@@ -2204,7 +2283,27 @@ options:
 - press the prefix key and the following key within 0.2 seconds, or
 - use the SHIFT key with the prefix key, i.e. C-S-x or C-S-c.
 
+* grip-mode
+require grip command
 
+pip grip install
+- grip==4.6.1 --hash=sha256:a5e6ac48cd253892f0fbd0aaef3f74fe8169d8ed3d94a2e9be6bf1540e008e9f
+- path-and-address==2.0.1 --hash=sha256:e96363d982b3a2de8531f4cd5f086b51d0248b58527227d43cf5014d045371b7
+** reqs
+Requirement already satisfied: Flask>=0.10.1 in ./.local/lib/python3.8/site-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (1.1.4)
+Requirement already satisfied: Markdown>=2.5.1 in ./.local/lib/python3.8/site-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (3.3.4)
+Requirement already satisfied: Pygments>=1.6 in ./.local/lib/python3.8/site-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (2.8.1)
+Requirement already satisfied: Werkzeug>=0.7 in ./.local/lib/python3.8/site-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (1.0.1)
+Requirement already satisfied: docopt>=0.4.0 in /usr/lib/python3/dist-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (0.6.2)
+Requirement already satisfied: requests>=2.4.1 in ./.local/lib/python3.8/site-packages (from grip==4.6.1->-r req_grip.txt (line 1)) (2.25.1)
+Requirement already satisfied: Jinja2<3.0,>=2.10.1 in ./.local/lib/python3.8/site-packages (from Flask>=0.10.1->grip==4.6.1->-r req_grip.txt (line 1)) (2.11.3)
+Requirement already satisfied: click<8.0,>=5.1 in ./.local/lib/python3.8/site-packages (from Flask>=0.10.1->grip==4.6.1->-r req_grip.txt (line 1)) (7.1.2)
+Requirement already satisfied: itsdangerous<2.0,>=0.24 in ./.local/lib/python3.8/site-packages (from Flask>=0.10.1->grip==4.6.1->-r req_grip.txt (line 1)) (1.1.0)
+Requirement already satisfied: idna<3,>=2.5 in ./.local/lib/python3.8/site-packages (from requests>=2.4.1->grip==4.6.1->-r req_grip.txt (line 1)) (2.10)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./.local/lib/python3.8/site-packages (from requests>=2.4.1->grip==4.6.1->-r req_grip.txt (line 1)) (1.25.11)
+Requirement already satisfied: chardet<5,>=3.0.2 in /usr/lib/python3/dist-packages (from requests>=2.4.1->grip==4.6.1->-r req_grip.txt (line 1)) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in ./.local/lib/python3.8/site-packages (from requests>=2.4.1->grip==4.6.1->-r req_grip.txt (line 1)) (2020.12.5)
+Requirement already satisfied: MarkupSafe>=0.23 in ./.local/lib/python3.8/site-packages (from Jinja2<3.0,>=2.10.1->Flask>=0.10.1->grip==4.6.1->-r req_grip.txt (line 1)) (1.1.1)
 * TODO DoomEmacs
   https://github.com/hlissner/doom-emacs
 * TODO Spacemacs
@@ -2379,3 +2478,26 @@ https://github.com/jcaw
 
 * QUESTIONS:
 - what is Auto-Composition minor mode?
+* TODO home
+#+BEGIN_SRC lisp
+(define-key key-translation-map (kbd "C-l") (kbd "C-b")) ;; left
+;; (define-key key-translation-map (kbd "C-b") (kbd "C-l"))
+(define-key key-translation-map (kbd "C-k") (kbd "C-p")) ;; up
+(define-key key-translation-map (kbd "C-p") (kbd "C-k"))
+(define-key key-translation-map (kbd "M-k") (kbd "M-p")) ;; up paragraph
+(define-key key-translation-map (kbd "M-p") (kbd "M-k"))
+(define-key key-translation-map (kbd "M-k") (kbd "M-p"))  ;; kill line
+(define-key key-translation-map (kbd "M-l") (kbd "M-b")) ;; backward-word
+(define-key key-translation-map (kbd "M-b") (kbd "M-l"))
+
+(define-key key-translation-map (kbd "C-b") (kbd "C-y")) ;; relace yank with C+b
+
+
+;; grip-mode
+;; (define-key markdown-mode-command-map (kbd "g") #'grip-mode)
+;; or start grip when opening a markdown file(add-hook 'markdown-mode-hook #'grip-mode)
+(add-hook 'markdown-mode-hook #'grip-mode)
+
+(global-set-key (kbd "C-x C-a") 'artist-mode)
+
+#+END_SRC

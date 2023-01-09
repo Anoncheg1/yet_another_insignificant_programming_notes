@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-11-17 Thu 20:49 -->
+<!-- 2023-01-09 Mon 10:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -254,195 +254,201 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge25b87d">1. course</a></li>
-<li><a href="#org596d62e">2. naming conventions</a></li>
-<li><a href="#orge026e4f">3. Hello world and compilers, main</a>
+<li><a href="#org1ac033a">1. course</a></li>
+<li><a href="#orga6946fc">2. naming conventions</a></li>
+<li><a href="#org2a5640a">3. Hello world and compilers, main</a>
 <ul>
-<li><a href="#org19cdfd9">3.1. gcc</a></li>
-<li><a href="#orga6dfdf4">3.2. hello world</a></li>
-<li><a href="#orgf85783f">3.3. main, return type and arguments</a></li>
+<li><a href="#orgced34e3">3.1. gcc</a></li>
+<li><a href="#org7c4fdbd">3.2. hello world</a></li>
+<li><a href="#orgb638036">3.3. main, return type and arguments</a></li>
 </ul>
 </li>
-<li><a href="#orgeff879a">4. history</a></li>
-<li><a href="#orgb7d398e">5. features, constants, comments</a>
+<li><a href="#org8000d97">4. history</a></li>
+<li><a href="#org14face1">5. features, constants, comments</a>
 <ul>
-<li><a href="#orge2d3421">5.1. Constants</a></li>
-<li><a href="#org7d0efbf">5.2. Comments</a></li>
+<li><a href="#org529b519">5.1. Constants</a></li>
+<li><a href="#org442a944">5.2. Comments</a></li>
 </ul>
 </li>
-<li><a href="#org004c609">6. Keywords</a></li>
-<li><a href="#org52c38a2">7. Linkage</a>
+<li><a href="#orge39c94c">6. Keywords</a></li>
+<li><a href="#org04a30db">7. Linkage</a>
 <ul>
-<li><a href="#orgde3708f">7.1. Storage class</a>
+<li><a href="#org72a378a">7.1. Storage class</a>
 <ul>
-<li><a href="#org1274105">7.1.1. restrict keyword</a></li>
-<li><a href="#orga22999d">7.1.2. extern keyword</a></li>
+<li><a href="#orga868f68">7.1.1. restrict keyword</a></li>
+<li><a href="#org2682a89">7.1.2. extern keyword</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org5c0787f">8. dynamic libraries, ldd, ldconfig</a></li>
-<li><a href="#org97da88b">9. Operators</a>
+<li><a href="#orgeead8ac">8. dynamic libraries, ldd, ldconfig</a></li>
+<li><a href="#orgad07cc3">9. Operators</a>
 <ul>
-<li><a href="#org1d7b18a">9.1. priority</a></li>
-<li><a href="#org3012587">9.2. cast operator: (type<sub>name</sub>) expression</a></li>
+<li><a href="#orga249d8b">9.1. priority</a></li>
+<li><a href="#org03bce83">9.2. cast operator: (type<sub>name</sub>) expression</a></li>
 </ul>
 </li>
-<li><a href="#org1be3f25">10. Chained operators</a>
+<li><a href="#org8412f89">10. Chained operators</a>
 <ul>
-<li><a href="#org1dad853">10.1. links</a></li>
+<li><a href="#orgc00f74d">10.1. links</a></li>
 </ul>
 </li>
-<li><a href="#org4e0e5f8">11. Data model</a>
+<li><a href="#orge4be6b2">11. Data model</a>
 <ul>
-<li><a href="#org0cfa784">11.1. literals</a>
+<li><a href="#org97163fa">11.1. literals</a>
 <ul>
-<li><a href="#org440c0f5">11.1.1. integer</a></li>
-<li><a href="#orge39bccb">11.1.2. float</a></li>
-<li><a href="#orge481b86">11.1.3. character</a></li>
-<li><a href="#org8953a88">11.1.4. String Literals</a></li>
+<li><a href="#org40c6115">11.1.1. integer</a></li>
+<li><a href="#org038ba04">11.1.2. float</a></li>
+<li><a href="#orgfbcfeb3">11.1.3. character</a></li>
+<li><a href="#org6276622">11.1.4. String Literals</a></li>
 </ul>
 </li>
-<li><a href="#org7e41fc0">11.2. memory allocation</a></li>
-<li><a href="#orgeec52a0">11.3. <span class="todo TODO">TODO</span> Numerical</a></li>
-<li><a href="#org60d4f71">11.4. structure</a></li>
-<li><a href="#orga997f90">11.5. Union</a></li>
-<li><a href="#orgc8d34c8">11.6. Array</a></li>
-<li><a href="#orgea1bbc6">11.7. Enum</a></li>
-<li><a href="#org0925294">11.8. Strings</a></li>
-<li><a href="#org302ecef">11.9. Pointers</a>
+<li><a href="#org8b07b02">11.2. memory allocation</a></li>
+<li><a href="#org169e8f8">11.3. <span class="todo TODO">TODO</span> Numerical</a></li>
+<li><a href="#org1ff3238">11.4. structure</a></li>
+<li><a href="#org8e85a05">11.5. Union</a></li>
+<li><a href="#org0858c22">11.6. Array</a></li>
+<li><a href="#org0df90ba">11.7. Enum</a></li>
+<li><a href="#orga224532">11.8. Strings</a></li>
+<li><a href="#orge34d33a">11.9. Pointers</a>
 <ul>
-<li><a href="#org5dfde85">11.9.1. ex</a></li>
-<li><a href="#orge140cde">11.9.2. dangers:</a></li>
-<li><a href="#org1c478c2">11.9.3. pointer arithmetic.</a></li>
+<li><a href="#org19a7388">11.9.1. ex</a></li>
+<li><a href="#orgd728a25">11.9.2. dangers:</a></li>
+<li><a href="#orgbe43c83">11.9.3. pointer arithmetic.</a></li>
 </ul>
 </li>
-<li><a href="#orgac3507a">11.10. void</a></li>
+<li><a href="#orgf50ddd9">11.10. void</a></li>
 </ul>
 </li>
-<li><a href="#orgee4a9a1">12. control structures</a>
+<li><a href="#org7a56e54">12. control structures</a>
 <ul>
-<li><a href="#org40e7ac7">12.1. loops</a></li>
+<li><a href="#org66bf644">12.1. loops</a></li>
 </ul>
 </li>
-<li><a href="#orgfd7c2d2">13. functions</a>
+<li><a href="#orgf87dd80">13. functions</a>
 <ul>
-<li><a href="#org5463ac3">13.1. variable number of arguments</a></li>
+<li><a href="#orgc0ad0eb">13.1. variable number of arguments</a></li>
 </ul>
 </li>
-<li><a href="#org13bc133">14. header files</a>
+<li><a href="#orgd8f207f">14. header files</a>
 <ul>
-<li><a href="#orga5a0c7b">14.1. Standart way to prevent "Once-Only Header"</a></li>
-<li><a href="#orgaaf6e1c">14.2. typedef</a></li>
+<li><a href="#org23dbec1">14.1. Standart way to prevent "Once-Only Header"</a></li>
+<li><a href="#org733be91">14.2. typedef</a></li>
 </ul>
 </li>
-<li><a href="#org1a26b1b">15. C - Preprocessors</a>
+<li><a href="#org9cfd43d">15. C - Preprocessors</a>
 <ul>
-<li><a href="#orgaa88db2">15.1. Macro types</a></li>
-<li><a href="#orge53c006">15.2. Directive &amp; Description</a></li>
-<li><a href="#org9991a44">15.3. Predefined Macros</a></li>
-<li><a href="#org0ef6dd3">15.4. Preprocessor Operators</a></li>
-<li><a href="#org7f11f62">15.5. examples</a></li>
-<li><a href="#org5453c93">15.6. links</a></li>
+<li><a href="#org8e46f7e">15.1. Macro types</a></li>
+<li><a href="#orga4c3171">15.2. Directive &amp; Description</a></li>
+<li><a href="#org773478a">15.3. Predefined Macros</a></li>
+<li><a href="#org4891c35">15.4. Preprocessor Operators</a></li>
+<li><a href="#orgf6927ec">15.5. examples</a></li>
+<li><a href="#org490f978">15.6. links</a></li>
 </ul>
 </li>
-<li><a href="#org0994c6b">16. Error Handling </a></li>
-<li><a href="#org3502d37">17. Libraries theory</a></li>
-<li><a href="#org1c6693c">18. C Standard Library</a>
+<li><a href="#org67bc3ff">16. Error Handling </a></li>
+<li><a href="#org35f5f57">17. Libraries theory</a></li>
+<li><a href="#org755c1a8">18. C Standard Library</a>
 <ul>
-<li><a href="#orgd9877fe">18.1. assert.h</a></li>
-<li><a href="#org6e42ded">18.2. ctype.h</a></li>
-<li><a href="#org719d93c">18.3. errno.h</a></li>
-<li><a href="#org0007834">18.4. float.h</a></li>
-<li><a href="#org0812a81">18.5. limits.h</a></li>
-<li><a href="#orgd6e31cc">18.6. locale.h</a></li>
-<li><a href="#org412638c">18.7. math.h</a></li>
-<li><a href="#org6e65a6b">18.8. setjmp.h</a>
+<li><a href="#org0fe25a0">18.1. assert.h</a></li>
+<li><a href="#orgcc05c30">18.2. ctype.h</a></li>
+<li><a href="#org9cba9d4">18.3. errno.h</a></li>
+<li><a href="#org5480abb">18.4. float.h</a></li>
+<li><a href="#orgb55a5d5">18.5. limits.h</a></li>
+<li><a href="#orga61c013">18.6. locale.h</a></li>
+<li><a href="#org8f0cf01">18.7. math.h</a></li>
+<li><a href="#orga51d17b">18.8. setjmp.h</a>
 <ul>
-<li><a href="#orge4233a9">18.8.1. examples</a></li>
+<li><a href="#org09abf69">18.8.1. examples</a></li>
 </ul>
 </li>
-<li><a href="#org3d870c2">18.9. signal.h</a></li>
-<li><a href="#org555e142">18.10. links</a></li>
+<li><a href="#org564c638">18.9. signal.h</a></li>
+<li><a href="#org19bb950">18.10. links</a></li>
 </ul>
 </li>
-<li><a href="#org7a29817">19. I/O</a>
+<li><a href="#orgb790308">19. I/O</a>
 <ul>
-<li><a href="#org0833a47">19.1. fastest io</a></li>
-<li><a href="#orgcd13c7b">19.2. printf</a></li>
+<li><a href="#orgaf7c490">19.1. fastest io</a></li>
+<li><a href="#org3b7e55f">19.2. printf</a></li>
 </ul>
 </li>
-<li><a href="#orgf736807">20. GTK</a>
+<li><a href="#orgebb28f2">20. GTK</a>
 <ul>
-<li><a href="#org5324be9">20.1. GLib is the low-level core library that forms the basis for projects such as GTK and GNOME</a></li>
+<li><a href="#org5a52e96">20.1. GLib is the low-level core library that forms the basis for projects such as GTK and GNOME</a></li>
 </ul>
 </li>
-<li><a href="#org517ec2a">21. GCC</a>
+<li><a href="#org9a7685c">21. GCC</a>
 <ul>
-<li><a href="#org0c5d50c">21.1. compilation options</a></li>
-<li><a href="#org1ac3a69">21.2. used header files</a></li>
+<li><a href="#org45dfdd9">21.1. compilation options</a></li>
+<li><a href="#orgb020832">21.2. used header files</a></li>
 </ul>
 </li>
-<li><a href="#org88d57da">22. toolchain</a>
+<li><a href="#org229af15">22. toolchain</a>
 <ul>
-<li><a href="#org72acc1e">22.1. GNU toolchain</a></li>
-<li><a href="#orga06e65c">22.2. LLVM</a></li>
+<li><a href="#orgd569e16">22.1. GNU toolchain</a></li>
+<li><a href="#org004ac48">22.2. LLVM</a></li>
 </ul>
 </li>
-<li><a href="#org2fbd612">23. Makefile</a>
+<li><a href="#org1f2bb52">23. Makefile</a>
 <ul>
-<li><a href="#org055bfd3">23.1. get targets from Makefile</a></li>
-<li><a href="#org7dd1214">23.2. theory</a></li>
-<li><a href="#org2b63fd6">23.3. Makefile</a></li>
-<li><a href="#org4e90bf0">23.4. Special Built-in Target Names</a>
+<li><a href="#org12447b7">23.1. get targets from Makefile</a></li>
+<li><a href="#orgfa0ab6f">23.2. theory</a></li>
+<li><a href="#org863d9cd">23.3. Makefile</a></li>
+<li><a href="#org9fd006d">23.4. Special Built-in Target Names</a>
 <ul>
-<li><a href="#org2a9df6e">23.4.1. '.SUFFIXES'</a></li>
+<li><a href="#orgcbd263b">23.4.1. '.SUFFIXES'</a></li>
 </ul>
 </li>
-<li><a href="#orgf65d70d">23.5. variables</a>
+<li><a href="#orgbe0b0aa">23.5. variables</a>
 <ul>
-<li><a href="#org14322f0">23.5.1. "recursively expanded" variable.</a></li>
-<li><a href="#org36af8d4">23.5.2. simply expanded variables (preffered)</a></li>
-<li><a href="#orgb590330">23.5.3. Substitution References</a></li>
-<li><a href="#orgf98053e">23.5.4. Computed Variable Names</a></li>
-<li><a href="#orge2e22c3">23.5.5. automatic variables</a></li>
-<li><a href="#org527dadf">23.5.6. ex</a></li>
+<li><a href="#org64f0fde">23.5.1. "recursively expanded" variable.</a></li>
+<li><a href="#org1462f91">23.5.2. simply expanded variables (preffered)</a></li>
+<li><a href="#orgf0c2a99">23.5.3. Substitution References</a></li>
+<li><a href="#org381e1d7">23.5.4. Computed Variable Names</a></li>
+<li><a href="#org77c14e4">23.5.5. automatic variables</a></li>
+<li><a href="#org56764ca">23.5.6. ex</a></li>
 </ul>
 </li>
-<li><a href="#org059e470">23.6. Implicit Rules</a></li>
-<li><a href="#org7a77e9d">23.7. directives</a>
+<li><a href="#org22da374">23.6. Implicit Rules</a></li>
+<li><a href="#orgf8cbb7c">23.7. directives</a>
 <ul>
-<li><a href="#org796334a">23.7.1. <span class="todo TODO">TODO</span> Conditional Directives or Conditionals</a></li>
+<li><a href="#org6b3f451">23.7.1. <span class="todo TODO">TODO</span> Conditional Directives or Conditionals</a></li>
 </ul>
 </li>
-<li><a href="#orgfe055e2">23.8. make.inc</a></li>
+<li><a href="#orge8d6cef">23.8. make.inc</a></li>
 </ul>
 </li>
-<li><a href="#orga404d35">24. cmake</a></li>
-<li><a href="#orga4572fd">25. pkg-config</a></li>
-<li><a href="#org5adedfb">26. GNU Libtool</a></li>
-<li><a href="#org6852708">27. debug</a>
+<li><a href="#org7a14202">24. cmake</a></li>
+<li><a href="#org452235e">25. pkg-config</a></li>
+<li><a href="#orge63a821">26. GNU Libtool</a></li>
+<li><a href="#orged6b21a">27. debug</a>
 <ul>
-<li><a href="#org5176743">27.1. Assertions</a></li>
-<li><a href="#orgf46359f">27.2. gdb</a></li>
-<li><a href="#org340f3b6">27.3. Valgrind</a></li>
-<li><a href="#org3f0dd82">27.4. print</a></li>
+<li><a href="#orge1acac0">27.1. Assertions</a></li>
+<li><a href="#orgb950ada">27.2. gdb</a></li>
+<li><a href="#org521e6d3">27.3. Valgrind</a></li>
+<li><a href="#orga4d1d1e">27.4. print</a></li>
 </ul>
 </li>
-<li><a href="#org9d3259b">28. install /usr/local/bin</a></li>
-<li><a href="#org1fdfea1">29. Difference between C and C++ and Objective-C</a>
+<li><a href="#org60f115f">28. Documentation</a>
 <ul>
-<li><a href="#orgdd92732">29.1. Objective-C</a></li>
+<li><a href="#org1d640a5">28.1. header</a></li>
+<li><a href="#org46b3d5f">28.2. .c</a></li>
 </ul>
 </li>
-<li><a href="#org9b73b49">30. C++</a>
+<li><a href="#orgf477264">29. install /usr/local/bin</a></li>
+<li><a href="#orgd04078e">30. Difference between C and C++ and Objective-C</a>
 <ul>
-<li><a href="#orge0bf89e">30.1. <span class="todo TODO">TODO</span> operators</a></li>
-<li><a href="#orgb065d6f">30.2. hello world</a></li>
-<li><a href="#org39cd824">30.3. libs</a></li>
+<li><a href="#org00e0f15">30.1. Objective-C</a></li>
 </ul>
 </li>
-<li><a href="#org0272bbe">31. Meson</a></li>
+<li><a href="#orgaaba447">31. C++</a>
+<ul>
+<li><a href="#org5521eac">31.1. <span class="todo TODO">TODO</span> operators</a></li>
+<li><a href="#org29c4765">31.2. hello world</a></li>
+<li><a href="#org64fe863">31.3. libs</a></li>
+</ul>
+</li>
+<li><a href="#org1450145">32. Meson</a></li>
 </ul>
 </div>
 </div>
@@ -453,8 +459,8 @@ for the JavaScript code in this tag.
 <p>
 <a href="https://www.tutorialspoint.com/cprogramming/index.htm">https://www.tutorialspoint.com/cprogramming/index.htm</a>
 </p>
-<div id="outline-container-orge25b87d" class="outline-2">
-<h2 id="orge25b87d"><span class="section-number-2">1</span> course</h2>
+<div id="outline-container-org1ac033a" class="outline-2">
+<h2 id="org1ac033a"><span class="section-number-2">1</span> course</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Course Outline
@@ -466,8 +472,8 @@ C Programming
 </div>
 </div>
 
-<div id="outline-container-org596d62e" class="outline-2">
-<h2 id="org596d62e"><span class="section-number-2">2</span> naming conventions</h2>
+<div id="outline-container-orga6946fc" class="outline-2">
+<h2 id="orga6946fc"><span class="section-number-2">2</span> naming conventions</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>array - array of data</li>
@@ -498,12 +504,12 @@ php
 </div>
 </div>
 
-<div id="outline-container-orge026e4f" class="outline-2">
-<h2 id="orge026e4f"><span class="section-number-2">3</span> Hello world and compilers, main</h2>
+<div id="outline-container-org2a5640a" class="outline-2">
+<h2 id="org2a5640a"><span class="section-number-2">3</span> Hello world and compilers, main</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org19cdfd9" class="outline-3">
-<h3 id="org19cdfd9"><span class="section-number-3">3.1</span> gcc</h3>
+<div id="outline-container-orgced34e3" class="outline-3">
+<h3 id="orgced34e3"><span class="section-number-3">3.1</span> gcc</h3>
 <div class="outline-text-3" id="text-3-1">
 <pre class="example">
 $ gcc hello.c
@@ -521,8 +527,8 @@ Published in June 2018, C17 is the current standard for the C programming langua
 </div>
 </div>
 
-<div id="outline-container-orga6dfdf4" class="outline-3">
-<h3 id="orga6dfdf4"><span class="section-number-3">3.2</span> hello world</h3>
+<div id="outline-container-org7c4fdbd" class="outline-3">
+<h3 id="org7c4fdbd"><span class="section-number-3">3.2</span> hello world</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;stdio.h&gt;</span>
@@ -538,8 +544,8 @@ Published in June 2018, C17 is the current standard for the C programming langua
 </div>
 </div>
 
-<div id="outline-container-orgf85783f" class="outline-3">
-<h3 id="orgf85783f"><span class="section-number-3">3.3</span> main, return type and arguments</h3>
+<div id="outline-container-orgb638036" class="outline-3">
+<h3 id="orgb638036"><span class="section-number-3">3.3</span> main, return type and arguments</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 C:
@@ -574,8 +580,8 @@ arguments
 </div>
 </div>
 
-<div id="outline-container-orgeff879a" class="outline-2">
-<h2 id="orgeff879a"><span class="section-number-2">4</span> history</h2>
+<div id="outline-container-org8000d97" class="outline-2">
+<h2 id="org8000d97"><span class="section-number-2">4</span> history</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="https://gcc.gnu.org/onlinedocs/gcc/Standards.html">https://gcc.gnu.org/onlinedocs/gcc/Standards.html</a>
@@ -589,8 +595,8 @@ TBD 	C2x
 </p>
 </div>
 </div>
-<div id="outline-container-orgb7d398e" class="outline-2">
-<h2 id="orgb7d398e"><span class="section-number-2">5</span> features, constants, comments</h2>
+<div id="outline-container-org14face1" class="outline-2">
+<h2 id="org14face1"><span class="section-number-2">5</span> features, constants, comments</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <b>procedural</b>
@@ -634,8 +640,8 @@ objects are visible to other files via static and extern attributes.
 Declaration and definition
 </p>
 </div>
-<div id="outline-container-orge2d3421" class="outline-3">
-<h3 id="orge2d3421"><span class="section-number-3">5.1</span> Constants</h3>
+<div id="outline-container-org529b519" class="outline-3">
+<h3 id="org529b519"><span class="section-number-3">5.1</span> Constants</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 #define LENGTH 10
@@ -643,8 +649,8 @@ const int  LENGTH = 10;
 </p>
 </div>
 </div>
-<div id="outline-container-org7d0efbf" class="outline-3">
-<h3 id="org7d0efbf"><span class="section-number-3">5.2</span> Comments</h3>
+<div id="outline-container-org442a944" class="outline-3">
+<h3 id="org442a944"><span class="section-number-3">5.2</span> Comments</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 <i>/ to end of the line
@@ -653,8 +659,8 @@ const int  LENGTH = 10;
 </div>
 </div>
 </div>
-<div id="outline-container-org004c609" class="outline-2">
-<h2 id="org004c609"><span class="section-number-2">6</span> Keywords</h2>
+<div id="outline-container-orge39c94c" class="outline-2">
+<h2 id="orge39c94c"><span class="section-number-2">6</span> Keywords</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>if</li>
@@ -725,8 +731,8 @@ C99 reserved five more words:
 </div>
 
 
-<div id="outline-container-org52c38a2" class="outline-2">
-<h2 id="org52c38a2"><span class="section-number-2">7</span> Linkage</h2>
+<div id="outline-container-org04a30db" class="outline-2">
+<h2 id="org04a30db"><span class="section-number-2">7</span> Linkage</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 When we compile a program, the ‘C’ compiler will generate object files (“.o” files. Some compilers will
@@ -771,8 +777,8 @@ What makes a declaration into a definition?
 </ul>
 </div>
 
-<div id="outline-container-orgde3708f" class="outline-3">
-<h3 id="orgde3708f"><span class="section-number-3">7.1</span> Storage class</h3>
+<div id="outline-container-org72a378a" class="outline-3">
+<h3 id="org72a378a"><span class="section-number-3">7.1</span> Storage class</h3>
 <div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li>For external declarations the default storage class specifier will be extern and for internal declarations it</li>
@@ -786,8 +792,8 @@ will be auto.
 </div>
 
 
-<div id="outline-container-org1274105" class="outline-4">
-<h4 id="org1274105"><span class="section-number-4">7.1.1</span> restrict keyword</h4>
+<div id="outline-container-orga868f68" class="outline-4">
+<h4 id="orga868f68"><span class="section-number-4">7.1.1</span> restrict keyword</h4>
 <div class="outline-text-4" id="text-7-1-1">
 <p>
 hints to the compiler that for the lifetime of the pointer, only the pointer itself or a value directly
@@ -808,8 +814,8 @@ derived from it (such as pointer + 1) will be used to access the object to which
 </div>
 </div>
 
-<div id="outline-container-orga22999d" class="outline-4">
-<h4 id="orga22999d"><span class="section-number-4">7.1.2</span> extern keyword</h4>
+<div id="outline-container-org2682a89" class="outline-4">
+<h4 id="org2682a89"><span class="section-number-4">7.1.2</span> extern keyword</h4>
 <div class="outline-text-4" id="text-7-1-2">
 <ul class="org-ul">
 <li>it is better to put extern functions and variables in header file</li>
@@ -856,8 +862,8 @@ $ gcc main.c support.c
 </div>
 </div>
 
-<div id="outline-container-org5c0787f" class="outline-2">
-<h2 id="org5c0787f"><span class="section-number-2">8</span> dynamic libraries, ldd, ldconfig</h2>
+<div id="outline-container-orgeead8ac" class="outline-2">
+<h2 id="orgeead8ac"><span class="section-number-2">8</span> dynamic libraries, ldd, ldconfig</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>man ld.so</li>
@@ -886,12 +892,12 @@ Show .so dependencies:
 </div>
 </div>
 
-<div id="outline-container-org97da88b" class="outline-2">
-<h2 id="org97da88b"><span class="section-number-2">9</span> Operators</h2>
+<div id="outline-container-orgad07cc3" class="outline-2">
+<h2 id="orgad07cc3"><span class="section-number-2">9</span> Operators</h2>
 <div class="outline-text-2" id="text-9">
 </div>
-<div id="outline-container-org1d7b18a" class="outline-3">
-<h3 id="org1d7b18a"><span class="section-number-3">9.1</span> priority</h3>
+<div id="outline-container-orga249d8b" class="outline-3">
+<h3 id="orga249d8b"><span class="section-number-3">9.1</span> priority</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 Higher at top
@@ -1033,8 +1039,8 @@ if (a = b + 1), which will be evaluated as true if a is not zero after the assig
 </div>
 </div>
 
-<div id="outline-container-org3012587" class="outline-3">
-<h3 id="org3012587"><span class="section-number-3">9.2</span> cast operator: (type<sub>name</sub>) expression</h3>
+<div id="outline-container-org03bce83" class="outline-3">
+<h3 id="org03bce83"><span class="section-number-3">9.2</span> cast operator: (type<sub>name</sub>) expression</h3>
 <div class="outline-text-3" id="text-9-2">
 <ul class="org-ul">
 <li><b>usual arithmetic conversions</b> are implicitly performed to cast their values to a common type.</li>
@@ -1076,8 +1082,8 @@ inbuilt typecasting functions:
 </div>
 </div>
 
-<div id="outline-container-org1be3f25" class="outline-2">
-<h2 id="org1be3f25"><span class="section-number-2">10</span> Chained operators</h2>
+<div id="outline-container-org8412f89" class="outline-2">
+<h2 id="org8412f89"><span class="section-number-2">10</span> Chained operators</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>All languages usually "left associative" - grouping left to right so that 16/4/4 is interpreted as (16/4)/4 =</li>
@@ -1149,8 +1155,8 @@ a&gt;b&gt;c
 bool&gt;c - что является не тем что хотелось бы. В Python эквивалентно a&lt;b and b&lt;c
 </p>
 </div>
-<div id="outline-container-org1dad853" class="outline-3">
-<h3 id="org1dad853"><span class="section-number-3">10.1</span> links</h3>
+<div id="outline-container-orgc00f74d" class="outline-3">
+<h3 id="orgc00f74d"><span class="section-number-3">10.1</span> links</h3>
 <div class="outline-text-3" id="text-10-1">
 <p>
 <a href="https://en.wikipedia.org/wiki/Operator_associativity">https://en.wikipedia.org/wiki/Operator_associativity</a>
@@ -1160,16 +1166,16 @@ bool&gt;c - что является не тем что хотелось бы. В
 </div>
 </div>
 
-<div id="outline-container-org4e0e5f8" class="outline-2">
-<h2 id="org4e0e5f8"><span class="section-number-2">11</span> Data model</h2>
+<div id="outline-container-orge4be6b2" class="outline-2">
+<h2 id="orge4be6b2"><span class="section-number-2">11</span> Data model</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-org0cfa784" class="outline-3">
-<h3 id="org0cfa784"><span class="section-number-3">11.1</span> literals</h3>
+<div id="outline-container-org97163fa" class="outline-3">
+<h3 id="org97163fa"><span class="section-number-3">11.1</span> literals</h3>
 <div class="outline-text-3" id="text-11-1">
 </div>
-<div id="outline-container-org440c0f5" class="outline-4">
-<h4 id="org440c0f5"><span class="section-number-4">11.1.1</span> integer</h4>
+<div id="outline-container-org40c6115" class="outline-4">
+<h4 id="org40c6115"><span class="section-number-4">11.1.1</span> integer</h4>
 <div class="outline-text-4" id="text-11-1-1">
 <p>
 212         <i>* Legal *</i>
@@ -1188,8 +1194,8 @@ bool&gt;c - что является не тем что хотелось бы. В
 </div>
 </div>
 
-<div id="outline-container-orge39bccb" class="outline-4">
-<h4 id="orge39bccb"><span class="section-number-4">11.1.2</span> float</h4>
+<div id="outline-container-org038ba04" class="outline-4">
+<h4 id="org038ba04"><span class="section-number-4">11.1.2</span> float</h4>
 <div class="outline-text-4" id="text-11-1-2">
 <p>
 3.14159       <i>* Legal *</i>
@@ -1200,8 +1206,8 @@ bool&gt;c - что является не тем что хотелось бы. В
 </p>
 </div>
 </div>
-<div id="outline-container-orge481b86" class="outline-4">
-<h4 id="orge481b86"><span class="section-number-4">11.1.3</span> character</h4>
+<div id="outline-container-orgfbcfeb3" class="outline-4">
+<h4 id="orgfbcfeb3"><span class="section-number-4">11.1.3</span> character</h4>
 <div class="outline-text-4" id="text-11-1-3">
 <p>
 single quotes
@@ -1215,8 +1221,8 @@ newline (\n) or tab (\t).
 </p>
 </div>
 </div>
-<div id="outline-container-org8953a88" class="outline-4">
-<h4 id="org8953a88"><span class="section-number-4">11.1.4</span> String Literals</h4>
+<div id="outline-container-org6276622" class="outline-4">
+<h4 id="org6276622"><span class="section-number-4">11.1.4</span> String Literals</h4>
 <div class="outline-text-4" id="text-11-1-4">
 <ul class="org-ul">
 <li>double quotes ""</li>
@@ -1241,8 +1247,8 @@ dear" // one
 
 
 
-<div id="outline-container-org7e41fc0" class="outline-3">
-<h3 id="org7e41fc0"><span class="section-number-3">11.2</span> memory allocation</h3>
+<div id="outline-container-org8b07b02" class="outline-3">
+<h3 id="org8b07b02"><span class="section-number-3">11.2</span> memory allocation</h3>
 <div class="outline-text-3" id="text-11-2">
 <ul class="org-ul">
 <li>Static memory allocation: space for the object is provided in the binary at compile-time; these objects have
@@ -1258,8 +1264,8 @@ freed for reuse by calling the library function realloc or free</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeec52a0" class="outline-3">
-<h3 id="orgeec52a0"><span class="section-number-3">11.3</span> <span class="todo TODO">TODO</span> Numerical</h3>
+<div id="outline-container-org169e8f8" class="outline-3">
+<h3 id="org169e8f8"><span class="section-number-3">11.3</span> <span class="todo TODO">TODO</span> Numerical</h3>
 <div class="outline-text-3" id="text-11-3">
 <p>
 <a href="https://en.wikipedia.org/wiki/C_data_types">https://en.wikipedia.org/wiki/C_data_types</a>
@@ -1278,8 +1284,8 @@ signed and unsigned
 </ul>
 </div>
 </div>
-<div id="outline-container-org60d4f71" class="outline-3">
-<h3 id="org60d4f71"><span class="section-number-3">11.4</span> structure</h3>
+<div id="outline-container-org1ff3238" class="outline-3">
+<h3 id="org1ff3238"><span class="section-number-3">11.4</span> structure</h3>
 <div class="outline-text-3" id="text-11-4">
 <ul class="org-ul">
 <li>all of its data members are stored in contiguous memory locations</li>
@@ -1308,8 +1314,8 @@ arguments-&gt;config_filepath <span style="color: #fa8072;">// </span><span styl
 </div>
 </div>
 </div>
-<div id="outline-container-orga997f90" class="outline-3">
-<h3 id="orga997f90"><span class="section-number-3">11.5</span> Union</h3>
+<div id="outline-container-org8e85a05" class="outline-3">
+<h3 id="org8e85a05"><span class="section-number-3">11.5</span> Union</h3>
 <div class="outline-text-3" id="text-11-5">
 <ul class="org-ul">
 <li>is a structure with overlapping members; only the last member stored is valid.</li>
@@ -1334,8 +1340,8 @@ union [union tag] {
 </div>
 </div>
 
-<div id="outline-container-orgc8d34c8" class="outline-3">
-<h3 id="orgc8d34c8"><span class="section-number-3">11.6</span> Array</h3>
+<div id="outline-container-org0858c22" class="outline-3">
+<h3 id="org0858c22"><span class="section-number-3">11.6</span> Array</h3>
 <div class="outline-text-3" id="text-11-6">
 <p>
 store a fixed-size sequential collection of elements of the same type
@@ -1384,8 +1390,8 @@ int * myFunction()
 </pre>
 </div>
 </div>
-<div id="outline-container-orgea1bbc6" class="outline-3">
-<h3 id="orgea1bbc6"><span class="section-number-3">11.7</span> Enum</h3>
+<div id="outline-container-org0df90ba" class="outline-3">
+<h3 id="org0df90ba"><span class="section-number-3">11.7</span> Enum</h3>
 <div class="outline-text-3" id="text-11-7">
 <p>
 enum cardsuit {
@@ -1418,8 +1424,8 @@ enum cardsuit {
 </p>
 </div>
 </div>
-<div id="outline-container-org0925294" class="outline-3">
-<h3 id="org0925294"><span class="section-number-3">11.8</span> Strings</h3>
+<div id="outline-container-orga224532" class="outline-3">
+<h3 id="orga224532"><span class="section-number-3">11.8</span> Strings</h3>
 <div class="outline-text-3" id="text-11-8">
 <ul class="org-ul">
 <li>conventionally implemented as null-terminated character arrays</li>
@@ -1440,8 +1446,8 @@ define:
 </div>
 </div>
 
-<div id="outline-container-org302ecef" class="outline-3">
-<h3 id="org302ecef"><span class="section-number-3">11.9</span> Pointers</h3>
+<div id="outline-container-orge34d33a" class="outline-3">
+<h3 id="orge34d33a"><span class="section-number-3">11.9</span> Pointers</h3>
 <div class="outline-text-3" id="text-11-9">
 <ul class="org-ul">
 <li>can be dereferenced to access data stored at the address pointed to, or to invoke a pointed-to function</li>
@@ -1461,8 +1467,8 @@ name[0], name[1]
 
 </pre>
 </div>
-<div id="outline-container-org5dfde85" class="outline-4">
-<h4 id="org5dfde85"><span class="section-number-4">11.9.1</span> ex</h4>
+<div id="outline-container-org19a7388" class="outline-4">
+<h4 id="org19a7388"><span class="section-number-4">11.9.1</span> ex</h4>
 <div class="outline-text-4" id="text-11-9-1">
 <div class="org-src-container">
 <pre class="src src-C">  <span style="color: #92a65e; font-weight: bold;">char</span> *<span style="color: #cae682;">square</span>;
@@ -1483,8 +1489,8 @@ name[0], name[1]
 </div>
 </div>
 
-<div id="outline-container-orge140cde" class="outline-4">
-<h4 id="orge140cde"><span class="section-number-4">11.9.2</span> dangers:</h4>
+<div id="outline-container-orgd728a25" class="outline-4">
+<h4 id="orgd728a25"><span class="section-number-4">11.9.2</span> dangers:</h4>
 <div class="outline-text-4" id="text-11-9-2">
 <ul class="org-ul">
 <li>point ot unsafe places by using invalid pointer arithmetic;</li>
@@ -1495,8 +1501,8 @@ name[0], name[1]
 </div>
 </div>
 
-<div id="outline-container-org1c478c2" class="outline-4">
-<h4 id="org1c478c2"><span class="section-number-4">11.9.3</span> pointer arithmetic.</h4>
+<div id="outline-container-orgbe43c83" class="outline-4">
+<h4 id="orgbe43c83"><span class="section-number-4">11.9.3</span> pointer arithmetic.</h4>
 <div class="outline-text-4" id="text-11-9-3">
 <ul class="org-ul">
 <li>++, &#x2013;, +, and -</li>
@@ -1507,8 +1513,8 @@ name[0], name[1]
 </div>
 </div>
 </div>
-<div id="outline-container-orgac3507a" class="outline-3">
-<h3 id="orgac3507a"><span class="section-number-3">11.10</span> void</h3>
+<div id="outline-container-orgf50ddd9" class="outline-3">
+<h3 id="orgf50ddd9"><span class="section-number-3">11.10</span> void</h3>
 <div class="outline-text-3" id="text-11-10">
 <p>
 specifies that no value is available
@@ -1524,12 +1530,12 @@ specifies that no value is available
 </div>
 </div>
 </div>
-<div id="outline-container-orgee4a9a1" class="outline-2">
-<h2 id="orgee4a9a1"><span class="section-number-2">12</span> control structures</h2>
+<div id="outline-container-org7a56e54" class="outline-2">
+<h2 id="org7a56e54"><span class="section-number-2">12</span> control structures</h2>
 <div class="outline-text-2" id="text-12">
 </div>
-<div id="outline-container-org40e7ac7" class="outline-3">
-<h3 id="org40e7ac7"><span class="section-number-3">12.1</span> loops</h3>
+<div id="outline-container-org66bf644" class="outline-3">
+<h3 id="org66bf644"><span class="section-number-3">12.1</span> loops</h3>
 <div class="outline-text-3" id="text-12-1">
 <pre class="example">
 for ( init; condition; increment ) {
@@ -1545,8 +1551,8 @@ for ( init; condition; increment ) {
 </div>
 </div>
 </div>
-<div id="outline-container-orgfd7c2d2" class="outline-2">
-<h2 id="orgfd7c2d2"><span class="section-number-2">13</span> functions</h2>
+<div id="outline-container-orgf87dd80" class="outline-2">
+<h2 id="orgf87dd80"><span class="section-number-2">13</span> functions</h2>
 <div class="outline-text-2" id="text-13">
 <ul class="org-ul">
 <li>by default, the return type of a function is an integer(int) data type.</li>
@@ -1577,8 +1583,8 @@ pass the parameters by:
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org5463ac3" class="outline-3">
-<h3 id="org5463ac3"><span class="section-number-3">13.1</span> variable number of arguments</h3>
+<div id="outline-container-orgc0ad0eb" class="outline-3">
+<h3 id="orgc0ad0eb"><span class="section-number-3">13.1</span> variable number of arguments</h3>
 <div class="outline-text-3" id="text-13-1">
 <ul class="org-ul">
 <li>#include &lt;stdarg.h&gt;</li>
@@ -1623,8 +1629,8 @@ pass the parameters by:
 </div>
 </div>
 </div>
-<div id="outline-container-org13bc133" class="outline-2">
-<h2 id="org13bc133"><span class="section-number-2">14</span> header files</h2>
+<div id="outline-container-orgd8f207f" class="outline-2">
+<h2 id="orgd8f207f"><span class="section-number-2">14</span> header files</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 Including a header file is equal to copying the content of the header file
@@ -1664,8 +1670,8 @@ library")
 
 </pre>
 </div>
-<div id="outline-container-orga5a0c7b" class="outline-3">
-<h3 id="orga5a0c7b"><span class="section-number-3">14.1</span> Standart way to prevent "Once-Only Header"</h3>
+<div id="outline-container-org23dbec1" class="outline-3">
+<h3 id="org23dbec1"><span class="section-number-3">14.1</span> Standart way to prevent "Once-Only Header"</h3>
 <div class="outline-text-3" id="text-14-1">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> HEADER_FILE
@@ -1697,8 +1703,8 @@ the entire header <span style="color: #92a65e; font-weight: bold;">file</span> <
 </div>
 </div>
 </div>
-<div id="outline-container-orgaaf6e1c" class="outline-3">
-<h3 id="orgaaf6e1c"><span class="section-number-3">14.2</span> typedef</h3>
+<div id="outline-container-org733be91" class="outline-3">
+<h3 id="org733be91"><span class="section-number-3">14.2</span> typedef</h3>
 <div class="outline-text-3" id="text-14-2">
 <p>
 typedef int aaa, bbb, ccc;
@@ -1731,8 +1737,8 @@ carr    chry;   <i>* array of 100 char *</i>
 </div>
 </div>
 
-<div id="outline-container-org1a26b1b" class="outline-2">
-<h2 id="org1a26b1b"><span class="section-number-2">15</span> C - Preprocessors</h2>
+<div id="outline-container-org9cfd43d" class="outline-2">
+<h2 id="org9cfd43d"><span class="section-number-2">15</span> C - Preprocessors</h2>
 <div class="outline-text-2" id="text-15">
 <ul class="org-ul">
 <li>text substitution tool  - pre-processing before the actual compilation</li>
@@ -1740,8 +1746,8 @@ carr    chry;   <i>* array of 100 char *</i>
 readability, a preprocessor directive should begin in the first column.</li>
 </ul>
 </div>
-<div id="outline-container-orgaa88db2" class="outline-3">
-<h3 id="orgaa88db2"><span class="section-number-3">15.1</span> Macro types</h3>
+<div id="outline-container-org8e46f7e" class="outline-3">
+<h3 id="org8e46f7e"><span class="section-number-3">15.1</span> Macro types</h3>
 <div class="outline-text-3" id="text-15-1">
 <ul class="org-ul">
 <li>Simple Macros - extend the same way
@@ -1817,8 +1823,8 @@ macro.  Either `defined name' or `defined (name)</li>
 </div>
 </div>
 
-<div id="outline-container-orge53c006" class="outline-3">
-<h3 id="orge53c006"><span class="section-number-3">15.2</span> Directive &amp; Description</h3>
+<div id="outline-container-orga4c3171" class="outline-3">
+<h3 id="orga4c3171"><span class="section-number-3">15.2</span> Directive &amp; Description</h3>
 <div class="outline-text-3" id="text-15-2">
 <ul class="org-ul">
 <li>#define - Substitutes a preprocessor macro. - constants, functions</li>
@@ -1836,8 +1842,8 @@ macro.  Either `defined name' or `defined (name)</li>
 </div>
 </div>
 
-<div id="outline-container-org9991a44" class="outline-3">
-<h3 id="org9991a44"><span class="section-number-3">15.3</span> Predefined Macros</h3>
+<div id="outline-container-org773478a" class="outline-3">
+<h3 id="org773478a"><span class="section-number-3">15.3</span> Predefined Macros</h3>
 <div class="outline-text-3" id="text-15-3">
 <p>
 Standart
@@ -1880,8 +1886,8 @@ Yet other nonstandard predefined macros describe the manufacturer of the system.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0ef6dd3" class="outline-3">
-<h3 id="org0ef6dd3"><span class="section-number-3">15.4</span> Preprocessor Operators</h3>
+<div id="outline-container-org4891c35" class="outline-3">
+<h3 id="org4891c35"><span class="section-number-3">15.4</span> Preprocessor Operators</h3>
 <div class="outline-text-3" id="text-15-4">
 <ul class="org-ul">
 <li>The Macro Continuation (\) Operator</li>
@@ -1892,8 +1898,8 @@ Yet other nonstandard predefined macros describe the manufacturer of the system.
 </ul>
 </div>
 </div>
-<div id="outline-container-org7f11f62" class="outline-3">
-<h3 id="org7f11f62"><span class="section-number-3">15.5</span> examples</h3>
+<div id="outline-container-orgf6927ec" class="outline-3">
+<h3 id="orgf6927ec"><span class="section-number-3">15.5</span> examples</h3>
 <div class="outline-text-3" id="text-15-5">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #6495ed; font-style: italic;">  #include</span> <span style="color: #95e454;">&lt;stdio.h&gt;</span>
@@ -1952,8 +1958,8 @@ Yet other nonstandard predefined macros describe the manufacturer of the system.
 </div>
 </div>
 </div>
-<div id="outline-container-org5453c93" class="outline-3">
-<h3 id="org5453c93"><span class="section-number-3">15.6</span> links</h3>
+<div id="outline-container-org490f978" class="outline-3">
+<h3 id="org490f978"><span class="section-number-3">15.6</span> links</h3>
 <div class="outline-text-3" id="text-15-6">
 <p>
 <a href="https://www.math.utah.edu/docs/info/cpp_1.html">https://www.math.utah.edu/docs/info/cpp_1.html</a>
@@ -1961,8 +1967,8 @@ Yet other nonstandard predefined macros describe the manufacturer of the system.
 </div>
 </div>
 </div>
-<div id="outline-container-org0994c6b" class="outline-2">
-<h2 id="org0994c6b"><span class="section-number-2">16</span> Error Handling <a id="orgfb325a6"></a></h2>
+<div id="outline-container-org67bc3ff" class="outline-2">
+<h2 id="org67bc3ff"><span class="section-number-2">16</span> Error Handling <a id="orgd383a7e"></a></h2>
 <div class="outline-text-2" id="text-16">
 <ul class="org-ul">
 <li>C does not provide direct support to error handling</li>
@@ -1998,8 +2004,8 @@ it.</li>
 </div>
 </div>
 
-<div id="outline-container-org3502d37" class="outline-2">
-<h2 id="org3502d37"><span class="section-number-2">17</span> Libraries theory</h2>
+<div id="outline-container-org35f5f57" class="outline-2">
+<h2 id="org35f5f57"><span class="section-number-2">17</span> Libraries theory</h2>
 <div class="outline-text-2" id="text-17">
 <p>
 C standard library - most common C library, which is specified by the ISO and ANSI C standards and comes with
@@ -2018,12 +2024,12 @@ POSIX and the Single UNIX Specification. - libraries
 </p>
 </div>
 </div>
-<div id="outline-container-org1c6693c" class="outline-2">
-<h2 id="org1c6693c"><span class="section-number-2">18</span> C Standard Library</h2>
+<div id="outline-container-org755c1a8" class="outline-2">
+<h2 id="org755c1a8"><span class="section-number-2">18</span> C Standard Library</h2>
 <div class="outline-text-2" id="text-18">
 </div>
-<div id="outline-container-orgd9877fe" class="outline-3">
-<h3 id="orgd9877fe"><span class="section-number-3">18.1</span> assert.h</h3>
+<div id="outline-container-org0fe25a0" class="outline-3">
+<h3 id="org0fe25a0"><span class="section-number-3">18.1</span> assert.h</h3>
 <div class="outline-text-3" id="text-18-1">
 <p>
 macro:
@@ -2041,8 +2047,8 @@ to display error messages and diagnostics) and aborts program execution.
 </div>
 </div>
 
-<div id="outline-container-org6e42ded" class="outline-3">
-<h3 id="org6e42ded"><span class="section-number-3">18.2</span> ctype.h</h3>
+<div id="outline-container-orgcc05c30" class="outline-3">
+<h3 id="orgcc05c30"><span class="section-number-3">18.2</span> ctype.h</h3>
 <div class="outline-text-3" id="text-18-2">
 <p>
 for testing and mapping characters.
@@ -2059,14 +2065,14 @@ if not.
 </ul>
 </div>
 </div>
-<div id="outline-container-org719d93c" class="outline-3">
-<h3 id="org719d93c"><span class="section-number-3">18.3</span> errno.h</h3>
+<div id="outline-container-org9cba9d4" class="outline-3">
+<h3 id="org9cba9d4"><span class="section-number-3">18.3</span> errno.h</h3>
 <div class="outline-text-3" id="text-18-3">
 <ul class="org-ul">
 <li>defines the integer variable errno, which is set by system calls and some library functions in the event of
 an error to indicate what went wrong.</li>
 <li>zero - no error</li>
-<li>see <a href="#orgfb325a6">16</a></li>
+<li>see <a href="#orgd383a7e">16</a></li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;stdio.h&gt;</span>
@@ -2093,8 +2099,8 @@ an error to indicate what went wrong.</li>
 </div>
 </div>
 
-<div id="outline-container-org0007834" class="outline-3">
-<h3 id="org0007834"><span class="section-number-3">18.4</span> float.h</h3>
+<div id="outline-container-org5480abb" class="outline-3">
+<h3 id="org5480abb"><span class="section-number-3">18.4</span> float.h</h3>
 <div class="outline-text-3" id="text-18-4">
 <p>
 floating-point number is composed of following four elements −
@@ -2120,8 +2126,8 @@ refers to double, and LDBL refers to long double.
 </div>
 </div>
 
-<div id="outline-container-org0812a81" class="outline-3">
-<h3 id="org0812a81"><span class="section-number-3">18.5</span> limits.h</h3>
+<div id="outline-container-orgb55a5d5" class="outline-3">
+<h3 id="orgb55a5d5"><span class="section-number-3">18.5</span> limits.h</h3>
 <div class="outline-text-3" id="text-18-5">
 <p>
 implementation-specific, determines various properties of the various variable types types like char, int and long.
@@ -2147,8 +2153,8 @@ implementation-specific, determines various properties of the various variable t
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd6e31cc" class="outline-3">
-<h3 id="orgd6e31cc"><span class="section-number-3">18.6</span> locale.h</h3>
+<div id="outline-container-orga61c013" class="outline-3">
+<h3 id="orga61c013"><span class="section-number-3">18.6</span> locale.h</h3>
 <div class="outline-text-3" id="text-18-6">
 <p>
 location specific settings, such as date formats and currency symbols.
@@ -2196,8 +2202,8 @@ Library Structure
 </div>
 </div>
 </div>
-<div id="outline-container-org412638c" class="outline-3">
-<h3 id="org412638c"><span class="section-number-3">18.7</span> math.h</h3>
+<div id="outline-container-org8f0cf01" class="outline-3">
+<h3 id="org8f0cf01"><span class="section-number-3">18.7</span> math.h</h3>
 <div class="outline-text-3" id="text-18-7">
 <p>
 All the functions available in this library take double as an argument and return double as the result.
@@ -2220,8 +2226,8 @@ Functions:
 </ul>
 </div>
 </div>
-<div id="outline-container-org6e65a6b" class="outline-3">
-<h3 id="org6e65a6b"><span class="section-number-3">18.8</span> setjmp.h</h3>
+<div id="outline-container-orga51d17b" class="outline-3">
+<h3 id="orga51d17b"><span class="section-number-3">18.8</span> setjmp.h</h3>
 <div class="outline-text-3" id="text-18-8">
 <p>
 These are used in C for exception handling.
@@ -2244,8 +2250,8 @@ function restores the environment saved by the most recent call to setjmp() macr
 the program with the corresponding jmp<sub>buf</sub> argument.
 </p>
 </div>
-<div id="outline-container-orge4233a9" class="outline-4">
-<h4 id="orge4233a9"><span class="section-number-4">18.8.1</span> examples</h4>
+<div id="outline-container-org09abf69" class="outline-4">
+<h4 id="org09abf69"><span class="section-number-4">18.8.1</span> examples</h4>
 <div class="outline-text-4" id="text-18-8-1">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;stdio.h&gt;</span>
@@ -2297,11 +2303,11 @@ the program with the corresponding jmp<sub>buf</sub> argument.
 </div>
 </div>
 </div>
-<div id="outline-container-org3d870c2" class="outline-3">
-<h3 id="org3d870c2"><span class="section-number-3">18.9</span> signal.h</h3>
+<div id="outline-container-org564c638" class="outline-3">
+<h3 id="org564c638"><span class="section-number-3">18.9</span> signal.h</h3>
 </div>
-<div id="outline-container-org555e142" class="outline-3">
-<h3 id="org555e142"><span class="section-number-3">18.10</span> links</h3>
+<div id="outline-container-org19bb950" class="outline-3">
+<h3 id="org19bb950"><span class="section-number-3">18.10</span> links</h3>
 <div class="outline-text-3" id="text-18-10">
 <p>
 <a href="https://www.tutorialspoint.com/c_standard_library/">https://www.tutorialspoint.com/c_standard_library/</a>
@@ -2309,12 +2315,12 @@ the program with the corresponding jmp<sub>buf</sub> argument.
 </div>
 </div>
 </div>
-<div id="outline-container-org7a29817" class="outline-2">
-<h2 id="org7a29817"><span class="section-number-2">19</span> I/O</h2>
+<div id="outline-container-orgb790308" class="outline-2">
+<h2 id="orgb790308"><span class="section-number-2">19</span> I/O</h2>
 <div class="outline-text-2" id="text-19">
 </div>
-<div id="outline-container-org0833a47" class="outline-3">
-<h3 id="org0833a47"><span class="section-number-3">19.1</span> fastest io</h3>
+<div id="outline-container-orgaf7c490" class="outline-3">
+<h3 id="orgaf7c490"><span class="section-number-3">19.1</span> fastest io</h3>
 <div class="outline-text-3" id="text-19-1">
 <ul class="org-ul">
 <li></li>
@@ -2325,8 +2331,8 @@ the program with the corresponding jmp<sub>buf</sub> argument.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcd13c7b" class="outline-3">
-<h3 id="orgcd13c7b"><span class="section-number-3">19.2</span> printf</h3>
+<div id="outline-container-org3b7e55f" class="outline-3">
+<h3 id="org3b7e55f"><span class="section-number-3">19.2</span> printf</h3>
 <div class="outline-text-3" id="text-19-2">
 <p>
 %[parameter][flags][width][.precision][length]type
@@ -2349,8 +2355,8 @@ the program with the corresponding jmp<sub>buf</sub> argument.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf736807" class="outline-2">
-<h2 id="orgf736807"><span class="section-number-2">20</span> GTK</h2>
+<div id="outline-container-orgebb28f2" class="outline-2">
+<h2 id="orgebb28f2"><span class="section-number-2">20</span> GTK</h2>
 <div class="outline-text-2" id="text-20">
 <p>
 Widget toolkit for creating graphical user interfaces (GUIs)
@@ -2360,8 +2366,8 @@ Widget toolkit for creating graphical user interfaces (GUIs)
 GTK 4 and GTK 3 are maintained
 </p>
 </div>
-<div id="outline-container-org5324be9" class="outline-3">
-<h3 id="org5324be9"><span class="section-number-3">20.1</span> GLib is the low-level core library that forms the basis for projects such as GTK and GNOME</h3>
+<div id="outline-container-org5a52e96" class="outline-3">
+<h3 id="org5a52e96"><span class="section-number-3">20.1</span> GLib is the low-level core library that forms the basis for projects such as GTK and GNOME</h3>
 <div class="outline-text-3" id="text-20-1">
 <p>
 <a href="https://docs.gtk.org/glib/">https://docs.gtk.org/glib/</a>
@@ -2379,8 +2385,8 @@ Dependencies
 </div>
 </div>
 
-<div id="outline-container-org517ec2a" class="outline-2">
-<h2 id="org517ec2a"><span class="section-number-2">21</span> GCC</h2>
+<div id="outline-container-org9a7685c" class="outline-2">
+<h2 id="org9a7685c"><span class="section-number-2">21</span> GCC</h2>
 <div class="outline-text-2" id="text-21">
 <p>
 GCC recognizes files with these names and compiles them as C/C++ programs
@@ -2418,8 +2424,8 @@ Language standard C/C++ opetion: -std=
 <li>gnu++17/gnu++1z - GNU dialect of -std=c++17.  This is the default for C++ code. The name gnu++1z is deprecated.</li>
 </ul>
 </div>
-<div id="outline-container-org0c5d50c" class="outline-3">
-<h3 id="org0c5d50c"><span class="section-number-3">21.1</span> compilation options</h3>
+<div id="outline-container-org45dfdd9" class="outline-3">
+<h3 id="org45dfdd9"><span class="section-number-3">21.1</span> compilation options</h3>
 <div class="outline-text-3" id="text-21-1">
 <p>
 We suggest that you use the '-O2' switch in all of your compilations; it increases speed and decreases the
@@ -2441,8 +2447,8 @@ optimizations that take a great deal of compilation time.</li>
 </div>
 </div>
 
-<div id="outline-container-org1ac3a69" class="outline-3">
-<h3 id="org1ac3a69"><span class="section-number-3">21.2</span> used header files</h3>
+<div id="outline-container-orgb020832" class="outline-3">
+<h3 id="orgb020832"><span class="section-number-3">21.2</span> used header files</h3>
 <div class="outline-text-3" id="text-21-2">
 <p>
 C++ header files:
@@ -2465,8 +2471,8 @@ In addition, gcc will look in the directories specified after the -I option.
 </div>
 </div>
 </div>
-<div id="outline-container-org88d57da" class="outline-2">
-<h2 id="org88d57da"><span class="section-number-2">22</span> toolchain</h2>
+<div id="outline-container-org229af15" class="outline-2">
+<h2 id="org229af15"><span class="section-number-2">22</span> toolchain</h2>
 <div class="outline-text-2" id="text-22">
 <p>
 set of programming tools that is used to perform a complex software development task or to create a software
@@ -2474,8 +2480,8 @@ product, which is typically another computer program or a set of related program
 </p>
 </div>
 
-<div id="outline-container-org72acc1e" class="outline-3">
-<h3 id="org72acc1e"><span class="section-number-3">22.1</span> GNU toolchain</h3>
+<div id="outline-container-orgd569e16" class="outline-3">
+<h3 id="orgd569e16"><span class="section-number-3">22.1</span> GNU toolchain</h3>
 <div class="outline-text-3" id="text-22-1">
 <ul class="org-ul">
 <li>GNU make: an automation tool for compilation and build</li>
@@ -2490,8 +2496,8 @@ product, which is typically another computer program or a set of related program
 </div>
 </div>
 
-<div id="outline-container-orga06e65c" class="outline-3">
-<h3 id="orga06e65c"><span class="section-number-3">22.2</span> LLVM</h3>
+<div id="outline-container-org004ac48" class="outline-3">
+<h3 id="org004ac48"><span class="section-number-3">22.2</span> LLVM</h3>
 <div class="outline-text-3" id="text-22-2">
 <ul class="org-ul">
 <li>libc++ - implementation of the C++ Standard Library</li>
@@ -2506,8 +2512,8 @@ documentation), and XCore.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org2fbd612" class="outline-2">
-<h2 id="org2fbd612"><span class="section-number-2">23</span> Makefile</h2>
+<div id="outline-container-org1f2bb52" class="outline-2">
+<h2 id="org1f2bb52"><span class="section-number-2">23</span> Makefile</h2>
 <div class="outline-text-2" id="text-23">
 <ul class="org-ul">
 <li>make -n : dry run</li>
@@ -2524,8 +2530,8 @@ make -p | grep PHONY
 
 </pre>
 </div>
-<div id="outline-container-org055bfd3" class="outline-3">
-<h3 id="org055bfd3"><span class="section-number-3">23.1</span> get targets from Makefile</h3>
+<div id="outline-container-org12447b7" class="outline-3">
+<h3 id="org12447b7"><span class="section-number-3">23.1</span> get targets from Makefile</h3>
 <div class="outline-text-3" id="text-23-1">
 <ul class="org-ul">
 <li>grep : Makefile | awk -F: '<i>^[^.]</i> {print $1;}'</li>
@@ -2539,8 +2545,8 @@ list:
 </div>
 </div>
 
-<div id="outline-container-org7dd1214" class="outline-3">
-<h3 id="org7dd1214"><span class="section-number-3">23.2</span> theory</h3>
+<div id="outline-container-orgfa0ab6f" class="outline-3">
+<h3 id="orgfa0ab6f"><span class="section-number-3">23.2</span> theory</h3>
 <div class="outline-text-3" id="text-23-2">
 <ul class="org-ul">
 <li>build automation tool</li>
@@ -2586,8 +2592,8 @@ common expectation of users:
 </div>
 </div>
 
-<div id="outline-container-org2b63fd6" class="outline-3">
-<h3 id="org2b63fd6"><span class="section-number-3">23.3</span> Makefile</h3>
+<div id="outline-container-org863d9cd" class="outline-3">
+<h3 id="org863d9cd"><span class="section-number-3">23.3</span> Makefile</h3>
 <div class="outline-text-3" id="text-23-3">
 <div class="org-src-container">
 <pre class="src src-makefile">    <span style="color: #cae682; font-size: 110%; font-weight: bold;">MAIN_TARGET1 ...</span> : TARGET2 \
@@ -2636,8 +2642,8 @@ comment line - # - at any place
 </p>
 </div>
 </div>
-<div id="outline-container-org4e90bf0" class="outline-3">
-<h3 id="org4e90bf0"><span class="section-number-3">23.4</span> Special Built-in Target Names</h3>
+<div id="outline-container-org9fd006d" class="outline-3">
+<h3 id="org9fd006d"><span class="section-number-3">23.4</span> Special Built-in Target Names</h3>
 <div class="outline-text-3" id="text-23-4">
 <p>
 .PHONY: clean - clean target will be executed regardless of existence of file "clear"
@@ -2863,8 +2869,8 @@ only POSIX-conforming makefiles will be accepted: all advanced GNU
 default behavior differs.
 </p>
 </div>
-<div id="outline-container-org2a9df6e" class="outline-4">
-<h4 id="org2a9df6e"><span class="section-number-4">23.4.1</span> '.SUFFIXES'</h4>
+<div id="outline-container-orgcbd263b" class="outline-4">
+<h4 id="orgcbd263b"><span class="section-number-4">23.4.1</span> '.SUFFIXES'</h4>
 <div class="outline-text-4" id="text-23-4-1">
 <p>
 to define own implisit rule:
@@ -2875,8 +2881,8 @@ to define own implisit rule:
 </div>
 </div>
 </div>
-<div id="outline-container-orgf65d70d" class="outline-3">
-<h3 id="orgf65d70d"><span class="section-number-3">23.5</span> variables</h3>
+<div id="outline-container-orgbe0b0aa" class="outline-3">
+<h3 id="orgbe0b0aa"><span class="section-number-3">23.5</span> variables</h3>
 <div class="outline-text-3" id="text-23-5">
 <ul class="org-ul">
 <li>case sensitive</li>
@@ -2886,8 +2892,8 @@ to define own implisit rule:
 </div>
 
 
-<div id="outline-container-org14322f0" class="outline-4">
-<h4 id="org14322f0"><span class="section-number-4">23.5.1</span> "recursively expanded" variable.</h4>
+<div id="outline-container-org64f0fde" class="outline-4">
+<h4 id="org64f0fde"><span class="section-number-4">23.5.1</span> "recursively expanded" variable.</h4>
 <div class="outline-text-4" id="text-23-5-1">
 <ul class="org-ul">
 <li>foo = b (Setting Variables)</li>
@@ -2914,8 +2920,8 @@ endef
 </div>
 </div>
 </div>
-<div id="outline-container-org36af8d4" class="outline-4">
-<h4 id="org36af8d4"><span class="section-number-4">23.5.2</span> simply expanded variables (preffered)</h4>
+<div id="outline-container-org1462f91" class="outline-4">
+<h4 id="org1462f91"><span class="section-number-4">23.5.2</span> simply expanded variables (preffered)</h4>
 <div class="outline-text-4" id="text-23-5-2">
 <ul class="org-ul">
 <li>:= or ::=</li>
@@ -2923,8 +2929,8 @@ endef
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb590330" class="outline-4">
-<h4 id="orgb590330"><span class="section-number-4">23.5.3</span> Substitution References</h4>
+<div id="outline-container-orgf0c2a99" class="outline-4">
+<h4 id="orgf0c2a99"><span class="section-number-4">23.5.3</span> Substitution References</h4>
 <div class="outline-text-4" id="text-23-5-3">
 <p>
 foo := a.o b.o l.a c.o
@@ -2939,8 +2945,8 @@ sets 'bar' to 'a.c b.c l.a c.c'.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf98053e" class="outline-4">
-<h4 id="orgf98053e"><span class="section-number-4">23.5.4</span> Computed Variable Names</h4>
+<div id="outline-container-org381e1d7" class="outline-4">
+<h4 id="org381e1d7"><span class="section-number-4">23.5.4</span> Computed Variable Names</h4>
 <div class="outline-text-4" id="text-23-5-4">
 <p>
 x = y
@@ -2950,8 +2956,8 @@ a will be z
 </p>
 </div>
 </div>
-<div id="outline-container-orge2e22c3" class="outline-4">
-<h4 id="orge2e22c3"><span class="section-number-4">23.5.5</span> automatic variables</h4>
+<div id="outline-container-org77c14e4" class="outline-4">
+<h4 id="org77c14e4"><span class="section-number-4">23.5.5</span> automatic variables</h4>
 <div class="outline-text-4" id="text-23-5-5">
 <p>
 make -p to get default variables
@@ -2989,8 +2995,8 @@ etc.
 </p>
 </div>
 </div>
-<div id="outline-container-org527dadf" class="outline-4">
-<h4 id="org527dadf"><span class="section-number-4">23.5.6</span> ex</h4>
+<div id="outline-container-org56764ca" class="outline-4">
+<h4 id="org56764ca"><span class="section-number-4">23.5.6</span> ex</h4>
 <div class="outline-text-4" id="text-23-5-6">
 <div class="org-src-container">
 <pre class="src src-makefile">     <span style="color: #cae682;">objects</span> = main.o kbd.o command.o display.o \
@@ -3004,8 +3010,8 @@ etc.
 </div>
 </div>
 
-<div id="outline-container-org059e470" class="outline-3">
-<h3 id="org059e470"><span class="section-number-3">23.6</span> Implicit Rules</h3>
+<div id="outline-container-org22da374" class="outline-3">
+<h3 id="org22da374"><span class="section-number-3">23.6</span> Implicit Rules</h3>
 <div class="outline-text-3" id="text-23-6">
 <ul class="org-ul">
 <li>main.o : defs.h - rule will be executed implisitly: cc -c main.c -o main.o</li>
@@ -3046,8 +3052,8 @@ etc.
 </div>
 
 
-<div id="outline-container-org7a77e9d" class="outline-3">
-<h3 id="org7a77e9d"><span class="section-number-3">23.7</span> directives</h3>
+<div id="outline-container-orgf8cbb7c" class="outline-3">
+<h3 id="orgf8cbb7c"><span class="section-number-3">23.7</span> directives</h3>
 <div class="outline-text-3" id="text-23-7">
 <ul class="org-ul">
 <li>Reading another makefile
@@ -3059,8 +3065,8 @@ etc.
 </ul>
 </div>
 
-<div id="outline-container-org796334a" class="outline-4">
-<h4 id="org796334a"><span class="section-number-4">23.7.1</span> <span class="todo TODO">TODO</span> Conditional Directives or Conditionals</h4>
+<div id="outline-container-org6b3f451" class="outline-4">
+<h4 id="org6b3f451"><span class="section-number-4">23.7.1</span> <span class="todo TODO">TODO</span> Conditional Directives or Conditionals</h4>
 <div class="outline-text-4" id="text-23-7-1">
 <p>
 <a href="https://www.tutorialspoint.com/makefile/makefile_directives.htm">https://www.tutorialspoint.com/makefile/makefile_directives.htm</a>
@@ -3069,8 +3075,8 @@ etc.
 </div>
 </div>
 
-<div id="outline-container-orgfe055e2" class="outline-3">
-<h3 id="orgfe055e2"><span class="section-number-3">23.8</span> make.inc</h3>
+<div id="outline-container-orge8d6cef" class="outline-3">
+<h3 id="orge8d6cef"><span class="section-number-3">23.8</span> make.inc</h3>
 <div class="outline-text-3" id="text-23-8">
 <p>
 TOPSRCDIR = .
@@ -3092,8 +3098,8 @@ DINSTALLBIN=$(DESTDIR)$(INSTALLBIN)
 </div>
 </div>
 </div>
-<div id="outline-container-orga404d35" class="outline-2">
-<h2 id="orga404d35"><span class="section-number-2">24</span> cmake</h2>
+<div id="outline-container-org7a14202" class="outline-2">
+<h2 id="org7a14202"><span class="section-number-2">24</span> cmake</h2>
 <div class="outline-text-2" id="text-24">
 <ul class="org-ul">
 <li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></li>
@@ -3119,8 +3125,8 @@ translates into specific build definitions for any supported platform.</li>
 </div>
 </div>
 
-<div id="outline-container-orga4572fd" class="outline-2">
-<h2 id="orga4572fd"><span class="section-number-2">25</span> pkg-config</h2>
+<div id="outline-container-org452235e" class="outline-2">
+<h2 id="org452235e"><span class="section-number-2">25</span> pkg-config</h2>
 <div class="outline-text-2" id="text-25">
 <ul class="org-ul">
 <li>program is used to retrieve information about installed libraries in the system. It is typically used to
@@ -3148,8 +3154,8 @@ program: program.c
 </div>
 </div>
 
-<div id="outline-container-org5adedfb" class="outline-2">
-<h2 id="org5adedfb"><span class="section-number-2">26</span> GNU Libtool</h2>
+<div id="outline-container-orge63a821" class="outline-2">
+<h2 id="orge63a821"><span class="section-number-2">26</span> GNU Libtool</h2>
 <div class="outline-text-2" id="text-26">
 <ul class="org-ul">
 <li>works implicitly. pkg-config needs to be used explicitly.</li>
@@ -3160,15 +3166,15 @@ portable interface.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6852708" class="outline-2">
-<h2 id="org6852708"><span class="section-number-2">27</span> debug</h2>
+<div id="outline-container-orged6b21a" class="outline-2">
+<h2 id="orged6b21a"><span class="section-number-2">27</span> debug</h2>
 <div class="outline-text-2" id="text-27">
 <p>
 <a href="https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)">https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)</a>Debugging.html
 </p>
 </div>
-<div id="outline-container-org5176743" class="outline-3">
-<h3 id="org5176743"><span class="section-number-3">27.1</span> Assertions</h3>
+<div id="outline-container-orge1acac0" class="outline-3">
+<h3 id="orge1acac0"><span class="section-number-3">27.1</span> Assertions</h3>
 <div class="outline-text-3" id="text-27-1">
 <ul class="org-ul">
 <li>#include &lt;assert.h&gt;</li>
@@ -3176,14 +3182,14 @@ portable interface.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf46359f" class="outline-3">
-<h3 id="orgf46359f"><span class="section-number-3">27.2</span> gdb</h3>
+<div id="outline-container-orgb950ada" class="outline-3">
+<h3 id="orgb950ada"><span class="section-number-3">27.2</span> gdb</h3>
 </div>
-<div id="outline-container-org340f3b6" class="outline-3">
-<h3 id="org340f3b6"><span class="section-number-3">27.3</span> Valgrind</h3>
+<div id="outline-container-org521e6d3" class="outline-3">
+<h3 id="org521e6d3"><span class="section-number-3">27.3</span> Valgrind</h3>
 </div>
-<div id="outline-container-org3f0dd82" class="outline-3">
-<h3 id="org3f0dd82"><span class="section-number-3">27.4</span> print</h3>
+<div id="outline-container-orga4d1d1e" class="outline-3">
+<h3 id="orga4d1d1e"><span class="section-number-3">27.4</span> print</h3>
 <div class="outline-text-3" id="text-27-4">
 <p>
 The problem is :
@@ -3200,10 +3206,133 @@ very confusing, and can lead you to believe that your program fails earlier than
 </div>
 
 
-
-<div id="outline-container-org9d3259b" class="outline-2">
-<h2 id="org9d3259b"><span class="section-number-2">28</span> install /usr/local/bin</h2>
+<div id="outline-container-org60f115f" class="outline-2">
+<h2 id="org60f115f"><span class="section-number-2">28</span> Documentation</h2>
 <div class="outline-text-2" id="text-28">
+<p>
+Sphinx - documentation tool used in Linux kernel (make htmldocs), uses reStructuredText as markup language
+</p>
+
+<p>
+one space line between of items
+</p>
+</div>
+<div id="outline-container-org1d640a5" class="outline-3">
+<h3 id="org1d640a5"><span class="section-number-3">28.1</span> header</h3>
+<div class="outline-text-3" id="text-28-1">
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">SPDX-License-Identifier: GPL-2.0-or-later </span><span style="color: #fa8072;">*/</span>
+<span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">audit -- definition of audit_context structure and supporting types</span>
+<span style="color: #99968b; font-style: italic;"> *</span>
+<span style="color: #99968b; font-style: italic;"> * Copyright 2003-2004 Red Hat, Inc.</span>
+<span style="color: #99968b; font-style: italic;"> * Copyright 2005 Hewlett-Packard Development Company, L.P.</span>
+<span style="color: #99968b; font-style: italic;"> * Copyright 2005 IBM Corporation</span>
+<span style="color: #99968b; font-style: italic;"> </span><span style="color: #fa8072;">*/</span>
+
+<span style="color: #fa8072;">/*</span>
+<span style="color: #99968b; font-style: italic;"> * blk_mq_map_queue_type() - map (hctx_type,cpu) to hardware queue</span>
+<span style="color: #99968b; font-style: italic;"> * @q: request queue</span>
+<span style="color: #99968b; font-style: italic;"> * @type: the hctx type index</span>
+<span style="color: #99968b; font-style: italic;"> * @cpu: CPU</span>
+<span style="color: #99968b; font-style: italic;"> </span><span style="color: #fa8072;">*/</span>
+<span style="color: #8ac6f2; font-weight: bold;">static</span> <span style="color: #8ac6f2; font-weight: bold;">inline</span> <span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">blk_mq_hw_ctx</span> *<span style="color: #cae682; font-size: 110%; font-weight: bold;">blk_mq_map_queue_type</span>(<span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">request_queue</span> *<span style="color: #cae682;">q</span>,
+                                                          <span style="color: #8ac6f2; font-weight: bold;">enum</span> <span style="color: #92a65e; font-weight: bold;">hctx_type</span> <span style="color: #cae682;">type</span>,
+                                                          <span style="color: #92a65e; font-weight: bold;">unsigned</span> <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">cpu</span>)
+{
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> q-&gt;queue_hw_ctx[q-&gt;tag_set-&gt;map[type].mq_map[cpu]];
+}
+
+<span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">At task start time, the audit_state is set in the audit_context using</span>
+<span style="color: #99968b; font-style: italic;">   a per-task filter.  At syscall entry, the audit_state is augmented by</span>
+<span style="color: #99968b; font-style: italic;">   the syscall filter. </span><span style="color: #fa8072;">*/</span>
+<span style="color: #8ac6f2; font-weight: bold;">enum</span> <span style="color: #92a65e; font-weight: bold;">audit_state</span> {
+        <span style="color: #cae682;">AUDIT_STATE_DISABLED</span>,   <span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">Do not create per-task audit_context.</span>
+<span style="color: #99968b; font-style: italic;">                                 * No syscall-specific audit records can</span>
+<span style="color: #99968b; font-style: italic;">                                 * be generated. </span><span style="color: #fa8072;">*/</span>
+        <span style="color: #cae682;">AUDIT_STATE_BUILD</span>,      <span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">Create the per-task audit_context,</span>
+<span style="color: #99968b; font-style: italic;">                                 * and fill it in at syscall</span>
+<span style="color: #99968b; font-style: italic;">                                 * entry time.  This makes a full</span>
+<span style="color: #99968b; font-style: italic;">                                 * syscall record available if some</span>
+<span style="color: #99968b; font-style: italic;">                                 * other part of the kernel decides it</span>
+<span style="color: #99968b; font-style: italic;">                                 * should be recorded. </span><span style="color: #fa8072;">*/</span>
+        <span style="color: #cae682;">AUDIT_STATE_RECORD</span>      <span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">Create the per-task audit_context,</span>
+<span style="color: #99968b; font-style: italic;">                                 * always fill it in at syscall entry</span>
+<span style="color: #99968b; font-style: italic;">                                 * time, and always write out the audit</span>
+<span style="color: #99968b; font-style: italic;">                                 * record at syscall exit time.  </span><span style="color: #fa8072;">*/</span>
+};
+
+
+<span style="color: #fa8072;">/*</span>
+<span style="color: #99968b; font-style: italic;"> * blk_mq_plug() - Get caller context plug</span>
+<span style="color: #99968b; font-style: italic;"> * @q: request queue</span>
+<span style="color: #99968b; font-style: italic;"> * @bio : the bio being submitted by the caller context</span>
+<span style="color: #99968b; font-style: italic;"> *</span>
+<span style="color: #99968b; font-style: italic;"> * Plugging, by design, may delay the insertion of BIOs into the elevator in</span>
+<span style="color: #99968b; font-style: italic;"> * order to increase BIO merging opportunities. This however can cause BIO</span>
+<span style="color: #99968b; font-style: italic;"> * insertion order to change from the order in which submit_bio() is being</span>
+<span style="color: #99968b; font-style: italic;"> * executed in the case of multiple contexts concurrently issuing BIOs to a</span>
+<span style="color: #99968b; font-style: italic;"> * device, even if these context are synchronized to tightly control BIO issuing</span>
+<span style="color: #99968b; font-style: italic;"> * order. While this is not a problem with regular block devices, this ordering</span>
+<span style="color: #99968b; font-style: italic;"> * change can cause write BIO failures with zoned block devices as these</span>
+<span style="color: #99968b; font-style: italic;"> * require sequential write patterns to zones. Prevent this from happening by</span>
+<span style="color: #99968b; font-style: italic;"> * ignoring the plug state of a BIO issuing context if the target request queue</span>
+<span style="color: #99968b; font-style: italic;"> * is for a zoned block device and the BIO to plug is a write operation.</span>
+<span style="color: #99968b; font-style: italic;"> *</span>
+<span style="color: #99968b; font-style: italic;"> * Return current-&gt;plug if the bio can be plugged and NULL otherwise</span>
+<span style="color: #99968b; font-style: italic;"> </span><span style="color: #fa8072;">*/</span>
+<span style="color: #8ac6f2; font-weight: bold;">static</span> <span style="color: #8ac6f2; font-weight: bold;">inline</span> <span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">blk_plug</span> *<span style="color: #cae682; font-size: 110%; font-weight: bold;">blk_mq_plug</span>(<span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">request_queue</span> *<span style="color: #cae682;">q</span>,
+                                           <span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">bio</span> *<span style="color: #cae682;">bio</span>)
+{
+        <span style="color: #fa8072;">/*</span>
+<span style="color: #99968b; font-style: italic;">         * For regular block devices or read operations, use the context plug</span>
+<span style="color: #99968b; font-style: italic;">         * which may be NULL if blk_start_plug() was not executed.</span>
+<span style="color: #99968b; font-style: italic;">         </span><span style="color: #fa8072;">*/</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> (!blk_queue_is_zoned(q) || !op_is_write(bio_op(bio)))
+                <span style="color: #8ac6f2; font-weight: bold;">return</span> current-&gt;plug;
+
+        <span style="color: #fa8072;">/* </span><span style="color: #99968b; font-style: italic;">Zoned block device write operation case: do not plug the BIO </span><span style="color: #fa8072;">*/</span>
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">NULL</span>;
+}
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org46b3d5f" class="outline-3">
+<h3 id="org46b3d5f"><span class="section-number-3">28.2</span> .c</h3>
+<div class="outline-text-3" id="text-28-2">
+<p>
+/usr/src/linux-5.15.80-gentoo/kernel/audit.c
+</p>
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * auditd_test_task - Check to see if a given task is an audit daemon</span>
+<span style="color: #f08080; font-style: italic;"> * </span><span style="color: #e5786d; font-weight: bold; font-style: italic;">@task</span><span style="color: #f08080; font-style: italic;">: the task to check</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * </span><span style="color: #e5786d; font-weight: bold; font-style: italic;">Description</span><span style="color: #f08080; font-style: italic;">:</span>
+<span style="color: #f08080; font-style: italic;"> * Return 1 if the task is a registered audit daemon, 0 otherwise.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+<span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682; font-size: 110%; font-weight: bold;">auditd_test_task</span>(<span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">task_struct</span> *<span style="color: #cae682;">task</span>)
+{
+        <span style="color: #92a65e; font-weight: bold;">int</span> <span style="color: #cae682;">rc</span>;
+        <span style="color: #8ac6f2; font-weight: bold;">struct</span> <span style="color: #92a65e; font-weight: bold;">auditd_connection</span> *<span style="color: #cae682;">ac</span>;
+
+        <span style="color: #cae682; font-size: 110%; font-weight: bold;">rcu_read_lock</span>();
+        ac = rcu_dereference(auditd_conn);
+        rc = (ac &amp;&amp; ac-&gt;pid == task_tgid(task) ? 1 : 0);
+        <span style="color: #cae682; font-size: 110%; font-weight: bold;">rcu_read_unlock</span>();
+
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> rc;
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf477264" class="outline-2">
+<h2 id="orgf477264"><span class="section-number-2">29</span> install /usr/local/bin</h2>
+<div class="outline-text-2" id="text-29">
 <p>
 copy files
 </p>
@@ -3215,9 +3344,9 @@ install -m 755 -s $(TARGET) <i>usr/local/bin</i>
 </div>
 
 
-<div id="outline-container-org1fdfea1" class="outline-2">
-<h2 id="org1fdfea1"><span class="section-number-2">29</span> Difference between C and C++ and Objective-C</h2>
-<div class="outline-text-2" id="text-29">
+<div id="outline-container-orgd04078e" class="outline-2">
+<h2 id="orgd04078e"><span class="section-number-2">30</span> Difference between C and C++ and Objective-C</h2>
+<div class="outline-text-2" id="text-30">
 <ul class="org-ul">
 <li>Major added features in C++ are Object-Oriented Programming, Exception Handling and rich C++ Library.</li>
 <li>C++ is a superset of C.</li>
@@ -3243,9 +3372,9 @@ type is immutable</li>
 <li>result of assignment a = b - in C evaluates to the same value as the expression b, C++ - as expression a.</li>
 </ul>
 </div>
-<div id="outline-container-orgdd92732" class="outline-3">
-<h3 id="orgdd92732"><span class="section-number-3">29.1</span> Objective-C</h3>
-<div class="outline-text-3" id="text-29-1">
+<div id="outline-container-org00e0f15" class="outline-3">
+<h3 id="org00e0f15"><span class="section-number-3">30.1</span> Objective-C</h3>
+<div class="outline-text-3" id="text-30-1">
 <p>
 Objective-C is a general-purpose programming language that enhances C with the Smalltalk-style messaging.
 </p>
@@ -3263,17 +3392,17 @@ Objective-C is a general-purpose programming language that enhances C with the S
 </div>
 </div>
 
-<div id="outline-container-org9b73b49" class="outline-2">
-<h2 id="org9b73b49"><span class="section-number-2">30</span> C++</h2>
-<div class="outline-text-2" id="text-30">
+<div id="outline-container-orgaaba447" class="outline-2">
+<h2 id="orgaaba447"><span class="section-number-2">31</span> C++</h2>
+<div class="outline-text-2" id="text-31">
 </div>
-<div id="outline-container-orge0bf89e" class="outline-3">
-<h3 id="orge0bf89e"><span class="section-number-3">30.1</span> <span class="todo TODO">TODO</span> operators</h3>
+<div id="outline-container-org5521eac" class="outline-3">
+<h3 id="org5521eac"><span class="section-number-3">31.1</span> <span class="todo TODO">TODO</span> operators</h3>
 </div>
 
-<div id="outline-container-orgb065d6f" class="outline-3">
-<h3 id="orgb065d6f"><span class="section-number-3">30.2</span> hello world</h3>
-<div class="outline-text-3" id="text-30-2">
+<div id="outline-container-org29c4765" class="outline-3">
+<h3 id="org29c4765"><span class="section-number-3">31.2</span> hello world</h3>
+<div class="outline-text-3" id="text-31-2">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #95e454;">&lt;iostream&gt;</span>     <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">std::cin, std::cout, std::hex</span>
 
@@ -3290,9 +3419,9 @@ Objective-C is a general-purpose programming language that enhances C with the S
 </div>
 </div>
 
-<div id="outline-container-org39cd824" class="outline-3">
-<h3 id="org39cd824"><span class="section-number-3">30.3</span> libs</h3>
-<div class="outline-text-3" id="text-30-3">
+<div id="outline-container-org64fe863" class="outline-3">
+<h3 id="org64fe863"><span class="section-number-3">31.3</span> libs</h3>
+<div class="outline-text-3" id="text-31-3">
 <pre class="example">
 #include &lt;cstdio&gt; # c library include &lt;stdio.h&gt;
 
@@ -3302,9 +3431,9 @@ Objective-C is a general-purpose programming language that enhances C with the S
 </div>
 
 
-<div id="outline-container-org0272bbe" class="outline-2">
-<h2 id="org0272bbe"><span class="section-number-2">31</span> Meson</h2>
-<div class="outline-text-2" id="text-31">
+<div id="outline-container-org1450145" class="outline-2">
+<h2 id="org1450145"><span class="section-number-2">32</span> Meson</h2>
+<div class="outline-text-2" id="text-32">
 <p>
 software tool for automating the building (compiling) of software
 </p>
@@ -3320,7 +3449,7 @@ compilers such as Emscripten and Cython</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2022-11-17 Thu 20:49</p>
+<p class="date">Created: 2023-01-09 Mon 10:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

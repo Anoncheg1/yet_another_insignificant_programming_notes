@@ -3,7 +3,7 @@
 - translate.yandex.com
 - Палладий транскрипция https://palladius.ru/
 - иероглифы https://www.mdbg.net/chinese/dictionary
-- chinese yandex https://fanyi.youdao.com/
+- 翻译 - fānyì - переводчик - chinese yandex https://fanyi.youdao.com/
 
 best learn videos
 - https://www.youtube.com/c/EverydayChinese/videos
@@ -20,12 +20,15 @@ input method emacs:
 - 中文 - Zhōng wén (Chinese language)
   - 中 - China / Chinese
   - 文 - language / culture / writing
-- 语言 - yǔyán - spoken language
+- 语言 - yǔyán - spoken language (language speak)
 - 汉语 - HànYǔ - Chinese language
 - 汉字 - Hànzì - китайский иероглиф
-- 简体中文 - Jiǎn tǐ Zhōng wén - Simplified Chinese
+- 简体中文 - Jiǎn tǐ Zhōng wén - Simplified Chinese - zh-Hans( zh-CN)
   - 简 - jiǎn - simple - Цзянь
   - 体 - tǐ - body - Ти
+- Mandarin Chinese, Traditional Script: zh-Hant or zh-Hant-TW (Taiwan) is preferred zh-TW
+- Pinyin (Mandarin): zh-Latn-pinyin
+- Cantonese (Hong Kong): zh-yue or zh-HK
 
 People's Republic of China
 - 中华人民共和国 (Chinese)
@@ -85,10 +88,10 @@ Wade-Giles -
 Yale
 * 拼音 pīnyīn
 ** tones pīnyīn
-1. mā 	high level		'mother'
+1. mā 	high level		'mother' - что-то высокое, на поверхности
 2. má 	high rising		'hemp' конопля
-3. mǎ 	low falling-rising 	'horse'
-4. mà 	high falling		'scold' ругать-бранить
+3. mǎ 	low falling-rising 	'horse' - что-то большое, вытянутое, требующее уважение
+4. mà 	high falling		'scold' ругать-бранить - что-то простое но серьезное или малозначимое
 5. ma 	neutral 	 	question particle
 
 https://en.wikipedia.org/wiki/Chinese_language#Tones
@@ -150,6 +153,13 @@ https://en.wikipedia.org/wiki/Chinese_language#Tones
 - нижняя горизонталь непересекающая, пишется последней
 - Лигатуры - объединённое в один иероглиф благожелательное словосочетание
 - каллиграфия - придание изящной формы
+
+Один и тот же иероглиф может использоваться как существительное, прилагательное,
+ предлог в различных контекстах и словообразующих сочетаниях
+- 爱好 - àihǎo - хобби
+- 好冷 - lěnghǎo - как, холодно!
+
+нет иероглифа, который читается более, чем в один слог.
 ** strokes and their order
 principle: writing characters should be economical, with the fewest
 hand movements to write the most strokes possible
@@ -528,16 +538,16 @@ htps://en.wikipedia.org/wiki/Table_of_Indexing_Chinese_Character_Components
 - 是 (Shì)
 - 是的 (Shì de)
 - 好的 - Hǎo de
-
+- 好 - ok!
 * я ты он она это то
 - 我 – wǒ – я
 - 你 - nǐ - ты
 - 您 - nín – Вы (вежливое обращение к одному человеку)
 - 他 - tā – он
 - 她 - tā – она
-
+- 我们 - wǒ men - мы
 this
-- 这 - zhè - Чжэ - this, these
+- 这 - zhè - Чжэ - this, these (这个 - this one)
 - 那 - nà - That
 - 哪 - nǎ - Which
 * hello and Self-Introduction
@@ -581,6 +591,9 @@ Into
 - nǎlǐ nǎlǐ - 哪里哪里 - Нали ньали - you’re too kind
 - bù, bù, bù - 不 - A rough pronunciation would be bhoo bhoo bhoo.
 - Duō xiè - 多謝 - Thanks a lot (multi-thanks)
+- 辛苦 xīnkǔ стараться из всех сил, тяжело трудиться
+- 辛苦了 xīnkǔ le благодарю за работу; мы молодцы, отличная работа
+- 辛苦你了 xīnkǔ nǐ le спасибо тебе, благодарю тебя зато, что ты сделал
 
 
 
@@ -679,12 +692,26 @@ https://www.howtosayinchinese.com/asking-questions-in-chinese-ma/
     - 你吃了以后叫我。Nǐ chī le yǐhòu jiào wǒ.  ― Call me when you are done eating.
       - 以后 - Yǐhòu - after
 
+- 男厕 - gents
+- 女厕 - Ladies
+- 超市在哪儿？ - Where is the supermarket?
+- 没问题 - No problem!
+- 那个 - That one!
+- 警察 - police
+- 多少个？ - How many?
+- 再来一个 - One more!
+- 少来一个 - One less!
+- 请稍等 - Please wait!
+  - 请 - Please!
+
 * и или
 И
 - 和 Hé
 - 并  Bìng
 - 与 Yǔ(и) 		问题与方法 Проблемы и методы
+или
 - 或	Huò		or, either
+- 或者
 - 于	Yú(и)	on, to	Focus on business 专注于商业
 
 Союзы
@@ -746,14 +773,55 @@ https://chinese4kids.net/simple-math-vocabulary-in-chinese/
 7-4=3 七减四等于三 Qī jiǎn sì děngyú sān
 
 * money 钱 qián тьен
+- 钱 - Qián - цянь - деньги
 - 货币 - Huòbì - currency - goods/procurts(change/convert sea_shell) coin - Хо Би
-- 人民币 rénmínbì - literally: 'people's currency'
+- 人民币 rénmínbì - жэньминьби - literally: 'people's currency' RMB
 - 元/¥ - symbol; code: CNY
-- 元 Yuán(Юань) - primary unit. equal to 10 jiao or 100 fen
+- 元/圆 Yuán(Юань) - primary unit. equal to 10 jiao or 100 fen
   - 块 kuài(Куай) - разговорный 元
+Subunit
 - 角 Jiǎo(Цзяо) - 1/10 元
-  - 毛 máo - разговорный
-- Фэнь fēn - 1/100 元
+- 分 fēn(Фэнь) - 1/100 元
+Nickname
+- 角 jiǎo
+- 毛 máo - разговорный
+
+- 外汇 - Wàihuì - вайхуй - валюта (foreign exchange)
+- 银行 - yínxíng - иньхан- банк
+- 收银台 - Shōuyín tái - шоуинь тай - касса
+- 签字 - QiānZì - цяньцзы - подпись
+- 卢布 - Lúbù - рубль
+- 货币兑换 - huòbì duìhuàn -  currency exchange
+- 邮件 - Yóujiàn - mail item
+- 取款机 - ATM machine
+- 信用卡 - credit card
+
+
+** ex
+
+I'm going on a business trip to Hong Kong next week. Do you know where I can exchange money for Hong Kong dollars?
+- 下周我要去香港出差,你知道哪里可以换些港币吗？
+- xiàzhōu wǒ yào qù xiānɡɡǎnɡ chūchāi,nǐ zhīdào nǎlǐ kěyǐ huàn xiē ɡǎnɡbì ma?
+
+
+You can exchange it at the bank. Most banks are fine.
+- 你可以去银行兑换,一般的银行都可以的。
+- nǐ kěyǐ qù yínhánɡ duìhuàn,yībān de yínhánɡ dōu kěyǐ de.
+
+
+这双鞋多少钱？ - Сколько стоит эта пара обуви?
+- zhè shuāng xié duōshao qián？
+- 这 zhè это
+- 双 shuāng пара (счётное слово для парных предметов)
+- 鞋 xié обувь
+- 多少钱 duōshao qián сколько стоит?
+  - 多少 - how many  - multi little
+  - 钱 - деньги
+
+* curse - Entrance, Exit
+- 紧急出口 emergency exit
+- 没有出口 no exit
+- 入口 entrance
 * plural
 - 各位 (gè wèi) for “everybody”
 - 女士们先生们 (nǚ shì men xiān shēng men) for “ladies and gentlemen,”
@@ -792,6 +860,8 @@ https://chinese4kids.net/simple-math-vocabulary-in-chinese/
   - 数星期 (shù xīng qí) — several weeks
 - 不少 (bù shǎo) — quite a few
 - 很多 (hěn duō) — a lot, very many
+** examples
+一家三口人 — семья из трёх человек
 ** links
 https://www.fluentu.com/blog/chinese/plural-in-chinese/
 * множественне число
@@ -858,6 +928,9 @@ https://www.fluentu.com/blog/chinese/plural-in-chinese/
 ** Internet
 - the internet —— 互联网 —— hù lián wăng - mutual united network
 - web site - 网站 - Wǎngzhàn - Чжань
+  - 站
+    - 立 lì, wèi - stand; let stand; establish, set
+    - 占 zhān, zhàn - divine; observe; versify
 - web page - 网页 - wǎng yè - вань е
 - web browser - 网页浏览器 - Wǎngyè liúlǎn qì - web_page browse device
   - 浏览 - browse
@@ -1102,7 +1175,7 @@ size 尺寸 Chǐ cùn:
 - 金 jīn Metal
 - 水 - shuǐ - вода
 * geography
-Běijīng shì - 北京 市 - Peking city "Northern Capital"
+Běijīng shì - 北京 市 - Peking city "Northern Capital" - Пекин
 за хе - 上海 - Shanghai (on sea)
 
 Mainland China - 中国大陆 - Zhōnggúo Dàlù - Continental China
@@ -1112,11 +1185,42 @@ Mainland China - 中国大陆 - Zhōnggúo Dàlù - Continental China
 
 中国人 - китаец Chinaman
 
+朝鲜 - Северная корея
+
+* ilness
+- 医院 - hospital
+- 你有病吗? → 你生病了吗?/ 你病了吗? - What the hell is wrong with you? → Are you sick?
+- 你还好吗? - Nǐ hái hǎo ma? - Are you ok?
+- 你看起来不太好 - Nǐ kàn qǐlái bu tài hǎo - You don’t look so well.
+- 你是不是感冒了? Nǐ shì bùshì gǎnmàole? - Did you catch a cold?
+- 我有点不舒服 - Wǒ yǒudiǎn bú shūfú - I don’t feel well.
+- 看病 kànbìng – ходить к врачу (на прием)
+- 用叫医生吗? Yòng jiào yīshēng ma? - Позвать врача?
+- 需要帮忙吗？ Xūyào bāngmáng ma?  - Вам помочь? Нужна помощь?
+- 请叫救护车 Qǐng jiào jiùhù chē - Вызовите скорую!
+- 救护车 jiùhù chē–скорая
+- 我要看病 Wǒ yào kànbìng -  Мне необходимо сходить к врачу
+- 我觉得身体不舒服 Wǒ juéde shēntǐ bú shūfú - Я плохо себя чувствую
+- 我喉咙不舒服 Wǒ hóulóng bú shūfú – болит горло
+- 头疼 Tóuténg – У меня болит голова
+- 肚子疼 Dùzi téng – У меня  живот болит
+- 头很沉 Tóu hěn chén  – Голова тяжелая
+- 你能帮我请位医生吗? Nǐ néng bāng wǒ qǐng wèi yīshēng ma ？ - Пожалуйста, позовите врача
+- 你怎么啦? Nǐ zěnme la?  - Что-то не так? Что с тобой?
+- 是什么症状?  Shì shénme zhèngzhuàng? -  Какие симптомы?
+ - 症状 zhèngzhuàng  - симптом
+- 量一下体温吧 Liàng yīxià tǐwēn ba -  Давай измерим температуру 体温tǐwēn  – температура (тела)
+- 吃了什么不对劲的东西没有? Chīle shénme bùduìjìn de dōngxi méiyǒu? -  Ты ничего странного(необычного)  не ел(а)?
+- 量一下血压吧 Liàng yīxià xiěyā ba - Давай измерим давление
+- 你常服用什么药?  - Nǐ cháng fúyòng shénme yào? Употребляете ли постоянно какие-либо лекарственные препараты?
+- 我没服用任何药 - Wǒ méi fúyòng rènhé yào  - нет, не принимаю (лекарства)
+- 我哪儿不好? Wǒ nǎ'er bù hǎo? - Что со мной (какой диагноз)?
+- 严重吗? Yánzhòng ma?  - Это серьезно(о болезни) ?
 * кулютура
 人 (жэнь, человек) — 大 (да, большой) — 天 (тянь, небо).
 ** Цигун 气功 qìgōng (тигон)
-- qi - primarily means air, gas or breath; often 'vital energy'
-- gōng - cultivation or work
+- 气 qì - primarily means air, gas or breath; often 'vital energy'
+- 功 gōng - cultivation or work
 
 coordinate
 - body (調身)
@@ -1180,14 +1284,45 @@ yin and yang (陰陽), to create a balanced flow of qi.
 - «Чжан-чжуань» — статические упражнения
 - «Даосская алхимия» — базируется на понятиях естественность и
   непреднамеренности.
-*** TODO Ушу (武术) Wǔshù, уи (武艺), гошу (国术), кунфу/гунфу (功夫) gōngfu
+** TODO Ушу (武术) Wǔshù, уи (武艺), гошу (国术), кунфу/гунфу (功夫) gōngfu
+** У-син 五行 wŭ xíng
+огонь (火), вода (水), дерево (木), металл (金) и земля (土)
+** 八卦 bāguà багуа - Восемь триграмм
+автор  Фу Си 先天图
+#+begin_src text
+--- - -
+Инь (陰) и Ян (陽)
+
+- -    ---    - -    ---
+- -    - -    ---    ---
+Старая Инь 老陰 lǎo yīn, Молодой Ян 少陽 shǎo yáng, Молодая Инь 少陰, Старый Ян 老陽
+
+
+- -    ---    - -    ---    - -    ---    - -
+- -    - -    ---    ---    - -    - -    ---
+- -    - -    - -    - -    ---    ---    ---
+乾, 兌 (兑), 離, 震, 巽, 坎, 艮, 坤. - Цянь, Дуй, Ли, Чжэнь, Сюнь, Кань, Гэнь, Кунь
+gān, duì (duì), lí, zhèn, xùn, kǎn, gèn, kūn
+
+
+乾	сухой
+兌 (兑)  Обмен (exchange)
+離	оставить
+震	потрясенный
+巽	слушаться
+坎	шурф
+艮	несговорчивый
+坤	женское начало
+#+end_src
+1.
+   -
+2.k
+   - Старая Инь 老陰, Молодой Ян 少陽, Молодая Инь 少陰, Старый Ян 老陽
+** 風水 / 风水, fēngshuǐ
+дословно — «ветер и вода»
 ** people
 习近平 - Си Цзиньпин
 ** TODO Лаошань Láo Shān 崂山, 牢山, 勞山
-** Made in China
-中国制造 - Made in China
-- 中国 China
-- 制造 Manufacture
 ** history of China
 中国朝代 -
 - 朝代 - Cháodài - dynasty
@@ -1246,6 +1381,51 @@ wèishēng kuàizi)
 - Нельзя указывать палочками, не следует размахивать ими в воздухе.
 - Прежде чем попросить ещё риса, палочки нужно положить на стол.
 
+** повидение
+1) 1 Большинство китайцев приветствуют друг друга кивком головы или легким
+  рукопожатием. Объятия и поцелуи при встрече или прощании абсолютно неприемлемы в
+  Китае, избегайте их.
+2) 2 Если вы хотите преподнести китайцу презент, не удивляйтесь его отказу принять
+  подарок. Для китайцев считается совершенно нормальным отказываться 2-3 раза от
+  подарков, прежде чем принять их. А если китаец принял подарок без церемонии, он
+  рискует выглядеть жадным. Уговаривайте своих знакомых, говорите, что ваши подарки
+  незначительны и что вы расстроитесь, если их не примут. Используйте для упаковки
+  традиционные цвета удачи - золотой и красный. Избегайте черного и белого цветов, они
+  символизируют траур.
+3) 3 Не дарите китайским друзьям часы. На одном из местных диалектов часы звучат как
+  «идти на похороны», поэтому этот подарок может выглядеть как пожелание смерти
+  человеку. Избегайте дарить острые предметы - это рассматривается как угроза вашей
+  дружбе. Цветы дарите в четном количестве. Нельзя дарить также носовые платки –
+  символы похорон и смерти.
+4) 4 В Китае существует культ чая. Китайский чай подается в течение всей
+  трапезы. Вежливый хозяин наполняет пиалы гостей, не дожидаясь, когда они
+  опустеют. Если вы уже не хотите чая, просто не допивайте до конца. В Китае такой
+  обычай - посуда с чаем во время приема пищи никогда не должна быть
+  пустой. Аналогично оставляйте на тарелке немного еды; пустая посуда означает, что вы
+  голодны, а хозяева не смогли накормить вас досыта.
+5) 5 Во время еды не втыкайте палочки в тарелку с едой вертикально. Для китайцев это
+  плохой знак, им это напоминает палочки фимиама, воткнутые в пиалу с песком на
+  похоронной церемонии. Кроме того, не размахивайте палочками, не пользуйтесь ими как
+  указкой.
+6) 6 Отрыжка за столом в Китае - знак удовлетворения пищей, поэтому не
+  стесняйтесь. Если вас пригласили на банкет, где множество блюд, старайтесь
+  сдерживать себя. Считается вежливым сначала отказаться попробовать то или иное
+  блюдо. А если вы сразу соглашаетесь, то можете показаться жадным.
+7) 7 Не ждите адекватного ответа на ваши вопросы от китайца, особенно
+  незнакомого. Даже если он не знает, о чем вы спрашиваете, он все равно ответит, но
+  может нафантазировать, выдавая это за достоверный ответ. Обращайтесь с вопросами к
+  блюстителям порядка.
+8) 8 В Китае строго относятся к исполнению законов. Не переходите дорогу в
+  неположенном месте и не разбрасывайте мусор, за это может грозить крупный
+  штраф. Всегда ведите себя вежливо. В случае каких-то проблем говорите «будун» - это
+  значит «не понимаю». Обычно помогает.
+
+
+Старое (традиционное) китайское приветствие («Чи гуо ла ма?» или «Ни чифань ла
+ ма?») дословно переводится как «Вы уже поели?». Вежливым ответом на это, независимо
+ от того, ели вы на самом деле или нет, является: «Да, спасибо. А вы?» или «Да, поел,
+ спасибо.» Приветствие было особенно популярным в древние времена, когда если ты хоть
+ что-то поел - это уже было хорошо.
 
 * links
 - Chinese Software Developer Network http://csdn.net/
@@ -1265,6 +1445,45 @@ masha231@163.com
 - 高清 - HD
 - 标清 - SD
 - Zìmù 字幕 - subtitles
+
+** ch-wiki
+Baidu Baike and Hudong are both commercial products are fully copyrighted by their
+  ownership
+- Худун Hudong 快懂百科 https://www.baike.com/
+- Байду https://baike.baidu.com/
+
+维基百科 - Wikipedia
+- 维基 Wéijī - wiki, maintenance of the fundamental
+  - 維 - maintain
+  - 基 - base, foundation
+- 百科 bǎikē -  encyclopedia, all subjects, miscellaneous disciplines
+  - 百 - numerous
+  - 科 - subject
+
+进入词条 - Jìnrù cí tiáo - Enter
+  - 进入 - enter enter - verbs
+  - 词条 cí tiáo - entry
+    - 词 - word, term
+    - 条 - article, strip(полоса)
+
+全站搜索 - Site Search
+- 全站 Quán zhàn - full site
+- 搜索 Sōusuǒ - search
+
+帮助 Bāngzhù - Help
+
+创建词条 Chuàngjiàn cí tiáo - Create (create entry)
+
+登录/注册 Dēnglù/zhùcè - log in / register
+
+*** baike.com 快懂百科
+快懂百科 - Kuài dǒng bǎikē - Hudong
+- 快懂 - Understand
+  - 快 Kuài - fast
+  - 懂 dǒng - know
+
+互动维客 - Hùdòng wéi kè - интерактивная энциклопедия - Hoodong
+
 
 * Chinese Buddy
 - 你会不会 说中文? Nǐ huì bù huì Shuō zhōngwén? Ты умеешь говорить по китайски?
@@ -1297,6 +1516,33 @@ masha231@163.com
 武术 - Wǔshù - (военный, боевой) (техника)
 氣功, упр. 气功 - qìgōng - цигун
 
+* 天气 Tiānqì - погода
+- 下雨 Xià yǔ - идет дождь
+- 下雪 Xià xuě - идет снег
+- 有云 Yǒu yún - облачно
+- 刮风 Guā fēng - дует ветер
+- 闪电 Shǎndiàn - молния
+- 雷 Léi - гром
+- 雷雨 Léiyǔ - гроза
+- 凉 Liáng - прохладно
+- 暖和 Nuǎnhuo - теплый
+- 热 Rè - жаркий
+- 冷 Lěng - холодный
+- 晴 Qíng - ясный
+- 阴 Yīn - пасмурный
+- 干 Gàn - сухой
+* 动作 Dòngzuò  -  движение
+- 冲 Chōng – рваться вперед, устремляться
+- 蹲 Dūn  - сидеть на корточках
+- 转 Zhuǎn – крутиться, вращаться
+- 爬 Pá – ползти, взбираться
+- 漂  Piào – плыть, держаться на поверхности воды
+- 滑 Huá - скользить
+- 走 Zǒu - идти
+- 游 Yóu - плыть
+- 跑 Pǎo - бежать
+- 跳 Tiào - прыгать
+- 飞 Fēi - летать
 * games
 - 电子游戏 - video game
   - 电子 - electoronic
@@ -1325,3 +1571,25 @@ masha231@163.com
 - 白酒 – bái jiǔ - white wine(40-60%)
 - 干 – gān bēi - “Bottoms up!”, “cheers” literally means “dry glass"
 - xiao bi zaizi - little bastard
+* examples:
+我们学习汉语 - Мы учим китайский
+
+中国制造 - Made in China
+- 中国 China
+- 制造 Manufacture
+
+
+** reject application for employment
+#+BEGIN_SRC text
+您好，Vitalij：
+
+感谢您对埃维诺的关注。遗憾的是，在这个阶段，我们不会继续处理您的 Azure Engineer 职位申请。对此我们深表遗憾，但新的职位经常开放，我们希望您在职业道路上经常关注埃维诺。
+
+请确保您时刻关注我们的职业网站。您可以单击 {here} 对其进行更新，或添加任何其他详细信息。
+
+希望不久能再次见到您。
+
+顺祝商祺！
+埃维诺人才招纳团队
+
+#+END_SRC

@@ -1,5 +1,5 @@
 -*- mode: Org; fill-column: 110; coding: utf-8; -*-
-#+TITLE: Python my notes
+#+TITLE Python my notes
 #+STARTUP: overview
 
 - build in functions https://docs.python.org/3/library/functions.html
@@ -1606,6 +1606,49 @@ comment.
 - nonlocal indentifier** - когда есть функция внутри функции. переменные в первой функции - не глобальные и не
   локальные
 
+** open external
+if shell=True you cannot use array of arguments
+
+#+BEGIN_SRC python
+# -- 1
+import os
+os.system("echo Hello World")
+# can no pass input
+# -- 2
+import os
+pipe=os.popen("dir *.md")
+print (pipe.read())
+
+# -- 2
+import subprocess
+subprocess.Popen("echo Hello World", shell=True, stdout=subprocess.PIPE).stdout.read()
+
+# -- 3 old
+import subprocess
+subprocess.call("echo Hello World", shell=True)
+
+# -- 4
+import subprocess
+print(subprocess.run("echo Hello World", shell=True))
+
+# -- 5
+import subprocess
+(ls_status, ls_output) = subprocess.getstatusoutput(ls_command)
+
+# -- 6
+# returns output as byte string
+returned_output = subprocess.check_output(cmd)
+# using decode() function to convert byte string to string
+print('Current date is:', returned_output.decode("utf-8"))
+
+# -- 7 with timeout
+import subprocess
+DELAY = 10
+po = subprocess.Popen(["sleep 1; echo 'asd\nasd'"], shell=True, stdout=subprocess.PIPE)
+po.wait(DELAY)
+print(po.stdout.read().decode('utf-8'))
+print("ok")
+#+END_SRC
 
 * The Python Standard Library
 - ref https://docs.python.org/3/library/index.html#library-index
@@ -2142,6 +2185,30 @@ from multiprocessing import Process, Manager
         return list(return_dict)
 #+END_SRC
 
+* Monkey patch (modification at runtile)
+- instance.attribute = 23
+
+** replace method of class instance
+#+BEGIN_SRC python
+# -- of not running class
+A.f = my_f
+
+# -- of running class
+import types
+
+def func_my(self):
+    pass
+
+
+border_collie = Dog()
+border_collie.herd  = types.MethodType(func_my, border_collie)
+
+#+END_SRC
+
+
+** inspect.getmembers() vs __dict__.items() vs dir()
+- dir() and inspect.getmembers() are basically the same,
+- __dict__ is the complete namespace including metaclass attributes.
 * Performance Tips
 https://wiki.python.org/moin/PythonSpeed/PerformanceTips
 ** string
@@ -2271,7 +2338,7 @@ if __name__ == '__main__':
     print(timeit.timeit("test()", setup="from __main__ import test"))
 #+END_SRC
 
-** small code measure 2
+** small code measure 2 <<time-of-execution>>
 #+begin_src python
 import time
 start_time = time.time()
@@ -2392,7 +2459,7 @@ https://pip.pypa.io/en/latest/topics/caching/
 
 - python -m pip download --no-binary=:all: SomePackage
 - python -m pip hash --algorithm sha512 ./pip_downloads/SomePackage-2.2.tar.gz
-- pip install --no-cache-dir --no-binary=:all: --require-hashes --user -r requirements.txt
+- pip install --force-reinstall --no-cache-dir --no-binary=:all: --require-hashes --user -r requirements.txt
 
 FooProject == 1.2 --hash=sha256:2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824 \
   --hash=sha256:486ea46224d1bb4fb680f34f7c9ad96a8f24ec88be73ea8e5a6c65260e9cb8a7
@@ -3474,17 +3541,160 @@ https://pymorphy2.readthedocs.io/en/latest/user/grammemes.html
 ** count max words in line of file
 : MAX=0; file="/path";
 : while read -r line; do if [[ $(echo $line | wc -w ) -gt $MAX ]]; then MAX=$(echo $line | wc -w ); fi; done < "$file"
+* fuzzysearch
+pip install --force-reinstall --no-cache-dir --no-binary=:all: --require-hashes --user -r file.txt
+#+BEGIN_SRC text
+fuzzysearch==0.7.3 --hash=sha256:d5a1b114ceee50a5e181b2fe1ac1b4371ac8db92142770a48fed49ecbc37ca4c
+attrs==22.2.0 --hash=sha256:c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99
+#+END_SRC
+
 * Audio - librosa
+librosa uses *soundfile* and *audioread* for reading audio.
+** generic audio characteristics
+- Channels: number of channels; 1 for mono, 2 for stereo audio
+- Sample width: number of bytes per sample; 1 means 8-bit, 2 means 16-bit
+- Frame rate/Sample rate: frequency of samples used (in Hertz)
+- Frame width or Bit depth: Number of bytes for each “frame”. One frame contains a sample for each channel.
+- Length: audio file length (in milliseconds)
+- Frame count: the number of frames from the sample
+- Intensity: loudness in dBFS (dB relative to the maximum possible loudness)
+** load
 default: librosa.core.load(path, sr=22050, mono=True, offset=0.0, duration=None, dtype=<class 'numpy.float32'>, res_type='kaiser_best')
-- sr is the sampling rate
+- sr is the sampling rate (To preserve the native sampling rate of the file, use sr=None.)
 - mono is the option (true/ false) to convert it into mono file.
 - offset is a floating point number which is the starting time to read the file
 - duration is a floating point number which signifies how much of the file to load.
 - dtype is the numeric representation of data can be float32, float16, int8 and others.
 - res_type is the type of resampling (one option is kaiser_best)
+
+#+begin_src python
+import librosa
+y: np.array
+y, sample_rate = librosa.load(filename, sr=None) # sampling rate as `sr` , y - time series
+print("sample rate of original file:", sample_rate)
+# -- Duration
+print(librosa.get_duration(y))
+print("duration in seconds", len(y)/sample_rate)
+
+
+from IPython.display import Audio
+Audio(data=data1,rate=sample_rate) # play audio
+
+# --- for WAV files:
+import soundfile as sf
+ob = sf.SoundFile('example.wav')
+print('Sample rate: {}'.format(ob.samplerate))
+print('Channels: {}'.format(ob.channels))
+print('Subtype: {}'.format(ob.subtype))
+
+# --- mp3
+import audioread
+with audioread.audio_open(filename) as f:
+    print(f.channels, f.samplerate, f.duration)
+
+#+end_src
+
+** the Fourier transform - spectrum
+#+BEGIN_SRC python
+import numpy as np
+import librosa
+import matplotlib.pyplot as plt
+
+# filepath = '/home/u2/h4/PycharmProjects/whisper/1670162239-2022-12-04-16_57.mp3'
+filepath = '/mnt/hit4/hit4user/gitlabprojects/captcha_fssp/app/929014e341a0457f5a90a909b0a51c40.wav'
+
+y, sr = librosa.load(filepath)
+librosa.fft_frequencies()
+n_fft = 2048
+ft = np.abs(librosa.stft(y[:n_fft], hop_length=n_fft + 1))
+
+plt.plot(ft)
+plt.title('Spectrum')
+plt.xlabel('Frequency Bin')
+plt.ylabel('Amplitude')
+plt.show()
+
+#+END_SRC
+** spectrogram
+#+BEGIN_SRC python
+import numpy as np
+import librosa
+import matplotlib.pyplot as plt
+
+# filepath = '/home/u2/h4/PycharmProjects/whisper/1670162239-2022-12-04-16_57.mp3'
+filepath = '/mnt/hit4/hit4user/gitlabprojects/captcha_fssp/app/929014e341a0457f5a90a909b0a51c40.wav'
+
+y, sr = librosa.load(filepath)
+
+spec = np.abs(librosa.stft(y, hop_length=512))
+spec = librosa.amplitude_to_db(spec, ref=np.max)
+# fig, ax = plt.figure()
+plt.imshow(spec, origin="lower", cmap=plt.get_cmap("magma"))
+
+plt.colorbar(format='%+2.0f dB')
+plt.title('Spectrogram')
+plt.show()
+#+END_SRC
+** log-Mel spectrogram
+#+BEGIN_SRC python
+import numpy as np
+import librosa
+import matplotlib.pyplot as plt
+
+# filepath = '/home/u2/h4/PycharmProjects/whisper/1670162239-2022-12-04-16_57.mp3'
+filepath = '/mnt/hit4/hit4user/gitlabprojects/captcha_fssp/app/929014e341a0457f5a90a909b0a51c40.wav'
+
+y, sr = librosa.load(filepath)
+
+hop_length = 512
+n_mels = 128 #  linear transformation matrix to project FFT bins
+n_fft = 2048 #  samples, corresponds to a physical duration of 93 milliseconds at a sample rate of 22050 Hz
+# one line mel spectrogram
+S = librosa.feature.melspectrogram(y, sr=sr, n_fft=n_fft, hop_length=hop_length, n_mels=n_mels)
+# 3 lines mel spectrogram
+fft_windows = librosa.stft(y, n_fft=n_fft, hop_length=hop_length)
+magnitude = np.abs(fft_windows)**2
+mel = librosa.filters.mel(sr=sr, n_fft=n_fft, n_mels=n_mels)
+S2 = mel.dot(magnitude)
+assert (S2 == S).all()
+
+S = np.log10(S) # Log
+
+mel_spect = librosa.power_to_db(S, ref=np.max)
+plt.imshow(mel_spect, origin="lower", cmap=plt.get_cmap("magma"))
+
+plt.colorbar(format='%+2.0f dB')
+plt.title('Mel Spectrogram')
+plt.show()
+#+END_SRC
+
+** distinguish emotions
+: male = librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13)
+: male = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13), axis=0)
+** links
+- https://community-app.topcoder.com/thrive/articles/audio-data-analysis-using-python
+- https://iq.opengenus.org/introduction-to-librosa/
+- https://librosa.org/doc/latest/index.html
+- split on silence https://medium.com/@vvk.victory/audio-processing-librosa-split-on-silence-8e1edab07bbb
+- distinguish emotions https://www.kaggle.com/code/krishnachary/speech-emotion-recognition-with-librosa
+* Audio
+** terms
+- down-mixing -  The process of combining multiple audio output channels into a single stereo or mono output
+- resampling - change sample rate, - samplese per seconds
 ** theory
 - waveform - wave or oscilates curve with amplitude
 - frequency - occurrences of vibrations per unit of time
+- sampling frequency or sampling rate - average number of samples obtained in one second. or hertz e.g. 48 kHz
+  is 48,000 samples per second. 44.1kHz, or 44,100 samples per second
+- Bit depth - typically recorded at 8-, 16-, and 24-bit depth,
+  - mp3 does not have bit depth - compressed format
+  - wav - uncompressed
+- quality 44.1kHz / 16-bit  - CD, 192kHz/24-bit - hires audio
+- bit rate - bits per second required for encoding without compression
+
+Calc bit rate and size:
+- 44.1kHz/16-bit: 44,100 x 16 x 2 = 1,411,200 bits per second (1.4Mbps)
+- 44.1kHz/16-bit: 1.4Mbps * 300s = 420Mb (52.5MB)
 
 All wave forms
 - periodic
@@ -3502,7 +3712,6 @@ All wave forms
 -
 
 
-
 features
 - loudness - brain intensity
 - pitch - brain frequency
@@ -3511,35 +3720,998 @@ features
 - amplitude phase
 - angular velocity
 
+** The Fourier Transform (spectrum)
+mathematical formula - converts the signal from the time domain into the frequency domain.
+- result - *spectrum
+- Fourier’s theorem - signal can be decomposed into a set of sine and cosine waves
+- fast Fourier transform (FFT) is an algorithm that can efficiently compute the Fourier transform
+- Short-time Fourier transform - signal in the time-frequency domain by computing discrete Fourier transforms
+  (DFT) over short overlapping windows. for non periodic signals - such as music and speech
 
 
-** generic audio characteristics
-- Channels: number of channels; 1 for mono, 2 for stereo audio
-- Sample width: number of bytes per sample; 1 means 8-bit, 2 means 16-bit
-- Frame rate/Sample rate: frequency of samples used (in Hertz)
-- Frame width: Number of bytes for each “frame”. One frame contains a sample for each channel.
-- Length: audio file length (in milliseconds)
-- Frame count: the number of frames from the sample
-- Intensity: loudness in dBFS (dB relative to the maximum possible loudness)
-** python
+** log-Mel spectrogram
+spectrogram - the horizontal axis represents time, the vertical axis represents frequency, and the color intensity
+represents the amplitude of a frequency at a certain point.
+- y - Decibels
+- used to train convolutional neural networks for the classification
 
-#+begin_src python
-import librosa
-y: np.array
-y, sample_rate = librosa.load(filename) # sampling rate as `sr` , y - time series
-#
-time = np.arange(0,len(y))/sample_rate # seconds
-#+end_src
+Mel-spectrogram converts the frequencies to the mel-scale is “a perceptual scale of pitches judged by
+listeners to be equal in distance from one another”
+- y - just Hz 0,64,128,256,512,1024
+- It uses the Mel Scale instead of Frequency on the y-axis.
+- It uses the Decibel Scale instead of Amplitude to indicate colors.
+- x - time sequence
+- value - mel shaped dB
 
-** distinguish emotions
-: male = librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13)
-: male = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=13), axis=0)
+Mel scale (after the word melody) - frequency(Hz) to mels(mel) conversion by formula
+- the pair at 100Hz and 200Hz will sound further apart than the pair at 1000Hz and 1100Hz.
+- you will hardly be able to distinguish between the pair at 10000Hz and 10100Hz.
+
+Decibel Scale - *2
+-  10 dB is 10 times louder than 0 dB
+-  20 dB is 100 times louder than 10 dB
+
+steps:
+1. Separate to windows: Sample the input with windows of size n_fft=2048, making hops of size hop_length=512
+   each time to sample the next window.
+2. Compute FFT (Fast Fourier Transform) for each window to transform from time domain to frequency domain.
+3. Generate a Mel scale: Take the entire frequency spectrum, and separate it into n_mels=128 evenly spaced
+   frequencies.
+4. Generate Spectrogram: For each window, decompose the magnitude of the signal into its components,
+   corresponding to the frequencies in the mel scale.
+*** Log - because
+- np.log10(S) after mel spectrogram
+- or because Mel Scale has log in formule
+#+BEGIN_SRC c
+ func frequencyToMel(_ frequency: Float) -> Float {
+        return 2595 * log10(1 + (frequency / 700))
+    }
+
+
+    func melToFrequency(_ mel: Float) -> Float {
+        return 700 * (pow(10, mel / 2595) - 1)
+    }
+#+END_SRC
+** pyo
+- http://ajaxsoundstudio.com/software/pyo/
+libsndfile-dev
+** torchaudio
+
+** ffmpeg-python
+- doc https://kkroening.github.io/ffmpeg-python/
+* Whisper
+- a Transformer based encoder-decoder model, also referred to as a sequence-to-sequence model
+- Input audio is split into 30-second chunks, converted into a log-Mel spectrogram, and then passed into an encoder
+- automatic speech recognition (ASR)
+- Whisper is pre-trained on a vast quantity of labelled audio-transcription data, 680,000 hours to be precise
+- 117,000 hours of this pre-training data is multilingual ASR data
+- supervised task of speech recognition
+- uses
+  - GPT2TokenizerFast https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/tokenization_gpt2_fast.py
+    - byte-level    Byte-Pair-Encoding
+    - "gpt2" and "multilingual"
+
+logits - all 51865 tokes probability
+
+Steps:
+1. model.transcribe
+2. model.decode
+3. DecodingTask.run()
+4. self._main_loop
+
+
+** Byte-Pair Encoding (BPE)
+ Tokenization algorithms can be
+- word
+- subword - used by most state-of-the-art NLP models - frequently used words should not be split into smaller subwords
+- character-based
+
+Subword-based tokenization:
+- splits the rare words into smaller meaningful subwords
+- WordPiece, Byte-Pair Encoding (BPE)(used in GPT-2), Unigram, and SentencePiece
+- https://huggingface.co/docs/transformers/tokenizer_summary
+- https://arxiv.org/abs/1508.07909
+*** usage
+#+BEGIN_SRC python
+from transformers import GPT2TokenizerFast
+path = '/home/u2/.local/lib/python3.8/site-packages/whisper/assets/multilingual'
+
+tokenizer = GPT2TokenizerFast.from_pretrained(path)
+
+tokens = [[50364, 3450, 5505, 13, 50464, 51014, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51114, 51414, 21249, 7520, 9916, 13, 51464]]
+print([tokenizer.decode(t).strip() for t in tokens])
+print(tokenizer.encode('А вот. Да, но он уже у меня не работает. Нет уже нет.'))
+#+END_SRC
+** model.transcribe(filepath or numpy)
+- mel = log_mel_spectrogram(audio) # split audio by chunks (84)
+  - whisper.audio.load_audio(filepath)
+- if no language set - it will use 30 seconds to detect language first
+- loop seek<length
+  - get 3000 frames - 30 seconds
+  - decode segment - DecodingResult=DecodingTask(model, options).run(mel) decoding.py (701) see [[whisper_decode]]
+  - if no speech then skip
+  - split segment to consequtives
+- tokenize and segment
+- summarize
+
+:
+- segments - think a chunk of speech based you obtain from the timestamps. Something like 10:00s -> 13.52s would be a segment
+
+*** return
+- text - full text
+- segments
+  - seek
+  - start&end
+  - text - segment text
+  - 'tokens': []
+  - 'temperature': 0.0,
+  - 'avg_logprob': -0.7076873779296875, # if < -1 - too low probability, retranscribe with another temperature
+  - 'compression_ratio': 1.1604938271604939,
+  - 'no_speech_prob': 0.5063244700431824 - если больше 0.6, то не возвращаем сегмент
+- 'language': 'ru'
+
+
+{'text': 'long text', 'segments': [{'id': 0, 'seek': 0, 'start': 0.0, 'end': 2.64, 'text': ' А вот, не добрый
+день.', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919,
+1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345,
+4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386,
+7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635,
+13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13,
+50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751,
+29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684,
+1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13,
+51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396,
+20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824},
+ {'id': 1, 'seek': 0, 'start': 2.64, 'end': 4.64, 'text': ' Меня зовут Дмитрий, это
+Русснорбанг.', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376,
+3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330,
+11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724,
+15028, 1635, 13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006,
+25190, 2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450,
+5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13,
+51304, 51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249,
+7520, 9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325,
+1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465,
+5332, 4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824},
+ {'id': 2, 'seek': 0, 'start': 4.64, 'end': 8.040000000000001, 'text': ' Дайте, он
+разжонили по поводу Мехеэлы Романовича Гапуэк,', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509,
+13, 50496, 50496, 47311, 46376, 3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416,
+1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387,
+7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11,
+2143, 10655, 30162, 1006, 17724, 15028, 1635, 13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158,
+50233, 19411, 23201, 4989, 1006, 25190, 2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725,
+30162, 13, 51116, 51116, 3450, 5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801,
+7247, 9223, 24665, 30162, 13, 51304, 51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777,
+1725, 485, 51388, 51388, 21249, 7520, 9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493,
+8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656,
+51656, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11,
+51766, 51766], 'temperature': 0.0, 'avg_logprob': -0.7076873779296875, 'compression_ratio':
+1.1604938271604939, 'no_speech_prob': 0.5063244700431824},
+ {'id': 3, 'seek': 0, 'start': 8.040000000000001,
+'end': 9.88, 'text': ' кто сказал, что вас работает и погустит.', 'tokens': [50364, 3450, 5505, 11, 1725,
+35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234,
+481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749,
+3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766,
+12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635, 13, 50858, 50858, 2348, 38769, 33495, 1055,
+11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520,
+1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595,
+10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11,
+6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11,
+3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573,
+51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753,
+5740, 11, 51766, 51766], 'temperature': 0.0, 'avg_logprob': -0.7076873779296875, 'compression_ratio':
+1.1604938271604939, 'no_speech_prob': 0.5063244700431824}, {'id': 4, 'seek': 0, 'start': 9.88, 'end':
+12.280000000000001, 'text': ' В конце концов, это такого сотрудника числа и свойств.', 'tokens': [50364, 3450,
+5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919, 1635, 50161, 11, 2691, 6325,
+7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203, 1820, 1784, 5435, 2801,
+10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247, 4219, 585, 7570, 755, 11,
+50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635, 13, 50858, 50858, 2348, 38769,
+33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13, 50978, 50978, 9149, 11, 6035,
+5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751, 29117, 21235, 13640, 11, 2143,
+5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684, 1725, 13790, 13549, 10986, 11,
+6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13, 51448, 51448, 4857, 37975, 11,
+25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 1595, 6519, 3348, 35968,
+23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740, 3200, 8169,
+6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0, 'avg_logprob': -0.7076873779296875,
+'compression_ratio': 1.1604938271604939, 'no_speech_prob': 0.5063244700431824}, {'id': 5, 'seek': 0, 'start':
+12.280000000000001, 'end': 15.040000000000001, 'text': ' Да, но он уже у меня не работает.', 'tokens': [50364,
+3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919, 1635, 50161, 11, 2691,
+6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203, 1820, 1784, 5435,
+2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247, 4219, 585, 7570, 755,
+11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635, 13, 50858, 50858, 2348,
+38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13, 50978, 50978, 9149, 11,
+6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751, 29117, 21235, 13640, 11,
+2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684, 1725, 13790, 13549, 10986,
+11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13, 51448, 51448, 4857, 37975, 11,
+25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 1595, 6519, 3348, 35968,
+23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740, 3200, 8169,
+6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0, 'avg_logprob': -0.7076873779296875,
+'compression_ratio': 1.1604938271604939, 'no_speech_prob': 0.5063244700431824}, {'id': 6, 'seek': 0, 'start':
+15.040000000000001, 'end': 18.8, 'text': ' А вот до этого информация была, что он у вас по ГПХ работает.',
+'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919, 1635,
+50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203,
+1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247,
+4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635, 13,
+50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13,
+50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751,
+29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684,
+1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13,
+51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396,
+20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824}, {'id': 7, 'seek': 0, 'start': 18.8, 'end': 20.48, 'text': ' Это не актуально, но да, но
+мы не...', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401,
+919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11,
+5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903,
+386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028,
+1635, 13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190,
+2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505,
+5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304,
+51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520,
+9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253,
+11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332,
+4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824}, {'id': 8, 'seek': 0, 'start': 20.48, 'end': 21.68, 'text': ' Нет уже нет.', 'tokens':
+[50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376, 3401, 919, 1635, 50161, 11,
+2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330, 11, 5345, 4203, 1820, 1784,
+5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 7247, 4219, 585,
+7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724, 15028, 1635, 13, 50858, 50858,
+2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006, 25190, 2981, 13, 50978, 50978,
+9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450, 5505, 5865, 10751, 29117, 21235,
+13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51304, 51304, 6684, 1725, 13790,
+13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249, 7520, 9916, 13, 51448, 51448,
+4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 1595, 6519,
+3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740,
+3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0, 'avg_logprob':
+-0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob': 0.5063244700431824}, {'id': 9,
+'seek': 0, 'start': 21.68, 'end': 25.84, 'text': ' Я понял, оставите, как Мехеэлы Романович у нас обманул
+покупателей', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311, 46376,
+3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401, 10330,
+11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006, 17724,
+15028, 1635, 13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989, 1006,
+25190, 2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116, 3450,
+5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13,
+51304, 51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249,
+7520, 9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325,
+1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465,
+5332, 4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824}, {'id': 10, 'seek': 0, 'start': 25.84, 'end': 28.04, 'text': ' без нашего завершения за
+угодно в ТКНА-Фест,', 'tokens': [50364, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50496, 50496, 47311,
+46376, 3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50596, 50596, 3401,
+10330, 11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 3493, 8008, 387, 7570, 693, 698, 6325, 1253,
+11114, 3903, 386, 7247, 4219, 585, 7570, 755, 11, 50766, 50766, 12278, 24980, 11, 2143, 10655, 30162, 1006,
+17724, 15028, 1635, 13, 50858, 50858, 2348, 38769, 33495, 1055, 11, 2691, 31158, 50233, 19411, 23201, 4989,
+1006, 25190, 2981, 13, 50978, 50978, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51116, 51116,
+3450, 5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13,
+51304, 51304, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51388, 51388, 21249,
+7520, 9916, 13, 51448, 51448, 4857, 37975, 11, 25969, 5878, 11, 3014, 3493, 8008, 387, 7570, 693, 698, 6325,
+1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51656, 51656, 10969, 45309, 13388, 19465,
+5332, 4396, 20392, 44356, 740, 3200, 8169, 6371, 5594, 12, 35753, 5740, 11, 51766, 51766], 'temperature': 0.0,
+'avg_logprob': -0.7076873779296875, 'compression_ratio': 1.1604938271604939, 'no_speech_prob':
+0.5063244700431824}, {'id': 11, 'seek': 2804, 'start': 28.04, 'end': 30.08, 'text': ' а не закон на чердине
+произвел.', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466,
+5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349,
+14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762,
+10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725,
+30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024,
+51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161,
+44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288,
+36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162,
+13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101,
+12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob': -0.5175992098721591,
+'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id': 12, 'seek': 2804,
+'start': 30.08, 'end': 34.68, 'text': ' Буквально, Дмитрий назад присвоил средство более миллиона из Крыуса.',
+'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466, 5697, 10282,
+859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349, 14411, 3943,
+3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762, 10278, 1414,
+22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725, 30147, 435,
+10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024, 51024, 2143,
+4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161, 44177, 1903,
+4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288, 36067, 19005,
+13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162, 13, 51508,
+51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101, 12846,
+32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob': -0.5175992098721591,
+'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id': 13, 'seek': 2804,
+'start': 34.68, 'end': 38.48, 'text': ' Он, конечно, на ФИТ-определённый вопрос, если все-таки он вас
+работает,', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466,
+5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349,
+14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762,
+10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725,
+30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024,
+51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161,
+44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288,
+36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162,
+13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101,
+12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob': -0.5175992098721591,
+'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id': 14, 'seek': 2804,
+'start': 38.48, 'end': 41.24, 'text': ' нам не принципиально мы же не налоговы, но тут вопрос в том,',
+'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466, 5697, 10282,
+859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349, 14411, 3943,
+3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762, 10278, 1414,
+22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725, 30147, 435,
+10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024, 51024, 2143,
+4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161, 44177, 1903,
+4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288, 36067, 19005,
+13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162, 13, 51508,
+51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101, 12846,
+32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob': -0.5175992098721591,
+'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id': 15, 'seek': 2804,
+'start': 41.24, 'end': 45.519999999999996, 'text': ' что мы к Мехеэлы Романовича и к новому собственнику будем
+выходить с исками.', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13,
+50466, 50466, 5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631,
+15103, 26349, 14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276,
+8556, 12, 3762, 10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886,
+50886, 11401, 1725, 30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740,
+13294, 11, 51024, 51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006,
+981, 10022, 4161, 44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485,
+51288, 51288, 36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885,
+1725, 30162, 13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725,
+22951, 8101, 12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob':
+-0.5175992098721591, 'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id':
+16, 'seek': 2804, 'start': 45.519999999999996, 'end': 46.519999999999996, 'text': ' Потому что...', 'tokens':
+[50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466, 5697, 10282, 859,
+10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349, 14411, 3943, 3422,
+10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762, 10278, 1414, 22212,
+4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725, 30147, 435, 10986,
+4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024, 51024, 2143, 4777,
+981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161, 44177, 1903, 4401,
+23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288, 36067, 19005, 13,
+51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162, 13, 51508, 51508,
+4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101, 12846, 32360,
+29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob': -0.5175992098721591, 'compression_ratio':
+1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id': 17, 'seek': 2804, 'start':
+46.519999999999996, 'end': 47.519999999999996, 'text': ' Понятно.', 'tokens': [50364, 2559, 1725, 25206, 1470,
+12360, 856, 20998, 16769, 859, 1414, 13, 50466, 50466, 5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161,
+28724, 26686, 12707, 2338, 20446, 9631, 15103, 26349, 14411, 3943, 3422, 10461, 45735, 13, 50696, 50696,
+12409, 11, 15271, 11, 1470, 13196, 10276, 8556, 12, 3762, 10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12,
+27430, 5345, 10655, 30162, 11, 50886, 50886, 11401, 1725, 30147, 435, 10986, 4777, 6151, 1725, 32750, 2353,
+1055, 698, 11, 6035, 12848, 17611, 740, 13294, 11, 51024, 51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693,
+698, 6325, 1253, 11114, 3903, 386, 1006, 981, 10022, 4161, 44177, 1903, 4401, 23213, 27142, 3258, 776, 20284,
+5150, 13, 51238, 51238, 23671, 2143, 485, 51288, 51288, 36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485,
+51388, 51388, 21249, 11, 5345, 1595, 6885, 1725, 30162, 13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525,
+11, 31159, 11, 12846, 29329, 11530, 1725, 22951, 8101, 12846, 32360, 29329, 22898, 13, 51790, 51790],
+'temperature': 0.0, 'avg_logprob': -0.5175992098721591, 'compression_ratio': 1.1231155778894473,
+'no_speech_prob': 3.550718611222692e-05}, {'id': 18, 'seek': 2804, 'start': 47.519999999999996, 'end':
+48.519999999999996, 'text': ' Ну, а...', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769,
+859, 1414, 13, 50466, 50466, 5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338,
+20446, 9631, 15103, 26349, 14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470,
+13196, 10276, 8556, 12, 3762, 10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162,
+11, 50886, 50886, 11401, 1725, 30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848,
+17611, 740, 13294, 11, 51024, 51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 386, 1006, 981, 10022, 4161, 44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238,
+23671, 2143, 485, 51288, 51288, 36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11,
+5345, 1595, 6885, 1725, 30162, 13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846,
+29329, 11530, 1725, 22951, 8101, 12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0,
+'avg_logprob': -0.5175992098721591, 'compression_ratio': 1.1231155778894473, 'no_speech_prob':
+3.550718611222692e-05}, {'id': 19, 'seek': 2804, 'start': 48.519999999999996, 'end': 50.92, 'text': ' Нет, он
+у меня не работает.', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13,
+50466, 50466, 5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631,
+15103, 26349, 14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276,
+8556, 12, 3762, 10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886,
+50886, 11401, 1725, 30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740,
+13294, 11, 51024, 51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006,
+981, 10022, 4161, 44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485,
+51288, 51288, 36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885,
+1725, 30162, 13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725,
+22951, 8101, 12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob':
+-0.5175992098721591, 'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id':
+20, 'seek': 2804, 'start': 50.92, 'end': 56.56, 'text': ' Я не могу сезаться, наверное, больше месяца не могу
+или больше двух месяцев.', 'tokens': [50364, 2559, 1725, 25206, 1470, 12360, 856, 20998, 16769, 859, 1414, 13,
+50466, 50466, 5697, 10282, 859, 10986, 11, 3401, 919, 1635, 50161, 28724, 26686, 12707, 2338, 20446, 9631,
+15103, 26349, 14411, 3943, 3422, 10461, 45735, 13, 50696, 50696, 12409, 11, 15271, 11, 1470, 13196, 10276,
+8556, 12, 3762, 10278, 1414, 22212, 4441, 17611, 11, 8042, 4640, 12, 27430, 5345, 10655, 30162, 11, 50886,
+50886, 11401, 1725, 30147, 435, 10986, 4777, 6151, 1725, 32750, 2353, 1055, 698, 11, 6035, 12848, 17611, 740,
+13294, 11, 51024, 51024, 2143, 4777, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 1006,
+981, 10022, 4161, 44177, 1903, 4401, 23213, 27142, 3258, 776, 20284, 5150, 13, 51238, 51238, 23671, 2143, 485,
+51288, 51288, 36067, 19005, 13, 51338, 51338, 7571, 11, 2559, 485, 51388, 51388, 21249, 11, 5345, 1595, 6885,
+1725, 30162, 13, 51508, 51508, 4857, 1725, 22951, 776, 3634, 8525, 11, 31159, 11, 12846, 29329, 11530, 1725,
+22951, 8101, 12846, 32360, 29329, 22898, 13, 51790, 51790], 'temperature': 0.0, 'avg_logprob':
+-0.5175992098721591, 'compression_ratio': 1.1231155778894473, 'no_speech_prob': 3.550718611222692e-05}, {'id':
+21, 'seek': 5656, 'start': 56.56, 'end': 58.56, 'text': ' Нет, я точно не помню.', 'tokens': [50364, 21249,
+11, 2552, 25311, 1725, 8613, 18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725,
+16315, 11, 2559, 485, 50674, 50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11,
+11919, 2143, 3014, 10022, 4161, 44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326,
+31671, 919, 11950, 11, 2143, 6448, 2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114,
+3903, 386, 3348, 35968, 23412, 8469, 3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11,
+7887, 740, 10755, 26425, 15850, 19284, 13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955,
+1006, 23644, 6151, 50233, 18994, 9197, 6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165,
+981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860,
+11, 51700, 51700], 'temperature': 0.0, 'avg_logprob': -0.4223871612548828, 'compression_ratio':
+1.1335227272727273, 'no_speech_prob': 5.263075308903353e-06}, {'id': 22, 'seek': 5656, 'start': 58.56, 'end':
+62.760000000000005, 'text': ' Вот где он скрылся, не знаю, а...', 'tokens': [50364, 21249, 11, 2552, 25311,
+1725, 8613, 18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559,
+485, 50674, 50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014,
+10022, 4161, 44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950,
+11, 2143, 6448, 2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968,
+23412, 8469, 3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425,
+15850, 19284, 13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233,
+18994, 9197, 6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387,
+7570, 693, 698, 6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700],
+'temperature': 0.0, 'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273,
+'no_speech_prob': 5.263075308903353e-06}, {'id': 23, 'seek': 5656, 'start': 62.760000000000005, 'end':
+63.760000000000005, 'text': ' У меня...', 'tokens': [50364, 21249, 11, 2552, 25311, 1725, 8613, 18672, 13,
+50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559, 485, 50674, 50674, 6523,
+6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014, 10022, 4161, 44177, 1903,
+4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950, 11, 2143, 6448, 2801, 18272,
+3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968, 23412, 8469, 3888, 15599,
+13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425, 15850, 19284, 13, 51340,
+51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233, 18994, 9197, 6406, 13,
+51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387, 7570, 693, 698, 6325, 1253,
+11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700], 'temperature': 0.0,
+'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273, 'no_speech_prob':
+5.263075308903353e-06}, {'id': 24, 'seek': 5656, 'start': 63.760000000000005, 'end': 68.28, 'text': ' А то
+видите, как просто, потому что как новому собственнику и подойдёт,', 'tokens': [50364, 21249, 11, 2552, 25311,
+1725, 8613, 18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559,
+485, 50674, 50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014,
+10022, 4161, 44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950,
+11, 2143, 6448, 2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968,
+23412, 8469, 3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425,
+15850, 19284, 13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233,
+18994, 9197, 6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387,
+7570, 693, 698, 6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700],
+'temperature': 0.0, 'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273,
+'no_speech_prob': 5.263075308903353e-06}, {'id': 25, 'seek': 5656, 'start': 68.28, 'end': 73.08, 'text': '
+просто человек поймёт, что его по сути Мехеэлы Романовича обманул наденьги.', 'tokens': [50364, 21249, 11,
+2552, 25311, 1725, 8613, 18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315,
+11, 2559, 485, 50674, 50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919,
+2143, 3014, 10022, 4161, 44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671,
+919, 11950, 11, 2143, 6448, 2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386,
+3348, 35968, 23412, 8469, 3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740,
+10755, 26425, 15850, 19284, 13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644,
+6151, 50233, 18994, 9197, 6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493,
+8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700,
+51700], 'temperature': 0.0, 'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273,
+'no_speech_prob': 5.263075308903353e-06}, {'id': 26, 'seek': 5656, 'start': 73.08, 'end': 76.08, 'text': ' И
+он с отлично обычно, чтобы в этом случае люди делать.', 'tokens': [50364, 21249, 11, 2552, 25311, 1725, 8613,
+18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559, 485, 50674,
+50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014, 10022, 4161,
+44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950, 11, 2143, 6448,
+2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968, 23412, 8469,
+3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425, 15850, 19284,
+13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233, 18994, 9197,
+6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387, 7570, 693, 698,
+6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700], 'temperature': 0.0,
+'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273, 'no_speech_prob':
+5.263075308903353e-06}, {'id': 27, 'seek': 5656, 'start': 76.08, 'end': 79.52000000000001, 'text': ' Они в
+полицию обращаются и тому же сотрудники работают.', 'tokens': [50364, 21249, 11, 2552, 25311, 1725, 8613,
+18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559, 485, 50674,
+50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014, 10022, 4161,
+44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950, 11, 2143, 6448,
+2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968, 23412, 8469,
+3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425, 15850, 19284,
+13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233, 18994, 9197,
+6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387, 7570, 693, 698,
+6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700], 'temperature': 0.0,
+'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273, 'no_speech_prob':
+5.263075308903353e-06}, {'id': 28, 'seek': 5656, 'start': 79.52000000000001, 'end': 83.28, 'text': ' Поэтому,
+конечно, они так хотим к Мехеэлы Романовича его разуму, как-то,', 'tokens': [50364, 21249, 11, 2552, 25311,
+1725, 8613, 18672, 13, 50464, 50464, 9756, 11418, 5345, 5239, 10461, 693, 1679, 11, 1725, 16315, 11, 2559,
+485, 50674, 50674, 6523, 6885, 485, 50724, 50724, 3450, 4572, 41904, 11, 3014, 8221, 11, 11919, 2143, 3014,
+10022, 4161, 44177, 1903, 4401, 1006, 4095, 19955, 11950, 11, 50950, 50950, 8221, 11326, 31671, 919, 11950,
+11, 2143, 6448, 2801, 18272, 3396, 3493, 8008, 387, 7570, 693, 698, 6325, 1253, 11114, 3903, 386, 3348, 35968,
+23412, 8469, 3888, 15599, 13, 51190, 51190, 3272, 5345, 776, 2943, 40955, 41878, 11, 7887, 740, 10755, 26425,
+15850, 19284, 13, 51340, 51340, 18973, 740, 4692, 435, 24718, 3348, 18747, 15955, 1006, 23644, 6151, 50233,
+18994, 9197, 6406, 13, 51512, 51512, 22318, 11, 15271, 11, 7515, 2936, 11515, 2165, 981, 3493, 8008, 387,
+7570, 693, 698, 6325, 1253, 11114, 3903, 386, 6448, 4203, 5525, 585, 11, 3014, 12, 860, 11, 51700, 51700],
+'temperature': 0.0, 'avg_logprob': -0.4223871612548828, 'compression_ratio': 1.1335227272727273,
+'no_speech_prob': 5.263075308903353e-06}, {'id': 29, 'seek': 8328, 'start': 83.28, 'end': 86.96000000000001,
+'text': ' да, воздвать, потому что...', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143,
+485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846,
+26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725,
+16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814,
+21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11,
+2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401,
+41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805,
+9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143,
+6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953,
+6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599,
+3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob':
+-0.5407129352012378, 'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id':
+30, 'seek': 8328, 'start': 86.96000000000001, 'end': 88.8, 'text': ' Я не думал, что за две недели он суму
+больше миллионов успел проесть,', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485,
+50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349,
+28137, 23944, 1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898,
+11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13,
+50864, 50864, 3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12,
+860, 485, 50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455,
+15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631,
+10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184,
+48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790,
+13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444,
+1006, 3422, 31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378,
+'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 31, 'seek': 8328,
+'start': 88.8, 'end': 91.28, 'text': ' он же там ни граман не какой, не замечали за него.', 'tokens': [50364,
+8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396,
+32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640,
+5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764,
+11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11,
+4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986,
+11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354,
+1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969,
+40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514,
+51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398,
+3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714],
+'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio': 1.2101063829787233,
+'no_speech_prob': 3.885026671923697e-05}, {'id': 32, 'seek': 8328, 'start': 91.28, 'end': 92.28, 'text': ' Не
+было ни тут.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857,
+1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414,
+4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071,
+4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450,
+4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964,
+50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724,
+5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332,
+740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464,
+3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292,
+5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334,
+30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio':
+1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 33, 'seek': 8328, 'start': 92.28, 'end':
+93.28, 'text': ' Нет.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548,
+4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944,
+1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618,
+4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864,
+3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485,
+50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908,
+28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051,
+4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30,
+51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564,
+51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422,
+31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378,
+'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 34, 'seek': 8328,
+'start': 93.28, 'end': 95.28, 'text': ' А за две недель, то есть там две недель назад, что-то...', 'tokens':
+[50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143,
+4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414, 4178, 30704, 11, 50640,
+50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764,
+50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908,
+11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859,
+10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101,
+11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006,
+10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13,
+51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382,
+13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714],
+'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio': 1.2101063829787233,
+'no_speech_prob': 3.885026671923697e-05}, {'id': 35, 'seek': 8328, 'start': 95.28, 'end': 97.28, 'text': '
+Буквально, буквально, да.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548,
+50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137,
+23944, 1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725,
+41618, 4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864,
+50864, 3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860,
+485, 50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704,
+3908, 28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969,
+24051, 4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503,
+1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13,
+51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006,
+3422, 31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378,
+'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 36, 'seek': 8328,
+'start': 97.28, 'end': 103.28, 'text': ' Две недель назад он покупать или продал за логую имущество без
+разрешения в банк и без согласования.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143,
+485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846,
+26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725,
+16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814,
+21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11,
+2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401,
+41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805,
+9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143,
+6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953,
+6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599,
+3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob':
+-0.5407129352012378, 'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id':
+37, 'seek': 8328, 'start': 103.28, 'end': 105.28, 'text': ' А что конкретно?', 'tokens': [50364, 8995, 11,
+8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183,
+15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640, 5345,
+6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764,
+11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11,
+4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986,
+11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354,
+1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969,
+40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514,
+51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398,
+3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714],
+'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio': 1.2101063829787233,
+'no_speech_prob': 3.885026671923697e-05}, {'id': 38, 'seek': 8328, 'start': 105.28, 'end': 106.28, 'text': '
+Машину.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857, 1725,
+13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414, 4178,
+30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071, 4396,
+15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450, 4396,
+32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964, 50964,
+5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724, 5345,
+34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332, 740,
+29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464,
+3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292,
+5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334,
+30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio':
+1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 39, 'seek': 8328, 'start': 106.28, 'end':
+107.28, 'text': ' Он может даже на негде.', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143,
+485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846,
+26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725,
+16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814,
+21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11,
+2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401,
+41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805,
+9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143,
+6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953,
+6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599,
+3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob':
+-0.5407129352012378, 'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id':
+40, 'seek': 8328, 'start': 107.28, 'end': 108.28, 'text': ' А такое он на работу привезёл.', 'tokens': [50364,
+8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548, 4857, 1725, 13082, 1218, 11, 2143, 4396,
+32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944, 1414, 4178, 30704, 11, 50640, 50640,
+5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618, 4071, 4396, 15052, 13, 50764, 50764,
+11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864, 3450, 4396, 32183, 15704, 3908, 11,
+4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485, 50964, 50964, 5697, 10282, 859, 10986,
+11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908, 28724, 5345, 34005, 2209, 8101, 11354,
+1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051, 4433, 5332, 740, 29049, 755, 1006, 10969,
+40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30, 51464, 51464, 3493, 6835, 15387, 13, 51514,
+51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564, 51564, 3450, 18292, 5345, 1470, 39382, 13398,
+3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422, 31242, 21974, 8334, 30, 51714, 51714],
+'temperature': 0.0, 'avg_logprob': -0.5407129352012378, 'compression_ratio': 1.2101063829787233,
+'no_speech_prob': 3.885026671923697e-05}, {'id': 41, 'seek': 8328, 'start': 108.28, 'end': 110.28, 'text': '
+Финда и Крет увидели?', 'tokens': [50364, 8995, 11, 8918, 856, 859, 2209, 11, 11919, 2143, 485, 50548, 50548,
+4857, 1725, 13082, 1218, 11, 2143, 4396, 32183, 15704, 8334, 5345, 776, 5525, 585, 12846, 26349, 28137, 23944,
+1414, 4178, 30704, 11, 50640, 50640, 5345, 6151, 8223, 13686, 11726, 1685, 1416, 1725, 16898, 11, 1725, 41618,
+4071, 4396, 15052, 13, 50764, 50764, 11512, 8060, 13686, 12848, 13, 50814, 50814, 21249, 13, 50864, 50864,
+3450, 4396, 32183, 15704, 3908, 11, 4572, 5640, 8223, 32183, 15704, 3908, 28724, 11, 2143, 12, 860, 485,
+50964, 50964, 5697, 10282, 859, 10986, 11, 42587, 10986, 11, 8995, 13, 51064, 51064, 3401, 41455, 15704, 3908,
+28724, 5345, 34005, 2209, 8101, 11354, 1218, 4396, 2344, 2353, 3924, 7604, 585, 4805, 9631, 10969, 24051,
+4433, 5332, 740, 29049, 755, 1006, 10969, 40587, 30821, 13, 51364, 51364, 3450, 2143, 6184, 48503, 1234, 30,
+51464, 51464, 3493, 6835, 15387, 13, 51514, 51514, 12409, 8689, 11210, 1470, 757, 4953, 6790, 13, 51564,
+51564, 3450, 18292, 5345, 1470, 39382, 13398, 3634, 24180, 13, 51614, 51614, 13196, 2599, 3444, 1006, 3422,
+31242, 21974, 8334, 30, 51714, 51714], 'temperature': 0.0, 'avg_logprob': -0.5407129352012378,
+'compression_ratio': 1.2101063829787233, 'no_speech_prob': 3.885026671923697e-05}, {'id': 42, 'seek': 11028,
+'start': 110.28, 'end': 114.28, 'text': ' Нет, он на меня работал, не на этой машине, он мне на эвеке
+работал.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11,
+5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571,
+11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764,
+50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11,
+36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11,
+51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11,
+3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071,
+1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11,
+31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485,
+51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664,
+51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature':
+0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio': 1.2178477690288714, 'no_speech_prob':
+8.676175639266148e-06}, {'id': 43, 'seek': 11028, 'start': 114.28, 'end': 115.28, 'text': ' Понятно.',
+'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345,
+8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11,
+2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764,
+50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11,
+36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11,
+51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11,
+3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071,
+1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11,
+31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485,
+51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664,
+51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature':
+0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio': 1.2178477690288714, 'no_speech_prob':
+8.676175639266148e-06}, {'id': 44, 'seek': 11028, 'start': 115.28, 'end': 118.28, 'text': ' Ну, это же ваша,
+наверное, организация машина, поэтому я не видел.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218,
+11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564,
+36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861,
+11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11,
+29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691,
+29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064,
+37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234,
+481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784,
+11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414,
+46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517,
+1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292,
+693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 45, 'seek': 11028, 'start': 118.28,
+'end': 119.28, 'text': ' Я понял.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218, 11, 1725, 1470,
+14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564, 36067, 19005,
+13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861, 11, 19698, 2552,
+1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11, 29334, 12, 860,
+29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691, 29049, 755, 776,
+981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064, 37564, 13, 51114,
+51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234, 481, 29049, 755, 13,
+51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354,
+757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11,
+2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517, 1644, 2241, 11, 2143,
+14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764],
+'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio': 1.2178477690288714,
+'no_speech_prob': 8.676175639266148e-06}, {'id': 46, 'seek': 11028, 'start': 119.28, 'end': 123.28, 'text': '
+А эту месяцу, какая-то информация будет, номерок с сохранением, позвонить это банк с киноми,', 'tokens':
+[50364, 21249, 11, 5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470,
+1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151,
+14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857,
+37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135,
+2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014,
+51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014,
+40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234,
+481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11,
+8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514,
+3450, 2840, 485, 51564, 51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717,
+755, 7635, 585, 11, 46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob':
+-0.49508141498176417, 'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06},
+{'id': 47, 'seek': 11028, 'start': 123.28, 'end': 124.28, 'text': ' приеменоваться.', 'tokens': [50364, 21249,
+11, 5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872,
+387, 9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11,
+31159, 11, 34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814,
+50814, 3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571,
+21297, 11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504,
+1008, 1055, 8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203,
+30, 51164, 51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13,
+51314, 51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603,
+1218, 19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485,
+51564, 51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585,
+11, 46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob':
+-0.49508141498176417, 'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06},
+{'id': 48, 'seek': 11028, 'start': 124.28, 'end': 125.28, 'text': ' Хорошо.', 'tokens': [50364, 21249, 11,
+5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387,
+9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11,
+34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814,
+3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297,
+11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055,
+8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164,
+51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314,
+51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218,
+19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564,
+51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11,
+46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417,
+'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 49, 'seek': 11028,
+'start': 125.28, 'end': 126.28, 'text': ' А банк, как называется еще раз?', 'tokens': [50364, 21249, 11, 5345,
+1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197,
+1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11,
+34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814,
+3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297,
+11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055,
+8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164,
+51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314,
+51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218,
+19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564,
+51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11,
+46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417,
+'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 50, 'seek': 11028,
+'start': 126.28, 'end': 127.28, 'text': ' Руснор банк.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197,
+1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564,
+50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820,
+7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329,
+22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672,
+3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064,
+51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071,
+1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740,
+1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414,
+51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798,
+20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776,
+15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 51, 'seek': 11028, 'start': 127.28,
+'end': 129.28, 'text': ' Руснор банк.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218, 11, 1725,
+1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564, 36067,
+19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861, 11,
+19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11,
+29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691,
+29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064,
+37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234,
+481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784,
+11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414,
+46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517,
+1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292,
+693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 52, 'seek': 11028, 'start': 129.28,
+'end': 131.28, 'text': ' Все, вон, и веро ничь, наверное, когда он брал машину.', 'tokens': [50364, 21249, 11,
+5345, 1470, 6885, 9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387,
+9197, 1218, 13, 50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11,
+34254, 21235, 19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814,
+3450, 18763, 29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297,
+11, 12188, 39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055,
+8525, 13, 51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164,
+51164, 6325, 7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314,
+51314, 18029, 11, 740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218,
+19820, 15387, 13, 51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564,
+51564, 41996, 39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11,
+46536, 10986, 11, 776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417,
+'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 53, 'seek': 11028,
+'start': 131.28, 'end': 133.28, 'text': ' Наверное, а вы...', 'tokens': [50364, 21249, 11, 5345, 1470, 6885,
+9197, 1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13,
+50564, 50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235,
+19820, 7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763,
+29329, 22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188,
+39672, 3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13,
+51064, 51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325,
+7071, 1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11,
+740, 1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13,
+51414, 51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996,
+39798, 20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11,
+776, 15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417,
+'compression_ratio': 1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 54, 'seek': 11028,
+'start': 133.28, 'end': 134.28, 'text': ' А вы...', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197, 1218,
+11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564, 50564,
+36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820, 7861,
+11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329, 22542, 11,
+29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672, 3258, 2691,
+29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064, 51064,
+37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071, 1234,
+481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740, 1784,
+11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414, 51414,
+46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798, 20517,
+1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776, 15292,
+693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 55, 'seek': 11028, 'start': 134.28,
+'end': 136.28, 'text': ' Где базируйки, что вообще?', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197,
+1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564,
+50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820,
+7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329,
+22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672,
+3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064,
+51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071,
+1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740,
+1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414,
+51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798,
+20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776,
+15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 56, 'seek': 11028, 'start': 136.28,
+'end': 138.28, 'text': ' Морклеу, центрально, селял.', 'tokens': [50364, 21249, 11, 5345, 1470, 6885, 9197,
+1218, 11, 1725, 1470, 14907, 19820, 20998, 11, 5345, 8531, 1470, 1704, 859, 2872, 387, 9197, 1218, 13, 50564,
+50564, 36067, 19005, 13, 50614, 50614, 7571, 11, 2691, 6151, 14536, 386, 11, 31159, 11, 34254, 21235, 19820,
+7861, 11, 19698, 2552, 1725, 40718, 13, 50764, 50764, 4857, 37975, 13, 50814, 50814, 3450, 18763, 29329,
+22542, 11, 29334, 12, 860, 29117, 21235, 7306, 11, 36847, 1135, 2637, 776, 41571, 21297, 11, 12188, 39672,
+3258, 2691, 29049, 755, 776, 981, 2599, 1253, 435, 11, 51014, 51014, 5082, 1504, 1008, 1055, 8525, 13, 51064,
+51064, 37564, 13, 51114, 51114, 3450, 29049, 755, 11, 3014, 40659, 9910, 4203, 30, 51164, 51164, 6325, 7071,
+1234, 481, 29049, 755, 13, 51214, 51214, 6325, 7071, 1234, 481, 29049, 755, 13, 51314, 51314, 18029, 11, 740,
+1784, 11, 1006, 10544, 354, 757, 3903, 678, 11, 31159, 11, 8874, 5345, 19603, 1218, 19820, 15387, 13, 51414,
+51414, 46929, 1135, 6126, 11, 2559, 2840, 485, 51514, 51514, 3450, 2840, 485, 51564, 51564, 41996, 39798,
+20517, 1644, 2241, 11, 2143, 14345, 30, 51664, 51664, 3493, 1717, 755, 7635, 585, 11, 46536, 10986, 11, 776,
+15292, 693, 13, 51764, 51764], 'temperature': 0.0, 'avg_logprob': -0.49508141498176417, 'compression_ratio':
+1.2178477690288714, 'no_speech_prob': 8.676175639266148e-06}, {'id': 57, 'seek': 13828, 'start': 138.28,
+'end': 140.28, 'text': ' А здесь у нас есть селял.', 'tokens': [50364, 3450, 9087, 1595, 6519, 5640, 776,
+15292, 693, 13, 50464, 50464, 7571, 11, 46441, 11, 1595, 6519, 5640, 32327, 755, 20635, 5697, 1414, 4567,
+10004, 11, 6035, 5345, 8689, 1470, 776, 10330, 38482, 1595, 6519, 6778, 22533, 753, 6251, 36847, 1135, 11,
+50714, 50714, 5561, 6885, 1725, 30147, 435, 10986, 13, 50814, 50814, 2608, 585, 3167, 12188, 39672, 3258, 776,
+15052, 13, 50914, 50914, 37564, 11, 44107, 30, 50964, 50964, 12412, 485, 51014, 51014, 12412, 3014, 12, 860,
+713, 6029, 10363, 11, 16977, 11, 20955, 10461, 1675, 13, 51164, 51164, 9149, 11, 8995, 11, 15520, 35620, 2350,
+17413, 13, 51264], 'temperature': 0.0, 'avg_logprob': -0.3628227009492762, 'compression_ratio':
+1.0274509803921568, 'no_speech_prob': 1.6432641132269055e-05}, {'id': 58, 'seek': 13828, 'start': 140.28,
+'end': 145.28, 'text': ' Ну, смотрите, у нас есть Москва Белгород, но он может на сайте посмотреть у нас
+горячий номер,', 'tokens': [50364, 3450, 9087, 1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11,
+46441, 11, 1595, 6519, 5640, 32327, 755, 20635, 5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776,
+10330, 38482, 1595, 6519, 6778, 22533, 753, 6251, 36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435,
+10986, 13, 50814, 50814, 2608, 585, 3167, 12188, 39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107,
+30, 50964, 50964, 12412, 485, 51014, 51014, 12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955,
+10461, 1675, 13, 51164, 51164, 9149, 11, 8995, 11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0,
+'avg_logprob': -0.3628227009492762, 'compression_ratio': 1.0274509803921568, 'no_speech_prob':
+1.6432641132269055e-05}, {'id': 59, 'seek': 13828, 'start': 145.28, 'end': 147.28, 'text': ' для меня не
+принципиально.', 'tokens': [50364, 3450, 9087, 1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11,
+46441, 11, 1595, 6519, 5640, 32327, 755, 20635, 5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776,
+10330, 38482, 1595, 6519, 6778, 22533, 753, 6251, 36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435,
+10986, 13, 50814, 50814, 2608, 585, 3167, 12188, 39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107,
+30, 50964, 50964, 12412, 485, 51014, 51014, 12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955,
+10461, 1675, 13, 51164, 51164, 9149, 11, 8995, 11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0,
+'avg_logprob': -0.3628227009492762, 'compression_ratio': 1.0274509803921568, 'no_speech_prob':
+1.6432641132269055e-05}, {'id': 60, 'seek': 13828, 'start': 147.28, 'end': 149.28, 'text': ' Пусть позвонить с
+него.', 'tokens': [50364, 3450, 9087, 1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11, 46441,
+11, 1595, 6519, 5640, 32327, 755, 20635, 5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776, 10330,
+38482, 1595, 6519, 6778, 22533, 753, 6251, 36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435, 10986,
+13, 50814, 50814, 2608, 585, 3167, 12188, 39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107, 30,
+50964, 50964, 12412, 485, 51014, 51014, 12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955, 10461,
+1675, 13, 51164, 51164, 9149, 11, 8995, 11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0,
+'avg_logprob': -0.3628227009492762, 'compression_ratio': 1.0274509803921568, 'no_speech_prob':
+1.6432641132269055e-05}, {'id': 61, 'seek': 13828, 'start': 149.28, 'end': 150.28, 'text': ' Хорошо, ладно?',
+'tokens': [50364, 3450, 9087, 1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11, 46441, 11, 1595,
+6519, 5640, 32327, 755, 20635, 5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776, 10330, 38482, 1595,
+6519, 6778, 22533, 753, 6251, 36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435, 10986, 13, 50814,
+50814, 2608, 585, 3167, 12188, 39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107, 30, 50964, 50964,
+12412, 485, 51014, 51014, 12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955, 10461, 1675, 13,
+51164, 51164, 9149, 11, 8995, 11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0, 'avg_logprob':
+-0.3628227009492762, 'compression_ratio': 1.0274509803921568, 'no_speech_prob': 1.6432641132269055e-05},
+{'id': 62, 'seek': 13828, 'start': 150.28, 'end': 151.28, 'text': ' Если...', 'tokens': [50364, 3450, 9087,
+1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11, 46441, 11, 1595, 6519, 5640, 32327, 755, 20635,
+5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776, 10330, 38482, 1595, 6519, 6778, 22533, 753, 6251,
+36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435, 10986, 13, 50814, 50814, 2608, 585, 3167, 12188,
+39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107, 30, 50964, 50964, 12412, 485, 51014, 51014,
+12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955, 10461, 1675, 13, 51164, 51164, 9149, 11, 8995,
+11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0, 'avg_logprob': -0.3628227009492762,
+'compression_ratio': 1.0274509803921568, 'no_speech_prob': 1.6432641132269055e-05}, {'id': 63, 'seek': 13828,
+'start': 151.28, 'end': 154.28, 'text': ' Если как-то пежись, хорошо, накрыли.', 'tokens': [50364, 3450, 9087,
+1595, 6519, 5640, 776, 15292, 693, 13, 50464, 50464, 7571, 11, 46441, 11, 1595, 6519, 5640, 32327, 755, 20635,
+5697, 1414, 4567, 10004, 11, 6035, 5345, 8689, 1470, 776, 10330, 38482, 1595, 6519, 6778, 22533, 753, 6251,
+36847, 1135, 11, 50714, 50714, 5561, 6885, 1725, 30147, 435, 10986, 13, 50814, 50814, 2608, 585, 3167, 12188,
+39672, 3258, 776, 15052, 13, 50914, 50914, 37564, 11, 44107, 30, 50964, 50964, 12412, 485, 51014, 51014,
+12412, 3014, 12, 860, 713, 6029, 10363, 11, 16977, 11, 20955, 10461, 1675, 13, 51164, 51164, 9149, 11, 8995,
+11, 15520, 35620, 2350, 17413, 13, 51264], 'temperature': 0.0, 'avg_logprob': -0.3628227009492762,
+'compression_ratio': 1.0274509803921568, 'no_speech_prob': 1.6432641132269055e-05}, {'id': 64, 'seek': 15428,
+'start': 154.28, 'end': 183.28, 'text': ' Ну, да, всего доброго, до сих пор.', 'tokens': [50364, 7571, 11,
+8995, 11, 15520, 35620, 2350, 11, 5865, 776, 4165, 11948, 13, 51814], 'temperature': 0.0, 'avg_logprob':
+-0.9855107069015503, 'compression_ratio': 0.576271186440678, 'no_speech_prob': 6.223811215022579e-05}],
+'language': 'ru'}
+
+** model.decode(mel, options) <<whisper_decode>>
+options: language
+
+DecodingTask(model, options).run(mel)
+- create GPT2TokenizerFast wrapped
+- audio_features <- mel
+- tokens, sum_logprobs, no_speech_probs <- audio_features
+- texts: List[str] = [tokenizer.decode(t).strip() for t in tokens]
+  - tokens = [ [50364, 3450, 5505, 13, 50464, 51014, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51114, 51414, 21249, 7520, 9916, 13, 51464] ]
+- <- fine tune
+
+https://huggingface.co/blog/fine-tune-whisper
+https://colab.research.google.com/drive/1P4ClLkPmfsaKn2tBbRp0nVjGMRKR-EWz
+** no_speech_prob and avg_logprob
+- no_speech_prob - calc at the first toke only and at SOT logit
+- avg_logprob
+  - sum_logprobs - sum of:
+    - current_logprobs - logprobs = F.log_softmax(logits.float(), dim=-1)
+** decode from whisper_word_level 844
+decode_word_level 781
+- result, ts = decode.run() 711   - decoding.py 612
+- finalize 524    - decoding.py 271
+
+
+self.ts
+- self.decoder.update_with_ts 700 (main_loop) - decoding.py 602
+-
+** main_loop
+receive
+- audio_features
+- tokens with 3 values
+
+
+tokes: int +=1
+complete: bool = False
+sum_logprobs: int
+** words timestemps https://github.com/jianfch/stable-ts
+timestamp_logits - ts_logits - self.ts -
+*** transcribe format
+-
+- segments:
+[{'id': 0, 'seek': 0, 'offset': 0.0, 'start': 1.0, 'end': 3.0, 'text': ' А вот, не добрый день.',
+  'tokens': [50414, 3450, 5505, 11, 1725, 35620, 4851, 13509, 13, 50514, 50514, 47311, 46376, 3401, 919, 1635, 50161, 11, 2691, 6325, 7071, 461, 1234, 481, 1552, 1416, 1906, 13, 50564, 50564, 3401, 10330, 11, 5345, 4203, 1820, 1784, 5435, 2801, 10499, 35749, 50150, 386, 2338, 6325, 1253, 11114, 3903, 386, 7247, 4219, 23412, 3605, 13, 50714, 50714, 3200, 585, 37408, 585, 11, 2143, 10655, 30162, 1006, 17724, 15028, 4558, 13, 50814, 50814, 2348, 1069, 755, 12886, 387, 29868, 11, 776, 31158, 50233, 19411, 23201, 860, 1283, 25190, 13, 51014, 51014, 9149, 11, 6035, 5345, 7520, 1595, 6885, 1725, 30162, 13, 51064, 51064, 3450, 5505, 5865, 10751, 29117, 21235, 13640, 11, 2143, 5345, 1595, 10655, 2801, 7247, 9223, 24665, 30162, 13, 51314, 51314, 6684, 1725, 13790, 13549, 10986, 11, 6035, 8995, 11, 6035, 4777, 1725, 485, 51414, 51414, 21249, 7520, 9916, 13, 51464, 51464, 4857, 37975, 11, 25969, 5878, 11, 3014, 50150, 386, 2338, 6325, 1253, 11114, 3903, 1595, 6519, 3348, 35968, 23412, 34005, 47573, 51664, 51664, 10969, 45309, 13388, 19465, 5332, 4396, 20392, 44356, 740, 1069, 755, 1234, 1814, 13254, 11, 51814, 51814],
+  'temperature': 0.0, 'avg_logprob': -0.5410955043438354, 'compression_ratio': 1.1496259351620948, 'no_speech_prob': 0.5069490671157837,
+  'alt_start_timestamps': [1.0, 0.9199999570846558, 1.0399999618530273, 0.9599999785423279, 1.100000023841858, 0.9399999976158142, 0.9799999594688416, 1.0799999237060547, 1.1200000047683716, 1.1999999284744263],
+  'start_ts_logits': [13.0390625, 12.4140625, 12.296875, 12.2109375, 12.171875, 12.140625, 12.0390625, 11.9921875, 11.9453125, 11.8046875],
+  'alt_end_timestamps': [3.0, 2.0, 2.859999895095825, 2.879999876022339, 2.8999998569488525, 4.0, 2.9800000190734863, 3.0399999618530273, 2.299999952316284, 2.359999895095825],
+  'end_ts_logits': [9.6015625, 8.9375, 7.65234375, 7.53125, 7.4609375, 7.4609375, 7.30859375, 7.28515625, 7.22265625, 7.11328125],
+  'unstable_word_timestamps': [{'word': ' А', 'token': 3450,
+				'timestamps':[7.0, 29.5, 1.0, 29.35999870300293, 13.0, 29.279998779296875, 29.34000015258789, 29.479999542236328, 28.939998626708984, 29.01999855041504],
+				'timestamp_logits': [15.1328125, 15.0703125, 14.9921875, 14.96875, 14.96875, 14.96875, 14.890625, 14.8359375, 14.7890625, 14.7890625]},
+				{'word': ' вот', 'token': 5505,
+				'timestamps': [27.34000015258789, 29.31999969482422, 26.979999542236328, 28.420000076293945, 28.739999771118164, 27.31999969482422, 28.439998626708984, 29.34000015258789, 13.519999504089355, 28.239999771118164],
+				'timestamp_logits': [19.546875, 19.46875, 19.296875, 19.125, 19.109375, 19.109375, 19.09375, 19.09375, 19.078125, 19.046875]},
+				{'word': ',', 'token': 11,
+				'timestamps': [2.0, 3.0, 4.0, 1.0, 1.7999999523162842, 10.0, 3.0199999809265137, 1.7599999904632568, 19.0, 3.5],
+				'timestamp_logits': [14.8828125, 13.640625, 13.21875, 12.734375, 11.3828125, 11.3671875, 11.3515625, 11.3359375, 11.2890625, 11.2578125]},
+				{'word': ' не', 'token': 1725,
+				'timestamps': [2.0, 1.0, 1.7599999904632568, 1.71999990940094, 1.6399999856948853, 1.7799999713897705, 28.19999885559082, 1.7999999523162842, 7.0, 28.239999771118164],
+				'timestamp_logits': [15.328125, 15.03125, 14.921875, 14.4453125, 14.3671875, 14.234375, 14.2265625, 14.203125, 14.0234375, 13.875]},
+				{'word': ' добр', 'token': 35620,
+				'timestamps': [28.099998474121094, 28.139999389648438, 14.75999927520752, 14.920000076293945, 27.099998474121094, 18.119998931884766, 14.59999942779541, 28.260000228881836, 13.0, 26.599998474121094],
+				'timestamp_logits': [14.015625, 13.9765625, 13.96875, 13.8515625, 13.84375, 13.8046875, 13.7109375, 13.7109375, 13.6953125, 13.6953125]},
+				{'word': 'ый', 'token': 4851,
+				'timestamps': [13.59999942779541, 15.399999618530273, 13.279999732971191, 14.719999313354492, 13.399999618530273, 14.880000114440918, 13.0, 14.59999942779541, 13.679999351501465, 13.639999389648438],
+				'timestamp_logits': [15.4140625, 15.28125, 15.21875, 14.765625, 14.7265625, 14.71875, 14.6328125, 14.578125, 14.5546875, 14.53125]}, {'word': ' день', 'token': 13509, 'timestamps': [2.0, 20.959999084472656, 3.0, 25.68000030517578, 3.4800000190734863, 24.0, 3.5, 19.920000076293945, 28.559999465942383, 4.0], 'timestamp_logits': [9.3984375, 9.21875, 9.046875, 9.015625, 8.9296875, 8.90625, 8.875, 8.8203125, 8.7890625, 8.7421875]},
+				{'word': '.', 'token': 13, 'timestamps': [3.0, 2.0, 4.0, 3.5, 3.0199999809265137, 2.879999876022339, 3.319999933242798, 3.0399999618530273, 2.299999952316284, 2.859999895095825], 'timestamp_logits': [12.6328125, 12.4296875, 10.875, 10.2578125, 9.828125, 9.5078125, 9.4921875, 9.421875, 9.3828125, 9.3046875]}
+				],
+  'anchor_point': False,
+  'word_timestamps': [{'word': ' А', 'token': 3450, 'timestamp': 1.0}, {'word': ' вот', 'token': 5505, 'timestamp': 1.0}, {'word': ',', 'token': 11, 'timestamp': 2.0}, {'word': ' не', 'token': 1725, 'timestamp': 2.0}, {'word': ' добр', 'token': 35620, 'timestamp': 2.0}, {'word': 'ый', 'token': 4851, 'timestamp': 2.0}, {'word': ' день', 'token': 13509, 'timestamp': 2.0}, {'word': '.', 'token': 13, 'timestamp': 3.0}],
+  'whole_word_timestamps': [{'word': ' А', 'timestamp': 1.3799999952316284}, {'word': ' вот,', 'timestamp': 1.7599999904632568}, {'word': ' не', 'timestamp': 1.7899999618530273}, {'word': ' добр', 'timestamp': 1.8899999856948853}, {'word': 'ый', 'timestamp': 1.8899999856948853}, {'word': ' день.', 'timestamp': 2.5899999141693115}
+			     ]
+  }, {'id': 1,
+** confidence score
+
+sum_logprobs: List[float] = [lp[i] for i, lp in zip(selected, sum_logprobs)]
+
+avg_logprob - [lp / (len(t) + 1) for t, lp in zip(tokens, sum_logprobs)]
+
+path
+- model.transcribe
+- model.decode
+- transcribe_word_level (whisper_word_level.py:39)
+- results, ts_tokens, ts_logits_ = model.decode
+
 ** links
-- https://community-app.topcoder.com/thrive/articles/audio-data-analysis-using-python
-- https://iq.opengenus.org/introduction-to-librosa/
-- https://librosa.org/doc/latest/index.html
-- split on silence https://medium.com/@vvk.victory/audio-processing-librosa-split-on-silence-8e1edab07bbb
-- distinguish emotions https://www.kaggle.com/code/krishnachary/speech-emotion-recognition-with-librosa
+https://github.com/openai/whisper
+- https://cdn.openai.com/papers/whisper.pdf
 * NER USΕ CASES
 ** Spelling correction algorithms or  (spell checker) or (comparing a word to a list of words)
 - https://www.quora.com/Algorithms-What-is-a-fast-way-of-comparing-a-word-to-a-list-of-words-to-find-the-closest-match
@@ -3572,7 +4744,15 @@ Apache 2.0
 - used for machine learning applications such as neural networks
 - Создается вычислительный граф. - Графовый фреймворк
 
-Features:
+
+‐ Cleverhans - фреймворд чтобы атаковать и защищать модели??
+- Lucid - визуализировать
+
+- define computation graph - позволяет автоматическое дифференцирование
+  - Nodes - operators, varibles, constants
+  - Edges - tensors
+- Execute it
+** Features:
 - Stable
 - Well-documented sources
 - Flexibility
@@ -3583,13 +4763,49 @@ Cons:
 - Невозможно обучать распределенно
 - Метрический тензор нельзя запрограммировать
 
-‐ Cleverhans - фреймворд чтобы атаковать и защищать модели??
-- Lucid - визуализировать
+** hellow world
+#+begin_src python
+import tensorflow as tf
+import timeit
 
-- define computation graph - позволяет автоматическое дифференцирование
-  - Nodes - operators, varibles, constants
-  - Edges - tensors
-- Execute it
+# -- set device manually
+try:
+    gpus = tf.config.experimental.list_physical_devices('GPU')
+    tf.config.set_visible_devices(gpus[0], 'GPU')
+    logical_gpus = tf.config.list_logical_devices('GPU')
+except RuntimeError as e:
+    print(e)
+
+# -- eager execution
+# Note:  steps through all of the program operations, needed or not.
+a = tf.Variable([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], trainable=False)
+b = tf.Variable([[1.0, 2.0, 3.0]], trainable=False)
+k = a * b
+print(k)
+# -- graph execution
+# Note: graph execution enables portability outside Python and tends to offer better performance
+# consist of: tf.Operation objects, which represent units of computation; and tf.Tensor objects, which represent the units of data that flow between operations
+# using graph directly is depricated
+# Graph execution only executes the operations necessary to produce the observable effects, which includes:  "Non-strict execution"
+
+x = tf.random.uniform(shape=[10, 10], minval=-1, maxval=2, dtype=tf.dtypes.int32)
+
+def power(x, y):
+  result = tf.eye(10, dtype=tf.dtypes.int32)
+  for _ in range(y):
+    result = tf.matmul(x, result)
+  return result
+
+print("Eager execution:", timeit.timeit(lambda: power(x, 100), number=1000), "seconds")
+
+power_as_graph = tf.function(power)
+print("Graph execution:", timeit.timeit(lambda: power_as_graph(x, 100), number=1000), "seconds")
+#+end_src
+** layours
+- tf.Module - is the base class for both tf.keras.layers.Layer and tf.keras.Model
+- tf.keras.layers.Layer
+- tf.keras.Model
+** Eager vs Grapth execution
 ** TF 2.0
 - https://www.tensorflow.org/guide/effective_tf2?hl=ru
 - https://medium.com/tensorflow/effective-tensorflow-2-0-best-practices-and-whats-changed-a0ca48767aff
@@ -3722,7 +4938,6 @@ class Linear(layers.Layer):
 *** layer-wise learning rate in Tensorflow?
 https://stackoverflow.com/questions/34945554/how-to-set-layer-wise-learning-rate-in-tensorflow?noredirect=1
 
-
 ** Save a model
 - v1 https://cv-tricks.com/tensorflow-tutorial/save-restore-tensorflow-models-quick-complete-tutorial/
 
@@ -3757,6 +4972,19 @@ Run:
 - Checkpoints - exact value of all parameters (tf.Variable) - source code required
   - tf.keras.Model.save_weights(path/mymodel)
 - Model.save(path) - the parameter values && serialized description of the computation defined by the model. Source code not needed.
+** dataset
+- https://keras.io/examples/vision/captcha_ocr/
+
+dataset must consist of typeles - (x, y) by default, but it may be dictionary
+
+*** test
+#+BEGIN_SRC python
+for elem in train_dataset_y.take(10):
+  print(elem.numpy().shape)
+  # or
+  print(elem['label'].numpy().shape)
+
+#+END_SRC
 ** install
    see Tested build configurations
 tensorflow.org/install/source#linux
@@ -4070,6 +5298,52 @@ sess.run
 - loss = tf.losses.softmax_cross_entropy(onehot_labels=labelOnehot, logits=output,  reduction=tf.losses.Reduction.MEAN)
 - lossm = tf.metrics.mean(loss)
 
+** custom metric
+levels:
+- function -> values summarized and divided by count
+- class -> gives full control
+*** function
+*total categorical accuracy*
+#+BEGIN_SRC python
+def total_categorical_accuracy(y_true, y_pred):
+        # a = tf.cast(tf.math.equal(tf.argmax(y_true, axis=-1), tf.argmax(y_pred, axis=-1)), dtype=y_pred.dtype)
+        a = keras.metrics.categorical_accuracy(y_true, y_pred)
+        classes = tf.constant(a.shape[1], a.dtype)
+        a2 = tf.reduce_sum(a, axis=-1)
+        c = tf.cast(tf.math.equal(a2, classes), dtype=classes.dtype)
+        return c
+model.compile(loss=loss, optimizer=opt.optimizer, metrics=["categorical_accuracy",total_categorical_accuracy])
+#+END_SRC
+*** class
+#+BEGIN_SRC python
+class ConfusionMatrixMetric(tf.keras.metrics.Metric):
+
+
+    def update_state(self, y_true, y_pred,sample_weight=None):
+        self.total_cm.assign_add(self.confusion_matrix(y_true,y_pred))
+        return self.total_cm
+
+    def result(self):
+        return self.process_confusion_matrix()
+
+    def confusion_matrix(self,y_true, y_pred):
+        """
+        Make a confusion matrix
+        """
+        y_pred=tf.argmax(y_pred,1)
+        cm=tf.math.confusion_matrix(y_true,y_pred,dtype=tf.float32,num_classes=self.num_classes)
+        return cm
+
+    def process_confusion_matrix(self):
+        "returns precision, recall and f1 along with overall accuracy"
+        cm=self.total_cm
+        diag_part=tf.linalg.diag_part(cm)
+        precision=diag_part/(tf.reduce_sum(cm,0)+tf.constant(1e-15))
+        recall=diag_part/(tf.reduce_sum(cm,1)+tf.constant(1e-15))
+        f1=2*precision*recall/(precision+recall+tf.constant(1e-15))
+        return precision,recall,f1
+
+#+END_SRC
 ** USE CASES
 *** TF 2.0 convert mode h5 to weight and arch
 #+BEGIN_SRC python
@@ -4612,6 +5886,39 @@ LSTM slowed becouse of hidden state saved between. Solutions:
 - detach/repackage the hidden state in between batches.
   - hidden.detach_()
   - hidden = hidden.detach()
+** memory management
+if a is a tensor:
+- a.to(torch.device("cpu"/"cuda:0"))  - move tensor around
+
+making sure t2 is on the same device as t2
+- a = t1.get_device()
+- b = torch.tensor(a.shape).to(dev)
+
+Using Multiple GPUs:
+- Data Parallelism, where we divide batches into smaller batches, and process these smaller batches in parallel on multiple GPU.
+- Model Parallelism, where we break the neural network into smaller sub networks and then execute these sub networks on different GPUs.
+
+: del out, loss - free tensor/model
+: torch.cuda.empy_cache() - empty garbage
+
+with torch.no_grad(): - PyTorch, by default, will create a computational graph during the forward pass. During
+creation of this graph, it will allocate buffers to store gradients and intermediate values which are used for
+computing the gradient during the backward pass.
+
+
+CuDNN can provided a lot of optimisation which can bring down your space usage,
+- torch.backends.cudnn.benchmark = True
+- torch.backends.cudnn.enabled = True
+
+Using 16-bit Floats
+- model = model.half()     # convert a model to 16-bit
+- input = input.half()     # convert a model to 16-bit
+- issues:
+  - batch-norm layers have convergence issues with half precision floats. If that's the case with you, make
+    sure that batch norm layers are float32
+  - You can have overflow issues with 16-bit float. Once, I remember I had such an overflow while trying to
+    store the Union area of two bounding boxes (for computation of IoUs) in a float16.  So make sure you have
+    a realistic bound on the value you are trying to save in a float16.
 * hyperparemeter optimization library *test-tube*
 https://github.com/williamFalcon/test-tube
 * Keras
@@ -5250,9 +6557,15 @@ https://habr.com/ru/post/303600/
 - Ctrl+Alt+S -> keymap - Navigate; Back -> add key Ctrl+\
 - Ctrl+Alt+S -> keymap - Select next tab -> Alt+E
 - Ctrl+Alt+S -> keymap - Select previous tab -> Alt+A
+- Ctrl+Alt+S -> keymap - Delete to word start -> Alt+h
 *** keys
-- Ctrl+Shift+U - to upper case
+- Alt+Shift+F10 - run
+- Alt+Shift+F8 - debug
 
+- Ctrl+Shift+U - to upper case
+- Ctrl+. - fold/unfold
+- Ctrl+q - get documentation
+- Alt+\ - error description
 *emacs keymap*
 - Alt+Shift+F10 run
 - Alt+; - comment text
@@ -5269,12 +6582,20 @@ https://habr.com/ru/post/303600/
 
 *navigate*
 - Ctrl+Alt+g - navigate to definition
-- Ctrl+\ - Navigate; Back (my)
+- Alt+, - Navigate; Back (my)
 
-*Bookmars*
+
+*Windows*
+- Alt+1 - project navigation
 - Alt+2 - bookmars and debug points
+- Alt+4 - console
+- Alt+5 - debug
 - F11 - create
+- Ctrl-Shift+F8 - debug points
 - Shift-F11 bookmars
+- shift+Esc - hide current window
+- switch to main window - shift+Esc or F4 or Alt+current window or double Alt+any
+- C-x k - close current tab
 
 *not emacs*
 - Ctrl+/ - comment text
@@ -5310,6 +6631,8 @@ cons
 * Jupyter Notebook
 https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Importing Notebooks.html
 *.ipynb*
+
+у каждой cell желательно обеспечить идемпотентность
 
 ** jupyter [ˈʤuːpɪtə] - акцентом на интерактивности производимых вычислений
 - https://jupyter.org/
@@ -5396,8 +6719,9 @@ jupyter_console, jupyter_client
 ** TODO lab
 - pip install jupyterlab
 - jupyter lab - http://localhost:8888
-
+k
 * USΕ CASES
+measure time [[time-of-execution]]
 ** NET
 *** REST request
 #+BEGIN_SRC python
@@ -5773,8 +7097,6 @@ chunk_size = 3
 chunked_list = [our_list[i:i+chunk_size] for i in range(0, len(our_list), chunk_size)]
 print(chunked_list)
 #+END_SRC
-** TODO TIMΕSEQUENCE
-
 ** FILES
 - os.path.join('/home','user') - /home/user
 - os.listdir('/home/user') -> list of file_names - files and directories
@@ -5928,6 +7250,33 @@ print(a("asd", "asd123")) # 100
 #+end_src
 
 **** https://en.wikipedia.org/wiki/Levenshtein_distance
+#+BEGIN_SRC python
+def levenshtein(s: str, t: str) -> int:
+    """
+
+    :param s:
+    :param t:
+    :return: 0 - len(s)
+    """
+    if s == "":
+        return len(t)
+    if t == "":
+        return len(s)
+    cost = 0 if s[-1] == t[-1] else 1
+
+    i1 = (s[:-1], t)
+    if not i1 in memo:
+        memo[i1] = levenshtein(*i1)
+    i2 = (s, t[:-1])
+    if not i2 in memo:
+        memo[i2] = levenshtein(*i2)
+    i3 = (s[:-1], t[:-1])
+    if not i3 in memo:
+        memo[i3] = levenshtein(*i3)
+    res = min([memo[i1] + 1, memo[i2] + 1, memo[i3] + cost])
+
+    return res
+#+END_SRC
 **** hamming distance
 #+begin_src python
 import hashlib
@@ -6310,6 +7659,10 @@ new_text = ''.join(filter(remove_special_characters, text))
 print(new_text)
 #+end_src
 
+** measure time
+#+BEGIN_SRC python
+
+#+END_SRC
 * Flask
 - Flask and Quart built on Werkzeug and uses Jinja for templating.
 - Flask wraps Werkzeug, allowing it to take care of the WSGI intricacies while also offering extra structure
@@ -6443,38 +7796,41 @@ def show_subpath(subpath):
 - dev-python/sphinxcontrib-log_cabinet
 - dev-python/werkzeug - Collection of various utilities for WSGI applications
 - dev-python/wheel - A built-package format for Python
-** EXAMPLES
+** Hello world
 #+BEGIN_SRC python
 import flask
 from flask import Flask
-from flask import json, Response
-
-app = Flask(__name__, template_folder='./', static_folder='./')
-
-@app.route("/predict", methods=["POST"])
-def predict():
-    data = {"success": False}
-
-    if flask.request.method != "POST":
-        json_string = json.dumps(data, ensure_ascii=False)
-        return Response(json_string, content_type="application/json; charset=utf-8")
-
-
+from flask import json, Response, redirect, url_for
 from markupsafe import escape
 
-@app.route("/<name>")
-def hello(name):
-    return f"Hello, {escape(name)}!"
 
+def create_app(test=False) -> Flask:
+    app = Flask(__name__, template_folder='./', static_folder='./')
+    if test:
+        pass
 
-@app.route("/")
-def hello() -> str:
-    return "Hello World"
+    @app.route("/predict", methods=["POST"])
+    def predict():
+        data = {"success": False}
+
+        if flask.request.method != "POST":
+            json_string = json.dumps(data, ensure_ascii=False)
+            return Response(json_string, content_type="application/json; charset=utf-8")
+
+    @app.route("/<name>")
+    def hello(name):
+        return f"Hello, {escape(name)}!"
+
+    @app.route('/', methods=['GET', 'POST'])
+    def index():
+        return redirect(url_for('transcribe'))
+
+    return app
 
 
 if __name__ == "__main__":
+    app = create_app()
     app.run(debug=False)
-
 #+END_SRC
 ** curl
 - https://gist.github.com/subfuzion/08c5d85437d5d4f00e58
@@ -6514,7 +7870,7 @@ def index():
 ** security
 - from markupsafe import escape; return f"Hello, {escape(name)}!"
 
-** testing
+** testing1
 #+begin_src python
 from main import app
 from flask.testing import FlaskClient
@@ -6559,6 +7915,28 @@ with app.test_request_context():
 
 
 #+end_src
+** testing2
+#+BEGIN_SRC python
+from main import app
+from flask.testing import FlaskClient
+from flask import Response
+from pathlib import Path
+app.testing = True
+client: FlaskClient
+import json
+
+
+with app.test_client() as client:
+    # r: Response = client.get('/speech_ru')
+    # assert r.status_code == 200
+    # print(r.status_code)
+
+    r: Response = client.post('/speech_ru', data={
+        'file': Path('/home/u2/h4/PycharmProjects/captcha_fssp/929014e341a0457f5a90a909b0a51c40.wav').open('rb')}
+    )
+    assert r.status_code == 200
+    print(json.loads(r.data))
+#+END_SRC
 ** Flask-2.2.2 hashes <<flask_hashes>>
 #+begin_src conf
 MarkupSafe==2.1.1 \
@@ -6776,3 +8154,64 @@ Docker
 - html.escape - <html> => &lt;html&gt;
 - from werkzeug.utils import secure_filename - request.files['the_file'].filename
 - [[pip_hashes]] - [[flask_hashes]]
+* serialization
+- pickle (unsafe alone) +  hmac
+- json
+- YAML: YAML is a superset of JSON, but easier to read (read & write, comparison of JSON and YAML)
+- csv
+- MessagePack (Python package): More compact representation (read & write)
+- HDF5 (Python package): Nice for matrices (read & write)
+- XML: exists too *sigh* (read & write)
+-
+** pickle
+#+BEGIN_SRC python
+# -- pandas pickle and csv --
+import pickle
+p: str = p
+if p.endswith('.csv'):
+    df = pd.read_csv(p, index_col=0, low_memory=False, nrows=nrows)
+elif p.endswith('.pickle'):
+    df: pd.DataFrame = pd.read_pickle(p)
+
+# -- pickle
+import pickle
+with open('filename.pickle', 'wb') as fh:
+    pickle.dump(a, fh, protocol=pickle.HIGHEST_PROTOCOL)
+with open('filename.pickle', 'rb') as fh:
+    b = pickle.load(fh)
+
+#+END_SRC
+
+* probability teory
+
+#+begin_src python
+from scipy import stats
+import numpy as np
+arr = np.random.normal(size=100) # continuous probability mass function
+
+# --------- pdf ---------
+# histogram
+plt.hist(arr)
+# line
+hist, bin_edges = np.histogram(arr)
+plt.plot(hist)
+# line and histogram
+import seaborn as sns
+sns.distplot(arr, kde=False, fit=stats.gamma, rug=True)
+plt.show()
+
+# -------- cdf ---------
+# -- numpy
+hist, bin_edges = np.histogram(arr)
+cdf = np.cumsum(hist) # cdf
+# -- stats
+cdf = stats.cumfreq(arr)
+
+# ------ variance -----
+import statistics as s
+s.variance(arr)
+# ------ std --------
+s.stdev(arr)
+
+
+#+end_src
