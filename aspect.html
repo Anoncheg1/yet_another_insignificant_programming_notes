@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3472ea6">1. Aspect CTRM</a>
+<ul>
+<li><a href="#org303192b">1.1. Persons</a></li>
+<li><a href="#org60ae0f1">1.2. history</a></li>
+<li><a href="#org50df1a0">1.3. <span class="todo TODO">TODO</span> Ecosystems</a></li>
+<li><a href="#orgd53483b">1.4. Covering the full value chain of Liquefied Natural Gas</a></li>
+<li><a href="#org056f186">1.5. What is Aspect CTRM?</a></li>
+<li><a href="#orgb8eaad4">1.6. Features</a></li>
+<li><a href="#org08730a8">1.7. interface</a></li>
+<li><a href="#orga518e23">1.8. Objects and Root nodes</a>
+<ul>
+<li><a href="#org3bb2fab">1.8.1. Root nodes</a></li>
+</ul>
+</li>
+<li><a href="#orgb5e86e4">1.9. Risk</a></li>
+</ul>
+</li>
+<li><a href="#org17dae3b">2. Commodity Trading</a>
+<ul>
+<li><a href="#org7259106">2.1. terms</a></li>
+<li><a href="#org232101d">2.2. free books</a></li>
+<li><a href="#org980ab21">2.3. theory</a>
+<ul>
+<li><a href="#org4cbc74c">2.3.1. differences:</a></li>
+<li><a href="#orgc835252">2.3.2. Cash, Forward, futures, options</a></li>
+<li><a href="#orga756935">2.3.3. other contracts</a></li>
+<li><a href="#org7d04e46">2.3.4. <b>Hedging</b></a></li>
+<li><a href="#orgd8e99f7">2.3.5. categories</a></li>
+<li><a href="#org49748ac">2.3.6. open interest and Bull/Bear market</a></li>
+</ul>
+</li>
+<li><a href="#org6018fa1">2.4. todo</a></li>
+<li><a href="#org75d6a81">2.5. trading process</a></li>
+<li><a href="#orge227493">2.6. clearing services</a>
+<ul>
+<li><a href="#org2260878">2.6.1. notable clearing services, electronic exchanges:</a></li>
+</ul>
+</li>
+<li><a href="#org6c5bdd7">2.7. Resources</a></li>
+<li><a href="#org0a532dd">2.8. Exchanges or Exchange Traded Commodities.</a></li>
+<li><a href="#org319f563">2.9. INCOTERMS</a></li>
+<li><a href="#org3873a46">2.10. courses</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+<div id="outline-container-org3472ea6" class="outline-2">
+<h2 id="org3472ea6"><span class="section-number-2">1.</span> Aspect CTRM</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org303192b" class="outline-3">
+<h3 id="org303192b"><span class="section-number-3">1.1.</span> Persons</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Lance Fogtman (business)</li>
+<li>Nikita Levitskiy (head of product)</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org60ae0f1" class="outline-3">
+<h3 id="org60ae0f1"><span class="section-number-3">1.2.</span> history</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+2021
+</p>
+<ul class="org-ul">
+<li><b>AWS</b> migration and ION Cloud management</li>
+<li>LNG advanced pricing and contract management</li>
+<li><b>Crude and refined products</b> standard packages</li>
+<li><b>UX</b> simplified reporting and workbenches</li>
+<li><b>Operations</b> truck tickets support</li>
+</ul>
+<p>
+2022
+</p>
+<ul class="org-ul">
+<li><b>Carbon and emissions</b> commodity support</li>
+<li><b>Metals</b> innovations and workflow support</li>
+<li><b>UX</b> dashboards and usability improvements</li>
+<li><b>Shipping</b> Softmar integration</li>
+<li><b>Capital allocation</b> reporting</li>
+<li><b>T/T+1</b> close of day</li>
+<li><b>Risk analytics</b> FEA integration - risk metrics</li>
+</ul>
+<p>
+2023
+</p>
+<ul class="org-ul">
+<li><b>Ecosystem</b> data rich and connected solutions</li>
+<li><b>UX</b> simplified trade, operations and back-office workflow</li>
+<li><b>Market data</b> distribution platform and price discovery</li>
+<li><b>Carbon</b> - use case diversity and ESG capture and reporting</li>
+<li><b>Risk analytics</b> FEA integration - pricing models</li>
+<li><b>STF</b> connectivity expansion - SGX, TT, LME</li>
+<li><b>Trade finance</b> and capital allocation - continued</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org50df1a0" class="outline-3">
+<h3 id="org50df1a0"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Ecosystems</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Canonical model
+</p>
+<ul class="org-ul">
+<li>Prices</li>
+<li>Exposure</li>
+<li>PnL</li>
+<li>Positions</li>
+<li>AR/AP</li>
+<li>Accrual (начисления)</li>
+</ul>
+
+<p>
+Others (already in):
+</p>
+<ul class="org-ul">
+<li>DSC</li>
+<li>Softmar</li>
+<li>Clarus</li>
+<li>Data lake</li>
+<li>ERP</li>
+</ul>
+
+<p>
+in prograss:
+</p>
+<ul class="org-ul">
+<li>FEA - deep reisk analytics</li>
+<li>Lab specs</li>
+<li>Tanks</li>
+<li>Truck/rack</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd53483b" class="outline-3">
+<h3 id="orgd53483b"><span class="section-number-3">1.4.</span> Covering the full value chain of Liquefied Natural Gas</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+NG:
+</p>
+<ul class="org-ul">
+<li>Production</li>
+<li>NG Pipeline</li>
+</ul>
+<p>
+NG-LNG
+</p>
+<ul class="org-ul">
+<li>Liquefaction</li>
+</ul>
+<p>
+LNG
+</p>
+<ul class="org-ul">
+<li>LNG Storage</li>
+<li>Loading</li>
+<li>Shipping</li>
+<li>Discharge + LNG Storage + Reloads</li>
+</ul>
+<p>
+LNG-NG
+</p>
+<ul class="org-ul">
+<li>Regasification</li>
+<li>Send out gas</li>
+<li>Consumption</li>
+<li>Storage</li>
+</ul>
+
+<p>
+NG props:
+</p>
+<ul class="org-ul">
+<li>Production forecast tools</li>
+<li>Cargo loading program</li>
+<li>Liquefaction tolling</li>
+<li>model</li>
+</ul>
+
+<p>
+LNG portfolio &amp; cargo operations
+</p>
+<ul class="org-ul">
+<li>Physical optionality valuation including extrinsics</li>
+<li>Enhanced tools to manage boil off, heels, and bunker calcs</li>
+<li>Track performance including charters and freight hedges</li>
+</ul>
+
+<p>
+Downstream
+</p>
+<ul class="org-ul">
+<li>Automated regasification process</li>
+<li>Model send out &amp; stored gass</li>
+<li>Automate landed &amp; tolling costs</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org056f186" class="outline-3">
+<h3 id="org056f186"><span class="section-number-3">1.5.</span> What is Aspect CTRM?</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>129$per user per month</li>
+<li>Commodity Trading Software and Risk Management</li>
+<li><a href="http://www.aspectenterprise.com/">http://www.aspectenterprise.com/</a></li>
+<li><a href="https://iongroup.com">https://iongroup.com</a></li>
+</ul>
+<p>
+AspectCTRM is a Web, cloud-based SaaS software, which helps organizations across
+ agriculture, oil and gas, bunker trading and various other sectors
+ monitor multiple commodities, credit, market and operational
+ risks.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb8eaad4" class="outline-3">
+<h3 id="orgb8eaad4"><span class="section-number-3">1.6.</span> Features</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Features include
+</p>
+<ul class="org-ul">
+<li>trade capture, -</li>
+<li>VaR reporting, - (Value-at-Risk) Reporting, estimates the potential
+loss of a portfolio over a specific time horizon with a given
+probability (usually 95% or 99%).</li>
+<li>pre-trade analytics - analyzing market data and other factors to
+predict the potential outcome of a trade before it is executed:
+Evaluate trade opportunities, Assess market risk, Optimize trade
+execution, Reduce trading costs.</li>
+<li>audit trail -  record of all changes in system</li>
+<li>group management - Assign permissions and access levels, performance</li>
+<li>energy corporations, OILspace, metals, Freight,</li>
+</ul>
+
+<p>
+other
+</p>
+<ul class="org-ul">
+<li>Custom User Interfaces - dashboards, reports, and data visualizations</li>
+<li>RESTful APIs</li>
+<li>“Client-Side Scripting”
+<ul class="org-ul">
+<li>enhance user experience by enabling dynamic content updates,</li>
+<li>form validations</li>
+<li>interactive features without requiring full page reloads</li>
+</ul></li>
+<li>Event Handling and Custom Logic
+<ul class="org-ul">
+<li>automate workflows</li>
+<li>trigger alerts</li>
+<li>perform specific actions based on user interactions or data changes</li>
+</ul></li>
+<li>Modular Development - deploy reusable JavaScript components</li>
+<li>Third-Party Libraries - can connect jQuery, React, Angular - to enhance the functionality and user experience</li>
+<li>Testing and Debugging - some tools and environment</li>
+<li>Version Control and Collaboration - can integrate with Git. have it.</li>
+<li>Integration: Oracle Cloud Financials, JD Edwards EnterpriseOne, Microsoft Excel</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org08730a8" class="outline-3">
+<h3 id="org08730a8"><span class="section-number-3">1.7.</span> interface</h3>
+<div class="outline-text-3" id="text-1-7">
+<dl class="org-dl">
+<dt>System menu</dt><dd>Reports, Accounting, Brazil
+<ul class="org-ul">
+<li>Actions - workbanches to manipulate existing data: shipments, invoices</li>
+<li>Create - create new master data: Deals, storages, etc..</li>
+<li>tools - to create additional functionality</li>
+</ul></dd>
+<dt>(no term)</dt><dd>Search</dd>
+<dt>(no term)</dt><dd>User Tabs</dd>
+<dt>Node bar</dt><dd>You are here: MP (Company) &gt; Strategies</dd>
+<dt>(no term)</dt><dd>landing page</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orga518e23" class="outline-3">
+<h3 id="orga518e23"><span class="section-number-3">1.8.</span> Objects and Root nodes</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+A record that characterise a document or an action.
+</p>
+<ul class="org-ul">
+<li>Classes: Deal, Cost, Invoice, Payment, Bank document, Bank transcation etc.</li>
+<li>Have inner state: initial and executed (completed, confirmed).</li>
+<li>Asigned to several hierarhcies.</li>
+<li>For every class exist a report.</li>
+</ul>
+</div>
+<div id="outline-container-org3bb2fab" class="outline-4">
+<h4 id="org3bb2fab"><span class="section-number-4">1.8.1.</span> Root nodes</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<ul class="org-ul">
+<li>Trader</li>
+<li>Strategy - related group of deals</li>
+<li>Product - underlying commodity</li>
+<li>Location - related geographic region</li>
+<li>Couterparty - customer or company engaged</li>
+<li>Broker - groker engaged</li>
+<li>Company - Legal entitiy inside your company it is assigned to</li>
+<li>Book - “company department accoountable” - looks like a part of company</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5e86e4" class="outline-3">
+<h3 id="orgb5e86e4"><span class="section-number-3">1.9.</span> Risk</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+VaR Value-at-Risk is a metric to assess the risk of your current portfolio.
+</p>
+<ul class="org-ul">
+<li>expected values of future events that may be +/-.
+CTRM Commodity Trading Software and Risk Management</li>
+</ul>
+<p>
+(Commodity Trading and Risk Management) - commodity trading, risk
+ management, and supply chain management.
+</p>
+<ul class="org-ul">
+<li>risks:  market risk, credit risk, and operational risk.</li>
+<li>Compliance with regulatory requirements.</li>
+<li>skils: commodity trading, risk management, supply chain management principles and practices.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org17dae3b" class="outline-2">
+<h2 id="org17dae3b"><span class="section-number-2">2.</span> Commodity Trading</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+part of Financial markets
+</p>
+</div>
+<div id="outline-container-org7259106" class="outline-3">
+<h3 id="org7259106"><span class="section-number-3">2.1.</span> terms</h3>
+<div class="outline-text-3" id="text-2-1">
+<dl class="org-dl">
+<dt>Asset</dt><dd>durable good. Anything that provides a current or potential future economic benefit to whoever
+possesses or controls that asset. Something of economic value that's owned or controlled by a person,
+company, or government.</dd>
+<dt>Liabilities</dt><dd>something that is owed to another person, company, or government. ex: loans, tax obligations,
+and accounts payable.</dd>
+<dt>Commodity</dt><dd>a type of asset.</dd>
+<dt>Market clearing</dt><dd>process by which “demand” balace with “supply”, so neither a surplus nor a shortage.</dd>
+<dt>Clearing service (clearinghouse)</dt><dd>intermediary between buyers and sellers in a commodity transaction.
+Process of settling trades, managing risk, and guaranteeing the performance of buyers and sellers in a
+commodity transaction. Types:
+<ul class="org-ul">
+<li>Exchange-based clearing: Provided by exchanges, such as the Chicago Mercantile Exchange (CME) or the
+Intercontinental Exchange (ICE), which offer clearing services for trades executed on their platforms.</li>
+<li>Over-the-counter (OTC) clearing: Provided by third-party clearinghouses, such as the London Clearing House
+(LCH) or the Depository Trust &amp; Clearing Corporation (DTCC), which clear trades executed outside of
+formal exchanges, directly with each other.</li>
+</ul></dd>
+<dt>Spot price</dt><dd>cash price or current price -  for immediate (or short 1-2 days) delivery.
+<dl class="org-dl">
+<dt>Delivery date</dt><dd>Spot prices are for immediate delivery, while futures prices are for delivery at a
+specific future date.</dd>
+<dt>Price risk</dt><dd>Spot prices reflect current market conditions and are subject to immediate price risk, while
+futures prices are locked in at the time of the contract and are subject to price risk at the time of
+delivery.</dd>
+<dt>Liquidity</dt><dd>Spot markets are generally more liquid than futures markets, meaning it's easier to buy or
+sell assets at the current market price.</dd>
+</dl></dd>
+<dt>Futures price</dt><dd>a future date after delivery.</dd>
+<dt>Commodity price index</dt><dd>index for some commodity, may be may be based on spot or futures prices.</dd>
+<dt>Commodity index fund</dt><dd>fund whose assets are invested in financial instruments based on or linked to a
+commodity index.</dd>
+<dt>Cash commodity</dt><dd>not derivatives, commodities that someone is buying/selling/trading.</dd>
+<dt>Derivatives</dt><dd>evolved from simple commodity future contracts to many others.</dd>
+<dt>Exchage</dt><dd>organized market</dd>
+<dt>Premises</dt><dd>warehouse</dd>
+<dt>Metric tonne</dt><dd>weight of oil and other petroleum products. 1 = 1,000 kilograms or 2,204.62 pounds</dd>
+<dt>petroleum products</dt><dd>нефтепродукты</dd>
+<dt>FOB</dt><dd>Most oil is sold either FOB (effectively priced at the loading port) or CIF (effectively priced at
+the delivery port). Exclude all insurance and freight charges.</dd>
+<dt>MT</dt><dd>metric tons is a lot size</dd>
+<dt>kgs</dt><dd>kilograms</dd>
+<dt>bbl</dt><dd>barrels</dd>
+<dt>Lots</dt><dd>number of units of a financial unstrument traded in one transactions. Lot - size of transaction</dd>
+<dt>price quote</dt><dd>катеровка цены, ценовое предложение, latest price. Quoted price is only valid for a certain
+period of time.</dd>
+<dt>Spread</dt><dd>is defined as the difference between the current bid and ask prices</dd>
+<dt>contingencies</dt><dd>непредвиденные обстоятельства</dd>
+<dt>Clearing Broker</dt><dd></dd>
+
+<dt>Executing Broker</dt><dd>execute buy/sell orders on behalf of clients. They find the best prices in the market.</dd>
+<dt>Clearing Broker</dt><dd>settlement of trades after they have been executed. Ensure that transaction is completed,
+includes transferring ownership of the securities and handling the associated cash flows.</dd>
+<dt>Financial statement</dt><dd>formal records of fin. activities.
+<dl class="org-dl">
+<dt>Consolided FS</dt><dd>FS of a grpup in which the assets, liabilities, equality, income, expenses and cash flows
+of the parent company and it's subsidiaries are presented as of a single econimic entity. Type of report.</dd>
+</dl></dd>
+<dt>revenue, income, profits</dt><dd>something similar.</dd>
+<dt>income statement or profit and loss account</dt><dd>one of financial statement of a company. Net income, result after all revenues and expenses have been accounted for.</dd>
+<dt>PnL</dt><dd>day-over-day change in the value of a portfolio (value today - value prior day)</dd>
+<dt>(no term)</dt><dd></dd>
+</dl>
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li><a href="https://imperiumcs.com/commodity-markets-glossary-terms/">https://imperiumcs.com/commodity-markets-glossary-terms/</a></li>
+<li><a href="https://www.commoditiesdemystified.info/en/glossary">https://www.commoditiesdemystified.info/en/glossary</a></li>
+<li><a href="https://www.unitedfutures.com/glossary.htm">https://www.unitedfutures.com/glossary.htm</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org232101d" class="outline-3">
+<h3 id="org232101d"><span class="section-number-3">2.2.</span> free books</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The Basics of Commodities Trading
+</p>
+
+<p>
+CME Commodity Trading Manual 2006 <a href="file:///home/ff/Downloads/ChickMan.pdf">file:///home/ff/Downloads/ChickMan.pdf</a> <a href="https://www.le.ac.uk/users/dsgp1/COURSES/DERIVATE/RESOURCE/ChickMan.pdf">https://www.le.ac.uk/users/dsgp1/COURSES/DERIVATE/RESOURCE/ChickMan.pdf</a>
+</p>
+
+<p>
+Commodities trading: Commodities Trading 101: Lessons from Trading Books <a href="https://fastercapital.com/content/Commodities-trading--Commodities-Trading-101--Lessons-from-Trading-Books.html">https://fastercapital.com/content/Commodities-trading--Commodities-Trading-101--Lessons-from-Trading-Books.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org980ab21" class="outline-3">
+<h3 id="org980ab21"><span class="section-number-3">2.3.</span> theory</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org4cbc74c" class="outline-4">
+<h4 id="org4cbc74c"><span class="section-number-4">2.3.1.</span> differences:</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<dl class="org-dl">
+<dt>Elasitcity</dt><dd>Electricity(low) vs Gold(high) - said: “elastic demand”. Refers to how responsive the demand for a
+commodity is to changes in its price. Commodities with low elasticity have a stable demand, regardless of
+price fluctuations, while those with high elasticity have a demand that can change significantly with price
+changes.</dd>
+<dt>Deliverability</dt><dd>Natural gas (high) vs Lean hogs (low) - how ease and speed with which a commodity can be
+transported and delivered to various markets.</dd>
+<dt>Substitability</dt><dd>Coffee (high) vs Gasoline (low) - can be replaced by other products or
+alternatives. Commodities with high substitutability have many alternatives, making demand more responsive
+to price changes, while those with low substitutability have limited alternatives, making demand less
+responsive.</dd>
+<dt>Storability</dt><dd>Animals (low) vs Aluminum (high) - stored for extended periods without significant degradation or loss of
+value. Commodities with high storability can be kept in inventory for long periods, while those with low
+storability require immediate use or processing.</dd>
+<dt>Exchange Prices vs Local Prices</dt><dd>Natural gas at Henry Hub (stable) vs Natural gas at source (local
+variable)</dd>
+<dt>Timing vs Production</dt><dd>Winter wheat (low sensitive to weather) vs Spring wheat (high sensisitve) - seasonal
+patterns of a commodity, some commodities have specific timing requirements, such as planting and harvesting
+seasons, which can affect their yield and availability.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgc835252" class="outline-4">
+<h4 id="orgc835252"><span class="section-number-4">2.3.2.</span> Cash, Forward, futures, options</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<dl class="org-dl">
+<dt>Cash sales</dt><dd>deliver to offline market and sell with the price for the day.</dd>
+<dt>Forward contracts</dt><dd>P2P, Contract not standardized. Negotiated now for delivery later for specified price
+at the time of delivery. You are protected if prices fall.</dd>
+<dt>Futures contracts</dt><dd>P2B. Contract standardized. (like forward) agreement to buy or sell a commodity at a
+date in the future. Buy or sell throught a brokerage firm that transacts the trade for you. You must deposit
+a “performance bound” (a small percentage of the contract value). <b>Specifies everythin but the price.</b></dd>
+<dt>options on futures contracs</dt><dd>P2P</dd>
+<dt>Option</dt><dd>P2P, buyer purchases the right but not the obligation to buy an agreed quantity of a
+particular commodity or financial instrument (the underlying) from the seller of the option at a certain
+time (the expiration date) for a certain price (the strike price). The seller (or "writer") is obligated to
+sell the commodity or financial instrument should the buyer so decide. The buyer pays a fee (called a
+premium) for this right.
+<dl class="org-dl">
+<dt>call option (to buy something at price)</dt><dd>The holder of a call option hopes that the price of the
+underlying asset will rise above the strike price, allowing them to buy the asset at the lower strike
+price and sell it at the higher market price later.</dd>
+<dt>put option (to sell something at price)</dt><dd>gives the holder the right to sell an underlying asset at a predetermined price, known as
+the strike price. The holder of a put option hopes that the price of the underlying asset will fall below
+the strike price, allowing them to sell the asset at the higher strike price and buy it back at the lower
+market price later.</dd>
+</dl></dd>
+</dl>
+
+<p>
+“sell forward contracts” - I get agreement to sell a commodity or asset at a future date, at a predetermined
+ price.
+</p>
+</div>
+</div>
+<div id="outline-container-orga756935" class="outline-4">
+<h4 id="orga756935"><span class="section-number-4">2.3.3.</span> other contracts</h4>
+<div class="outline-text-4" id="text-2-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="org5762b00"></a>swap<br />
+<div class="outline-text-5" id="text-2-3-3-1">
+<p>
+derivative contract, s exchanging one type of cash flow for another. In commodity trading, swaps are
+ used to hedge against price risks or to speculate on price movements.
+</p>
+
+
+<p>
+Ex. Suppose a farmer wants to hedge against a potential decline in the price of wheat. They enter into a swap
+ contract with a bank, agreeing to exchange a fixed price of $200 per ton of wheat for a floating price based
+ on the market price of wheat. If the market price of wheat falls to $180 per ton, the farmer will receive $20
+ per ton from the bank, which will help offset the loss in revenue. Types of swaps:
+</p>
+
+<p>
+Types
+</p>
+<ul class="org-ul">
+<li>Fixed-for-floating swap: Exchanges a fixed price for a floating price.</li>
+<li>Floating-for-floating swap: Exchanges one floating price for another floating price.</li>
+<li>Basis swap: Exchanges a fixed price for a floating price, with the floating price based on a specific
+market index.</li>
+</ul>
+</div>
+</li>
+<li><a id="orgeedabfa"></a><span class="todo TODO">TODO</span> Exchange-traded commodities (ETCs)<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org7d04e46" class="outline-4">
+<h4 id="org7d04e46"><span class="section-number-4">2.3.4.</span> <b>Hedging</b></h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+(minimise or remove price risk) - by taking an opposite position in the futures market.
+</p>
+
+<p>
+Example: Suppose you have a forward contract to sell 1,000 barrels of oil at $50 per barrel in three
+ months. To hedge this position, you could:
+</p>
+
+<ul class="org-ul">
+<li>Buy a futures contract: Buy a futures contract for 1,000 barrels of oil at $50 per barrel, expiring in three
+months. This would offset the risk of the forward contract.</li>
+<li>Buy a call option: Buy a call option to buy 1,000 barrels of oil at $50 per barrel, expiring in three
+months. This would give you the right, but not the obligation, to buy oil at $50 per barrel, reducing the
+risk of the forward contract.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd8e99f7" class="outline-4">
+<h4 id="orgd8e99f7"><span class="section-number-4">2.3.5.</span> categories</h4>
+<div class="outline-text-4" id="text-2-3-5">
+<ul class="org-ul">
+<li>Energy (such as Coal, Crude Oil, Ethanol, Gas Oil, Gasoline, Heating Oil, Natural Gas, Propane)</li>
+<li>Metals
+<ul class="org-ul">
+<li>Base metals (such as Lead, Zinc, Nickel, Copper)</li>
+<li>Precious metals (such as Gold, Silver, Platinum, Palladium)</li>
+</ul></li>
+<li>Agriculture
+<ul class="org-ul">
+<li>Grains (such as Corn, Oats, Rice, Soybeans, Wheat)</li>
+<li>Softs (such as Coffee, Cocoa, Sugar, Butter, Cotton, Milk, Orange Juice)</li>
+<li>Livestock (such as Hogs, Live Cattle, Pork Bellies, Feeder Cattle)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org49748ac" class="outline-4">
+<h4 id="org49748ac"><span class="section-number-4">2.3.6.</span> open interest and Bull/Bear market</h4>
+<div class="outline-text-4" id="text-2-3-6">
+<p>
+<b>Open interest</b> is a number of contracts outstanding at the end of each day. this number changes from day to day
+ and gives us trand.
+</p>
+
+<p>
+<b>Bull</b> One who expect prices to rise
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Prices</th>
+<th scope="col" class="org-left">Volume</th>
+<th scope="col" class="org-left">Open interest</th>
+<th scope="col" class="org-left">Market Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Rising</td>
+<td class="org-left">Rising</td>
+<td class="org-left">Rising</td>
+<td class="org-left">Bullish</td>
+</tr>
+
+<tr>
+<td class="org-left">Rising</td>
+<td class="org-left">Falling</td>
+<td class="org-left">Falling</td>
+<td class="org-left">Bearish</td>
+</tr>
+
+<tr>
+<td class="org-left">Falling</td>
+<td class="org-left">Rising</td>
+<td class="org-left">Rising</td>
+<td class="org-left">Bearish</td>
+</tr>
+
+<tr>
+<td class="org-left">Falling</td>
+<td class="org-left">Falling</td>
+<td class="org-left">Falling</td>
+<td class="org-left">Bullish</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6018fa1" class="outline-3">
+<h3 id="org6018fa1"><span class="section-number-3">2.4.</span> todo</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Define commodities and their key features
+Identify the major commodity categories
+Discuss the drivers of the commodities in different categories
+Undertake commodity trading strategies using futures and options
+Explain commodity spreads and common spread trading strategies
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75d6a81" class="outline-3">
+<h3 id="org75d6a81"><span class="section-number-3">2.5.</span> trading process</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Trade matching: Verifying that the trade details, such as price, quantity, and delivery terms, match between the buyer and seller.</li>
+<li>Trade confirmation: Confirming the trade details with both parties to ensure accuracy and agreement.</li>
+<li>Margining: Collecting and managing margin deposits from traders to cover potential losses.</li>
+<li>Risk management: Monitoring and managing the risk of default by either party, using techniques such as position limits, stop-loss orders, and margin calls.</li>
+<li>Settlement: Facilitating the exchange of commodities and payment between buyers and sellers, ensuring that the transaction is completed smoothly and efficiently.</li>
+<li>Guaranteeing performance: Acting as a guarantor for the trade, ensuring that the buyer and seller fulfill their obligations.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge227493" class="outline-3">
+<h3 id="orge227493"><span class="section-number-3">2.6.</span> clearing services</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Clearing services offer several benefits to commodity traders, including:
+</p>
+<ul class="org-ul">
+<li>Reduced counterparty risk: By acting as a guarantor, clearing services minimize the risk of default by either party.</li>
+<li>Increased efficiency: Clearing services streamline the trading process, reducing the time and effort required to settle trades.</li>
+<li>Improved transparency: Clearing services provide a transparent and auditable record of trades, helping to
+prevent errors and disputes.</li>
+<li>Enhanced risk management: Clearing services help traders manage their risk exposure, using techniques such
+as margining and position limits.</li>
+</ul>
+</div>
+
+<div id="outline-container-org2260878" class="outline-4">
+<h4 id="org2260878"><span class="section-number-4">2.6.1.</span> notable clearing services, electronic exchanges:</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<ul class="org-ul">
+<li>CME Clearing: (largest in the world) Provided by the Chicago Mercantile Exchange (CME), one of the largest
+and most well-established clearinghouses in the world.
+<ul class="org-ul">
+<li>CBOT - It is a subsidiary of the CME Group, focuses on agricultural commodities.</li>
+</ul></li>
+<li>ICE Clear: Provided by the Intercontinental Exchange (ICE), which offers clearing services for a range of
+commodity and financial markets.</li>
+<li>LCH.Clearnet: A leading independent clearinghouse, which provides clearing services for a range of markets,
+including commodities, currencies, and interest rates.</li>
+<li>DTCC: The Depository Trust &amp; Clearing Corporation, which provides clearing and settlement services for a
+range of financial markets, including commodities.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c5bdd7" class="outline-3">
+<h3 id="org6c5bdd7"><span class="section-number-3">2.7.</span> Resources</h3>
+<div class="outline-text-3" id="text-2-7">
+<dl class="org-dl">
+<dt>CME Group</dt><dd><a href="https://www.cmegroup.com">https://www.cmegroup.com</a> derivatives exchanges - trading in futures and options + real-time data</dd>
+<dt>ICE (Intercontinental Exchange)</dt><dd><a href="https://www.ice.com">https://www.ice.com</a> Clearing + trading and clearing services + real-time data</dd>
+
+<dt>Bloomberg</dt><dd>real-time data <a href="https://www.bloomberg.com">https://www.bloomberg.com</a></dd>
+<dt>Thomson Reuters Eikon</dt><dd>real-time data  <a href="https://www.thomsonreuters.com/en/products-services/financial-markets/trading-platforms/eikon.html">https://www.thomsonreuters.com/en/products-services/financial-markets/trading-platforms/eikon.html</a></dd>
+<dt>(no term)</dt><dd>S&amp;P Global have: ratings, Market Intelligence, Dow Jones Indices, Engineering Solutions, Capital IQ
+<dl class="org-dl">
+<dt>S&amp;P Global Commodity Insights</dt><dd><a href="https://www.spglobal.com/commodityinsights">https://www.spglobal.com/commodityinsights</a> real-time data + most used for analysis</dd>
+<dt>Platts</dt><dd><a href="https://www.spglobal.com/platts">https://www.spglobal.com/platts</a> real-time data for  energy and commodities market.</dd>
+</dl></dd>
+<dt>Argus Media</dt><dd><a href="https://www.argusmedia.com">https://www.argusmedia.com</a> : real-time data</dd>
+<dt>Refinitiv</dt><dd><a href="https://www.refinitiv.com">https://www.refinitiv.com</a> - real-time data and analytics</dd>
+<dt>(no term)</dt><dd>Cargill: <a href="https://www.cargill.com/">https://www.cargill.com/</a> - agro-commodity trader and processor + real-time data</dd>
+<dt>(no term)</dt><dd>World Bank and IMF Reports: offer research and reports on global economic trends, including commodity
+markets, which can be valuable for risk assessment.</dd>
+<dt>(no term)</dt><dd>Trade Associations: Organizations like the International Energy Agency (IEA) and the American Petroleum
+Institute (API) provide industry reports and statistics that are useful for understanding market dynamics.</dd>
+<dt>(no term)</dt><dd>News and Research Websites:
+<ul class="org-ul">
+<li>Seeking Alpha: Offers insights and analysis on various commodities and markets.</li>
+<li>MarketWatch: Provides news, analysis, and data on commodities and financial markets.</li>
+<li>Investing.com: Offers data, news, and analysis for various commodities, including real-time price updates.</li>
+</ul></dd>
+<dt>(no term)</dt><dd>Academic Journals and Publications: Research published in journals such as the "Journal of Commodity
+Markets" and the "Energy Journal" can provide valuable insights into commodity pricing, trading
+strategies, and risk management.</dd>
+<dt>(no term)</dt><dd>Social Media and Networking Platforms: LinkedIn and Twitter can be useful for following industry experts,
+analysts, and news outlets for real-time updates and insights.</dd>
+</dl>
+
+<p>
+News and Research Websites
+</p>
+<ul class="org-ul">
+<li>Bloomberg: www.bloomberg.com - news and analysis</li>
+<li>Reuters: www.reuters.com - news and analysis</li>
+<li>CNBC: www.cnbc.com - news and analysis</li>
+<li>Seeking Alpha: www.seekingalpha.com - news and analysis</li>
+<li>Investing.com: www.investing.com - news and analysis</li>
+</ul>
+
+
+<p>
+Regulatory and Industry Organizations
+</p>
+<ul class="org-ul">
+<li>CFTC (Commodity Futures Trading Commission): www.cftc.gov - regulatory agency</li>
+<li>SEC (Securities and Exchange Commission): www.sec.gov - regulatory agency</li>
+<li>ICE (Intercontinental Exchange): www.theice.com - industry organization</li>
+<li>CME Group: www.cmegroup.com - industry organization</li>
+<li>National Futures Association: www.nfa.futures.org - industry organization</li>
+</ul>
+
+<p>
+CME Group, ICE, and Refinitiv.
+</p>
+</div>
+</div>
+<div id="outline-container-org0a532dd" class="outline-3">
+<h3 id="org0a532dd"><span class="section-number-3">2.8.</span> Exchanges or Exchange Traded Commodities.</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+<a href="https://en.wikipedia.org/wiki/Commodity_trading#Commodities_exchange">https://en.wikipedia.org/wiki/Commodity_trading#Commodities_exchange</a>
+<a href="https://en.wikipedia.org/wiki/Commodities_exchange">https://en.wikipedia.org/wiki/Commodities_exchange</a>
+</p>
+
+<p>
+Most ETCs implement a futures trading strategy.
+</p>
+
+<ul class="org-ul">
+<li>ICE Futures Europe (IFEU)
+<ul class="org-ul">
+<li>Electronic trading platform</li>
+<li>Clearing and settlement</li>
+<li>Market data</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org319f563" class="outline-3">
+<h3 id="org319f563"><span class="section-number-3">2.9.</span> INCOTERMS</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+is a set of standardized terms used in international trade. developed by the International Chamber of Commerce
+ (ICC).
+</p>
+
+<p>
+Categories
+</p>
+<ul class="org-ul">
+<li>E-terms: These terms (EXW, FCA, FAS, FOB) refer to the seller's obligations and responsibilities.</li>
+<li>C-terms: These terms (CFR, CIF, CPT, CIP) refer to the buyer's obligations and responsibilities.</li>
+<li>D-terms: These terms (DAT, DAP, DDP) refer to the delivery of goods to a specific location.</li>
+</ul>
+
+<p>
+Common INCOTERMS:
+</p>
+<dl class="org-dl">
+<dt>FOB (Free on Board)</dt><dd>The seller is responsible for delivering the goods to the buyer's ship, and the buyer
+is responsible for the costs and risks of transportation.</dd>
+<dt>CIF (Cost, Insurance, and Freight)</dt><dd>The seller is responsible for delivering the goods to the buyer's
+destination, including the costs of transportation and insurance.</dd>
+<dt>CFR (Cost and Freight)</dt><dd>The seller is responsible for delivering the goods to the buyer's destination,
+including the costs of transportation, but not insurance.</dd>
+<dt>EXW (Ex Works)</dt><dd>The seller is responsible for making the goods available at their premises, and the buyer is
+responsible for the costs and risks of transportation.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org3873a46" class="outline-3">
+<h3 id="org3873a46"><span class="section-number-3">2.10.</span> courses</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+<a href="https://corporatefinanceinstitute.com/course/commodities-fundamentals/">https://corporatefinanceinstitute.com/course/commodities-fundamentals/</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

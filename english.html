@@ -1,0 +1,3764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0742edd">1. links</a></li>
+<li><a href="#orgad3befd">2. phonetic transcriptions</a></li>
+<li><a href="#org1278398">3. common</a></li>
+<li><a href="#org8e4f456">4. phrases:</a></li>
+<li><a href="#orgd6afcf0">5. slang</a>
+<ul>
+<li><a href="#orgfbfe4d4">5.1. other</a></li>
+<li><a href="#org14996f4">5.2. shorts, abbreviations</a></li>
+<li><a href="#org662801b">5.3. - Kinda,” “wanna,” “whatcha,” “hafta,” “gimme,” “lemme,” and “gonna</a></li>
+</ul>
+</li>
+<li><a href="#org9a772b3">6. ideoms</a>
+<ul>
+<li><a href="#org2ed0699">6.1. fillers, crutches</a></li>
+</ul>
+</li>
+<li><a href="#org84f9922">7. old pronouns</a></li>
+<li><a href="#orge3df40d">8. meeting speach</a>
+<ul>
+<li><a href="#org4c516ab">8.1. what yearsterday</a></li>
+<li><a href="#org4cdd963">8.2. did</a></li>
+</ul>
+</li>
+<li><a href="#orgb8e1f0d">9. job terms</a></li>
+<li><a href="#orgcaff77a">10. please find attached my resume</a></li>
+<li><a href="#org1e29df2">11. Intervew - interoduction</a></li>
+<li><a href="#org39ee065">12. Banks [bæŋks] </a>
+<ul>
+<li><a href="#org67fea70">12.1. investment</a></li>
+<li><a href="#org40ad873">12.2. credit, loan</a></li>
+<li><a href="#orge6dd6d8">12.3. repayment</a></li>
+<li><a href="#org8254d1e">12.4. mortage</a></li>
+</ul>
+</li>
+<li><a href="#orged13d55">13. neural networks</a></li>
+<li><a href="#org6cc3fd1">14. IDE features</a></li>
+<li><a href="#org2a8c017">15. Latin and Greek</a></li>
+<li><a href="#orgce32599">16. Mobile [ˈməʊbaɪl]</a></li>
+<li><a href="#orgd01e9a3">17. Союзы</a></li>
+<li><a href="#org068f563">18. Morphological derivation</a></li>
+<li><a href="#org4fc5ea5">19. math</a></li>
+<li><a href="#org2a4941d">20. colloquial way of writing (')</a></li>
+<li><a href="#org3f0e713">21. -s ending pronunciation</a></li>
+<li><a href="#org20a26e1">22. time: at, in, on, for, per, in</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orga6f6b30">22.0.1. for, per, in</a></li>
+<li><a href="#org6022960">22.0.2. at, in, on</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org85191e2">23. grammar</a>
+<ul>
+<li><a href="#org1040cc5">23.1. theory: classes of words</a>
+<ul>
+<li><a href="#org4a59709">23.1.1. inverted sentences:</a></li>
+</ul>
+</li>
+<li><a href="#org1e648f9">23.2. am/is/are</a></li>
+<li><a href="#orgbf416e8">23.3. tenses</a>
+<ul>
+<li><a href="#org4ee53aa">23.3.1. theory</a></li>
+<li><a href="#orgb754771">23.3.2. Continuous, Perfect</a></li>
+<li><a href="#orgde3b0c6">23.3.3. Conditional, Conditional continuous</a></li>
+<li><a href="#orgac97a2b">23.3.4. Future Perfect Continuous</a></li>
+<li><a href="#org362de93">23.3.5. two sentences</a></li>
+<li><a href="#org0e89696">23.3.6. examples simple</a></li>
+<li><a href="#orga7491a4">23.3.7. examples advance</a></li>
+<li><a href="#org9d9d540">23.3.8. exampels fast</a></li>
+<li><a href="#org51c1a64">23.3.9. links</a></li>
+</ul>
+</li>
+<li><a href="#orgfbe1de1">23.4. articles</a>
+<ul>
+<li><a href="#org367e5da">23.4.1. school / the school</a></li>
+<li><a href="#orgb48286e">23.4.2. abstract</a></li>
+<li><a href="#org30412e0">23.4.3. the pople of the country: the + nationality</a></li>
+</ul>
+</li>
+<li><a href="#org60e42c8">23.5. is/are</a></li>
+<li><a href="#org5bc5627">23.6. capitalization in English</a>
+<ul>
+<li><a href="#org5821809">23.6.1. terms</a></li>
+<li><a href="#org07f713e">23.6.2. прописные, или заглавные (большие), буквы и строчные (маленькие).</a></li>
+<li><a href="#org607554c">23.6.3. difference russian and english capitalization</a></li>
+</ul>
+</li>
+<li><a href="#org61b3348">23.7. Irregular verbs</a></li>
+<li><a href="#org189a0a0">23.8. nouns plural or singular</a></li>
+<li><a href="#orge111c1d">23.9. apostrophe ('s)</a></li>
+<li><a href="#orgd3cf616">23.10. do in ?</a></li>
+<li><a href="#org40556af">23.11. Maybe vs May be</a></li>
+</ul>
+</li>
+<li><a href="#org1df0e35">24. Nouns vs Verbs - emphasis or stress pattern</a>
+<ul>
+<li><a href="#org1178302">24.1. exceptions</a></li>
+</ul>
+</li>
+<li><a href="#org91205a6">25. TOEFL or IELTS certificate</a>
+<ul>
+<li><a href="#orgc82cd5c">25.1. difference</a></li>
+<li><a href="#org6c163da">25.2. where</a></li>
+<li><a href="#org4ccf5a8">25.3. how</a>
+<ul>
+<li><a href="#orgd6f1732">25.3.1. Listening:</a></li>
+<li><a href="#org847bda6">25.3.2. Speaking:</a></li>
+<li><a href="#orgda63623">25.3.3. Reading</a></li>
+<li><a href="#org1199fd0">25.3.4. Writing</a></li>
+</ul>
+</li>
+<li><a href="#org36e9e9f">25.4. preparation</a></li>
+<li><a href="#org971cf75">25.5. skolkovo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- mode: Org; org-image-actual-width: 500 ; fill-column: 100; coding: utf-8; -</b>-
+</p>
+<div id="outline-container-org0742edd" class="outline-2">
+<h2 id="org0742edd"><span class="section-number-2">1.</span> links</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>transcription <a href="https://www.collinsdictionary.com/dictionary/english/kurtosis">https://www.collinsdictionary.com/dictionary/english/kurtosis</a></li>
+<li>pronunciation mp3 <a href="https://howjsay.com/how-to-pronounce-Kurtosis">https://howjsay.com/how-to-pronounce-Kurtosis</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad3befd" class="outline-2">
+<h2 id="orgad3befd"><span class="section-number-2">2.</span> phonetic transcriptions</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+International Phonetic Alphabet (IPA) - based primarily on the Latin script.
+</p>
+<ul class="org-ul">
+<li>[ &#x2026; ] - may not be used for distinguishing words in the language being transcribed</li>
+<li>/ &#x2026; / - note only features that are distinctive in the language.  'p' sounds of English pin and
+spin are pronounced differently, the difference is not meaningful in English - <i>ˈpɪn</i> and <i>ˈspɪn</i> -
+same phoneme <i>p</i>.</li>
+</ul>
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Pronunciation_respelling_for_English">https://en.wikipedia.org/wiki/Pronunciation_respelling_for_English</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1278398" class="outline-2">
+<h2 id="org1278398"><span class="section-number-2">3.</span> common</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+(франц. comme il faut - как должно
+</p>
+
+<p>
+software solutions 	[ˈsɒftweər] [səˈluːʃn]
+</p>
+<ul class="org-ul">
+<li>in the cloud	(klaʊd)</li>
+<li>on-premise	[ˈprɛmɪs] - традиционно</li>
+<li>On-Demand	[ɔn-dɪˈmɑːnd] - cloud SaaS</li>
+<li>Commercial off-the-shelf (COTS) - products are packaged or canned (ready-made) hardware or
+software, which are adapted aftermarket to the needs of the purchasing organization</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>premise <i>ˈpremis</i> предпосылка The premise of something is that.</li>
+<li>hybrid scenario <i>ˈhaɪbrɪd</i> <i>sɪˈnɑːrɪˌəʊ</i></li>
+<li id="while (&lt;condition does not hold&gt;)">условие не выполняется</li>
+<li id="arity">function of indefinite arity</li>
+
+<li>figuratively 	[ˈfɪgjərətɪvlɪ] образно, фигурально</li>
+<li>literally 		[ˈlɪtərəlɪ]	прямо, буквально</li>
+
+<li>customizing [ˈkʌstəmaɪzɪŋ]</li>
+<li>personalization [pɜːsənəlɪˈzeɪʃn]</li>
+<li>modification [mɔdɪfɪˈkeɪʃn]</li>
+
+<li>customer [ˈkʌstəmə]</li>
+<li>tenant [ˈtenənt] - hirer, renter, inhabitant</li>
+<li>report [rɪˈpɔːt]</li>
+<li>dialog [ˈdaɪəlɒg]</li>
+<li>reuse [rɪˈjuːz]</li>
+<li>user [ˈjuːzə] dialog [ˈdaɪəlɒg]</li>
+<li>functionality <i>ˌfʌŋkʃəˈnæləti</i></li>
+<li>possibility <i>ˌpɒsəˈbɪləti</i></li>
+<li>upgrade <i>ˈʌpɡreɪd</i></li>
+<li>group <i>ɡruːp</i></li>
+<li>multi-layer <i>ˈmʌlti//ˈleɪə(r)</i></li>
+<li>template [ˈtemplət]</li>
+
+<li>to profile [ˈprəʊfaɪl] обрабатывать по шаблону</li>
+<li>сonsolidate [kənˈsɒlɪˌdeɪt] объединять, хранить в одном месте</li>
+<li>data governance [ˈɡʌvənəns] управление данными</li>
+<li>persistence [pəˈsɪstəsn] постоянсво persistent classes</li>
+<li>query [ˈkwɪərɪ] запрос</li>
+</ul>
+
+
+<p>
+To achieve overall system reliability in the presence of a number of faulty processes. Достичь общей
+достоверности при наличии нескольких неисправных процессов.
+</p>
+<dl class="org-dl">
+<dt>overall</dt><dd>[ˈəʊvərˌɔːl] общей [ˌəʊvərˈɔːl] в общем и целом Overall accuracy</dd>
+</dl>
+
+<p>
+<b>Money pit</b> refers to a financial sinkhole where significant amounts
+ of money are constantly poured in without yielding positive returns.
+</p>
+
+<p>
+non
+</p>
+<dl class="org-dl">
+<dt>typo [/ˈtaɪ.pəʊ/]</dt><dd>misprint.</dd>
+<dt>procedure [prəˈsiːʤə]</dt><dd>.</dd>
+<dt>array [əˈreɪ]</dt><dd>.</dd>
+<dt>tuple[ˈtjʊpəl]</dt><dd>finite ordered list (как правило одного типа) например: relat. database - records(rows),
+list in Lisp</dd>
+<dt>sequence [ˈsiːkwəns]</dt><dd>.</dd>
+<dt>function [ˈfʌŋkʃən]</dt><dd>функционировать. it functions as something.</dd>
+<dt>variable [ˈvɛərɪəbəl]</dt><dd>переменная</dd>
+<dt>value [ˈvæljuː]</dt><dd>значение</dd>
+<dt>embedded [ɪmˈbɛdɪd]</dt><dd>embedded systems</dd>
+<dt>facilitate changes [fəˈsɪlɪˌteɪt]</dt><dd>обеспечивать изменение. в react programming.</dd>
+<dt>decimal</dt><dd>[ˈdɛsɪməl] десятичная дробь</dd>
+<dt>assignment [əˈsaɪnmənt]</dt><dd>назначение</dd>
+<dt>architecture [ˈɑːkɪˌtɛktʃə]</dt><dd>.</dd>
+<dt>interpreter [ɪnˈtɜːprɪtə]</dt><dd>истолкователь.</dd>
+<dt>throughput [ˈθruːˌpʊt]</dt><dd>пропускная способность</dd>
+<dt>latency, latence [ˈleɪtəns]</dt><dd>просто задержка, скрытая задержка, delay время вызова</dd>
+<dt>queue [kjuː]</dt><dd>очередь</dd>
+<dt>ack [ˈæk]</dt><dd>подтверждение получения (message will be acked or failed)</dd>
+<dt>suspension [səˈspɛnʃən]</dt><dd>приостановка</dd>
+<dt>monitoring [ˈmɒnɪtərɪŋ]</dt><dd>.</dd>
+<dt>enhancement [ɪn'hɑːnsmənt]</dt><dd>усовершенствование to enhance [ɪnˈhɑːns]</dd>
+<dt>layer [ˈleɪə]</dt><dd>. microservices layer</dd>
+<dt>process [ˈprəʊsɛs]</dt><dd>.</dd>
+<dt>notation [nəʊˈteɪʃən]</dt><dd>Business Process Model and Notation</dd>
+<dt>workflow [ˈwɜːkˌfləʊ]</dt><dd>рабочий процесс, документооборот.</dd>
+<dt>overloading [ˈəʊvəˌləʊd] v [ˌəʊvəˈləʊd]</dt><dd>.</dd>
+<dt>overriding [ˌəʊvəˈraɪdɪŋ]</dt><dd>.</dd>
+<dt>multithreading [ˌmʌltɪˈθrɛdɪŋ]</dt><dd>многопоточность</dd>
+<dt>processing  [ˈprəʊsesɪŋ]</dt><dd>обработка</dd>
+<dt>recap [ˈriːkæp]</dt><dd>резюме о чем-то Let us quickly do a recap about Kafka</dd>
+<dt>keyword [ˈkiːwɜːd]</dt><dd>ключевое слово</dd>
+<dt>machine [məˈʃiːn]</dt><dd>.</dd>
+<dt>workshop [ˈwɜːkʃɔp]</dt><dd>семинар, мастерская</dd>
+<dt>workbench [ˈwɜːkbenʧ]</dt><dd>инструментальные средства, рабочее место</dd>
+<dt>storage [ˈstɔːrɪʤ]</dt><dd>.</dd>
+<dt>Dilemma [daɪˈlem.ə]</dt><dd>two.</dd>
+<dt>Trilemma [traɪˈlem.ə]</dt><dd>.</dd>
+</dl>
+<p>
+OOP
+</p>
+<dl class="org-dl">
+<dt>descendant  [dɪˈsendənt]</dt><dd>потомок.  these and their descendants - они и их потомки</dd>
+</dl>
+<p>
+Data
+</p>
+<dl class="org-dl">
+<dt>clause [klɔːz]</dt><dd>SQL clause</dd>
+<dt>column [ˈkɒləm]</dt><dd>колонка</dd>
+<dt>query [ˈkwɪərɪ]</dt><dd>запрос</dd>
+<dt>volume [ˈvɒljuːm]</dt><dd>объем данных</dd>
+<dt>variety [vəˈraɪɪtɪ]</dt><dd>разнообразие типов и источников данных</dd>
+<dt>velocity [vɪˈlɒsɪtɪ]</dt><dd>скорость поступления и обработки</dd>
+<dt>veracity [vɛˈræsɪtɪ]</dt><dd>достоверность данных</dd>
+<dt>noise [nɔɪz]</dt><dd>.</dd>
+<dt>batch [bætʃ]</dt><dd>партия, пакет</dd>
+<dt>commit [kəˈmɪt]</dt><dd>.</dd>
+<dt>subscript [ˈsʌbskrɪpt]</dt><dd>index</dd>
+<dt>discrepancy  [dɪsˈkrepənsɪ]</dt><dd>несоответствие, разница discrepancy between the expected and</dd>
+<dt>accuracy [ˈækjʊrəsɪ] </dt><dd>точность = num of correct classification/ total num of predicates</dd>
+</dl>
+
+<p>
+adj
+</p>
+<dl class="org-dl">
+<dt>abstract [ˈæbstrækt]</dt><dd>.</dd>
+<dt>compiled [kəmˈpaɪl]</dt><dd>.</dd>
+<dt>compulsory <i>kəmˈpʌlsərɪ</i></dt><dd>обязательнный</dd>
+<dt>obligatory <i>ɔˈblɪgətərɪ</i></dt><dd>обязательный</dd>
+<dt>mandatory [ˈmændətərɪ]</dt><dd>обязательны mandatory access control</dd>
+<dt>discretionary [dɪˈskrɛʃənərɪ]</dt><dd>Discretionary access control у объекта</dd>
+<dt>coherent</dt><dd>[kəʊˈhɪərənt] последовательный</dd>
+<dt>error prone</dt><dd>[prəʊn] склонный к ошибкам. error prone behavior, solution</dd>
+<dt>explicit <i>ɪkˈsplɪsɪt</i></dt><dd>явный</dd>
+<dt>robust [rəʊˈbʌst]</dt><dd>надежный Java is a strong programming language as it uses strong memory management. The
+concepts like Automatic garbage collection, Exception handling, etc. make it more robust.</dd>
+<dt>troubleproof</dt><dd>бесперебойное, безотказный. ex. “To monitor troubleproof operation of production.”</dd>
+<dt>composite [ˈkɔmpəzɪt]</dt><dd>составной</dd>
+<dt>obsolete [ˈɒbsəˌliːt] eng [äbsəˈlēt] </dt><dd>устарелый</dd>
+<dt>resilient [rɪˈzɪlɪənt]</dt><dd>устойчивый к , resilient to architecture erosion</dd>
+<dt>loosely coupled [luːs]-ly [kʌpəld]</dt><dd>loosely coupled services.</dd>
+<dt>fault tolerant [fɔːlt] [ˈtɒlərənt]</dt><dd>отказоусточивый see Reliability</dd>
+<dt>failover [ˈfeɪləʊvər]</dt><dd>failover software - a method of protecting computer systems from <span class="underline">failure</span>, in
+which <span class="underline">standby equipment</span> automatically <span class="underline">takes over</span> when the main system <span class="underline">fails</span>. will <span class="underline">reschedule</span> its
+task to the <span class="underline">standby server</span>.</dd>
+<dt>standby</dt><dd>резервный</dd>
+<dt>fail-fast</dt><dd>systems are usually designed to stop normal operation rather than attempt to continue</dd>
+<dt>unwarranted [ʌnˈwɒrəntɪd]</dt><dd>необоснованный</dd>
+<dt>distributed [dɪˈstrɪbjuːtɪd]</dt><dd>распределенные системы решающие одну проблему SOA-based systems to massively
+multiplayer online games to peer-to-peer applications.</dd>
+<dt>decentralise [diːˈsɛntrəˌlaɪz]</dt><dd>decentralization</dd>
+<dt>Swarm intelligence [swɔːm]</dt><dd>коллективное поведение децентрализованной самоорганизующейся системы</dd>
+<dt>faulty [ˈfɔːltɪ]</dt><dd>неисправный</dd>
+<dt>virtual [ˈvɜːtʃʊəl]</dt><dd>Java Virtual Machine</dd>
+<dt>lightweight [ˈlaɪtˌweɪt]</dt><dd>облегченный, меньше кода</dd>
+<dt>versatile [ˈvɜːsətaɪl]</dt><dd>универсальный, многоцелевой, многофункциональный,</dd>
+<dt>arbitrary [ˈɑːbɪtrərɪ]</dt><dd>произвольный arbitrary value - произвольное значение</dd>
+<dt>supersede [sjuːpəˈsiːd] superseded</dt><dd>замененный</dd>
+<dt>precede [prɪˈsiːd]</dt><dd>предшествующий</dd>
+<dt>salient [ˈseɪljənt]</dt><dd>salient features существенные фичи</dd>
+<dt>Boilerplate [ˈbɔɪləpleɪt]</dt><dd>шаблон, шаблонный</dd>
+<dt>graceful [ˈgreɪsf(ə)l]</dt><dd>изящный</dd>
+<dt>refused [rɪˈfjuːzd]</dt><dd>connection refused отклоненный, отвергнутый</dd>
+<dt>(no term)</dt><dd>opt-in options, rather than an opt-out options - opting-in - выбрать-в, opting-out выбрать-вон</dd>
+<dt>adhere [ədˈhir]</dt><dd>v. придерживаться, прилепить; adhered - прилепший</dd>
+</dl>
+
+<p>
+Data
+</p>
+<dl class="org-dl">
+<dt>periodic [ˌpɪərɪˈɒdɪk]</dt><dd>периодический</dd>
+<dt>dense [dens]</dt><dd>without gaps - плотный</dd>
+<dt>sparse [spɑːs]</dt><dd>with gaps - разреженный</dd>
+</dl>
+
+<p>
+non
+</p>
+<dl class="org-dl">
+<dt>timeliness</dt><dd>своевременность</dd>
+<dt>accuracy [ˈækjʊrəsɪ]</dt><dd>точность</dd>
+<dt>completeness [kəmˈpliːt]</dt><dd>завершенность, законченность, полнота</dd>
+<dt>meaning [ˈmiːnɪŋ]</dt><dd>значащий</dd>
+<dt>granularity [ˌɡrænjʊˈlærɪtɪ]</dt><dd>величина зерен и их количество - зернистость
+<dl class="org-dl">
+<dt>fine-grained [ɡreɪn]</dt><dd>выверенно зернистый</dd>
+</dl></dd>
+<dt>fault-tolerant [fɔːlt] [ˈtɒlərənt]</dt><dd>отказоустойчивость. Если часть системы откажет, то ничего</dd>
+<dt>scalability [ˌskeɪləˈbɪlɪtɪ]</dt><dd>масштабируемость scalable [ˈskeɪləbəl] масштабируемый</dd>
+<dt>reliability [rɪˈlaɪəbəl]</dt><dd>надежность, достоверность  reliably [rɪˈlaɪəbəl]</dd>
+<dt>performance [pəˈfɔːməns]</dt><dd>производит-ность</dd>
+<dt>serviceability [ˈsɜːvɪsəbəl]</dt><dd>бесперебойность</dd>
+<dt>reliability</dt><dd>надежность</dd>
+</dl>
+
+<p>
+verb
+</p>
+<dl class="org-dl">
+<dt>invocation [ˌɪnvəˈkeɪʃən]</dt><dd>вызов decouples method execution from method invocation</dd>
+<dt>execute [ˈɛksɪˌkjuːt]</dt><dd>выполнять</dd>
+<dt>evaluate [ɪˈvæljʊˌeɪt]</dt><dd>вычислять</dd>
+<dt>interpret [ɪnˈtɜːprɪt]</dt><dd>.</dd>
+<dt>extend [ɪkˈstɛnd]</dt><dd>.</dd>
+<dt>implement [ˈɪmplɪmənt] verb [ˈɪmplɪˌmɛnt]</dt><dd></dd>
+
+<dt>to set-up</dt><dd>the set-up. устанавить</dd>
+<dt>cite [saɪt]</dt><dd>цитировать he cited "" он цитировал</dd>
+<dt>acquire [əˈkwaɪə]</dt><dd>приобретать</dd>
+<dt>emit</dt><dd>emits the data to</dd>
+<dt>deplay [dɪˈplɔɪ] deployment [dɪˈplɔɪmənt]</dt><dd>развертывать</dd>
+<dt>detection [dɪˈtekʃn]</dt><dd>обнаружение</dd>
+<dt>yield [jiːld]</dt><dd>уступать, дает, It did not yield much.</dd>
+<dt>bootstrap [ˈbuːtstræp]</dt><dd>self-starting process</dd>
+<dt>infer [ɪnˈfɜː]</dt><dd>догадываться. сompiler in situations where it cannot infer the type automatically</dd>
+<dt>prediction [prɪˈdɪkʃn]</dt><dd>REST API that serves up predictions</dd>
+<dt>estimate [ˈestɪmɪt]</dt><dd>probability estimate - оценка вероятности</dd>
+</dl>
+<p>
+adv
+</p>
+<dl class="org-dl">
+<dt>succinctly [səkˈsɪŋktlɪ]</dt><dd>кратко, лаконично can be coded succinctly</dd>
+</dl>
+
+<p>
+fuckery :: пиздец
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8e4f456" class="outline-2">
+<h2 id="org8e4f456"><span class="section-number-2">4.</span> phrases:</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>I hope in hindsight <b>[ɪn ˈhaɪndsaɪt]</b> надеюсь задним числом</li>
+<li>indivisible atom <b>[ˌɪndɪˈvɪzəbəl] [ˈætəm]</b> - неделимый атом</li>
+<li>you are outnumbered [ˌaʊtˈnʌmbə] - ты в меньшинстве</li>
+<li>de-emphasizes explicit dick manupulation - не акцентирует внимание на явном манипулировании членом</li>
+<li>Clean and fluent English - Чистый и свободный английский язык</li>
+<li>You Are encouraged [ɪnˈkʌrɪʤd] to fill out the value to list - Вам предлагается заполнить список значений</li>
+<li>is an instance of the argument or of a subclass thereof (из этого) (или их подкласса)</li>
+<li>Jack of all trades - мастер на все руки</li>
+<li><b>State-of-the-art</b> (cutting edge) (SOTA) - highest level of general development, as of a device, technique, or
+scientific field achieved at a particular time.</li>
+<li>all are species of a common genus - все есть виды общего рода</li>
+<li>In its substance, &#x2026; - По своей сути, что-то такое-то&#x2026;</li>
+<li>used to provide an <b>unbiased evaluation</b> - непредвзятая оценка</li>
+<li id="the ends justify the means">цель оправдывает средства</li>
+<li>an apple a day keeps the doctor away</li>
+<li>speak of the devil and he doth/shall appear</li>
+<li id="have flown under the radar">пролетели вне поля зрения радара</li>
+<li id="don't beard the lion in his own den">не вуступай против льва в его собственном логове</li>
+<li id="we should allow the chaos to reign">мы должны позволить хаусу править</li>
+<li id="as the saying goes/is">как говорится</li>
+<li id="out of the blue">неожиданно</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd6afcf0" class="outline-2">
+<h2 id="orgd6afcf0"><span class="section-number-2">5.</span> slang</h2>
+<div class="outline-text-2" id="text-5">
+<dl class="org-dl">
+<dt>lame</dt><dd>boring</dd>
+<dt>rad</dt><dd>radical = cool</dd>
+<dt>butthurt  <i>ˈbʌt.hɜːt</i></dt><dd>offended and upset, especially in a way that is silly or unreasonable</dd>
+<dt>Aima</dt><dd>most beautiful girl/boy</dd>
+<dt>homie</dt><dd>сосед чувак</dd>
+<dt>(no term)</dt><dd>homeboy</dd>
+<dt>(no term)</dt><dd>street cat</dd>
+<dt>boomer</dt><dd>фанатик прошлого</dd>
+<dt>wishbone</dt><dd>рэпер с повторяющимися стихами</dd>
+<dt>jacking off</dt><dd>дрочить</dd>
+<dt>PITA</dt><dd>pain in the ass</dd>
+<dt>wigger</dt><dd>white like a nigger</dd>
+<dt>Normie</dt><dd>normal zombie</dd>
+<dt>Sperg</dt><dd>obsessive on subject of interest</dd>
+<dt>Derailment</dt><dd>wrong to anal hole</dd>
+<dt>Janitor</dt><dd>genius failed by the education system</dd>
+<dt>janny</dt><dd>Short for janitor. less authority than a moderator. He's a
+janny on an anime imageboard. He does it for free. a girl with the
+emotional capacity of a rock.</dd>
+<dt>Glowie</dt><dd>hence they "glow in the dark." - CIA fails "here's how to
+get cheap guns illegally", "we should shoot first ", and " Stop
+larping kill the blank now "</dd>
+<dt>glownigger</dt><dd>governmental agent (FBI, NSA, CIA, ATF) making bait posts</dd>
+<dt>Jagger</dt><dd>boy with lots of wonderful thoughts that will share anything with you</dd>
+<dt>Weeaboo</dt><dd>person who retains an unhealthy obsession with Japan and
+Japanese culture</dd>
+<dt>redpills</dt><dd>one side of truth propoganda, example IOTBW</dd>
+<dt>Vanned</dt><dd>to be fucked by the FBI</dd>
+<dt>oinkies</dt><dd>police</dd>
+<dt>binging  on things</dt><dd>увлечья чем-то</dd>
+<dt>rulecuck</dt><dd>чувак помешанный на правилах, затворник</dd>
+<dt>heck</dt><dd>hell - She has a heck of a lot of money. Thats a heck of a bug.</dd>
+<dt>(no term)</dt><dd>Dread:: группа диллеров</dd>
+<dt>lay off</dt><dd>отвали, отложить что-то за ненадобностью</dd>
+<dt>ginger</dt><dd>расса огня Прометея с красными волосами и виснушками</dd>
+<dt>cuteness</dt><dd>act of being cute</dd>
+<dt>Lookit</dt><dd>Abbreviation of "look at that/this</dd>
+<dt>splort</dt><dd>Head-exploding cuteness.</dd>
+<dt>94</dt><dd>everything and anything you want it to mean.</dd>
+<dt>dox</dt><dd>Personal information</dd>
+<dt>trick</dt><dd>man who lets women use him</dd>
+<dt>yankass</dt><dd>a person whose only hobby is to insult people and/or push their buttons.</dd>
+<dt>Duh</dt><dd>Of course you idiot, obviously, Duh Dad</dd>
+<dt>imposter/Impostor</dt><dd>пхохой чел в команде котоырй использует чужое имя.</dd>
+<dt>phatass</dt><dd>Female with a nice rounded buttocks</dd>
+<dt>Sheesh</dt><dd>Dammmmmn</dd>
+<dt>Reds</dt><dd>secanol&#x2013;a barbituate/downer.</dd>
+<dt>Sussy balls</dt><dd>подозрительный человек, коп на вечеринке</dd>
+<dt>dip into</dt><dd>To remove a portion of a stash of drugs for the purpose of consumption.</dd>
+<dt>mosey</dt><dd>slow forward movement of the legs</dd>
+<dt>fuck up, screw up, mess up</dt><dd>1. To make a mistake 2. shut the fuck up</dd>
+<dt>dissing</dt><dd>showing disrespect</dd>
+<dt>run up on</dt><dd>to confront someone with hostility</dd>
+<dt>shill</dt><dd>зазывала, проплаченный критик</dd>
+<dt>Clyde</dt><dd>smart assholes that know how to get their way around things</dd>
+<dt>Yummu</dt><dd>very pleasing to the senses, especially to the taste; delicious, an adjective describing
+someone who is soo great that theyre yummy. An expression of enjoyment and joy.</dd>
+<dt>(no term)</dt><dd>rope - rape</dd>
+<dt>bonanza  <i>bəˈnæn·zə</i></dt><dd>кладезь. (alt. version of Bazinga from "The Big Bang Theory"?) A rich mine, vein, or pocket of ore. a situation in which large profits are made. ex: bonanza of topics</dd>
+<dt>wrecked</dt><dd>to get drunk, beyond drunk, because of a bad day or week. ex. Man, I had three exams today, im gonna get wrecked tonight</dd>
+<dt>Rekt</dt><dd>Rekt means a player got completely destroyed, usually used in first person shooter games. ex. HA GET REKT M8 U SUCK LOLOL</dd>
+<dt>bombshell</dt><dd>гром среди ясного неба, потрясающая новость</dd>
+<dt>Rimshot [rimˌSHät]</dt><dd>1) a drum beat used to draw attention to the humor or pointedness of a preceding statement 2)</dd>
+</dl>
+<p>
+basketball: a shot that strikes the rim of the hoop
+</p>
+<dl class="org-dl">
+<dt>cringe</dt><dd>draw back, as with fear or pain; show submission or fear</dd>
+<dt>crange</dt><dd>The combinations of the words cringe and strange.</dd>
+<dt>friggin</dt><dd>euphemism for fucking. friggin' parade.</dd>
+</dl>
+</div>
+
+<div id="outline-container-orgfbfe4d4" class="outline-3">
+<h3 id="orgfbfe4d4"><span class="section-number-3">5.1.</span> other</h3>
+<div class="outline-text-3" id="text-5-1">
+<dl class="org-dl">
+<dt>Satoshi</dt><dd>japanese name which means “wise” or “intelligent”. Satoshi Nakamoto - creator of bitcoin</dd>
+<dt>(no term)</dt><dd>보추 literally means "pussy + dick" and it really means a trap, an otokonoko, a male cross-dresser.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org14996f4" class="outline-3">
+<h3 id="org14996f4"><span class="section-number-3">5.2.</span> shorts, abbreviations</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+most frequent:
+</p>
+<dl class="org-dl">
+<dt>LOL</dt><dd>Laugh Out Loud.</dd>
+<dt>OMG</dt><dd>Oh My God.</dd>
+<dt>BTW</dt><dd>By The Way.</dd>
+<dt>IDK</dt><dd>I Don't Know.</dd>
+<dt>TBH</dt><dd>To Be Honest.</dd>
+</dl>
+
+<p>
+Corps:
+</p>
+<dl class="org-dl">
+<dt>Co.</dt><dd>company</dd>
+<dt>Corp.</dt><dd>corporation</dd>
+<dt>Ltd.</dt><dd>"limited," (Private Limited Company) UK and other to indicate a private limited company.</dd>
+<dt>Plc.</dt><dd>(Public Limited Company)</dd>
+<dt>Inc.</dt><dd>“incorporated” - United States, commonly used in the United States to indicate a
+corporation. More frequently in Canada.</dd>
+<dt>Ent.</dt><dd>"enterprise." - United States</dd>
+<dt>Org.</dt><dd>"organization," which can refer to any type of enterprise or company.</dd>
+</dl>
+
+<p>
+Others:
+</p>
+<dl class="org-dl">
+<dt>AFAICT</dt><dd>As far as I can tell</dd>
+<dt>AFAIK</dt><dd>As far as I know</dd>
+<dt>AFAIR</dt><dd>As far as I remember</dd>
+<dt>BABOP</dt><dd>Big-Ass Bowl Of Popcorn</dd>
+<dt>DM</dt><dd>Direct message</dd>
+<dt>Douchebag</dt><dd>дюшбэг</dd>
+<dt>FTW</dt><dd>For the win</dd>
+<dt>Fren</dt><dd>frend</dd>
+<dt>FOMO</dt><dd>Fear of missing out - is the feeling of apprehension that one is either not in the know about or missing out on information, events, experiences, or life decisions that could make one's life better.</dd>
+<dt>Henlo</dt><dd>Hello</dd>
+<dt>IRC</dt><dd>I remember correctly</dd>
+<dt>Nah</dt><dd>no</dd>
+<dt>NB</dt><dd>1) "Nota Bene," Latin for "please note;" 2) not bad 3) Non-binary</dd>
+<dt>Nuts</dt><dd>testicles</dd>
+<dt>POV</dt><dd>Point of View</dd>
+<dt>QQ</dt><dd>Crying</dd>
+<dt>TL;DR</dt><dd>Too long; didn’t read</dd>
+<dt>YNK</dt><dd>You never know</dd>
+<dt>asap</dt><dd>As soon as possible</dd>
+<dt>awhile</dt><dd>for a while</dd>
+<dt>chu</dt><dd>nigga version of you</dd>
+<dt>cuss</dt><dd>(kŭs) Informal - A curse or A stubborn or annoying person or animal.</dd>
+<dt>fb</dt><dd>facebook</dd>
+<dt>ffs</dt><dd>"For fuck's sake", from "in Christ's name please explain/stop that".</dd>
+<dt>for ya</dt><dd>for you</dd>
+<dt>ftfy</dt><dd>fixed that for you</dd>
+<dt>fyi</dt><dd>For your information</dd>
+<dt>g2g</dt><dd>Got to go</dd>
+<dt>gun show</dt><dd>выставление мускулатуры</dd>
+<dt>im</dt><dd>I am</dd>
+<dt>imo</dt><dd>in my opinion</dd>
+<dt>m8</dt><dd>mate</dd>
+<dt>msg</dt><dd>message</dd>
+<dt>ngl</dt><dd>Not Gonna Lie</dd>
+<dt>sugi or shawty</dt><dd>young teen - pretty and knew it</dd>
+<dt>sus</dt><dd>suspishos  [səsˈpɪʃəs]</dd>
+<dt>tbh</dt><dd>to be honest</dd>
+<dt>tho</dt><dd>Though.[ðəʊ] - хотя, однако</dd>
+<dt>thx/th</dt><dd>thanks, thank you</dd>
+<dt>tryna</dt><dd>trying to</dd>
+<dt>why hapas</dt><dd>What Happened?</dd>
+<dt>ya</dt><dd>you</dd>
+<dt>yo</dt><dd>hello</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org662801b" class="outline-3">
+<h3 id="org662801b"><span class="section-number-3">5.3.</span> - Kinda,” “wanna,” “whatcha,” “hafta,” “gimme,” “lemme,” and “gonna</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Kinda = Kind of</li>
+<li>wanna - Want to/a</li>
+<li>Whatcha = What are you</li>
+<li>hafta</li>
+<li>gimme</li>
+<li>lemme</li>
+<li>gonna</li>
+<li>Outta = Out of.  ex. I’m outta here. -  я ухожу отсюда</li>
+</ul>
+
+<p>
+Ain’t = Has not/have not
+Ain’t = Am not/are not/is not
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9a772b3" class="outline-2">
+<h2 id="org9a772b3"><span class="section-number-2">6.</span> ideoms</h2>
+<div class="outline-text-2" id="text-6">
+<dl class="org-dl">
+<dt>opt for</dt><dd>I opt for it - it fresher. people opt for English</dd>
+<dt>in search of</dt><dd></dd>
+
+<dt>steer clear</dt><dd>держаться подальше</dd>
+<dt>(no term)</dt><dd>therefore</dd>
+<dt>(no term)</dt><dd>“I can relate.” / “I can’t relate.” / “to relate to something”  - to understand feelings</dd>
+<dt>make use of</dt><dd>использовать то, что не было использовано</dd>
+<dt>it should be taken to mean a</dt><dd>это следует понимать как означающее</dd>
+<dt>Get a load of something</dt><dd>зацени это</dd>
+<dt>case in point</dt><dd>наглядный пример</dd>
+<dt>hold up</dt><dd>подожди секундочку, держись!, держать высоко</dd>
+<dt>nigga hush</dt><dd>нигер заткнись</dd>
+<dt>token gesture [ˈʤesʧə]</dt><dd>символический жест</dd>
+<dt>queue the boo/hisses</dt><dd>очередь на бу и шипение</dd>
+<dt>Desire path</dt><dd>тропинка game trail, social trail, fishermen trail, bootleg trail, etc.</dd>
+<dt>In a nutshell</dt><dd>в двух словах</dd>
+<dt>wind up</dt><dd>кончить как-то, wind up dead - сдохнуть.</dd>
+<dt>All the more reason</dt><dd>тем более, нужно что-то</dd>
+<dt>on your own</dt><dd>по своей воле</dd>
+<dt>is not just</dt><dd>неправильно</dd>
+<dt>run-of-the-mill</dt><dd>заурядный (пробег мельницы)</dd>
+<dt>in one go</dt><dd>закодировать в одном месте, сделать за один раз</dd>
+<dt>from the ground up</dt><dd>с нуля</dd>
+<dt>the proof is in the pudding</dt><dd>means the value, quality, or truth of something must be judged
+based on direct experience with it</dd>
+<dt>(no term)</dt><dd>get to it:: ближе к делу</dd>
+<dt>(no term)</dt><dd>nitty-gritty ['nɪtɪ'grɪtɪ] - моменты (чего-либо)</dd>
+<dt>look forward to hearing from you</dt><dd>ждать вашего ответа, звонка, известия, новостей от вас.</dd>
+<dt>on the ball</dt><dd>aware of events</dd>
+<dt>do (someone) a solid</dt><dd>to do one a favor.</dd>
+<dt>this is one heck of a ride</dt><dd>very cool ride, one heck = jerk</dd>
+</dl>
+</div>
+<div id="outline-container-org2ed0699" class="outline-3">
+<h3 id="org2ed0699"><span class="section-number-3">6.1.</span> fillers, crutches</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>like</li>
+<li>so</li>
+<li>totally</li>
+<li>exactly</li>
+<li>roughly - примерно</li>
+</ul>
+
+<p>
+beginig:
+</p>
+<ul class="org-ul">
+<li>i mean</li>
+<li>well</li>
+<li>okay</li>
+<li>you see</li>
+<li>by the way</li>
+<li>i just</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org84f9922" class="outline-2">
+<h2 id="org84f9922"><span class="section-number-2">7.</span> old pronouns</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+thou shalt not kill
+</p>
+<ul class="org-ul">
+<li>thou, ye [jiː] - you</li>
+<li>shalt - form of shall for you</li>
+</ul>
+
+<p>
+неформальные:
+thee -  тебя
+thy/thine - твой
+theirs
+</p>
+
+<p>
+thou knowest, thou knewest - ты знаешь, ты знал
+</p>
+
+<p>
+exceptions:
+</p>
+<ul class="org-ul">
+<li>thou dost, thou didst</li>
+<li>thou art, thou wast, thou wert  - are,was, were</li>
+<li>thou shalt</li>
+<li>thou hast, thou hadst - have</li>
+<li>thou wilt - will</li>
+<li>thou must</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge3df40d" class="outline-2">
+<h2 id="orge3df40d"><span class="section-number-2">8.</span> meeting speach</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Docker [ˈdɒkə]</li>
+<li>python [ˈpaɪθən]</li>
+<li>Jupyter (<i>ˈdʒuːpɪtər</i></li>
+<li>analysis [əˈnælɪsɪs]</li>
+<li>random [ˈrændəm]</li>
+<li>gradient boosting [ˈgreɪdɪənt] [ˈbuːstɪŋ]</li>
+<li>feature [ˈfiːʧə]  [ɪmˈpɔːtəns]</li>
+<li>estimator [ˈestɪmeɪtə]</li>
+<li>classificator [ˈklæsɪfɪkeɪtər]</li>
+<li>diagram [ˈdaɪəgræm]</li>
+<li>confusion [kənˈfjuːʒən] matrix - table layout for supervized learning with predicted errors
+<ul class="org-ul">
+<li>it</li>
+</ul></li>
+<li>please remind me</li>
+<li>what took the most time</li>
+<li>что вызывает боьше сложностей</li>
+<li>what will you do tomorrow</li>
+<li>извините если отнял у вас мног овремени</li>
+<li>как это сказать на английском How do they say it in French?</li>
+<li>если пытаться будет получаться лучше и лучше
+<ul class="org-ul">
+<li>if you try it will get better and better</li>
+</ul></li>
+<li>why english is important?</li>
+</ul>
+<p>
+it is pronounced as [prəˈnaʊnst] [æz]
+</p>
+
+
+<p>
+Good morning.
+(yandex) Yesterday [ˈjestədɪ]. I was working on finding the best model
+(google translate) I worked on the best model yesterday
+Well, there's one other thing I've been working on you might find somewhat more interesting.
+I fixed several bugs
+</p>
+
+<p>
+I have found that
+I was looking for
+</p>
+
+<p>
+I am going
+</p>
+
+<p>
+what will you do tomorrow
+</p>
+
+<p>
+I am finished.
+</p>
+
+
+
+
+<p>
+have a nice day
+see you at the next morting meeting tomorrow
+</p>
+</div>
+<div id="outline-container-org4c516ab" class="outline-3">
+<h3 id="org4c516ab"><span class="section-number-3">8.1.</span> what yearsterday</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+what have you been up to lately
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4cdd963" class="outline-3">
+<h3 id="org4cdd963"><span class="section-number-3">8.2.</span> did</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>I have done everything she told me.</li>
+<li>I've done it.</li>
+<li>I did everything you wanted.</li>
+<li>I didn’t do much yesterday  [ˈjestədɪ] since the majority of my day consisted of meetings.</li>
+<li>I made this lock.</li>
+</ul>
+
+<p>
+i made a big effort - приложил большие усилия
+Most of the time I have to answer email.
+</p>
+
+<p>
+forget
+</p>
+<ul class="org-ul">
+<li>I did not forget that I did that.</li>
+<li>I forgot to make it.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb8e1f0d" class="outline-2">
+<h2 id="orgb8e1f0d"><span class="section-number-2">9.</span> job terms</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+a <b>notice period</b> is a period of time between the receipt of the letter of dismissal and the end of the last working day
+</p>
+</div>
+</div>
+<div id="outline-container-orgcaff77a" class="outline-2">
+<h2 id="orgcaff77a"><span class="section-number-2">10.</span> please find attached my resume</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+terms
+</p>
+<ul class="org-ul">
+<li>applying for jobs</li>
+<li>applicant</li>
+<li>to a hiring manager</li>
+<li>cover letter - is a letter of introduction attached to or accompanying another document such as a
+résumé or a curriculum vitae(CV)("course of life").[1]</li>
+</ul>
+
+<p>
+when used:
+</p>
+<ul class="org-ul">
+<li>Submitting a cover letter or email or online form with resume</li>
+<li>Responding to an interview invitation</li>
+<li>get their attention to attached resume</li>
+<li>Requesting a professional recommendation from current boss and attach resume for him</li>
+</ul>
+
+<p>
+avoid using:
+</p>
+<ul class="org-ul">
+<li>Please find attached my resume.</li>
+<li>Please find attached: my resume.</li>
+<li>Please find, attached, my resume.</li>
+<li>Please find my resume attached.</li>
+<li>Please find attached my resume for your review and consideration.</li>
+</ul>
+
+<p>
+Alternative Ways:
+</p>
+<ol class="org-ol">
+<li>I have attached my resume for your consideration.</li>
+<li>My resume is in attachments of this email for your consideration.</li>
+<li>My resume is included for your consideration.</li>
+<li>My resume has been included for your review.</li>
+<li>I attached my resume for your review.</li>
+<li>You will find my resume attached.</li>
+<li>Let me know if you have any questions about my resume attached below.</li>
+<li>I have attached my resume for your review.</li>
+<li>I have included my resume for your review.</li>
+<li>You will find my resume attached below.</li>
+<li>As the attached resume/documents show(s)…</li>
+<li>Please refer to my attached resume for more about…</li>
+<li>The resume I’ve attached includes more information about…</li>
+<li>I’ve included my resume for your reference.</li>
+<li>To learn more about my involvement/experience with [something], refer to my attached resume.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org1e29df2" class="outline-2">
+<h2 id="org1e29df2"><span class="section-number-2">11.</span> Intervew - interoduction</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+mathematician [ˌmæθəmə'tɪʃn]  It's called RUSNARBANK.
+</p>
+
+<p>
+Hello! Nice to meet you.
+</p>
+
+<p>
+My last place of work was IT software company that provide financial service with help of blockchian
+ transaction technology. I was warking on AutoML project, I have been programming, planning and
+ researching for two month in this organization. I was fired without clear reason. I was told that I
+ don't have base knowledge, I don't know what that knowledge are.
+</p>
+
+<p>
+My last place of work was a medium size bank with about 600 workers.  I have been working there for 4
+ years with software development, Machine Learning and Neural Networks.
+</p>
+
+<p>
+My biggest projects there were programming with Apache Airflow, the documents recognition service
+ and data analysis for client scoring(this last project included in itself  model interpretation and
+ clusterization). All of them were successful. [sək'sesf(ə)l]
+</p>
+
+<p>
+I like programming and math and choose to specialize myself as a Data Scientist, because I have experience
+ with Deep Learning, Machine Learning, Mathematical statistics and I prepare myself to learn. [mæθɪ'mætɪk(ə)l]
+</p>
+
+<p>
+I use Python programming language and I read about new features of new versions.  I concentrate at
+ Data Science. I hope that you will visit my github account and my portfolio project to see my works. [pɔ:t'fəulɪəu]
+</p>
+
+<p>
+In future I hope to become MLOps architect <i>['ɑ:kɪtekt]</i>.
+</p>
+
+<p>
+Also I have special skills:
+</p>
+<ul class="org-ul">
+<li>I can administrate Linux exceptionly. As a hobby I use only software from sources and recommended by
+U.S. Department of Defense. I harden my home Linux in kernel, at boot, at network and application
+izolation.</li>
+<li>I keep my knowledge in special files organized as semantic tree or ontology structure
+with references.[sɪ'mæntɪk] [ɒn'tɒlədʒi]</li>
+<li>As you can see my fundamental skills is very strong, that is why I can do magic.</li>
+</ul>
+<p>
+Thank you.
+</p>
+
+<p>
+You can check the project code on github account.
+</p>
+
+<p>
+I'm glad to meet you.
+questions:
+</p>
+<ol class="org-ol">
+<li>how big your company are?, how many workers are in your company?</li>
+<li>What is the name of your company and what is its specialization?</li>
+<li>How big is your company and how many employees does it have?</li>
+<li>Which department would I be working in and how many people work in that department?</li>
+<li>What project are you hiring for?</li>
+<li>What is the work schedule, remote or in-office, and what are the hours?</li>
+<li>What is the salary? (monthly payments, monthly pay period, on the last Friday of the month)</li>
+<li>How are payments made and what methods are available for transferring them?</li>
+<li>What interesting things did you notice in my resume/CV and why did you choose me for this
+position?</li>
+<li>What are the next steps in the interview process (after I am offered the
+job?)</li>
+</ol>
+
+<p>
+thank you for your invitation.
+</p>
+
+<p>
+you can expect to be contacted by email or phone regarding the status of your
+   application. If you are offered the job, you will likely receive an offer letter outlining the
+   terms and conditions of employment. It is important to carefully review and understand this
+   document before accepting the job.
+</p>
+</div>
+</div>
+<div id="outline-container-org39ee065" class="outline-2">
+<h2 id="org39ee065"><span class="section-number-2">12.</span> Banks [bæŋks] <a id="org1914920"></a></h2>
+<div class="outline-text-2" id="text-12">
+<dl class="org-dl">
+<dt>Financial institutions [faɪˈnænʃəl] [ɪnstɪˈtjuːʃn]</dt><dd>banking institutions</dd>
+<dt>deposit [dɪˈpɔzɪt]</dt><dd>вклад, Depository institutions - кредитная организация</dd>
+<dt>fraud  [frɔːd]</dt><dd>мошенничество</dd>
+<dt>swipe [swaɪp]</dt><dd>Swipe your card, please. Paid $300,000 on swipe fees. swipe machines - проводя черной
+полосой карты</dd>
+<dt>retail stores [ˈriːteɪl] [stɔːz] </dt><dd>розничные магазины.</dd>
+<dt>pricing [ˈpraɪsɪŋ]</dt><dd>ценообразование</dd>
+<dt>Interest rate [ˈɪntrɪst reɪt]</dt><dd>Процентная ставка
+<dl class="org-dl">
+<dt>variable interest rate (ARM) Adjustable-rate mortgage</dt><dd></dd>
+
+<dt>fixed rates</dt><dd></dd>
+</dl></dd>
+</dl>
+</div>
+<div id="outline-container-org67fea70" class="outline-3">
+<h3 id="org67fea70"><span class="section-number-3">12.1.</span> investment</h3>
+<div class="outline-text-3" id="text-12-1">
+<dl class="org-dl">
+<dt>investment [ɪnˈvestmənt]</dt><dd></dd>
+
+<dt>Home equity [həʊm ˈekwɪtɪ]</dt><dd>Собственный капитал</dd>
+<dt>Treasury Yield  [jiːld]</dt><dd>доходность казначейских облигаций Debt obligations
+<dl class="org-dl">
+<dt>Treasury Rate  [ˈtreʒ(ə)rɪ]</dt><dd>то же, 10 Years US Treasury Rate</dd>
+</dl></dd>
+<dt>debt obligations  [det ɒblɪˈgeɪʃn]</dt><dd>долговые обязательства - treasury bill, treasury note, treasury bond</dd>
+<dt>investor confidance [ˈkɒnfɪdəns] </dt><dd>уверенность</dd>
+<dt>savings [ˈseɪvɪŋz]</dt><dd>сбережения</dd>
+<dt>net worth</dt><dd>балансовая стоимость - собаственный капитал</dd>
+<dt>book value</dt><dd>чистые активы - собаственный капитал</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org40ad873" class="outline-3">
+<h3 id="org40ad873"><span class="section-number-3">12.2.</span> credit, loan</h3>
+<div class="outline-text-3" id="text-12-2">
+<dl class="org-dl">
+<dt>credit</dt><dd>кредит, кредитование</dd>
+<dt>credit obligation [ɒblɪˈgeɪʃn]</dt><dd>кредитное обязательство</dd>
+<dt>Credit bureau [bjʊəˈrəʊ]</dt><dd>кредитное бюро</dd>
+<dt>credit report [rɪˈpɔːt]</dt><dd>кредитная история</dd>
+<dt>credit term [tɜːm]</dt><dd>срок кредитования, credit terms - условия предоставления кредита</dd>
+<dt>borrow [ˈbɒrəʊ]</dt><dd>одолжить</dd>
+<dt>borrower [ˈbɔrəuə]</dt><dd>заемщик, должник</dd>
+<dt>lend  [lend]</dt><dd>одалживать</dd>
+<dt>lender [ˈlendə]</dt><dd>кредитор, кредитодатель</dd>
+<dt>loan [ləʊn]</dt><dd>кредит, ссуда, заем, заимствование borrowing, lending
+<dl class="org-dl">
+<dt>Loan origination [ərɪʤɪˈneɪʃn] :: Оформление кредита - Mortgage origination</dt><dd>Ипотечное кредитование</dd>
+<dt>loan issue</dt><dd>выдача кредита</dd>
+</dl></dd>
+<dt>Revolving credit</dt><dd>не имеющий рассрочки</dd>
+<dt>home equity loan</dt><dd>кредит под залог имущества type of loan in which the borrower uses the equity of his or
+her home as collateral</dd>
+<dt>default</dt><dd>is failure to meet the legal obligations (or conditions) of a loan.</dd>
+<dt>Credit <b>exposure</b></dt><dd>is a measurement of the maximum potential loss to a lender if the borrower
+defaults on payment.</dd>
+<dt>counterparties</dt><dd>entities to which an exposure of financial risk may exist.</dd>
+<dt>prospective debtor [prəˈspektiv ˈdedər]</dt><dd>потенциальный должник</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge6dd6d8" class="outline-3">
+<h3 id="orge6dd6d8"><span class="section-number-3">12.3.</span> repayment</h3>
+<div class="outline-text-3" id="text-12-3">
+<dl class="org-dl">
+<dt>repayment[rɪˈpeɪmənt]</dt><dd>выплата, возмещение</dd>
+<dt>installment loan or credit</dt><dd>рассрочка, scheduled payments</dd>
+<dt>amortization schedule  [əmɔːtəˈzeɪʃən]</dt><dd>график погашения</dd>
+<dt>delinquency [dɪˈlɪŋkwənsɪ]</dt><dd>просрочка</dd>
+<dt>charge-off</dt><dd>written off as uncollectable, the debt is still legally valid and will be collected.</dd>
+<dt>to default  [dɪˈfɔːlt]</dt><dd>невыполнение обязательств</dd>
+<dt>delinquent [dɪˈlɪŋkwənt]</dt><dd>неплательщик</dd>
+<dt>amount due [əˈmaʊnt djuː]</dt><dd>сумма задолженности</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org8254d1e" class="outline-3">
+<h3 id="org8254d1e"><span class="section-number-3">12.4.</span> mortage</h3>
+<div class="outline-text-3" id="text-12-4">
+<dl class="org-dl">
+<dt>mortgage  [ˈmɔːgɪʤ]</dt><dd>заклад
+<ul class="org-ul">
+<li>mortgage loan - ипотечный кредит</li>
+<li>real estate mortgage - ипотека, залог недвижимости</li>
+<li>mortgage application - заявка ни ипотеку</li>
+</ul></dd>
+<dt>collateral [kəˈlatrəl]</dt><dd>залог</dd>
+<dt>lien [lɪən]</dt><dd>залог</dd>
+<dt>pledge [pleʤ]</dt><dd>залог</dd>
+<dt>House Price Index or Home Supply Index</dt><dd>Индекс Цен На Жилье</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-orged13d55" class="outline-2">
+<h2 id="orged13d55"><span class="section-number-2">13.</span> neural networks</h2>
+<div class="outline-text-2" id="text-13">
+<dl class="org-dl">
+<dt>successive [səkˈsesɪv]</dt><dd>последующий</dd>
+<dt>neural [ˈnjʊərəl]</dt><dd>нейронный</dd>
+<dt>downsampling [daʊnˈsɑːmplɪŋ]</dt><dd>approximation at a lower rate or density without filter</dd>
+<dt>recurrent [rɪˈkʌrənt]</dt><dd>повторяющийся</dd>
+<dt>learning [ˈlɜːnɪŋ]</dt><dd>самообучение</dd>
+<dt>training [ˈtreɪnɪŋ]</dt><dd>обучение с подкрепление</dd>
+<dt>threshold [ˈθreʃhəʊld]</dt><dd>пороговая величина</dd>
+<dt>estimate [ˈestɪmeɪtə]</dt><dd>оценка</dd>
+<dt>oscillations [ɒsɪˈleɪʃnz]</dt><dd>колебания</dd>
+<dt>augment  [ˈɔːgment]</dt><dd>увеличение, увеличивать</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org6cc3fd1" class="outline-2">
+<h2 id="org6cc3fd1"><span class="section-number-2">14.</span> IDE features</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>syntax highlighting</li>
+<li>smart and not smart autocompletion</li>
+<li>code folding</li>
+<li>indentation</li>
+<li>next occurrence</li>
+<li>Source navigation</li>
+<li>code generation</li>
+<li>integrated code debugger</li>
+<li>Project wizards and templates</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a8c017" class="outline-2">
+<h2 id="org2a8c017"><span class="section-number-2">15.</span> Latin and Greek</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>e.g. 		<i>iːˈdʒiː</i>.		From Latin exempli gratia ‘for the sake of example’</li>
+<li>ad hoc 	<i>ˌæd ˈhɒk</i> from Latin :"for this"</li>
+<li>and vice versa и наоборот</li>
+<li>nullipotent - nullus (“not any”) +‎ potent (“having power”) – literally, “having no power” - no side effect on reading data</li>
+<li>Idempotence -  idem + potence (same + power) - multiple request have same result.</li>
+<li>Pros and cons -  a shortening of the Latin expression "pro et contra" (for and against)</li>
+<li>ca. 1800 BCE - приблизительно до нашей эры 2019CE Before the Common or Current Era</li>
+<li>AD 2019  (anno Domini, "[the] year of [the] Lord")</li>
+<li>400 BC ("before Christ")</li>
+<li>c., ca., or ca (and less frequently circ. or cca.) <b>Circa [ˈsɜːkə]</b> (from Latin, meaning 'around, about')</li>
+<li>Curriculum vitae  <b>[kəˈrɪkjʊləm ˈviːtaɪ, -ˈwiːtaɪ, -ˈvaɪtiː]</b>  -  [the] course of [my] life - резюмэ</li>
+<li>Tabula rasa  лат.«Чистая доска» -  индивид рождается без врождённого или встроенного умственного содержания</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce32599" class="outline-2">
+<h2 id="orgce32599"><span class="section-number-2">16.</span> Mobile [ˈməʊbaɪl]</h2>
+<div class="outline-text-2" id="text-16">
+<dl class="org-dl">
+<dt>mobile phone [ˈməʊbaɪl fəʊn]</dt><dd>.</dd>
+<dt>tablet [ˈtæblɪt]</dt><dd>дощечка, таблетка</dd>
+<dt>pin</dt><dd>прикреплять app к dock at bottom of the screen</dd>
+<dt>tap</dt><dd>нажать на notification to open its corresponding app</dd>
+<dt>Internal accelerometers [ɪnˈtɜːnl] [ækˌsɛləˈrɒmɪtə]</dt><dd>акселерометр- shaking and rotation detection.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgd01e9a3" class="outline-2">
+<h2 id="orgd01e9a3"><span class="section-number-2">17.</span> Союзы</h2>
+<div class="outline-text-2" id="text-17">
+<dl class="org-dl">
+<dt>though</dt><dd>хотя&#x2026;</dd>
+<dt>although [ɔːlˈðəʊ]</dt><dd>несмотря на то что,</dd>
+<dt>as though</dt><dd>как-будто</dd>
+<dt>provided [prəvaɪdɪd]</dt><dd>при условии They will help you provided you tell them the truth.</dd>
+<dt>either here or there</dt><dd>или тут или там</dd>
+<dt>neither here nor there</dt><dd>ни тут ни там</dd>
+<dt>She is both beautiful and intelligent.</dt><dd>И красива и умна.</dd>
+<dt>So tired that can not talk.</dt><dd>Настолько уставший, что не может говорить.</dd>
+<dt>Sick as he was, he worked diligently.</dt><dd>Хоть болел, но работал прилежно</dd>
+<dt>We started early so as to finish it all in time.</dt><dd>чтобы успеть</dd>
+<dt>Do it now lest you change your mind.</dt><dd>Сделай сейчас пока не передумал</dd>
+<dt>by vs per</dt><dd>by - ones uses as "grouped by" others as "made by", per - percent.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org068f563" class="outline-2">
+<h2 id="org068f563"><span class="section-number-2">18.</span> Morphological derivation</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+derivational patterns
+</p>
+<ul class="org-ul">
+<li>adjective-to-noun: -ness (slow → slowness)</li>
+<li>adjective-to-verb: -en (weak → weaken)</li>
+<li>adjective-to-adjective: -ish (red → reddish)</li>
+<li>adjective-to-adverb: -ly (personal → personally); (slow → slowly</li>
+<li>noun-to-adjective: -al (recreation → recreational)</li>
+<li>noun-to-verb: -fy (glory → glorify)</li>
+<li>verb-to-adjective: -able (drink → drinkable)</li>
+<li>verb-to-noun (abstract): -ance (deliver → deliverance)</li>
+<li>verb-to-noun (agent): -er (write → writer)</li>
+</ul>
+
+<p>
+prefix
+</p>
+<ul class="org-ul">
+<li>write → re-write;</li>
+<li>lord → over-lord</li>
+<li>(healthy → unhealthy ; do → undo</li>
+<li>circle (verb) → encircle (verb); rich (adj) → enrich (verb), large (adj) → enlarge (verb), rapture
+(noun) → enrapture (verb), slave (noun) → enslave (verb).</li>
+</ul>
+<p>
+<a href="https://en.wikipedia.org/wiki/Morphological_derivation">https://en.wikipedia.org/wiki/Morphological_derivation</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4fc5ea5" class="outline-2">
+<h2 id="org4fc5ea5"><span class="section-number-2">19.</span> math</h2>
+<div class="outline-text-2" id="text-19">
+<dl class="org-dl">
+<dt>math [mæθ]</dt><dd>математический</dd>
+<dt>mathematics [ˌmæθəˈmætɪks]</dt><dd>математика</dd>
+<dt>mathematician [ˌmæθəməˈtɪʃən]</dt><dd>математик</dd>
+<dt>odd [ɒd]</dt><dd>нечетное нечетный</dd>
+<dt>even [ˈiːvən]</dt><dd>четное</dd>
+<dt>formula [ˈfɔːmjʊlə]</dt><dd>формула</dd>
+<dt>parentheses ( ) [pəˈrɛnθəsiːz]</dt><dd>.</dd>
+<dt>brackets [ ] [ˈbrækɪt]</dt><dd></dd>
+
+<dt>braces { } [ˈbreɪsɪz]</dt><dd>фигурные скобки</dd>
+<dt>trivial [ˈtrɪvɪəl]</dt><dd>.</dd>
+<dt>Arithmetic [əˈrɪθmətɪk]</dt><dd>искуство чисел  - Number theory - более новая ветвь.</dd>
+<dt>addition [əˈdɪʃən]</dt><dd>добавление add [æd]</dd>
+<dt>subtraction [səbˈtrækʃən]</dt><dd>, subtract вычесть</dd>
+<dt>multiplication [ˌmʌltɪplɪˈkeɪʃən]</dt><dd>умножение</dd>
+<dt>multiply [ˈmʌltɪˌplaɪ]</dt><dd>умножить</dd>
+<dt>product [ˈprɒdʌkt]</dt><dd>произведение</dd>
+<dt>division [dɪˈvɪʒən]</dt><dd>divide [dɪˈvaɪd] diviser [dɪˈvaɪzə].</dd>
+<dt>exponentiation [ˌɛkspəˌnɛnʃɪˈeɪʃən]</dt><dd>возведение в степень b<sup>n</sup> b-base n-</dd>
+<dt>exponent [ɪkˈspəʊnənt]</dt><dd>степень</dd>
+<dt>power</dt><dd>When we multiply two powers we add their exponents. "b raised to the n-th power", "b raised to the
+power of n", or "the n-th power of b"</dd>
+<dt>factor [ˈfæktə]</dt><dd>множитель</dd>
+<dt>coordinate system [kəʊˈɔːdɪnɪt]</dt><dd>.</dd>
+<dt>x-axis [ˈæksɪs] plural axes [ˈæksiːz]</dt><dd>ось оси</dd>
+<dt>origin(0.0) [ˈɒrɪdʒɪn]</dt><dd>начало координат</dd>
+<dt>Inequalities [ˌɪnɪˈkwɒlɪtɪ]</dt><dd>неравенства = &lt; &gt;= != Equality and Relational Operators (java)</dd>
+<dt>equation [ɪˈkweɪʒən]</dt><dd>уравнение</dd>
+<dt>absolute value [ˈæbsəˌluːt]</dt><dd>|x|</dd>
+<dt>zero [ˈzɪərəʊ]</dt><dd>.</dd>
+<dt>negative [ˈnɛɡətɪv]  positive number [ˈpɒzɪtɪv]</dt><dd>.</dd>
+<dt>plus sign [plʌs] [saɪn] minus [ˈmaɪnəs]</dt><dd>.</dd>
+<dt>numerator [ˈnjuːməˌreɪtə] dividend [ˈdɪvɪˌdɛnd]</dt><dd>числитель</dd>
+<dt>denominator [dɪˈnɒmɪˌneɪtə] divisor [dɪˈvaɪzə]</dt><dd>знаменатель</dd>
+<dt>quotient [ˈkwəʊʃənt]</dt><dd>частное 20/3 = the quotient = 6 and two thirds 2/3 (also ratio of a dividend to
+its divisor)</dd>
+<dt>remainder [rɪˈmeɪndə]</dt><dd>остаток  (Remainder operator %)</dd>
+<dt>ratio [ˈreɪʃɪˌəʊ]</dt><dd>отношение 2:3</dd>
+<dt>monomial [mɒˈnəʊmɪəl]</dt><dd>одночлен</dd>
+<dt>reciprocal [riˈsiprəkəl]</dt><dd>or  multiplicative inverse. for x = 1/x or x<sup>-1</sup></dd>
+<dt>degree [dɪˈɡriː]</dt><dd>уровень</dd>
+<dt>polynomial [ˌpɒlɪˈnəʊmɪəl]</dt><dd>многочлен. сумма одночленов</dd>
+<dt>coefficient [ˌkəʊɪˈfɪʃənt]</dt><dd>содействующий фактор</dd>
+<dt>set</dt><dd>множество</dd>
+<dt>commutativity[kəˈmjuːtətɪvɪtɪ]</dt><dd>zg = gz</dd>
+<dt>Bijection [bɪˈʤekʃn]</dt><dd>биекция</dd>
+<dt>injection [ɪnˈʤekʃn]</dt><dd>как биекция, только не на все элементы</dd>
+<dt>distributivity [dɪˈstrɪbjʊtɪvɪtɪ]</dt><dd>дистрибутивость with respect to addition - правая и левая.</dd>
+<dt>Intersection [ɪntəˈsekʃn]</dt><dd>пересечение</dd>
+<dt>Cartesian Product [kɑːˈtiːzjən ˈprɔdʌkt]</dt><dd>декартово произведение</dd>
+<dt>intersept [ˈɪntəsept]</dt><dd>y-intercept y-пересечения</dd>
+<dt>logarithm [ˈlɔgərɪðəm]</dt><dd>.</dd>
+<dt>quantify [ˈkwɔntɪfaɪ]</dt><dd>количественно оценить Probability quantifies as a number between 0 and 1x</dd>
+<dt>derivative [dɪˈrɪvətɪv]</dt><dd>производная</dd>
+<dt>Gradient [ˈgreɪdjənt]</dt><dd>градиент</dd>
+<dt>logistic [ləˈʤɪstɪk]</dt><dd>логистический</dd>
+<dt>Hyperbolic [haɪpɜːˈbɔlɪk]</dt><dd>функции выраженные экспоненту и тесно связанных с тригонометрическими функциями</dd>
+<dt>converge [kənˈvɜːʤ]</dt><dd>сходиться</dd>
+</dl>
+
+<p>
+frases:
+</p>
+<ul class="org-ul">
+<li>A variable is a letter, for example x, y or z</li>
+<li>To evaluate an algebraic expression</li>
+<li>arithmetic operations + - /</li>
+<li>solve equation 6*x=12. solution x =2</li>
+<li>sides of an equation</li>
+<li>This kind of diagram is called a number line -&#x2014;|-1&#x2013;&#x2014;|0-&#x2014;|+1-&#x2013;&#x2014;</li>
+<li>whole numbers 0,1,2,3 &#x2026;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a4941d" class="outline-2">
+<h2 id="org2a4941d"><span class="section-number-2">20.</span> colloquial way of writing (')</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>"rockin'" for "rocking,"</li>
+<li>"talkin'" for "talking."</li>
+<li>Ain't: A contraction for "is not" or "are not" (e.g., "I ain't going").</li>
+<li>Y'all: A contraction for "you all". - Southern American English dialects</li>
+<li>Gonna: Short for "going to".</li>
+<li>Wanna: Short for "want to".</li>
+<li>Coulda/Woulda/Shoulda: Contractions for "could have", "would have", and "should have".</li>
+<li>"fixin' to" (meaning "getting ready to"). - Southern American English dialects</li>
+<li>"finna" (short for "fixing to") or "hella" (meaning very) - African American Vernacular English (AAVE)</li>
+</ul>
+<p>
+Informal Spellings:
+</p>
+<ul class="org-ul">
+<li>Cuz: Instead of "because".</li>
+<li>Thru: Instead of "through".</li>
+<li>U or You: Using single letters or abbreviations (e.g., "u r gr8" instead of "you are great").</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f0e713" class="outline-2">
+<h2 id="org3f0e713"><span class="section-number-2">21.</span> -s ending pronunciation</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>To create a plural noun (cats)</li>
+<li>To conjugate a verb (snows)</li>
+<li>To show possession (coach's, coaches')</li>
+<li>To create a contraction (coach's meaning coach is or coach has) - сокращение</li>
+</ul>
+
+<p>
+Three posibilities  [pɔsəˈbɪlɪtɪs]:
+</p>
+<ol class="org-ol">
+<li><i>s</i> 's sound': hats <i>hæts</i></li>
+<li><i>z</i> 'z sound': loves <i>lʌvz</i></li>
+<li><i>ɪz</i> 'short i'+'z sound': misses <i>'mɪ sɪz</i></li>
+</ol>
+
+<p>
+<i>ɪz</i>  final sound:
+</p>
+<ul class="org-ul">
+<li><i>s</i> misses</li>
+<li><i>z</i> causes</li>
+<li><i>ʧ</i> watches</li>
+<li><i>ʤ</i> changes</li>
+<li><i>ʃ</i> wishes</li>
+<li><i>ʒ</i> garages</li>
+</ul>
+
+<p>
+<i>s</i>
+</p>
+<ul class="org-ul">
+<li><i>p</i> stops</li>
+<li><i>k</i> looks</li>
+<li><i>t</i> cats</li>
+<li><i>θ</i> Earth's</li>
+</ul>
+
+<p>
+<i>z</i>
+</p>
+<ul class="org-ul">
+<li><i>b</i> describes</li>
+<li><i>g</i> begs</li>
+<li><i>d</i> words</li>
+<li><i>ð</i> bathes</li>
+<li><i>v</i> loves</li>
+<li><i>l</i> calls</li>
+<li><i>r</i> cures</li>
+<li><i>m</i> dreams</li>
+<li><i>n</i> rains</li>
+<li><i>ŋ</i> belongs</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org20a26e1" class="outline-2">
+<h2 id="org20a26e1"><span class="section-number-2">22.</span> time: at, in, on, for, per, in</h2>
+<div class="outline-text-2" id="text-22">
+</div>
+<div id="outline-container-orga6f6b30" class="outline-4">
+<h4 id="orga6f6b30"><span class="section-number-4">22.0.1.</span> for, per, in</h4>
+<div class="outline-text-4" id="text-22-0-1">
+<ul class="org-ul">
+<li>in one year	1) за один год 2) через один год (generally refers to a period of time that starts from the present moment)</li>
+<li>for a year	I have been working on this project for a year (может в прошлом когда-то)</li>
+<li>per year,	в год</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6022960" class="outline-4">
+<h4 id="org6022960"><span class="section-number-4">22.0.2.</span> at, in, on</h4>
+<div class="outline-text-4" id="text-22-0-2">
+<ul class="org-ul">
+<li>at for a PRECISE TIME</li>
+<li>in for MONTHS, YEARS, CENTURIES and LONG PERIODS</li>
+<li>on for DAYS and DATES</li>
+</ul>
+
+<p>
+ex:
+</p>
+<ul class="org-ul">
+<li>at 3 o'clock</li>
+<li>in May</li>
+<li>on Sunday</li>
+</ul>
+
+<p>
+When we say <b>last, next, every</b>, this we do not also use at, in, on.
+</p>
+<ul class="org-ul">
+<li>I went to London last June. (not in last June)</li>
+<li></li>
+</ul>
+
+
+<p>
+<a href="https://www.englishclub.com/grammar/prepositions-at-in-on-time.php">https://www.englishclub.com/grammar/prepositions-at-in-on-time.php</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org85191e2" class="outline-2">
+<h2 id="org85191e2"><span class="section-number-2">23.</span> grammar</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+грамматика
+</p>
+<ul class="org-ul">
+<li><img src="https://i.pinimg.com/originals/59/b3/16/59b316adbf77914fc62fdedcab42894f.gif" alt="59b316adbf77914fc62fdedcab42894f.gif" /></li>
+<li><a href="https://englishtexts.ru/misc/poliglot-angliyskiy-za-16-chasov/urok-11">https://englishtexts.ru/misc/poliglot-angliyskiy-za-16-chasov/urok-11</a></li>
+</ul>
+</div>
+<div id="outline-container-org1040cc5" class="outline-3">
+<h3 id="org1040cc5"><span class="section-number-3">23.1.</span> theory: classes of words</h3>
+<div class="outline-text-3" id="text-23-1">
+<ul class="org-ul">
+<li>Nouns</li>
+<li>Verbs</li>
+<li id="Pronouns">I, my, thou, thy, thine, thee, ye, you, myself</li>
+<li id="Adjectives">large, white, this, few, Richard is careless. - modify nouns (directly before nouns)</li>
+<li id="Adverbs">Richard talks carelessly, slowly, yesterday, here, well - modify verb</li>
+<li>Prepositions</li>
+<li>Conjunctions</li>
+<li>Exclamations</li>
+</ul>
+</div>
+
+<div id="outline-container-org4a59709" class="outline-4">
+<h4 id="org4a59709"><span class="section-number-4">23.1.1.</span> inverted sentences:</h4>
+<div class="outline-text-4" id="text-23-1-1">
+<ul class="org-ul">
+<li>Dark was the night.</li>
+<li>Beautiful was the morning</li>
+<li>Where is the book?</li>
+<li>How sad was the story.</li>
+<li>Great was the joy.</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e648f9" class="outline-3">
+<h3 id="org1e648f9"><span class="section-number-3">23.2.</span> am/is/are</h3>
+<div class="outline-text-3" id="text-23-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">I</td>
+<td class="org-left">am</td>
+<td class="org-left">I'm</td>
+</tr>
+
+<tr>
+<td class="org-left">he/she/it</td>
+<td class="org-left">is</td>
+<td class="org-left">he's</td>
+</tr>
+
+<tr>
+<td class="org-left">we/you/they</td>
+<td class="org-left">are</td>
+<td class="org-left">we're</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgbf416e8" class="outline-3">
+<h3 id="orgbf416e8"><span class="section-number-3">23.3.</span> tenses</h3>
+<div class="outline-text-3" id="text-23-3">
+</div>
+<div id="outline-container-org4ee53aa" class="outline-4">
+<h4 id="org4ee53aa"><span class="section-number-4">23.3.1.</span> theory</h4>
+<div class="outline-text-4" id="text-23-3-1">
+<p>
+three main <b>Tenses</b>: Present, Past, Future
+</p>
+
+<p>
+four <b>Tense Form</b>:
+</p>
+<ul class="org-ul">
+<li>Simple</li>
+<li>Continuous</li>
+<li>Perfect</li>
+<li>Perfect Continuous</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb754771" class="outline-4">
+<h4 id="orgb754771"><span class="section-number-4">23.3.2.</span> Continuous, Perfect</h4>
+<div class="outline-text-4" id="text-23-3-2">
+<p>
+Continuous (be -ing)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Present – настоящее</th>
+<th scope="col" class="org-left">Past – прошедшее</th>
+<th scope="col" class="org-left">Future – будущее</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">It is raining.</td>
+<td class="org-left">It was raining. промежуток времени</td>
+<td class="org-left">It will be raining.</td>
+</tr>
+
+<tr>
+<td class="org-left">–</td>
+<td class="org-left">It is not raining.</td>
+<td class="org-left">It wasn’t raining.</td>
+<td class="org-left">It will not be raining.</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Is it raining?</td>
+<td class="org-left">Was it raining? промежуток времени</td>
+<td class="org-left">Will it be raining?</td>
+</tr>
+</tbody>
+</table>
+<p>
+Perfect (have/has) - нужно событие
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Present – have/has</th>
+<th scope="col" class="org-left">Past – had</th>
+<th scope="col" class="org-left">Future – have     by, in a week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">I have seen you.имеем результат</td>
+<td class="org-left">I had seen you.перед чем-то</td>
+<td class="org-left">I will have finished this project by Friday.</td>
+</tr>
+
+<tr>
+<td class="org-left">–</td>
+<td class="org-left">I have not seen you.уже мимо прошел</td>
+<td class="org-left">I hadn’t seen you.</td>
+<td class="org-left">I will have not V(3) …</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Has he seen her?</td>
+<td class="org-left">Had he seen her?</td>
+<td class="org-left">Will I have V(3) … ?</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+perfect continuous (&#x2026; |now )
+</p>
+<ul class="org-ul">
+<li>I have been working</li>
+</ul>
+
+<p>
+past perfect continuous (&#x2026; |past |now )
+</p>
+<ul class="org-ul">
+<li>I had (I'd) been working.</li>
+</ul>
+
+<p>
+used to travel a lot - kind of past perfect continuous
+</p>
+
+<p>
+Mistakes:
+</p>
+<ul class="org-ul">
+<li>Had got - no such, just "had".</li>
+</ul>
+
+<p>
+Not good sound:
+</p>
+<ul class="org-ul">
+<li>Alex will work. - must be: Alex is working next week.</li>
+<li>Will you watch. - must be: Are you going to watch this?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgde3b0c6" class="outline-4">
+<h4 id="orgde3b0c6"><span class="section-number-4">23.3.3.</span> Conditional, Conditional continuous</h4>
+<div class="outline-text-4" id="text-23-3-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Conditional - now (might take place)</th>
+<th scope="col" class="org-left">past (might have taken place in the past)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">e</td>
+<td class="org-left">He would speak.</td>
+<td class="org-left">He would have spoken.</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">He would not speak.</td>
+<td class="org-left">He would not have spoken.</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Would he speak?</td>
+<td class="org-left">Would he have spoken?</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>If I were you, I would go home.</li>
+<li>If I had seen that, I would have helped.</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Conditional - cont</th>
+<th scope="col" class="org-left">past</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">e</td>
+<td class="org-left">He would be speaking.</td>
+<td class="org-left">He would have been speaking.</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">He would not be speaking.</td>
+<td class="org-left">He would not have been speaking.</td>
+</tr>
+
+<tr>
+<td class="org-left">?</td>
+<td class="org-left">Would he be speaking?</td>
+<td class="org-left">Would he have been speaking?</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul class="org-ul">
+<li>She wasn't used to driving on the left.</li>
+<li>Then she got used to dring on the left.</li>
+<li>Now she is used to driving on the left</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac97a2b" class="outline-4">
+<h4 id="orgac97a2b"><span class="section-number-4">23.3.4.</span> Future Perfect Continuous</h4>
+<div class="outline-text-4" id="text-23-3-4">
+<p>
+Ram starts waiting at 9am. I am late and cannot arrive before 10am.
+</p>
+<ul class="org-ul">
+<li>Ram <b>will have been waiting</b> for an hour by the time I meet him.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org362de93" class="outline-4">
+<h4 id="org362de93"><span class="section-number-4">23.3.5.</span> two sentences</h4>
+<div class="outline-text-4" id="text-23-3-5">
+<p>
+We do not use will in the when-part of future sentence.
+</p>
+<ul class="org-ul">
+<li>I'll phone you when I get home from work.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0e89696" class="outline-4">
+<h4 id="org0e89696"><span class="section-number-4">23.3.6.</span> examples simple</h4>
+<div class="outline-text-4" id="text-23-3-6">
+<p>
+I came yesterday. Tomorrow, I will come or Tomorrow, I am coming.
+</p>
+
+<p>
+He is <b>going to</b> speak. <b>decision</b> made for the future
+</p>
+
+<ol class="org-ol">
+<li>Present Simple:
+<ul class="org-ul">
+<li>I eat breakfast every morning.</li>
+<li>She likes to play tennis on the weekends.</li>
+<li>They usually watch TV in the evening.</li>
+</ul></li>
+<li>Present Continuous:
+<ul class="org-ul">
+<li>I am studying for my exam right now.</li>
+<li>She is working on her project at the moment.</li>
+<li>They are having a meeting at 2 PM.</li>
+</ul></li>
+<li>Present Perfect:
+<ul class="org-ul">
+<li>I have eaten breakfast already.</li>
+<li>She has just finished her homework.</li>
+<li>They have been on vacation for two weeks.</li>
+</ul></li>
+<li>Present Perfect Continuous:
+<ul class="org-ul">
+<li>I have been studying for three hours.</li>
+<li>She has been working on her project for a month.</li>
+<li>They have been living in this city for ten years.</li>
+</ul></li>
+<li>Past Simple:
+<ul class="org-ul">
+<li>I went to the store yesterday.</li>
+<li>She watched a movie last night.</li>
+<li>They visited their grandparents last weekend.</li>
+</ul></li>
+<li>Past Continuous:
+<ul class="org-ul">
+<li>I was studying math when the phone tang.</li>
+</ul></li>
+<li>Past Perfect:
+<ul class="org-ul">
+<li>She had visited Paris before she moved to London.</li>
+<li>We had already finished our work by the time he arrived.</li>
+<li>They had studied French for two years before going to France.</li>
+<li>He had never seen such a beautiful sight before.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga7491a4" class="outline-4">
+<h4 id="orga7491a4"><span class="section-number-4">23.3.7.</span> examples advance</h4>
+<div class="outline-text-4" id="text-23-3-7">
+<p>
+By the time I had finished my PhD, I will have already published five research papers in
+ prestigious journals.
+</p>
+<ul class="org-ul">
+<li>К тому времени, когда я получу докторскую степень, я уже опубликую пять научных работ в</li>
+</ul>
+<p>
+престижных журналах.
+</p>
+<ul class="org-ul">
+<li>Perfect (past), Perfect (future)</li>
+</ul>
+
+<p>
+Once he has completed the marathon, he will have been training for over a year.
+</p>
+<ul class="org-ul">
+<li>Как только он завершит марафон, он будет тренироваться больше года.</li>
+<li>Perfect(present), perfect(future) continuous</li>
+</ul>
+
+<p>
+By the end of this month, we will have been living in this city for ten years.
+</p>
+<ul class="org-ul">
+<li>К концу этого месяца мы будем жить в этом городе уже десять лет.</li>
+<li>perfect(future) continuous</li>
+</ul>
+
+<p>
+After I graduate from university, I plan to pursue a Master's degree in neuroscience.
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<p>
+By the time they retire, they will have worked in the same company for 40 years.
+</p>
+
+<p>
+Once she arrives, we will have already started the meeting.
+After the project is completed, we will have spent months developing the final product.
+By the time he turns 30, he will have traveled to every continent in the world.
+Once I have mastered the guitar, I will have been practicing for hours every day.
+After we finish eating dinner, we will have cooked a three-course meal from scratch.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9d9d540" class="outline-4">
+<h4 id="org9d9d540"><span class="section-number-4">23.3.8.</span> exampels fast</h4>
+<div class="outline-text-4" id="text-23-3-8">
+<p>
+Present Perfect
+</p>
+<pre class="example">
+I have eaten breakfast already.
+</pre>
+
+<p>
+Past Perfect
+</p>
+<pre class="example">
+I had eaten breakfast before I went to cinema.
+</pre>
+
+<p>
+Future Perfect
+</p>
+<pre class="example">
+I will have eaten breakfast before I went to cinema.
+I will have finished the project by Friday.
+</pre>
+
+
+<p>
+Future Perfect Continues
+</p>
+<pre class="example">
+I had been eating breakfast before I went to the cinema.
+By next summer, I will have been studying English for three years.
+</pre>
+
+
+<p>
+Past Perfect Continues
+</p>
+<pre class="example">
+I had been eating breakfast before I went to the cinema.
+</pre>
+</div>
+</div>
+<div id="outline-container-org51c1a64" class="outline-4">
+<h4 id="org51c1a64"><span class="section-number-4">23.3.9.</span> links</h4>
+<div class="outline-text-4" id="text-23-3-9">
+<ul class="org-ul">
+<li><a href="https://www.englishpage.com/verbpage/verbtenseintro.html">https://www.englishpage.com/verbpage/verbtenseintro.html</a></li>
+<li><a href="https://www.ego4u.com/en/cram-up/grammar/tenses">https://www.ego4u.com/en/cram-up/grammar/tenses</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfbe1de1" class="outline-3">
+<h3 id="orgfbe1de1"><span class="section-number-3">23.4.</span> articles</h3>
+<div class="outline-text-3" id="text-23-4">
+<ul class="org-ul">
+<li>I had a sandwich and an apple for lunch. (first time)</li>
+<li>The sandwich wasn't very good, but the apple nice (known things)</li>
+</ul>
+</div>
+<div id="outline-container-org367e5da" class="outline-4">
+<h4 id="org367e5da"><span class="section-number-4">23.4.1.</span> school / the school</h4>
+<div class="outline-text-4" id="text-23-4-1">
+<p>
+We do not use <b>the</b> when we are thinking of the general idea of
+</p>
+<ol class="org-ol">
+<li>places: prison, hospital, university, college, church, school, bed, home, work. With most other
+places, you need the. For example, the cinema, the bank.
+<ul class="org-ul">
+<li>Ken went to the prison to visit his brother.</li>
+<li>When I leave school, I want to go to university/college.</li>
+</ul></li>
+<li>thinks or people in general: dogs, doctors, teachers, stamps, crime, music, food, cars, football,
+history, English, children.
+<ul class="org-ul">
+<li>Do you like classical music, chinese food, fast cars?</li>
+<li>We took the children to the zoo.</li>
+<li>All the cars in this car park belong to people who work here.</li>
+<li>The giraffe is the tallest of all animals</li>
+<li>Do you think the rich should pay higher taxes?</li>
+</ul></li>
+<li>"most + people / books / cars / hotels / &#x2026; etc"</li>
+</ol>
+
+<p>
+We do not use <b>the</b>:
+</p>
+<ol class="org-ol">
+<li>names of people: Helen, etc.</li>
+<li>names of places: Africa (<i>not</i> the Africa), Europe, France, Everest</li>
+<li>Mr/Mrs/Captain/Doctor + a name:
+<ul class="org-ul">
+<li>We call the doctor. We call Doctor Johnson.</li>
+<li>We live near the lake. They live near Lake Constance.</li>
+</ul></li>
+</ol>
+
+<p>
+We use <b>the</b> with
+</p>
+<ol class="org-ol">
+<li>Republi, Kingdom, States etc.:
+<ul class="org-ul">
+<li>the Czech Republic</li>
+<li>the United Kingdom (the UK)</li>
+<li>have you been to Canada or the United States?</li>
+</ul></li>
+<li>plural names of people and places:
+<ul class="org-ul">
+<li>people:		the Taylors (= the Taylors family), the Johnsons.</li>
+<li>countries:	the Netherlands, the Philippines, the Unites States</li>
+<li>groups of islands: the Canaries / the Canary Islands, the Bahamas</li>
+<li>mountain ranges:	the Rocky Mountains / the Rockies, the Alps</li>
+</ul></li>
+<li>names with <b>of</b>: the Bank of England</li>
+</ol>
+
+<p>
+the north of , nother &#x2026;
+</p>
+
+<p>
+Backingham Palace. the Royal Palace. (adjective)
+</p>
+</div>
+</div>
+<div id="outline-container-orgb48286e" class="outline-4">
+<h4 id="orgb48286e"><span class="section-number-4">23.4.2.</span> abstract</h4>
+<div class="outline-text-4" id="text-23-4-2">
+<p>
+Abstract nouns shouldn't get indeffinite article.
+</p>
+
+<p>
+The same noun is sometimes abstract and sometimes not, depending on how you use it.
+</p>
+
+<p>
+I can offer you an apple, an orange, or a pear.
+&#x2013;I'll have the pear, thanks.
+&#x2013; tell me the truth.
+</p>
+
+<p>
+Water is necessary for life.
+</p>
+
+<p>
+The water from the spring down the road tastes wonderful.
+</p>
+
+<p>
+When loading and unloading a container ship, the deck officer must take into account both <b>size</b> and
+ <b>weight</b>, so as not to unbalance the cargo.
+</p>
+
+<p>
+When loading and unloading a container ship, the deck officer must take into account both <b>the size</b>
+ and <b>the weight</b> of the containers, so as not to unbalance the cargo.
+</p>
+
+<p>
+source
+</p>
+<ul class="org-ul">
+<li>In general, a source is the location from which information is gathered.</li>
+<li>A power source is a source of power. (phisics)</li>
+<li>A power source refers to the source of electricity, which is the rate at which electrical energy
+is transferred by an electric circuit.1</li>
+<li>what is source of power? (abstract)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org30412e0" class="outline-4">
+<h4 id="org30412e0"><span class="section-number-4">23.4.3.</span> the pople of the country: the + nationality</h4>
+<div class="outline-text-4" id="text-23-4-3">
+<ul class="org-ul">
+<li>The French are plural in meaning.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org60e42c8" class="outline-3">
+<h3 id="org60e42c8"><span class="section-number-3">23.5.</span> is/are</h3>
+<div class="outline-text-3" id="text-23-5">
+<p>
+Some singular nouns are often used with a plural verb:
+</p>
+<ul class="org-ul">
+<li>audience, committe, company, family, firm, goverment, staff, team:
+<ul class="org-ul">
+<li>The goverment (= they) want to increase taxes.</li>
+<li>The staff at the school (= they) are not happy with their new working conditions.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5bc5627" class="outline-3">
+<h3 id="org5bc5627"><span class="section-number-3">23.6.</span> capitalization in English</h3>
+<div class="outline-text-3" id="text-23-6">
+<p>
+usually if a noun indicates a proper noun.
+</p>
+<ul class="org-ul">
+<li>I</li>
+<li>personal and place names: "John", "Mr. Smith", "Amsterdam", "Europe", "Mount Everest", "the Ganges".</li>
+<li>compass directions when referring to geographical regions: "Western Canada", "I was raised in the
+South", but not for points on a compass: "London is west of Berlin".</li>
+<li>races, tribes, nationalities, and languages: "Arabic", "Inuit", "French", "Chinese".</li>
+<li>national and regional adjectives: "an American" (noun), "an American man" (adjective).</li>
+<li>school subjects and courses: "He passed History this term", "She is taking Chemistry 101".</li>
+<li>religions: "an Anglican curate", "a Catholic church" (adjective), but not "a catholic diet" in
+which catholic simply means "all-encompassing" or "universal."</li>
+<li>the Supreme Being, deities and personifications: "God", "Providence", "Fame".</li>
+<li>reverential pronouns: "His, Him" when referring to God or Christ.</li>
+<li>days and months: "Monday", "January", but not seasons such as "autumn".</li>
+<li>brand names: "Toyota", "Nike", "Coca-Cola", unless the brand itself is purposely not capitalized
+or unusually capitalized: "iPhone", "eBay".</li>
+<li>royal titles: "King George III" but "kings and queens of England", but only sometimes 'sir' or
+'madam'.</li>
+<li>planets and other celestial bodies: "Jupiter", "the Crab Nebula"; and "the Earth", "the Sun", or
+"the Moon" should be capitalized according to the International Astronomical Union based on its
+manual of style, but style guides may suggest differently</li>
+<li>words which change their meaning between capitalized and uncapitalized usage, such as "liberal"
+and "Liberal", are called capitonyms: Compare "A man of liberal tastes" and "The leader of the
+Liberal Party" (as with "catholic" above).</li>
+<li>in legal documents, where the full name of an individual or body is later referred to in short
+form, in order to avoid ambiguity: "John Smith (the Plaintiff)", "Exxon-Mobil Corporation (the
+Company)".</li>
+</ul>
+</div>
+<div id="outline-container-org5821809" class="outline-4">
+<h4 id="org5821809"><span class="section-number-4">23.6.1.</span> terms</h4>
+<div class="outline-text-4" id="text-23-6-1">
+<ul class="org-ul">
+<li><b>capital letter</b> at the start of a word.</li>
+<li><b>proper noun</b> -  identifies a single entity  (Africa, Jupiter, Sarah, Tesla, Inc.)</li>
+<li><b>common noun</b> -  refers to a class of entities (continent, planet, person, corporation)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org07f713e" class="outline-4">
+<h4 id="org07f713e"><span class="section-number-4">23.6.2.</span> прописные, или заглавные (большие), буквы и строчные (маленькие).</h4>
+<div class="outline-text-4" id="text-23-6-2">
+<ol class="org-ol">
+<li>в начале предложения и в начале прямой речи или цитаты</li>
+<li>Имена собственные (имена, фамилии, отчества людей, клички животных, названия стран, городов, рек,
+озёр, горных цепей и отдельных пиков и так далее).</li>
+<li>В именах собственных, состоящих из нескольких (двух или более) слов, с большой буквы пишутся (в
+отличие, напр., от английского языка) только первое слово и те слова, которые сами по себе являются
+именами собственными: Ленинградская область, Великолукская наступательная операция, Ладожское
+озеро, но: Великий Новгород, Малая Вишера. Но есть исключения — напр., Российская Федерация,
+Великая Отечественная война.</li>
+<li>Первое слово в названии исторических эпох и событий (Варфоломеевская ночь, Июльская монархия,
+Первая мировая война, Октябрьская революция), а также праздников (День независимости).</li>
+<li>Названия политических, культурных и других мероприятий (Всемирный экономический форум,
+Олимпийские игры).</li>
+<li>Имена религиозных и мифологических персонажей, а также слова, обозначающие бога в
+монотеистических религиях (Иисус Христос, Аллах, Всесильный, Он — если это местоимение относится к
+богу монотеистической религии). Для обозначения мифологических и языческих богов используется
+строчная буква.</li>
+<li>Названия фирм, компаний и так далее, названия заключаются в кавычки.</li>
+<li>Некоторые должности и титулы (Президент РФ, Ваше величество) в текстах официальных документов.</li>
+<li>Отдельные слова в особых случаях (Родина как синоним названия родной страны, но «родина кенгуру —
+Австралия»; Бог как обозначение божества монотеистической религии (чаще авраамических религий —
+христианства, ислама и иудаизма), но древнегреческий бог, красив как бог и тому подобное).</li>
+<li>Необязательно, но часто, — местоимение «вы» («Вы») и все его словоформы при использовании в
+качестве вежливого обращения к одному человеку в личной переписке, официальных документах и тому
+подобном.</li>
+<li>Используется для выделения в официальных текстах наименований документов, обозначения сторон,
+участников и тому подобного, например: «…Заказчик обязуется оплатить Исполнителю…», «…Стороны
+пришли к соглашению…», «… несоблюдение требований Правил влечёт за собой…». Как правило, в начале
+документа делают уточняющую запись — «… „Правила поведения в общественных местах“ (далее —
+Правила)…» или «… ООО „Одуванчик“ и Иван Иванович Иванов (далее — Стороны)…».</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org607554c" class="outline-4">
+<h4 id="org607554c"><span class="section-number-4">23.6.3.</span> difference russian and english capitalization</h4>
+<div class="outline-text-4" id="text-23-6-3">
+<ul class="org-ul">
+<li>Звания и титулы по отношению к конкретным людям. Это могут быть профессиональные, научные,
+религиозные, государственные, королевские и другие титулы. Заглавная буква обязательна при
+обращении к человеку по званию или титулу или если оно используется вместе с именем</li>
+<li>Названия родственников или термины родства, когда они обозначают конкретного человека – например,
+при обращении или в разговоре о родственнике.
+<ul class="org-ul">
+<li>I miss you, dear Aunt!</li>
+</ul></li>
+<li>Названия дней недели и месяцев: Monday, April, January, summer</li>
+<li>Национальности и обозначение этнической принадлежности, a Black man.
+<ul class="org-ul">
+<li>the Russians, Russian food, Japanese, African-American</li>
+</ul></li>
+<li>названиях религий. Islam, Buddhism, Protestant church, the Bible</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org61b3348" class="outline-3">
+<h3 id="org61b3348"><span class="section-number-3">23.7.</span> Irregular verbs</h3>
+<div class="outline-text-3" id="text-23-7">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">beat</td>
+<td class="org-left"><i>bi:t</i></td>
+<td class="org-left">beat</td>
+<td class="org-left"><i>bi:t</i></td>
+<td class="org-left">beaten</td>
+<td class="org-left"><i>'bi:tn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">become</td>
+<td class="org-left"><i>bɪ'kʌm</i></td>
+<td class="org-left">became</td>
+<td class="org-left"><i>bɪ'keɪm</i></td>
+<td class="org-left">become</td>
+<td class="org-left"><i>bɪ'kʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">begin</td>
+<td class="org-left"><i>bɪ'gɪn</i></td>
+<td class="org-left">began</td>
+<td class="org-left"><i>bɪ'gæn</i></td>
+<td class="org-left">begun</td>
+<td class="org-left"><i>bɪ'gʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bend</td>
+<td class="org-left"><i>bend</i></td>
+<td class="org-left">bent</td>
+<td class="org-left"><i>bent</i></td>
+<td class="org-left">bent</td>
+<td class="org-left"><i>bent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bind</td>
+<td class="org-left"><i>baɪnd</i></td>
+<td class="org-left">bound</td>
+<td class="org-left"><i>baʊnd</i></td>
+<td class="org-left">bound</td>
+<td class="org-left"><i>baʊnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bite</td>
+<td class="org-left"><i>baɪt</i></td>
+<td class="org-left">bit</td>
+<td class="org-left"><i>bɪt</i></td>
+<td class="org-left">bitten</td>
+<td class="org-left"><i>'bɪtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bleed</td>
+<td class="org-left"><i>bli:d</i></td>
+<td class="org-left">bled</td>
+<td class="org-left"><i>bled</i></td>
+<td class="org-left">bled</td>
+<td class="org-left"><i>bled</i></td>
+</tr>
+
+<tr>
+<td class="org-left">blow</td>
+<td class="org-left"><i>blou</i></td>
+<td class="org-left">blew</td>
+<td class="org-left"><i>blu:</i></td>
+<td class="org-left">blown</td>
+<td class="org-left"><i>bloun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">break</td>
+<td class="org-left"><i>breɪk</i></td>
+<td class="org-left">broke</td>
+<td class="org-left"><i>brouk</i></td>
+<td class="org-left">broken</td>
+<td class="org-left"><i>'broukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">bring</td>
+<td class="org-left"><i>brɪŋ</i></td>
+<td class="org-left">brought</td>
+<td class="org-left"><i>brɔ:t</i></td>
+<td class="org-left">brought</td>
+<td class="org-left"><i>brɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">build</td>
+<td class="org-left"><i>bɪld</i></td>
+<td class="org-left">built</td>
+<td class="org-left"><i>bɪlt</i></td>
+<td class="org-left">built</td>
+<td class="org-left"><i>bɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">burn</td>
+<td class="org-left"><i>bɜ:rn</i></td>
+<td class="org-left">burnt</td>
+<td class="org-left"><i>bɜ:rnt</i></td>
+<td class="org-left">burnt</td>
+<td class="org-left"><i>bɜ:rnt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">burn</td>
+<td class="org-left"><i>bɜ:rn</i></td>
+<td class="org-left">burned</td>
+<td class="org-left"><i>bɜ:rnd</i></td>
+<td class="org-left">burned</td>
+<td class="org-left"><i>bɜ:rnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">buy</td>
+<td class="org-left"><i>baɪ</i></td>
+<td class="org-left">bought</td>
+<td class="org-left"><i>bɔ:t</i></td>
+<td class="org-left">bought</td>
+<td class="org-left"><i>bɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">catch</td>
+<td class="org-left"><i>kætʃ</i></td>
+<td class="org-left">caught</td>
+<td class="org-left"><i>kɔ:t</i></td>
+<td class="org-left">caught</td>
+<td class="org-left"><i>kɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">choose</td>
+<td class="org-left"><i>tʃu:z</i></td>
+<td class="org-left">chose</td>
+<td class="org-left"><i>tʃouz</i></td>
+<td class="org-left">chosen</td>
+<td class="org-left"><i>'tʃouzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">come</td>
+<td class="org-left"><i>kʌm</i></td>
+<td class="org-left">came</td>
+<td class="org-left"><i>keɪm</i></td>
+<td class="org-left">come</td>
+<td class="org-left"><i>kʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+<td class="org-left">cost</td>
+<td class="org-left"><i>kɒst</i></td>
+</tr>
+
+<tr>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+<td class="org-left">cut</td>
+<td class="org-left"><i>kʌt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dig</td>
+<td class="org-left"><i>dɪg</i></td>
+<td class="org-left">dug</td>
+<td class="org-left"><i>dʌg</i></td>
+<td class="org-left">dug</td>
+<td class="org-left"><i>dʌg</i></td>
+</tr>
+
+<tr>
+<td class="org-left">do</td>
+<td class="org-left"><i>du:</i></td>
+<td class="org-left">did</td>
+<td class="org-left"><i>dɪd</i></td>
+<td class="org-left">done</td>
+<td class="org-left"><i>dʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">draw</td>
+<td class="org-left"><i>drɔ:</i></td>
+<td class="org-left">drew</td>
+<td class="org-left"><i>dru:</i></td>
+<td class="org-left">drawn</td>
+<td class="org-left"><i>drɔ:n</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dream</td>
+<td class="org-left"><i>dri:m</i></td>
+<td class="org-left">dreamt</td>
+<td class="org-left"><i>dremt</i></td>
+<td class="org-left">dreamt</td>
+<td class="org-left"><i>dremt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">dream</td>
+<td class="org-left"><i>dri:m</i></td>
+<td class="org-left">dreamed</td>
+<td class="org-left"><i>dri:md</i></td>
+<td class="org-left">dreamed</td>
+<td class="org-left"><i>dri:md</i></td>
+</tr>
+
+<tr>
+<td class="org-left">drink</td>
+<td class="org-left"><i>drɪŋk</i></td>
+<td class="org-left">drank</td>
+<td class="org-left"><i>dræŋk</i></td>
+<td class="org-left">drunk</td>
+<td class="org-left"><i>drʌŋk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">drive</td>
+<td class="org-left"><i>draɪv</i></td>
+<td class="org-left">drove</td>
+<td class="org-left"><i>drouv</i></td>
+<td class="org-left">driven</td>
+<td class="org-left"><i>'drɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">eat</td>
+<td class="org-left"><i>i:t</i></td>
+<td class="org-left">ate</td>
+<td class="org-left"><i>eɪt,et</i></td>
+<td class="org-left">eaten</td>
+<td class="org-left"><i>'i:tn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fall</td>
+<td class="org-left"><i>fɔ:l</i></td>
+<td class="org-left">fell</td>
+<td class="org-left"><i>fel</i></td>
+<td class="org-left">fallen</td>
+<td class="org-left"><i>'fɔ:lən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">feed</td>
+<td class="org-left"><i>fi:d</i></td>
+<td class="org-left">fed</td>
+<td class="org-left"><i>fed</i></td>
+<td class="org-left">fed</td>
+<td class="org-left"><i>fed</i></td>
+</tr>
+
+<tr>
+<td class="org-left">feel</td>
+<td class="org-left"><i>fi:l</i></td>
+<td class="org-left">felt</td>
+<td class="org-left"><i>felt</i></td>
+<td class="org-left">felt</td>
+<td class="org-left"><i>felt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fight</td>
+<td class="org-left"><i>faɪt</i></td>
+<td class="org-left">fought</td>
+<td class="org-left"><i>fɔ:t</i></td>
+<td class="org-left">fought</td>
+<td class="org-left"><i>fɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">find</td>
+<td class="org-left"><i>faɪnd</i></td>
+<td class="org-left">found</td>
+<td class="org-left"><i>faʊnd</i></td>
+<td class="org-left">found</td>
+<td class="org-left"><i>faʊnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">fly</td>
+<td class="org-left"><i>flaɪ</i></td>
+<td class="org-left">flew</td>
+<td class="org-left"><i>flu:</i></td>
+<td class="org-left">flown</td>
+<td class="org-left"><i>floun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">forget</td>
+<td class="org-left"><i>fər'get</i></td>
+<td class="org-left">forgot</td>
+<td class="org-left"><i>fər'gɒt</i></td>
+<td class="org-left">forgotten</td>
+<td class="org-left"><i>fər'gɒtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">forgive</td>
+<td class="org-left"><i>fər'gɪv</i></td>
+<td class="org-left">forgave</td>
+<td class="org-left"><i>fər'geɪv</i></td>
+<td class="org-left">forgiven</td>
+<td class="org-left"><i>fər'gɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">freeze</td>
+<td class="org-left"><i>fri:z</i></td>
+<td class="org-left">froze</td>
+<td class="org-left"><i>frouz</i></td>
+<td class="org-left">frozen</td>
+<td class="org-left"><i>'frouzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">get</td>
+<td class="org-left"><i>get</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">get</td>
+<td class="org-left"><i>get</i></td>
+<td class="org-left">got</td>
+<td class="org-left"><i>gɒt</i></td>
+<td class="org-left">gotten</td>
+<td class="org-left"><i>'gɒtn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">give</td>
+<td class="org-left"><i>gɪv</i></td>
+<td class="org-left">gave</td>
+<td class="org-left"><i>geɪv</i></td>
+<td class="org-left">given</td>
+<td class="org-left"><i>'gɪvən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">go</td>
+<td class="org-left"><i>gou</i></td>
+<td class="org-left">went</td>
+<td class="org-left"><i>went</i></td>
+<td class="org-left">gone</td>
+<td class="org-left"><i>gɒn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">grow</td>
+<td class="org-left"><i>grou</i></td>
+<td class="org-left">grew</td>
+<td class="org-left"><i>gru:</i></td>
+<td class="org-left">grown</td>
+<td class="org-left"><i>groun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hang</td>
+<td class="org-left"><i>hæŋ</i></td>
+<td class="org-left">hung</td>
+<td class="org-left"><i>hʌŋ</i></td>
+<td class="org-left">hung</td>
+<td class="org-left"><i>hʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">have</td>
+<td class="org-left"><i>hæv</i></td>
+<td class="org-left">had</td>
+<td class="org-left"><i>hæd</i></td>
+<td class="org-left">had</td>
+<td class="org-left"><i>hæd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hear</td>
+<td class="org-left"><i>hɪər</i></td>
+<td class="org-left">heard</td>
+<td class="org-left"><i>hɜ:rd</i></td>
+<td class="org-left">heard</td>
+<td class="org-left"><i>hɜ:rd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hide</td>
+<td class="org-left"><i>haɪd</i></td>
+<td class="org-left">hid</td>
+<td class="org-left"><i>hɪd</i></td>
+<td class="org-left">hidden</td>
+<td class="org-left"><i>'hɪdn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+<td class="org-left">hit</td>
+<td class="org-left"><i>hɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hold</td>
+<td class="org-left"><i>hould</i></td>
+<td class="org-left">held</td>
+<td class="org-left"><i>held</i></td>
+<td class="org-left">held</td>
+<td class="org-left"><i>held</i></td>
+</tr>
+
+<tr>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+<td class="org-left">hurt</td>
+<td class="org-left"><i>hɜ:rt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">keep</td>
+<td class="org-left"><i>ki:p</i></td>
+<td class="org-left">kept</td>
+<td class="org-left"><i>kept</i></td>
+<td class="org-left">kept</td>
+<td class="org-left"><i>kept</i></td>
+</tr>
+
+<tr>
+<td class="org-left">know</td>
+<td class="org-left"><i>nou</i></td>
+<td class="org-left">knew</td>
+<td class="org-left"><i>nu:</i></td>
+<td class="org-left">known</td>
+<td class="org-left"><i>noun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lay</td>
+<td class="org-left"><i>leɪ</i></td>
+<td class="org-left">laid</td>
+<td class="org-left"><i>leɪd</i></td>
+<td class="org-left">laid</td>
+<td class="org-left"><i>leɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lead</td>
+<td class="org-left"><i>li:d</i></td>
+<td class="org-left">led</td>
+<td class="org-left"><i>led</i></td>
+<td class="org-left">led</td>
+<td class="org-left"><i>led</i></td>
+</tr>
+
+<tr>
+<td class="org-left">learn</td>
+<td class="org-left"><i>lɜ:rn</i></td>
+<td class="org-left">learnt</td>
+<td class="org-left"><i>lɜ:rnt</i></td>
+<td class="org-left">learnt</td>
+<td class="org-left"><i>lɜ:rnt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">learn</td>
+<td class="org-left"><i>lɜ:rn</i></td>
+<td class="org-left">learned</td>
+<td class="org-left"><i>lɜ:rnd</i></td>
+<td class="org-left">learned</td>
+<td class="org-left"><i>lɜ:rnd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">leave</td>
+<td class="org-left"><i>li:v</i></td>
+<td class="org-left">left</td>
+<td class="org-left"><i>left</i></td>
+<td class="org-left">left</td>
+<td class="org-left"><i>left</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lend</td>
+<td class="org-left"><i>lend</i></td>
+<td class="org-left">lent</td>
+<td class="org-left"><i>lent</i></td>
+<td class="org-left">lent</td>
+<td class="org-left"><i>lent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+<td class="org-left">let</td>
+<td class="org-left"><i>let</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lie</td>
+<td class="org-left"><i>laɪ</i></td>
+<td class="org-left">lay</td>
+<td class="org-left"><i>leɪ</i></td>
+<td class="org-left">lain</td>
+<td class="org-left"><i>leɪn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">lose</td>
+<td class="org-left"><i>lu:z</i></td>
+<td class="org-left">lost</td>
+<td class="org-left"><i>lɒst</i></td>
+<td class="org-left">lost</td>
+<td class="org-left"><i>lɒst</i></td>
+</tr>
+
+<tr>
+<td class="org-left">make</td>
+<td class="org-left"><i>meɪk</i></td>
+<td class="org-left">made</td>
+<td class="org-left"><i>meɪd</i></td>
+<td class="org-left">made</td>
+<td class="org-left"><i>meɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">mean</td>
+<td class="org-left"><i>mi:n</i></td>
+<td class="org-left">meant</td>
+<td class="org-left"><i>ment</i></td>
+<td class="org-left">meant</td>
+<td class="org-left"><i>ment</i></td>
+</tr>
+
+<tr>
+<td class="org-left">meet</td>
+<td class="org-left"><i>mi:t</i></td>
+<td class="org-left">met</td>
+<td class="org-left"><i>met</i></td>
+<td class="org-left">met</td>
+<td class="org-left"><i>met</i></td>
+</tr>
+
+<tr>
+<td class="org-left">pay</td>
+<td class="org-left"><i>peɪ</i></td>
+<td class="org-left">paid</td>
+<td class="org-left"><i>peɪd</i></td>
+<td class="org-left">paid</td>
+<td class="org-left"><i>peɪd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+<td class="org-left">put</td>
+<td class="org-left"><i>pʊt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">read</td>
+<td class="org-left"><i>ri:d</i></td>
+<td class="org-left">read</td>
+<td class="org-left"><i>red</i></td>
+<td class="org-left">read</td>
+<td class="org-left"><i>red</i></td>
+</tr>
+
+<tr>
+<td class="org-left">ride</td>
+<td class="org-left"><i>raɪd</i></td>
+<td class="org-left">rode</td>
+<td class="org-left"><i>roud</i></td>
+<td class="org-left">ridden</td>
+<td class="org-left"><i>'rɪdn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">ring</td>
+<td class="org-left"><i>rɪŋ</i></td>
+<td class="org-left">rang</td>
+<td class="org-left"><i>ræŋ</i></td>
+<td class="org-left">rung</td>
+<td class="org-left"><i>rʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">rise</td>
+<td class="org-left"><i>raɪz</i></td>
+<td class="org-left">rose</td>
+<td class="org-left"><i>rouz</i></td>
+<td class="org-left">risen</td>
+<td class="org-left"><i>'rɪzən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">run</td>
+<td class="org-left"><i>rʌn</i></td>
+<td class="org-left">ran</td>
+<td class="org-left"><i>ræn</i></td>
+<td class="org-left">run</td>
+<td class="org-left"><i>rʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">say</td>
+<td class="org-left"><i>seɪ</i></td>
+<td class="org-left">said</td>
+<td class="org-left"><i>sed</i></td>
+<td class="org-left">said</td>
+<td class="org-left"><i>sed</i></td>
+</tr>
+
+<tr>
+<td class="org-left">see</td>
+<td class="org-left"><i>si:</i></td>
+<td class="org-left">saw</td>
+<td class="org-left"><i>sɔ:</i></td>
+<td class="org-left">seen</td>
+<td class="org-left"><i>si:n</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sell</td>
+<td class="org-left"><i>sel</i></td>
+<td class="org-left">sold</td>
+<td class="org-left"><i>sould</i></td>
+<td class="org-left">sold</td>
+<td class="org-left"><i>sould</i></td>
+</tr>
+
+<tr>
+<td class="org-left">send</td>
+<td class="org-left"><i>send</i></td>
+<td class="org-left">sent</td>
+<td class="org-left"><i>sent</i></td>
+<td class="org-left">sent</td>
+<td class="org-left"><i>sent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+<td class="org-left">set</td>
+<td class="org-left"><i>set</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shake</td>
+<td class="org-left"><i>ʃeɪk</i></td>
+<td class="org-left">shook</td>
+<td class="org-left"><i>ʃʊk</i></td>
+<td class="org-left">shaken</td>
+<td class="org-left"><i>'ʃeɪkən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shine</td>
+<td class="org-left"><i>ʃaɪn</i></td>
+<td class="org-left">shone</td>
+<td class="org-left"><i>ʃoun,ʃɒn</i></td>
+<td class="org-left">shone</td>
+<td class="org-left"><i>ʃoun, ʃɒn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shoot</td>
+<td class="org-left"><i>ʃu:t</i></td>
+<td class="org-left">shot</td>
+<td class="org-left"><i>ʃɒt</i></td>
+<td class="org-left">shot</td>
+<td class="org-left"><i>ʃɒt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">show</td>
+<td class="org-left"><i>ʃou</i></td>
+<td class="org-left">showed</td>
+<td class="org-left"><i>ʃoud</i></td>
+<td class="org-left">shown</td>
+<td class="org-left"><i>ʃoun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+<td class="org-left">shut</td>
+<td class="org-left"><i>ʃʌt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sing</td>
+<td class="org-left"><i>sɪŋ</i></td>
+<td class="org-left">sang</td>
+<td class="org-left"><i>sæŋ</i></td>
+<td class="org-left">sung</td>
+<td class="org-left"><i>sʌŋ</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sink</td>
+<td class="org-left"><i>sɪŋk</i></td>
+<td class="org-left">sank</td>
+<td class="org-left"><i>sæŋk</i></td>
+<td class="org-left">sunk</td>
+<td class="org-left"><i>sʌŋk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sit</td>
+<td class="org-left"><i>sɪt</i></td>
+<td class="org-left">sat</td>
+<td class="org-left"><i>sæt</i></td>
+<td class="org-left">sat</td>
+<td class="org-left"><i>sæt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">sleep</td>
+<td class="org-left"><i>sli:p</i></td>
+<td class="org-left">slept</td>
+<td class="org-left"><i>slept</i></td>
+<td class="org-left">slept</td>
+<td class="org-left"><i>slept</i></td>
+</tr>
+
+<tr>
+<td class="org-left">smell</td>
+<td class="org-left"><i>smel</i></td>
+<td class="org-left">smelt</td>
+<td class="org-left"><i>smelt</i></td>
+<td class="org-left">smelt</td>
+<td class="org-left"><i>smelt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">smell</td>
+<td class="org-left"><i>smel</i></td>
+<td class="org-left">smelled</td>
+<td class="org-left"><i>smeld</i></td>
+<td class="org-left">smelled</td>
+<td class="org-left"><i>smeld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">speak</td>
+<td class="org-left"><i>spi:k</i></td>
+<td class="org-left">spoke</td>
+<td class="org-left"><i>spouk</i></td>
+<td class="org-left">spoken</td>
+<td class="org-left"><i>'spoukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spell</td>
+<td class="org-left"><i>spel</i></td>
+<td class="org-left">spelt</td>
+<td class="org-left"><i>spelt</i></td>
+<td class="org-left">spelt</td>
+<td class="org-left"><i>spelt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spell</td>
+<td class="org-left"><i>spel</i></td>
+<td class="org-left">spelled</td>
+<td class="org-left"><i>speld</i></td>
+<td class="org-left">spelled</td>
+<td class="org-left"><i>speld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spend</td>
+<td class="org-left"><i>spend</i></td>
+<td class="org-left">spent</td>
+<td class="org-left"><i>spent</i></td>
+<td class="org-left">spent</td>
+<td class="org-left"><i>spent</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spill</td>
+<td class="org-left"><i>spɪl</i></td>
+<td class="org-left">spilt</td>
+<td class="org-left"><i>spɪlt</i></td>
+<td class="org-left">spilt</td>
+<td class="org-left"><i>spɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spill</td>
+<td class="org-left"><i>spɪl</i></td>
+<td class="org-left">spilled</td>
+<td class="org-left"><i>spɪld</i></td>
+<td class="org-left">spilled</td>
+<td class="org-left"><i>spɪld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spat</td>
+<td class="org-left"><i>spæt</i></td>
+<td class="org-left">spat</td>
+<td class="org-left"><i>spæt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+<td class="org-left">spit</td>
+<td class="org-left"><i>spɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+<td class="org-left">split</td>
+<td class="org-left"><i>splɪt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spoil</td>
+<td class="org-left"><i>spoɪl</i></td>
+<td class="org-left">spoilt</td>
+<td class="org-left"><i>spoɪlt</i></td>
+<td class="org-left">spoilt</td>
+<td class="org-left"><i>spoɪlt</i></td>
+</tr>
+
+<tr>
+<td class="org-left">spoil</td>
+<td class="org-left"><i>spoɪl</i></td>
+<td class="org-left">spoiled</td>
+<td class="org-left"><i>spoɪld</i></td>
+<td class="org-left">spoiled</td>
+<td class="org-left"><i>spoɪld</i></td>
+</tr>
+
+<tr>
+<td class="org-left">stand</td>
+<td class="org-left"><i>stænd</i></td>
+<td class="org-left">stood</td>
+<td class="org-left"><i>stʊd</i></td>
+<td class="org-left">stood</td>
+<td class="org-left"><i>stʊd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">steal</td>
+<td class="org-left"><i>sti:l</i></td>
+<td class="org-left">stole</td>
+<td class="org-left"><i>stoul</i></td>
+<td class="org-left">stolen</td>
+<td class="org-left"><i>'stoulən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">strike</td>
+<td class="org-left"><i>straɪk</i></td>
+<td class="org-left">struck</td>
+<td class="org-left"><i>strʌk</i></td>
+<td class="org-left">struck</td>
+<td class="org-left"><i>strʌk</i></td>
+</tr>
+
+<tr>
+<td class="org-left">swim</td>
+<td class="org-left"><i>swɪm</i></td>
+<td class="org-left">swam</td>
+<td class="org-left"><i>swæm</i></td>
+<td class="org-left">swum</td>
+<td class="org-left"><i>swʌm</i></td>
+</tr>
+
+<tr>
+<td class="org-left">take</td>
+<td class="org-left"><i>teɪk</i></td>
+<td class="org-left">took</td>
+<td class="org-left"><i>tʊk</i></td>
+<td class="org-left">taken</td>
+<td class="org-left"><i>'teɪkən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">teach</td>
+<td class="org-left"><i>ti:tʃ</i></td>
+<td class="org-left">taught</td>
+<td class="org-left"><i>tɔ:t</i></td>
+<td class="org-left">taught</td>
+<td class="org-left"><i>tɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">tear</td>
+<td class="org-left"><i>teər</i></td>
+<td class="org-left">tore</td>
+<td class="org-left"><i>tɔr</i></td>
+<td class="org-left">torn</td>
+<td class="org-left"><i>tɔrn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">tell</td>
+<td class="org-left"><i>tel</i></td>
+<td class="org-left">told</td>
+<td class="org-left"><i>tould</i></td>
+<td class="org-left">told</td>
+<td class="org-left"><i>tould</i></td>
+</tr>
+
+<tr>
+<td class="org-left">think</td>
+<td class="org-left"><i>θɪŋk</i></td>
+<td class="org-left">thought</td>
+<td class="org-left"><i>θɔ:t</i></td>
+<td class="org-left">thought</td>
+<td class="org-left"><i>θɔ:t</i></td>
+</tr>
+
+<tr>
+<td class="org-left">throw</td>
+<td class="org-left"><i>θrou</i></td>
+<td class="org-left">threw</td>
+<td class="org-left"><i>θru:</i></td>
+<td class="org-left">thrown</td>
+<td class="org-left"><i>θroun</i></td>
+</tr>
+
+<tr>
+<td class="org-left">understand</td>
+<td class="org-left"><i>ʌndər'stænd</i></td>
+<td class="org-left">understood</td>
+<td class="org-left"><i>ʌndər'stʊd</i></td>
+<td class="org-left">understood</td>
+<td class="org-left"><i>ʌndər 'stʊd</i></td>
+</tr>
+
+<tr>
+<td class="org-left">wake</td>
+<td class="org-left"><i>weɪk</i></td>
+<td class="org-left">woke</td>
+<td class="org-left"><i>wouk</i></td>
+<td class="org-left">woken</td>
+<td class="org-left"><i>'woukən</i></td>
+</tr>
+
+<tr>
+<td class="org-left">wear</td>
+<td class="org-left"><i>weər</i></td>
+<td class="org-left">wore</td>
+<td class="org-left"><i>wɔr</i></td>
+<td class="org-left">worn</td>
+<td class="org-left"><i>wɔrn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">win</td>
+<td class="org-left"><i>wɪn</i></td>
+<td class="org-left">won</td>
+<td class="org-left"><i>wʌn</i></td>
+<td class="org-left">won</td>
+<td class="org-left"><i>wʌn</i></td>
+</tr>
+
+<tr>
+<td class="org-left">write</td>
+<td class="org-left"><i>raɪt</i></td>
+<td class="org-left">wrote</td>
+<td class="org-left"><i>rout</i></td>
+<td class="org-left">written</td>
+<td class="org-left"><i>'rɪtn</i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org189a0a0" class="outline-3">
+<h3 id="org189a0a0"><span class="section-number-3">23.8.</span> nouns plural or singular</h3>
+<div class="outline-text-3" id="text-23-8">
+<p>
+Plural Nouns:
+</p>
+<ul class="org-ul">
+<li>Children</li>
+<li>Polity</li>
+<li>Gentry</li>
+<li>Brethren</li>
+<li>Infantry</li>
+<li>Police</li>
+<li>Cattle</li>
+<li>People</li>
+</ul>
+
+<p>
+ex:
+</p>
+<ul class="org-ul">
+<li>There <del>was</del> were no Gentry in function.</li>
+<li>Police <del>has</del> have been deployed all over the route.</li>
+</ul>
+
+<p>
+Singular nouns - if not specified numerical:
+</p>
+<ul class="org-ul">
+<li>scissors</li>
+<li>spectacles</li>
+<li>binoculars</li>
+<li>thanks</li>
+<li>contents</li>
+<li>trousers</li>
+<li>socks</li>
+<li>pincers</li>
+<li>congratulations</li>
+<li>jeans</li>
+<li>remains</li>
+<li>pajamas</li>
+<li>earnings</li>
+<li>pants</li>
+<li>scales</li>
+<li>tights</li>
+<li>wages</li>
+<li>shorts</li>
+<li>pliers</li>
+<li>tweezers</li>
+<li>savings</li>
+</ul>
+
+<p>
+ex:
+</p>
+<ul class="org-ul">
+<li>A pair of spectacles <del>have</del> has been bought by me.</li>
+<li>He read the letter and made aware of its <del>contents</del> content.</li>
+<li>All the evidences <del>where</del> was agains and he was held guilty.</li>
+<li>He is a twenty <del>years</del> year old boy. The boy is twenty years old.</li>
+<li>Twenty kms <del>are</del> is a long distance. He walked twenty kms.</li>
+<li>Twenty km walk is a long distance.</li>
+<li>The five members deligation will call on the president.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge111c1d" class="outline-3">
+<h3 id="orge111c1d"><span class="section-number-3">23.9.</span> apostrophe ('s)</h3>
+<div class="outline-text-3" id="text-23-9">
+<ul class="org-ul">
+<li>The Ram House of ram = Ram's house. Ram and sham's house.</li>
+<li>Mother of his wife's secretary has died.</li>
+<li>He was late and entered the <del>female</del> (Women's or ladies') compartment in hurry.</li>
+<li>We reached the fare and found that there was no <del>place</del> room to stand.</li>
+</ul>
+
+<p>
+Never use apostrophe with non-living like wood, table, chair etc. Exceptions
+</p>
+<ul class="org-ul">
+<li>America's problems</li>
+<li>Nature's low</li>
+<li>A meter's length</li>
+<li>A Kg's sugar</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd3cf616" class="outline-3">
+<h3 id="orgd3cf616"><span class="section-number-3">23.10.</span> do in ?</h3>
+</div>
+
+<div id="outline-container-org40556af" class="outline-3">
+<h3 id="org40556af"><span class="section-number-3">23.11.</span> Maybe vs May be</h3>
+<div class="outline-text-3" id="text-23-11">
+<ul class="org-ul">
+<li>"Maybe" is an <b>adverb</b>.
+<ul class="org-ul">
+<li>Example: "Maybe I'll go to the party."</li>
+</ul></li>
+<li>"May be" is a <b>verb phrase</b>.
+<ul class="org-ul">
+<li>Example: "It may be cold outside."</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1df0e35" class="outline-2">
+<h2 id="org1df0e35"><span class="section-number-2">24.</span> Nouns vs Verbs - emphasis or stress pattern</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>Noun: INcrease (e.g., "There’s been an increase in the number of students.")</li>
+<li>Verb: inCREASE (e.g., "Numbers are increasing.")</li>
+
+<li>Noun: DEcrease (e.g., "We’ve seen a decrease in the bird population.")</li>
+<li>Verb: deCREASE (e.g., "Numbers are decreasing every year.")</li>
+
+<li>Noun: IMport (e.g., "This is a cheap import.")</li>
+<li>Verb: imPORT (e.g., "They import their oil from the UK.")</li>
+
+<li>Noun: EXport (e.g., "Oil is one of their biggest exports.")</li>
+<li>Verb: exPORT (e.g., "We need to export more.")</li>
+
+<li>Noun: DIScount (e.g., "Is there a discount on this?")</li>
+<li>Verb: disCOUNT (e.g., "They discounted the theories.")</li>
+
+<li>Noun: REfund (e.g., "I’d like a refund please.")</li>
+<li>Verb: reFUND (e.g., "We’ll refund you 50%.")</li>
+
+<li>Noun: PERmit (e.g., "Do you need a permit to fish here?")</li>
+<li>Verb: perMIT (e.g., "They won’t permit her to leave the country.")</li>
+
+<li>Noun: CONflict (e.g., "They’re reporting armed conflict in the area.")</li>
+<li>Verb: conFLICT (e.g., "His opinion conflicted with hers.")</li>
+
+<li>Noun: CONtest (e.g., "She entered a beauty contest.")</li>
+<li>Verb: conTEST (e.g., "They contested the results.")</li>
+
+<li>Noun: INsult (e.g., "Your offer is so low it’s an insult.")</li>
+<li>Verb: inSULT (e.g., "Don’t insult me")</li>
+
+<li>Noun: PROtest (e.g., "There’s a student protest today.")</li>
+<li>Verb: proTEST (e.g., "They’re protesting against cuts.")</li>
+
+<li>Noun: REwrite (e.g., "That’s a rewrite of an old song.")</li>
+<li>Verb: reWRITE (e.g., "She rewrote her story.")</li>
+
+<li>Noun: UPdate (e.g., "We’ve got some updates for you.")</li>
+<li>Verb: upDATE (e.g., "We’re updating our files.")</li>
+
+<li>Noun: UPgrade (e.g., "They got an upgrade on the flight.")</li>
+<li>Verb: upGRADE (e.g., "It’s time to upgrade our computer.")</li>
+
+<li>Noun: DEtail (e.g., "It’s just a minor detail.")</li>
+<li>Verb: deTAIL (e.g., "The story details their struggle with poverty.")</li>
+
+<li>Noun: EScort (e.g., "You’ll need an escort to get through security.")</li>
+<li>Verb: esCORT (e.g., "He escorted her out of the door.")</li>
+
+<li>Noun: COMbine (e.g., "The farmer has a combine for his fields.")</li>
+<li>Verb: comBINE (e.g., "She will combine all of the ingredients.")</li>
+
+<li>Noun: ENtrance (e.g., "The entrance to the theatre was blocked.")</li>
+<li>Verb: enTRANCE (e.g., "We were entranced by the performance.")</li>
+</ul>
+
+
+
+<p>
+Object, Subject, Rectord, Project, Refuse, Desert, Conduct, Address, Contrast, Convert, Reject,
+ Extract, Suspect, Transfer
+</p>
+</div>
+<div id="outline-container-org1178302" class="outline-3">
+<h3 id="org1178302"><span class="section-number-3">24.1.</span> exceptions</h3>
+<div class="outline-text-3" id="text-24-1">
+<ul class="org-ul">
+<li>Answer (ANswer)</li>
+<li>Picture (PICture)</li>
+<li>Travel (TRAvel)</li>
+<li>Visit (VISit)</li>
+<li>Purchase (PURchase)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org91205a6" class="outline-2">
+<h2 id="org91205a6"><span class="section-number-2">25.</span> TOEFL or IELTS certificate</h2>
+<div class="outline-text-2" id="text-25">
+</div>
+<div id="outline-container-orgc82cd5c" class="outline-3">
+<h3 id="orgc82cd5c"><span class="section-number-3">25.1.</span> difference</h3>
+<div class="outline-text-3" id="text-25-1">
+<p>
+popular English language proficiency tests
+</p>
+<ul class="org-ul">
+<li>TOEFL (Test of English as a Foreign Language)</li>
+<li>IELTS (International English Language Testing System)</li>
+
+<li>Test Format:</li>
+<li>TOEFL: The TOEFL exam is administered online and consists of four sections - Reading, Listening, Speaking, and Writing.</li>
+<li>IELTS: The IELTS exam is available in two formats - Academic and General Training. Both formats include Listening, Reading, Writing, and Speaking sections.</li>
+
+<li>Scoring:</li>
+<li>TOEFL: TOEFL scores range from 0 to 120, with each section scored separately.</li>
+<li>IELTS: IELTS scores range from 0 to 9, with half-point increments. Overall band scores are reported along with individual section scores.</li>
+
+<li>Accent:</li>
+<li>TOEFL: TOEFL is administered by an AI (Artificial Intelligence) system that evaluates the speaking section,
+and students need to respond to prompts given by a computer.</li>
+<li>IELTS: IELTS speaking section is conducted face-to-face with an examiner, allowing for a more natural conversation.</li>
+
+<li>Test Acceptance:</li>
+<li>TOEFL: TOEFL is commonly accepted by universities in the United States and Canada.</li>
+<li>IELTS: IELTS is widely accepted by universities in the UK, Australia, New Zealand, and many institutions worldwide.</li>
+
+<li>Test Duration:</li>
+<li>TOEFL: The TOEFL exam takes approximately 4 hours to complete.</li>
+<li>IELTS: The IELTS exam takes about 2 hours and 45 minutes to 3 hours to complete.</li>
+</ul>
+
+<p>
+Ultimately, the choice between TOEFL and IELTS depends on the requirements of the institution or organization
+ you are applying to. It's recommended to check the specific language proficiency requirements of the place
+ you are applying to before selecting a test.
+</p>
+
+<p>
+IELTS simplier Generally, the TOEFL exam is more expensive than the IELTS exam.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c163da" class="outline-3">
+<h3 id="org6c163da"><span class="section-number-3">25.2.</span> where</h3>
+<div class="outline-text-3" id="text-25-2">
+<p>
+<a href="https://ielts-russia.com/">https://ielts-russia.com/</a>
+</p>
+<ul class="org-ul">
+<li>24500 руб</li>
+<li>за 35 дней до запланированной даты IELTS.</li>
+</ul>
+
+<p>
+Pre-test IELTS General
+</p>
+<ul class="org-ul">
+<li>5000 руб</li>
+</ul>
+
+
+<ol class="org-ol">
+<li>Choose which exam you want to take: TOEFL or IELTS.</li>
+<li>Register for the exam on the respective official website:
+<ul class="org-ul">
+<li>For TOEFL: Visit the ETS website and create an account to register for the exam.</li>
+<li>For IELTS: Visit the British Council or IDP website to find a test center and register for the exam.</li>
+</ul></li>
+<li>Prepare for the exam by studying the format and content of the test.</li>
+<li>Attend the exam on the scheduled test date at the designated test center in Russia.</li>
+<li>Receive your results within a few weeks after completing the exam.</li>
+</ol>
+
+<p>
+Remember to check the specific requirements and registration procedures on the official websites of TOEFL and IELTS for the most up-to-date information. Good luck with your exam!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4ccf5a8" class="outline-3">
+<h3 id="org4ccf5a8"><span class="section-number-3">25.3.</span> how</h3>
+<div class="outline-text-3" id="text-25-3">
+<p>
+частей экзамена IELTS: Listening, Reading, Writing, and Speaking sections.
+</p>
+</div>
+
+<div id="outline-container-orgd6f1732" class="outline-4">
+<h4 id="orgd6f1732"><span class="section-number-4">25.3.1.</span> Listening:</h4>
+<div class="outline-text-4" id="text-25-3-1">
+<p>
+40 minutes - 30 minutes listening and 10 minutes to add your answers to an answer sheet.
+</p>
+
+<p>
+Section One: A conversation between two people in a social situation.
+</p>
+
+<p>
+Section Two: A speech in a formal situation, such as at work or college.
+</p>
+
+<p>
+Section Three: A conversation between two or three people, perhaps a discussion between a tutor and two students.
+</p>
+
+<p>
+Section Four: A lecture or talk by one person.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org847bda6" class="outline-4">
+<h4 id="org847bda6"><span class="section-number-4">25.3.2.</span> Speaking:</h4>
+<div class="outline-text-4" id="text-25-3-2">
+<p>
+Part One: You are asked some questions about either your home, hometown, study or work, and then
+ questions around two other topics randomly chosen by the examiner. These could be about things such
+ as holidays, the weather, visiting museums, reading, fashion, travelling etc.
+</p>
+
+<p>
+Part Two: You have to speak for <b>two minutes</b> on a topic the examiner gives you. For example, you
+ could talk on a teacher you liked, a dinner party you attended, or a favourite place to visit. You
+ are given a pencil and paper and given one minute to prepare your talk.
+</p>
+
+<p>
+Part Three: You have a discussion with the examiner around more complex topics related to your part
+ two talk. So for example if you spoke about a teacher you liked in part two, part three could be
+ questions about the educational system in your country and more generally.
+</p>
+</div>
+</div>
+<div id="outline-container-orgda63623" class="outline-4">
+<h4 id="orgda63623"><span class="section-number-4">25.3.3.</span> Reading</h4>
+<div class="outline-text-4" id="text-25-3-3">
+<p>
+one hour
+</p>
+
+<p>
+40 questions and three readings.
+</p>
+
+<p>
+each reading is around 800 words.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1199fd0" class="outline-4">
+<h4 id="org1199fd0"><span class="section-number-4">25.3.4.</span> Writing</h4>
+<div class="outline-text-4" id="text-25-3-4">
+<p>
+60 minutes for two tasks. recommended in the test to spend 20 minutes on task 1 and 40 on task2
+</p>
+
+<ul class="org-ul">
+<li>Task 1 is writing a letter to someone, either informal, such as a friend, or more formal, such as a company manager,  on a given topic.</li>
+<li>Task 2 is writing an academic essay on a topic of general interest.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org36e9e9f" class="outline-3">
+<h3 id="org36e9e9f"><span class="section-number-3">25.4.</span> preparation</h3>
+<div class="outline-text-3" id="text-25-4">
+<p>
+engvid IELTS site:youtube.com
+</p>
+</div>
+</div>
+<div id="outline-container-org971cf75" class="outline-3">
+<h3 id="org971cf75"><span class="section-number-3">25.5.</span> skolkovo</h3>
+<div class="outline-text-3" id="text-25-5">
+<p>
+We are more than happy to meet visitors Monday to Friday from 9:00 to 18:00. Please arrange a visit 48 hours
+ in advance by contacting admissions@skoltech.ru
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

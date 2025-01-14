@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgcae219c">1. glosary</a></li>
+<li><a href="#org7064899">2. tags</a>
+<ul>
+<li><a href="#org7f3dfad">2.1. tags that do not have a closing tag</a></li>
+<li><a href="#org8339413">2.2. head tags</a></li>
+<li><a href="#org7330fa4">2.3. comment tag</a></li>
+<li><a href="#org6d6cd09">2.4. text formating</a></li>
+<li><a href="#orgaad35e4">2.5. hyperlink and anchor</a>
+<ul>
+<li><a href="#org76e8953">2.5.1. &lt;a&gt;</a></li>
+<li><a href="#orge97c1df">2.5.2. &lt;base&gt;</a></li>
+</ul>
+</li>
+<li><a href="#orgba31a92">2.6. scripting</a></li>
+<li><a href="#org10d2564">2.7. images</a></li>
+<li><a href="#org8f4cc3a">2.8. Table Tags</a></li>
+<li><a href="#org00d77f1">2.9. HTML Form Tags</a>
+<ul>
+<li><a href="#org5bcf914">2.9.1. tags</a></li>
+<li><a href="#orgbb53dce">2.9.2. method attribute</a></li>
+</ul>
+</li>
+<li><a href="#orge1dad52">2.10. structuring content</a></li>
+</ul>
+</li>
+<li><a href="#orgf5f68be">3. HTML Entities</a></li>
+<li><a href="#org4999fdf">4. basic template</a></li>
+<li><a href="#org33f4c44">5. snippets</a></li>
+<li><a href="#org4a0e279">6. links</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+
+<div id="outline-container-orgcae219c" class="outline-2">
+<h2 id="orgcae219c"><span class="section-number-2">1.</span> glosary</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Hyper Text Markup Language (HTML5) (aitch-tee-em-el)</li>
+<li>HTML tags -
+<ul class="org-ul">
+<li>opening tag</li>
+<li>attribute name</li>
+<li>attribute value</li>
+<li>enclosed tag content</li>
+<li>closing tag - with forward slash</li>
+<li>element - opening tag + closing tag</li>
+<li>less than and greater than angle brackets</li>
+</ul></li>
+<li>Hyperlinks. The most common attribute used with links is href</li>
+<li>Absolute URLs vs. Relative URLs - <a href="https://www.w3.org/">https://www.w3.org/</a>  html<sub>images.asp</sub> or /css/default.asp</li>
+<li>semantic and non-semantic - clear meaning for browser and developer, no meaning for developer</li>
+<li>block-level element always starts on a new line, and the browsers automatically add some space (a margin)
+before and after the element. always takes up the full width available. &lt;p&gt;, &lt;div&gt;</li>
+<li>inline element does not start on a new line.  only takes up as much width as necessary. &lt;span&gt;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7064899" class="outline-2">
+<h2 id="org7064899"><span class="section-number-2">2.</span> tags</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org7f3dfad" class="outline-3">
+<h3 id="org7f3dfad"><span class="section-number-3">2.1.</span> tags that do not have a closing tag</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+For tags that do not have a closing tag like &lt;img&gt;, it is best practice to end the tag with a forward slash.
+</p>
+<ul class="org-ul">
+<li>&lt;br&gt;</li>
+<li>&lt;hr&gt; 	Represents thematic break between paragraph-level elements in the HTML document. If we use this, it will insert a horizontal line.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8339413" class="outline-3">
+<h3 id="org8339413"><span class="section-number-3">2.2.</span> head tags</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>&lt;meta&gt; 	Describes the metadata of HTML page where it contains page description, author of the page, keywords.
+<ul class="org-ul">
+<li>&lt;meta charset="utf-8" /&gt;</li>
+<li>&lt;meta name="viewport" content="width=device-width" /&gt;</li>
+</ul></li>
+<li>&lt;title&gt;,&lt;style&gt;,&lt;script&gt;,&lt;link&gt;,&lt;meta&gt; and &lt;base&gt;.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7330fa4" class="outline-3">
+<h3 id="org7330fa4"><span class="section-number-3">2.3.</span> comment tag</h3>
+<div class="outline-text-3" id="text-2-3">
+<pre class="example">
+&lt;!-- Write your comments here --&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-org6d6cd09" class="outline-3">
+<h3 id="org6d6cd09"><span class="section-number-3">2.4.</span> text formating</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>heading &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt; - higher to lower</li>
+<li>Paragraph Tag &lt;p&gt;</li>
+<li>Preserve Formatting &lt;pre&gt; - keep \n and \t</li>
+<li>&lt;br&gt;: It is used for a line break. after text</li>
+<li>&lt;b&gt; bold</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaad35e4" class="outline-3">
+<h3 id="orgaad35e4"><span class="section-number-3">2.5.</span> hyperlink and anchor</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-org76e8953" class="outline-4">
+<h4 id="org76e8953"><span class="section-number-4">2.5.1.</span> &lt;a&gt;</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>&lt;a&gt;: It is an anchor tag which is used to add a link in an HTML document for navigating from one page to another.
+<ul class="org-ul">
+<li>&lt;a href="url"&gt;link text&lt;/a&gt;</li>
+<li>&lt;a href="<a href="mailto:someone@example.com">mailto:someone@example.com</a>"&gt;Send email&lt;/a&gt;</li>
+<li>&lt;a href="default.asp"&gt;&lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;&lt;/a&gt;</li>
+<li>&lt;button onclick="document.location='default.asp'"&gt;HTML Tutorial&lt;/button&gt;</li>
+<li>&lt;a href="#section2"&gt;Go to Section 2&lt;/a&gt;</li>
+<li>&lt;a href="javascript:alert('Hello World!');"&gt;Execute JavaScript&lt;/a&gt;</li>
+<li>Attribute
+<ul class="org-ul">
+<li>target
+<ul class="org-ul">
+<li>_self - Default. Opens the document in the same window/tab as it was clicked</li>
+<li>_blank - Opens the document in a new window or tab</li>
+<li>_parent - Opens the document in the parent frame</li>
+<li>_top - Opens the document in the full body of the window</li>
+</ul></li>
+<li>title attribute - tooltip text when the mouse moves over the element.</li>
+<li>referrerpolicy - Specifies which referrer information to send with the link</li>
+<li>type 	media<sub>type</sub>  Specifies the media type of the linked document</li>
+<li>download attribute to provide a default save filename</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org51630b3"></a>Default CSS Settings<br />
+<div class="outline-text-5" id="text-2-5-1-1">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #b0c4de;">a:link, a:visited</span> {
+  <span style="color: #20b2aa;">color</span>: (internal value);
+  <span style="color: #20b2aa;">text-decoration</span>: underline;
+  <span style="color: #20b2aa;">cursor</span>: auto;
+}
+
+<span style="color: #20b2aa;">a</span>:link:active, a:visited:active {
+  <span style="color: #20b2aa;">color</span>: (internal value);
+}
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orge97c1df" class="outline-4">
+<h4 id="orge97c1df"><span class="section-number-4">2.5.2.</span> &lt;base&gt;</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li>&lt;base&gt; tag specifies the base URL and/or target for all relative URLs in a document.</li>
+</ul>
+<p>
+n  - &lt;base&gt; tag must have either an href or a target attribute present, or both.
+</p>
+<ul class="org-ul">
+<li>used in &lt;head&gt;</li>
+<li>href 	URL 	Specifies the base URL for all relative URLs in the page</li>
+<li>target 	_blank  _parent _self _top Specifies the default target for all hyperlinks and forms in the page
+<ul class="org-ul">
+<li>_blank − the target URL will open in a new window.</li>
+<li>_self − the target URL will open in the same frame as it was clicked.</li>
+<li>_parent − the target URL will open in the parent frameset</li>
+<li>_top − the target URL will open in the full body of the window</li>
+</ul></li>
+<li>ex.
+<ul class="org-ul">
+<li>&lt;base href = "<a href="https://www.tutorialspoint.com">https://www.tutorialspoint.com</a>" /&gt;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgba31a92" class="outline-3">
+<h3 id="orgba31a92"><span class="section-number-3">2.6.</span> scripting</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>&lt;script&gt; 	Describes client- side script that is JavaScript.</li>
+<li>&lt;noscript&gt; 	When browsers do not support JavaScript or when scripts or disabled, you can use &lt;noscript&gt; tag.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org10d2564" class="outline-3">
+<h3 id="org10d2564"><span class="section-number-3">2.7.</span> images</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>&lt;img src= "images&image;1.png" alt="Testing Image"&gt;</li>
+<li>&lt;canvas&gt; 	This tag in HTML5 is used to draw graphics on web page using JavaScript.</li>
+<li>&lt;figcaption&gt; 	This tag gives Caption to figure element. This can be placed as first or last child of &lt;figure&gt; element.</li>
+<li>&lt;figure&gt; 	It defines media content with captions. Content of &lt;figure&gt; element belongs to main flow.</li>
+<li>&lt;svg&gt; 	It is a language used to describe 2D graphics and graphical applications in XML.</li>
+<li>&lt;map&gt; 	Represent map within &lt;img&gt; tag. And the image map contains clickable areas.</li>
+<li>&lt;area&gt; 	It is used to define area inside an image-map, where it contains clickable region on an image map.</li>
+<li>&lt;object&gt; 	It is used to embed multimedia in HTML documents like video, audio, Java applets, ActiveX, PDF, and Flash.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f4cc3a" class="outline-3">
+<h3 id="org8f4cc3a"><span class="section-number-3">2.8.</span> Table Tags</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+&lt;table&gt; 	To define a Table in HTML.
+&lt;caption&gt; 	To define a Table caption in HTML. It is like a name of the table
+&lt;th 	th is like "Table Head" to specify the header cell in the table. It is used to provide the Column name of a table.
+&lt;tr&gt; 	tr is like "Table Row" to specify the row in a table. It is used for each row of a table.
+&lt;td&gt; 	td is like "Table Data" to specify a cell in a table.
+&lt;thead&gt; 	thead is like "Table Head" used to change the properties like the color of the Header content in HTML table. We can change the properties of the heading.
+&lt;tbody&gt; 	tbody is like "Table Body" used to change the properties like the color of the content in the body in HTML table. We can change the properties of the body.
+&lt;tfoot&gt; 	tfoot is like "Table footer" used to change the properties like the color of the footer content in HTML table. We can change the properties of a footer.
+&lt;col&gt; 	Defines the properties of each column within colgroup.
+&lt;colgroup&gt; 	It is used to specify a group of one or more columns in a table for formatting.
+</p>
+</div>
+</div>
+<div id="outline-container-org00d77f1" class="outline-3">
+<h3 id="org00d77f1"><span class="section-number-3">2.9.</span> HTML Form Tags</h3>
+<div class="outline-text-3" id="text-2-9">
+</div>
+<div id="outline-container-org5bcf914" class="outline-4">
+<h4 id="org5bcf914"><span class="section-number-4">2.9.1.</span> tags</h4>
+<div class="outline-text-4" id="text-2-9-1">
+<ul class="org-ul">
+<li>&lt;form&gt; 	Form is used in all the websites to collect information about user who visits your website.</li>
+<li>&lt;input&gt; 	It is an input field where user can give there details in the given form.</li>
+<li>&lt;textarea&gt; 	Represent a multi-line plain-text editing control.</li>
+<li>&lt;button&gt; 	Creates various clickable buttons like submit, reset, cancel, ok and many more.</li>
+<li>&lt;select&gt; 	Describes a drop-down list.</li>
+<li>&lt;optgroup&gt; 	Display group of options related lists in the form of drop down list.</li>
+<li>&lt;option&gt; 	Displays option in drop down list.</li>
+<li>&lt;label&gt; 	Describes text label with a form input field.</li>
+<li>&lt;fieldset&gt; 	To form related data in group &lt;fieldset&gt; element is used.</li>
+<li>&lt;legend&gt; 	Represent caption of &lt;fieldset&gt; element.</li>
+<li>&lt;datalist&gt; 	The pre-defined option is specified in drop down list.</li>
+<li>&lt;output&gt; 	Declares results of calculation.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb53dce" class="outline-4">
+<h4 id="orgbb53dce"><span class="section-number-4">2.9.2.</span> method attribute</h4>
+<div class="outline-text-4" id="text-2-9-2">
+<p>
+get
+</p>
+<div class="org-src-container">
+<pre class="src src-html"> &lt;<span style="color: #cae682; font-weight: bold;">form</span> <span style="color: #cae682;">action</span>=<span style="color: #95e454;">"/action_page.php"</span> <span style="color: #cae682;">method</span>=<span style="color: #95e454;">"get"</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">label</span> <span style="color: #cae682;">for</span>=<span style="color: #95e454;">"fname"</span>&gt;First name:&lt;/<span style="color: #cae682; font-weight: bold;">label</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">input</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text"</span> <span style="color: #cae682;">id</span>=<span style="color: #95e454;">"fname"</span> <span style="color: #cae682;">name</span>=<span style="color: #95e454;">"fname"</span>&gt;&lt;<span style="color: #cae682; font-weight: bold;">br</span>&gt;&lt;<span style="color: #cae682; font-weight: bold;">br</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">label</span> <span style="color: #cae682;">for</span>=<span style="color: #95e454;">"lname"</span>&gt;Last name:&lt;/<span style="color: #cae682; font-weight: bold;">label</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">input</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text"</span> <span style="color: #cae682;">id</span>=<span style="color: #95e454;">"lname"</span> <span style="color: #cae682;">name</span>=<span style="color: #95e454;">"lname"</span>&gt;&lt;<span style="color: #cae682; font-weight: bold;">br</span>&gt;&lt;<span style="color: #cae682; font-weight: bold;">br</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">input</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"submit"</span> <span style="color: #cae682;">value</span>=<span style="color: #95e454;">"Submit"</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">form</span>&gt;
+<span style="color: #fa8072;">&lt;!-- </span><span style="color: #99968b; font-style: italic;">https://www.w3schools.com/action_page.php?fname=asdasd&amp;lname=asd</span><span style="color: #fa8072;"> --&gt;</span>
+</pre>
+</div>
+<p>
+post 	Sends the form-data as an HTTP post transaction
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge1dad52" class="outline-3">
+<h3 id="orge1dad52"><span class="section-number-3">2.10.</span> structuring content</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+With the right CSS, you could use pretty much any elements to wrap around the different sections and get it
+looking how you wanted
+</p>
+
+<p>
+A semantic element clearly describes its meaning to both the browser and the developer.
+</p>
+<ul class="org-ul">
+<li>header: &lt;header&gt;.</li>
+<li>navigation bar: &lt;nav&gt;.</li>
+<li>main content: &lt;main&gt;, with various content subsections represented by &lt;article&gt;, &lt;section&gt;, and &lt;div&gt; elements.</li>
+<li>sidebar: &lt;aside&gt;; often placed inside &lt;main&gt;.</li>
+<li>footer: &lt;footer&gt;.</li>
+</ul>
+
+<p>
+non-semantic
+</p>
+<ul class="org-ul">
+<li>&lt;span&gt;</li>
+<li>&lt;div&gt; is a block level non-semantic element</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf5f68be" class="outline-2">
+<h2 id="orgf5f68be"><span class="section-number-2">3.</span> HTML Entities</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+to display reserved characters in HTML.
+</p>
+<ul class="org-ul">
+<li>&amp;entity<sub>name</sub>; -  &amp;lt; - &lt;</li>
+<li>&amp;#entity<sub>number</sub>; - &amp;#60; - &lt;</li>
+</ul>
+
+<p>
+basic:
+</p>
+<ul class="org-ul">
+<li>- non-breaking space 	&amp;nbsp; 	&amp;#160;</li>
+<li>&lt; 	less than 	&amp;lt; 	&amp;#60;</li>
+<li>&gt; 	greater than 	&amp;gt; 	&amp;#62;</li>
+<li>&amp; 	ampersand 	&amp;amp; 	&amp;#38;</li>
+<li>" 	double quotation mark 	&amp;quot; 	&amp;#34;</li>
+<li>' 	single quotation mark (apostrophe) 	&amp;apos; 	&amp;#39;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4999fdf" class="outline-2">
+<h2 id="org4999fdf"><span class="section-number-2">4.</span> basic template</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>&lt;!DOCTYPE&gt;</li>
+<li>&lt;html&gt;</li>
+<li>&lt;head&gt;</li>
+<li>&lt;title&gt;</li>
+<li>&lt;body&gt;</li>
+<li></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #8ac6f2; font-weight: bold;">!DOCTYPE</span> HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;<span style="color: #cae682; font-weight: bold;">html</span>&gt;
+ &lt;<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Example page</span>&lt;/<span style="color: #cae682; font-weight: bold;">title</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">meta</span> <span style="color: #cae682;">http-equiv</span>=<span style="color: #95e454;">"Content-Type"</span> <span style="color: #cae682;">content</span>=<span style="color: #95e454;">"text/html; charset=windows-1252"</span>&gt;
+ &lt;/<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+ &lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">This is a heading</span>&lt;/<span style="color: #cae682; font-weight: bold;">h1</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">p</span>&gt;This is an &lt;<span style="color: #cae682; font-weight: bold;">b</span>&gt;<span style="font-weight: bold;">example</span>&lt;/<span style="color: #cae682; font-weight: bold;">b</span>&gt; of a basic HTML page.&lt;/<span style="color: #cae682; font-weight: bold;">p</span>&gt;
+ &lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33f4c44" class="outline-2">
+<h2 id="org33f4c44"><span class="section-number-2">5.</span> snippets</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>emmet.io</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4a0e279" class="outline-2">
+<h2 id="org4a0e279"><span class="section-number-2">6.</span> links</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn">https://developer.mozilla.org/en-US/docs/Learn</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:44</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

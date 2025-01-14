@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org79e8bcf">1. theory</a>
+<ul>
+<li><a href="#org53900aa">1.1. features</a></li>
+<li><a href="#orgc8f59bc">1.2. terms</a></li>
+</ul>
+</li>
+<li><a href="#orga70e081">2. scripting</a></li>
+<li><a href="#orgf4e5e45">3. compilation and execution</a></li>
+<li><a href="#org3aba8dc">4. operators</a>
+<ul>
+<li><a href="#org616c424">4.1. Arithmetic Operators</a></li>
+<li><a href="#org9d76b41">4.2. Bitwise Operators</a></li>
+<li><a href="#orgccd8ada">4.3. Relational Operators</a></li>
+<li><a href="#orge6612b2">4.4. logical: and, or, not</a></li>
+<li><a href="#orgea4ef6e">4.5. priority</a></li>
+</ul>
+</li>
+<li><a href="#org05f29e3">5. keywords</a></li>
+<li><a href="#org405881d">6. types and classes</a>
+<ul>
+<li><a href="#org8379fb9">6.1. basic types</a></li>
+<li><a href="#org7e28bec">6.2. integers</a></li>
+<li><a href="#orgd9fe785">6.3. scope</a></li>
+<li><a href="#org9a98133">6.4. tables</a>
+<ul>
+<li><a href="#org6bcb1ed">6.4.1. ex</a></li>
+<li><a href="#org617391b">6.4.2. print table</a></li>
+</ul>
+</li>
+<li><a href="#org96bad82">6.5. Metatables and Metamethods</a>
+<ul>
+<li><a href="#org7105d91">6.5.1. list of events controlled by metatables</a></li>
+</ul>
+</li>
+<li><a href="#orge3a39d3">6.6. OOP</a></li>
+<li><a href="#orgdf60f42">6.7. ex1</a></li>
+<li><a href="#org9d0ef2d">6.8. syntax shugar ":"</a></li>
+</ul>
+</li>
+<li><a href="#org7a29af7">7. strings</a></li>
+<li><a href="#org935e8c3">8. functions</a></li>
+<li><a href="#orgd0d4f47">9. helloworld</a></li>
+<li><a href="#org6b437b0">10. comments</a></li>
+<li><a href="#org5392699">11. control flow</a>
+<ul>
+<li><a href="#org52e2e80">11.1. basic</a></li>
+<li><a href="#orga31400a">11.2. iterate</a></li>
+</ul>
+</li>
+<li><a href="#orgc3e3b04">12. modules</a>
+<ul>
+<li><a href="#orgb2a7520">12.1. path - list of patterns ANSI C</a></li>
+<li><a href="#orgd537de7">12.2. 2</a></li>
+<li><a href="#org0f38765">12.3. old 5.0,5.1 way</a></li>
+</ul>
+</li>
+<li><a href="#org8cfa3e3">13. Standard Libraries</a>
+<ul>
+<li><a href="#org855e081">13.1. basic</a></li>
+<li><a href="#org9b19643">13.2. other</a></li>
+</ul>
+</li>
+<li><a href="#orgd5788d4">14. debug</a></li>
+<li><a href="#org9b0bfff">15. Documenting</a>
+<ul>
+<li><a href="#orgd0d5729">15.1. Tags</a></li>
+<li><a href="#orgbb6b2e9">15.2. Infered Tags</a></li>
+<li><a href="#org859cf35">15.3. LDoc style</a></li>
+<li><a href="#orgf38588c">15.4. LDoc tags</a></li>
+<li><a href="#orgbabee1b">15.5. table - classic way</a></li>
+<li><a href="#org793f3b8">15.6. Doxygen - Generate documentation from source code</a></li>
+<li><a href="#org8c6b612">15.7. links</a></li>
+</ul>
+</li>
+<li><a href="#org77be624">16. Style guide</a>
+<ul>
+<li><a href="#org3f7c760">16.1. basic</a></li>
+<li><a href="#org26fcb87">16.2. require</a></li>
+<li><a href="#org806926a">16.3. links</a></li>
+</ul>
+</li>
+<li><a href="#org5324faa">17. The Complete Syntax of Lua</a></li>
+<li><a href="#org856c361">18. <span class="todo TODO">TODO</span> not errors</a>
+<ul>
+<li><a href="#orgdcdf794">18.1. undefined variable</a></li>
+<li><a href="#orgc962bd8">18.2. key not present</a></li>
+</ul>
+</li>
+<li><a href="#orgdfd5705">19. package managers</a></li>
+<li><a href="#org7b6014c">20. links</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+
+<div id="outline-container-org79e8bcf" class="outline-2">
+<h2 id="org79e8bcf"><span class="section-number-2">1.</span> theory</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+MIT License
+</p>
+
+<p>
+.lua
+</p>
+</div>
+<div id="outline-container-org53900aa" class="outline-3">
+<h3 id="org53900aa"><span class="section-number-3">1.1.</span> features</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+designed primarily for embedded use in applications.
+</p>
+
+<p>
+designed as an extension language, to be embedded in a host C program
+</p>
+
+<ul class="org-ul">
+<li>scripting</li>
+<li>imperative (procedural, prototype-based, object-oriented)</li>
+<li>functional</li>
+<li>meta</li>
+<li>reflective</li>
+<li>cross-platform, since the interpreter of compiled bytecode is written in ANSI C</li>
+<li>dynamically typed language</li>
+<li>advanced:
+<ul class="org-ul">
+<li>first-class functions</li>
+<li>garbage collection</li>
+<li>closures</li>
+<li>proper tail calls</li>
+<li>coercion (automatic conversion between string and number values at run time)</li>
+<li>coroutines (cooperative multitasking)</li>
+<li>dynamic module loading.</li>
+</ul></li>
+</ul>
+
+<p>
+It ignores spaces (including new lines) and comments between lexical elements (tokens), except as delimiters
+ between names and keywords.
+</p>
+
+<p>
+Lua programs are much more error prone, due to automatic coercion, accessing of unset variables without an
+ exception, and having to check most functions for nil values, rather than just catching the exceptions.
+</p>
+
+<p>
+Lua has out-of-the-box support for multiple threads and multiple interpreters in a single thread or process
+</p>
+
+<p>
+Lua starts table indices at 1, which is strange for a language designed to interface with C where arrays start
+ at 0. (Comment: Ad-hoc , there is no problem to use index 0 or even -1
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8f59bc" class="outline-3">
+<h3 id="orgc8f59bc"><span class="section-number-3">1.2.</span> terms</h3>
+<div class="outline-text-3" id="text-1-2">
+<dl class="org-dl">
+<dt>chunk</dt><dd>The unit of compilation of Lua is called a chunk. Syntactically, a chunk is simply a block. Chunks
+do not nest (unlike blocks). A chunk is an outermost block which you feed to "load". Lua handles a chunk as
+the body of an anonymous function.</dd>
+<dt>(no term)</dt><dd>::</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-orga70e081" class="outline-2">
+<h2 id="orga70e081"><span class="section-number-2">2.</span> scripting</h2>
+<div class="outline-text-2" id="text-2">
+<pre class="example">
+#!/usr/local/bin/lua
+#!/usr/bin/env lua
+</pre>
+
+
+<p>
+lua [options] [script [args]]
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">-e stat</td>
+<td class="org-left">executes string stat;</td>
+</tr>
+
+<tr>
+<td class="org-left">-l mod</td>
+<td class="org-left">"requires" mod and assigns the result to global @mod;</td>
+</tr>
+
+<tr>
+<td class="org-left">-i</td>
+<td class="org-left">enters interactive mode after running script;</td>
+</tr>
+
+<tr>
+<td class="org-left">-v</td>
+<td class="org-left">prints version information;</td>
+</tr>
+
+<tr>
+<td class="org-left">-E</td>
+<td class="org-left">ignores environment variables;</td>
+</tr>
+
+<tr>
+<td class="org-left">--</td>
+<td class="org-left">stops handling options;</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">executes stdin as a file and stops handling options.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+luac - Lua compiler
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf4e5e45" class="outline-2">
+<h2 id="orgf4e5e45"><span class="section-number-2">3.</span> compilation and execution</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+are not interpreted directly from the textual Lua file, but are compiled into bytecode, which is then run on
+ the Lua virtual machine.
+</p>
+
+<p>
+When Lua loads a chunk, the default value for its _ENV upvalue is the global environment .
+</p>
+</div>
+</div>
+<div id="outline-container-org3aba8dc" class="outline-2">
+<h2 id="org3aba8dc"><span class="section-number-2">4.</span> operators</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The concatenation ('..') and exponentiation ('^') operators are right associative. All other binary operators
+ are left associative.
+</p>
+</div>
+<div id="outline-container-org616c424" class="outline-3">
+<h3 id="org616c424"><span class="section-number-3">4.1.</span> Arithmetic Operators</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>+: addition</li>
+<li>-: subtraction</li>
+<li>*: multiplication</li>
+<li>/: float division</li>
+<li>//: floor division</li>
+<li>%: modulo</li>
+<li>^: exponentiation</li>
+<li>-: unary minus</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9d76b41" class="outline-3">
+<h3 id="org9d76b41"><span class="section-number-3">4.2.</span> Bitwise Operators</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>&amp;: bitwise AND</li>
+<li>|: bitwise OR</li>
+<li>~: bitwise exclusive OR</li>
+<li>&gt;&gt;: right shift</li>
+<li>&lt;&lt;: left shift</li>
+<li>~: unary bitwise NOT</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgccd8ada" class="outline-3">
+<h3 id="orgccd8ada"><span class="section-number-3">4.3.</span> Relational Operators</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>==: equality</li>
+<li>~=: inequality</li>
+<li>&lt;: less than</li>
+<li>&gt;: greater than</li>
+<li>&lt;=: less or equal</li>
+<li>&gt;=: greater or equal</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge6612b2" class="outline-3">
+<h3 id="orge6612b2"><span class="section-number-3">4.4.</span> logical: and, or, not</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>10 or 20            &#x2013;&gt; 10</li>
+<li>10 or error()       &#x2013;&gt; 10</li>
+<li>nil or "a"          &#x2013;&gt; "a"</li>
+<li>nil and 10          &#x2013;&gt; nil</li>
+<li>false and error()   &#x2013;&gt; false</li>
+<li>false and nil       &#x2013;&gt; false</li>
+<li>false or nil        &#x2013;&gt; nil</li>
+<li>10 and 20           &#x2013;&gt; 20</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgea4ef6e" class="outline-3">
+<h3 id="orgea4ef6e"><span class="section-number-3">4.5.</span> priority</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+from lower to higher:
+</p>
+<ol class="org-ol">
+<li>or</li>
+<li>and</li>
+<li>&lt;     &gt;     &lt;=    &gt;=    ~=    ==</li>
+<li>|</li>
+<li>~</li>
+<li>&amp;</li>
+<li>&lt;&lt;    &gt;&gt;</li>
+<li>..</li>
+<li>-</li>
+<li>/     //    %</li>
+<li>unary operators (not   #     -     ~)</li>
+<li>^</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org05f29e3" class="outline-2">
+<h2 id="org05f29e3"><span class="section-number-2">5.</span> keywords</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+and       break     do        else      elseif    end
+    false     for       function  goto      if        in
+    local     nil       not       or        repeat    return
+    then      true      until     while
+</p>
+</div>
+</div>
+
+<div id="outline-container-org405881d" class="outline-2">
+<h2 id="org405881d"><span class="section-number-2">6.</span> types and classes</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+dynamically typed language
+</p>
+<ul class="org-ul">
+<li>All values carry their own type</li>
+<li>no type definition</li>
+</ul>
+
+<pre class="example">
+type(a) - get type
+</pre>
+</div>
+<div id="outline-container-org8379fb9" class="outline-3">
+<h3 id="org8379fb9"><span class="section-number-3">6.1.</span> basic types</h3>
+<div class="outline-text-3" id="text-6-1">
+<pre class="example">
+nil, boolean, number, string, function, userdata, thread, and table.
+</pre>
+
+<dl class="org-dl">
+<dt>nil</dt><dd>singleton - absence of a useful value - (as false)</dd>
+<dt>boolean</dt><dd>false and true</dd>
+<dt>number</dt><dd>integer numbers and real (floating-point) numbers
+<dl class="org-dl">
+<dt>integer</dt><dd></dd>
+
+<dt>float</dt><dd></dd>
+</dl></dd>
+<dt>string</dt><dd>immutable sequences of bytes. 8-bit clean: strings can contain any 8-bit value. encoding-agnostic;
+it makes no assumptions about the contents of a string.</dd>
+<dt>function</dt><dd>written in Lua and functions written in C</dd>
+<dt>userdata</dt><dd>block of raw memory - arbitrary C data to be stored in Lua variables. assignment and identity
+test. created and modified only through the C API.
+<dl class="org-dl">
+<dt>full userdata</dt><dd>an object with a block of memory</dd>
+<dt>light userdata</dt><dd>a C pointer value</dd>
+</dl></dd>
+<dt>thread</dt><dd>used to implement coroutines. not related to operating-system threads</dd>
+<dt>table</dt><dd>associative arrays - idexes of any type. can be heterogeneous - can contain values of all types (except nil)
+<ul class="org-ul">
+<li>can be used to represent ordinary arrays, lists, symbol tables, sets, records, graphs, trees, etc.</li>
+<li>a.name as syntactic sugar for a["name"]</li>
+</ul></dd>
+</dl>
+
+<p>
+<b>Tables</b>, <b>functions</b>, <b>threads</b>, and (full) <b>userdata</b> values are objects: variables do not actually contain
+ these values, only references to them.
+</p>
+</div>
+</div>
+<div id="outline-container-org7e28bec" class="outline-3">
+<h3 id="org7e28bec"><span class="section-number-3">6.2.</span> integers</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+converts between integer and float automatically as needed.
+</p>
+
+<p>
+Standard Lua uses 64-bit integers and double-precision (64-bit) floats, but you can also compile Lua so that
+ it uses 32-bit integers and/or single-precision (32-bit) floats.
+</p>
+
+<p>
+valid integer constants are
+</p>
+<pre class="example">
+3   345   0xff   0xBEBADA
+</pre>
+
+
+<p>
+Examples of valid float constants are
+</p>
+<pre class="example">
+3.0     3.1416     314.16e-2     0.31416E1     34e1
+0x0.1E  0xA23p-4   0X1.921FB54442D18P+1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd9fe785" class="outline-3">
+<h3 id="orgd9fe785"><span class="section-number-3">6.3.</span> scope</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+kinds of variables in Lua:
+</p>
+<ul class="org-ul">
+<li>global variables</li>
+<li>local variables</li>
+<li>table fields.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9a98133" class="outline-3">
+<h3 id="org9a98133"><span class="section-number-3">6.4.</span> tables</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+always passed by reference
+</p>
+
+<p>
+A key (index) can be any value except nil and NaN, including functions.
+</p>
+</div>
+<div id="outline-container-org6bcb1ed" class="outline-4">
+<h4 id="org6bcb1ed"><span class="section-number-4">6.4.1.</span> ex</h4>
+<div class="outline-text-4" id="text-6-4-1">
+<div class="org-src-container">
+<pre class="src src-lua">a_table = {} -- Creates a new, empty table
+a_table = {x = 10}  -- Creates a new table, with one entry mapping "x" to the number 10.
+print(a_table["x"]) -- Prints the value associated with the string key, in this case 10.
+b_table = a_table
+b_table["x"] = 20   -- The value in the table has been changed to 20.
+print(b_table["x"]) -- Prints 20.
+print(a_table["x"]) -- Also prints 20, because a_table and b_table both refer to the same table.
+
+point = { x = 10, y = 20 }   -- Create new table
+print(point["x"])            -- Prints 10
+print(point.x)               -- Has exactly the same meaning as line above. The easier-to-read dot notation is just syntactic sugar.
+
+Point = {}
+
+Point.new = function(x, y)
+  return {x = x, y = y}  --  return {["x"] = x, ["y"] = y}
+end
+
+Point.set_x = function(point, x)
+  point.x = x  --  point["x"] = x;
+end
+
+array = { "a", "b", "c", "d" }   -- Indices are assigned automatically.
+print(array[2])                  -- Prints "b". Automatic indexing in Lua starts at 1.
+print(#array)                    -- Prints 4.  # is the length operator for tables and strings.
+array[0] = "z"                   -- Zero is a legal index.
+print(#array)                    -- Still prints 4, as Lua arrays are 1-based.
+
+ExampleTable =
+{
+  {1, 2, 3, 4},
+  {5, 6, 7, 8}
+}
+print(ExampleTable[1][3]) -- Prints "3"
+print(ExampleTable[2][4]) -- Prints "8"
+
+-- A table can be an array of objects.
+
+function Point(x, y)        -- "Point" object constructor
+  return { x = x, y = y }   -- Creates and returns a new object (table)
+end
+array = { Point(10, 20), Point(30, 40), Point(50, 60) }   -- Creates array of points
+                        -- array = { { x = 10, y = 20 }, { x = 30, y = 40 }, { x = 50, y = 60 } };
+print(array[2].y)                                         -- Prints 40
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org617391b" class="outline-4">
+<h4 id="org617391b"><span class="section-number-4">6.4.2.</span> print table</h4>
+<div class="outline-text-4" id="text-6-4-2">
+<div class="org-src-container">
+<pre class="src src-lua">oprint = print -- origin print
+print = function (...)
+    if type(...) == "table" then
+        local str = ''
+        local amount = 0
+        for i,v in pairs(...) do
+            amount=amount+1
+            local pre = type(i) == "string" and i.."=" or ""
+            str = str .. pre..tostring(v) .. "\n"
+        end
+        oprint('#'..amount..':')
+        oprint(str)
+    else
+        oprint(...)
+    end
+end
+print ({x=7, y=9, w=11, h="height", 7, 8, 9})
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96bad82" class="outline-3">
+<h3 id="org96bad82"><span class="section-number-3">6.5.</span> Metatables and Metamethods</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+Every value in Lua can have a metatable - table, that defines the behavior of the original value under operations.
+</p>
+<ul class="org-ul">
+<li>consist of event "_<sub>add</sub>" key and <b>metamethods</b> - value</li>
+</ul>
+
+<p>
+to retrieve the metamethod for event ev in object o, Lua does:
+</p>
+<ul class="org-ul">
+<li>rawget (table, index) - Gets the real value of table[index], index may be any value.</li>
+<li>getmetatable (object) - get nil, metatable or metatable._<sub>metatable</sub> field.</li>
+</ul>
+<pre class="example">
+rawget(getmetatable(o) or {}, "__ev")
+</pre>
+
+
+<p>
+setmetatable (table, metatable) - metatable is nil, removes the metatable of the given table.  If the original
+ metatable has a _<sub>metatable</sub> field, raises an error. This function returns table.
+</p>
+</div>
+
+<div id="outline-container-org7105d91" class="outline-4">
+<h4 id="org7105d91"><span class="section-number-4">6.5.1.</span> list of events controlled by metatables</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<ul class="org-ul">
+<li>_<sub>add</sub>: the addition (+) operation. If any operand for an addition is not a number (nor a string coercible to a number), Lua will try to call a metamethod. First, Lua will check the first operand (even if it is valid). If that operand does not define a metamethod for _<sub>add</sub>, then Lua will check the second operand. If Lua can find a metamethod, it calls the metamethod with the two operands as arguments, and the result of the call (adjusted to one value) is the result of the operation. Otherwise, it raises an error.</li>
+<li>_<sub>sub</sub>: the subtraction (-) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>mul</sub>: the multiplication (*) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>div</sub>: the division (/) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>mod</sub>: the modulo (%) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>pow</sub>: the exponentiation (^) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>unm</sub>: the negation (unary -) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>idiv</sub>: the floor division (//) operation. Behavior similar to the addition operation.</li>
+<li>_<sub>band</sub>: the bitwise AND (&amp;) operation. Behavior similar to the addition operation, except that Lua will try a metamethod if any operand is neither an integer nor a value coercible to an integer (see §3.4.3).</li>
+<li>_<sub>bor</sub>: the bitwise OR (|) operation. Behavior similar to the bitwise AND operation.</li>
+<li>_<sub>bxor</sub>: the bitwise exclusive OR (binary ~) operation. Behavior similar to the bitwise AND operation.</li>
+<li>_<sub>bnot</sub>: the bitwise NOT (unary ~) operation. Behavior similar to the bitwise AND operation.</li>
+<li>_<sub>shl</sub>: the bitwise left shift (&lt;&lt;) operation. Behavior similar to the bitwise AND operation.</li>
+<li>_<sub>shr</sub>: the bitwise right shift (&gt;&gt;) operation. Behavior similar to the bitwise AND operation.</li>
+<li>_<sub>concat</sub>: the concatenation (..) operation. Behavior similar to the addition operation, except that Lua will try a metamethod if any operand is neither a string nor a number (which is always coercible to a string).</li>
+<li>_<sub>len</sub>: the length (#) operation. If the object is not a string, Lua will try its metamethod. If there is a metamethod, Lua calls it with the object as argument, and the result of the call (always adjusted to one value) is the result of the operation. If there is no metamethod but the object is a table, then Lua uses the table length operation (see §3.4.7). Otherwise, Lua raises an error.</li>
+<li>_<sub>eq</sub>: the equal (==) operation. Behavior similar to the addition operation, except that Lua will try a metamethod only when the values being compared are either both tables or both full userdata and they are not primitively equal. The result of the call is always converted to a boolean.</li>
+<li>_<sub>lt</sub>: the less than (&lt;) operation. Behavior similar to the addition operation, except that Lua will try a metamethod only when the values being compared are neither both numbers nor both strings. The result of the call is always converted to a boolean.</li>
+<li>_<sub>le</sub>: the less equal (&lt;=) operation. Unlike other operations, the less-equal operation can use two different events. First, Lua looks for the _<sub>le</sub> metamethod in both operands, like in the less than operation. If it cannot find such a metamethod, then it will try the _<sub>lt</sub> metamethod, assuming that a &lt;= b is equivalent to not (b &lt; a). As with the other comparison operators, the result is always a boolean. (This use of the _<sub>lt</sub> event can be removed in future versions; it is also slower than a real _<sub>le</sub> metamethod.)</li>
+<li>_<sub>index</sub>: The indexing access operation table[key]. This event happens when table is not a table or when key is not present in table. The metamethod is looked up in table.</li>
+<li>_<sub>newindex</sub>: The indexing assignment table[key] = value. Like the index event, this event happens when table is not a table or when key is not present in table. The metamethod is looked up in table.</li>
+<li>_<sub>call</sub>: The call operation func(args). This event happens when Lua tries to call a non-function value (that is, func is not a function). The metamethod is looked up in func. If present, the metamethod is called with func as its first argument, followed by the arguments of the original call (args). All results of the call are the result of the operation. (This is the only metamethod that allows multiple results.)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge3a39d3" class="outline-3">
+<h3 id="orge3a39d3"><span class="section-number-3">6.6.</span> OOP</h3>
+<div class="outline-text-3" id="text-6-6">
+<p>
+object-oriented programming can be emulated using functions and tables
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf60f42" class="outline-3">
+<h3 id="orgdf60f42"><span class="section-number-3">6.7.</span> ex1</h3>
+<div class="outline-text-3" id="text-6-7">
+<div class="org-src-container">
+<pre class="src src-lua">local Vector = {}
+local VectorMeta = { __index = Vector}
+
+function Vector.new(x, y, z)    -- The constructor
+  return setmetatable({x = x, y = y, z = z}, VectorMeta)
+end
+
+function Vector.magnitude(self)     -- Another method
+  return math.sqrt(self.x^2 + self.y^2 + self.z^2)
+end
+
+local vec = Vector.new(0, 1, 0) -- Create a vector
+print(vec.magnitude(vec))       -- Call a method (output: 1)
+print(vec.x)                    -- Access a member variable (output: 0)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d0ef2d" class="outline-3">
+<h3 id="org9d0ef2d"><span class="section-number-3">6.8.</span> syntax shugar ":"</h3>
+<div class="outline-text-3" id="text-6-8">
+<div class="org-src-container">
+<pre class="src src-lua">-- Meta class
+Rectangle = {area = 0, length = 0, breadth = 0}
+
+-- Derived class method new
+
+function Rectangle:new (o,length,breadth)
+   o = o or {}
+   setmetatable(o, self)
+   self.__index = self
+   self.length = length or 0
+   self.breadth = breadth or 0
+   self.area = length*breadth;
+   return o
+end
+
+-- Derived class method printArea
+
+function Rectangle:printArea ()
+   print("The area of Rectangle is ",self.area)
+end
+
+r = Rectangle:new(nil,10,20)
+
+print(r.length)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a29af7" class="outline-2">
+<h2 id="org7a29af7"><span class="section-number-2">7.</span> strings</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+string concatenation operator by two dots ('..').
+</p>
+
+<p>
+The length operator is denoted by the unary prefix operator #.
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">a = 'alo\n123"'
+a = "alo\n123\""
+a = '\97lo\10\04923"'
+-- no new line
+a = [[alo
+     123"]]
+print(a)
+print('-------')
+a = [==[
+     alo
+   123"]==]
+print(a)
+print('-------')
+print(#a)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org935e8c3" class="outline-2">
+<h2 id="org935e8c3"><span class="section-number-2">8.</span> functions</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+allow to ommit parenthesis, but it is bad style
+</p>
+
+
+
+<div class="org-src-container">
+<pre class="src src-lua">function factorial(n)
+  local x = 1
+  for i = 2, n do
+    x = x * i
+  end
+  return x
+end
+
+--  print function's behavior is modified:
+
+do
+  local oldprint = print
+  -- Store current print function as oldprint
+  function print(s)
+    --[[ Redefine print function. The usual print function can still be used
+      through oldprint. The new one has only one argument.]]
+    oldprint(s == "foo" and "bar" or s)
+  end
+end
+
+-- closures
+
+function addto(x)
+  -- Return a new function that adds x to the argument
+  return function(y)
+    --[=[ When we refer to the variable x, which is outside the current
+      scope and whose lifetime would be shorter than that of this anonymous
+      function, Lua creates a closure.]=]
+    return x + y
+  end
+end
+fourplus = addto(4)
+print(fourplus(3))  -- Prints 7
+
+--This can also be achieved by calling the function in the following way:
+print(addto(4)(3))
+--[[ This is because we are calling the returned function from 'addto(4)' with the argument '3' directly.
+  This also helps to reduce data cost and up performance if being called iteratively.
+]]
+</pre>
+</div>
+
+<p>
+style:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lua">-- bad
+local nope = function(name, options)
+   -- ...stuff...
+end
+
+-- good
+local function yup(name, options)
+   -- ...stuff...
+end
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd0d4f47" class="outline-2">
+<h2 id="orgd0d4f47"><span class="section-number-2">9.</span> helloworld</h2>
+<div class="outline-text-2" id="text-9">
+<pre class="example">
+print("Hello, World!") -- or print 'Hello, World!'
+</pre>
+</div>
+</div>
+<div id="outline-container-org6b437b0" class="outline-2">
+<h2 id="org6b437b0"><span class="section-number-2">10.</span> comments</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+single line: &#x2013;, multiline:
+</p>
+<pre class="example">
+--[[
+]]--
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5392699" class="outline-2">
+<h2 id="org5392699"><span class="section-number-2">11.</span> control flow</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>stat ::= <b>while</b> exp <b>do</b> block <b>end</b></li>
+<li>stat ::= <b>repeat</b> block <b>until</b> exp</li>
+<li>stat ::= if exp then block {elseif exp then block} [else block] end</li>
+</ul>
+
+<pre class="example">
+break
+::label::
+goto label
+</pre>
+</div>
+<div id="outline-container-org52e2e80" class="outline-3">
+<h3 id="org52e2e80"><span class="section-number-3">11.1.</span> basic</h3>
+<div class="outline-text-3" id="text-11-1">
+<div class="org-src-container">
+<pre class="src src-lua">if condition then
+	--statement body
+elseif condition then
+	--statement body
+else -- optional
+	--optional default statement body
+end
+
+while condition do
+  --statements
+end
+
+repeat
+  --statements
+until condition
+
+for i = first, last, delta do  --delta may be negative, allowing the for loop to count down or up
+  --statements
+  --example: print(i)
+end
+
+for key, value in pairs(_G) do
+  print(key, value)
+end
+
+local grid = {
+  { 11, 12, 13 },
+  { 21, 22, 23 },
+  { 31, 32, 33 }
+}
+
+for y, row in pairs(grid) do
+  for x, value in pairs(row) do
+    print(x, y, value)
+  end
+end
+
+</pre>
+</div>
+
+<pre class="example">
+as
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga31400a" class="outline-3">
+<h3 id="orga31400a"><span class="section-number-3">11.2.</span> iterate</h3>
+<div class="outline-text-3" id="text-11-2">
+<div class="org-src-container">
+<pre class="src src-lua">for i,v in ipairs({3,3,2}) do
+   print(i,v)
+end
+</pre>
+</div>
+
+<pre class="example">
+1	3
+2	3
+3	2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc3e3b04" class="outline-2">
+<h2 id="orgc3e3b04"><span class="section-number-2">12.</span> modules</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+require (modname)
+</p>
+<ul class="org-ul">
+<li>searches for the file in a path</li>
+<li><p>
+avoid duplicating the work
+</p>
+
+<p>
+well behaved module has necessary provisions to return this table on require.
+</p></li>
+</ul>
+</div>
+<div id="outline-container-orgb2a7520" class="outline-3">
+<h3 id="orgb2a7520"><span class="section-number-3">12.1.</span> path - list of patterns ANSI C</h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>components in a path are separated by semicolons ";"</li>
+</ul>
+
+<p>
+?;?.lua;c:\windows\?;/usr/local/lua/?/?.lua
+</p>
+
+<p>
+require"lili" will try to open the following files:
+</p>
+<ul class="org-ul">
+<li>lili</li>
+<li>lili.lua</li>
+<li>c:\windows\lili</li>
+<li>/usr/local/lua/lili/lili.lua</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd537de7" class="outline-3">
+<h3 id="orgd537de7"><span class="section-number-3">12.2.</span> 2</h3>
+<div class="outline-text-3" id="text-12-2">
+<div class="org-src-container">
+<pre class="src src-lua">local mymath =  {}
+
+function mymath.add(a,b)
+   print(a+b)
+end
+
+return mymath
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lua">mymathmodule = require("mymath")
+mymathmodule.add(10,20)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f38765" class="outline-3">
+<h3 id="org0f38765"><span class="section-number-3">12.3.</span> old 5.0,5.1 way</h3>
+<div class="outline-text-3" id="text-12-3">
+<div class="org-src-container">
+<pre class="src src-lua">module("mymath", package.seeall)
+
+function mymath.add(a,b)
+   print(a+b)
+end
+
+function mymath.sub(a,b)
+   print(a-b)
+end
+
+</pre>
+</div>
+
+<p>
+usage:
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">require "mymath.add"
+mymath.add.test2()
+</pre>
+</div>
+
+<p>
+alternative
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">-- file: finance/BankAccount.lua
+
+local M = {}; M.__index = M
+
+local function construct()
+  local self = setmetatable({balance = 0}, M)
+  return self
+end
+setmetatable(M, {__call = construct})
+
+function M:add(value) self.balance = self.balance + value end
+
+return M
+</pre>
+</div>
+
+<p>
+usage:
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">local BankAccount = require "finance.BankAccount"
+local account = BankAccount()
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8cfa3e3" class="outline-2">
+<h2 id="org8cfa3e3"><span class="section-number-2">13.</span> Standard Libraries</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org855e081" class="outline-3">
+<h3 id="org855e081"><span class="section-number-3">13.1.</span> basic</h3>
+<div class="outline-text-3" id="text-13-1">
+<ul class="org-ul">
+<li>assert (v [, message])		Calls <b>error</b> if <b>v</b> is false.</li>
+<li>collectgarbage ([opt [, arg]])	opt:"collect", "stop", "restart", "count", "step", "setpause", "setstepmul", "isrunning"</li>
+<li>dofile ([filename])			Opens the named file and executes its contents as a Lua chunk.</li>
+<li>error (message [, level])		levels = 1 (default) - position where error was called, 2 - function that call error</li>
+<li>_G					variable of type table - holds the global environment</li>
+<li>getmetatable (object)		not have = nil, the object's metatable _<sub>metatable</sub> field or metatable of the object</li>
+<li>ipairs (t)				used in:  for i,v in ipairs(t) do  (1,t[1]), (2,t[2]), &#x2026;,</li>
+<li>load (chunk [, chunkname [, mode [, env]]]) chunk is a string of function that return string.</li>
+<li>loadfile ([filename [, mode [, env]]])  gets the chunk from file filename</li>
+<li>next (table [, index])		returns the next index of the table and its associated value.</li>
+<li>pairs (t)				for k,v in pairs(t) do body end - over all key–value pairs of table t. <b>next</b></li>
+<li>pcall (f [, arg1, ···])		protected mode - error inside f is not propagated. ret: (true, return) or (false, message)</li>
+<li>print (···)				any number of arguments, to stdout. <b>tostring</b>. for quick way only. use <b>string.format</b> and <b>io.write</b>.</li>
+<li>rawequal (v1, v2)			bool, v1 is equal to v2, without invoking the _<sub>eq</sub> metamethod.</li>
+<li>rawget (table, index)		table[index], without invoking the _<sub>index</sub> metamethod. index - any value.</li>
+<li>rawlen (v)				v - string or table, without invoking the _<sub>len</sub> metamethod. integer</li>
+<li>rawset (table, index, value)		table[index], without invoking the _<sub>newindex</sub>. returns table.</li>
+<li>select (index, ···)			number - return next elemets &#x2026; after number, '#' - count of &#x2026; elements.</li>
+<li>setmetatable (table, metatable)</li>
+<li>tonumber (e [, base])		base - any integer between 2 and 36. return int or nil.</li>
+<li>tostring (v)				call _<sub>tostring</sub>.</li>
+<li>type (v)				return type coded as a string. "nil", "number", "string", "boolean", "table", "function", "thread", and "userdata".</li>
+<li>_VERSION				string - the running Lua version.</li>
+<li>xpcall (f, msgh [, arg1, ···])	This function is similar to pcall, except that it sets a new message handler msgh.</li>
+</ul>
+
+<p>
+other
+</p>
+<ul class="org-ul">
+<li>require (modname)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9b19643" class="outline-3">
+<h3 id="org9b19643"><span class="section-number-3">13.2.</span> other</h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>coroutine.</li>
+<li>package.</li>
+<li>string.</li>
+<li>utf8.</li>
+<li>table.</li>
+<li>math.</li>
+<li>io.</li>
+<li>file:</li>
+<li>os:</li>
+<li>debug.</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5788d4" class="outline-2">
+<h2 id="orgd5788d4"><span class="section-number-2">14.</span> debug</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+assert (v [, message])  - Calls error if the value of its argument v is false
+</p>
+</div>
+</div>
+<div id="outline-container-org9b0bfff" class="outline-2">
+<h2 id="org9b0bfff"><span class="section-number-2">15.</span> Documenting</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>luadoc 1999-2008 <a href="http://keplerproject.github.io/luadoc/">http://keplerproject.github.io/luadoc/</a></li>
+<li>ldoc <a href="http://stevedonovan.github.io/ldoc/">http://stevedonovan.github.io/ldoc/</a>
+<ul class="org-ul">
+<li>LDoc is a LuaDoc-compatible documentation generator which can also process C extension source</li>
+</ul></li>
+<li>ExpLua - code comment format and a tool for extracting said comments and exporting HTML, LaTeX, and whatnot</li>
+</ul>
+
+
+<p>
+LuaDoc looks for the sequence of three minus signs (&#x2014;). This sequence of characters indicates the beginning
+of a documented comment. The documentation ends with the first line of code found.
+</p>
+</div>
+<div id="outline-container-orgd0d5729" class="outline-3">
+<h3 id="orgd0d5729"><span class="section-number-3">15.1.</span> Tags</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+LuaDoc can parse some tags at each function or table documentation. Tags are indicated in the source code with
+ a `@' character followed by the name of the tag:
+</p>
+
+<dl class="org-dl">
+<dt>@author &lt;text&gt;</dt><dd>An author of the module or file.</dd>
+<dt>@copyright &lt;text&gt;</dt><dd>The copyright notice of the module or file. LuaDoc adds a © sign between the label
+(Copyright) and the given text (e.g. 2004-2007 Kepler Project).</dd>
+<dt>@field</dt><dd>Describe a table field definition.</dd>
+<dt>@param &lt;word&gt; &lt;text&gt;</dt><dd>Describe function parameters. It requires the name of the parameter and its description.</dd>
+<dt>@release &lt;text&gt;</dt><dd>Free format string to describe the module or file release.</dd>
+<dt>@return &lt;text&gt;</dt><dd>Describe a returning value of the function. Since Lua can return multiple values, this tag
+should appear more than once.</dd>
+<dt>@see &lt;text&gt;</dt><dd>Refers to other descriptions of functions or tables.</dd>
+<dt>@usage &lt;text&gt;</dt><dd>Describe the usage of the function or variable.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgbb6b2e9" class="outline-3">
+<h3 id="orgbb6b2e9"><span class="section-number-3">15.2.</span> Infered Tags</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+The following tags would be normally infered by LuaDoc, but they can be used to override the infered value.
+</p>
+
+<dl class="org-dl">
+<dt>@class &lt;word&gt;</dt><dd>If LuaDoc cannot infer the type of documentation (function, table or module definition),
+the programmer can specify it explicitly.</dd>
+<dt>@description</dt><dd>The description of the function or table. This is usually infered automatically.</dd>
+<dt>@name &lt;word&gt;</dt><dd>The name of the function or table definition. This is usually infered from the code
+analysis, and the programmer does not need to define it. If LuaDoc can infer the name of the function
+automatically it's even not recomended to define the name explicitly, to avoid redundancy.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org859cf35" class="outline-3">
+<h3 id="org859cf35"><span class="section-number-3">15.3.</span> LDoc style</h3>
+<div class="outline-text-3" id="text-15-3">
+<div class="org-src-container">
+<pre class="src src-lua">--- summary.
+-- Description; this can extend over
+-- several lines
+
+-----------------
+-- This will also do.
+
+You can also use Lua block comments:
+
+--[[--
+ Summary. A description
+ ...;
+]]
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf38588c" class="outline-3">
+<h3 id="orgf38588c"><span class="section-number-3">15.4.</span> LDoc tags</h3>
+<div class="outline-text-3" id="text-15-4">
+<ol class="org-ol">
+<li>@module A Lua module containing functions and tables, which may be inside sections</li>
+<li>@classmod Like @module but describing a class</li>
+<li>@submodule A file containing definitions that you wish to put into the named master module</li>
+<li>@script A Lua program</li>
+<li>@author (multiple), copyright, @license, @release only used for project-level tags like @module</li>
+<li>@function, @lfunction. Functions inside a module</li>
+<li>@param formal arguments of a function (multiple)</li>
+<li>@return returned values of a function (multiple)</li>
+<li>@raise unhandled error thrown by this function</li>
+<li>@local explicitly marks a function as not being exported (unless &#x2013;all)</li>
+<li>@see reference other documented items</li>
+<li>@usage give an example of a function’s use. (Has a somewhat different meaning when used with @module)</li>
+<li>@table a Lua table</li>
+<li>@field a named member of a table</li>
+<li>@section starting a named section for grouping functions or tables together</li>
+<li>@type a section which describes a class</li>
+<li>@within puts the function or table into an implicit section</li>
+<li>@fixme, @todo and @warning are annotations, which are doc comments that occur inside a function body.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgbabee1b" class="outline-3">
+<h3 id="orgbabee1b"><span class="section-number-3">15.5.</span> table - classic way</h3>
+<div class="outline-text-3" id="text-15-5">
+<div class="org-src-container">
+<pre class="src src-julia">--- a useful table of constants
+-- @field alpha first correction
+-- @field beta second correction
+-- @field gamma fudge factor
+-- @table constants
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org793f3b8" class="outline-3">
+<h3 id="org793f3b8"><span class="section-number-3">15.6.</span> Doxygen - Generate documentation from source code</h3>
+<div class="outline-text-3" id="text-15-6">
+<div class="org-src-container">
+<pre class="src src-julia">---------------------------------
+--! @file
+--! @brief a Doxygen::Lua example
+---------------------------------
+
+PARAMETER = {
+    --! table is supported
+    a = 1,
+    b = 2, --! end of line comment is also supported
+    c = 3,
+}
+
+--! my name
+AUTHOR = 'Alec Chen'
+
+--! my email
+EMAIL = 'alec@cpan.org'
+
+--! @brief The factorial is an example of a recursive function
+--! @param n a positive integer
+--! @return return the product of all positive integers less than or equal to n
+
+function factorial(n)
+    x = 10
+    y = 20
+    if n == 0 then
+        return 1
+    else
+        return n * factorial(n - 1)
+    end
+end
+
+--! @brief a simple function declared local
+local function localFunction()
+end
+
+--! a function namespace
+luaCharacter = inheritsFrom( nil, "luaCharacter" )
+
+--! @brief luaCharacter:reset
+function luaCharacter:reset()
+end
+
+--! @brief luaCharacter:destroy
+function luaCharacter:destroy()
+end
+
+--! @brief luaCharacter:entry_point
+function luaCharacter:entry_point()
+end
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c6b612" class="outline-3">
+<h3 id="org8c6b612"><span class="section-number-3">15.7.</span> links</h3>
+<div class="outline-text-3" id="text-15-7">
+<p>
+<a href="http://lua-users.org/wiki/DocumentingLuaCode">http://lua-users.org/wiki/DocumentingLuaCode</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77be624" class="outline-2">
+<h2 id="org77be624"><span class="section-number-2">16.</span> Style guide</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+Python style is a reference.
+</p>
+</div>
+<div id="outline-container-org3f7c760" class="outline-3">
+<h3 id="org3f7c760"><span class="section-number-3">16.1.</span> basic</h3>
+<div class="outline-text-3" id="text-16-1">
+<p>
+<b>Formatting</b>
+</p>
+<ul class="org-ul">
+<li>Indentation - Indenting often uses two spaces.</li>
+</ul>
+
+<p>
+<b>Naming</b>
+</p>
+<ul class="org-ul">
+<li>lenght - variable names with larger scope should be more descriptive than those with smaller scope.</li>
+</ul>
+
+<p>
+<b>variables</b>
+</p>
+<ul class="org-ul">
+<li>lowercase - Variables holding values or objects are typically lowercase and short (e.g. color)</li>
+<li>Booleans - It can be helpful to prefix Boolean values or functions used as predicates with is, such as
+is<sub>directory</sub> rather than directory (which might store a directory object itself).</li>
+<li>underscore "_" is commonly used as a placeholder when you want to ignore the variable</li>
+<li>i, k, v, t</li>
+</ul>
+<pre class="example">
+for k,v in pairs(t) ... end
+for i,v in ipairs(t) ... end
+mt.__newindex = function(t, k, v) ... end
+</pre>
+
+<p>
+M is sometimes used as the "current module table"
+</p>
+
+<ul class="org-ul">
+<li>functions - print<sub>table</sub> or getmetatable.</li>
+<li>constants - ALL<sub>CAPS</sub>, with words optionally separated by underscores.</li>
+<li>module/package -  nouns with names that are short and lowercase, with nothing between words.</li>
+<li>Class names - upper CamelCase</li>
+</ul>
+
+<p>
+<b>libraries</b> - Avoid using the debug library unless necessary, especially if trusted code is being run.
+</p>
+
+<p>
+Use <b>local</b>! Globals have larger scopes and lifetimes and therefore increase [coupling] and complexity
+</p>
+<ul class="org-ul">
+<li>limit the scope of local variables with do-blocks</li>
+</ul>
+
+<p>
+Don't use semicolons <b>;</b>. They are generally only useful to separate multiple statements on a single line, but
+ you shouldn't be putting multiple statements on a single line anyway.
+</p>
+</div>
+</div>
+<div id="outline-container-org26fcb87" class="outline-3">
+<h3 id="org26fcb87"><span class="section-number-3">16.2.</span> require</h3>
+</div>
+<div id="outline-container-org806926a" class="outline-3">
+<h3 id="org806926a"><span class="section-number-3">16.3.</span> links</h3>
+<div class="outline-text-3" id="text-16-3">
+<ul class="org-ul">
+<li><a href="http://lua-users.org/wiki/LuaStyleGuide">http://lua-users.org/wiki/LuaStyleGuide</a></li>
+<li><a href="https://roblox.github.io/lua-style-guide/">https://roblox.github.io/lua-style-guide/</a></li>
+<li><a href="https://github.com/luarocks/lua-style-guide">https://github.com/luarocks/lua-style-guide</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5324faa" class="outline-2">
+<h2 id="org5324faa"><span class="section-number-2">17.</span> The Complete Syntax of Lua</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+Here is the complete syntax of Lua in extended BNF. As usual in extended BNF, {A} means 0 or more As, and [A]
+ means an optional A.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">        chunk ::= block
+
+        block ::= {stat} [retstat]
+
+        stat ::=  &#8216;;&#8217; |
+                 varlist &#8216;=&#8217; explist |
+                 functioncall |
+                 label |
+                 break |
+                 goto Name |
+                 do block end |
+                 while exp do block end |
+                 repeat block until exp |
+                 if exp then block {elseif exp then block} [else block] end |
+                 for Name &#8216;=&#8217; exp &#8216;,&#8217; exp [&#8216;,&#8217; exp] do block end |
+                 for namelist in explist do block end |
+                 function funcname funcbody |
+                 local function Name funcbody |
+                 local namelist [&#8216;=&#8217; explist]
+
+        retstat ::= return [explist] [&#8216;;&#8217;]
+
+        label ::= &#8216;::&#8217; Name &#8216;::&#8217;
+
+        funcname ::= Name {&#8216;.&#8217; Name} [&#8216;:&#8217; Name]
+
+        varlist ::= var {&#8216;,&#8217; var}
+
+        var ::=  Name | prefixexp &#8216;[&#8217; exp &#8216;]&#8217; | prefixexp &#8216;.&#8217; Name
+
+        namelist ::= Name {&#8216;,&#8217; Name}
+
+        explist ::= exp {&#8216;,&#8217; exp}
+
+        exp ::=  nil | false | true | Numeral | LiteralString | &#8216;...&#8217; | functiondef |
+                 prefixexp | tableconstructor | exp binop exp | unop exp
+
+        prefixexp ::= var | functioncall | &#8216;(&#8217; exp &#8216;)&#8217;
+
+        functioncall ::=  prefixexp args | prefixexp &#8216;:&#8217; Name args
+
+        args ::=  &#8216;(&#8217; [explist] &#8216;)&#8217; | tableconstructor | LiteralString
+
+        functiondef ::= function funcbody
+
+        funcbody ::= &#8216;(&#8217; [parlist] &#8216;)&#8217; block end
+
+        parlist ::= namelist [&#8216;,&#8217; &#8216;...&#8217;] | &#8216;...&#8217;
+
+        tableconstructor ::= &#8216;{&#8217; [fieldlist] &#8216;}&#8217;
+
+        fieldlist ::= field {fieldsep field} [fieldsep]
+
+        field ::= &#8216;[&#8217; exp &#8216;]&#8217; &#8216;=&#8217; exp | Name &#8216;=&#8217; exp | exp
+
+        fieldsep ::= &#8216;,&#8217; | &#8216;;&#8217;
+
+        binop ::=  &#8216;+&#8217; | &#8216;-&#8217; | &#8216;*&#8217; | &#8216;/&#8217; | &#8216;//&#8217; | &#8216;^&#8217; | &#8216;%&#8217; |
+                 &#8216;&amp;&#8217; | &#8216;~&#8217; | &#8216;|&#8217; | &#8216;&gt;&gt;&#8217; | &#8216;&lt;&lt;&#8217; | &#8216;..&#8217; |
+                 &#8216;&lt;&#8217; | &#8216;&lt;=&#8217; | &#8216;&gt;&#8217; | &#8216;&gt;=&#8217; | &#8216;==&#8217; | &#8216;~=&#8217; |
+                 and | or
+
+        unop ::= &#8216;-&#8217; | not | &#8216;#&#8217; | &#8216;~&#8217;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org856c361" class="outline-2">
+<h2 id="org856c361"><span class="section-number-2">18.</span> <span class="todo TODO">TODO</span> not errors</h2>
+<div class="outline-text-2" id="text-18">
+</div>
+<div id="outline-container-orgdcdf794" class="outline-3">
+<h3 id="orgdcdf794"><span class="section-number-3">18.1.</span> undefined variable</h3>
+<div class="outline-text-3" id="text-18-1">
+<div class="org-src-container">
+<pre class="src src-lua">a=b -- a = nil
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc962bd8" class="outline-3">
+<h3 id="orgc962bd8"><span class="section-number-3">18.2.</span> key not present</h3>
+<div class="outline-text-3" id="text-18-2">
+<p>
+Indexing into a table in Lua gives you nil if the key isn't present.
+</p>
+<div class="org-src-container">
+<pre class="src src-lua">local MyEnum = {
+    A = "A",
+    B = "B",
+    C = "CC",
+}
+
+print(MyEnum.V) -- nil
+
+setmetatable(MyEnum, {
+    __index = function(self, key)
+        error(string.format("%q is not a valid member of MyEnum",
+            tostring(key)), 2)
+    end,
+})
+
+print(MyEnum.C) -- CC
+print(MyEnum.V) -- error
+</pre>
+</div>
+
+<pre class="example">
+nil
+CC
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfd5705" class="outline-2">
+<h2 id="orgdfd5705"><span class="section-number-2">19.</span> package managers</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+LuaRocks - MIT - <a href="https://luarocks.org/">https://luarocks.org/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org7b6014c" class="outline-2">
+<h2 id="org7b6014c"><span class="section-number-2">20.</span> links</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>books
+<ul class="org-ul">
+<li>Lua Reference Manual <a href="https://www.lua.org/manual/5.3">https://www.lua.org/manual/5.3</a></li>
+<li>"Programming in Lua" <a href="http://www.lua.org/pil/">http://www.lua.org/pil/</a></li>
+<li>lua-users wiki <a href="http://lua-users.org/wiki/">http://lua-users.org/wiki/</a></li>
+<li>book <a href="http://lua-users.org/wiki/LuaBooks">http://lua-users.org/wiki/LuaBooks</a></li>
+<li><b>Beginning Lua Programming</b> - book for sale.</li>
+</ul></li>
+<li>module <a href="http://www.keplerproject.org/">http://www.keplerproject.org/</a></li>
+<li>module <a href="http://lua-users.org/wiki/LuaForge">http://lua-users.org/wiki/LuaForge</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:47</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

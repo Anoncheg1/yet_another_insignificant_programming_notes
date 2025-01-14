@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0532b59">1. help</a></li>
+<li><a href="#org9feec5f">2. REPL</a></li>
+<li><a href="#org396d068">3. scripting</a></li>
+<li><a href="#org6d343e7">4. Varibles</a>
+<ul>
+<li><a href="#org62f722b">4.1. null</a></li>
+<li><a href="#orga1ee80e">4.2. context</a></li>
+</ul>
+</li>
+<li><a href="#org5f7138a">5. General Variables</a></li>
+<li><a href="#org4fdcc9a">6. references</a></li>
+<li><a href="#orgf85991a">7. comparision</a></li>
+<li><a href="#orgd1f53bb">8. if else</a></li>
+<li><a href="#org9e36d9c">9. loops</a></li>
+<li><a href="#org457b48e">10. comments</a></li>
+<li><a href="#org472b5ac">11. strings</a>
+<ul>
+<li><a href="#org7f93110">11.1. examples</a></li>
+<li><a href="#org9fc6c26">11.2. functions</a></li>
+<li><a href="#orgdd02dea">11.3. special funcitons</a></li>
+<li><a href="#org988274b">11.4. EOF</a></li>
+</ul>
+</li>
+<li><a href="#orgf52ba84">12. arrays</a></li>
+<li><a href="#org1371fce">13. Hash Variables</a></li>
+<li><a href="#orgcf9f307">14. subroutines</a>
+<ul>
+<li><a href="#orgdf035c4">14.1. return value</a></li>
+<li><a href="#org5380bea">14.2. ex</a></li>
+</ul>
+</li>
+<li><a href="#orgc933ea4">15. I/O operators</a></li>
+<li><a href="#org54ea909">16. IPC inter-process communication</a>
+<ul>
+<li><a href="#org0092df3">16.1. sockets</a>
+<ul>
+<li><a href="#orgeb2d363">16.1.1. program1</a></li>
+<li><a href="#org7ed90cc">16.1.2. program2</a></li>
+</ul>
+</li>
+<li><a href="#org9232276">16.2. file</a></li>
+</ul>
+</li>
+<li><a href="#orge3505b6">17. Date and Time</a></li>
+<li><a href="#org2dd7858">18. documentation style</a></li>
+<li><a href="#orgc371d97">19. code style</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+
+<ul class="org-ul">
+<li>case sensitive programming language.</li>
+</ul>
+<div id="outline-container-org0532b59" class="outline-2">
+<h2 id="org0532b59"><span class="section-number-2">1.</span> help</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>perldoc -f print</li>
+<li>perldoc strict</li>
+<li>perldoc -q FAQ Keyword</li>
+<li>perldoc -q "if"</li>
+<li>perldoc -v PerlVariable</li>
+<li>perldoc -a PerlAPI</li>
+<li>man perlrun - everythin about command "perl"</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9feec5f" class="outline-2">
+<h2 id="org9feec5f"><span class="section-number-2">2.</span> REPL</h2>
+<div class="outline-text-2" id="text-2">
+<pre class="example">
+perl -de1
+perl -e 'do{print("perl&gt; ");$_x=&lt;&gt;;chomp $_x;print(eval($_x)."\n")}while($_x ne "q")'
+</pre>
+</div>
+</div>
+<div id="outline-container-org396d068" class="outline-2">
+<h2 id="org396d068"><span class="section-number-2">3.</span> scripting</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+use strict; # requires you to declare variable explicitly before using it.
+use warnings; # All warnings are enabled in a block
+no warnings; # all warnings are disabled in a block
+</p>
+
+<p>
+path looking for modules:
+</p>
+<pre class="example">
+perl -e 'print "@INC";'
+</pre>
+</div>
+</div>
+<div id="outline-container-org6d343e7" class="outline-2">
+<h2 id="org6d343e7"><span class="section-number-2">4.</span> Varibles</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>$age=32 ;- varibale</li>
+<li>@ages = (25, 30, 40); - array
+<ul class="org-ul">
+<li>$ages[0] = 25</li>
+<li>print $size=scalar (@array);</li>
+</ul></li>
+<li>#hash = ('John Paul' =&gt; 45, 'Lisa' =&gt; 30); - key/value
+<ul class="org-ul">
+<li>(-JohnPaul =&gt; 45, -Lisa =&gt; 30, -Kumar =&gt; 40);</li>
+<li>$data{'John Paul'} = 45</li>
+<li>@names = keys %data;</li>
+<li>@ages = values %data;</li>
+</ul></li>
+<li>my $color = 'red'; -  lexically scoped variable.</li>
+<li>our $color = 'red'; - global variable</li>
+<li>qw(foo bar baz)  is semantically equivalent to the list: "foo", "bar", "baz"</li>
+<li>ref(?) - get type</li>
+<li>defined() - to check that variable is defined</li>
+</ul>
+</div>
+<div id="outline-container-org62f722b" class="outline-3">
+<h3 id="org62f722b"><span class="section-number-3">4.1.</span> null</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">a</span> = <span style="color: #95e454;">"asd"</span>;
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">b</span>;
+print <span style="color: #95e454;">"defined? "</span>, (defined($<span style="color: #cae682;">a</span>) || <span style="color: #95e454;">"0"</span>), <span style="color: #95e454;">"\n"</span> ;
+print <span style="color: #95e454;">"defined? "</span>, (defined($<span style="color: #cae682;">b</span>) || <span style="color: #95e454;">"0"</span>), <span style="color: #95e454;">"\n"</span> ;
+</pre>
+</div>
+
+<pre class="example">
+defined? 1
+defined? 0
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga1ee80e" class="outline-3">
+<h3 id="orga1ee80e"><span class="section-number-3">4.2.</span> context</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+function behave different in different context - Used for as some sort of like overloading.
+</p>
+
+<p>
+two major contexts:
+</p>
+<ul class="org-ul">
+<li>scalar - $x, $x[1], $x{"ray"}
+<ul class="org-ul">
+<li>numeric, string, and don't care context,</li>
+</ul></li>
+<li>list - @x, @x[1], @x{"ray"}, %x; ($x,$y,$z) = ,</li>
+<li>void</li>
+</ul>
+
+<p>
+Forcing context:
+</p>
+<pre class="example">
+print scalar localtime();
+my $match_count = ()= /x/g;
+</pre>
+
+
+<p>
+Determining context with wantarray:
+</p>
+<pre class="example">
+wantarray() - list
+defined wantarray() - false value that's defined
+undef - void context
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5f7138a" class="outline-2">
+<h2 id="org5f7138a"><span class="section-number-2">5.</span> General Variables</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="https://perldoc.perl.org/perlvar">https://perldoc.perl.org/perlvar</a>
+</p>
+<ul class="org-ul">
+<li>$_
+<ul class="org-ul">
+<li>as a default argument - abs, alarm, chomp, chop, chr, chroot, cos, defined, eval</li>
+<li>All file tests (-f, -d) except for -t</li>
+<li>The pattern matching operations m//, s/// and tr/// (aka y///) when used without an =~ operator.</li>
+<li>The default iterator variable in a foreach loop if no other variable is supplied.</li>
+<li>The implicit iterator variable in the grep() and map() functions.</li>
+<li>The implicit variable of given().</li>
+<li>The default place to put the next value or input record when a &lt;FH&gt;, readline, readdir or each operation's
+result is tested by itself as the sole criterion of a while test. Outside a while test, this will not
+happen.</li>
+</ul></li>
+<li>@_
+<ul class="org-ul">
+<li>Within a subroutine the array @_ contains the parameters passed to that subroutine. Inside a subroutine,
+@_ is the default array for the array operators pop and shift.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4fdcc9a" class="outline-2">
+<h2 id="org4fdcc9a"><span class="section-number-2">6.</span> references</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>$scalarref = \$foo;</li>
+<li>$arrayref  = \@ARGV;</li>
+<li>$hashref   = \%ENV;</li>
+<li>$coderef   = \&amp;handler;</li>
+<li>$globref   = \*foo;</li>
+<li>$arrayref = [1, 2, ['a', 'b', 'c']]; - anonymous array</li>
+<li>$coderef = sub { print "Boink!\n" }; - anonymous subroutine</li>
+<li>ref($scalarref) -&gt; SCALAR</li>
+<li>dereference:
+<ul class="org-ul">
+<li>$$scalarref == $foo</li>
+<li>@$arrayref  == @ARGV;</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf85991a" class="outline-2">
+<h2 id="orgf85991a"><span class="section-number-2">7.</span> comparision</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>&amp;&amp; and || -  logical AND and OR.</li>
+<li>! for NOT</li>
+<li>&lt;=&gt; - number comparison
+<ul class="org-ul">
+<li>1 if a &gt; b</li>
+<li>0 if a = b,</li>
+<li>-1 if a &lt; b.</li>
+</ul></li>
+</ul>
+<p>
+<a id="org00c78ad"></a>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Equality</th>
+<th scope="col" class="org-left">Numeric</th>
+<th scope="col" class="org-left">String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Equal</td>
+<td class="org-left">\==</td>
+<td class="org-left">eq</td>
+</tr>
+
+<tr>
+<td class="org-left">Not Equal</td>
+<td class="org-left">!=</td>
+<td class="org-left">ne</td>
+</tr>
+
+<tr>
+<td class="org-left">Comparison</td>
+<td class="org-left">&lt;=&gt;</td>
+<td class="org-left">cmp</td>
+</tr>
+</tbody>
+</table>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Relational</th>
+<th scope="col" class="org-left">Numeric</th>
+<th scope="col" class="org-left">String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Less than</td>
+<td class="org-left">&lt;</td>
+<td class="org-left">lt</td>
+</tr>
+
+<tr>
+<td class="org-left">Greater than</td>
+<td class="org-left">&gt;</td>
+<td class="org-left">gt</td>
+</tr>
+
+<tr>
+<td class="org-left">Less than or equal</td>
+<td class="org-left">&lt;=</td>
+<td class="org-left">le</td>
+</tr>
+
+<tr>
+<td class="org-left">Greater than or equal</td>
+<td class="org-left">&gt;=</td>
+<td class="org-left">ge</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+print "yes" if $string1 eq $string2;
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-perl">print !1 . <span style="color: #95e454;">" s "</span> . !0 . !<span style="color: #95e454;">""</span>;
+</pre>
+</div>
+
+<pre class="example">
+s 11
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd1f53bb" class="outline-2">
+<h2 id="orgd1f53bb"><span class="section-number-2">8.</span> if else</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>$status = ($age &gt; 60 )? "A senior citizen" : "Not a senior citizen";</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e36d9c" class="outline-2">
+<h2 id="org9e36d9c"><span class="section-number-2">9.</span> loops</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>for ($count = 1 ; $count &lt;= 3 ; $count+=1)</li>
+<li>foreach $word (@data)</li>
+<li>while ($count &gt;= 0)</li>
+<li>do { } while(condition);</li>
+<li>until (condition)</li>
+</ul>
+
+<p>
+keywords:
+</p>
+<ul class="org-ul">
+<li>next; - continue</li>
+<li>last; - break</li>
+<li>redo; - execute the current iteration again without checking the condition</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">for</span>( ; ; ) {
+   printf <span style="color: #95e454;">"This loop will run forever.\n"</span>;
+}
+
+<span style="color: #8ac6f2; font-weight: bold;">foreach</span> $<span style="color: #cae682;">a</span> (@<span style="color: #cae682; text-decoration: underline;">list</span>) {
+   print <span style="color: #95e454;">"value of a: $a\n"</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org457b48e" class="outline-2">
+<h2 id="org457b48e"><span class="section-number-2">10.</span> comments</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li># - one line</li>
+<li>=begin comment\n=cut - multiline comment</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org472b5ac" class="outline-2">
+<h2 id="org472b5ac"><span class="section-number-2">11.</span> strings</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+see <a href="#org00c78ad">7</a>
+</p>
+<ul class="org-ul">
+<li>'\n' -&gt; \n not interpolate (equal to q//)</li>
+<li>"\n$var" -&gt;  "text" with new line, and interpolate $var (equal to qq//)</li>
+<li>(.) - concatenation, (.=)</li>
+</ul>
+
+<p>
+Transform Strings to Arrays:
+</p>
+<ul class="org-ul">
+<li>@string = split('-', $var<sub>string</sub>);</li>
+<li>$string1 = join( '-', @string );</li>
+</ul>
+
+<p>
+add new to print:
+</p>
+<pre class="example">
+use feature qw(say);
+</pre>
+
+
+<p>
+Interpolation - is a process of transformation of variable/escaped<sub>car</sub> to string in "" or qq//.
+</p>
+</div>
+<div id="outline-container-org7f93110" class="outline-3">
+<h3 id="org7f93110"><span class="section-number-3">11.1.</span> examples</h3>
+<div class="outline-text-3" id="text-11-1">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">target</span> = <span style="color: #95e454;">"##cooking1"</span>;
+print $<span style="color: #cae682;">target</span> eq <span style="color: #95e454;">"##cooking"</span> . <span style="color: #95e454;">"ss"</span>;
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print shift;</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-perl">$<span style="color: #cae682;">a</span>=<span style="color: #95e454;">"aad3:44"</span>;
+@<span style="color: #cae682; text-decoration: underline;">v</span> = split(<span style="color: #95e454;">":"</span>, $<span style="color: #cae682;">a</span>);
+print scalar @<span style="color: #cae682; text-decoration: underline;">v</span> . <span style="color: #95e454;">" @v[0]"</span>;
+<span style="color: #8ac6f2; font-weight: bold;">if</span> (scalar @<span style="color: #cae682; text-decoration: underline;">v</span> &gt; 1){
+    print <span style="color: #95e454;">"WTF\n"</span>
+}
+</pre>
+</div>
+
+<pre class="example">
+2 aad3WTF
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9fc6c26" class="outline-3">
+<h3 id="org9fc6c26"><span class="section-number-3">11.2.</span> functions</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li>print("Length: ", length($s));</li>
+<li>print $msg1, "",$msg2, "\n";</li>
+<li>uc($s)/lc() - upper case</li>
+<li>substr() - get from index with lenght</li>
+<li>index() - get position of first occurance</li>
+<li>chomp() - remove trainling new line</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdd02dea" class="outline-3">
+<h3 id="orgdd02dea"><span class="section-number-3">11.3.</span> special funcitons</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+replace string:
+</p>
+<pre class="example">
+my $var1 = "Tigers are big and frightening.";
+$var1 =~ s/Tigers/Lions/;
+</pre>
+
+
+<p>
+Finding a match
+</p>
+<pre class="example">
+my $var = "Tigers are big and frightening.";
+if($var =~ /frightening/) ...
+</pre>
+</div>
+</div>
+<div id="outline-container-org988274b" class="outline-3">
+<h3 id="org988274b"><span class="section-number-3">11.4.</span> EOF</h3>
+<div class="outline-text-3" id="text-11-4">
+<div class="org-src-container">
+<pre class="src src-perl">$<span style="color: #cae682;">var</span> = &lt;&lt;<span style="color: #95e454;">"EOF"</span>;
+<span style="color: #95e454;">This is the syntax for here document and it will continue</span>
+<span style="color: #95e454;">until it encounters a EOF in the first line.</span>
+<span style="color: #95e454;">This is case of double quote so variable value will be</span>
+<span style="color: #95e454;">interpolated. For example value of a = $a</span>
+<span style="color: #95e454;">EOF</span>
+
+
+$<span style="color: #cae682;">var</span> = &lt;&lt;<span style="color: #95e454;">'EOF'</span>;
+<span style="color: #95e454;">This is case of single quote so variable value will be</span>
+<span style="color: #95e454;">interpolated. For example value of a = $a</span>
+<span style="color: #95e454;">EOF</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf52ba84" class="outline-2">
+<h2 id="orgf52ba84"><span class="section-number-2">12.</span> arrays</h2>
+<div class="outline-text-2" id="text-12">
+<pre class="example">
+@ages = (25, 30, 40);
+@words = qw/This is an array/;
+@var_10 = (1..10);
+</pre>
+
+
+<p>
+access by index, start from zero, [-1] - second from the end.
+</p>
+<pre class="example">
+print "\$ages[0] = $ages[0]\n";
+</pre>
+
+<ul class="org-ul">
+<li>scalar @array # size or length</li>
+<li>$max<sub>index</sub> = $#array;</li>
+<li>push @ARRAY, LIST # add values to the end of the array.</li>
+<li>pop @ARRAY # from the end</li>
+<li>shift @ARRAY # get first and remove it</li>
+</ul>
+
+<p>
+slice:
+</p>
+<ul class="org-ul">
+<li>@weekdays = @days[3..5];</li>
+</ul>
+
+<p>
+Replacing Array Elements: splice @ARRAY, OFFSET [ , LENGTH [ , LIST ] ]
+</p>
+<pre class="example">
+splice(@nums, 5, 5, 21..25);
+</pre>
+
+
+<p>
+sort [ SUBROUTINE ] LIST
+</p>
+<ul class="org-ul">
+<li>@foods = sort(@foods);</li>
+<li>($[) - is special variable containing first index of all arrays, almost always be 0</li>
+</ul>
+
+<pre class="example">
+@numbers = (1,3,(4,5,6)); # merging
+</pre>
+
+
+<p>
+check if it is empty:
+</p>
+<pre class="example">
+print "asd" if !@a; # print if empty
+print "asd" if !@a; # print if not empty
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-perl">@<span style="color: #cae682; text-decoration: underline;">ages</span> = (25, 30, 40);
+print scalar @<span style="color: #cae682; text-decoration: underline;">ages</span>, $<span style="color: #cae682;">ages</span>[1];
+</pre>
+</div>
+
+<pre class="example">
+330
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1371fce" class="outline-2">
+<h2 id="org1371fce"><span class="section-number-2">13.</span> Hash Variables</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+(%) sign. A hash is a set of key/value pairs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf9f307" class="outline-2">
+<h2 id="orgcf9f307"><span class="section-number-2">14.</span> subroutines</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+You don't define arguments of subroutine, you access it with @_. return("re") - return value.
+</p>
+<ul class="org-ul">
+<li>(;) don't required after definition.</li>
+<li>call: subroutine();</li>
+</ul>
+
+<p>
+Arguments:
+</p>
+<ul class="org-ul">
+<li>$n = scalar(@_);</li>
+<li>my @list = @_;</li>
+</ul>
+
+<p>
+Local variables, require:
+</p>
+<pre class="example">
+use feature 'state';
+state $count = 0; # initial value
+</pre>
+</div>
+<div id="outline-container-orgdf035c4" class="outline-3">
+<h3 id="orgdf035c4"><span class="section-number-3">14.1.</span> return value</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+single value returned as a single, multiple returned as an array.
+</p>
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">feature</span> qw<span style="color: #95e454;">(say)</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">a1</span> {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span>(<span style="color: #95e454;">"444"</span>)
+}
+say(a1());
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">a2</span> {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span>(<span style="color: #95e454;">"444"</span>, 23)
+}
+<span style="color: #8ac6f2; font-weight: bold;">my</span>($<span style="color: #cae682;">b</span>, $<span style="color: #cae682;">c</span>) = a2();
+say $<span style="color: #cae682;">c</span>;
+
+</pre>
+</div>
+
+<pre class="example">
+444
+23
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5380bea" class="outline-3">
+<h3 id="org5380bea"><span class="section-number-3">14.2.</span> ex</h3>
+<div class="outline-text-3" id="text-14-2">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Function definition</span>
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">Hello</span> {
+   <span style="color: #8ac6f2; font-weight: bold;">my</span> ($<span style="color: #cae682;">server</span>, $<span style="color: #cae682;">msg</span>, $<span style="color: #cae682;">nick</span>, $<span style="color: #cae682;">address</span>, $<span style="color: #cae682;">target</span>) = @<span style="color: #cae682; text-decoration: underline;">_</span>;
+   print <span style="color: #95e454;">"Hello, World!\n"</span>;
+   <span style="color: #8ac6f2; font-weight: bold;">return</span>(<span style="color: #95e454;">"a"</span>, <span style="color: #95e454;">"b"</span>, <span style="color: #95e454;">"c"</span>);
+}
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Function call</span>
+@<span style="color: #cae682; text-decoration: underline;">retval</span> = Hello();
+
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">Mul</span>($$)
+{
+    <span style="color: #8ac6f2; font-weight: bold;">my</span>($<span style="color: #cae682;">a</span>, $<span style="color: #cae682;">b</span> ) = @<span style="color: #cae682; text-decoration: underline;">_</span>;
+    <span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">c</span> = $<span style="color: #cae682;">a</span> * $<span style="color: #cae682;">b</span>;
+
+    <span style="color: #99968b; font-style: italic;"># Return Value</span>
+    <span style="color: #8ac6f2; font-weight: bold;">return</span>($<span style="color: #cae682;">a</span>, $<span style="color: #cae682;">b</span>, $<span style="color: #cae682;">c</span>);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc933ea4" class="outline-2">
+<h2 id="orgc933ea4"><span class="section-number-2">15.</span> I/O operators</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+equivalent:
+</p>
+<ul class="org-ul">
+<li>while (defined($_ = &lt;STDIN&gt;)) { print; }</li>
+<li>while ($_ = &lt;STDIN&gt;) { print; }</li>
+<li>while (&lt;STDIN&gt;) { print; }</li>
+<li>for (;&lt;STDIN&gt;;) { print; }</li>
+<li>print while defined($_ = &lt;STDIN&gt;);</li>
+<li>print while ($_ = &lt;STDIN&gt;);</li>
+<li>print while &lt;STDIN&gt;;</li>
+</ul>
+
+<p>
+<b>STDIN, STDOUT, and STDERR</b> are predefined filehandles. New created with open().
+</p>
+
+<p>
+&lt;&gt; diamond operator - null filehandle, used to emulate - the first time "&lt;&gt;" is evaluated, the @ARGV array is
+ checked, and if it is empty, $ARGV[0] is set to "-", which when opened gives you standard input. The @ARGV
+ array is then processed as a list of filenames.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org54ea909" class="outline-2">
+<h2 id="org54ea909"><span class="section-number-2">16.</span> IPC inter-process communication</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li><a href="https://metacpan.org/pod/IPC::Run">https://metacpan.org/pod/IPC::Run</a></li>
+<li><a href="https://perldoc.perl.org/perlipc">https://perldoc.perl.org/perlipc</a></li>
+</ul>
+</div>
+<div id="outline-container-org0092df3" class="outline-3">
+<h3 id="org0092df3"><span class="section-number-3">16.1.</span> sockets</h3>
+<div class="outline-text-3" id="text-16-1">
+</div>
+<div id="outline-container-orgeb2d363" class="outline-4">
+<h4 id="orgeb2d363"><span class="section-number-4">16.1.1.</span> program1</h4>
+<div class="outline-text-4" id="text-16-1-1">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">IO::Socket::UNIX</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">socket_path</span> = <span style="color: #95e454;">"/tmp/my_unix_socket"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">socket</span> = IO::Socket::UNIX-&gt;new(
+    Type   =&gt; SOCK_STREAM,
+    Local  =&gt; $<span style="color: #cae682;">socket_path</span>,
+    Listen =&gt; 1,
+) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Can't create socket: $!"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">client</span> = $<span style="color: #cae682;">socket</span>-&gt;accept();
+
+print $<span style="color: #cae682;">client</span> <span style="color: #95e454;">"Hello from server!\n"</span>;
+
+close($<span style="color: #cae682;">client</span>);
+close($<span style="color: #cae682;">socket</span>);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ed90cc" class="outline-4">
+<h4 id="org7ed90cc"><span class="section-number-4">16.1.2.</span> program2</h4>
+<div class="outline-text-4" id="text-16-1-2">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">IO::Socket::UNIX</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">socket_path</span> = <span style="color: #95e454;">"/tmp/my_unix_socket"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">socket</span> = IO::Socket::UNIX-&gt;new(
+    Type   =&gt; SOCK_STREAM,
+    Peer   =&gt; $<span style="color: #cae682;">socket_path</span>,
+) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Can't connect to socket: $!"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">line</span> = &lt;$<span style="color: #cae682;">socket</span>&gt;) {
+    print <span style="color: #95e454;">"Received from server: $line"</span>;
+}
+
+close($<span style="color: #cae682;">socket</span>);
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9232276" class="outline-3">
+<h3 id="org9232276"><span class="section-number-3">16.2.</span> file</h3>
+<div class="outline-text-3" id="text-16-2">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">IO::Handle</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">Fcntl</span> qw<span style="color: #95e454;">(:flock)</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">openFileWrite</span> {
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #99968b; font-style: italic;"># Accept file_path and return fh.</span>
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #8ac6f2; font-weight: bold;">my</span> ($<span style="color: #cae682;">file_path</span>) = @<span style="color: #cae682; text-decoration: underline;">_</span>; <span style="color: #99968b; font-style: italic;"># my $file_path = "/tmp/messages.txt";</span>
+    open(<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">fh</span>, <span style="color: #95e454;">'&gt;&gt;'</span>, $<span style="color: #cae682;">file_path</span>) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Can't open file '$file_path' - $!\n"</span>;
+    $<span style="color: #cae682;">fh</span>-&gt;autoflush(1);
+    <span style="color: #8ac6f2; font-weight: bold;">return</span>($<span style="color: #cae682;">fh</span>)
+}
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">myWriteToFile</span> {
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #99968b; font-style: italic;"># Use global $fh created from $file_path</span>
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #8ac6f2; font-weight: bold;">my</span> ($<span style="color: #cae682;">message</span>, $<span style="color: #cae682;">fh</span>) = @<span style="color: #cae682; text-decoration: underline;">_</span>;
+    print $<span style="color: #cae682;">message</span> . <span style="color: #95e454;">"\n"</span>;
+
+    flock($<span style="color: #cae682;">fh</span>, LOCK_EX) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Could not lock file - $!\n"</span>;
+    print $<span style="color: #cae682;">fh</span> $<span style="color: #cae682;">message</span> . <span style="color: #95e454;">"\n"</span>;
+    flock($<span style="color: #cae682;">fh</span>, LOCK_UN) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Cannot unlock file - $!\n"</span>;
+
+}
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">fh</span> = openFileWrite(<span style="color: #95e454;">"/tmp/messages.txt"</span>);
+myWriteToFile(<span style="color: #95e454;">"hello 2"</span>, $<span style="color: #cae682;">fh</span>);
+close($<span style="color: #cae682;">fh</span>);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">rm "/tmp/messages.txt"</span>
+cat <span style="color: #95e454;">"/tmp/messages.txt"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">strict</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">warnings</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">IO::Handle</span>;
+<span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">Fcntl</span> qw<span style="color: #95e454;">(:flock)</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">file_path</span> = <span style="color: #95e454;">"/tmp/messages.txt"</span>;
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">clearFile</span> {
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #99968b; font-style: italic;"># Clear file.</span>
+    <span style="color: #99968b; font-style: italic;"># uses $file_path</span>
+    <span style="color: #99968b; font-style: italic;">#</span>
+    open(<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">cfh</span>, <span style="color: #95e454;">'&gt;'</span>, $<span style="color: #cae682;">file_path</span>) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Cannot open file for writing: $!"</span>;
+    print $<span style="color: #cae682;">cfh</span> <span style="color: #95e454;">''</span>;
+    close $<span style="color: #cae682;">cfh</span>;
+    }
+
+<span style="color: #8ac6f2; font-weight: bold;">sub</span> <span style="color: #cae682; font-weight: bold;">myReadFromToFile</span> {
+    <span style="color: #99968b; font-style: italic;">#</span>
+    <span style="color: #99968b; font-style: italic;"># Uses $file_path</span>
+    <span style="color: #99968b; font-style: italic;">#</span>
+    open(<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">fh</span>, <span style="color: #95e454;">'&lt;'</span>, $<span style="color: #cae682;">file_path</span>) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Can't open file: $!"</span>;
+    $<span style="color: #cae682;">fh</span>-&gt;autoflush(1);
+
+    open(<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">lock_fh</span>, <span style="color: #95e454;">'&gt;&gt;'</span>, $<span style="color: #cae682;">file_path</span>) or <span style="color: #8ac6f2; font-weight: bold;">die</span> <span style="color: #95e454;">"Can't open lock file: $!"</span>;
+    flock($<span style="color: #cae682;">lock_fh</span>, LOCK_SH);
+    <span style="color: #8ac6f2; font-weight: bold;">my</span> @<span style="color: #cae682; text-decoration: underline;">lines</span>;
+    <span style="color: #8ac6f2; font-weight: bold;">while</span> (<span style="color: #8ac6f2; font-weight: bold;">my</span> $<span style="color: #cae682;">line</span> = &lt;$<span style="color: #cae682;">fh</span>&gt;) {
+        chomp($<span style="color: #cae682;">line</span>);
+        <span style="color: #99968b; font-style: italic;"># print "Received message: $line\n";</span>
+        push (@<span style="color: #cae682; text-decoration: underline;">lines</span>, $<span style="color: #cae682;">line</span>);
+    };
+    clearFile() <span style="color: #8ac6f2; font-weight: bold;">if</span> @<span style="color: #cae682; text-decoration: underline;">lines</span>;
+    print <span style="color: #95e454;">"Received message: @lines\n"</span>;
+    close($<span style="color: #cae682;">lock_fh</span>);
+
+    close($<span style="color: #cae682;">fh</span>);
+}
+
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (1) {
+    myReadFromToFile();
+    sleep(1);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge3505b6" class="outline-2">
+<h2 id="orge3505b6"><span class="section-number-2">17.</span> Date and Time</h2>
+<div class="outline-text-2" id="text-17">
+<div class="org-src-container">
+<pre class="src src-perl"><span style="color: #8ac6f2; font-weight: bold;">use</span> <span style="color: #e5786d; font-weight: bold;">POSIX</span> qw<span style="color: #95e454;">(strftime)</span>;
+
+$<span style="color: #cae682;">datestring</span> = strftime <span style="color: #95e454;">"%a %b %e %H:%M:%S %Y"</span>, localtime;
+print(<span style="color: #95e454;">"$datestring\n"</span>);
+
+$<span style="color: #cae682;">datestring</span> = strftime <span style="color: #95e454;">"%F %R"</span>, localtime;
+print(<span style="color: #95e454;">"$datestring\n"</span>);
+</pre>
+</div>
+
+<pre class="example">
+Sun Apr 21 18:27:42 2024
+2024-04-21 18:27
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2dd7858" class="outline-2">
+<h2 id="org2dd7858"><span class="section-number-2">18.</span> documentation style</h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li><a href="https://perldoc.perl.org/perldocstyle">https://perldoc.perl.org/perldocstyle</a></li>
+<li>comment in ine line # before or after line</li>
+<li>comment in 3 lines after subroutine definition</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc371d97" class="outline-2">
+<h2 id="orgc371d97"><span class="section-number-2">19.</span> code style</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+<a href="https://www.tutorialspoint.com/perl/perl_coding_standard.htm">https://www.tutorialspoint.com/perl/perl_coding_standard.htm</a>
+</p>
+<ul class="org-ul">
+<li>4 char indentation</li>
+<li>Opening curly on same line as keyword, if possible, otherwise line up.</li>
+<li>Space before the opening curly of a multi-line BLOCK.</li>
+<li>One-line BLOCK may be put on one line, including curlies.</li>
+<li>No space before the semicolon.</li>
+<li>Space around most operators.</li>
+<li>No space between function name and its opening parenthesis.</li>
+<li>Space after each comma.</li>
+</ul>
+
+<p>
+good
+</p>
+<pre class="example">
+print "Starting analysis\n" if $verbose;
+</pre>
+
+<p>
+bad
+</p>
+<pre class="example">
+$verbose &amp;&amp; print "Starting analysis\n";
+</pre>
+
+
+<p>
+good
+</p>
+<pre class="example">
+open(FOO,$foo) || die "Can't open $foo: $!";
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:49</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

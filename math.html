@@ -1,0 +1,4090 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org80af382">1. math unicode</a></li>
+<li><a href="#org2b90cb5">2. terms uncategorized</a></li>
+<li><a href="#org148e9a2">3. math markdown</a></li>
+<li><a href="#orgf6e2a56">4. history</a></li>
+<li><a href="#orgf63220c">5. major branches of mathematics</a>
+<ul>
+<li><a href="#orgbc69fbc">5.1. Number theory (old Arithmetic)</a>
+<ul>
+<li><a href="#orgc250d48">5.1.1. monomial, polynomial, binomial expressions</a></li>
+<li><a href="#orge4737b3">5.1.2. definition of arithmetic</a></li>
+<li><a href="#orgc61ce81">5.1.3. basic</a></li>
+<li><a href="#org3f0dd56">5.1.4. operations</a></li>
+<li><a href="#org3f06102">5.1.5. monomial (одночлен) and polynomial, terms</a></li>
+<li><a href="#org828546a">5.1.6. mean</a></li>
+<li><a href="#org2c8d78a">5.1.7. links</a></li>
+</ul>
+</li>
+<li><a href="#orgab13304">5.2. <span class="todo TODO">TODO</span> Geometry</a></li>
+<li><a href="#org91bce5c">5.3. Algebra</a>
+<ul>
+<li><a href="#orgf651cc7">5.3.1. terms</a></li>
+</ul>
+</li>
+<li><a href="#org0d077cf">5.4. <span class="todo TODO">TODO</span> Calculus Математический анализ</a>
+<ul>
+<li><a href="#orgdd4da18">5.4.1. terms</a></li>
+<li><a href="#org36bc34d">5.4.2. definition of calculus</a></li>
+<li><a href="#org2f638e2">5.4.3. <span class="todo TODO">TODO</span> Fundamental theorem of calculus</a></li>
+</ul>
+</li>
+<li><a href="#org5a27701">5.5. <span class="todo TODO">TODO</span> Discrete mathematics</a></li>
+<li><a href="#orgf56eaa5">5.6. Mathematical logic</a>
+<ul>
+<li><a href="#org8929d58">5.6.1. Major subareas</a></li>
+<li><a href="#org0e822d3">5.6.2. terms</a></li>
+<li><a href="#org875bf91">5.6.3. classical logic (deductive logic)</a></li>
+<li><a href="#org56e5930">5.6.4. Formal logical systems</a></li>
+</ul>
+</li>
+<li><a href="#orga53e940">5.7. Set theory </a></li>
+<li><a href="#org07b5f05">5.8. Probability see probability_theory</a></li>
+<li><a href="#org6d6c726">5.9. Statistics see statistics</a></li>
+<li><a href="#org9b6fe9a">5.10. <span class="todo TODO">TODO</span> decision sciences</a></li>
+<li><a href="#orgf0ae3ab">5.11. <span class="todo TODO">TODO</span> Trigonometry</a></li>
+</ul>
+</li>
+<li><a href="#orgb5352e5">6. Logarithm [ˈlɔgərɪðəm]</a></li>
+<li><a href="#orgcfa4a70">7. Graph theory [ɡrɑːf] [ˈθɪərɪ]</a>
+<ul>
+<li><a href="#org5242ce4">7.1. main terms</a></li>
+<li><a href="#orgac287fd">7.2. terms</a></li>
+<li><a href="#org0343f1e">7.3. Theorems  [ˈθɪərəm]</a>
+<ul>
+<li><a href="#org66ef576">7.3.1. Trees</a></li>
+</ul>
+</li>
+<li><a href="#org5d08a7a">7.4. Types of graphs:</a></li>
+<li><a href="#org5499967">7.5. links</a></li>
+</ul>
+</li>
+<li><a href="#org39f5787">8. Abstract algebra and group theory [gruːp] Теория групп</a>
+<ul>
+<li><a href="#orgd4c546f">8.1. terms</a></li>
+<li><a href="#org420dc5d">8.2. Teorems</a></li>
+</ul>
+</li>
+<li><a href="#org8d5f165">9. Topology</a>
+<ul>
+<li><a href="#org73bbb8c">9.1. dot product</a></li>
+<li><a href="#org20a7322">9.2. Vector space or linear space</a></li>
+<li><a href="#org8d15476">9.3. Affine space</a></li>
+<li><a href="#orgfc04c89">9.4. Norm</a></li>
+</ul>
+</li>
+<li><a href="#org1a3674e">10. Linear algebra</a>
+<ul>
+<li><a href="#org5c7dc27">10.1. Linear combination </a></li>
+<li><a href="#orgf29a961">10.2. Cramer's Rule</a></li>
+<li><a href="#orgccec4bf">10.3. Соглашение Эйнштейна Einstein notation</a></li>
+<li><a href="#orgff67936">10.4. Ковариантность и контравариантность</a></li>
+</ul>
+</li>
+<li><a href="#org212bbec">11. Matrix theory</a>
+<ul>
+<li><a href="#org3092a14">11.1. Operations</a></li>
+<li><a href="#org2a8b30b">11.2. Elementary matrix Элементарные преобразования матрицы</a></li>
+<li><a href="#org47482e5">11.3. Invertible matrix Обра́тная ма́трица A<sup>-1</sup></a></li>
+<li><a href="#org221f400">11.4. Identity matrix Единичная матрица</a></li>
+<li><a href="#org3b0f3be">11.5. singular-value decomposition (SVD) Сингулярное разложение</a></li>
+</ul>
+</li>
+<li><a href="#org7d7be5f">12. Combinatorics - Комбинаторика </a>
+<ul>
+<li><a href="#org13b4a9c">12.1. Биномиальный коэффициент (combination), факториал</a>
+<ul>
+<li><a href="#orge49ae4e">12.1.1. combination сочетание </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0b1039e">13. Probability theory </a>
+<ul>
+<li><a href="#orgabb8c3f">13.1. Probability distribution</a></li>
+<li><a href="#orgc5d885b">13.2. Kolmogorov axioms and basis ( частотная)</a></li>
+<li><a href="#org93fe826">13.3. веротяность, условная вероятность </a></li>
+<li><a href="#org034f849">13.4. types of events</a></li>
+<li><a href="#org20bb81d">13.5. теорема Байеса Bayes' theorem</a>
+<ul>
+<li><a href="#orgabdfad9">13.5.1. Prior probability A</a></li>
+<li><a href="#org5a271b8">13.5.2. Example:</a></li>
+</ul>
+</li>
+<li><a href="#org934e743">13.6. Frequent классическая частотная статистика</a></li>
+<li><a href="#org5af9e7a">13.7. Bayesian Байесовская статистика</a></li>
+<li><a href="#org2777eca">13.8. схемой повторных независимых испытаний или схемой Бернулли </a></li>
+<li><a href="#orgf312c13">13.9. Непрерывная случайная величина  continuous probability distribution</a>
+<ul>
+<li><a href="#org8c1344d">13.9.1. Функция распределения or cumulative distribution function CDF</a></li>
+<li><a href="#orge94ed7a">13.9.2. Плотность вероятности probability density function (PDF) or density f(x) </a></li>
+</ul>
+</li>
+<li><a href="#orge93257b">13.10. Распределения</a>
+<ul>
+<li><a href="#org942effb">13.10.1. характеристики</a></li>
+<li><a href="#orgb0b67e1">13.10.2. виды случайных величин и распределений</a></li>
+<li><a href="#org34413ee">13.10.3. Сходимость по распределению Convergence of random variables</a></li>
+<li><a href="#org09bc092">13.10.4. Example: calc expected value</a></li>
+</ul>
+</li>
+<li><a href="#org92e1387">13.11. Monte Carlo method</a></li>
+<li><a href="#org01ed0dd">13.12. Law of large numbers Закон больших чисел</a></li>
+<li><a href="#org0c04573">13.13. Центральная предельная теорема Central limit theorem</a></li>
+<li><a href="#orgdee81ee">13.14. Це́пь Ма́ркова Markov chain</a></li>
+<li><a href="#orgeaf876f">13.15. python PDF, CDF, variance, std</a></li>
+</ul>
+</li>
+<li><a href="#org6021fcc">14. Математическая статистика </a>
+<ul>
+<li><a href="#org4101254">14.1. terms</a></li>
+<li><a href="#orgb3b26e9">14.2. topics wiki</a></li>
+<li><a href="#orgfd206d3">14.3. types of statistic:</a>
+<ul>
+<li><a href="#org3b43aae">14.3.1. Statistical inference or inductive statistics</a></li>
+<li><a href="#org4fa56a2">14.3.2. Descriptive statistics</a></li>
+</ul>
+</li>
+<li><a href="#orgbdb9dc5">14.4. Statistical inference</a></li>
+<li><a href="#org3e39060">14.5. regression analysis</a>
+<ul>
+<li><a href="#orgb036a69">14.5.1. Linear regression</a></li>
+<li><a href="#org66c36e6">14.5.2. General linear models or multivariate linear models (Основная линейная модель)</a></li>
+<li><a href="#org6f78d90">14.5.3. Generalized linear model</a></li>
+</ul>
+</li>
+<li><a href="#orgb7e74cc">14.6. Statistical dispersion</a></li>
+<li><a href="#org0ab4b44">14.7. Causal reasoning </a></li>
+<li><a href="#org8bcc850">14.8. A/B тестированию, Bucket tests, Split-run testing, Раздельное тестирование </a>
+<ul>
+<li><a href="#orga928008">14.8.1. terms</a></li>
+<li><a href="#org56ffa2b">14.8.2. definition</a></li>
+<li><a href="#orgec4ff09">14.8.3. steps</a></li>
+<li><a href="#orgf904ad1">14.8.4. hypothesis testing</a></li>
+<li><a href="#orgbca3e8f">14.8.5. Частотный и байесовский подходы - сравнение</a></li>
+<li><a href="#orgddc3a93">14.8.6. links</a></li>
+</ul>
+</li>
+<li><a href="#org219c4c0">14.9. sample and population</a></li>
+<li><a href="#orgfb67d8e">14.10. точечное оценивание (point estimation)</a></li>
+<li><a href="#orgceb589c">14.11. Estimator [ˈestɪmeɪtə] оценка</a>
+<ul>
+<li><a href="#orgf5c054b">14.11.1. point estimator</a></li>
+</ul>
+</li>
+<li><a href="#orgd117903">14.12. интервальное оценивание (interval estimation) - Доверительный интервал</a></li>
+<li><a href="#org5d7d82b">14.13. Likelihood and Probability</a></li>
+<li><a href="#org46649a3">14.14. Statistical hypothesis testing </a>
+<ul>
+<li><a href="#org62c749a">14.14.1. steps:</a></li>
+<li><a href="#org60efdca">14.14.2. Chi-squared distribution</a></li>
+<li><a href="#org3c2c878">14.14.3. examples</a></li>
+<li><a href="#org6b11281">14.14.4. Behrens–Fisher problem</a></li>
+</ul>
+</li>
+<li><a href="#orge86d24f">14.15. <span class="todo TODO">TODO</span> Power Analysis</a></li>
+<li><a href="#org1db30c5">14.16. Resampling</a></li>
+<li><a href="#org0369012">14.17. R-squared, Adjusted R-squared and Pseudo-R-squared (coefficient of determination)</a></li>
+<li><a href="#orga5c8fd1">14.18. Confounding</a></li>
+<li><a href="#orge3baa56">14.19. knowledge</a></li>
+</ul>
+</li>
+<li><a href="#org9ce058a">15. Physics</a>
+<ul>
+<li><a href="#org21bf8e7">15.1. SUVAT equations -  kinematic equations of motion</a></li>
+</ul>
+</li>
+<li><a href="#orgd8c5572">16. Calculus Математический анализ (Functional analysis)</a>
+<ul>
+<li><a href="#orgadff9aa">16.1. Differential calculus</a>
+<ul>
+<li><a href="#orgbabf490">16.1.1. Gradient or gradient vector field</a></li>
+</ul>
+</li>
+<li><a href="#org557f397">16.2. Vector calculus</a>
+<ul>
+<li><a href="#org0cc0881">16.2.1. Vector algebra </a></li>
+</ul>
+</li>
+<li><a href="#orgb6dfd17">16.3. integral calculus</a></li>
+<li><a href="#org3cc9bf7">16.4. Fourier transform (discrete Fourier transform - DFT)</a>
+<ul>
+<li><a href="#org2bdc71b">16.4.1. Convolution</a></li>
+<li><a href="#orgb2ffaea">16.4.2. Dirac delta function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>- mode: xah-math-input;
+</p>
+
+<p>
+<a href="https://www.coursera.org/specializations/compstats">https://www.coursera.org/specializations/compstats</a>
+</p>
+<ul class="org-ul">
+<li><a href="https://sjster.github.io/introduction_to_computational_statistics/docs/index.html">https://sjster.github.io/introduction_to_computational_statistics/docs/index.html</a></li>
+<li>Русские лекции Университета ИТМО <a href="https://neerc.ifmo.ru/wiki">https://neerc.ifmo.ru/wiki</a></li>
+</ul>
+
+<p>
+app-emacs/auctex - LaTeX документы
+</p>
+<div id="outline-container-org80af382" class="outline-2">
+<h2 id="org80af382"><span class="section-number-2">1.</span> math unicode</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+∑<sub>x</sub> - sum by x
+</p>
+</div>
+</div>
+<div id="outline-container-org2b90cb5" class="outline-2">
+<h2 id="org2b90cb5"><span class="section-number-2">2.</span> terms uncategorized</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>c is at most a constant - является не более чем константой</li>
+<li>a multiple of g - кратной</li>
+<li>multivariate - многоменрый</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org148e9a2" class="outline-2">
+<h2 id="org148e9a2"><span class="section-number-2">3.</span> math markdown</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>TeX LaTeX (Tex Commands) - Academic documents, Multi-purpose</li>
+<li>Math Markup Language (MathML) (MathML code) - tags - part of HTML5</li>
+</ul>
+
+<p>
+UnicodeMath - Unicode can encode most mathematical expressions in a readable nearly plain text. UnicodeMath is
+ more compact and easier to read than [La]TeX or MathML.
+</p>
+<ul class="org-ul">
+<li>delegates some rich-text properties like text and background colors, font size, footnotes, comments,
+hyperlinks, etc., to a higher layer</li>
+<li><a href="https://www.unicode.org/notes/tn28/UTN28-PlainTextMath-v3.1.pdf">https://www.unicode.org/notes/tn28/UTN28-PlainTextMath-v3.1.pdf</a></li>
+<li><a href="https://github.com/vspinu/company-math">https://github.com/vspinu/company-math</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6e2a56" class="outline-2">
+<h2 id="orgf6e2a56"><span class="section-number-2">4.</span> history</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>несоизмеримые отрезки - Евдоксова теория несоизмеримых величин, изложенная в геометрической форме в "Началах" Евклида</li>
+<li>открытие несчетного континуума (0;1) Г. Кантор</li>
+<li>Куртом Фридрихом Гёделем — доказательства теоремы о неполноте</li>
+
+<li>В середине ХХ века была сформулирована теория хаоса, начало которой
+было положено русским математиком Колмогоровым в теории вероятностей
+и продолжено его учениками Арнольдом, Мозером и Синаем. Суть
+открытия заключается в том, что большинство нелинейных
+дифференциальных уравнений решаются неаналитическим путем, их
+невозможно решить на компьютере, они имеют характеристики случайных
+процессов, хотя и подчиняются детерминированным законам.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf63220c" class="outline-2">
+<h2 id="orgf63220c"><span class="section-number-2">5.</span> major branches of mathematics</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgbc69fbc" class="outline-3">
+<h3 id="orgbc69fbc"><span class="section-number-3">5.1.</span> Number theory (old Arithmetic)</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+When we multiply or divide an inequality by a negative integer, the sign of the inequality will be reversed
+(changed). x&gt;y, x*z&lt;y*z  if z&lt;0
+</p>
+
+<p>
+factorization  -(x – 2)(x + 2) is a factorization of the polynomial x<sup>2</sup> – 4
+</p>
+
+<p>
+greatest common factor or divisor (GCF or GCD)
+</p>
+</div>
+
+<div id="outline-container-orgc250d48" class="outline-4">
+<h4 id="orgc250d48"><span class="section-number-4">5.1.1.</span> monomial, polynomial, binomial expressions</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+monomial is:
+</p>
+<ul class="org-ul">
+<li>a number 2</li>
+<li>a variable x</li>
+<li>a product of a number and a variable where all exponents are whole numbers 2<sup>3</sup>*x<sup>6</sup>, 2pq</li>
+</ul>
+<p>
+not: 2*p*q<sup>-2</sup>, 2<sup>x</sup>, 5/y
+</p>
+
+<p>
+The degree of the monomial is the sum of the exponents of all included variables. 42 = 0, 5x = 1, 2pq = 2
+</p>
+
+<p>
+A polynomial - sum of each monomial is called a term.  degree of the polynomial is the greatest degree of its
+terms
+</p>
+
+<p>
+first term of a polynomial is called the leading coefficient
+</p>
+
+<p>
+binomial - 2 terms, trinomial -3 terms
+</p>
+</div>
+</div>
+<div id="outline-container-orge4737b3" class="outline-4">
+<h4 id="orge4737b3"><span class="section-number-4">5.1.2.</span> definition of arithmetic</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+Arithmetic [əˈrɪθmətɪk] - study of numbers, especially the properties of the traditional operations on
+ them—addition, subtraction, multiplication and division. arithmetic also include advanced computing of
+ percentage, logarithm, exponentiation and square roots, etc.
+</p>
+<ol class="org-ol">
+<li>Simplify the expressions inside parentheses ( ), brackets [ ], braces { } and fractions bars.</li>
+<li>Evaluate all powers.</li>
+<li>Do all multiplications and divisions from left to right.</li>
+<li>Do all additions and subtractions from left to right.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc61ce81" class="outline-4">
+<h4 id="orgc61ce81"><span class="section-number-4">5.1.3.</span> basic</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+interval can either be closed (i.e. [ a , b ]) or open (i.e. ( a , b ))
+</p>
+
+<p>
+Scientific notation(E notation): way of expressing numbers
+</p>
+<ul class="org-ul">
+<li>6.02e23 = 6.02*(10<sup>23</sup>)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f0dd56" class="outline-4">
+<h4 id="org3f0dd56"><span class="section-number-4">5.1.4.</span> operations</h4>
+<div class="outline-text-4" id="text-5-1-4">
+<ul class="org-ul">
+<li>Addition: term + term = sum</li>
+<li>Substraction: term - term = difference</li>
+<li>Multiplication:
+<ul class="org-ul">
+<li>factor * factor = product</li>
+<li>multiplier * multiplicant</li>
+</ul></li>
+<li>Division:
+<ul class="org-ul">
+<li>dividend / divisor = fraction, quotient, ratio</li>
+<li>numerator / denominator</li>
+</ul></li>
+<li>Modulo:
+<ul class="org-ul">
+<li>remainder:  5 divided by 2 has a quotient of 2 and a remainder of 1</li>
+</ul></li>
+<li>Exponentiation: base<sup>exponent</sup> = power</li>
+<li>n-th root: (degree)√(radicand) = root</li>
+<li>Logarithm: (base)log(anti-logarithm) = logarithm</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f06102" class="outline-4">
+<h4 id="org3f06102"><span class="section-number-4">5.1.5.</span> monomial (одночлен) and polynomial, terms</h4>
+<div class="outline-text-4" id="text-5-1-5">
+<p>
+monomial is a power product of variables with nonnegative integer exponents
+</p>
+<ul class="org-ul">
+<li>x<sup>2</sup>*y*z<sup>3</sup>=xxyzzz</li>
+<li>-7*x<sup>5</sup></li>
+<li>(3-4i)*x<sup>4</sup>*y*z<sup>13</sup>, where (3-4i) is a complex number</li>
+<li>a number 2</li>
+<li>a variable x</li>
+<li>a product of a number and a variable where all exponents are whole numbers 2<sup>3</sup>*x<sup>6</sup>, 2pq</li>
+</ul>
+<p>
+not: 2*p*q<sup>-2</sup>, 2<sup>x</sup>, 5/y
+</p>
+
+<p>
+<b>polynomial</b> is an expression consisting of indeterminates (also called variables) and
+ coefficients. polynomial is a linear combination of monomials.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org828546a" class="outline-4">
+<h4 id="org828546a"><span class="section-number-4">5.1.6.</span> mean</h4>
+<div class="outline-text-4" id="text-5-1-6">
+<ul class="org-ul">
+<li>взвешенное - если значения повторяются и это повторение нужно особым образом взвесить</li>
+<li>невзвешенное - простое  средниt арифметическое</li>
+</ul>
+
+<p>
+<b>Generalized mean</b> if p is a non-zero real number, and x1 , … , xn are positive real numbers
+</p>
+<ul class="org-ul">
+<li>Mp(x1,&#x2026;,xn) = (1/n*(n)∑xi<sup>p</sup>)<sup>1</sup>/p</li>
+</ul>
+
+<p>
+if xi are equal: min&lt;=HM&lt;=GM&lt;=AM&lt;=max
+</p>
+<ul class="org-ul">
+<li>arithmetic mean (p=1) (AM)=(x1+x2+..)/n</li>
+<li>geometric mean (p=0) (GM)=(n)√|x1*x2*..|</li>
+<li>harmonic mean (p=-1) (HM)=n/(1/x1+&#x2026;+1/xn)</li>
+<li>root mean square (p=2) (RMS) = √(1/n*(x1<sup>2</sup>+&#x2026;+xn<sup>2</sup>))</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2c8d78a" class="outline-4">
+<h4 id="org2c8d78a"><span class="section-number-4">5.1.7.</span> links</h4>
+<div class="outline-text-4" id="text-5-1-7">
+<p>
+<a href="https://www.mathplanet.com/">https://www.mathplanet.com/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgab13304" class="outline-3">
+<h3 id="orgab13304"><span class="section-number-3">5.2.</span> <span class="todo TODO">TODO</span> Geometry</h3>
+</div>
+<div id="outline-container-org91bce5c" class="outline-3">
+<h3 id="org91bce5c"><span class="section-number-3">5.3.</span> Algebra</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>Its direct application is not often observed in daily life and is associated with high school education.
+Arithmetic is generally applicable in real life and associated with elementary education.</li>
+<li>It uses numbers, variables, and general rules or formulae to solve problems. Not just 4 operatios like in
+Arithmetic.</li>
+</ul>
+</div>
+<div id="outline-container-orgf651cc7" class="outline-4">
+<h4 id="orgf651cc7"><span class="section-number-4">5.3.1.</span> terms</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+<b>indeterminate</b> is a symbol that is treated as a variable, but does not stand for anything else except itself.
+</p>
+
+<p>
+Substitution (logic) is
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d077cf" class="outline-3">
+<h3 id="org0d077cf"><span class="section-number-3">5.4.</span> <span class="todo TODO">TODO</span> Calculus Математический анализ</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-orgdd4da18" class="outline-4">
+<h4 id="orgdd4da18"><span class="section-number-4">5.4.1.</span> terms</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<ul class="org-ul">
+<li>convergence</li>
+<li>infinite sequences: (1, 1, 2, 3, 5, 8), (a<sub>n</sub>), (b<sub>n</sub>) enumerated collection of objects in which repetitions are allowed and
+order matters.</li>
+<li>infinite series: a1+a2+ &#x2026;</li>
+<li>well-defined limit</li>
+<li>Antiderivative: of a function f is a differentiable function F whose derivative is equal to the original
+function f. F' = f.
+<ul class="org-ul">
+<li>antidifferentiation (or indefinite integration) - process of solving for antiderivatives</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org36bc34d" class="outline-4">
+<h4 id="org36bc34d"><span class="section-number-4">5.4.2.</span> definition of calculus</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+study of continuous change, in the same way that geometry is the study of shape, and algebra is the study of
+ generalizations of arithmetic operations.
+</p>
+
+<p>
+two major branches:
+</p>
+<ul class="org-ul">
+<li>differential calculus - instantaneous rates of change, and the slopes of curves.</li>
+<li>integral calculus - accumulation of quantities, and areas under or between curves.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2f638e2" class="outline-4">
+<h4 id="org2f638e2"><span class="section-number-4">5.4.3.</span> <span class="todo TODO">TODO</span> Fundamental theorem of calculus</h4>
+<div class="outline-text-4" id="text-5-4-3">
+<p>
+link differentiation with integration
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org1ba1557"></a>first fundamental theorem of calculus<br /></li>
+<li><a id="orgf8fa65a"></a>second fundamental theorem of calculus<br />
+<div class="outline-text-5" id="text-5-4-3-2">
+<p>
+shows how antiderivatives are related to definite integrals.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5a27701" class="outline-3">
+<h3 id="org5a27701"><span class="section-number-3">5.5.</span> <span class="todo TODO">TODO</span> Discrete mathematics</h3>
+</div>
+<div id="outline-container-orgf56eaa5" class="outline-3">
+<h3 id="orgf56eaa5"><span class="section-number-3">5.6.</span> Mathematical logic</h3>
+<div class="outline-text-3" id="text-5-6">
+</div>
+<div id="outline-container-org8929d58" class="outline-4">
+<h4 id="org8929d58"><span class="section-number-4">5.6.1.</span> Major subareas</h4>
+<div class="outline-text-4" id="text-5-6-1">
+<ul class="org-ul">
+<li>set theory <a href="#orgd6ee95c">5.7</a></li>
+<li>model theory</li>
+<li>proof theory and constructive mathematics</li>
+<li>recursion theory</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0e822d3" class="outline-4">
+<h4 id="org0e822d3"><span class="section-number-4">5.6.2.</span> terms</h4>
+<div class="outline-text-4" id="text-5-6-2">
+<dl class="org-dl">
+<dt>premise</dt><dd>or argument - part of inference, a true or false declarative statement. a proposition. used in an
+argument to prove the truth of another proposition called the conclusion.</dd>
+<dt>conclusion</dt><dd>or entailment. the consequence of the premises.</dd>
+<dt>formal logical systems</dt><dd>deductive system (most commonly first order predicate logic) together with
+additional (non-logical) axioms</dd>
+<dt>Signature</dt><dd>non-logical symbols of a formal language.</dd>
+<dt>predicates</dt><dd>symbol that represents a property or a relation. это утверждение, высказанное о субъекте.  это
+функция с множеством значений { 0 , 1 }  (или {ложь, истина}),</dd>
+<dt>Quantifier</dt><dd>an operator that specifies how many individuals in the domain of discourse satisfy an open formula</dd>
+<dt>Open formula, free variables</dt><dd>a formula that contains at least one free variable: x+2 &gt; y</dd>
+<dt>closed formula, bounded variables</dt><dd>"∃y ∀x: x+2 &gt; y" has truth value true</dd>
+<dt>Closed-form expression</dt><dd>an expression formed with constants, variables and a finite set of basic functions
+connected by arithmetic operations (+, −, ×, ÷, and integer powers) and function composition. functions are
+nth root, exponential function, logarithm, and trigonometric functions or others.</dd>
+<dt>terms</dt><dd>mathematical object - variable or predicate of variables</dd>
+<dt>first-order term</dt><dd>recursively constructed from constant symbols, variables and function symbols (x+1)*(x+1)</dd>
+<dt>atomic formula</dt><dd>An expression formed by applying a predicate symbol to an appropriate number of
+terms. (x+1)*(x+1) &gt;= 0, evaluates to true for each real-numbered value of x.</dd>
+<dt>Fallacy ['fæləsɪ]</dt><dd>Логическая ошибка - the use of invalid or otherwise faulty reasoning in the
+construction of an argument which may appear to be a well-reasoned argument if unnoticed.</dd>
+<dt>bivalent</dt><dd>true of false</dd>
+<dt>Hasse diagram</dt><dd><a href="https://en.wikipedia.org/wiki/Logical_connective">https://en.wikipedia.org/wiki/Logical_connective</a></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org875bf91" class="outline-4">
+<h4 id="org875bf91"><span class="section-number-4">5.6.3.</span> classical logic (deductive logic)</h4>
+<div class="outline-text-4" id="text-5-6-3">
+<p>
+Most semantics of classical logic are <b>bivalent</b>, meaning all of the possible denotations of propositions can
+ be categorized as either true or false
+</p>
+
+<p>
+<b>argument</b> - collection of statements (premises) intended to support or infer a claim (conclusion)
+</p>
+<ul class="org-ul">
+<li>deductive - conclusion necessarily/certainly follows from premises
+<ul class="org-ul">
+<li>valid - sound - valid and all premises are true</li>
+<li>invalid - unsound</li>
+</ul></li>
+<li>inductive - conclusion follows from premises with some probability
+<ul class="org-ul">
+<li>string
+<ul class="org-ul">
+<li>cogen - strong and all premises are true</li>
+<li>uncogen -</li>
+</ul></li>
+<li>weak - uncogen</li>
+</ul></li>
+</ul>
+
+<p>
+inductive reasoning - general principle is derived from a body of observations.
+</p>
+<ul class="org-ul">
+<li>if n=1 and n+1 = 1 and n+2 = 1, then n+n = 1</li>
+<li>types:
+<ul class="org-ul">
+<li>Inductive generalization</li>
+<li>Statistical generalization</li>
+<li>Anecdotal evidence - evidence based only on personal observation</li>
+<li>Prediction</li>
+<li>Statistical syllogism</li>
+<li>&#x2026;</li>
+</ul></li>
+</ul>
+<p>
+Deductive reasoning - Inferences are steps in reasoning, moving from premises to logical consequences
+</p>
+
+<p>
+Hasse diagram of logical connectives. Logic and set theory. <a href="https://en.wikipedia.org/wiki/Logical_connective">https://en.wikipedia.org/wiki/Logical_connective</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org56e5930" class="outline-4">
+<h4 id="org56e5930"><span class="section-number-4">5.6.4.</span> Formal logical systems</h4>
+<div class="outline-text-4" id="text-5-6-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgcbb680e"></a>Signature <a id="orgc540daf"></a><br />
+<div class="outline-text-5" id="text-5-6-4-1">
+<p>
+σ = (S<sub>fun</sub>, S<sub>rel</sub>, S<sub>const</sub>, ar)
+</p>
+<ul class="org-ul">
+<li>S<sub>fun</sub> - function symbols (examples: + , × , 0 , 1 ),</li>
+<li>S<sub>rel</sub> - predicates (examples: ≤ , ∈),</li>
+<li>S<sub>const</sub> - constants  (examples: 0 , 1)</li>
+<li>ar - assigns a natural number called arity to every S<sub>fun</sub> or S<sub>rel</sub></li>
+</ul>
+
+<p>
+<b>relational signature</b> - no function symbols
+</p>
+
+<p>
+<b>algebraic signature</b> - no relation symbols
+</p>
+</div>
+</li>
+<li><a id="orgbb49428"></a>propositional logic, Propositional calculus, statement logic, sentential calculus, sentential logic, zeroth-order logic<br />
+<div class="outline-text-5" id="text-5-6-4-2">
+<p>
+proposition - true of false and relations between them
+</p>
+
+<p>
+L = L(A, Ω, Z, I) - language
+</p>
+<ul class="org-ul">
+<li>A alpha - countably infinite set of symbols that serve to represent logical propositions: A ={p,q,r,s,t,u,p}</li>
+<li>Ω omega - operator symbols or logical connectives.: conjunction, disjunction, and implication ( ∧ , ∨ and
+→), negation (¬). Ω<sub>0</sub>={⊥ ,⊤ } or {F,T}</li>
+<li>Z zeta - transformation rules that are called inference rules when they acquire logical applications.</li>
+<li>I iota - countable set of initial points that are called axioms when they receive logical interpretations.</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org4ba5bb1"></a>Standard form of rule of inference:<br />
+<div class="outline-text-6" id="text-5-6-4-2-1">
+<ul class="org-ul">
+<li>Premise#1</li>
+<li>Premise#2</li>
+<li>&#x2026;</li>
+<li>Premise#n</li>
+<li><span class="underline"><span class="underline"><span class="underline"><span class="underline">__</span></span></span></span></li>
+<li>Conclusion</li>
+</ul>
+
+<p>
+propositions
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org4809d64"></a>rules<br />
+<div class="outline-text-7" id="text-5-6-4-2-1-1">
+<ul class="org-ul">
+<li>( p ∧ ( p → q ) ) → q                 	Modus ponens</li>
+<li>( ¬ q ∧ ( p → q ) ) → ¬ p             	Modus tollens</li>
+<li>( ( p ∨ q ) ∨ r ) → ( p ∨ ( q ∨ r ) )  	Associative</li>
+<li>( p ∧ q ) → ( q ∧ p )                  	Commutative</li>
+<li>( ( p → q ) ∧ ( q → p ) ) → ( p ↔ q )  	Law of biconditional propositions</li>
+<li>( ( p ∧ q ) → r ) → ( p → ( q → r ) )  	Exportation</li>
+</ul>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/List_of_rules_of_inference#Table:_Rules_of_Inference">https://en.wikipedia.org/wiki/List_of_rules_of_inference#Table:_Rules_of_Inference</a>
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a id="orgbbbf31f"></a>First-order logic, predicate logic, quantificational logic, and first-order predicate calculus, логики первого порядка<br />
+<div class="outline-text-5" id="text-5-6-4-3">
+<p>
+extension of proposition logic +  quantified variables or relations
+</p>
+
+<p>
+"Theory" is sometimes understood in a more formal sense as just a set of sentences in first-order logic.
+</p>
+
+<p>
+Alphabet - consist of
+</p>
+
+<ol class="org-ol">
+<li><b>logical symbols</b>, which always have the same meaning. vary by author, but usually include the following:
+<ul class="org-ul">
+<li>Quantifier symbols:
+<ul class="org-ul">
+<li>∀ for universal quantification - Квантор всеобщности</li>
+<li>∃ for existential quantification -  ∃ Квантор существования asdasd</li>
+</ul></li>
+<li>Logical connectives:
+<ul class="org-ul">
+<li>¬,~ Отрицание («не») negation</li>
+<li>∧, &amp; Конъюнкция («и») conjunction</li>
+<li>∨ Дизъюнкция («или»)  disjunction</li>
+<li>→, ⊃ Импликация («если …, то …») implication</li>
+<li>↔,≡ biconditional</li>
+</ul></li>
+<li>Parentheses, brackets, and other punctuation symbols</li>
+<li>variables:  x, y, z, &#x2026; . Subscripts are often used to distinguish variables: x0, x1, x2, &#x2026; .</li>
+<li>An <b>equality symbol</b> (sometimes, <b>identity symbol</b>) =</li>
+<li>constants - T, V, or ⊤ for "true" F, O, or ⊥ for "false"</li>
+</ul></li>
+
+<li><b>Non-logical symbols</b> - <a href="#orgc540daf">5.6.4.1</a> - set of symbols</li>
+</ol>
+
+<p>
+In first-order logic, the symbols in a signature are also known as the <b>non-logical symbols</b>.
+</p>
+
+<p>
+formulas  (also called well-formed formulas or WFFs):
+</p>
+<ul class="org-ul">
+<li>Predicate of terms</li>
+<li>Equality of terms</li>
+<li>Negation of formula</li>
+<li>binary connectives of formulas</li>
+<li>quantifiers for formulas and variables</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org48ae635"></a>Second-order logic<br />
+<div class="outline-text-5" id="text-5-6-4-4">
+<p>
+extension of first-order logic +  quantifies over relations.
+</p>
+
+
+<p>
+∀P ∀x ( Px ∨ ¬ Px ) - for every formula P, and every individual x, either Px is true or not(Px) is true (law
+ of excluded middle)
+</p>
+
+
+<p>
+P is prdicate and is semantically a set of individuals.
+</p>
+
+<p>
+<b>Gödel's incompleteness theorem</b> (lack of a complete proof system) that there is no deductive system (that is, no notion of provability) for
+ second-order formulas that simultaneously satisfies these three desired attributes:
+</p>
+<ul class="org-ul">
+<li>(Soundness) Every provable second-order sentence is universally valid, i.e., true in all domains under standard semantics.</li>
+<li>(Completeness) Every universally valid second-order formula, under standard semantics, is provable.</li>
+<li>(Effectiveness) There is a proof-checking algorithm that can correctly decide whether a given sequence of symbols is a proof or not.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org16e4f13"></a>Higher-order logic HOL<br />
+<div class="outline-text-5" id="text-5-6-4-5">
+<p>
+extension of second-order logic + quantifies over sets of sets and so on -  sets that are nested arbitrarily deeply.
+</p>
+</div>
+</li>
+
+<li><a id="org754cab4"></a>Hoare logic or Floyd–Hoare logic or Hoare rules - Логика Хоара<br />
+<div class="outline-text-5" id="text-5-6-4-6">
+<p>
+Used for simple imperative programming language + concurrency, procedures, jumps, and pointers.
+</p>
+
+<p>
+Hoare triple - describes how the execution of a piece of code changes the state
+</p>
+<ul class="org-ul">
+<li>{P}C{Q}</li>
+<li>P and Q are assertions: precondition and postcondition - formulae in predicate logic.</li>
+<li>C is a command</li>
+</ul>
+
+<p>
+Hoare logic provides axioms and inference rules. Only partial correctness can be proven.
+</p>
+
+<p>
+uses axiomatic techniques to define programming language semantics
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga53e940" class="outline-3">
+<h3 id="orga53e940"><span class="section-number-3">5.7.</span> Set theory <a id="orgd6ee95c"></a></h3>
+<div class="outline-text-3" id="text-5-7">
+<ul class="org-ul">
+<li><b>set</b> - множество.C = {0,1,2}</li>
+<li>Cardinality [kɑːdɪˈnælɪtɪ] (мощность) - |B| = количество эллементов (elements or members)</li>
+<li>x ∈ B - x belongs to B</li>
+<li>y ∉ B - y does not belong to B</li>
+<li>A ⊆ B - A is a subset of B or A is contained in B - every member of set A is also a member of set B</li>
+<li>proper (or strict) subset - f A is a subset of B, but A is not equal to B</li>
+<li>∅ - empty set - ∅ ⊆ A.</li>
+<li>A ⊆ U - universal set</li>
+<li>A ∪ B - <b>Union</b> - together</li>
+<li>A ∩ B - <b>Intersections</b> [ɪntəˈsekʃn] A ∩ ∅ = ∅ - пересечение - общее</li>
+<li>{1, 2, 3, 4} \ {1, 3} = {2, 4}. - Set <b>difference</b></li>
+<li>A' = U \ A is called the absolute complement or simply complement of A</li>
+<li>{1, 2} \ {1, 2} = ∅.</li>
+<li>A ∩ A' = ∅. - A' or A<sup>c</sup> = <b>Complement</b></li>
+<li><b>Cartesian product</b> - A x B - {1, 2} × {red, white, green} = {(1, red), (1, white), (1, green), (2, red),
+(2, white), (2, green)}.</li>
+<li>|A × B| = |A| × |B| = умножение</li>
+<li>union ∪ and intersection ∩: Commutative, Associative, Distributive</li>
+<li>absorption laws:
+<ul class="org-ul">
+<li>A∪(A∩B)=A</li>
+<li>A∩(Α∪B)=A</li>
+</ul></li>
+<li>A∩B=A\(A\B)</li>
+<li>algebra of inclusion ⊆:
+<ul class="org-ul">
+<li>reflexivity A⊆A   - ∀x∈A:x⊆x</li>
+<li>antisymmetry A⊆B and B⊆A only if A=B</li>
+<li>transitivity. If A⊆B and B⊆C, then A⊆C</li>
+</ul></li>
+<li>equivalent:
+<ul class="org-ul">
+<li>A⊆B</li>
+<li>A∩B=A</li>
+<li>A∪B=B</li>
+<li>A\B=0</li>
+<li>B'⊆A'</li>
+</ul></li>
+<li>complement lows:
+<ul class="org-ul">
+<li>(A∪B)' = A'∩B'</li>
+<li>(A∩B)' = A'∪B'</li>
+<li>(A')'= A</li>
+<li>0' = U</li>
+<li>U' = 0</li>
+</ul></li>
+
+<li><b>Transitive closure</b> - binary relation R on a set X smallest relation on X that contains R and is
+transitive.
+<ul class="org-ul">
+<li>if X is a set of airports. xRy means "there is a direct flight from airport x to airport y. xR+y means "it
+is possible to fly from x to y in one or more flights</li>
+<li>intersection of two R+ is transitive</li>
+<li>union need not to be transitive.</li>
+</ul></li>
+</ul>
+
+<p>
+Для илюстрации используются диагрмы эйлера Euler diagram.
+</p>
+</div>
+</div>
+<div id="outline-container-org07b5f05" class="outline-3">
+<h3 id="org07b5f05"><span class="section-number-3">5.8.</span> Probability see <a href="#orgdda56c4">13</a></h3>
+</div>
+<div id="outline-container-org6d6c726" class="outline-3">
+<h3 id="org6d6c726"><span class="section-number-3">5.9.</span> Statistics see <a href="#orgf4385d9">14</a></h3>
+</div>
+<div id="outline-container-org9b6fe9a" class="outline-3">
+<h3 id="org9b6fe9a"><span class="section-number-3">5.10.</span> <span class="todo TODO">TODO</span> decision sciences</h3>
+</div>
+<div id="outline-container-orgf0ae3ab" class="outline-3">
+<h3 id="orgf0ae3ab"><span class="section-number-3">5.11.</span> <span class="todo TODO">TODO</span> Trigonometry</h3>
+<div class="outline-text-3" id="text-5-11">
+<p>
+is a branch of mathematics concerned with relationships between angles and ratios of lengths.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org43a859c"></a>Логика Хоара<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgb5352e5" class="outline-2">
+<h2 id="orgb5352e5"><span class="section-number-2">6.</span> Logarithm [ˈlɔgərɪðəm]</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+inverse function to exponentiation
+</p>
+<ul class="org-ul">
+<li>log = log по основанию e - <b>natural logarithm</b> - ln(x)</li>
+<li>e - Euler's number - log<sub>e</sub></li>
+<li>log(a)+log(b) = log(a*b)</li>
+<li>log(a)-log(b) = log(a/b)</li>
+<li>log(x<sup>p</sup>) = p*log(x)</li>
+</ul>
+<p>
+Используется для шкалирования результата [0,1] в удобочитаемый (-inf,+inf)
+</p>
+<ul class="org-ul">
+<li>log(1/2) = 0.69</li>
+<li>log(2/1) = -0.69</li>
+</ul>
+<p>
+Используется для удаления смещения гистограммы в сторону меньших значений [0,+inf] с постоянным убыванием для
+преобразования в нормальное распределение.
+</p>
+
+<p>
+Выравнивание дисперсии. Если для различных иксов постоянен не абсолютный разброс y, а
+относительный, так что с ростом y увеличивается и разброс, порождённый случайными причинами,
+логарифмирование может помочь.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcfa4a70" class="outline-2">
+<h2 id="orgcfa4a70"><span class="section-number-2">7.</span> Graph theory [ɡrɑːf] [ˈθɪərɪ]</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+branch of Combinatorics <a href="#orgb34daad">12</a>
+</p>
+</div>
+<div id="outline-container-org5242ce4" class="outline-3">
+<h3 id="org5242ce4"><span class="section-number-3">7.1.</span> main terms</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Graph - pair (V,E), where V={a, b, c} finite set of vertix  and E is a finite set of edges E={ab, ac}
+</p>
+<dl class="org-dl">
+<dt>edge [ɛdʒ]</dt><dd>ребро - joining a pair of nodes</dd>
+<dt>vertex [ˈvɜːtɛks] vertices [ˈvɜːtɪˌsiːz] node [nəʊd]</dt><dd>вершиныx</dd>
+<dt>arc [ɑːk]</dt><dd>дуга is a directed line (a pair of ordered vertices).</dd>
+<dt>Incident [ˈɪnsɪdənt]</dt><dd>смежный edge</dd>
+<dt>adjacent [əˈdʒeɪsənt]</dt><dd>примыкающий vertex</dd>
+<dt>successor [səkˈsɛsə]</dt><dd>приемник vertex</dd>
+<dt>walk [wɔːk]</dt><dd>тропа</dd>
+<dt>circuit [ˈsɜːkɪt]</dt><dd>контур</dd>
+<dt>cycle [ˈsaɪkəl]</dt><dd>цикл</dd>
+<dt>girth [ɡɜːθ]</dt><dd>обхват</dd>
+<dt>circumference [səˈkʌmfərəns]</dt><dd>длина окружности</dd>
+<dt>Hypergraph [haɪpəˈgræf]</dt><dd>edge can join any number of vertices H=(X,E) X - nodes or vertices, E - non-empty
+subsets of X</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgac287fd" class="outline-3">
+<h3 id="orgac287fd"><span class="section-number-3">7.2.</span> terms</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Main properties:
+</p>
+<ul class="org-ul">
+<li><b>radius of a connected graph</b> r(G) - minimum eccentricity from all the vertices</li>
+<li><b>diameter</b> d(G) - maximum eccentricity from all to all other vertices</li>
+<li><b>girth [ɡɜːθ]</b> - number of edges in the shortest cycle of ‘G’</li>
+</ul>
+
+<hr />
+<ul class="org-ul">
+<li><b>Incident edges</b> are edges which share a vertex. A edge and vertex are incident if the edge connects the
+vertex to another.</li>
+<li>A <b>loop</b> is an edge or arc that joins a vertex to itself.</li>
+<li>A vertex, sometimes called a <b>node</b>, is a point or circle. It is the fundamental unit from which graphs are
+made.</li>
+<li>Adjacent vertices are vertices which are connected by an edge.</li>
+<li>The <b>degree of a vertex</b> is simply the number of edges that connect to that vertex. Loops count twice.</li>
+<li>A <b>predecessor</b> is the node (vertex) before a given vertex on a path.</li>
+<li>A <b>successor</b> is the node (vertex) following a given vertex on a path.</li>
+<li>A <b>walk</b> is a series of vertices and edges. A u-v walk would be a walk beginning at u and ending at v.</li>
+<li>A <b>closed walk</b> is a walk from a vertex back to itself; a series of vertices and edges which begins and ends
+at the same place. May have repeated vertices or/and edges.</li>
+<li>A <b>circuit</b> is a closed walk with every edge distinct.</li>
+<li>A <b>cycle</b> is a closed walk with no repeated vertices (except that the first and last vertices are the same).</li>
+<li>A <b>path</b> is a walk where no repeated vertices. A u-v path is a path beginning at u and ending at v.</li>
+<li><b>isolated vertex</b> has no edges.</li>
+<li><b>indegree</b> = deg-(V), <b>outdegree</b> = deg+(V)</li>
+<li><b>pendent vertex</b> = vertex deg(v) = 1.</li>
+<li><b>degree sequence</b> for V={b, a, c, d} and E={ba, bc}  will be {2, 1, 1, 0}</li>
+<li><b>distance between 2 vertices</b> - number of deges in a shortest path between U and V = d(U, V)</li>
+<li><b>eccentricity of a vertex [ˌɛksɛnˈtrɪsɪtɪ]</b> e(V)  - max distance to all other.</li>
+<li><b>central point</b> e(V) =r(V)</li>
+<li><b>centre [ˈsɛntə]</b> set of all central points</li>
+<li><b>circumference [səˈkʌmfərəns]</b> - number of edges in the longest cycle of ‘G’</li>
+<li><b>Connected undirected graph.</b> 1) there is a path between every pair of vertices</li>
+<li><b>Connected component</b> of undirected graph. A subgraph in which any two vertices are connected to each other by paths</li>
+<li><b>Incidence matrix</b> columns - vertices, rows - edges</li>
+<li><b>Degree matrix</b> - <b>diagonal matrix</b></li>
+<li><b>Laplacian matrix</b></li>
+</ul>
+
+<hr />
+<ul class="org-ul">
+<li><b>edge contraction</b> [kənˈtrækʃən] is an operation which removes an edge from a graph while simultaneously
+merging the two vertices that it previously joined</li>
+<li><b>graph traversal</b> [ˈtrævɜːs] is an exploration of a graph in which the vertices are visited or updated one by one.</li>
+<li>A <b>Hamiltonian cycle</b> is a closed loop where every node is visited exactly once.</li>
+</ul>
+<hr />
+<ul class="org-ul">
+<li><b>Circuit Rank of G</b> (cyclomatic number, cycle rank, or nullity)  minimum number of edges that must be removed from the
+undirected connectedgraph to break all its cycles, making it into a tree or forest. r = m - n + c
+where m= edges, n= vertices, c = number of connected components.</li>
+<li><b>Laplacian matrix</b> (admittance matrix, Kirchhoff matrix or discrete Laplacian) -</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0343f1e" class="outline-3">
+<h3 id="org0343f1e"><span class="section-number-3">7.3.</span> Theorems  [ˈθɪərəm]</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-org66ef576" class="outline-4">
+<h4 id="org66ef576"><span class="section-number-4">7.3.1.</span> Trees</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<p>
+<b>Kirchoff’s Theorem</b> - concstruct
+</p>
+
+<hr />
+</div>
+</div>
+</div>
+<div id="outline-container-org5d08a7a" class="outline-3">
+<h3 id="org5d08a7a"><span class="section-number-3">7.4.</span> Types of graphs:</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li><b>null graph</b> no edges.</li>
+<li><b>trivial graph</b> one vertix, no edges.</li>
+<li>A <b>multigraph</b> is a graph with multiple edges(parallel edges) with or without loops.</li>
+<li><b>simple grapth</b> no parallel edges, no loops. deg(V) &lt;= n-1 ∀ v ∈ G</li>
+<li><b>directed and non-directed [dɪˈrɛktɪd]</b>. edge has direction ab=ba or not.</li>
+<li><b>Connected graph</b> -  undirected graph when there is a <b>path</b> between every pair of vertices.</li>
+<li><b>Bipartite Graph</b> - двудольный - with vertex partition V = {V1, V2} if every edge of E joins a vertex in V1 to a vertex in V2
+<ul class="org-ul">
+<li>Complete Bipartite Graph - bipartite graph -  if every vertex in V1 is connected to every vertex of V2.</li>
+</ul></li>
+<li><b>complete graph</b> - simple undirected graph - every pair of distinct vertices is connected by a unique edge</li>
+</ul>
+<hr />
+<ul class="org-ul">
+<li><b>tree</b> -  any two vertices are connected by <i>exactly one</i> path or a connected acyclic undirected graph.
+<ul class="org-ul">
+<li>if V = n, E = n-1.</li>
+</ul></li>
+<li><b>tree</b> - disconnected acyclic graph</li>
+<li><b>H Spanning Trees of G</b> - основное дерево. Where G is connected graph. H is a tree and has all vertices of G.</li>
+<li></li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>An <b>acyclic directed graph</b> [eɪˈsaɪklɪk] is a finite directed graph which has no directed cycles.</li>
+<li>A <b>condensation</b> [ˌkɒndɛnˈseɪʃən] of a multigraph is the graph that results when you delete any multiple
+edges, leaving just one edge between any two points.</li>
+<li>If a graph has a path between every pair of vertices (there is no vertex not connected with an edge), the graph is called a connected graph.
+If a graph G’ can be constructed from a graph G by repeated edge contractions or deletions, the graph G’ is a graph minor of G.
+An inverted graph G’ of G is a graph with the same vertices but none of the same edges; two vertices in G’ are adjacent if and only if they were not adjacent in G.
+A multigraph is a graph without loops, but which may have multiple edges.
+A null graph is a graph with no edges. It may have one or more vertices.
+An oriented graph is a directed graph that doesn’t have any symmetric pairs of directed edges.
+A simple graph is a graph that doesn’t have any loops or multiple edges. No multiple edges means that no two edges have the same endpoints.
+A subgraph is a graph whose vertices and edges are included in the vertices and edges of another graph (the supergraph).
+A symmetric graph is a directed graph D where, for every arc (x,y), the inverted arc (y,x) is also in D.
+A trivial graph is a graph with only one vertex.
+An undirected graph is a graph where none of the edges have direction; the pairs of vertices that make up each edge are unordered.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5499967" class="outline-3">
+<h3 id="org5499967"><span class="section-number-3">7.5.</span> links</h3>
+<div class="outline-text-3" id="text-7-5">
+<ul class="org-ul">
+<li><a href="https://www.statisticshowto.datasciencecentral.com/graph-theory/">https://www.statisticshowto.datasciencecentral.com/graph-theory/</a></li>
+<li><a href="https://www.tutorialspoint.com/graph_theory/graph_theory_quick_guide.htm">https://www.tutorialspoint.com/graph_theory/graph_theory_quick_guide.htm</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org39f5787" class="outline-2">
+<h2 id="org39f5787"><span class="section-number-2">8.</span> Abstract algebra and group theory [gruːp] Теория групп</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Group theory - language to describe invertible transformations:
+</p>
+<ul class="org-ul">
+<li>translation</li>
+<li>rotation</li>
+<li>roto-translation</li>
+<li>reflections</li>
+<li>scalings</li>
+</ul>
+<p>
+Cannot work with:
+</p>
+<ul class="org-ul">
+<li>scale</li>
+<li>affine transformation</li>
+<li>occlusions - затемнение части объекта</li>
+</ul>
+</div>
+<div id="outline-container-orgd4c546f" class="outline-3">
+<h3 id="orgd4c546f"><span class="section-number-3">8.1.</span> terms</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li><a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9_%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF#%D0%9A">https://ru.wikipedia.org/wiki/%D0%93%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9_%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF#%D0%9A</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_group_theory_topics">https://en.wikipedia.org/wiki/List_of_group_theory_topics</a></li>
+<li><b>group</b> - <b>set</b> with binary operation • (group law of G) to form a third element in such a way that four
+group axioms are satisfied:
+<ul class="org-ul">
+<li><b>closure</b>  For all a, b in G, the result of the operation, a • b, is also in G.</li>
+<li><b>associativity</b> For all a, b and c in G,       (a • b) • c = a • (b • c).</li>
+<li><b>identity</b>  There exists an element e such that, for every element a the equation e • a = a • e = a holds.
+e - identity element.</li>
+<li><b>invertibility</b> For each a exists an element b (a<sup>-1</sup> or -a) such that a • b = b • a = e. e -  identity element.</li>
+</ul></li>
+</ul>
+
+<p>
+Абелевые группы:
+Convention	Operation	Identity	Powers	Inverse
+Addition	x + y		0		nx	−x
+Multiplication	x ⋅ y or xy	e or 1		x<sup>n</sup> x^−1
+</p>
+
+<ul class="org-ul">
+<li><b>center of a group</b> -  set of elements that commute with every element of G. Z(G) = {z ∈ G ∣ ∀g ∈ G, zg = gz}</li>
+<li><b>Abelian group</b> - коммутативная  -obey the axiom of commutativity[kəˈmjuːtətɪvɪtɪ] .</li>
+<li><b>Group homomorphisms</b> - are functions that preserve group structure. G → H between two groups (G, •) and (H,
+∗) where a(g • k) = a(g) ∗ a(k) - (∀g,k∈G</li>
+<li><b>Isomorphic groups</b> [aɪsəˈmɔːfɪk] - if there exist group homomorphisms a: G → H and b: H → G such that
+a(b(h)) = h and b(a(g)) = g for any g in G and h in H</li>
+<li><b>Identity element</b> - Нейтральный элемент 1: a · 1 = a and 1 · a = a</li>
+<li><b>partial binary operation</b> - f:X-&gt;Y not forcing f to map every element of X to an element of Y. Ex. division
+of real numbers - a/0 is not defined for any real a.  However, both in universal algebra and model theory
+binary operations considered are defined on all of S × S.</li>
+<li><b>Magma</b> - базовая математическая структура. Set with closed binary operation.  magma or closure axiom: For all a, b in M, the result of the operation
+a • b is also in M.  If partial operation, then a <b>partial magma</b>.</li>
+<li><b>Semigroup</b> -  set S with a associative binary operation</li>
+<li><b>monoid or groupoid</b> [məˈnɔɪd] -  полугруппа с нейтральным элементом</li>
+<li><b>Ring</b> -  set R with two binary operations + and <b>ring axioms</b>:
+<ol class="org-ol">
+<li>R is an abelian group under addition
+<ul class="org-ul">
+<li>associative</li>
+<li>commutative</li>
+<li>additive identity - There is an element 0 in R such that a + 0 = a for all a in R</li>
+<li>additive inverse - For each a in R there exists −a in R such that a + (−a) = 0</li>
+</ul></li>
+<li>R is a monoid under multiplication
+<ul class="org-ul">
+<li>associative</li>
+<li>multiplicative identity</li>
+</ul></li>
+<li>Multiplication is distributive with respect to addition
+<ul class="org-ul">
+<li>left distributivity a ⋅ (b + c) = (a · b) + (a · c) for all a, b, c in R</li>
+<li>right distributivity (b + c) · a = (b · a) + (c · a) for all a, b, c in R</li>
+</ul></li>
+</ol></li>
+<li>Ring properties:
+<ul class="org-ul">
+<li>The additive identity, the additive inverse of each element, and the multiplicative identity are unique.</li>
+</ul></li>
+<li><b>Field</b> -</li>
+<li><b>Difference between groups and fields</b> - Groups model symmetries</li>
+<li><b>Matrix ring</b> -</li>
+
+<li><b>Matrix</b> [ˈmeɪtrɪks] - rectangular array of numbers, symbols, or expressions, arranged in <b>rows</b> and
+<b>columns</b></li>
+<li><b>dimensions</b> - 2x3 "two and three"
+<ul class="org-ul">
+<li>1 2 3</li>
+<li>1 2 3</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org420dc5d" class="outline-3">
+<h3 id="org420dc5d"><span class="section-number-3">8.2.</span> Teorems</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<b>Uniqueness of inverses</b> -
+b 	= 	b • e 	     	 as e is the identity element
+	= 	b • (a • c) 	  Because c is an inverse of a, so e = a • c
+	= 	(b • a) • c 	by associativity, which allows rearranging the parentheses
+	= 	e • c 	     	 since b is an inverse of a, i.e., b • a = e
+	= 	c 	     	  for e is the identity element
+there is only one inverse element of a
+</p>
+
+<p>
+<b>Uniqueness of identity element</b> G is a group with two identity elements e and f. Then e = e • f = f, hence e
+ and f are equal.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d5f165" class="outline-2">
+<h2 id="org8d5f165"><span class="section-number-2">9.</span> Topology</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+разновидностью геометрии, не зависящих от расстояний, величин углов, площадей и объёмов. concerned with the
+ properties of a geometric object that are preserved under continuous deformations, such as stretching,
+ twisting, crumpling, and bending;
+</p>
+
+<dl class="org-dl">
+<dt>space</dt><dd>set (sometimes called a universe) and relationships between these points</dd>
+<dt>Metric space</dt><dd>set together with a metric on the set (M,d) where M is a set and d is a metric (function or
+distance) d:MxM-&gt;R with axioms:
+<ol class="org-ol">
+<li>d(x,y) = 0 &lt;-&gt; x=y</li>
+<li>d(x,y) = d(y,x)</li>
+<li>d(x,z) &lt;= d(x,y)+d(y,z) subadditivity or triangle inequality</li>
+</ol></dd>
+<dt>topological space</dt><dd>set of points, along with a set of neighbourhoods for each point, satisfying a set of
+axioms relating points and neighbourhoods OR ordered pair (X, τ), where X is a set and τ is a collection
+of subsets of X:
+<ul class="org-ul">
+<li>empty set and X itself belong to τ.</li>
+<li>Any arbitrary (finite or infinite) union of members of τ still belongs to τ.</li>
+<li>The intersection of any finite number of members of τ still belongs to τ.</li>
+</ul></dd>
+<dt>trivial topology</dt><dd>(X,τ) -  X = {1, 2, 3, 4},  τ = {{}, {1, 2, 3, 4}}</dd>
+<dt>A\B ={x in A | x not in B}</dt><dd>дополнение B до A (если B in A)</dd>
+<dt>Closed set</dt><dd>подмножество пространства, дополнение к которому открыто.</dd>
+<dt>Open set</dt><dd>subset U of a metric space is opern if every point in U has a neighborhood contained in U</dd>
+<dt>Neighbourhood</dt><dd>V окрестность точки x если существует открытое множество U ∈ τ такое, что x∈U⊂V</dd>
+<dt>Hausdorff space T2-space</dt><dd>topological space любые две различных точки x, y из X обладают
+непересекающимися окрестностями.</dd>
+<dt>Euclidean space</dt><dd>конечномерное вещественное векторное пространство R<sup>n</sup> c скалярным произведением, либо
+метрическое пространство, соответствующее такому векторному пространству.
+<ul class="org-ul">
+<li>Скаля́рное произведе́ние a•b = a1*b1+a2*b2&#x2026;. или |a|*|b|*cos&lt;(a,b), что эквивалентно</li>
+<li>Евклидово пространство это афинное пространство с метрикой. Метрика - это мера расстояния между объектами.</li>
+</ul></dd>
+<dt>Affine space</dt><dd>оперирует с объектами не одного, а двух типов: «векторами» и «точками». Euclidean spaces are
+affine spaces.</dd>
+<dt>База топологии</dt><dd>семейство открытых подмножеств топологического пространства X, такое, что любое открытое
+множество в X представимо в виде объединения элементов этого семейства.</dd>
+<dt>Second-countable space</dt><dd></dd>
+
+<dt>Homeomorphism</dt><dd>однозначное и взаимно непрерывное отображение топологических пространств, биекция,
+связывающая топологические структуры двух пространств
+<ul class="org-ul">
+<li>Пространства, связанные гомеоморфизмом, топологически неразличимы</li>
+<li>кружка и бублик (тор) топологически эквивалентны</li>
+</ul></dd>
+<dt>Manifold Многообра́зие</dt><dd>хаусдорфово топологическое пространство со счётной базой, каждая точка которого
+обладает окрестностью, гомеоморфной евклидову пространству R<sup>n</sup>
+<ul class="org-ul">
+<li>Евклидово пространство является самым простым примером многообразия</li>
+<li>Любая двумерная поверхность без края</li>
+</ul></dd>
+<dt>Smoothness of function</dt><dd>функция, имеющая непрерывную производную на всём множестве определения</dd>
+<dt>Injective function Инъекция</dt><dd>maps distinct elements of its domain to distinct elements</dd>
+<dt>Embedding Вложение</dt><dd>f: X-&gt;Y (with "hooked arrow") injective and structure-preserving(morphism)
+map. continuous (change without jump).</dd>
+</dl>
+</div>
+<div id="outline-container-org73bbb8c" class="outline-3">
+<h3 id="org73bbb8c"><span class="section-number-3">9.1.</span> dot product</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+see <a href="#org7666aa9">16.2.1</a>
+Это метрика расстояния для Real coordinate space. Simple case: Cartesian coordinates of the points of a
+Euclidean space.
+</p>
+
+<p>
+Используется для задания Euclidean space.
+</p>
+
+<p>
+скалярное произведение это функция
+</p>
+<ul class="org-ul">
+<li>для любыъ векторов u,v,w и и любых чисел a,b: (a*u+b*v,w) = a(u,w)+b(v,w)</li>
+<li>(u,v) = (v,u)</li>
+<li>(u,u) &gt;= 0</li>
+</ul>
+
+<p>
+Пример такого пространства, это набор вечественных чисал (x1,x2,x3), где скалярное произведение:
+</p>
+<ul class="org-ul">
+<li>(x,y) = ∑xi*yi = x1*y1+x2*y2+x3*y3</li>
+</ul>
+
+<p>
+Определение скалярного произведения достаточно, чтобы ввести понятия
+</p>
+<ul class="org-ul">
+<li>длина |u|=sqrt((u,u))</li>
+<li>угол = arccos((x,y)/(|x|*|y|))</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org20a7322" class="outline-3">
+<h3 id="org20a7322"><span class="section-number-3">9.2.</span> Vector space or linear space</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+set whose elements are vectors, may be added together and multiplied ("scaled") by numbers called
+ scalars. (generalize Euclidean vectors)
+</p>
+
+<p>
+Векторы коллинеарны если они одно их двух
+</p>
+<ul class="org-ul">
+<li>независимы <a href="#orgb6c0f75">10.1</a></li>
+<li>их векторное произведение коллинеарных векторов равно 0</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d15476" class="outline-3">
+<h3 id="org8d15476"><span class="section-number-3">9.3.</span> Affine space</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+Affine space is a set A with a vector space, and a transitive and free <b>action</b> of the <b>additive group</b> of
+verctor space on set A.
+</p>
+
+<ul class="org-ul">
+<li>The elements of the affine space A are called points.</li>
+<li>The vector space is said to be associated to the affine space, and its elements are called vectors.</li>
+<li>action generally denoted as an addition.
+<ul class="org-ul">
+<li>a+0=a</li>
+<li>(a+u)+w = a+(u+w), where a ∈ set A and u,w in vector space A</li>
+<li>for any m and n in set A, there is only one v ∈ vector space A: N=M+v</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfc04c89" class="outline-3">
+<h3 id="orgfc04c89"><span class="section-number-3">9.4.</span> Norm</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+function from a real or complex vector space to the non-negative real numbers that behaves in certain ways
+like the distance from the origin:
+</p>
+<ul class="org-ul">
+<li>subadditivity/ triangle inequality: p(x+y) &lt;=p(x) + p(y)</li>
+<li>Absolute homogeneity: p(s*x) = |s|*p(x), for all x ∈ X and all scalars s.</li>
+<li>Positive definiteness/Point-separatin: if p(x) = 0, then x = 0</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1a3674e" class="outline-2">
+<h2 id="org1a3674e"><span class="section-number-2">10.</span> Linear algebra</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li><a href="https://habr.com/ru/post/261421/">https://habr.com/ru/post/261421/</a></li>
+<li>linear [ˈlɪnɪə] equations [ɪˈkweɪʃn]:   a1x1+a2+.. = b</li>
+<li>linear function: (x1,..xn)-&gt;a1x1+a2+..anxn</li>
+<li>Линейность функции:
+<ul class="org-ul">
+<li>f(x+y) = f(x) + f(y)</li>
+<li>f(c*x) = c*f(x)</li>
+</ul></li>
+<li>Декартова - прямоугольная система координат</li>
+<li>контрвариантные координаты вектора a<sup>i</sup> = a<sup>1</sup>*e1+a<sup>2</sup>*e2 - столбцом</li>
+<li>ковариантные координаты - координаты в декартовой системе координат - строкой</li>
+<li>связь контрвариантных и ковариантных координат <a href="https://habr.com/ru/post/261421/">https://habr.com/ru/post/261421/</a></li>
+<li>Tangent vector Касательный вектор - элемент касательной прямой к кривой или касательной плоскости к
+поверхности</li>
+<li>Tensor [ˈtensər] T:v1 x v2 x v3 -&gt; R - полилинейная функция-отображения из произведения векторныз
+пространств в вещественные числа</li>
+<li>Тензор Риччи
+<ul class="org-ul">
+<li>измеряет деформацию объёма</li>
+<li>степени отличия геометрии многообразия от геометрии плоского евклидова пространства</li>
+</ul></li>
+<li>Symmetric tensor - Tij = Tji</li>
+</ul>
+</div>
+<div id="outline-container-org5c7dc27" class="outline-3">
+<h3 id="org5c7dc27"><span class="section-number-3">10.1.</span> Linear combination <a id="orgb6c0f75"></a></h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+linear comany form of x and y is ax + by, where a and b is constants
+</p>
+<ul class="org-ul">
+<li>V1: a1*x+b1*y or (a1,b1)</li>
+<li>V2: a2*x+b2*y or (a2,b2)</li>
+<li>V1+V2 = a1*x+b1*y +  a2*x+b2*y = (a1+a2)*x + (b1+b2)*y</li>
+<li>or a*V1+b*V2</li>
+
+<li><b>нетривиальной</b>, если хотя бы один из её коэффициентов отличен от нуля.</li>
+<li><b>барицентрической</b>, если сумма её коэффициентов равна 1[4],</li>
+<li><b>выпуклой</b>, если сумма её коэффициентов равна 1 и все коэффициенты неотрицательны,</li>
+<li><b>сбалансированной</b>, если сумма её коэффициентов равна 0.</li>
+</ul>
+
+<p>
+<b>Linear independence</b> - if a1*v1 + a2*v2 = 0 and a1 != 0 or a2 !=0 - linear dependent
+</p>
+<ul class="org-ul">
+<li>for vectors - they are not collinear if they are independent</li>
+<li>for Линейные системы уравнений - имеет однозначное решение тогда, когда столбцы её основной матрицы являются линейно независимыми.</li>
+<li>matrixs: Ранг матрицы равен максимальному числу её линейно независимых строк или столбцов.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf29a961" class="outline-3">
+<h3 id="orgf29a961"><span class="section-number-3">10.2.</span> Cramer's Rule</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+determinant of a coefficient matrix (let it be |A| )
+</p>
+<ul class="org-ul">
+<li>== 0 =&gt;  no solutions or infinite solutions.</li>
+<li>!= =&gt; unique solution</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgccec4bf" class="outline-3">
+<h3 id="orgccec4bf"><span class="section-number-3">10.3.</span> Соглашение Эйнштейна Einstein notation</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li>y = (i=1-3)∑ci*xi = c1*x1+c2*x2+c3*x3  == y = ci*x<sup>i</sup></li>
+<li>uk=ai*bk<sup>i</sup> == uk = (i=1-n)∑ai*bk<sup>i</sup> где n - размерность a, b</li>
+<li>e'i = Si<sup>j</sup>*ej - суммирование по j</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgff67936" class="outline-3">
+<h3 id="orgff67936"><span class="section-number-3">10.4.</span> Ковариантность и контравариантность</h3>
+<div class="outline-text-3" id="text-10-4">
+<ul class="org-ul">
+<li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B8_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B8_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org212bbec" class="outline-2">
+<h2 id="org212bbec"><span class="section-number-2">11.</span> Matrix theory</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>m-by-n matrix - m rows, n columns - dimensions</li>
+<li>a21 - second row, first column element(or entries) - aij</li>
+</ul>
+
+<p>
+application of matrices:
+</p>
+<ul class="org-ul">
+<li>linear transformations - rotation of vectors in three-dimensional space</li>
+<li>solution of systems of linear equations</li>
+</ul>
+</div>
+<div id="outline-container-org3092a14" class="outline-3">
+<h3 id="org3092a14"><span class="section-number-3">11.1.</span> Operations</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Addition
+<ul class="org-ul">
+<li>require equal dimensions</li>
+<li>(A+B)ij = Aij+Bij</li>
+</ul></li>
+<li>Scalar multiplication - (cA)ij= c*Aij</li>
+<li>Transposition - A m-by-n to A<sup>tr</sup> or A<sup>T</sup> n-by-m (A<sup>T</sup>)ij = Aji - переворачивает относительно диагонали
+<ul class="org-ul">
+<li>A*A<sup>T</sup> =  <b>symmetric matrices</b></li>
+</ul></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">1 7</td>
+</tr>
+
+<tr>
+<td class="org-left">7 1</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Matrix multiplication - используются для преобразования векторов
+<ul class="org-ul">
+<li>require A n columns equal to B m rows</li>
+<li>2*1000 + 3*100 + 4*10 = 2340</li>
+<li>associativity (AB)C = A(BC)</li>
+<li>left and right distributivity (A + B)C = AC + BC as well as C(A + B) = CA + CB</li>
+<li>not commutative AB =! BA</li>
+</ul></li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">2 3 4</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0 1000</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">3 2340</td>
+</tr>
+
+<tr>
+<td class="org-left">1 0 0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">1  100</td>
+<td class="org-left">=</td>
+<td class="org-left">0 1000</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">0   10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<p>
+Определитель (детерминант)
+</p>
+<ul class="org-ul">
+<li>require квадратная</li>
+<li>Δ = det A</li>
+<li>for 2x2 Δ = a11a22 - a12a21</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2a8b30b" class="outline-3">
+<h3 id="org2a8b30b"><span class="section-number-3">11.2.</span> Elementary matrix Элементарные преобразования матрицы</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+Элементарные преобразования не изменяют множество решений системы линейных алгебраических уравнений, которую
+ представляет эта матрица.
+</p>
+
+<p>
+Элементарная матрица - если умножение на неё произвольной матрицы В приводит к элементарным преобразованиям
+строк в матрице В.
+</p>
+</div>
+</div>
+<div id="outline-container-org47482e5" class="outline-3">
+<h3 id="org47482e5"><span class="section-number-3">11.3.</span> Invertible matrix Обра́тная ма́трица A<sup>-1</sup></h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+A*A<sup>-1</sup> = A<sup>-1</sup>*A = E - единичная матрица
+</p>
+</div>
+</div>
+<div id="outline-container-org221f400" class="outline-3">
+<h3 id="org221f400"><span class="section-number-3">11.4.</span> Identity matrix Единичная матрица</h3>
+<div class="outline-text-3" id="text-11-4">
+<p>
+квадратная матрица, элементы главной диагонали которой равны единице поля, а остальные равны нулю.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">1 0</td>
+</tr>
+
+<tr>
+<td class="org-left">0 1</td>
+</tr>
+</tbody>
+</table>
+<p>
+Свойства:
+AE=EA=A
+A<sup>0</sup> = E
+A*A-1
+</p>
+</div>
+</div>
+<div id="outline-container-org3b0f3be" class="outline-3">
+<h3 id="org3b0f3be"><span class="section-number-3">11.5.</span> singular-value decomposition (SVD) Сингулярное разложение</h3>
+</div>
+</div>
+<div id="outline-container-org7d7be5f" class="outline-2">
+<h2 id="org7d7be5f"><span class="section-number-2">12.</span> Combinatorics - Комбинаторика <a id="orgb34daad"></a></h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-org13b4a9c" class="outline-3">
+<h3 id="org13b4a9c"><span class="section-number-3">12.1.</span> Биномиальный коэффициент (combination), факториал</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+это коэффициенты при x<sup>k</sup> в разложении бинома Ньютона (1+x)<sup>n</sup>
+</p>
+<ul class="org-ul">
+<li>(1+x)<sup>n</sup> = ∑Cnk*x<sup>k</sup></li>
+<li>обозначается Cnk или вертикальные скобочки (n k)</li>
+<li>Cnk = n!/(k!(n-k)!) для 0&lt;=k&lt;=n. Если k&gt;n Cnk=0</li>
+<li>факториал n! = 1*2*..*n</li>
+<li>(n-1)!=n!/n =&gt; 0!=1</li>
+<li>0!=1, 1!=1, 2!=2, 3!=6, 4!=24, 5!=120</li>
+<li>файкториал 4!=24 - это количество перестановок для множества {A,B,C,D}</li>
+</ul>
+</div>
+<div id="outline-container-orge49ae4e" class="outline-4">
+<h4 id="orge49ae4e"><span class="section-number-4">12.1.1.</span> combination сочетание <a id="org3f10975"></a></h4>
+<div class="outline-text-4" id="text-12-1-1">
+<p>
+Число сочетаний из n по k - это subset of k distinct elements of n элементов. Порядок не важен. Без повторяющихся.
+</p>
+<ul class="org-ul">
+<li>Сnk = n!/(k!(n-k)!)</li>
+</ul>
+<p>
+Пример 3-element subsets of a 5-element set - (12345 - element set, 123,124,125,134 - subset)
+</p>
+<ul class="org-ul">
+<li>С(n k) = C(5 3) = 5!/(3!(5-3)!) = 120/6*2= 10</li>
+<li>123,124,125,134,135,145,234,235,245,345</li>
+</ul>
+<p>
+Пример three fruits, say an apple, an orange and a pear, there are three combinations of two
+</p>
+<ul class="org-ul">
+<li>an apple and a pear</li>
+<li>an apple and an orange</li>
+<li>a pear and an orange</li>
+</ul>
+
+<p>
+<b>combinations with repetition</b>
+</p>
+<ul class="org-ul">
+<li>обозначается вертикально ((n k))</li>
+<li>((n k)) = (n+k-1  k)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b1039e" class="outline-2">
+<h2 id="org0b1039e"><span class="section-number-2">13.</span> Probability theory <a id="orgdda56c4"></a></h2>
+<div class="outline-text-2" id="text-13">
+<p>
+<b>Probability</b> is the measure of the likelihood that an event will occur.
+</p>
+<ul class="org-ul">
+<li>эксперименты</li>
+<li>элементарные исходы - чем может закончится эксперимент</li>
+</ul>
+
+<p>
+Probability (risk) = p/(p+q)
+Odds = p / q, где p положиьные исходы, q отрицательные
+</p>
+
+<p>
+Частотная и Байесовская(Bayes') вероятность:
+</p>
+<ul class="org-ul">
+<li>P(x) - доля выпаданий события среди n испытаний</li>
+<li>P(x) - степень уверенности в истинности суждения</li>
+</ul>
+
+<p>
+Теория проверки статистических гипотез:
+</p>
+<ul class="org-ul">
+<li>Частотная - позволяет отвергать или не отвергать модели-гипотезы</li>
+<li>Байесовская - выдает апостериорную вероятность быть адекватной для каждой из моделей гипотез</li>
+</ul>
+
+<p>
+<b>sample space</b> - Flipping a coin leads to a sample space composed of two outcomes that are almost equally
+ likely.
+</p>
+</div>
+<div id="outline-container-orgabb8c3f" class="outline-3">
+<h3 id="orgabb8c3f"><span class="section-number-3">13.1.</span> Probability distribution</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+Probability distribution - function whose value at any given sample (or point - outcome) can be interpreted as
+ providing a relative likelihood (or probability) that the value of the random variable would equal that
+ sample.
+</p>
+
+<p>
+P:A-&gt;R [0,1]
+</p>
+
+<p>
+Методы описания (распределения случайной величины):
+</p>
+<ul class="org-ul">
+<li>F(x) функции распределения - вероятностью того, что значения случайной величины меньше или равное
+вещественного числа x - интервал [a, b) - вероятность F(b)-F(a)</li>
+<li>f(x) - плотности вероятности density</li>
+<li>характеристической функции</li>
+<li>probability mass function (PMF)</li>
+<li>cumulative distribution function</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc5d885b" class="outline-3">
+<h3 id="orgc5d885b"><span class="section-number-3">13.2.</span> Kolmogorov axioms and basis ( частотная)</h3>
+<div class="outline-text-3" id="text-13-2">
+<ol class="org-ol">
+<li>Probability quantifies as a number between 0 and 1</li>
+<li>P(Ω) = 1 - probability that at least one of the elementary events</li>
+<li>P(∪Ei) = ∑P(Ei) Where E - events. Any countable sequence of disjoint sets (synonymous with <b>mutually
+exclusive events</b>) satisfies. - взаимоисключающие события</li>
+</ol>
+
+<p>
+Note:
+</p>
+<ul class="org-ul">
+<li>P(E) -  probability of some event</li>
+<li>Let (Ω, F, P) be a probability space -</li>
+<li>Ω - set of all possible outcomes</li>
+<li>F - set of <b>events</b> - each event is a set containing zero or more <b>outcomes</b> - или Алгебра событий</li>
+<li><b>elementary event</b> or simple event - is an event which contains only a single outcome</li>
+<li>P(not A) = 1 - P(A)</li>
+</ul>
+
+<p>
+Example: single coin-toss, and assume that the coin will either land heads (H) or tails (T) (but not both). No
+assumption is made as to whether the coin is fair.
+</p>
+<ul class="org-ul">
+<li>Ω = {H,T}</li>
+<li>F={∅,{H},{T},{H,T}}</li>
+<li>P(∅)=0 - Вероятность невыподания = 0</li>
+<li>P({H,T})= 1 = P({H}) + P({T})</li>
+</ul>
+
+<p>
+Consequences: P(A∪B)=P(A) + P(B) - P(A∩B) becouse of:
+</p>
+<ul class="org-ul">
+<li>P(A∪B) = P(A) + P(B\A) (by Axiom 3)</li>
+<li>P(A∪B) = P(A) + P(B\(A∩B))</li>
+<li>P(B) = P(B\(A∩B)) + P(A∩B)</li>
+<li>P(B) - P(A∩B) = P(B\(A∩B))</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org93fe826" class="outline-3">
+<h3 id="org93fe826"><span class="section-number-3">13.3.</span> веротяность, условная вероятность <a id="org3ae312f"></a></h3>
+<div class="outline-text-3" id="text-13-3">
+<p>
+условная вероятность и теорема Байеса (Bayes' theorem) являются фундаментом для байесовского классификатора
+</p>
+<ul class="org-ul">
+<li>случайным экспериментом - эксперимент, результат которого не детерминирован изначально</li>
+<li>элементарный исход - исхода случайного эксперимента</li>
+<li>пространством элементарных исходов - омега Ω</li>
+</ul>
+
+<p>
+P(A) = n/N - <b>вероятность</b> А
+</p>
+<ul class="org-ul">
+<li>n - равновероятные элементарные исходы, составляющие событие A,</li>
+<li>N - все возможные элементарные исходы</li>
+</ul>
+
+<p>
+<b>Дополнение события А</b> - это неболагоприятные события для А. У дополнения А и самого А нет общих исходов - они
+ взаимоисключающие, называют <b>несовместные</b>. (черта над А, у нас ^A)
+</p>
+<ul class="org-ul">
+<li>P(A) - P(<sup>A</sup>) = 1</li>
+<li>1 - 0.7 = 0.3 - 0.7 и 0.3 вероятности 2 взаимоисключающих событий</li>
+</ul>
+
+<p>
+вероятность двух несовместимых событий в одном эксперименте
+</p>
+<ul class="org-ul">
+<li>P(A U B ) = P(A) + P(B) - где А и B - несовместимые</li>
+</ul>
+
+<p>
+вероятность двух независимых событий в двух разных экспериментах или пересечение в одном
+</p>
+<ul class="org-ul">
+<li>P(A ∩ B) = P(A) * P(B)</li>
+<li>если равенство выполняется, то события <b>независимы</b></li>
+</ul>
+
+<p>
+вероятность двух совместимых событий в двух разных экспериментах
+</p>
+<ul class="org-ul">
+<li>P(A U B) = P(A) + P(B) - P(A ∩ B)</li>
+</ul>
+
+<p>
+Разбиение вероятностного пространства — это взаимоисключающие и совместно исчерпывающие события
+</p>
+
+<p>
+Услованая вероятность P(B|A) - вероятность B при условии A уже произошло (posterior probability)
+</p>
+<ul class="org-ul">
+<li>P(B|A) = P(A and B) / P(A)
+<ul class="org-ul">
+<li>где P(A and B) - вероятность что произошло А и затем B</li>
+</ul></li>
+<li>P(A and B) = P(A) * P(B|A)
+<ul class="org-ul">
+<li>если это один эксперимент, то скорее всего P(A and B) = P(A)</li>
+<li>например: Среди студентов-первокурсников онлайн-магистратуры SkillFactory 30 % устроились на
+работу в первый месяц обучения, а остальные — позже. Среди тех, кто устроился на работу в первый
+месяц, 70 % получили повышение в течение года.
+<ul class="org-ul">
+<li>30/70*70/100=0.3 получили повышение в течении первого года</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+Precision = P(real=1&amp;pred=1|pred=1) = tp/(tp+fp)
+Recall = P(real=1&amp;pred=1|real=1) = tp/(tp+fn)
+Specificity = P(real=0&amp;pred=0|pred=0)
+</p>
+
+<p>
+Cобытия A и B называются <b>независимыми</b>, если вероятность их пересечения равна произведению вероятностей
+</p>
+<ul class="org-ul">
+<li>P(A and B) = P(A) * P(B|A)</li>
+</ul>
+
+<p>
+Вероятность, что случайно выбранный человек пьёт кофе, равна сумме вероятности, что человек пьёт кофе и
+  является мужчиной, и вероятности, что человек пьет кофе и является женщиной.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org034f849" class="outline-3">
+<h3 id="org034f849"><span class="section-number-3">13.4.</span> types of events</h3>
+<div class="outline-text-3" id="text-13-4">
+<p>
+Marginal Probability - probability of one event, P(A).
+</p>
+
+<p>
+<b>Joint probability</b> - just product of two Independent events. ex. for two coins: 01 11 10 00
+</p>
+<ul class="org-ul">
+<li>P(A,B) = P(A)*P(B) - for independent</li>
+</ul>
+
+<p>
+<b>Cross-entropy</b> - measures the difference between two probability distributions. see <a href="theory#MissingReference">theory#MissingReference</a>
+</p>
+<ul class="org-ul">
+<li>is a averaged probabilities of p outcomes by the weights of amount of information in q outcomes.</li>
+<li>relative entropy, for discrete: H(p,q) = - ∑<sub>x</sub> p(x)*log(q(x))</li>
+<li>relative entropy, for continuo: H(p,q) = - ∫ P(x)*log(Q(x)) dx</li>
+<li>where p is true q predicted distribution.</li>
+<li>entropy is uncertainty associated with it variable</li>
+<li>measure surprise/discrepancy when moving from one distribution to another.</li>
+<li>Asymmetric: Cross-entropy is not symmetric with respect to its arguments. It penalizes deviations from the
+true distribution more severely than vice versa.</li>
+<li>sensitive to small differences between the predicted and true distributions. It penalizes larger deviations
+more severely than smaller ones.</li>
+<li>will be equal to the entropy of the distribution if the two probability distributions are identical.</li>
+</ul>
+
+
+<p>
+<b>Independent events</b>
+</p>
+<ul class="org-ul">
+<li>P(A and B) = P(A∩B)=P(A)P(B)  -  joint probability equals the product of their probabilities</li>
+<li>two coins are flipped the chance of both being heads is 1/2*1/2 = 1/4</li>
+</ul>
+<p>
+<b>Mutually exclusive events</b>
+</p>
+<ul class="org-ul">
+<li>P(A and B) = P(A∩B)= 0</li>
+<li>P(A or B) = P(A∪B) = P(A) + P(B) - P(A∩B) = P(A)+P(B)</li>
+<li>Ex. Chance of rolling a 1 or 2 on a six-sided die is P(1 or 2) = P(1)+P(2) = 1/6 + 1/6 = 1/3</li>
+</ul>
+<p>
+<b>Not mutually exclusive events</b>
+</p>
+<ul class="org-ul">
+<li>P(A or B) = P(A∪B) = P(A) + P(B) - P(A∩B)</li>
+<li>Ex. drawing card from a deck of cards, the chance of getting a heart or a face card (J,Q,K) (or one that is both):
+<ul class="org-ul">
+<li>total 52, 13 - hearts, 12 - face cards, 3 - heart face cards in deck.</li>
+<li>13/52 + 12/52 - 3/52 = 11/26</li>
+</ul></li>
+</ul>
+<p>
+<b>Conditional probability</b> - probability of some event A, given the occurrence [əˈkʌrəns] of some other event B
+ (учитывая наличие)
+</p>
+<ul class="org-ul">
+<li>P(A|B) -  "A given B" - Вероятность A учитывая unconditional B</li>
+<li>Ex. Box: 2 red and 2 blue balls. Taking second boll A pobability: 1/3</li>
+<li>P(B)=1/2  P(A∩B) = x/(1/2) = 1/3</li>
+<li>P(A|B) = P(A∩B)/P(B) = P(B|A)P(A)/P(B)</li>
+<li>P(A and B) = P(A|B)*P(B) - вероятность совместного появления двух зависимых событий А после B:</li>
+<li>Ex. В урне 4 белых и 7 черных шаров. всего 11. Оба белые?
+<ul class="org-ul">
+<li>P(B) = 4/11</li>
+<li>P(A|B) = 3/10</li>
+<li>P(A∩B) = 3/10*4/11=6/55</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org20bb81d" class="outline-3">
+<h3 id="org20bb81d"><span class="section-number-3">13.5.</span> теорема Байеса Bayes' theorem</h3>
+<div class="outline-text-3" id="text-13-5">
+<p>
+see <a href="#org3ae312f">13.3</a>
+</p>
+
+<ul class="org-ul">
+<li>P(A|B) = P(A and B)/P(B)</li>
+<li>P(B|A) = P(A and B)/P(A)</li>
+</ul>
+
+<p>
+Теорема Байеса - позволяет «переставить причину и следствие»
+</p>
+<ul class="org-ul">
+<li>P(A|B) = ( P(B|A)*P(A) ) / P(B)</li>
+<li>из P(B|A) можно получить P(A|B)</li>
+<li>P(A and B) = P(A) * P(B|A) = P(B) * P(A|B)</li>
+<li>Posterior = ( Likelihood * Prior ) /  Evidence</li>
+</ul>
+
+
+
+<pre class="example">
+P(A|B) = P(B|A)*P(A)/P(B)
+</pre>
+
+
+<ul class="org-ul">
+<li>Если B разложить на "B и A" и "B и не A", то:
+<ul class="org-ul">
+<li>P(B) = P(B,A)+P(B,¬A)</li>
+<li>P(A|B) = P(B|A)P(A)/(P(B|A)P(A)+ P(B|¬A)P(¬A))</li>
+</ul></li>
+</ul>
+
+<p>
+in P(A|B) = ( P(B|A)*P(A) ) / P(B)
+</p>
+<ul class="org-ul">
+<li><b>posterior probability</b> of A = P(A|B)</li>
+<li><b>prior probability</b> of A = P(A)</li>
+<li>A is called <i>hypothesis</i> and B is <i>given data</i></li>
+</ul>
+
+<p>
+If P(A|B) = P(A), then events A and B are said to be independent.
+</p>
+
+
+
+<pre class="example">
+P(Ai|B) = P(B|Ai)*P(A)/∑(P(B|Aj)*P(Aj))
+</pre>
+
+<p>
+for A1, &#x2026;, An - mutually exclusive and exhaustive events
+</p>
+</div>
+
+
+<div id="outline-container-orgabdfad9" class="outline-4">
+<h4 id="orgabdfad9"><span class="section-number-4">13.5.1.</span> Prior probability A</h4>
+<div class="outline-text-4" id="text-13-5-1">
+<p>
+Информативное априорное распределение - выражает конкретную информацию о переменной.
+</p>
+<ul class="org-ul">
+<li>Например, подходящим априорным распределением для температуры воздуха завтра в полдень будет нормальное
+распределение со средним значением, равным температуре сегодня в полдень, и дисперсией, равной ежедневной
+дисперсии температуры.</li>
+</ul>
+
+<p>
+Неинформативное априорное распределение выражает размытую или общую информацию о переменной.
+</p>
+<ul class="org-ul">
+<li>Например, такое априори может выражать «объективную» информацию о том, что «переменная может быть только
+положительной» или «переменная лежит в интервале».</li>
+</ul>
+
+
+<p>
+the same result would be obtained if all the prior probabilities P(Ai) and P(Aj) were multiplied by a given
+ constant.
+</p>
+
+<p>
+<b>improper prior</b> - in many cases the sum or integral of the prior values may not even need to be finite to get
+ sensible answers for the posterior probabilities.
+</p>
+<ul class="org-ul">
+<li>Statisticians sometimes use improper priors as uninformative priors.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5a271b8" class="outline-4">
+<h4 id="org5a271b8"><span class="section-number-4">13.5.2.</span> Example:</h4>
+<div class="outline-text-4" id="text-13-5-2">
+<ul class="org-ul">
+<li>Suppose we have 100 movies and 50 books.</li>
+<li>There are 3 different movie types: Action, Sci-fi, Romance,</li>
+<li>2 different book types: Sci-fi, Romance</li>
+</ul>
+
+<p>
+100 movies
+</p>
+<ul class="org-ul">
+<li>20 of those  are Action.</li>
+<li>30 are Sci-fi</li>
+<li>50 are Romance.</li>
+</ul>
+
+<p>
+50 books
+</p>
+<ul class="org-ul">
+<li>15 of those are Sci-fi</li>
+<li>35 are Romance</li>
+</ul>
+
+<p>
+So given a unclassified object,
+</p>
+<ul class="org-ul">
+<li>P(Movie) = <b>Prior</b> = 100/150 - it's a movie</li>
+<li>P(Book) = <b>Prior</b> = 50/150 - for book.</li>
+<li>If we already know it's a movie, then the probability that it's an action movie is 20/100, 30/100 for Sci-fi and 50/100 for Romance.</li>
+<li>If we already know it's a book, then that probability that it's an Sci-fi book is 15/50, 35/50 for Romance.</li>
+<li>P(movie|Sci-fi) = P(Sci-fi| Movie) * P(Movie) / P(Sci-fi)</li>
+</ul>
+<p>
+task:
+</p>
+<ul class="org-ul">
+<li>P(Sci-fi| Movie) = P(movie|Sci-fi) * P(Sci-fi) / P(Movie)</li>
+<li>P(Sci-fi) = <b>Evidence</b> = 45/150</li>
+<li>P(movie|Sci-fi) = <b>Posterior</b> = 30/100</li>
+<li>P(Sci-fi| Movie) = <b>Likelihood</b> = (30/100*45/150)/(100/150) = 0.135</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org934e743" class="outline-3">
+<h3 id="org934e743"><span class="section-number-3">13.6.</span> Frequent классическая частотная статистика</h3>
+<div class="outline-text-3" id="text-13-6">
+<p>
+Классической или частотная статистика - , которая предполагает, что вероятности — это
+частота конкретных случайных событий, происходящих в длительном цикле повторяющихся испытаний.
+</p>
+
+<p>
+считаем, что случайную величину можно оценить, только если будет проведено большое количество
+экспериментов.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5af9e7a" class="outline-3">
+<h3 id="org5af9e7a"><span class="section-number-3">13.7.</span> Bayesian Байесовская статистика</h3>
+<div class="outline-text-3" id="text-13-7">
+<p>
+предоставляет математические инструменты для обновления представлений о случайных событиях в свете
+появления новых данных или свидетельств об этих событиях.
+</p>
+
+<p>
+случайная величина — это детерминированный процесс, который можно просчитать даже без
+экспериментов, если знать значение всех влияющих на процесс факторов.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2777eca" class="outline-3">
+<h3 id="org2777eca"><span class="section-number-3">13.8.</span> схемой повторных независимых испытаний или схемой Бернулли <a id="orgdd3dbf0"></a></h3>
+<div class="outline-text-3" id="text-13-8">
+<ul class="org-ul">
+<li>Какова вероятность того, что в результате n независимых испытаний событие A наступит ровно k раз?</li>
+<li>P(A)=p</li>
+<li>Pk =</li>
+<li>Ckn - Количество различных сочетаний успеха и неудач в последовтаельности испытаний</li>
+<li>Вероятность удачной комбинации P(A)P(B) = p<sup>k</sup>*(1-p)<sup>n</sup>-k</li>
+<li>Pnk=Ckn*p<sup>k</sup>*(1-p)<sup>n</sup>-k см <a href="#org3f10975">12.1.1</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf312c13" class="outline-3">
+<h3 id="orgf312c13"><span class="section-number-3">13.9.</span> Непрерывная случайная величина  continuous probability distribution</h3>
+<div class="outline-text-3" id="text-13-9">
+</div>
+<div id="outline-container-org8c1344d" class="outline-4">
+<h4 id="org8c1344d"><span class="section-number-4">13.9.1.</span> Функция распределения or cumulative distribution function CDF</h4>
+<div class="outline-text-4" id="text-13-9-1">
+<p>
+Общее:
+</p>
+<ul class="org-ul">
+<li>0&lt;=F(x)&lt;=1</li>
+</ul>
+<p>
+Дискретную можно настроить: F(x)=p(l(x-x0)) + p(l(x-x1))
+</p>
+<ul class="org-ul">
+<li>для дискретной СВ функция распределения является ступенчатой.</li>
+</ul>
+<p>
+Непрерывная CDF:
+</p>
+<ul class="org-ul">
+<li>CDF F(x) = P(X &lt; x) - describes the probability that the random variable is no larger than a given value</li>
+<li>P(a&lt;X&lt;=b)=F(b)-F(a)</li>
+<li>интеграл от -∞ до x от f(t) по dt = F(x) where f(x) - probability density function</li>
+<li>P(X=b)=F(b) - (x-&gt;-b)limF(x) - If F is continuous at b this <b>equals zero</b></li>
+<li>In the case of a continuous distribution, it gives the area under the probability density function from
+-∞ to x.</li>
+</ul>
+
+<p>
+probability that the outcome lies in a given interval can be computed:
+</p>
+<ul class="org-ul">
+<li>by taking the difference between the values of the cumulative distribution function at the endpoints of the interval</li>
+<li>by integrating the probability density function over that interval</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgf863131"></a>гемор через функцию распределения<br />
+<div class="outline-text-5" id="text-13-9-1-1">
+<p>
+<b>теории распределений на подмножествах R</b>
+</p>
+<ul class="org-ul">
+<li>До этого мы имели дело с дискретным распределением, пронумерованным исходам дается вероятность.</li>
+<li>Если функция распределений X = X(ω) у которой область значений R</li>
+<li>Рассмотреть булеву σ-алгебру подмножеств R, порожденную всевозможными интервалами на прямой R. (борелевским полем)</li>
+<li>Введем измеримое пространство (R,β)  {w:X(w)∈β}⊂Ω</li>
+<li>вероятность попадания значения X в B как Px(B) = P(X^−1(B))</li>
+<li>Случайной величиной X=X(ω) называется измеримое отображение измеримого пространства (Ω,A) на борелевскую прямую (R,β).</li>
+<li>Борелевское поле является чрезвычайно сложным объектом с точки зрения строений его элементов, поэтому
+задание функции P(B), B∈β представляется совершенно неразрешимой проблемой.</li>
+<li>мы знаем, что B порождается интервалами вида (−∞, x)(событиями X &lt; x)</li>
+<li>начнем с задания вероятности только на событиях, порождающих β:F(x)=P(X&lt;x), x∈R потом распространить ее аддитивным</li>
+</ul>
+<p>
+образом на булеву алгебру конечных объединений всевозможных интервалов на R
+</p>
+
+
+<p>
+Cейчас мы займемся построением вероятностных моделей, в которых пространство элементарных исходов есть
+числовая прямая.
+<b>функцией распределения F(x)=P(X&lt;x) случайной величины X</b>
+</p>
+<ul class="org-ul">
+<li>Пусть X принимает вероятность 1/2 на x = -1 и x = 1. Тогда функция распределения F(x) = (0 if x&lt;-1 1 if x&gt;1 else 1/2)</li>
+<li>Действительно, для любого x &lt;−1 множество (−∞, x) не содержит значений X =&gt; F(x) = 0</li>
+<li>В области x &gt; +1 содержатся все значения случайной величины X, которые она принимает с положительной
+вероятностью, поэтому F(x) = 1 при x&gt;+1</li>
+</ul>
+<p>
+Свойства функции распределения
+</p>
+<ul class="org-ul">
+<li>(x-&gt;-∞)lim F(x)=0</li>
+<li>(x-&gt;+∞)lim F(x)=1</li>
+<li>0&lt;=F(x)&lt;=1</li>
+<li>F(x) – неубывающая функция x∈R.</li>
+<li>Функция F(x) имеет не более чем счетное множество скачков.</li>
+<li>Абсолютно непрерывными называют распределения, имеющие плотность вероятности</li>
+<li>F(x) = μ(-∞,x]= интеграл от -∞ по x от f(t) по dt где f(x) - probability density function</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orge94ed7a" class="outline-4">
+<h4 id="orge94ed7a"><span class="section-number-4">13.9.2.</span> Плотность вероятности probability density function (PDF) or density f(x) <a id="org98034a2"></a></h4>
+<div class="outline-text-4" id="text-13-9-2">
+<p>
+A distribution has a density function if and only if its <b>cumulative distribution function</b> F(x) is absolutely
+continuous. In this case: F is almost everywhere differentiable, and its derivative can be used as probability
+density: (d/dx)F(x)=f(x)
+</p>
+<ul class="org-ul">
+<li>P(a&lt;=X&lt;=b) = интеграл от а до b</li>
+</ul>
+<p>
+по <b>f(x)</b> по dx
+</p>
+<ul class="org-ul">
+<li>F(x)= интеграл от -∞ до x по f(u) по du - распределение</li>
+<li>one can think of f(x)dx as being the probability of X falling within the infinitesimal interval [x , x+dx].</li>
+<li>f(x) - [0,1]</li>
+</ul>
+
+<p>
+Example:
+</p>
+<ul class="org-ul">
+<li>Suppose bacteria of a certain species typically live 4 to 6 hours.</li>
+<li>The probability that a bacterium lives exactly 5 hours is equal to zero.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge93257b" class="outline-3">
+<h3 id="orge93257b"><span class="section-number-3">13.10.</span> Распределения</h3>
+<div class="outline-text-3" id="text-13-10">
+<ul class="org-ul">
+<li>свойства <a href="https://en.wikipedia.org/wiki/Probability_distribution">https://en.wikipedia.org/wiki/Probability_distribution</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_probability_distributions">https://en.wikipedia.org/wiki/List_of_probability_distributions</a></li>
+</ul>
+
+<p>
+Распределение (distribution) - это формула описания значений случайной величины - для каждого события какая вероятность. PMS
+ чаще всего, так как для дискретных.
+</p>
+</div>
+<div id="outline-container-org942effb" class="outline-4">
+<h4 id="org942effb"><span class="section-number-4">13.10.1.</span> характеристики</h4>
+<div class="outline-text-4" id="text-13-10-1">
+<p>
+<b>Probability mass function</b> (PMF) (функция вероятности) - for discrete only
+</p>
+<ul class="org-ul">
+<li>P(X) = R, ∑P(X) = 1</li>
+<li>for continues variable PDF is used</li>
+<li>для монеты pX(x)=(1/2 if x∈{0, 1}, 0 if x∉{0,1})</li>
+<li>-&gt;[0,1]</li>
+<li>x - outcomes, y - probability</li>
+</ul>
+
+<p>
+<b>Probability density function</b> (PDF) - Плотность вероятности - for continuous
+</p>
+<ul class="org-ul">
+<li>вероятность попадания слуйчайной величины в интервал</li>
+<li>ingetral -∞ +∞ f(x)dx = 1</li>
+</ul>
+
+<p>
+<b>Cumulative distribution function</b> (CDF) - удобно для continuous random variable
+</p>
+<ul class="org-ul">
+<li>ingetral -∞ x f(t)dt = F(x)</li>
+<li>вероятность того, что случайная величина X примет значение, меньшее х</li>
+<li>F(x) = P(X &lt; x) - probability that the random variable X takes on a value less than or equal to x</li>
+<li>lim -&gt; +∞ F(x) = 1</li>
+<li>lim -&gt; -∞ F(x) = 0</li>
+<li>F(b)-F(a) - для непрерывной - вероятностью того, что значения случайной величины меньше или равное
+вещественного числа x</li>
+</ul>
+
+<p>
+<b>Mode</b>
+</p>
+<ul class="org-ul">
+<li>= типичность</li>
+<li>значение во множестве наблюдений, которое встречается наиболее часто</li>
+<li>Модой абсолютно непрерывного распределения называют любую точку локального максимума плотности распределени.</li>
+</ul>
+<p>
+<b>Median</b>
+</p>
+<ul class="org-ul">
+<li>P(X&lt;=m)&gt;=1/2 and P(X&gt;=m)&gt;=1/2 where m-median</li>
+<li>P(X&lt;=m) = P(X&gt;=m) = интеграл от -∞ to m от f(x) по dx = 1/2 где f(x) -  probability density</li>
+<li>учитывает площадь f(x) 50% на %50</li>
+</ul>
+<p>
+<b>Mean</b> Среднее значение - некоторое число, заключённое между наименьшим и наибольшим из их значений ???
+</p>
+
+<p>
+<b>arithmetic mean</b> - сумма элементов деленная на количество
+</p>
+<ul class="org-ul">
+<li>np.mean</li>
+<li>вычитание среднего из каждого эллемента - привеодит к mean = 0</li>
+</ul>
+
+<p>
+<b>Expected value</b> Математическое ожидание - модель для среднего арифметического - число
+</p>
+<ul class="org-ul">
+<li>Discrete: среднее значение случайной величины</li>
+<li>"probability-weighted average" of all its possible values: mid = (∑wi*xi)/∑wi где w - веса</li>
+<li>В случае непрерывной случайной величины подразумевается взвешивание по плотности распределения</li>
+<li>E[X] or M[X]</li>
+<li>E[X] = ∑xi*pi where x - outcome, p - probability</li>
+</ul>
+<p>
+Example: roll of a fair six-sided die X = 1,2,3,4,5,6 all with probability 1/6
+</p>
+<ul class="org-ul">
+<li>E[X] = 1*1/6+2*1/6+3*1/6+4*1/6+5*1/6+6*1/6 = 3.5</li>
+<li><b>strong law of large numbers</b> states that the sample average converges almost surely to the expected value</li>
+</ul>
+
+<p>
+<b><a id="org7b18363"></a> Дисперсия случайной величины</b> σ<sup>2</sup> D[X] - мера разброса значений случайной величины относительно её
+ математического ожидания
+</p>
+<ul class="org-ul">
+<li>для дискретной D[X] = ∑pi(xi-E[X])<sup>2</sup></li>
+<li>для непрерывной D[X] = интеграл от -∞ по +∞ от (x-E[X])<sup>2</sup>*f(x) по dx где f(x)-density</li>
+<li>np.var()</li>
+</ul>
+
+<p>
+<b>Standard deviation Среднеквадратическое отклонение</b> σ - показатель рассеивания значений случайной величины
+ относительно её математического ожидания
+</p>
+<ul class="org-ul">
+<li>σ = √D[X]</li>
+<li>np.std</li>
+<li>деление каждого элемента на std дает std = 1</li>
+</ul>
+
+<p>
+<b>normal distribution</b>
+</p>
+<ul class="org-ul">
+<li>mean = 0</li>
+<li>std = 1</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb0b67e1" class="outline-4">
+<h4 id="orgb0b67e1"><span class="section-number-4">13.10.2.</span> виды случайных величин и распределений</h4>
+<div class="outline-text-4" id="text-13-10-2">
+</div>
+<ol class="org-ol">
+<li><a id="org85d331c"></a>дискретные распределения<br />
+<div class="outline-text-5" id="text-13-10-2-1">
+<p>
+Дискретная случайная величина — это случайная величина, множество значений которой конечно или счётно.
+</p>
+<ul class="org-ul">
+<li>∑P(Ai) = 1</li>
+</ul>
+
+<p>
+<b>Равномерное распределение</b> — это распределение вероятностей, в качестве значений которого могут выступать любые
+целые числа от 1 до N, а вероятности P(x) их появления одинаковы. Например монетка N=2, P(x) = 1/2
+</p>
+
+<p>
+Expected value EX = (N+1)/2
+</p>
+<ul class="org-ul">
+<li>для монетки 3/2=1.5</li>
+</ul>
+
+<p>
+σ = sqrt((N<sup>2</sup> - 1)/12)
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org02d70cb"></a>Распределение Бернулли (discrete)(finite)<br />
+<div class="outline-text-6" id="text-13-10-2-1-1">
+<p>
+Случайная величина X имеет распределение Бернулли, если она принимает всего два значения: 1 и 0 с
+вероятностями p и q ≡ 1 − p соответственно.
+</p>
+
+<p>
+Probability mass function (Функция вероятности):
+</p>
+<ul class="org-ul">
+<li>P(X=0)=q</li>
+<li>P(X=1)=p</li>
+</ul>
+
+<p>
+Функция распределения:
+F(x) = 1/2, x∈{0,1} or  0, x ∉{0,1}
+</p>
+</div>
+
+
+<ol class="org-ol">
+<li><a id="orgaede83f"></a>cumulative distribution function<br />
+<div class="outline-text-7" id="text-13-10-2-1-1-1">
+<p>
+Фунция распределения
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">     &#8721;P(x)
+      ^
+      |
+     1+              +------
+      |              |
+      |            p |
+      |              |
+     q+   +----------+
+      |  q|
+      |___|
+      ----+----------+-------&gt; x
+          0          1
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org57774b0"></a>Probability density function<br />
+<div class="outline-text-7" id="text-13-10-2-1-1-2">
+<p>
+Функция вероятности
+</p>
+
+<div class="org-src-container">
+<pre class="src src-text">   P(x)
+    ^
+    |
+    |
+   1+
+    |
+   p+             *
+    |             |
+    |             |
+   q+      *      |
+    |      |      |
+    +------+------+--------&gt; x
+           0      1
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org51ffc0a"></a>ex<br />
+<div class="outline-text-7" id="text-13-10-2-1-1-3">
+<p>
+Вы стреляете по мишени в тире. Вероятность попасть составляет 0.6. В случае успеха вы выиграете плюшевого
+  медведя стоимостью 3000 рублей, а в случае промаха — не выиграете ничего. У вас есть только один выстрел.
+</p>
+
+<p>
+Какой должна быть стоимость билета, чтобы игра была честной, то есть чтобы цена билета равнялась ожидаемому
+  выигрышу, а значит, не уводила в убыток продавца или вас при большом количестве выстрелов?
+</p>
+
+<ul class="org-ul">
+<li>1*0.6 + 0*0.4 = 1</li>
+<li>0.6*3000 + 0.4* 0 = 1800</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgac201a2"></a>Binomial distribution (discrete)(finite) см <a href="#orgdd3dbf0">13.8</a><br />
+<div class="outline-text-6" id="text-13-10-2-1-2">
+<p>
+Повторение нескольких независимых испытаний Бернулли называется процессом Бернулли.
+</p>
+
+<p>
+Number of successes in a sequence of n independent experiments (имеющих одинаковое распределение
+  Бернулли)(Bernoulli process), each asking a yes–no question (Xi принимает значения 1 «успех» и 0 «неудача»)
+</p>
+<ul class="org-ul">
+<li>1 - с вероятностью p</li>
+<li>0 - q=1−p</li>
+</ul>
+
+<p>
+Биноминальная случайная величина это сумма n независимых случайных величин с распределением Бернулли
+</p>
+
+<p>
+Probability of getting exactly k successes in n trials is given by the probability mass function:
+</p>
+<ul class="org-ul">
+<li>f(k,n,p) = Cnk*p<sup>k</sup>*q<sup>(n-k)</sup> см <a href="#org3f10975">12.1.1</a></li>
+</ul>
+<p>
+Пример p=0.5 n=40
+</p>
+<ul class="org-ul">
+<li>PMS f(20)=0.14, f(10)=0.01, f(30)=0.01</li>
+<li>CMS f(10)=0.01, f(20)=0.5, f(40)=1</li>
+
+<li><a href="https://en.wikipedia.org/wiki/Binomial_distribution">https://en.wikipedia.org/wiki/Binomial_distribution</a></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org4d650ff"></a>ex<br /></li>
+</ol>
+</li>
+
+<li><a id="orgb13e22d"></a>Discrete univariate distribution<br />
+<div class="outline-text-6" id="text-13-10-2-1-3">
+<p>
+all elements of a finite set are equally likely
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org295e502"></a>ex:<br />
+<div class="outline-text-7" id="text-13-10-2-1-3-1">
+<p>
+Normal p.d.f - в виде сплошной линии. Binominal distribution - в виде гистрограммы.
+</p>
+<div class="org-src-container">
+<pre class="src src-text" id="orgbe4fd11">       P(X=k)
+        ^
+        |
+    0.4 +                 ___
+        |                /   \
+        |              _/     \_
+        |             /         \
+        |            |           |
+        |           /             \
+        |          |               |
+        |         /                 \
+        |        /                   \
+        |    __ /                     \_
+        | __/
+        /+-----------------+--------------+---&gt; k
+         0                 3              6
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org5aabace"></a>Continuous uniform distribution<br />
+<div class="outline-text-6" id="text-13-10-2-1-4">
+<p>
+there is an arbitrary outcome that lies between certain bounds
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orga321ea2"></a>Абсолютно непрерывные распределения<br />
+<div class="outline-text-5" id="text-13-10-2-2">
+<p>
+случайная величина X называется абсолютно непрерывной если существует неотрицательная функция:
+</p>
+<ul class="org-ul">
+<li>P(X)</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org6f8f6d4"></a>Normal distribution, Нормальное распределение, распределением Гаусса, bell curve (continuous)(whole real line)<br />
+<div class="outline-text-6" id="text-13-10-2-2-1">
+<ul class="org-ul">
+<li>Notation N(μ,σ<sup>2</sup>)</li>
+</ul>
+
+<p>
+density function (функцией Гаусса):
+</p>
+<ul class="org-ul">
+<li>PDF f(x) = 1/(σ√(2π))*e^-(x-μ)<sup>2</sup>/2σ<sup>2</sup></li>
+<li>CDF F(x) = &#x2026;.</li>
+<li>μ - mean or expectation of the distribution (and also its median and mode)</li>
+<li>σ - standard deviation</li>
+<li>σ<sup>2</sup> - variance</li>
+<li>Стандартным нормальным распределением называется нормальное распределение с математическим ожиданием μ = 0 и
+стандартным отклонением σ = 1.</li>
+<li>PDF см <a href="#org98034a2">13.9.2</a> имеет форму колокола x = -∞ to +∞ y = [0;1]</li>
+<li>CDF форму S</li>
+<li>Skewness = 0</li>
+</ul>
+<p>
+Значение:
+</p>
+<ul class="org-ul">
+<li>Если некая величина образуется в результате сложения многих случайных слабо взаимозависимых величин, каждая
+из которых вносит малый вклад относительно общей суммы, то центрированное и нормированное распределение
+такой величины при увеличении числа наблюдений стремится к нормальному распределению.</li>
+<li>to represent real-valued random variables whose distributions are not known</li>
+<li>useful because of the <b>central limit theorem</b> - states that averages of samples of observations of random
+variables independently drawn from independent distributions <b>converge in distribution</b> to the normal, that
+is, they become normally distributed when the number of observations is sufficiently large. N(0,1)</li>
+<li>при больших n биноминальная случайная величина приближенно распределена с математическим ожиданием μ=np и
+стандартным отклонением σ=√(np(1-p))</li>
+
+<li>Probability density function <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/220px-Normal_Distribution_PDF.svg.png" alt="220px-Normal_Distribution_PDF.svg.png" /></li>
+<li>Cumulative distribution function <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Normal_Distribution_CDF.svg/220px-Normal_Distribution_CDF.svg.png" alt="220px-Normal_Distribution_CDF.svg.png" /></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgef1dcaf"></a>Beta distribution<br />
+<div class="outline-text-6" id="text-13-10-2-2-2">
+<p>
+Notation: Beta(α, β)
+</p>
+<ul class="org-ul">
+<li>defined on the interval [0, 1] or (0, 1)</li>
+<li><p>
+The beta distribution is a suitable model for the random behavior of percentages and proportions.
+</p>
+
+<p>
+<a href="http://varianceexplained.org/statistics/beta_distribution_and_baseball/">http://varianceexplained.org/statistics/beta_distribution_and_baseball/</a>
+</p></li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div id="outline-container-org34413ee" class="outline-4">
+<h4 id="org34413ee"><span class="section-number-4">13.10.3.</span> Сходимость по распределению Convergence of random variables</h4>
+<div class="outline-text-4" id="text-13-10-3">
+<p>
+sequence X1, X2, &#x2026; of real-valued random variables is said <b>to converge in distribution</b> to a random
+variable X if:
+</p>
+
+<p>
+(n-&gt;∞) lim Fn(x) =F(x) where Fn(x) - cumulative distribution functions of random variables Xn and F of X
+</p>
+</div>
+</div>
+
+<div id="outline-container-org09bc092" class="outline-4">
+<h4 id="org09bc092"><span class="section-number-4">13.10.4.</span> Example: calc expected value</h4>
+<div class="outline-text-4" id="text-13-10-4">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+<span style="color: #cae682;">x</span> = <span style="color: #e5786d;">list</span>(<span style="color: #e5786d;">range</span>(-3,5))
+<span style="color: #cae682;">y</span> = [0, 0, 0, 1/3, 1/3, 1, 1, 1]
+plt.plot(x,y)
+plt.title(<span style="color: #95e454;">"PMF"</span>)
+plt.xlabel(<span style="color: #95e454;">'outcome'</span>)
+plt.ylabel(<span style="color: #95e454;">'probability'</span>)
+plt.savefig(<span style="color: #95e454;">'./autoimgs/calc-expected-value.png'</span>)
+plt.close()
+</pre>
+</div>
+
+
+<div id="org88934fd" class="figure">
+<p><img src="./autoimgs/calc-expected-value.png" alt="calc-expected-value.png" />
+</p>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">x</span> = <span style="color: #e5786d;">list</span>(<span style="color: #e5786d;">range</span>(-3,5))
+<span style="color: #cae682;">y</span> = [0, 0, 0, 1/3, 1/3, 1, 1, 1]
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">"E[X]="</span>, <span style="color: #e5786d;">sum</span>([v[0]*v[1] <span style="color: #8ac6f2; font-weight: bold;">for</span> v <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">zip</span>(x,y)]))
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">"variants for answer="</span>, [1, 7/6, 5/6, 1.2])
+</pre>
+</div>
+
+<pre class="example">
+E[X]= 9.333333333333334
+variants for answer= [1, 1.1666666666666667, 0.8333333333333334, 1.2]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92e1387" class="outline-3">
+<h3 id="org92e1387"><span class="section-number-3">13.11.</span> Monte Carlo method</h3>
+<div class="outline-text-3" id="text-13-11">
+<p>
+чтобы узнать, какое в среднем будет расстояние между двумя случайными точками в круге, методом Монте-Карло,
+ нужно взять много случайных пар точек, для каждой пары найти расстояние, а потом усреднить.
+</p>
+</div>
+</div>
+<div id="outline-container-org01ed0dd" class="outline-3">
+<h3 id="org01ed0dd"><span class="section-number-3">13.12.</span> Law of large numbers Закон больших чисел</h3>
+<div class="outline-text-3" id="text-13-12">
+<p>
+the average of the results obtained from a large number of trials should be close to the expected value and
+ tends to become closer to the expected value as more trials are performed.
+</p>
+<ul class="org-ul">
+<li>LLN only applies to the average.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c04573" class="outline-3">
+<h3 id="org0c04573"><span class="section-number-3">13.13.</span> Центральная предельная теорема Central limit theorem</h3>
+<div class="outline-text-3" id="text-13-13">
+<p>
+It states that, under some conditions, the average of many samples (observations) of a random variable with
+ finite mean and variance is itself a random variable—whose distribution converges to a normal distribution as
+ the number of samples increases.
+</p>
+
+<p>
+in many situations, for identically distributed independent samples, the standardized sample mean tends
+ towards the standard normal distribution even if the original variables themselves are not normally
+ distributed.
+</p>
+
+<p>
+Неформально говоря, классическая центральная предельная теорема утверждает, что сумма n независимых одинаково
+ распределённых случайных величин имеет распределение, близкое к N(n*μ,n*σ<sup>2</sup>)
+</p>
+
+<p>
+сумма достаточно большого количества слабо зависимых случайных величин, имеющих примерно одинаковые масштабы
+ (ни одно из слагаемых не доминирует, не вносит в сумму определяющего вклада), имеет распределение, близкое к
+ нормальному.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdee81ee" class="outline-3">
+<h3 id="orgdee81ee"><span class="section-number-3">13.14.</span> Це́пь Ма́ркова Markov chain</h3>
+<div class="outline-text-3" id="text-13-14">
+<p>
+последовательность случайных событий с конечным или счётным числом исходов, где вероятность наступления каждого события зависит только от состояния, достигнутого в предыдущем событии
+</p>
+</div>
+</div>
+<div id="outline-container-orgeaf876f" class="outline-3">
+<h3 id="orgeaf876f"><span class="section-number-3">13.15.</span> python PDF, CDF, variance, std</h3>
+<div class="outline-text-3" id="text-13-15">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2023-04-16 Sun&gt;</span></span>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> pandas <span style="color: #8ac6f2; font-weight: bold;">as</span> pd
+<span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+<span style="color: #8ac6f2; font-weight: bold;">from</span> scipy.interpolate <span style="color: #8ac6f2; font-weight: bold;">import</span> UnivariateSpline
+<span style="color: #8ac6f2; font-weight: bold;">from</span> math <span style="color: #8ac6f2; font-weight: bold;">import</span> sqrt
+<span style="color: #8ac6f2; font-weight: bold;">from</span> statistics <span style="color: #8ac6f2; font-weight: bold;">import</span> variance, stdev
+
+<span style="color: #cae682;">arr</span> = np.random.normal(size=100) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">continuous probability mass function</span>
+<span style="color: #e5786d;">print</span>(pd.Series(arr).describe())
+
+<span style="color: #cae682;">fig</span> = plt.figure(figsize=(8,3))
+
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">" --------- Probability density function (PDF) or density---------"</span>)
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">" - the area under the entire curve is equal to 1"</span>)
+
+<span style="color: #cae682;">sp1</span> = fig.add_subplot(1, 2, 1)   <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">1 row 2 columns - left</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">histogram</span>
+sp1.hist(arr, density=<span style="color: #e5786d; font-weight: bold;">True</span>, bins=20)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">line</span>
+<span style="color: #cae682;">hist</span>, <span style="color: #cae682;">bin_edges</span> = np.histogram(arr, bins=20, density=<span style="color: #e5786d; font-weight: bold;">True</span>)
+<span style="color: #cae682;">x</span> = bin_edges
+<span style="color: #cae682;">x</span> = x[:-1] + (x[1] - x[0])/2   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">convert bin edges to centers</span>
+<span style="color: #cae682;">f</span> = UnivariateSpline(x, hist, k=5)
+sp1.plot(x, hist) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">line</span>
+sp1.plot(x, f(x)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Spline</span>
+sp1.set_title(<span style="color: #95e454;">"Probability density function (PDF)"</span>)
+
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">" -------- cumulative distribution function (CDF) ---------"</span>)
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">" (x-&gt;-&#8734;)lim F(x) = 0 , (x-&gt;+&#8734;)lim F(x) = 1"</span>)
+<span style="color: #cae682;">sp2</span> = fig.add_subplot(1, 2, 2)   <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">1 row 2 columns - right</span>
+
+<span style="color: #cae682;">hist</span>, <span style="color: #cae682;">bin_edges</span> = np.histogram(arr, bins=20, density=<span style="color: #e5786d; font-weight: bold;">False</span>)
+<span style="color: #cae682;">cumsum</span> = np.cumsum(hist)
+<span style="color: #cae682;">cdf</span> = cumsum/cumsum[-1]
+sp2.plot(bin_edges[:-1], cdf)
+sp2.set_title(<span style="color: #95e454;">"cumulative distribution function (CDF)"</span>)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">------ variance -----</span>
+
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">"variance:</span><span style="color: #e5786d; font-weight: bold;">\t</span><span style="color: #95e454;">"</span>, variance(arr))
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">------ std --------</span>
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">"std:</span><span style="color: #e5786d; font-weight: bold;">\t\t</span><span style="color: #95e454;">"</span>, stdev(arr))
+
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">"sqrt of variance:"</span>, sqrt(variance(arr)))
+</pre>
+</div>
+
+<pre class="example" id="orgae90128">
+count    100.000000
+mean       0.015371
+std        1.036308
+min       -3.213961
+25%       -0.684610
+50%       -0.001296
+75%        0.618288
+max        2.394898
+dtype: float64
+ --------- Probability density function (PDF) or density---------
+ - the area under the entire curve is equal to 1
+ -------- cumulative distribution function (CDF) ---------
+ (x-&gt;-∞)lim F(x) = 0 , (x-&gt;+∞)lim F(x) = 1
+variance:	 1.073933925916817
+std:		 1.0363078335691653
+sqrt of variance: 1.0363078335691653
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python">plt.savefig(<span style="color: #95e454;">'./autoimgs/pdfcdf.png'</span>)
+</pre>
+</div>
+
+
+<div id="orgf5c18a5" class="figure">
+<p><img src="./autoimgs/pdfcdf.png" alt="pdfcdf.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6021fcc" class="outline-2">
+<h2 id="org6021fcc"><span class="section-number-2">14.</span> Математическая статистика <a id="orgf4385d9"></a></h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>родственная теории вероятности</li>
+<li>наблюдая значения случайной величины X, исследователь стремится сделать определенное заключение о
+неизвестных параметрах вероятностной модели</li>
+</ul>
+</div>
+<div id="outline-container-org4101254" class="outline-3">
+<h3 id="org4101254"><span class="section-number-3">14.1.</span> terms</h3>
+<div class="outline-text-3" id="text-14-1">
+<dl class="org-dl">
+<dt>point estimator</dt><dd>is a function of the random sample   that is used to estimate an unknown quantity.
+<ul class="org-ul">
+<li>Q = h(X1, X2, X3) , ex. Q = (X1+X2+X3)/n</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgb3b26e9" class="outline-3">
+<h3 id="orgb3b26e9"><span class="section-number-3">14.2.</span> topics wiki</h3>
+<div class="outline-text-3" id="text-14-2">
+<ul class="org-ul">
+<li>Descriptive statistics</li>
+<li>Data collection</li>
+<li>Statistical inference
+<ul class="org-ul">
+<li>Frequentist inference</li>
+<li>Bayesian inference</li>
+<li>Statistical theory - probability distribution, bootstrap, loss function</li>
+</ul></li>
+<li>Correlation</li>
+<li>Regression analysis</li>
+<li>Categorical / Multivariate / Time-series / Survival analysis</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd206d3" class="outline-3">
+<h3 id="orgfd206d3"><span class="section-number-3">14.3.</span> types of statistic:</h3>
+<div class="outline-text-3" id="text-14-3">
+</div>
+<div id="outline-container-org3b43aae" class="outline-4">
+<h4 id="org3b43aae"><span class="section-number-4">14.3.1.</span> Statistical inference or inductive statistics</h4>
+<div class="outline-text-4" id="text-14-3-1">
+<p>
+Статистический вывод, индуктивная статистика.
+</p>
+
+<p>
+steps:
+</p>
+<ol class="org-ol">
+<li>select model</li>
+<li>deducing propositions from the model</li>
+</ol>
+
+<p>
+forms of statistical proposition:
+</p>
+<ul class="org-ul">
+<li>a <b>point estimate</b>, i.e. a particular value that best approximates some parameter of interest; (<b>Mathematical
+optimization</b> is a way to solve it)</li>
+<li>interval estimation -
+<ul class="org-ul">
+<li>confidence interval - would contain the true parameter value with the probability at the stated confidence level;</li>
+<li>credible interval, i.e. a set of values containing, for example, 95% of posterior belief;</li>
+</ul></li>
+<li>distribution estimator - <b>confidence distributions</b>, <b>randomized estimators</b>, and <b>Bayesian posteriors</b>.</li>
+<li>rejection of a hypothesis</li>
+<li>clustering or classification of data points into groups.</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org9a0ad2a"></a>statistical model<br />
+<div class="outline-text-5" id="text-14-3-1-1">
+<p>
+<b>statistical model</b> is a set of assumptions concerning the generation of the observed data and similar
+ data. Descriptive statistics are typically used as a preliminary step.
+</p>
+
+<p>
+A <b>statistical model</b> is a collection of probability distributions on some sample space.
+</p>
+
+<p>
+Degree of models/assumptions
+</p>
+<ul class="org-ul">
+<li>Fully parametric - all the parameters are in finite-dimensional parameter spaces;</li>
+<li>non-parametric - all the parameters are in infinite-dimensional parameter spaces;
+<ul class="org-ul">
+<li>distribution-free methods</li>
+<li>nonparametric statistics - histogram, etc.</li>
+</ul></li>
+<li>semi-parametric - finite-dimensional parameters + infinite-dimensional nuisance parameters (parameter which is unspecified)</li>
+<li>semi-nonparametric - finite-dimensional and infinite-dimensional unknown parameters of interest</li>
+</ul>
+</div>
+</li>
+<li><a id="orgcac7012"></a>paradigs<br />
+<div class="outline-text-5" id="text-14-3-1-2">
+<p>
+Bandyopadhyay &amp; Forster describe four paradigms:
+</p>
+<ul class="org-ul">
+<li>The classical (or frequentist) paradigm
+<ul class="org-ul">
+<li>p-value</li>
+<li>Confidence interval</li>
+<li>Null hypothesis significance testing</li>
+</ul></li>
+<li>the Bayesian paradigm
+<ul class="org-ul">
+<li>Credible interval for interval estimation</li>
+<li>Bayes factors for model comparison</li>
+</ul></li>
+<li>the likelihoodist paradigm</li>
+<li>the Akaikean-Information Criterion-based paradigm.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org4fa56a2" class="outline-4">
+<h4 id="org4fa56a2"><span class="section-number-4">14.3.2.</span> Descriptive statistics</h4>
+<div class="outline-text-4" id="text-14-3-2">
+<ul class="org-ul">
+<li>does not rest on the assumption that the data come from a larger population.</li>
+<li>aim to summarize a sample.</li>
+<li>not developed on the basis of probability theory, and are frequently nonparametric statistics</li>
+</ul>
+
+<p>
+measures of
+</p>
+<ul class="org-ul">
+<li>central tendency - mean, median and mode</li>
+<li>variability or dispersion - standard deviation (or variance), the minimum and maximum values of the variables, kurtosis and skewness</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbdb9dc5" class="outline-3">
+<h3 id="orgbdb9dc5"><span class="section-number-3">14.4.</span> Statistical inference</h3>
+<div class="outline-text-3" id="text-14-4">
+<p>
+is a collection of methods that deal with drawing conclusions from data that are prone to random variation.
+</p>
+
+<p>
+ex: Let <b>X</b> be a normal random variable with mean <b>μ = 100</b> and variance <b>σ<sup>2</sup> = 15</b>. Find the probability
+that <b>X&gt;110</b>.
+</p>
+
+<p>
+we should conclude whether has a normal distribution or not. Now, suppose that we can use the central limit
+ theorem to argue that is normally distributed.
+</p>
+
+<p>
+Approaches to estimate some quantity from the data:
+</p>
+<ul class="org-ul">
+<li>Frequentist (classical) Inference
+<ul class="org-ul">
+<li>unknown quantity is assumed to be a fixed quantity. ? = ? /n</li>
+<li>deals with estimating non-random quantities</li>
+<li>Maximum Likelihood Estimation (MLE),</li>
+</ul></li>
+<li>Bayesian Inference
+<ul class="org-ul">
+<li>deals with estimating random variables.</li>
+<li>Maximum a Posteriori (MAP),</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org4e43e89"></a>Метод максимального правдоподобия maximum likelihood estimation (MLE)<br />
+<div class="outline-text-5" id="text-14-4-0-1">
+<p>
+это метод оценивания неизвестного параметра путём максимизации функции правдоподобия - seek a set of
+ parameters that results in the best fit for the joint probability of the data sample (X).
+</p>
+
+<p>
+we wish to maximize the probability of observing the data from the joint probability distribution given a
+ specific probability distribution and its parameters
+</p>
+
+<p>
+steps:
+</p>
+<ol class="org-ol">
+<li>defining a parameter called theta that defines both the choice of the probability density function and the
+parameters of that distribution. It may be a vector of numerical values whose values change smoothly and map
+to different probability distributions and their parameters.</li>
+<li>P(X | theta) stated using the semicolon (;) notation because theta is not a random variable, but instead an
+unknown parameter.  P(x1, x2, x3, …, xn ; theta) or L(X ; theta)</li>
+<li>to find the set of parameters (theta) that maximize the likelihood function</li>
+<li>The joint probability distribution can be restated as the multiplication of the conditional probability for
+observing each example given the distribution parameters.
+<ul class="org-ul">
+<li><b>product i to n P(xi ; theta)</b></li>
+</ul></li>
+<li>Multiplying many small probabilities together can be numerically unstable in practice,. therefore, it is
+common to restate this problem as the sum of the log conditional probabilities of observing each example
+given the model parameters.
+<ul class="org-ul">
+<li><b>sum i to n log(P(xi ; theta))</b></li>
+<li>or minimize <b>-sum i to n log(P(xi ; theta))</b></li>
+</ul></li>
+</ol>
+
+
+
+
+
+<ul class="org-ul">
+<li><a href="https://www.probabilitycourse.com/chapter8/8_2_3_max_likelihood_estimation.php">https://www.probabilitycourse.com/chapter8/8_2_3_max_likelihood_estimation.php</a></li>
+<li><a href="https://machinelearningmastery.com/what-is-maximum-likelihood-estimation-in-machine-learning/">https://machinelearningmastery.com/what-is-maximum-likelihood-estimation-in-machine-learning/</a></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org3e39060" class="outline-3">
+<h3 id="org3e39060"><span class="section-number-3">14.5.</span> regression analysis</h3>
+<div class="outline-text-3" id="text-14-5">
+</div>
+<div id="outline-container-orgb036a69" class="outline-4">
+<h4 id="orgb036a69"><span class="section-number-4">14.5.1.</span> Linear regression</h4>
+<div class="outline-text-4" id="text-14-5-1">
+<p>
+linear approach for modelling the relationship between a scalar response and one or more explanatory variables
+</p>
+
+<p>
+y=X*b+ϵ , where
+</p>
+<ul class="org-ul">
+<li>y - regressand, endogenous variable, response variable, measured variable, criterion variable, or dependent
+variable</li>
+<li>X - regressors, exogenous variables, explanatory variables, covariates, input variables, predictor
+variables, or independent variables</li>
+<li>b - parameter vector and ϵ - vector, error term, disturbance term, or noise</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org66c36e6" class="outline-4">
+<h4 id="org66c36e6"><span class="section-number-4">14.5.2.</span> General linear models or multivariate linear models (Основная линейная модель)</h4>
+<div class="outline-text-4" id="text-14-5-2">
+<ul class="org-ul">
+<li>y is a vector</li>
+<li>b replaced with B - matrix</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f78d90" class="outline-4">
+<h4 id="org6f78d90"><span class="section-number-4">14.5.3.</span> Generalized linear model</h4>
+<div class="outline-text-4" id="text-14-5-3">
+<p>
+<a href="https://en.wikipedia.org/wiki/Generalized_linear_model">https://en.wikipedia.org/wiki/Generalized_linear_model</a>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb7e74cc" class="outline-3">
+<h3 id="orgb7e74cc"><span class="section-number-3">14.6.</span> Statistical dispersion</h3>
+<div class="outline-text-3" id="text-14-6">
+<p>
+zero if all the data are the same and increases as the data become more diverse:
+</p>
+<ul class="org-ul">
+<li>Standard deviation</li>
+<li>Interquartile range (IQR)</li>
+<li>Range</li>
+<li>Mean absolute difference (also known as Gini mean absolute difference)</li>
+<li>Median absolute deviation (MAD)</li>
+<li>Average absolute deviation (or simply called average deviation)</li>
+<li>Distance standard deviation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ab4b44" class="outline-3">
+<h3 id="org0ab4b44"><span class="section-number-3">14.7.</span> Causal reasoning <a id="orge86f1c4"></a></h3>
+<div class="outline-text-3" id="text-14-7">
+<p>
+Process of identifying <b>causality</b>: the relationship between a <b>cause</b> and its <b>effect</b>.
+</p>
+
+<p>
+causal relationships:
+</p>
+<dl class="org-dl">
+<dt>common-cause</dt><dd>a single cause has several effects a -&gt; (b, c)</dd>
+<dt>common-effect</dt><dd>several causes converge in one effect (a,b) -&gt; c</dd>
+<dt>causal chains</dt><dd>a -&gt; b -&gt; c</dd>
+<dt>causal homeostasis</dt><dd>a -&gt; b -&gt; c -&gt; a</dd>
+</dl>
+
+<p>
+Causal understanding can be automatic, in complex situations advanced <b>reasoning</b> is necessary:
+</p>
+<ul class="org-ul">
+<li>Deduction: Involves deriving a conclusion that is necessarily true from general premises. Example:
+<b>∀x(P(x)→Q(x))</b>, <b>P(a)⟹Q(a)</b>.</li>
+<li>Induction: Involves making a generalized conclusion based on specific observations. Example: Observing
+<b>P(ai​)∧Q(ai​)</b> for many <b>i</b>, then concluding <b>∀x(P(x)→Q(x))</b> with some probability.</li>
+<li>Abduction: Involves finding the simplest and most likely explanation for a set of observations. Example:
+Given <b>B</b> (observation), and <b>A→B</b> (hypothesis), concluding <b>A</b> as the best explanation.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8bcc850" class="outline-3">
+<h3 id="org8bcc850"><span class="section-number-3">14.8.</span> A/B тестированию, Bucket tests, Split-run testing, Раздельное тестирование <a id="orgb82b72e"></a></h3>
+<div class="outline-text-3" id="text-14-8">
+</div>
+<div id="outline-container-orga928008" class="outline-4">
+<h4 id="orga928008"><span class="section-number-4">14.8.1.</span> terms</h4>
+<div class="outline-text-4" id="text-14-8-1">
+<ul class="org-ul">
+<li>Conversion Rate -  dividing the number of desired completed actions by the number of visitors</li>
+<li>multivariate testing - A/B and</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org56ffa2b" class="outline-4">
+<h4 id="org56ffa2b"><span class="section-number-4">14.8.2.</span> definition</h4>
+<div class="outline-text-4" id="text-14-8-2">
+<p>
+представляет собой проверку значимости различия двух реализаций одной и той же случайной переменной
+</p>
+
+<p>
+A/B testing is a method of comparing two versions of a webpage or app against each other to
+determine which one performs better against a specific objective. (more cases = multivariate)
+</p>
+</div>
+</div>
+<div id="outline-container-orgec4ff09" class="outline-4">
+<h4 id="orgec4ff09"><span class="section-number-4">14.8.3.</span> steps</h4>
+<div class="outline-text-4" id="text-14-8-3">
+<p>
+rus
+</p>
+<ol class="org-ol">
+<li>набор наблюдений, в которых случайная переменная принимает, например, 100 различных значений, случайным
+образом разделяют на два равных (по 50 наблюдений) подмножества: контрольное A и модифицированное B.</li>
+<li>формулируют гипотезу о значимости их различия относительно дисперсии, среднего или другой структурной
+характеристики</li>
+</ol>
+
+<p>
+web
+</p>
+<ol class="org-ol">
+<li>decide what we would like to test and what our objective is</li>
+<li>we create one or more variations of our original web element (a.k.a. the control group, or the
+baseline)</li>
+<li>split the website traffic randomly between two variations. Calc:
+<ul class="org-ul">
+<li>необходимый объем выборки</li>
+<li>минимальной разнице в показателях, которую мы хотим выявить, и необходимой статистической
+мощности</li>
+</ul></li>
+<li>collect data regarding our web page performance (metrics)</li>
+<li>After some time, we look at the data, pick the variation that performed best, and cancel the one
+that performed poorly. (calc p-value, также известной как “уровень достоверности)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf904ad1" class="outline-4">
+<h4 id="orgf904ad1"><span class="section-number-4">14.8.4.</span> hypothesis testing</h4>
+<div class="outline-text-4" id="text-14-8-4">
+<p>
+The process of gaining validity is called <b>hypothesis testing</b>, and the validity we seek is called
+ <b>statistical significance</b>.
+</p>
+
+<p>
+Неверно, что p-value — это вероятность того, что вариация B лучше, чем вариация A.
+</p>
+
+<p>
+“нулевой гипотезе” — которая гласит, что новая вариация ничем не лучше существующей
+</p>
+<ul class="org-ul">
+<li>Если p-value ниже определенного порога (который часто принимают за 0,05), мы можем утверждать, что
+данные позволяют опровергнуть нулевую гипотезу и, таким образом, объявить вариацию B победителем</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgbca3e8f" class="outline-4">
+<h4 id="orgbca3e8f"><span class="section-number-4">14.8.5.</span> Частотный и байесовский подходы - сравнение</h4>
+<div class="outline-text-4" id="text-14-8-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Hypothesis Testing</td>
+<td class="org-left">Bayesian A/B Testing</td>
+</tr>
+
+<tr>
+<td class="org-left">Знания о показателях при старт</td>
+<td class="org-left">Нужны</td>
+<td class="org-left">Не нужны</td>
+</tr>
+
+<tr>
+<td class="org-left">Интуитивность</td>
+<td class="org-left">Невысокая p-value - сложная</td>
+<td class="org-left">напрямую вычисляем вероятность, что А лучше B</td>
+</tr>
+
+<tr>
+<td class="org-left">Объем выборки</td>
+<td class="org-left">Определен заранее</td>
+<td class="org-left">Не нужно вычислять заранее</td>
+</tr>
+
+<tr>
+<td class="org-left">подсмотреть в процессе</td>
+<td class="org-left">Нельзя</td>
+<td class="org-left">Можно</td>
+</tr>
+
+<tr>
+<td class="org-left">скорость принятия решения</td>
+<td class="org-left">ниже, больше огран.-щих доп-ий о распр.-ях</td>
+<td class="org-left">выше, меньше допущений</td>
+</tr>
+
+<tr>
+<td class="org-left">Неуверенность выражается</td>
+<td class="org-left">доверительный интервал</td>
+<td class="org-left">область наибольшей апост. плотности (HPDR)</td>
+</tr>
+
+<tr>
+<td class="org-left">Объявление победителя</td>
+<td class="org-left">достигнут объем выборки и p-value &lt; порога</td>
+<td class="org-left">P2BB &gt; порог или когда</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgddc3a93" class="outline-4">
+<h4 id="orgddc3a93"><span class="section-number-4">14.8.6.</span> links</h4>
+<div class="outline-text-4" id="text-14-8-6">
+<ul class="org-ul">
+<li><a href="https://www.dynamicyield.com/lesson/introduction-to-ab-testing/">https://www.dynamicyield.com/lesson/introduction-to-ab-testing/</a></li>
+<li>Hypothesis Testing <a href="https://www.dynamicyield.com/lesson/frequentists-approach-to-ab-testing/">https://www.dynamicyield.com/lesson/frequentists-approach-to-ab-testing/</a></li>
+<li>bayesian approach <a href="https://www.dynamicyield.com/lesson/bayesian-approach-to-ab-testing/">https://www.dynamicyield.com/lesson/bayesian-approach-to-ab-testing/</a></li>
+<li>bayesian calc <a href="https://marketing.dynamicyield.com/bayesian-calculator/">https://marketing.dynamicyield.com/bayesian-calculator/</a></li>
+<li>How Not To Run an A/B Test <a href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html">https://www.evanmiller.org/how-not-to-run-an-ab-test.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Power_of_a_test">https://en.wikipedia.org/wiki/Power_of_a_test</a></li>
+<li><a href="https://vc.ru/u/1174886-koptelnya/411293-chastotnyy-i-bayesovskiy-podhody-k-a-b-testirovaniyu-podrobnoe-sravnenie-urok-7">https://vc.ru/u/1174886-koptelnya/411293-chastotnyy-i-bayesovskiy-podhody-k-a-b-testirovaniyu-podrobnoe-sravnenie-urok-7</a></li>
+<li>article <a href="https://wiki.loginom.ru/articles/ab-testing.html">https://wiki.loginom.ru/articles/ab-testing.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org219c4c0" class="outline-3">
+<h3 id="org219c4c0"><span class="section-number-3">14.9.</span> sample and population</h3>
+<div class="outline-text-3" id="text-14-9">
+<ul class="org-ul">
+<li>statistical population - set of items for experiment.</li>
+<li>sample - subset of population</li>
+<li>sampling fraction = len(sample)/len(population)</li>
+<li>sample points - elements of sample</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb67d8e" class="outline-3">
+<h3 id="orgfb67d8e"><span class="section-number-3">14.10.</span> точечное оценивание (point estimation)</h3>
+<div class="outline-text-3" id="text-14-10">
+<p>
+involves the use of sample date to calculate a signle values - best guess of unknown population paremeter
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgceb589c" class="outline-3">
+<h3 id="orgceb589c"><span class="section-number-3">14.11.</span> Estimator [ˈestɪmeɪtə] оценка</h3>
+<div class="outline-text-3" id="text-14-11">
+<p>
+Rule for calculating an estimate of a given quantity based on observed data
+</p>
+<ul class="org-ul">
+<li><b>estimand</b> - θ - fixed parameter of model being estimated</li>
+<li><b>estimator</b> q - is a function that maps the sample space to a set of sample estimates</li>
+<li><b>Error</b> - For a given sample -  e(x) = q(x)-θ</li>
+<li>MSE of q - E[(q(X)-θ)<sup>2</sup>)]</li>
+</ul>
+<p>
+Types:
+</p>
+<ul class="org-ul">
+<li>point estimator - single value</li>
+<li>interval estimator - two values
+<ul class="org-ul">
+<li>confidence intervals - Frequentist inference</li>
+<li>credible intervals - Bayesian inference</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgf5c054b" class="outline-4">
+<h4 id="orgf5c054b"><span class="section-number-4">14.11.1.</span> point estimator</h4>
+<div class="outline-text-4" id="text-14-11-1">
+<ul class="org-ul">
+<li><b>Bias</b> is defined as the difference between the expected value of the estimator and the true value</li>
+</ul>
+<p>
+of the population parameter being estimated
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd117903" class="outline-3">
+<h3 id="orgd117903"><span class="section-number-3">14.12.</span> интервальное оценивание (interval estimation) - Доверительный интервал</h3>
+<div class="outline-text-3" id="text-14-12">
+<p>
+Доверительный интервал - покрывает неизвестный параметр с заданной точностью. Чтобы population parameter
+попадал в интервал в 95 процентах случаев.
+</p>
+
+<p>
+более предпочтителен чем точечние оценивание при небольшой выборке
+</p>
+
+<p>
+Различают классический (confidence interval CI) и баесовый интервал (credible interval)
+</p>
+
+<p>
+Most commonly 95% confidence level used.
+</p>
+
+<p>
+Ex: Here is CI interval from XYZ experiments. Means:
+</p>
+<dl class="org-dl">
+<dt>confidence interval</dt><dd>If we repeat the experiment infinitely times 95% of calculated intervals will capture parameter in
+CI. Frequientist. boundaries random, parameter fixed.</dd>
+<dt>credible interval</dt><dd>There is 95% probability/plausibility/likelihood that the parameter lies in the
+interval. Bayesian statistics. Boundaris fixed, variable random.</dd>
+
+<dt>confidence interval</dt><dd>If we repeat the experiment infinitely times 95% of calculated intervals will capture parameter in
+CI. Frequientist.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org5d7d82b" class="outline-3">
+<h3 id="org5d7d82b"><span class="section-number-3">14.13.</span> Likelihood and Probability</h3>
+<div class="outline-text-3" id="text-14-13">
+<p>
+Понятия вероятности и правдоподобия тесно связаны.
+</p>
+<ul class="org-ul">
+<li>Вероятность - используется для описания результата функции при наличии фиксированного значения параметра.</li>
+<li>Правдоподобие - используется для описания параметра функции при наличии результата функции.</li>
+<li>«Какова вероятность выпадения 12 очков в каждом из ста бросков двух костей?»</li>
+<li>«Насколько правдоподобно, что кости не шулерские, если из ста бросков в каждом выпало 12 очков?»</li>
+</ul>
+
+
+<p>
+Функция правдоподобия Likelihood function
+</p>
+<ul class="org-ul">
+<li>P(x) = P(x)</li>
+<li>L(q) = L(x=X|q) - показывает, насколько правдоподобно выбранное значение параметра q при известном событии
+X.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org46649a3" class="outline-3">
+<h3 id="org46649a3"><span class="section-number-3">14.14.</span> Statistical hypothesis testing <a id="org8538808"></a></h3>
+<div class="outline-text-3" id="text-14-14">
+<p>
+method of statistical inference used to decide whether the data at hand sufficiently support a particular hypothesis
+</p>
+<ul class="org-ul">
+<li>statistical inference - статистический вывод process of using data analysis to infer properties of an
+underlying distribution of probability</li>
+<li>data at hand - имеющиеся данные</li>
+<li>provisional conclusions - предварительные выводы</li>
+<li>statistical independence - probability independence of events</li>
+<li>the null hypothesis (denoted H0) - ('no effect' or 'no difference'). Tested in a test of <b>statistical significance</b>.</li>
+<li>alternative hypothesis (H1 and Ha)</li>
+<li>Test statistic T (Статистический критерий) - математическое правило, в соответствии с которым принимается
+или отвергается та или иная статистическая гипотеза с заданным уровнем значимости.
+<ul class="org-ul">
+<li>t-statistic - used in Student's t-test -</li>
+<li>F-test -</li>
+</ul></li>
+</ul>
+<p>
+Statistical significance(denoted by α or - when it is very unlikely to have occurred given the null
+  hypothesis (simply by chance alone). The significance level α is the threshold for p below which the null
+  hypothesis is rejected even though by assumption it were true, and something else is going on.
+</p>
+<ul class="org-ul">
+<li>is the probability of the study rejecting the null hypothesis, given that the null hypothesis is true.</li>
+<li>The significance level for a study is chosen before data collection, and is typically set to 5%</li>
+<li>p-value - the probability of obtaining a result at least as extreme, given that the null hypothesis is
+true. Как я понял, вычеленная вероятность, которая подтвердила null гипотезу оказавшись меньше The significance level.</li>
+<li>One- and two-tailed tests - способ расчета p-value как хвосты нормального распределения - места где значения маловероятны.</li>
+</ul>
+
+<p>
+p-value vs α:
+</p>
+<ul class="org-ul">
+<li>p-value is the probability of obtaining a result at least as extreme, given that the null hypothesis is true.</li>
+<li>a - is the probability of the study rejecting the null hypothesis, given that the null hypothesis is true</li>
+<li>The result is statistically significant, by the standards of the study, when p ≤ α.</li>
+</ul>
+
+<p>
+Fisher's null hypothesis testing
+</p>
+<ul class="org-ul">
+<li>Do not use a conventional 5% level</li>
+<li>do not talk about accepting or rejecting hypotheses.</li>
+<li>If the result is "not significant", draw no conclusions and make no decisions, but suspend judgement until
+further data is available</li>
+</ul>
+</div>
+
+<div id="outline-container-org62c749a" class="outline-4">
+<h4 id="org62c749a"><span class="section-number-4">14.14.1.</span> steps:</h4>
+<div class="outline-text-4" id="text-14-14-1">
+<ol class="org-ol">
+<li>state the relevant null and alternative hypotheses</li>
+<li>statistical independence and Statistical assumptions
+<ul class="org-ul">
+<li>Distributional assumptions</li>
+<li>Structural assumptions - relationships between variables</li>
+<li>Cross-variation assumptions -</li>
+<li>Design-based assumptions - the way observations have been gathered</li>
+</ul></li>
+<li>Decide which test is appropriate, and state the relevant test statistic T</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org60efdca" class="outline-4">
+<h4 id="org60efdca"><span class="section-number-4">14.14.2.</span> Chi-squared distribution</h4>
+<div class="outline-text-4" id="text-14-14-2">
+<p>
+распределение суммы квадратов k независимых стандартных нормальных случайных величин.
+</p>
+<ul class="org-ul">
+<li>x = z1<sup>2</sup> + z2<sup>2</sup> + &#x2026; + zk<sup>2</sup> - случайная величина</li>
+<li>x есть Chi-squared distribution, если z1-k - совместно независимые стандартные нормальные случайные величины N(0,1)</li>
+<li>k степеней свободы</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c2c878" class="outline-4">
+<h4 id="org3c2c878"><span class="section-number-4">14.14.3.</span> examples</h4>
+<div class="outline-text-4" id="text-14-14-3">
+<p>
+to determine whether a coin flip is fair (equal chance of landing heads or tails) or unfairly biased (one
+outcome being more likely than the other).
+</p>
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/P-value">https://en.wikipedia.org/wiki/P-value</a></li>
+<li>heads 14 times out of 20 total flips</li>
+<li>null hypothesis is that the coin is fair - coin tosses are independent of one another
+<ul class="org-ul">
+<li>H0: The coin is fair, Pr(heads) = 0.5</li>
+</ul></li>
+<li>p-value of this result is the chance of a fair coin landing on heads at least 14 times out of 20 flips. This
+probability is the p-value, considering only extreme results that favor heads.
+<ul class="org-ul">
+<li>p-value = Pr(14 heads) + Pr(15 heads) + &#x2026; + Pr(20 heads) ~= 0.058 - one-tailed test</li>
+<li>p-value = 0.115 for two-tailed test</li>
+</ul></li>
+<li>Test statistic: Number of heads</li>
+<li>Alpha level (designated threshold of significance): 0.05</li>
+</ul>
+
+<p>
+calculated p-value exceeds .05, meaning that the data falls within the range of what would happen 95% of the
+time were the coin in fact fair. Hence, the null hypothesis is not rejected at the .05 level.
+</p>
+
+<p>
+так как мы задали p-value -
+</p>
+
+<p>
+However, had one more head been obtained, the resulting p-value (two-tailed) would have been 0.0414 (4.14%),
+in which case the null hypothesis would be rejected at the .05 level.
+</p>
+</div>
+</div>
+<div id="outline-container-org6b11281" class="outline-4">
+<h4 id="org6b11281"><span class="section-number-4">14.14.4.</span> Behrens–Fisher problem</h4>
+<div class="outline-text-4" id="text-14-14-4">
+<ul class="org-ul">
+<li>i.i.d = Independent and identically distributed random variables  P(A and B) = P(A)P(B) - independent</li>
+<li>X, Y - iid samples, same location–scale family of distributions
+<ul class="org-ul">
+<li></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orge86d24f" class="outline-3">
+<h3 id="orge86d24f"><span class="section-number-3">14.15.</span> <span class="todo TODO">TODO</span> Power Analysis</h3>
+<div class="outline-text-3" id="text-14-15">
+<ul class="org-ul">
+<li>To find the number of trials needed to get an effect of a certain size. This is probably the most common use for power analysis&#x2013;it tells you how many trials you need to do to avoid incorrectly rejecting the null hypothesis.</li>
+<li>To find the power, given an effect size and the number of trials available. This is often useful when you have a limited budget, for say, 100 trials, and you want to know if that number of trials is enough to detect an effect.</li>
+<li>To validate your research. Conducting power analysis is simply put&#x2013;good science.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1db30c5" class="outline-3">
+<h3 id="org1db30c5"><span class="section-number-3">14.16.</span> Resampling</h3>
+<div class="outline-text-3" id="text-14-16">
+<p>
+creation of new samples based on one observed sample
+</p>
+</div>
+</div>
+<div id="outline-container-org0369012" class="outline-3">
+<h3 id="org0369012"><span class="section-number-3">14.17.</span> R-squared, Adjusted R-squared and Pseudo-R-squared (coefficient of determination)</h3>
+<div class="outline-text-3" id="text-14-17">
+<p>
+the proportion of variance in the response variable <b>y</b> that your regression model is able to “explain” via the
+ introduction of regression variables.
+</p>
+<ul class="org-ul">
+<li>measure in Regression Analysis</li>
+<li>confused with the coefficient of correlation r²</li>
+<li>R² lets you quantify just how much better the Linear model fits the data as compared to the Mean Model.</li>
+</ul>
+
+<p>
+Total Sum of Square (TSS). ∑(yi-ymean)<sup>2</sup>, where ∑ is for i of N.
+</p>
+<ul class="org-ul">
+<li>quantity that is proportional to the variance in y</li>
+<li>It is the variance that the Mean Model wasn’t able to explain.</li>
+<li>Because TSS/N is the actual variance in y, the TSS is proportional to the total variance in your data.</li>
+</ul>
+
+<p>
+Mean Model (Null Model) : y<sub>ped</sub> = y<sub>mean</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga5c8fd1" class="outline-3">
+<h3 id="orga5c8fd1"><span class="section-number-3">14.18.</span> Confounding</h3>
+<div class="outline-text-3" id="text-14-18">
+<p>
+Exposure(воздействие) -&gt; Mediator -&gt; Outcome ( Exposure -&gt; Outcome )
+</p>
+<ul class="org-ul">
+<li>where -&gt; is cause</li>
+</ul>
+
+<p>
+Exposure &lt;- Confounder -&gt; Outcome ( Exposure -!-  Outcome )
+</p>
+
+<p>
+There is no confronder if P(y|do(x)) = P(y|x), where P(y|x) is controlled experiment, with x randomized,
+ do(x) - when x is under the hypothetical intervention.
+</p>
+
+<p>
+can be obtained by "adjusting" for all confounding factors, namely, conditioning on their various values and
+ averaging the result.
+</p>
+<ul class="org-ul">
+<li>P(y|do(x)) = ∑P(y|x,z)P(z), where ∑ at z</li>
+</ul>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Confounding">https://en.wikipedia.org/wiki/Confounding</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orge3baa56" class="outline-3">
+<h3 id="orge3baa56"><span class="section-number-3">14.19.</span> knowledge</h3>
+<div class="outline-text-3" id="text-14-19">
+<p>
+Zero Knowledge <a href="https://codethechange.stanford.edu/guides/guide_zk.html">https://codethechange.stanford.edu/guides/guide_zk.html</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ce058a" class="outline-2">
+<h2 id="org9ce058a"><span class="section-number-2">15.</span> Physics</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-org21bf8e7" class="outline-3">
+<h3 id="org21bf8e7"><span class="section-number-3">15.1.</span> SUVAT equations -  kinematic equations of motion</h3>
+<div class="outline-text-3" id="text-15-1">
+<ul class="org-ul">
+<li>S: Displacement (distance traveled in a specific direction)</li>
+<li>U: Initial velocity</li>
+<li>V: Final velocity</li>
+<li>A: Acceleration</li>
+<li>T: Time</li>
+</ul>
+
+
+<p>
+Uniformly accelerated motion: d=v*t + (1/2)*a*t<sup>2</sup>, where
+</p>
+<ul class="org-ul">
+<li>d - The displacement or distance traveled by the object.</li>
+<li>v - The initial velocity of the object.</li>
+<li>t - The time over which the motion occurs.</li>
+<li>a - The constant acceleration of the object.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd8c5572" class="outline-2">
+<h2 id="orgd8c5572"><span class="section-number-2">16.</span> Calculus Математический анализ (Functional analysis)</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-orgadff9aa" class="outline-3">
+<h3 id="orgadff9aa"><span class="section-number-3">16.1.</span> Differential calculus</h3>
+<div class="outline-text-3" id="text-16-1">
+<p>
+concerning instantaneous rates of change and slopes of curves - мгновенных скоростей и угловой коэффициент
+</p>
+</div>
+
+<div id="outline-container-orgbabf490" class="outline-4">
+<h4 id="orgbabf490"><span class="section-number-4">16.1.1.</span> Gradient or gradient vector field</h4>
+<div class="outline-text-4" id="text-16-1-1">
+<p>
+is a multi-variable generalization of the derivative. While a <b>derivative</b> can be defined on functions
+ of a single variable, for functions of several variables.
+</p>
+
+<p>
+Represents the slope of the tangent of the graph of the function. Угловой коэффициент прямой - коэффициент k
+of f(y)=kx+b численно равен тангенсу угла
+</p>
+
+<p>
+nabla ∇f or grad f(x,y,z) = ∂f/∂x(i) +∂f/∂y(j) + ∂f/∂z(k) where i,j,k оси OR вектор (∂f/∂x, ∂f/∂y, ∂f/∂z) -
+частные производные
+</p>
+
+<p>
+f(x,y,z) - называют скалярным полем scalar field
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org557f397" class="outline-3">
+<h3 id="org557f397"><span class="section-number-3">16.2.</span> Vector calculus</h3>
+<div class="outline-text-3" id="text-16-2">
+<ul class="org-ul">
+<li>Scalar fields - function that associating a single number to every point in a space</li>
+<li>Vector fields - function that associating a vector to each point in a space</li>
+</ul>
+</div>
+<div id="outline-container-org0cc0881" class="outline-4">
+<h4 id="org0cc0881"><span class="section-number-4">16.2.1.</span> Vector algebra <a id="org7666aa9"></a></h4>
+<div class="outline-text-4" id="text-16-2-1">
+<ul class="org-ul">
+<li>v1 + v2 = v3		Vector addition</li>
+<li>a*v = v3		Scalar multiplication</li>
+<li>v 1 ⋅ v 2 = a	Dot product, yielding a scalar.</li>
+<li>v 1 × v 2 = pv	Cross product, yielding a (pseudo)vector.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb6dfd17" class="outline-3">
+<h3 id="orgb6dfd17"><span class="section-number-3">16.3.</span> integral calculus</h3>
+</div>
+
+<div id="outline-container-org3cc9bf7" class="outline-3">
+<h3 id="org3cc9bf7"><span class="section-number-3">16.4.</span> Fourier transform (discrete Fourier transform - DFT)</h3>
+<div class="outline-text-3" id="text-16-4">
+<p>
+Применяются в сжатии звука в MP3, сжатии изображений в JPEG и др.
+</p>
+
+<p>
+Сопоставляющая одной функции вещественной переменной другую функцию вещественной переменной.
+</p>
+</div>
+<div id="outline-container-org2bdc71b" class="outline-4">
+<h4 id="org2bdc71b"><span class="section-number-4">16.4.1.</span> Convolution</h4>
+<div class="outline-text-4" id="text-16-4-1">
+<p>
+Mathematical operation on two functions (f and g) that produces a
+third function expressing how the shape of one is modified by the
+other
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2ffaea" class="outline-4">
+<h4 id="orgb2ffaea"><span class="section-number-4">16.4.2.</span> Dirac delta function</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:48</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,1734 @@
+;-*- mode: Org; fill-column: 110;-*-
+news
+- https://fossforce.com/
+- security news https://www.gentoo.org/support/security/
+* community
+- https://wiki.gentoo.org/wiki/Project:Council/Code_of_conduct
+- https://wiki.gentoo.org/wiki/Project:ComRel
+- annoncements https://forums.gentoo.org/viewforum.php?f=16
+- blogs https://planet.gentoo.org/
+- https://gentoo-ev.org/
+
+IRC
+- https://memleek.org/gentoo-chat.txt https://gentoo-chat.org/
+
+-
+* short help
+https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet
+  emerge:
+- emerge -pv :: to check if package was installed
+- emerge  --search sci-libs/* | grep -e "^\*" -e "Description" :: look for all packages in category
+- eclean-dist :: clear /var/cache/distfiles, /usr/portage/distfiles - DISTDIR and the PKGDIR respectively
+  variables in /etc/portage/make.conf
+- eclean-pkg :: clear /usr/portage/packages, /var/cache/binpkgs
+- emerge -atv :: install package with --ask --tree --verbose
+- emerge --search pck :: search any package in names
+- emerge --info pck :: info for any package
+- emerge -s '@net-ftp' :: search al packages in category
+- emerge --ask --oneshot sys-apps/portage
+- emerge --ask --depclean --verbose package - :: find out reverse dependencies
+- emerge --ask --autounmask =sys-libs/glibc-2.33-r1 :: emerge older version
+- USE="qt4 -gtk" emerge -1v app-misc/autokey
+- cat /var/lib/portage/world :: installed packages
+- emerge --resume :: resume from package was finished (after Ctr+C)
+- emerge --resume --skip-first :: skip first package with couse failure --keep-going - ignore fails
+- emerge @preserved-rebuild - emerge does not update the depending libraries, but put them into a set instead
+- qlop -a | less :: last installed packages
+- equery list *::localre :: installed packages from overlay
+- qlist -IRv | grep localre :: installed packages from overlay
+- eix -e dev-lang/lua :: list available stots for package
+- emerge --fuzzy-search=y --searchdesc, -S "descr" :: search for package by description
+
+
+light (standard):
+: emerge --ask --update --changed-use --deep @world :: update
+: emerge -1vUD @world
+hard
+: emerge --ask --update --newuse --deep --with-bdeps=y --verbose-conflicts --tree @world :: update
+
+equery:
+for installes:
+- equery h flag1 flag2 :: packages with specific USE flags
+- equery list '*' :: all installed packages - chech if package installed
+- equery f package :: files of package
+- equery b 'ifstat' :: belongs - list installed packages that owns FILE
+- emerge app/portage-plf ; plf 'file' :: list all packages that owns FILE
+- equery g iwd-1.24 :: dependencies for iwd - "-1.24" - required
+- equery d iwd-1.24 :: packages dependent on iwd
+- equery l sci-libs/* :: installed packages in category
+
+for all:
+- equery m firefox :: info and available versions
+- equery m -d firefox :: description of package
+- equery meta package :: info
+- equery u package :: package USE flags
+
+which package provide file:
+- emerge -av app-portage/pfl
+- e-file YOURFILE
+- or http://www.portagefilelist.de/site/query/file
+
+
+ REQUIRED_USE conditions:
+ | foo? ( bar )            | if foo is set, bar must be set     |
+ | foo? (!bar )            | if foo is set, bar must not be set |
+ | foo? (or (bar baz aha ) | at least one must be set           |
+ | ^^ (foo bar aha)        | exactly one must be set            |
+ | ?? ( foo bar aha)       | no more than one may be set        |
+
+CFLAGS per package:
+
+* emerge
+** output language
+man -P 'less -p ^OUTPUT' emerge
+
+<<KEYWORDS>>
+- N	new
+- NS	?
+- R	re-emerge
+- U	upgrade
+- UD	downgrade
+- #	package.mask
+- *	missing keyword
+- ~	unstable keyword
+** stupid language
+- D - deep
+- u - update
+- q - quiet
+- N - newuse
+- v - verbose
+- a - ask
+- 1 - oneshot - do not add to world
+- p - pretend
+- e - emptytree - reinstall of atom and his dependencies as though no packages are currently installed
+- s - search
+- U - changed-use (weeker)
+- N - newuse (stronger)
+** save output
+: emerge --ask package 2>&1 | tee a.txt
+* package manager  - Portage
+TODO: https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree
+variables:
+- emerge --info
+- make.defaults - /usr/share/portage/config/make.defaults
+- make.globals - /usr/share/portage/config/make.globals
+- /usr/share/portage/config/make.globals
+- activated repositories/overlays:
+  - q -o
+  - eselect repository list -i
+** terms
+- *Portage* - package manager and distribution system (emerge command)
+  - packages or atoms
+- *ebuild repository*, colloquially known as an overlay - metadata files for pachages
+  - main Gentoo ebuild repository.
+  - *overlays* not main Gentoo ebuild repository, because when they are used, they are overlay on the main
+  (ebuild) repository, means that a package with the same name and version in the overlay will take precedence
+  over that in the main ebuild repository when user installs package via emerge.
+    - local ebuild repository
+- primary repository - *Gentoo ebuild repository* - Gentoo repo, ::gentoo, gentoo.git - the Portage
+  tree, rsync tree, or sometimes just "the tree"
+  - contains ebuilds
+- *package* -  examples the www-client/firefox
+- *category* - “www-client” or “sci-libs”
+- *ebuild* file - bash like
+  - standardized through the Package Manager Specification
+  - define Ebuild Phase Functions - how to install
+    - src_unpack, src_prepare, src_configure, src_compile
+  - SRC_URI - tells Portage the address to use for downloading the source tarball
+  - BDEPEND, DEPEND, and RDEPEND - dependencies
+- *live ebuilds* -  use 9999 as the version (or as the last version component)
+- *Gentoo rsync mirrors* - mirrors distribute the Gentoo ebuild repository
+  - sync-uri variable in the [gentoo] section of repos.conf
+  - https://www.gentoo.org/support/rsync-mirrors/
+- *Gentoo source mirrors* - distribute the source archives for the software, stages and tree snapshots for installation
+  - GENTOO_MIRRORS variable in make.conf
+  - https://www.gentoo.org/downloads/mirrors/
+- eclass is a collection of code which can be used by more than one ebuild
+- CBUILD - The system on which the build is performed.
+- CHOST - The system on which the package is going to be executed.
+- BDEPEND - dependencies, programs that need to be executed during the build
+- RDEPEND - dependencies, on built (target) system
+** system directories and files
+directories
+- /usr/tmp/portage/ or /var/tmp/portage/ - extracted source files (PORTAGE_TMPDIR)
+- /var/db/pkg/ - config of installed packages
+
+
+make.conf:
+- PORTDIR="/var/db/repos/gentoo/" - snapshot of Gentoo ebuild repository
+  - /var/db/repos/gentoo/profiles/use.desc - A full description on the available USE flags
+  - /var/db/repos/gentoo/metadata/timestamp.chk  - last updated (synced)
+- DISTDIR="/var/cache/distfiles" - is the default directory Portage uses to store source code tarballs.
+- PKGDIR="/var/cache/binpkgs"
+
+default config /usr/share/portage/config/
+- repos.conf - may be overwriten in /etc/portage/repos.conf/gentoo.conf
+- make.globals - main config file defaults
+
+https://wiki.gentoo.org/wiki/Gentoo_specific_directories
+** solving conflicts
+types:
+- slot conflict
+- dependency confclit ( warning)
+
+search installed packages and output formatted:
+- equery l kde-frameworks/* -F '$category/$name'
+** add remote repository
+: root # eselect repository add guru git git://github.com/gentoo-mirror/guru.git
+: root # emaint sync -r guru
+
+Sometime, it's convenient to temporarily configure the overlay as local repository for test purpose, this can
+ avoid frequently pushing temporary work to remote git repository.
+
+/etc/portage/repos.conf/my-overlay.conf
+: [localrepo]
+: location = /home/my-name/my-overlay
+: priority = 100
+- https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide
+- not official search https://gpo.zugaina.org/
+** overlays
+*** install from overlay
+- emerge --ask app-eselect/eselect-repository
+- eselect repository enable N
+- emerge --sync
+- emerge ??
+
+*** add non-official overlay
+- eselect repository add matrix git https://anongit.gentoo.org/git/repo/proj/matrix.git
+- root #emaint sync -r matrix
+- root #eix-update # Regenerate eix database cache (optional)
+*** list
+- official eselect repostitory list https://repos.gentoo.org/ https://overlays.gentoo.org/
+
+*** create own
+- main https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide
+- https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository
+*** links
+- official overlays: eselect repostitory list https://repos.gentoo.org/ https://overlays.gentoo.org/
+- doc https://wiki.gentoo.org/wiki/Ebuild_repository
+- non-official list https://gpo.zugaina.org/Overlays
+- doc https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide
+- all official repositories https://gitweb.gentoo.org/
+** socks proxy
+- net-proxy/sshuttle - to create VPN connection over ssh
+
+for portage: https://forums.gentoo.org/viewtopic-t-52442-start-0.html
+- net-proxy/tsocks
+- in /etc/make.conf
+  - SYNC="rsync://rsync.us.gentoo.org/gentoo-portage"
+  - FTP_PROXY="ftp://192.168.0.1:8000"
+  - HTTP_PROXY="http://192.168.0.1:80"
+  - #RSYNC_PROXY="192.168.0.1:873"
+- in /etc/socks/tsocks.conf
+  - # We can access 192.168.0.* directly
+  - local = 192.168.0.0/255.255.255.0
+  - # Otherwise we use the server
+  - path {
+  - reaches = 0.0.0.0/0
+  - server = 192.168.0.1
+  - server_type = 5
+  - default_user = test
+  - default_pass = test
+  - }
+
+** issue solving
+- emerge --info
+- eselect profile show
+** add localrep or personal overlay
+- emerge --ask app-eselect/eselect-repository
+- eselect repository create <repository_name>  #  /var/db/repos/localrepo and /etc/portage/repos.conf/eselect-repo.conf
+- chown -R portage:portage /var/db/repos/localrepo
+- emerge --ask git -iconv -pcre -perl -webdav
+- /var/db/repos/localrepo/metadata/layout.conf:
+  - auto-sync = false
+** create own package and ebuild to localrep
+- emerge --ask  app-emacs/ebuild-mode
+- mkdir /var/db/repos/localrepo/<package-group>
+- cp /var/db/repos/gentoo/<package-group>/<package> /var/db/repos/localrepo/<package-group>/<package>
+# - emerge --ask --verbose app-portage/repoman
+# - repoman manifest
+- cd /var/db/repos/localrepo/<package-group>/<package> # {CATEGORY}/{PN}
+- one of:
+  - cp <package-group>/<package> <package-group>/<package>-r222 # version must be more
+  - create own:
+    - cp /var/db/repos/gentoo/skel.ebuild /var/db/repos/example_repository/{CATEGORY}/{PN}
+    - emacs {P}.ebuild
+    - chown -R portage:portage /var/db/repos/localrepo
+- pkgdev manifest ; pkgcheck scan #  to create the package's Manifest file for ebuild and # QA errors in an ebuild
+- emerge --ask --verbose app-dicts/artha # test
+- GENTOO_MIRRORS="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack # test fetching and unpacking the upstream sources
+- ebuild scrub-2.6.1.ebuild clean test install  # test suite
+- ebuild scrub-2.6.1.ebuild clean install merge # actual install
+
+old
+- ebuild <ebuild> manifest # update Manifest for .ebuild file
+- chown -R portage:portage /var/db/repos/localrepo
+- https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_ebuild_repository
+- https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository
+- https://wiki.gentoo.org/wiki/User:Shunlir/An_Overlay_Tutorial
+- https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds
+- https://devmanual.gentoo.org/quickstart/
+** add own overlay to gentoo
+** ebuilds
+ex. name-version.ebuild
+
+*** main links:
+-[[/usr/lib/portage/python3.12/phase-helpers.sh]]
+- https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html
+*** minimal ebuild
+: EAPI=8
+: inherit .. ???
+: DESCRIPTION="Ruby grammar for Tree-sitter" # for info
+: HOMEPAGE="https://github.com/tree-sitter-grammars/tree-sitter-yaml" # for info
+: SRC_URI="https://github.com/tree-sitter/${PN}/archive/${TS_PV:-v${PV}}.tar.gz"
+
+: LICENSE="MIT" # for info
+: SLOT="0"
+: KEYWORDS="~amd64 ~x86" This variable is required to specify the architectures and platforms that the package supports.
+
+: RESTRICT="mirror bindist" # mirror - disable attempt to download from GENTOO_MIRRORS
+*** terms
+- ebuild :: bash scripts that are executed within a special environment.
+- EAPI :: standardization effort of ebuild file format, ebuild repository format. located at the top of the
+ ebuild. (eclasses may have EAPI-conditional code)
+- helpers :: functions, can require eutils eclass or accessed directly. usage: ~inherit autotools~
+- version specifier :: {CATEGORY}, {PN}, and {P} represent package category, package name, and package name and
+ version. ex. “sys-devel/gdb-7.3”
+
+*** steps
+1) /usr/bin/emerge -> /usr/lib/python-exec/python-exec2 ->  /usr/lib/python-exec/python3.11/emerge
+2) k/usr/lib/python3.11/site-packages/_emerge/main.py
+3) [[ebuild.sh]] /usr/lib/python-exec/python3.11/ebuild
+4) all files from SRC_URI downloaded to /var/cache/distfiles (if exist, skip)
+   - SRC_URI tells Portage the address to use for downloading the source tarball.
+*** <<ebuild.sh>>
+low level interface to the Portage system
+- /usr/lib/python-exec/python3.11/ebuild
+- portage.doebuild(ebuild_path, action) /usr/lib/python3.11/site-packages/portage/package/ebuild/doebuild.py
+  - _spawn_phase -> _doebuild_spawn
+- /usr/lib/portage/python3.11/ebuild.sh
+- /usr/lib/portage/python3.11/phase-functions.sh: __ebuild_main
+*** package in the tree(ebuild repository)
+- Manifest - hashes
+- 20200316.ebuild
+- 99999999.ebuild
+- metadata.xml - additional data about a package or category. use flags, maintainers
+
+*** Ebuild Phase Functions
+- Package from source: pkg_pretend, pkg_setup, src_unpack, src_prepare, src_configure, src_compile, src_test (optional, FEATURES="test"), src_install, pkg_preinst, pkg_postinst
+- Package from binary: pkg_pretend, pkg_setup, pkg_preinst, pkg_postinst
+
+*pkg_prerm* and *pkg_postrm* functions are called when uninstalling a package
+
+Between the transition from *pkg_preinst* to *pkg_postinst*, files are copied over to the live filesystem from the
+ sandboxed temporary installation location, and Portage records digests of the files installed.
+
+
+There is phase functions, which may be called as "default" from redefined funcions(pkg_nofetch, src_unpack).
+- default_pkg_nofetch - when RESTRICT="fetch"
+- default_src_unpack
+- default_src_prepare - apply patches
+- default_src_configure https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html
+- default_src_compile
+- default_src_test
+- default_src_install
+
+actual code located in functions: __eapi8_src_prepare ...
+
+files:
+- /usr/lib/portage/python3.11/phase-functions.sh
+-
+
+https://devmanual.gentoo.org/ebuild-writing/functions/index.html
+**** in code functions
+eapply_user - apply patches from /etc/portage/patches
+*** Predefined Read-Only Variables
+internal
+- PORTAGE_TMPDIR :: from emerge --info: PORTAGE_TMPDIR="/var/tmp"
+- PORTAGE_BUILDDIR :: internal directory with extracter tar.gz. ex: '/var/tmp/portage/dev-python/flask-2.3.2/'
+
+accessible
+- P :: Package name and version (excluding revision, if any), for example vim-6.3.
+- PN :: Package name, for example vim.
+- CATEGORY :: Package's category, for example app-editors.
+- ROOT :: The absolute path to the root directory into which the package is to be merged.  Only allowed in pkg_* phases
+- DISTDIR :: Contains the path to the directory where all the files fetched for the package are stored (.tar.gz). defined in "/var/cache/distfiles"
+- A :: All the source files for the package (excluding those which are not available because of USE flags).
+- WORKDIR ::  Path to the ebuild's root build directory. For example: "${PORTAGE_BUILDDIR}/work".
+- T ::  Path to a temporary directory which may be used by the ebuild.  For example: "${PORTAGE_BUILDDIR}/temp".
+- D ::  Path to the temporary install directory. For example: "${PORTAGE_BUILDDIR}/image".
+- HOME :: Path to a temporary directory for use by any programs invoked by an ebuild that may read or modify
+ the home directory. For example: "${PORTAGE_BUILDDIR}/homedir".
+
+https://devmanual.gentoo.org/ebuild-writing/variables/index.html#predefined-read-only-variables
+**** ex
+#+begin_src bash :results output
+PN=slack
+PV=4.36.138
+echo https://downloads.slack-edge.com/releases/linux/${PV}/prod/x64/${PN}-desktop-${PV}-amd64.deb
+#+end_src
+
+#+RESULTS:
+: https://downloads.slack-edge.com/releases/linux/4.36.138/prod/x64/slack-desktop-4.36.138-amd64.deb
+*** Ebuild-defined Variables
+EAPI 7: CHOST vs CBUILD
+- CHOST - DEPEND The system on which the package is going to be executed.
+- CBUILD - BDEPEND - The system on which the build is performed.
+
+dependencies
+- DEPEND ::  legacy variable that was used to specify both build-time and runtime dependencies. It is still
+  supported for backwards compatibility, but it is recommended to use BDEPEND and RDEPEND instead.
+- RDEPEND :: Runtime dependencies. target platform
+- BDEPEND :: where we build, programs that will be executed during the build (not necessarily required to run it.)
+- IDEPEND :: Install Dependencies. needed during the pkg_postinst phase and that can be unmerged afterwards.  not for runtime.
+- PDEPEND :: Post-Dependencies. runtime dependencies that do not strictly require being satisfied immediately. Can be merget After.
+
+
+variables
+- SRC_URI :: A list of source URIs for the package. Can contain USE-conditional parts, see SRC_URI. From where to get tar.gz
+- KEYWORDS :: suitability and stability of both the package and the ebuild on each given arch. see [[KEYWORDS]], -* - worth trying to test on unlisted arches.
+- IUSE ::  A list of all USE flags (excluding arch flags, but including USE_EXPAND flags) used within the ebuild.
+- SLOT :: "0" - not needed. when package require multiple version of same app or lib. see https://devmanual.gentoo.org/general-concepts/slotting/index.html
+- REQUIRED_USE :: A list of assertions that must be met by the configuration of USE flags to be valid for this ebuild.
+- RESTRICT ::  Valid values are fetch, mirror, strip, test and userpriv. see: man 5 ebuild
+- S :: Path to the temporary build directory, used by src_compile and src_install. Default: "${WORKDIR}/${P}"
+- BROOT :: BROOT is the absolute path to the root directory
+
+*** SLOT
+ebuild variable. ex. file:/var/db/repos/gentoo/dev-lang/lua/lua-5.4.6.ebuild
+: SLOT="5.4"
+ Allow multiple versions of a package to be installed and managed simultaneously by Portage.
+
+Slots may be used in ebuild with (:) :
+: emerge --ask gentoo-kernel:6.6.21 gentoo-kernel:6.1.81
+where 6.6.21 and 6.1.81 are two SLOTs
+*** DEPEND - RDEPEND, BDEPEND etc.
+- arbitrary whitespace separated.
+- may have versions:
+  - >=ev-libs/openssl-0.9.7d - at least version 0.9.7d
+  - ~app-misc/foo-1.23 	Version 1.23 (or any 1.23-r*) is required.
+  - =app-misc/foo-1.23 	without allowing revisions
+
+**** USE in dependencies
+foo must have bar disabled and baz enabled:
+: app-misc/foo[-bar,baz]
+
+Compact form 	Equivalent expanded form
+- app-misc/foo[bar?] 	bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo )
+- app-misc/foo[!bar?] 	bar? ( app-misc/foo ) !bar? ( app-misc/foo[-bar] )
+- app-misc/foo[bar=] 	bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo[-bar] )
+- app-misc/foo[!bar=] 	bar? ( app-misc/foo[-bar] ) !bar? ( app-misc/foo[bar] )
+
+For a new package version: (+) indicates that the missing flag is assumed to be enabled, (-) the opposite.
+: >=dev-libs/boost-1.48[threads(+)]
+Treat all boost versions without the threads flag as having it enabled.
+
+
+doc https://devmanual.gentoo.org/general-concepts/dependencies/
+**** Blockers
+Пакеты, которые не должны быть установлены одновременно с пакетом, для которого определяется зависимость.
+
+- weak blockers. ex. RDEPEND="!app-misc/foo"
+  - allow to have two versions installed
+  - exempts the common files from file collision checks
+- strong blockers. ex. RDEPEND="!!app-misc/foo"
+  - do not allow to install
+
+Allow blocking specific versions: ~RDEPEND="!<app-misc/foo-1.3"~
+
+**** Slot operators: media-libs/cogl:1.0=
+- :=, :* - means that any slot is acceptable.
+
+USE-conditional dependencies:
+- Should not be used for disabling a certain USE flag on a given architecture.
+- ex.
+  - if a given USE flag is set:
+    - perl? ( dev-lang/perl )
+  - if a given USE flag is not set:
+    - !perl? ( dev-lang/perl )
+
+**** Or: Any of many
+: DEPEND="|| ( app-misc/foo app-misc/bar )"
+Require foo or bar.
+*** helpers
+ /usr/lib/portage/python3.12/phase-helpers.sh
+**** general
+- assert [reason] :: if any component is non-zero (indicating failure), calls die with reason as a failure message.
+- die [reason] :: Causes the current emerge process to be aborted. The final display will include reason.
+- nonfatal <helper> :: Execute helper and do not call die if it fails. The nonfatal helper is available beginning with EAPI 4.
+- use <USE item> :: If USE item is in the USE variable, the function will silently return 0 (aka shell
+ true). If USE item is not in the USE variable, the function will silently return 1 (aka shell false). usev is
+ a verbose version of use.  Example: use python && python-single-r1_pkg_setup
+  - usev <USE item> :: Like use, but also echoes USE item when use returns true.
+  - usex <USE flag> [true output] [false output] [true suffix] [false suffix]
+  - use_with <USE item> [configure name] [configure opt]
+  - use_enable <USE item> [configure name] [configure opt]    Same as use_with above, except that the configure options are --enable- instead of --with- and --disable- instead of --without-. Beginning with EAPI 4, an empty configure opt argument is recognized. In EAPI 3 and earlier, an empty configure opt argument is treated as if it weren't provided.
+- has <item> <item list>
+- hasv <item> <item list> :: Like has, but also echoes item when has returns true.
+- has_version [-b] [-d] [-r] [--host-root] <category/package-version>
+- best_version [-b] [-d] [-r] [--host-root] <package name>
+
+for Python: https://projects.gentoo.org/python/guide/helper.html
+
+python_doexe, python_doscript, python_domodule, and python_doheader: Used for installing Python executables,
+ scripts, modules, and headers respectively.
+**** Log
+- elog		:: If you need to display a message that you wish the user to read and take notice of, then use
+ elog. It works just like echo(1), but adds a little more to the output so as to catch the user's eye. The
+ message will also be logged by portage for later review.
+- einfo	:: Same as elog, but should be used when the message isn't important to the user (like progress or
+ status messages during the build process).
+- ebegin	:: Like einfo, we output a helpful message and then hint that the following operation may take some
+ time to complete. Once the task is finished, you need to call eend.
+- eend		:: Followup the ebegin message with an appropriate "OK" or "!!" (for errors) marker. If status is
+ non-zero, then the additional error message is displayed.
+- eqawarn	:: Same as einfo, but should be used when showing a QA warning to the user.
+- ewarn	:: Same as einfo, but should be used when showing a warning to the user.
+- doman	:: Recognition of Language Codes in File Names
+- unpack	:: Support for the xz file extension
+- econf	:: ./configure
+- einstall	:: make install
+- dodoc	:: Installs documentation files into /usr/share/doc.
+- emake	:: Used for building and installing packages using the make command.
+- eapply	:: Applies patches to the source code during the src_prepare phase.
+- doins	:: Installs files into the system, often used for installing executables and scripts.
+- dobin	:: Installs binaries into the system.
+- udev_dorules	:: Installs udev rules files into the system.
+
+man 5 ebuild - full list
+
+https://dev.gentoo.org/~zmedico/portage/doc/man/ebuild.5.html
+
+additional in /var/db/repos/gentoo/eclass/*.eclass files
+*** patches
+patches - is optional directory.
+
+There are two types of patches - /etc/portage/patches and ebuild patches.
+**** etc patches
+steps:
+: cd /tmp/
+: git clone --branch <tag-name> --single-branch https://github.com/example/repo.git
+: cd src/
+: edit
+: "git diff --relative --stat -p --output=patch.patch" # cannot be used: commit and "git format-patch -1 HEAD"
+: mkdir -p /etc/portage/patches/x11-misc/pcmanfm-1.2.5
+: mv patch.patch /etc/portage/patches/x11-misc/pcmanfm-1.2.5/patch.patch
+
+
+https://wiki.gentoo.org/wiki//etc/portage/patches
+**** ebuild patches
+
+files/ - path for *.patch files
+
+example: net-analyzer/portmon
+
+#+begin_src bash :eval no :exports code :results none
+PATCHES=(
+    #name-0.1
+    "${FILESDIR}"/${P}-dont-umask.patch #93671
+)
+# or
+PATCHES=(
+    #name
+    "${FILESDIR}"/${PN}-4.3-dont-umask.patch #93671
+)
+#+end_src
+https://devmanual.gentoo.org/ebuild-writing/misc-files/patches/index.html
+*** fetch
+Downloading a package's source happens before any of phases.
+
+If the user tries to install a *fetch-restricted* package, the package manager will not try to download it,
+ but simply check whether the corresponding archive is present in /usr/portage/distfiles
+
+If not, it will execute the pkg_nofetch ebuild function which should print a message describing the steps
+ needed to acquire the archive.
+*** debugging ebuild
+- ebuild /path/to/your.ebuild --check-syntax
+- use -v with “ebuild” command
+- /etc/portage/make.conf: PORTAGE_ELOG_SYSTEM="echo save" -  Show messages after emerging *and* save
+- export DEBUG=1
+- export PORTAGE_LOG_FILE="/path/to/logfile"
+- emerge --debug your-package
+- use tools like chroot or Docker to create isolated environments.
+- Using src_test Phase
+https://wiki.gentoo.org/wiki/Portage_log
+*** testing
+It is possible to test fetching and unpacking the upstream sources by the new ebuild, using the ebuild command:
+- GENTOO_MIRRORS="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack
+
+ebuild require modified config of /etc/portage/make.conf or /usr/share/portage/config/make.globals
+
+steps:
+1) create tmp directory:
+   - mkdir -p /tmp/ebuildtest
+   - chown u:portage /tmp/ebuildtest
+   - chmod g+s /tmp/ebuildtest
+2) add repository with ebuild: eselect repository enable localrep. Which add /etc/portage/repos.conf/eselect-repo.conf
+3) creation of environment:
+   1) btrfs subvolume snapshot / /mnt/test # directory /mnt/test should not exist
+   2) cd /mnt/test
+   3) mount -t proc /proc proc/
+   4) # mount -t sysfs /sys sys/
+   5) mount --rbind /dev dev/ # both places
+   6) mount --rbind /var/tmp/ var/tmp # both places
+   7) chroot /mnt/gentoo /bin/bash
+   8) source /etc/profile
+   9) mount -t proc proc /proc
+   10)
+4) GENTOO_MIRRORS="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack
+5) pkg-testing-tool --append-emerge='--autounmask=y' --extra-env-file 'test.conf' --append-required-use
+ '!anonch' --test-feature-scope once --max-use-combinations 6 -p '=sci-libs/onnxruntime-1.18.1' --report
+ /var/tmp/portage/logs/efl-1.25.1-r11-report.json
+
+creation of environment:
+- btrfs subvolume snapshot / /mnt/test
+- btrfs subvolume delete /mnt/test
+
+execute ebuild step - pkg_setup()
+: ebuild /var/db/repos/gentoo/app-containers/lxc/lxc-4.0.6.ebuild setup
+**** pkgdev tatt
+- --packages TARGET [TARGET ...], -p TARGET [TARGET ...]
+- --use-default - Prefer to use default use flags configuration
+- --test, -t - Include a test run for packages which define src_test phase (in the ebuild or inherited from
+ eclass). make.conf FEATURES="test"
+
+optional:
+- --job-name NAME -j NAME - just name
+
+kgdev tatt --use-default --extra-env-file test.conf -p =www-client/firefox-122.0.1 -j tatt-firefox
+- /etc/portage/env/test.conf
+
+Feature=”test” Run package-specific tests during each merge to help make sure the package compiled properly.
+ See test in ebuild(1) and src_test() in ebuild(5).  This feature implies the "test" USE flag if it is a
+ member of IUSE, either explic‐ itly or implicitly (see ebuild(5) for more information about IUSE).  The
+ "test" USE flag is also automatically disabled when the "test" feature is disabled.
+**** pkg-testing-tool
+: emerge --ask app-portage/pkg-testing-tools
+
+: $ pkg-testing-tool --append-emerge '--autounmask=y' --extra-env-file 'test.conf' --test-feature-scope once --max-use-combinations 6 -p '=sci-libs/onnxruntime-1.18.1'
+under user:
+: Permission denied: '/etc/portage/package.accept_keywords/zzz_pkg_testing_tool_h8yuhdy8'
+
+*** test dependencies
+#+begin_src bash :eval no :exports code :results none
+TEST_DEPEND="dev-util/check
+             dev-util/valgrind"
+
+src_test() {
+    emake test
+}
+#+end_src
+
+*** Troubleshooting
+The source directory
+ '/var/tmp/portage/sci-libs/unhubbed-transformers-4.45.0/work/unhubbed-transformers-4.45.0' doesn't exist. But
+ work/unhubbed-transformers-4.45.0.dev0 exist, because we download unhubbed-transformers-4.45.0.dev0.tar.gz
+ from github.
+- Solution:
+: MY_PV="${PV}.dev0"
+: MY_P="${PN}-${MY_PV}"
+: S=${WORKDIR}/${MY_P} # work/...
+: SRC_URI="https://github.com/Anoncheg1/${PN}/archive/refs/tags/${MY_PV}.tar.gz
+: 	-> ${P}.gh.tar.gz"
+*** examples
+- cmake git-releasedev-libs/sexpp/sexpp-0.9.0.ebuild
+- cmake git-r3 xdg-utilsgames-strategy/colobot/colobot-9999.ebuild
+*** links
+- https://devmanual.gentoo.org/quickstart/index.html
+- main reference for ebuild development https://devmanual.gentoo.org/index.html
+- man 5 ebuild
+- https://devmanual.gentoo.org/eclass-reference/ebuild/
+
+** eclass
+*** theory
+collection of code which can be used by more than one ebuild.
+
+add <repo>/eclass/autotools.eclass in ebuild:
+: inherit autotools
+
+for:
+- used by many ebuilds (for example, autotools, bash-completion-r1, flag-o-matic, toolchain-funcs)
+- provide a basic build system for many similar packages (for example, perl-module, vim-plugin)
+- handle one or a small number of packages with complex build systems (for example, kernel-2, toolchain)
+
+consit of:
+- variables - affect the default behavior of the eclass.
+- functions -
+- Function Variables
+- phase functions or Export Functions - default implementations for any of the ebuild phase functions - used to override eclass-defined defaults
+  - simple function definition (not multiple eclass friendly)
+  - EXPORT_FUNCTIONS - have their name prefixed ("namespaced") with ${ECLASS}_. 1) define ${ECLASS}_src_compile 2) EXPORT_FUNCTIONS ${ECLASS}_src_compile
+    - If multiple eclasses export the same function, the latest (inherited last) defined version wins.
+- Inherit guard:
+: if [[ -z ${_FOO_ECLASS} ]]; then _FOO_ECLASS=1 ... fi
+- Handling incorrect usage of an eclass: case ${EAPI} in ...
+recommendation is now that eclasses should not inherit other eclasses after calling EXPORT_FUNCTIONS.
+- inherit other eclasses
+*** python building
+**** eclasses
+pypi.eclass - A helper eclass to generate PyPI source URIs
+- executes _pypi_set_globals which set: SRC_URI as https://files.pythonhosted.org/packages/{pytag}/${project::1}/${project}/${filename}
+distutils-r1.eclass
+- redefine phases src_prepare src_configure src_compile src_test src_install
+- variables:
+  - DISTUTILS_USE_PEP517 - complete build and install is done in python_compile() just merges the temporary  install tree into the real fs. may be: setuptools, hatchling, jupyter, poetry
+- inherit multibuild multilib multiprocessing ninja-utils toolchain-funcs
+  - and python-r1 or python-single-r1
+
+multibuild.eclass - building multiple variants of packages (e.g. multilib, Python implementations).
+
+python-r1.eclass - A common, simple eclass for Python packages.
+- inherit multibuild python-utils-r1
+- variables:
+  - PYTHON_COMPAT - list of Python implementations the package supports. ex: ( python2_7 python3_{3,4} )
+  - BUILD_DIR - The current build directory. if unset, it defaults to ${S}. locally set to an implementation-specific build directory
+**** steps
+1) Compiling: gpep517 build-wheel --backend setuptools.build_meta --output-fd 3 --wheel-dir /var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3_11/wheel
+
+2) Installing to install tmp direcotyry: gpep517 install-wheel --destdir=/var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3_11/install --interpreter=/usr/bin/python3.11 --prefix=/usr --optimize=all /var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3_11/wheel/Flask-2.3.2-py3-none-any.whl
+- install directory has venv structure
+3) installing - copying tmp install directory to /
+
+**** links
+https://github.com/projg2/python-guide/
+*** TODO testing
+https://wiki.gentoo.org/wiki/Eclass_testing
+*** links
+https://devmanual.gentoo.org/eclass-writing/
+** disable unused ebuilds
+/etc/portage/package.mask:
+: */*::gentoo
+
+/etc/portage/package.unmask
+: emerge -pve --color n world > /tmp/tmpe
+: cat /tmp/tmpe | sed 's/.* ] \([^ ]*\).*/\1/' | grep :: | grep -o '^\w*\-\?\w*/' | sort -u | sed 's#$#*::gentoo#' > /etc/portage/package.unmask
++ profiles, scripts, eclass
+
+get repository name:
+- emerge --info
+** mirrors
+- Rsync mirrors https://www.gentoo.org/support/rsync-mirrors/
+  - /etc/portage/repos.conf/gentoo.conf
+- Source mirrors https://www.gentoo.org/downloads/mirrors/
+  - /etc/portage/make.conf
+*** links
+https://wiki.gentoo.org/wiki/Project:Infrastructure/Mirrors
+** update security critical packages
+check if the system is up to date security-wise
+- glsa-check --list
+- glsa-check -t all
+packages that will be updates:
+- glsa-check -p $(glsa-check -t all)
+update required packages:
+- glsa-check -f $(glsa-check -t all)
+
+** (old) Portage security
+- https://wiki.gentoo.org/wiki/Portage_Security
+- Gentoo public keys: gpg /usr/share/openpgp-keys/gentoo-release.asc
+- verify: gemato verify -K /usr/share/openpgp-keys/gentoo-release.asc /var/db/repos/gentoo
+
+** FAQ
+“the following features is restricted: Test”
+- RESTRICT="test"
+- typically used to prevent tests that require network access or other disallowed activities from running
+ during the build process. The restriction ensures that the build procedure does not attempt to access
+ external resources.
+** links
+- https://dev.gentoo.org/~zmedico/portage/doc/
+- https://devmanual.gentoo.org/index.html
+- https://github.com/gentoo/portage
+
+* tools
+- ebump 	Ebuild revision bumper (more useful for developers).
+- eclean 	Tool for cleaning repository source files and binary packages.
+- enalyze 	Gentoo's installed packages analysis and repair tool. See man page, which states "CAUTION: This is beta software and is not yet feature complete".
+- epkginfo 	Wrapper to equery: display metadata about a given package.
+- equery 	Gentoo package query tool.
+- eread 	Script to read portage log items from einfo, ewarn etc.
+- eshowkw 	Display keywords for specified package(s).
+- euse 	Tool to see, set and unset USE flags at various places.
+- imlate 	Displays candidates for keywords for an architecture (more useful for developers?).
+- revdep-rebuild 	Reverse Dependency rebuilder. Generally not necessary to run this tool anymore.
+* TODO q
+- portage utility applet
+- collection of utilities
+* TODO eix
+- https://github.com/vaeth/eix
+- app-portage/eix
+
+more efficient and more flexible than the *emerge --search*
+* profiles
+: eselect profile show
+
+Describe:
+- the current profile's running architecture
+- default USE flags
+- @system package ebuilds.
+
+files:
+- /var/db/repos/gentoo/profiles
+- /etc/portage/make.profile
+
+Default USE for profile:
+: USE_ORDER="defaults:pkginternal:repo" emerge --info|grep USE
+** merged-user/split-user
+- split-user - legacy layer
+- merged-user - newer layer "/usr merge" where the /bin, /sbin, /lib, and /lib64 are permanently migrated to
+ the /usr/bin, /usr/sbin, /usr/lib and /usr/lib64 directories respectively and /sbin and /usr/sbin are both
+ actually merged to /usr/bin.
+
+It is required for >= systemd 255 due to changes upstream, but it remains optional for other init systems.
+
+https://wiki.gentoo.org/wiki/Merge-usr
+* install handbook
+- mkfs.ext4 -T small /dev/sda2
+- parted /dev/sda: set 1 bios_grub on # very important for GPT table
+- gpg --verify stage3-amd64-<release>-<init>.tar.?(bz2|xz){.DIGESTS.asc,}
+- tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+- set time:
+  - date +%Y%m%d -s "20220429"
+  - date -s "19:35"
+  - hwclock --systohc
+- mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf # require correct date
+- chroot!
+- mkdir --parents /etc/portage/repos.conf
+- cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+- nano /etc/resolv.conf: nameserver 8.8.8.8
+- for CPU_FLAGS_X86: emerge --ask app-portage/cpuid2cpuflags
+  - variant: #`echo "*/* $(cpuid2cpuflags)" >> /etc/portage/package.use/00cpuflags
+- to raplace -march=native: gcc -v -E -x c /dev/null -o /dev/null -march=native 2>&1 | grep /cc1 | grep mtune
+- /etc/portage/make.conf:
+  - USE="caps X alsa ipv6 jpeg png ogg upower verify-sig -fonts -themes -nls -su -pam -qt5 -cups -fortran udev -elogind -udisks" # udev
+  - CPU_FLAGS_X86="avx f16c mmx mmxext pclmul popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"
+  - COMMON_FLAGS="-march=native -O2 -pipe"
+  - MAKEOPTS="-j2"
+  - L10N="en"
+- emerge --sync --quiet
+- build and install gentoo ???????????
+- emerge --ask sys-boot/grub sys-kernel/gentoo-sources
+- install kernel and grub
+- install dhcp client [[network_config_gentoo]]
+- Xorg/X11 confuguration [[xfce4_install_gentoo]]
+- logging daemon
+  - emerge --ask app-admin/sysklogd or app-admin/syslog-ng
+  - rc-update add sysklogd default
+  - chmod 700 /var/log
+- passwd larry
+- user autologin:
+  - /etc/inittab: c2:2345:respawn:/sbin/agetty -a larry 38400 tty2 linux
+- timezone:
+  - ls /usr/share/zoneinfo
+  - echo "UTC" > /etc/timezone
+- locale
+  - cat /usr/share/i18n/SUPPORTED
+  - nano -w /etc/locale.gen
+  - locale-gen
+  - eselect locale list
+- file:nix::kernel_security
+- emerge --ask app-portage/gentoolkit # equery
+** firmware
+download
+- links
+  - https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+  - https://www.kernel.org/doc/wot/
+  - https://keyserver2.gnupg.org/
+  - git https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
+- gzip -d linux-firmware-20221214.tar.gz
+- gpg --verify linux-firmware-20221214.tar.asc
+
+- emerge --ask --autounmask=y linux-firmware
+- emerge --ask sys-kernel/linux-firmware
+- emerge --ask net-wireless/wireless-regdb
+- copy files to /lib/firmware
+- emerge --unmerge sys-kernel/linux-firmware
+- set Device Drivers -> Generic Driver Options -> Formware loader -> regulatory.db regulatory.db.p7s
+
+
+-
+** chroot
+- mount --types proc /proc /mnt/gentoo/proc
+- mount --rbind /sys /mnt/gentoo/sys
+- mount --make-rslave /mnt/gentoo/sys
+- mount --rbind /dev /mnt/gentoo/dev
+- mount --make-rslave /mnt/gentoo/dev
+- mount --bind /run /mnt/gentoo/run
+- mount --make-slave /mnt/gentoo/run
+- chroot /mnt/gentoo /bin/bash
+- source /etc/profile
+- export PS1="(chroot) ${PS1}"
+
+* install xfce4 <<xfce4_install_gentoo>>
+1) emerge --ask app-misc/tmux && tmux
+2) /etc/portage/make.conf:
+   - INPUT_DEVICES="evdev synaptics"
+   - VIDEO_CARDS="intel i915" or "amdgpu radeon"
+   - USE="X jpeg png ogg upower -qt5 -pam -su -elogind"
+     - -qt5 - because of app-text/poppler
+3) emerge --pretend --verbose x11-base/xorg-server
+4) USE=-server emerge --ask x11-base/xorgcp ????????
+5) env-update
+6) source /etc/profile
+7) echo "xfce-base/xfce4-panel -dbusmenu" >> /etc/portage/package.use/xfce4-panel
+8) emerge --ask --oneshot xfce-extra/xfce4-notifyd
+9) emerge --ask xfce-base/xfce4-meta
+10) emerge --ask xfce4-xkb-plugin # keyboard layouts
+11) cp -r /usr/share/X11/xorg.conf.d /etc/X11/xorg.conf.d # copy configuration files of xorg-drivers
+12) rc-service dbus start && rc-update add dbus default # required for battery power management
+13) useradd -m -G users,wheel,input,audio,video,cdrom,games,usb -s /bin/bash larry
+14) or #usermod -a -G input,video larry # user should be in input,video groups
+16) $startxfce4 -- vt1 # 1 - number of current tty
+17) security:
+    - $startx -- -nolisten tcp
+    - or:
+      - /usr/bin/startx: defaultserverargs="-nolisten tcp"
+      - /etc/portage/make.conf:
+	- CONFIG_PROTECT="/usr/bin/startx" # To make sure that startx does not get overwritten when emerging a new version of Xorg you must protect it. Add the following line to /etc/portage/make.conf:
+18) keyboard repeat delay: 200, speed: 35
+
+
+Testing and trouble shooting
+- emerge --ask x11-wm/twm x11-terms/xterm
+- X -config /home/u/xorg.conf
+- $X -configure # generate xorg.conf (for testing)
+- evtest # test evdev app-misc/evtest
+- $less .local/share/xorg/Xorg.0.log # holy grail of trouble shooting
+* Dracut - disk encryption USB - full install
+
+steps
+- we need offset for MBR with grub and boot partition. This partition will contain GRUB files, plain
+  (unencrypted) kernel and kernel initrd, dracut initramfs:
+- Partitioning GPT table (offset is a separate partition of size 1M):
+  - parted /dev/sda
+    - mkpart primary fat32 3 515
+    - name 2 boot
+    - set 2 BOOT on
+    - mkpart primary 515 -1
+    - name 3 lvm
+    - set 3 lvm on
+    - set 1 bios_grub on # offset for MBR in GPT table
+- Partitioning MSDOS table (offset is an empty space of size 1-10M):
+  - fdisk /dev/sda
+    - o
+    - n, p, 1, 20488 (10M offset, not shure how many required for grub), +300M, w - boot
+    - n, p, 2, 20488, Enter, +10G, w - swap
+    - n, p, 3, 20488, Enter, Enter - luks partition
+- Formatting:
+  - mkfs.vfat -F32 /dev/sdX2
+  - modprobe dm-crypt
+  - gpg variant
+    - export GPG_TTY=$(tty)
+    - dd if=/dev/urandom bs=8388607 count=1 | gpg --symmetric --cipher-algo AES256 --output /mnt/key/rootkey.gpg
+    - gpg --quiet --decrypt /mnt/key/rootkey.gpg | cryptsetup --type luks2 --batch-mode --key-file - luksFormat /dev/sdX3
+    - gpg --quiet --decrypt /mnt/key/rootkey.gpg | cryptsetup --type luks2 --batch-mode --key-file - luksOpen /dev/sdX3 lvm
+  - cryptsetup-variant (not tested):
+    - cryptsetup luksFormat /dev/sdZn
+    - cryptsetup luksOpen /dev/ssdZn
+  - cryptsetup luksDump /dev/sdX3 # check
+- Create LVM inside encrypted block - for SSD TRIM require special options
+  - vgcreate vg0 /dev/mapper/lvm  # Create volume group vg0:
+  - lvcreate -L 60G -n root vg0  # Create logical volume for /root filesystem
+  - lvcreate -L 40G -n var vg0  # Create logical volume for /var filesystem
+  - lvcreate -L 7G -n swap vg0  # Create logical volume for swap filesystem
+  - lvcreate -l 100%FREE -n home vg0  # Create logical volume for /home filesystem:
+  - cryptsetup luksHeaderBackup /dev/sdXn --header-backup-file /tmp/efiboot/luks-header.img  # backup
+- format
+  - mkswap -L "swap" -n 32k /dev/mapper/vg1-swap
+  - mkfs.btrfs -L "root" -n 32k /dev/mapper/vg1-root
+  - mkfs.btrfs -L "var" -n 32k /dev/mapper/vg1-var
+  - mkfs.trfs -L "home" -n 32k /dev/mapper/vg1-home
+- mount - require sys-fs/lvm2 +lvm
+  - mount -o ssd,compress=lzo,discard=async /dev/vg0/root /mnt/gentoo/
+  - mkdir /mnt/getnoo/var
+  - mount -o ssd,compress=lzo,discard=async /dev/vg0/var/ /mnt/gentoo/var/
+- tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner # v - verbose
+- mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+- mkdir --parents /mnt/gentoo/etc/portage/repos.conf
+- cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+- cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+- nano -w /mnt/gentoo/etc/portage/make.conf
+  - COMMON_FLAGS="-march=native -O2 -pipe"
+  - MAKEOPTS="-j4"
+- chroot! (don't forget env-update && . /etc/profile )
+- emerge-webrsync
+- emerge --sync --quiet
+- gcc -v -E -x c /dev/null -o /dev/null -march=native 2>&1 | grep /cc1 | grep mtune
+- replace -march=native
+- emerge --ask  app-portage/cpuid2cpuflags
+- $cpuid2cpuflags >> /etc/portage/make.conf
+- emerge --ask emacs sys-kernel/dracut sys-kernel/gentoo-sources sys-boot/grub sys-fs/lvm2 sys-fs/cryptsetup  sys-apps/busybox app-shells/dash
+  app-crypt/gnupg sys-fs/btrfs-progs
+- USE="-gtk -pango -libkms" emerge --ask sys-boot/plymouth
+- rc-update add lvm boot
+- fstab
+- sfdisk -d /dev/sda > /mnt/img/sda.partition.table.txt # backup partition table
+- findmnt --verify --verbose # verify fstab
+- set time:
+  - date +%Y%m%d -s "20220429"
+  - date -s "19:35"
+  - hwclock --systohc
+- configure and build Kernel [[file:nix::config_kernel_gentoo]]
+- /etc/dracut.conf
+  - # Equivalent to -a "module"
+  - # located /usr/lib/dracut/modules.d/
+  - add_dracutmodules+=" lvm btrfs crypt crypt-gpg dm "
+  - filesystems+=" btrfs "
+  - kernel_cmdline="rd.luks.key=/luks-key.gpg:UUID=xxxxxx-xxx-xx-xx rd.luks.uuid=luks-xxxxxx-xxx-xx-xx rd.luks
+    rd.lvm rd.lvm.vg=vg0 rd.lvm.lv=vg0/root root=/dev/mapper/vg0-root rootfstype=btrfs
+    rootflags=rw,noatime,nodirtime,compress=lzo,ssd,space_cache=v2,subvolid=5,subvol=/" # shoud work
+  - full: kernel_cmdline="
+  - early_microcode="no
+  - show_modules="yes"
+  - rd.lvm.vg="vg0"
+- dracut --kver 6.1.57-gentoo --force --hostonly --fstab 2>drac_log.txt # - to generate /boot/initramfs-6.1.57-gentoo.img
+- grub-mkconfig -o /boot/grub/grub.cfg
+- grub-install
+- /etc/dracut.conf: kernel_cmdline shoud be copied to /etc/default/grub:GRUB_CMDLINE_LINUX
+- passwd # set root password
+- useradd -m -G users,wheel,audio,video,cdrom,games,usb -s /bin/bash larry
+- network confuguration [[network_config_gentoo]]
+- Xorg/X11 confuguration [[xfce4_install_gentoo]]
+- logging daemon
+  - emerge --ask app-admin/sysklogd
+  - rc-update add sysklogd default
+  - chmod 700 /var/log
+- passwd larry
+- user autologin:
+  - /etc/inittab: c2:2345:respawn:/sbin/agetty -a larry 38400 tty2 linux
+- timezone:
+  - ls /usr/share/zoneinfo
+  - echo "UTC" > /etc/timezone
+- locale
+  - cat /usr/share/i18n/SUPPORTED
+  - nano -w /etc/locale.gen
+  - locale-gen
+  - eselect locale list
+- file:nix::kernel_security
+
+
+change password:
+- gpg -d /mnt/key/rootkey.gpg > /mnt/key/rootkey
+- cat /mnt/key/rootkey | gpg --cipher-algo aes256 --armor -c > /mnt/key/rootkey_sc.gpg
+
+btrfs:
+- btrfs filesystem defragment -r -v -clzo / # force mounted to compress
+- mount -o compress=lzo,discard=async /dev/  /mnt/
+
+** links
+https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut.html
+https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption
+** dracut.conf
+# Gentoo specific
+udevdir=/lib/udev
+ro_mnt=yes
+omit_drivers+=" i2o_scsi "
+
+
+omit_dracutmodules+=" systemd systemd-initrd dracut-systemd
+** errors
+crypt error allocating crypto tfm
+- device-mapper: table : crypt error allocating crypto tfm
+- device-mapper: ioctl: error adding target to table
+- device-mapper: reload ioctl on failed: no such file or directory
+- no cryptographic support in Cryptographic API --->
+
+grub install: WARNING: Failed to connect to lvmetad. Failling back to device scanning. ; Cannot process volume
+group luks
+- in /etc/lvm/lvm.conf the following : use_lvmetad = 0
+- USE=device-manager emerge --ask grub
+** change password luks.gpg
+- export GPG_TTY=$(tty)
+- gpg --quiet --decrypt /mnt/key/rootkey.gpg > file
+- cat file | gpg --symmetric --cipher-algo AES256 --output /mnt/key/luks-key_new.gpg
+
+** ru descryption
+Если вам интересно, так я обеспечиваю свою безопасность. Понимаю, что вы работаете с более серьезными задачами.
+- Перепрошиваю чип с UEFI BIOS на "coreboot", это обратный инжинеринг волонтерами.
+- Устанавливаю Gentoo, где бинарные пакеты только на первом шаге, затем они же пересобирается из исходного кода.
+- Компилирую ядро Линукс с отключенными модулями и такими настройками, как: защита от переполнения буфера, рандомизация структур, очистка стека, отладка структур. Выборочно вставляю бинарные Блобы в ядро, когда нет альтернатив.
+- Полное шифрование диска с помощью LUKS (Linux Unified Key Setup) структуры раздела, где берется файл-ключ шифрования размером несколько мегабайт, шифруется симметричным шифрованием (AES256) обычным паролем и помещается на флеш карту. Во время загрузки из initramfs запрашивается пароль, с флешки берется файл, расшифровывается паролем и используется как ключ для LUKS (aes-xts-plain64,256 bits). /boot раздел располагается на флешке без шифрования.
+-  /etc/fstab: proc /proc proc hidepid=2,nosuid,noexec,gid=wheel       /home на отдельном разделе с noexec,nosuid,nodev
+- Простой фаервол с помощью iptables или nftables. Logcheck анализатор логов. Бэкап с помощью rsync.
+- Не использую SELinux, так как под рутом вроде бы ничего не запускаю, вместо этого устанавливаю библиотеку POSIX Capabilities, которая поддерживается многими пакетами.
+- Захожу под рутом и пользователем с разных консолей, для каждого прилажения создаю отдельного пользователя, sudo использую только для запуска таких прилажений.
+- Изолирую прилажения с помощью чательно настроенного Firejail, чтобы исключить сбор информации о системе и кейлогеров. Аппаратная виртуализация слишком сложная в настройке, даже паравиртуализация слишком много требует.
+** EDID - video kernel mode setting
+https://wiki.archlinux.org/title/Kernel_mode_setting
+
+emerge --ask edid-decode read-edid
+
+get-edid
+
+get-edid -b 10 > edid.bin
+
+
+cat edid.bin | edid-decode
+
+cp edid > /lib/firmware/edid/edid.bin
+(add to .config)
+drm.edid_firmware=edid/your_edid.bin
+drm.edid_firmware=VGA-1:edid/your_edid.bin
+
+drivers/gpu/drm/drm_edid_load.c
+** custom edid
+
+https://kodi.wiki/view/Archive:Creating_and_using_edid.bin_via_xorg.conf
+xrandr --props
+
+Section "Monitor"
+    Identifier "LG 42LD560"
+    VendorName "GSM"
+    ModelName "LG TV"
+
+    Option "UseEDID" "True"
+    Option "CustomEDID" "DFP-1:/etc/X11/LG-42LD560.edid.bin"
+EndSection
+
+Section "Device"
+   Identifier  "Device0"
+   BusID       "PCI:00:02:0"
+   Option      "LVDS-1" "MonitorLVDS1"
+   Option      "DP-1"   "MonitorDP1"
+   Driver      "intel"
+   Option      "CustomEDID" "DP1:/etc/X11/edid.bin"
+   Option      "UseEDID" "true"
+EndSection
+** nvidia example Xorg
+https://wiki.gentoo.org/wiki/NVIDIA/Optimus/EDID_Xorg.conf_Example
+* Dracut - disk encryption USB - kernel update
+[[file:nix::kernel-update]]
+- PYTHON="python3.8" sh ./deblob-6.6.sh | tee >(tee) > out.log
+- make -j2
+- make install
+-
+* create USB stick
+1) check gpg
+2) or check hash
+3) USB: dd if=/path/to/image.iso of=/dev/sdc bs=8192k
+* python
+PYTHON_SINGLE_TARGET
+PYTHON_TARGETS
+
+app-editors/vim PYTHON_TARGETS: -* python2_7 PYTHON_SINGLE_TARGET: -* python2_7
+
+$profile-config list      - current stable
+
+* no root Xorg
+package.use/xorg:
+x11-base/xorg-server -suid
+
+startx -- vt2
+
+~/.xinitrc
+exec startxfce4
+
+* add user
+useradd -m -G video,audio,wheel -s /bin/bash larry
+usermod -a -G video larry
+gpasswd -d larry video
+* network configuration <<network_config_gentoo>>
+netifrc is Gentoo's default framework for configuring and managing network interfaces
+1) emerge --ask  net-misc/dhcpcd
+2) dhcpcd eth0
+3) echo 'config_eth0="dhcp"' > /etc/conf.d/net
+4) ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
+5) rc-service net.eth0 start
+6) rc-update add dhcpcd default
+7) iptables or nftables
+
+wifi:
+- emerge --ask net-wireless/iw net-wireless/wpa_supplicant
+** /etc/wpa_supplicant/wpa_supplicant.conf
+#+begin_src sh
+#ctrl_interface=/var/run/wpa_supplicant
+eapol_version=2
+country=RU
+
+# random
+# auto_uuid=1
+mac_addr=1
+preassoc_mac_addr=1
+
+bss_expiration_age=1980
+bss_expiration_scan_count=5
+
+passive_scan=1
+
+network={
+        ssid="TP-Link_ACC3"
+        psk="60s%.!_Col"
+}
+#+end_src
+** router
+- emerge --ask net-dns/dnsmasq
+- /etc/sysctl.conf:
+  - net.ipv4.ip_forward = 1
+  - net.ipv4.conf.default.rp_filter = 1
+- sysctl -p /etc/sysctl.conf
+- /etc/dnsmasq.conf:
+  - dhcp-range=eth0,192.168.0.100,192.168.0.250,72h
+  - interface=eth0
+- /etc/init.d/: ln -s net.ln net.eth0
+- rc-service net.eth0 restart
+
+- client:
+- /etc/init.d/: ln -s net.ln net.eth0
+- /etc/conf.d/:
+  - config_eth0="192.168.0.2/24"
+  - routes_eth0="default via 192.168.0.1" # or ip route add default via 192.168.0.1 dev eth0
+- rc-service net.eth0 restart
+- /etc/resolv.conf: nameserver 192.168.0.1
+-
+** configure pachcard
+1) ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
+2) /etc/conf.d/net: config_eth0="192.168.0.2/24"
+3) rc-service net.eth0 restart
+* audio
+- add user to audio group!
+- euse -E alsa # add alsa to /etc/portage/make.conf
+- emerge --ask --changed-use --deep @world
+- emerge --ask media-sound/alsa-utils
+- alamixer # unmute Master
+- speaker-test -c2 -t wav
+- aplay -l # List all soundcards and digital audio devices
+- aplay -L # List all PCMs defined
+- arecord -L  # List all PCMs defined
+- alsactl dump-cfg # show current full config
+
+microphone
+- SND_USB_AUDIO - kernel
+- alsamixer => internal
+- arecord -l # list capture hardware
+- arecord -f S16_LE -d 3 -r 44100 --device="hw:0,0" -c 2 /tmp/test.wav
+- arecord arecord -f S16_LE -d 3 -f dat -V stereo -r 44100 --device="hw:0,0" -c 2 /tmp/test.wav
+- aplat /tmp/test.wav
+
+volumne control:
+- amixer set Master 5%+
+- amixer set Master 5%-
+
+** alsa ~/.asoundrc
+main config in /etc/asound.conf
+** simplest config output hw:0,0
+# defaults.pcm.!card 0
+# defaults.pcm.!device 0
+
+** hdmi output
+#+begin_src conf
+# defaults.pcm.!card 0
+# defaults.pcm.!device 3
+
+# pcm.!spdif {
+# 	   type hw
+# 	   card 0
+# 	   device 3
+# }
+
+# pcm.!default {
+# 	     type plug
+# 	     slave {
+# 	     	   pcm "spdif"
+#  	     }
+# }
+
+#+end_src
+** troubleshooting
+Automatic encoder selection failed for output stream #1:2. Default encoder for format xv (codec none) is probably disabled
+
+
+** pulseaudion
+
+pavucontrol
+
+https://wiki.gentoo.org/wiki/PulseAudio
+
+
+echo "autospawn = no" > ~/.config/pulse/client.conf
+pulseaudio --kill
+** loop back test or “hear yourself” - alsa
+#+begin_src text
+pcm.!default {
+    type plug
+    slave.pcm "hw:0,0"
+}
+
+pcm.mic {
+    type plug
+    slave.pcm "hw:1,0"
+}
+
+pcm.output {
+    type plug
+    slave.pcm "hw:0,0"
+}
+
+#+end_src
+
+#+begin_src conf
+pcm.!default {
+    type asym
+    playback.pcm "output"
+    capture.pcm "mic"
+}
+
+
+# ctl.!default { # required?
+#     type hw
+#     card 0
+# }
+
+pcm.mic {
+    type plug
+    slave {
+        pcm "hw:1,0" # Replace with your microphone device (e.g., hw:1,0)
+	format S16_LE # Optional: Set the format to 16-bit, Little Endian
+        rate 48000
+        channels 1
+    }
+}
+
+pcm.output {
+    type plug
+    slave {
+        pcm "hw:0,0" # Replace with your output device (e.g., hw:0,0)
+    }
+}
+#+end_src
+
+#+begin_src conf
+pcm.dmixer {
+    type dmix
+    ipc_key 1024
+    slave {
+        pcm "hw:0,0" # Adjust this to your output device
+        period_time 0
+        period_size 1024
+        buffer_size 4096
+        rate 44100
+    }
+    bindings {
+        0 0
+        1 1
+    }
+}
+
+pcm.asymed {
+    type asym
+    playback.pcm "dmixer"
+    capture.pcm "hw:1,0" # Adjust this to your microphone device
+}
+
+pcm.!default {
+    type plug
+    slave.pcm "asymed"
+}
+
+pcm.default {
+    type plug
+    slave.pcm "asymed"
+}
+
+ctl.mixer1 {
+    type hw
+    card 1 # Adjust this to your card number
+}
+#+end_src
+
+working:
+: arecord -f S16_LE -c 2 -r 44100 -D mic | aplay -f S16_LE -c 2 -r 44100 -D output
+: arecord -f S16_LE -c 2 -r 44100 -D plughw:1,0 | aplay -f S16_LE -c 2 -r 44100 -D plughw:0,0
+: arecord -f S16_LE -c 2 -D mic | aplay
+: arecord -f S16_LE -r 44100 -c 1 -D mic | aplay
+: arecord | aplay # right way to use
+
+Recording WAVE 'stdin' : Signed 16 bit Little Endian, Rate 8000 Hz, Mono
+
+
+dump capabilities of mic:
+: arecord -D plughw:1,0 --dump-hw-params
+** loop back test - pulseaudio
+: parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16le --rate=8000 --channels=2 output.wav
+: parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16be --rate=44100 --channels=1 | aplay --format S16_BE --rate=44100
+: parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16be --rate=8000 --channels=1 | aplay --format S16_BE --rate=8000
+: parec --device=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor --format=s16be --rate=8000 --channels=1 | aplay --format S16_BE --rate=8000
+working:
+: parec --raw | paplay --raw
+
+pactl list sources
+pactl list sinks
+** firefox and ALSA - microphone
+https://github.com/i-rinat/apulse
+https://forums.gentoo.org/viewtopic-p-8582451.html?sid=d35904653f4a8f9b1b6c4334b3c4ba38
+https://bbs.archlinux.org/viewtopic.php?id=252378
+** pulseaudion
+useful configuration .config/pulse/client.conf
+#+begin_src text
+autospawn = no
+#+end_src
+** links
+- https://wiki.gentoo.org/wiki/ALSA
+- https://wiki.debian.org/ALSA#Troubleshooting
+- https://alsa.opensrc.org/MultipleCards
+- https://alsa.opensrc.org/Troubleshooting
+- alsa config
+  - https://www.alsa-project.org/main/index.php/Documentation
+  - https://www.alsa-project.org/alsa-doc/alsa-lib/conf.html
+  - https://www.volkerschatz.com/noise/alsa.html
+* fonts
+eselect fontconfig list
+
+System:
+- emerge --ask media-fonts/dejavu
+
+Chinese:
+- emerge --ask media-fonts/font-isas-misc
+
+* linux firmware
+- package distributed alongside the Linux kernel
+- contains firmware binary blobs
+
+bin files should be placed to /lib/firmware/
+* OpenRC
+- gide https://github.com/OpenRC/openrc/blob/master/service-script-guide.md
+- /etc/conf.d/ - configuration files for /etc/init.d/ scripts with same name
+
+make two instances
+- ln -s sshd /etc/init.d/sshd.eth0
+- cp /etc/conf.d/sshd /etc/conf.d/sshd.eth0
+
+* udev brightness
+/etc/udev/rules.d/91-backlight.rules:
+- ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/sh -c 'echo 150 > /sys/class/backlight/radeon_bl0/brightness'"
+* device manager udev/eudev/hal
+- hal - old device manager
+- udev - systemd's device manager
+-
+
+* parallel emerge
+- MAKEOPTS="-jN" - parallel makes
+- EMERGE_DEFAULT_OPTS= "--jobs 3 --load-average 2.9" - parallel emerges
+- N*K = max cpu
+- MAKEOPTS=”-j${core} +1″ is NOT the best optimization
+* raspberry pi
+- https://wiki.gentoo.org/wiki/Raspberry_Pi/Quick_Install_Guide
+  - git clone --depth 1 https://github.com/raspberrypi/firmware/
+  - boot to /boot
+  - modules to /lib
+- https://wiki.gentoo.org/wiki/Raspberry_Pi/Installation
+  - emerge --ask sys-kernel/raspberrypi-image sys-boot/raspberrypi-firmware
+
+
+- arm64
+- Clear root password: sed -i 's/^root:.*/root::::::::/' /mnt/gentoo/etc/shadow
+- /etc/fstab
+- for CPU_FLAGS_X86: emerge --ask app-portage/cpuid2cpuflags
+- to raplace -march=native: gcc -v -E -x c /dev/null -o /dev/null -march=native 2>&1 | grep /cc1 | grep march
+- /etc/portage/make.conf
+- mkdir --parents /etc/portage/repos.conf
+- cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
+- date +%Y%m%d -s "20220429"
+- date -s "19:35"
+- rc-update add swclock
+
+
+** kernel:
+- emerge --ask sys-devel/bc sys-devel/bison sys-devel/flex
+- Platform selection - Broadcom BCM2835 family
+- emerge --ask sys-boot/raspberrypi-firmware or git clone --depth 1 git://github.com/raspberrypi/linux.git
+- make bcmrpi3_defconfig
+- make bcm2711_defconfig
+- CPU Power Management -> SPU Frequency scaling -> Default CPUFreq governor = performance
+- make -j4 zImage modules dtbs
+- make -j4 Image modules dtbs
+- sudo make modules_install
+- sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/
+- sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/overlays/
+- sudo cp arch/arm64/boot/dts/overlays/README /boot/overlays/
+- sudo cp arch/arm64/boot/Image /boot/kernel8.img
+
+Network support -> Network opetions -> The IPv6 protocol
+Network support -> RF switch subsystem support
+Device drivers -> Network -> Broadcom FullMac WLAN driver
+*** links
+- official https://www.raspberrypi.com/documentation/computers/linux_kernel.html
+- https://wiki.gentoo.org/wiki/Raspberry_Pi/Kernel_Compilation
+- https://wiki.gentoo.org/wiki/Raspberry_Pi/Mainline_Kernel
+- https://wiki.gentoo.org/wiki/Raspberry_Pi4_64_Bit_Install
+** firmware
+- emerge sys-kernel/linux-firmware --autounmask=y
+-
+
+https://github.com/raspberrypi/firmware/tree/master/boot
+** overcloking
+https://haydenjames.io/raspberry-pi-3-overclock/
+* soft
+** games
+*** dri
+emerge --ask mesa-progs
+emerge --ask dev-util/strace
+strace glxinfo
+*** openmw
+- emerge app-arch/innoextract
+: innoextract --exclude-temp --gog -d ./caesar3 setup_caesar3_2.0.0.9.exe
+*** fps
+games-fps/doomsday - modern engine for Doom, Heretic, and Hexen
+*** mednafen
+mednafen.github.io/documentation
+*no sound*
+- mednafen -sounddevice sexyal-literal-default
+
+*scaller*
+- mednafen -md.special hq2x/nn2x/super2xsai/2xsai/nny2x
+
+*destination resolution*
+- mednafen -md.stretch full/aspect
+*** gemrb
+
+after 0.9.1 require Python 3.3 or better
+**** TODO ebuild
+#+begin_src ebuild
+# Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=5
+
+PYTHON_COMPAT=( python3_7 python3_8 python3_9 python3_10 python3_11 )
+
+inherit eutils python-single-r1 cmake-utils gnome2-utils
+
+DESCRIPTION="Reimplementation of the Infinity engine"
+HOMEPAGE="http://gemrb.sourceforge.net/"
+
+if [[ ${PV} = 9999* ]]; then
+    EGIT_REPO_URI="https://github.com/gemrb/gemrb.git"
+    inherit git-r3
+elif [[ ${PV} = 6666* ]]; then
+    EGIT_REPO_URI="https://github.com/gemrb/gemrb.git"
+    EGIT_BRANCH="subviews"
+    inherit git-r3
+else
+    SRC_URI="mirror://sourceforge/gemrb/${P}.tar.gz"
+fi
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="mixer openal opengl png sdl sdl2 truetype -vlc -debug"
+PYTHON_REQ_USE=""
+
+REQUIRED_USE="
+   opengl? ( sdl2 )
+   ^^ ( sdl sdl2 )
+"
+
+RDEPEND="
+   truetype? ( media-libs/freetype )
+   png? ( media-libs/libpng:0 )
+   mixer? (
+      sdl? ( media-libs/sdl-mixer )
+      sdl2? ( media-libs/sdl2-mixer )
+   )
+   sdl? (
+      >=media-libs/libsdl-1.2[video]
+   )
+   sdl2? (
+      media-libs/libsdl2[video]
+   )
+   media-libs/libvorbis
+   openal? ( media-libs/openal )
+   opengl? ( media-libs/glew:0 )
+   vlc? ( media-video/vlc )
+   sys-libs/zlib
+   ${PYTHON_DEPS}"
+
+DEPEND="${RDEPEND}
+   virtual/pkgconfig"
+
+
+src_prepare() {
+   cmake-utils_src_prepare
+   sed -i \
+      -e '/COPYING/d' \
+      CMakeLists.txt || die
+}
+
+src_configure() {
+   CMAKE_BUILD_TYPE=$(usex debug "Debug" "None")
+   local libdir=$(get_libdir)
+
+   mycmakeargs=(
+   -DLIBDIR_SUFFIX=${libdir/lib/}
+   -DDOC_DIR=share/doc/${PF}
+   -DDISABLE_WERROR=ON
+   -DSDL_BACKEND=$(usex sdl2 "SDL2" "SDL")
+   -DOPENGL_BACKEND=$(usex opengl "OpenGL" "None")
+   $(cmake-utils_use_use mixer SDLMIXER)
+   $(cmake-utils_use_use openal OPENAL)
+   $(cmake-utils_use_use png PNG)
+   $(cmake-utils_use_use truetype FREETYPE)
+   $(cmake-utils_use_use vlc LIBVLC)
+   )
+   cmake-utils_src_configure
+}
+
+src_compile() {
+   cmake-utils_src_compile
+}
+
+src_install() {
+   cmake-utils_src_install
+   python_fix_shebang "${ED%/}"/usr/bin/extend2da.py
+}
+
+pkg_preinst() {
+   gnome2_icon_savelist
+}
+
+pkg_postinst() {
+   gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+   gnome2_icon_cache_update
+}
+#+end_src
+
+**** links
+- https://github.com/gemrb/gemrb
+- config https://github.com/gemrb/gemrb/blob/master/gemrb/GemRB.cfg.sample.in
+
+** media player
+media-video/mpv
+** ntp set time
+client:
+- emerge --ask net-misc/openntpd
+- /etc/ntpd.conf:  servers 0.ru.pool.ntp.org
+- ntpd -ds # to sync time
+
+* hdmi mirroring
+xarndr --output HDMI-0 --auto --same-as LVDS
+* opencl
+- virtual/opencl
+- emerge --ask =dev-util/rocminfo-5.0.2 --autounmask=y
+- dev-libs/rocm-opencl-runtime
+
+- HSA_USERPTR_FOR_PAGED_MEM=0 rocminfo
+- HSAKMT_DEBUG_LEVEL=7 rocminfo
+
+Segmentation fault:
+- fix VIDEO_CARD or disable opencl flag from mesa
+* all modifications:
+- ~/.bashrc
+- ~/.bash_aliases
+- ~/nftables
+- ~/.ssh
+- /etc/udev/rules.d/91-backlight.rules
+- /etc/portage/make.conf
+- /etc/portage/package.use/*
+- /etc/sysctl.conf
+- ~/firef*
+- ~/hotkeys.sh
+- ~/.emacs
+- ~/x-set-keys.conf
+- create /mnt/share
+* lock screen & consoles
+screen:
+- emerge --ask x11-misc/alock
+- alock -auth passwd
+consoles:
+- emerge --ask app-misc/vlock
+- vlock -a
+* patching guide
+ It's usually better, if the patch is trivial, to open a bug and note that in the ChangeLog for the overlaid
+ package just before adding the package to the overlay itself, unless the patches needs to be tested for a
+ while before submitting them to the ebuild maintainer.
+
+ As soon as a patch is merged in the main tree, the ebuilds in the overlay need to go, to avoid having
+ unneeded ebuilds there.
+* USECASES
+downgrade package dracut to dracut-055-r4 for dracut-056-r1:
+- echo ">sys-kernel/dracut-055-r4" >> /etc/portage/package.mask/glibc
+
+
+specify using the greater than operator (>) prefix if it is an older package than latest stable or lesser than
+operator (<) as a prefix if it is a newer one:
+* developsers githubs
+- Python packages, LLVM, Xfce https://github.com/mgorny
+- SELinuxProject, identity management platform, matrix, llvm, mumble-voip https://github.com/0xC0ncord
+* gcc optimization
+Some packages  will  fail to compile/run if the optimizations are too extreme.
+
+declaration is on a single line, with as little whitespace as possible to avoid issues.
+- CFLAGS - C compiler
+- CXXFLAGS - is used to refer to the C++ compiler within many buildsystems.
+- FFLAGS - Fortran
+- FCFLAGS - any FORTRAN compiler in more modern build systems
+
+** options
+- -march :: processor architecture (or arch); certain kind of CPU
+  - -mtune and -mcpu ::  These flags are normally only used when there is no available -march option.
+- -pipe :: use pipes instead of temporary files. it makes the compilation process faster. On systems with low
+ memory, GCC might get killed.
+- -O0, -O1, -O2, -O3, -Os, -Oz, -Og, and -Ofast ::
+  - -Ofast :: -O3 plus -ffast-math, -fno-protect-parens, -fallow-store-data-races, -fstack-arrays and
+  -fno-semantic-interposition
+- -ftree-vectorize :: is an optimization option (default at -O3, -Ofast and -fvect-cost-model=very-cheap),
+ attempts to vectorize loops using the selected ISA if possible. doesn't always improve code
+- -fvect-cost-model=very-cheap :: ??
+- -fomit-frame-pointer :: turned on at all levels of -O. will make debugging hard or impossible.
+- -msse, -msse2, -msse3, -mmmx, -m3dnow ::   Streaming SIMD Extensions (SSE), SSE2, SSE3, MMX, and 3DNow! instruction sets for x86 and x86-64 architectures.
+- -funroll-loops and -funroll-all-loops  :: Loop unrolling. On modern processors, loop unrolling is often
+ counterproductive, as the increased code size can cause more cache misses;
+- -finline-functions :: Inline expansion
+- -funswitch-loops :: Loop unswitching optimization
+
+Hardening optimizations
+- -fpie ::  full ASLR for executables
+  - -fpic -shared ::  no text relocations for shared libraries
+- -D_FORTIFY_SOURCE=2 :: run-time buffer overflow detection
+- -D_GLIBCXX_ASSERTIONS :: run-time bounds checking for C++ strings and containers
+- -fstack-protector-strong :: stack smashing protector
+- -fstack-clash-protection :: increased reliability of stack overflow detection
+- -fcf-protection :: control flow integrity protection
+
+** Per-package
+- /etc/portage/env directory
+- /etc/portage/package.env file.
+
+ex:
+
+/etc/portage/env/debug-cflags
+: CFLAGS="-O2 -ggdb -pipe"
+: FEATURES="${FEATURES} nostrip"
+/etc/portage/package.env
+: media-video/mplayer debug-cflags
+** links
+- https://wiki.gentoo.org/wiki/Safe_CFLAGS
+- https://wiki.gentoo.org/wiki/GCC_optimization
+- https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#Optimize-Options
+- per package https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Advanced#Per-package_environment_variables
+* diablo
+- https://github.com/diasurgical/devilutionX
+- keys https://github.com/diasurgical/devilutionX/wiki/Keyboard-Controls
+- doc https://github.com/diasurgical/devilutionX/blob/master/docs/installing.md
+
+: emerge games-engines/devilutionx
+
+required in ~/.local/share/diasurgical/devilution/:
+- DIABDAT.MPQ, hellfire.mpq, hfmonk.mpq, hfmusic.mpq, hfvoice.mpq
+- For Chinese, Korean, and Japanese users will also need *fonts.mpq* or the text will be missing.
+- For Polish voice support you need *pl.mpq*
+- For Russian voice support you need *ru.mpq*
+
+* Rust and Compiler Bootstrapping
+Bootstrapping compiler - when a compiler is written in own language, it have sevaral stages “0-9”.
+
+
+https://jyn.dev/bootstrapping-rust-in-2023/
+
+- GCC
+- LLVM
+- Go Compiler
+* links
+- https://devmanual.gentoo.org/index.html
+- https://wiki.gentoo.org/wiki/User:SwifT/Complete_Handbook
+- https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet

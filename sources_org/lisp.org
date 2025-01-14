@@ -1,0 +1,2874 @@
+;-*- mode: Org; fill-column: 110;-*-
+* common operations
+** get list of functions if file:
+M-x occur RET defun RET
+- M-s o
+** print list
+: (mapc 'print calendar-holidays)
+* common structures
+add "s" to every element of list "left-let":
+: (setq fin (mapcar (lambda (x) (cons s x)) left-let))
+flatten list by one level
+: (apply 'append v)
+all or every
+: (defun all (l) (cl-every #'identity l))
+all or every nil
+: (defun allnil (l) (cl-every #'null l))
+any t
+: (defun any (l) (cl-some #'identity l))
+any nil
+: (defun anynil (l) (cl-some #'null l))
+
+Apply map to every leaf of a tree like list
+#+begin_src elisp :results output :exports both :eval no
+(defun maptree (f l)
+"Apply map to every leaf of a list."
+  (mapcar (lambda (x) (if (listp x)
+                          (maptree f x)
+                        ;; else
+                        (funcall f x)
+                        )) l))
+#+end_src
+Concatenate two lists
+#+begin_src elisp :results output :exports both :eval no
+(setq c1 '(1 (2) 3 4))
+(setq c2 '(1 2 3 (4)))
+(print (seq-concatenate 'list c1 c2))
+
+(defun add_one_to_another(c1 c2)
+  (apply 'append (list c1 c2)))
+#+end_src
+
+#+RESULTS:
+:
+: (1 (2) 3 4 1 2 3 (4))
+
+* Lisp - philosophy, patterns
+everything is list, space is items separrator
+
+https://aartaka.me/lisp-design-patterns
+* features
+https://www.tutorialspoint.com/lisp/index.htm
+https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html
+
+ "Lots of Isolated Silly Parentheses"
+ 1958 by John McCarthy
+
+- dynamic and strong typing, functional, reflective, meta
+- advanced object-oriented programming
+- prefix notation - operators are written before their operands
+
+- machine-independent, such as word length etc.
+- iterative design methodology, (easy extensibility ?)
+- allow updating the program dynamically
+- high level debugging
+- advanced object-oriented programming
+- convenient macro system?
+- expression-based ?
+- object-oriented condition system ?
+* compilation
+batch-byte-compile:
+#+begin_src bash :results output
+emacs --quick -batch \
+         -l pinyin-isearch-loaders.el \
+         -l pinyin-isearch-pinyin.el \
+         -l pinyin-isearch-chars.el \
+         -l pinyin-isearch.el \
+         --eval "(setq byte-compile-error-on-warn ${ERROR_ON_WARN})" \
+         -f batch-byte-compile \
+         pinyin-isearch.el pinyin-isearch-loaders.el pinyin-isearch-chars.el pinyin-isearch-pinyin.el
+#+end_src
+
+To prevent compilation of file:
+#+begin_src elisp :results none :exports code :eval no
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+;;; test.el ends here
+#+end_src
+* symbols, special characters
+(') is equal to (list) operator
+
+"#"
+: (eq 'my-add #'my-add) -> t
+can be used in front of a lambda expression indicating to the byte-compiler that the following expression can be byte compiled
+
+used in the printed representation along with the left angle bracket (<) to indicate that the object printed is a description
+
+":" A symbol whose name starts with a colon (‘:’) is called a “keyword symbol”. act as constants, and are
+ normally used only by comparing an unknown symbol with a few specific alternatives [[cl-case]]
+
+#+begin_src elisp :results output :exports both :eval no
+(print (list 1 2))
+(print #'(1 2))
+#+end_src
+
+#+RESULTS:
+:
+: (1 2)
+:
+: (1 2)
+
+** Steps for info:
+- F1 i or M-x info RET (open the info browser)
+- d m elisp RET (open the elisp manual)
+- I # RET (list the entries for # in the index)
+** meaning with Backquote (`) macroses
+*Backquote (`) and comma (,)*
+- (`) character signals that in the expression that follows, every subexpression not preceded by a comma is
+ to be quoted, and every subexpression preceded by a comma is to be evaluated.
+- (`) and (,) used instead of (') to make exception in quoting and for better looking
+- (`) and (,) used in macro definition for the same reason
+
+#+begin_src elisp :results output :exports both :eval no
+(setq v1 2)
+(setq e 2)
+(setq v2 2)
+(print `(progn (setq v1 ,@e) (setq ,v2 ,e)))
+;;     ^ backquote,     ^          ^   ^ commas
+
+(print '(progn (setq v1 e) `(setq ,v2 ,e)))
+#+end_src
+
+#+RESULTS:
+:
+: (progn (setq v1 . 2) (setq 2 2))
+:
+: (progn (setq v1 e) `(setq ,v2 ,e))
+
+#+begin_src elisp :results none :exports code :eval no
+;; (')
+    (defmacro my-macro-1 (arg1 arg2)
+      (list 'setq arg1 (list 'cons arg2 arg1)))
+;; (`) and (,)
+    (defmacro my-macro-2 (arg1 arg2)
+      `(setq ,arg1 ,`(cons ,arg2 ,arg1)))
+#+end_src
+
+*Comma-splice (`)(,@)*
+- This is particularly useful when writing macros with an &rest specifier.
+#+begin_src elisp :results output :exports both :eval no
+(setq v  '("oh boy"))
+(print `(zap ,@v ,v))
+#+end_src
+
+#+RESULTS:
+:
+: (zap "oh boy" ("oh boy"))
+
+#+begin_src elisp :results none :exports code :eval no
+;;(`) (,)
+    (let ((list '(a b c d)))
+      `(elt1 ,list elt2))
+        => (elt1 (a b c d) elt2)
+;;(`) (,@)
+    (let ((list '(a b c d)))
+      `(elt1 ,@list elt2))
+        => (elt1 a b c d elt2)
+#+end_src
+
+*Quote-comma (`)(',)* - insert sexp as a string without evaluation
+#+begin_src elisp :results output :exports both :eval no
+(defmacro explain-exp (exp)
+  `(format "%s = %s" ',exp ,exp))
+  ;;                 ^^
+
+(print (explain-exp (+ 2 3)))
+
+#+end_src
+
+#+RESULTS:
+:
+: "(+ 2 3) = 5"
+
+* terms
+ must know:
+- whitespace and () - separators;
+- () = nil = atom and list
+- expressions = prefix notation = (+ 1 2)
+- special operators = (+, (list, (if. (lambda
+- anonymous function (lambda (arg) (+ arg 1) )
+- function (defun foo "optional comment" (a b c) (+ a b c))
+- function are case-insensitive
+- constants = Numbers, letter t, nil
+- true = t, false = nil
+- certain kinds of atom(arrays) can be separated into parts but not like lists,l
+- function names that end with a "p" often means it return true=t of false=nil = predicate
+
+ terms:
+- Numbers :: are provided in various forms and representations
+- Characters :: represent printed glyphs such as letters or text formatting operations
+- atom :: elemental entities, *number* *symbols* and *strings* (list 2 3), nil, (ab-a#221), ("asd asd")
+- symbols :: are named data objects: + foo forward-line - atom type
+- list :: sequence of atoms or lists in (), nil; unlist and unquote: (apply 'function '(12 23))
+- string :: "asd" - arrays of characters
+- comment ::  ;
+- form :: any object meant to be evaluated (+ 3 4 1)
+- symbolic expression :: printed representation of both atoms and lists
+- quote :: '(+3 4 1) list without evaluation
+- function :: first symbol in list (call)
+- variable ::
+- special form ::
+- macros :: translate lisp expression into another lisp expression
+- Hash tables ::
+
+ Arithmetic
+  - +-*/%
+  - (/ 7 2) ;3
+  - (/7 2.0) ; 3.5
+  - (expt 2 3) ; 2^3=8
+
+* advanced terms
+forms - a data object meant to be evaluated as a program to produce one or more values (which are also data
+ objects). One may request evaluation of any data object, but only certain ones are meaningful.
+- symbols and lists are meaningful forms:
+  - 3, whose value is 3
+  - (+ 3 4), whose value is 7
+- *Meaningful forms* may be divided into three categories:
+  - self-evaluating forms, such as numbers
+  - symbols, which stand for variables
+  - lists, may be divided into:
+    - special forms
+    - macro calls
+    - function calls.
+
+* evaluation process and forms
+- file to s-expressions
+- defines syntax of List *forms* that a built from s-expressions
+- determines which s-expressions are LISP forms.
+- Eval - Returns the result of evaluating an AutoLisp expression.
+  - Syntax : (eval expr)
+- when you evaluate a function call form such as (car x), Emacs first evaluates the argument (the subform
+  x). After evaluating the argument, Emacs executes the function (car)
+- Two tupes:
+  - Self-Evaluating Forms '123   ⇒ 123, 123 ⇒ 123, (eval '123) => 123
+  - Symbol Forms (setq a 123) (eval 'a) => 123, a => 123
+
+LISP form could be:
+- An atom
+- An empty or non-list
+- Any list that has a symbol as its first element
+
+*Special Forms* - is a primitive function specially marked so that its arguments are not all evaluated
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Special-Forms.html
+** Special Forms
+
+and
+
+    see Combining Conditions
+catch
+
+    see Catch and Throw
+cond
+
+    see Conditionals
+condition-case
+
+    see Handling Errors
+defconst
+
+    see Defining Variables
+defvar
+
+    see Defining Variables
+function
+
+    see Anonymous Functions
+if
+
+    see Conditionals
+interactive
+
+    see Interactive Call
+lambda
+
+    see Lambda Expressions
+let
+let*
+
+    see Local Variables [[let]]
+or
+
+    see Combining Conditions
+prog1
+prog2
+progn
+
+    see Sequencing
+quote
+
+    see Quoting
+save-current-buffer
+
+    see Current Buffer
+save-excursion
+
+    see Excursions
+save-restriction
+
+    see Narrowing
+setq
+
+    see Setting Variables
+setq-default
+
+    see Creating Buffer-Local
+unwind-protect
+
+    see Nonlocal Exits
+while
+
+    see Iteration
+
+* dialects
+https://en.wikipedia.org/wiki/Emacs_Lisp
+
+- Emacs Lisp or Elisp
+- Common Lisp - for javaVM too
+- Scheme - simple semantics and few different ways to form expressions. more minimalist design
+- Clojure is a recent dialect . mainly the Java virtual machine
+** TODO Common lisp vs Emacs Lisp
+ https://www.gnu.org/software/emacs/manual/html_node/cl/Porting-Common-Lisp.html
+ - Case-insensitivity for symbols
+   - Common LISP expressions are case-insensitive - cos 45 or COS 45 are same
+   - Emacs lisp - case-sensitive
+ -
+
+* types
+** basic
+everything atom or list
+
+object - instance of type, object is a piece of data used and manipulated by Lisp programs
+
+Linked lists -  one of Lisp's major data structures
+
+s-expression or sexp - for code and data structure : (x y z) stands for (x . (y . (z . NIL)))
+
+Constants:
+- Numbers
+- The letter t, that stands for logical true.
+- The value nil, that stands for logical false, as well as an empty list.
+
+
+atom - is a number or symbol or string in double quotation marks.
+
+symbol - string of contiguous character - can consist of any number of alphanumeric characters other
+than whitespace, open and closing parentheses, double and single quotes, backslash, comma, colon,
+semicolon and vertical bar. To use these characters in a name, you need to use escape character (\).
+- hello-from-tutorials-point
+- 123008907
+- *hello*
+- Block#221
+- abc123
+- +1
+- FOO                 ; A symbol named ‘FOO’, different from ‘foo’  for Emacs Lisp
+
+A string is a group of characters enclosed in double quotation marks. "Hello world!"
+
+primitive types:
+- integer
+- float
+- cons
+- symbol
+- string
+- vector
+- hash-table
+- subr
+- byte-code function
+- record
+- plus several special types, such as buffer, that are related to editing
+
+single inheritance?
+
+each object belongs to one and only one primitive type
+
+single quote: (write '(* 2 3)) - atoms or lists literally and don't want them evaluated or treated as function calls.
+- Quoting - '123, (quote (+ 1 2))
+- Self-Evaluating Forms - evaluate to themselves '123 => 123 (eval '123) => 123
+
+types of types:
+- Lisp programming types
+- editing - unique to Emacs Lisp
+** literals
+#+begin_src elisp :results output
+(print 1e3)
+(print 'this-a-symbol)
+(print 'vector->list)
+(print 'symbol?)
+
+;; Pair / Cons Cell
+(print '(a . b))
+(print'(a . 2999))
+
+(print "list")
+(print'(+ 2 3 (3 4) (5 6 (+ 3 4)) 10 'a 'b "hello" ))
+
+(print "vectors")
+(print [1 2 3 4 (+ 1 2 3 54)])
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+1000.0
+
+this-a-symbol
+
+vector->list
+
+symbol\?
+
+(a . b)
+
+(a . 2999)
+
+"list"
+
+(+ 2 3 (3 4) (5 6 (+ 3 4)) 10 'a 'b "hello")
+
+"vectors"
+
+[1 2 3 4 (+ 1 2 3 54)]
+#+end_example
+
+** lists
+sequence
+- list - not a single primitive object; it is made of cons cells, one cell per element
+- array: vector, string, char-table, bool-vector - fixed-length object with a slot for each of its elements.
+*** basic
+*list* is a Linked lists is a sequence of atoms and/or other lists enclosed in parentheses.
+- Lists in Lisp are not a primitive data type they are built up from "cons cells"
+- "cons cells" - ordered pair - (CAR CDR)
+- each cell refers to the next one: CARs of the cons cells hold the elements of the list, and the CDRs are
+ used to chain the list
+- CDR of the last cons cell in a list is ‘nil’
+
+: (setq bouquet '(rose violet buttercup))
+#+begin_src text
+     bouquet
+      |
+      |    --------------       ---------------       ----------------
+      |   | car   | cdr  |     | car    | cdr  |     | car     | cdr  |
+       -->| rose  |   o------->| violet |   o------->| butter- |  nil |
+          |       |      |     |        |      |     | cup     |      |
+           --------------       ---------------       ----------------
+#+end_src
+
+*** Association Lists
+(alist-get key alist &optional default remove testfn)
+**** clist
+values and the keys - may be any Lisp objects
+#+begin_src elisp :results output
+;; Lists
+(print '(10 203 40 "hello" () ("empty" 65)))
+
+;; alist
+(print '((a . b) (x . y) (2 . 3) (4 . (1 2 3 4 5))))
+
+(print (cons 'a 'b))
+
+(print (cons 'a (cons 'b (cons 'c nil))))
+
+#+end_src
+
+#+RESULTS:
+:
+: (10 203 40 "hello" nil ("empty" 65))
+:
+: ((a . b) (x . y) (2 . 3) (4 1 2 3 4 5))
+:
+: (a . b)
+:
+: (a b c)
+
+#+begin_src elisp :results output :exports both :eval no
+(setq
+ vv
+ (list
+  (cons "aa" 23)
+  (cons "bb" 24)
+  (cons "cc" 33)))
+(print vv)
+(print (alist-get "aa" vv 999 nil 'string-equal))
+
+;; get the value with key "bb". if not found, return 999. use string-equal for comparison
+;; (print (alist-get "bb" xx 999 nil 'string-equal))
+#+end_src
+
+#+RESULTS:
+:
+: (("aa" . 23) ("bb" . 24) ("cc" . 33))
+:
+: 23
+
+#+begin_src elisp :results output :exports both :eval no
+(let (clist)
+  (setq clist
+          (append (list (cons "sd" "asd"))
+                  clist))
+  (print clist)
+    )
+#+end_src
+
+#+RESULTS:
+:
+: (("sd" . "asd"))
+
+**** alist - Association Lists
+#+begin_src elisp :results output
+(print '((a  b) (x  y) (2  3) (4  (1 2 3 4 5))))
+(print (list (list 'a 'b) (list 'x 'y) (list 2 3) (list 2 '(1 2 3 4 5))))
+#+end_src
+
+#+RESULTS:
+:
+: ((a b) (x y) (2 3) (4 (1 2 3 4 5)))
+:
+: ((a b) (x y) (2 3) (2 (1 2 3 4 5)))
+
+**** plist - Property Lists
+requires less parenthesis and it is more human readable
+
+two types:
+- Text Properties.
+- Symbol Properties.
+***** plist examples
+#+begin_src elisp :results output
+(setq myvar '(:key1 value1 :key2 value2 :key3 1002.23 :key4 (a b c d e)))
+(print (cl-loop for key in myvar by 'cddr
+               collecting key))
+
+#+end_src
+
+#+RESULTS:
+:
+: (:key1 :key2 :key3 :key4)
+
+
+#+begin_src elisp :results output
+(print '(:key1 value1 :key2 value2 :key3 1002.23 :key4 (a b c d e)))
+(print '(
+:key1  value1
+:key2  value2
+:key3  value3
+:key4  (a b c d e )
+))
+#+end_src
+
+#+RESULTS:
+:
+: (:key1 value1 :key2 value2 :key3 1002.23 :key4 (a b c d e))
+:
+: (:key1 value1 :key2 value2 :key3 value3 :key4 (a b c d e))
+
+***** functions
+- (plist-get plist property)
+- (plist-member plist property ) ; check
+- (plist-put plist property value)
+- get list of keys: (print (cl-loop for key in myvar by 'cddr collecting key))
+***** Symbol Properties
+- get symbol property :: get property from symbol. `eq' used, so any object is a legitimate property.
+- put symbol property value :: .
+- symbol-plist symbol :: .
+***** text properties
+
+**** examples plist, assoc, mapcar
+#+begin_src elisp :results output
+(setq dict '((pine . cones)
+             (oak . acorns)
+             (maple . seeds)))
+
+(print dict)
+;; Get a cell associated with a key
+(print (assoc 'oak dict))
+(print (assoc 'wrong dict))
+
+(print (list
+       (car (assoc 'oak dict))
+       (cdr (assoc 'oak dict))
+       ))
+(print (car (assoc 'oak dict)))
+;; Get all keys
+(print (mapcar #'car dict))
+;; Get all values
+(print (mapcar #'cdr dict))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+((pine . cones) (oak . acorns) (maple . seeds))
+
+(oak . acorns)
+
+nil
+
+(oak acorns)
+
+oak
+
+(pine oak maple)
+
+(cones acorns seeds)
+#+end_example
+*** list operators
+- cons		construct
+- car		return first element of list
+- cdr		return all elements of list except of first
+- list		wrap to list ()
+- length/seq-length - get length
+- nthcdr n	without first n elements
+- nth n	get n element, starting from 0
+- last		last element of list
+- reverse seq
+- append, nconc add elements to list
+- member, memq - check if there is memeber with equal or eq - like “in” in Python
+- push		add element existing list
+- (setf (alist-get <key> <alist>) <value>)- replace element of list
+- copy-sequence/tree - make copy
+- reverse/nreverse - non destructive and destructive
+- seq-elt	get element at index 0 - (len-1)
+- seq-drop	[n:]
+- seq-take	[:n]
+- seq-filter PRED SEQUENCE) Return a list of all the elements in SEQUENCE for which PRED returns non-nil.
+- (add-to-ordered-list LIST-VAR ELEMENT 3) ; Add ELEMENT to the value of LIST-VAR if it isn’t there yet in position.
+**** init, append
+#+begin_src elisp :results output :exports both :eval no
+(defvar cc nil)
+(setq cc (cons "asd2" cc))
+(print cc)
+#+end_src
+
+#+RESULTS:
+:
+: ("asd2" "asd")
+
+**** indexing
+- (assoc KEY ALIST &optional TESTFN) - value is actually the first element of ALIST whose car equals KEY
+- (assoc-string KEY LIST &optional CASE-FOLD) - for strings
+
+#+begin_src elisp :results output :exports both :eval no
+(defconst sisheng-vowel-table
+  '(("ā" "a" "ā" "á" "ǎ" "à")
+    ("ē" "e" "ē" "é" "ě" "è")
+    ("ī" "i" "ī" "í" "ǐ" "ì")
+    ("ō" "o" "ō" "ó" "ǒ" "ò")
+    ("ū" "u" "ū" "ú" "ǔ" "ù")
+    ("ǖ" "v" "ǖ" "ǘ" "ǚ" "ǜ")
+    ("üē" "ve" "üē" "üé" "üě" "üè")))
+
+(print (assoc-string "üē" sisheng-vowel-table))
+#+end_src
+
+#+RESULTS:
+:
+: ("üē" "ve" "üē" "üé" "üě" "üè")
+
+**** cons, car, cdr
+#+begin_src elisp :results output :exports both :eval no
+;; (print (cons 'pine '(fir oak maple)))
+(print (list
+ (cons 'pine '(fir oak maple))
+ (car '(rose violet daisy buttercup))
+ (cdr '(rose violet daisy buttercup))
+ ))
+#+end_src
+
+#+RESULTS:
+:
+: ((pine fir oak maple) rose (violet daisy buttercup))
+
+**** nthcdr, nth, setcar, setcdr
+#+begin_src elisp :results value
+(list
+ (nthcdr 2 '(rose fir oak maple))
+ (nth 2 '(rose fir oak maple))
+ (nth 1 '(rose fir oak maple))
+ )
+#+end_src
+
+#+RESULTS:
+| (oak maple) | oak | fir |
+
+setcar
+
+#+begin_src elisp :results output
+(setq animals (list 'antelope 'giraffe 'lion 'tiger))
+(print animals)
+(print (setcar animals 'hippopotamus) )
+(print animals)
+#+end_src
+
+#+RESULTS:
+:
+: (antelope giraffe lion tiger)
+:
+: hippopotamus
+:
+: (hippopotamus giraffe lion tiger)
+
+setcdr
+#+begin_src elisp :results output
+(setq animals (list 'antelope 'giraffe 'lion 'tiger))
+(print animals)
+(print (setcdr animals 'hippopotamus) )
+(print animals)
+#+end_src
+
+#+RESULTS:
+:
+: (antelope giraffe lion tiger)
+:
+: hippopotamus
+:
+: (antelope . hippopotamus)
+
+**** length, nth, cl-position, car, cdr, cons, reverse, append, remove-if-not, null, delq, push, pop
+#+begin_src elisp :results output
+(print (length '(1 2 3 4 5 6)))
+;; nth element of a list
+(print (list
+(nth 0 '(0 1 2 3 4 5))
+(nth 5 '(0 1 2 3 4 5))
+(nth 10 '(0 1 2 3 4 5))
+))
+
+;; Position of list element (emacs 24.4 or later)
+(print (cl-position 7 '(5 6 7 8)))
+
+;; cdr - Removes first element of the list, returns the list tail.
+(print  (cdr '(1 2 3 4 5)))
+;; car - Returns the first list element
+(print (car '(1 2 3 4 5)))
+;; cons -  List constructor
+
+(print (cons 10 '(1 2 3 4)))
+
+;; reverse
+(print (reverse '(1 2 3 4 5)))
+
+;; append
+(print (append '(1 "s") '( "a" "b" "c" "d")))
+
+;; (print (remove-if-not (lambda (x) (> x 2))     '(1 2 3 4 5 6 7 8 9 10)))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+6
+
+(0 5 nil)
+
+2
+
+(2 3 4 5)
+
+1
+
+(10 1 2 3 4)
+
+(5 4 3 2 1)
+
+(1 "s" "a" "b" "c" "d")
+#+end_example
+
+#+begin_src elisp :results output
+(print (list
+        (null '(1 2 3 4 5))
+        (null '())
+        (null nil)))
+
+;; Drop the firsts n elements of a list
+(print (nthcdr 2 '(1 2 3 4)))
+
+;; Delete an element of a list
+(print (delq 1 '(1 2 3 4)))
+(print (delq '(5) '(1 2 (5) 3 4)))
+(print (delete '(5) '(1 2 (5) 3 4)))
+
+;; Convert Vector to List
+(print (number-sequence 0 10 2))
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+(nil t t)
+
+(3 4)
+
+(2 3 4)
+
+(1 2 (5) 3 4)
+
+(1 2 3 4)
+
+(0 2 4 6 8 10)
+#+end_example
+
+#+begin_src elisp :results output :exports both :eval no
+;; Modify list variables.
+(setq alist '(a b c d e))
+(print (push 'f alist))
+(print (pop alist))
+(print alist)
+(print "asd")
+#+end_src
+
+#+RESULTS:
+:
+: (f a b c d e)
+:
+: f
+:
+: (a b c d e)
+:
+: "asd"
+
+**** nconc
+**** map
+- (mapcar function sequence)
+- (seq-some PRED SEQUENCE) - nil or first non-nil value returned by PRED.
+#+begin_src elisp :results output :exports both :eval no
+(print (mapcar #'1+ [1 2 3]))
+#+end_src
+
+#+RESULTS:
+:
+: (2 3 4)
+
+#+begin_src elisp :results output :exports both :eval no
+(setq properties '((a . 1)
+                (b . 2)
+                (c . 3)))
+;; (print properties)
+(seq-some (lambda (property) (print property)) properties)
+(seq-some (lambda (property)
+            (print (car property))
+            (let
+                  (print (car property)) )) ;; predicate for every property
+                 properties)
+#+end_src
+
+#+RESULTS:
+:
+: (a . 1)
+:
+: a
+:
+: b
+:
+: c
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html
+**** USECASE: remove elemets of one list from another
+#+begin_src elisp :results output :exports both :eval no
+(defvar a '(2 3 45  4))
+(defvar b '(3 45 6))
+(mapc (lambda (x) (delq x a)) b )
+(print a)
+
+#+end_src
+
+#+RESULTS:
+:
+: (2 4)
+
+**** USECASE: find difference between lists
+#+begin_src elisp :results output :exports both :eval no
+(defvar a '(2 3 45  4))
+(defvar b '(3 45 6))
+(setq a2 (copy-tree a))
+(seq-filter
+(print a)
+
+#+end_src
+
+#+RESULTS:
+:
+: (2 4)
+
+**** USECASE: get keys(), get values()
+: (mapcar 'car '((key1 . value1) (key2 . value2) ...))
+: (mapcar 'cdr '((key1 . value1) (key2 . value2) ...))
+**** s
+#+begin_src elisp :results output :exports both :eval no
+(defun my-test (a b)
+  (equal (car a) b))
+;; (print (my-test '(a 3 4) )
+
+(defun find-position (i elt seq)
+  (seq-position seq elt (lambda (a b) (equal (nth i a) b))))
+
+(defun find-next (i elt seq)
+    (nth (1+ (find-position i elt seq)) seq))
+
+;; (defun find-next (elt seq)
+;;   (seq-position seq elt (lambda (a b) (equal (car a) b))))
+;; (print (find-position 0 'a '((a 3 4) (b 4 2) (c 5 6))))  ; Returns1
+(print (find-next 0 'b '((a 3 4) (b 4 2) (c 5 6))))  ; Returns1
+
+#+end_src
+
+#+RESULTS:
+:
+: (c 5 6)
+
+** symbol type
+is literal (not evaluated).
+
+- (symbolp sym) - Test if variable sym is a symbol
+- (symbol-name 'sym) - ;; Get symbol as string
+Get value from a symbol
+- (symbol-value 'sym)
+- (symbol-function 'sym)
+- (symbol-plist 'sym)
+
+Test if function is an elisp primitive
+: (subrp (symbol-function 'goto-char))
+
+#+begin_src elisp :results output
+; Convert a symbol to string
+(print (symbol-name 'wombat))
+; Convert a String to Symbol
+(print (intern "wombat"))
+#+end_src
+
+#+RESULTS:
+:
+: "wombat"
+:
+: wombat
+
+** nil and t - special symbols that always evaluate to themselves
+- symbol nil has three separate meanings:
+  - it is a symbol with the name ‘nil’;
+  - it is the logical truth value false;
+  - it is the empty list—the list of zero elements.
+- When used as a variable, nil always has the value nil.
+- we write () when we wish to emphasize that it means the empty list, and we write nil when we wish to
+  emphasize that it means the truth value false.
+  - (cons 'foo ())                ; Emphasize the empty list
+  - (setq foo-flag nil)           ; Emphasize the truth value false
+- non-nil value is considered to be true
+- *t* is the preferred way to represent the truth value true
+- The symbol t always has the value t.
+
+;;; Everything that is not "nil" is true:
+
+** type conversion
+#+begin_src elisp :results output
+(list
+ (cl-coerce '(a b c) 'vector)
+ (cl-coerce 7.2 'float)
+ (cl-coerce "a" 'character)
+ (format "%s" 33.2222)
+)
+
+; Number <-> String
+(print (number-to-string 1000))
+(print (string-to-number "200"))
+
+; Symbol <-> String
+(print (symbol-name 'my-symbol))
+(print (symbol-name :my-symbol))
+; String to Symbol
+(print (intern "some-symbol"))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+"1000"
+
+200
+
+"my-symbol"
+
+":my-symbol"
+
+some-symbol
+#+end_example
+
+** get type or find type
+#+begin_src elisp :results output
+(print (list
+ (type-of "a")
+ (type-of 7.2)
+ (type-of 'type-of)
+))
+
+(print (equal 'buffer (type-of (current-buffer))))
+#+end_src
+
+#+RESULTS:
+:
+: (string float symbol)
+:
+: t
+
+** Basic Types Predicate
+| Type   | Predicate | Literal         | Description                                       |
+|--------+-----------+-----------------+---------------------------------------------------|
+| Nil    | null      | nil '()         | Test if argument is nil                           |
+| Number | numberp   | 100, 200e3      | Test if it is number.                             |
+| String | stringp   | "hello"         | Test if it is string                              |
+| Symbol | symbolp   | 'sym :keyworkd  | Test if it is a symbol.                           |
+| Atom   | atom      | 'x "h" :key 200 | Everything that is not a list or pair is an atom. |
+| List   | listp     | '(1 2 x y)      | Test if it is a list                              |
+| Pair   | consp     | '( a . 200)     | Test if it is a pair (cons cell)                  |
+| Vector | vectorp   | [1 200 'sym]    | Test if it is a vector                            |
+
+| Object  | Predicate |
+|---------+-----------|
+| Buffer  | bufferp   |
+| Window  | windowp   |
+| Frame   | framep    |
+| Process | processp  |
+#+begin_src elisp :results output
+(print (atom 10))
+(print (null nil))
+#+end_src
+
+#+RESULTS:
+:
+: t
+:
+: t
+
+** evaluation process
+As said in https://stackoverflow.com/questions/48363798/how-are-arguments-passed-into-functions-in-elisp
+ Passed by assignment, new variables created just like assignment works. Symbol of variable is evaluated first
+ and then assignment to new symbol. (We do
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html
+
+Mutability defines ability of functions to have side effect to argument.
+
+If there is exist a function in Emacs Lisp that may modify type of argument then this argument may be
+ considered as may be affected by side effect.
+* char
+no way to distinguish integer from char.
+
+- get char at postion in string: (aref "foo" 0)
+- int/char to string: (char-to-string CHAR)
+
+: (equal 97 ?a ) ;; t
+: (equal 97 (string-to-char "a")) ;; t
+
+#+begin_src elisp :results output :exports both :eval no
+(let (az)
+  (dolist (h (number-sequence 97 122)) (setq az (cons (char-to-string h) az)) )
+  (print az)
+  )
+#+end_src
+
+#+RESULTS:
+:
+: ("z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j" "i" "h" "g" "f" "e" "d" "c" "b" "a")
+
+http://xahlee.info/emacs/emacs/elisp_char_datatype.html
+* strings
+- (format "notify-send --expire-time 5000 -i emacs '%s'" msg)
+- (substring "abcdefg" 0 3)     ⇒ "abc"
+- (concat "abc" "-def")     ⇒ "abc-def"
+- (split-string "  two words " &optional SEPARATORS OMIT-NULLS TRIM)   ⇒ ("two" "words")
+- (length "abc");; 3
+- (string-to-number "3")
+- (number-to-string 3)
+- (format "%d" 3)  ;; same as number-to-string but can also do format
+- endswith: (string-suffix-p "ending" a)
+- startswith: (string-prefix-p "beg" a)
+- compare string insensitive: (string-equal-ignore-case "a" "b")
+- replace substring: (defun string-replace (from-string to-string in-string)
+- split string: split-string (string &optional separators omit-nulls trim)
+- combine-and-quote-strings (strings &optional separator)
+- to characters: (split-string "abc" "" t) => ("a" "b" "c")
+- (number-to-string n) ; convert number to string
+
+search, or contains
+- (string-match "ce" "central park") - find first occurance
+- (string-match-p "ce" "central park") - test that contains
+
+libs:
+- subr.el
+
+links
+  - http://xahlee.info/emacs/emacs/elisp_string_functions.html
+** ex
+#+begin_src elisp :results output :exports both :eval no
+(print (mapconcat 'identity '("aaa" "bbb" "ccc") ","))
+(print (split-string "aaa,bbb,ccc" ","))
+(print (string-match "ce" "central park"))
+(print (make-string 5 ?x))
+; S-expression from String
+(print (read-from-string
+            "(
+               (POINT1  (X  10.2323)  (Y   20.2323))
+               (POINT2  (x  0.2)          (Y 923.23))
+               (POINT3  (x -10.5)       (Y 78,23))
+             )"))
+
+(setq raw "(:x 10 :y 20 :z 30 :w \"hello world\")")
+(print (read raw))
+(print (plist-get (read raw) :x))
+
+; Serialize a s-expression
+(setq sexp '(:x 10 :y 20 :z 30 :w "hello world"))
+(print (prin1-to-string sexp))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+"aaa,bbb,ccc"
+
+("aaa" "bbb" "ccc")
+
+0
+
+"xxxxx"
+
+(((POINT1 (X 10.2323) (Y 20.2323)) (POINT2 (x 0.2) (Y 923.23)) (POINT3 (x -10.5) (Y 78 (\, 23)))) . 174)
+
+(:x 10 :y 20 :z 30 :w "hello world")
+
+10
+
+"(:x 10 :y 20 :z 30 :w \"hello world\")"
+#+end_example
+
+* comments
+** inside comments
+- (`) backquoted comment
+** conventies
+- ;; - for full line
+- ; - for after line
+* symbols and strings
+- (symbol-name 'some-symbol) -> "some-symbol"
+- (make-symbol "foo") -> 'foo
+* variables
+** terms
+a *symbol* with a value or a function definition attached to it. variable is a symbol that has a value, not
+ function. use of a symbol as a variable is independent of its use as a function name.
+
+*scoping rule* - default *dynamic scoping* - current binding as the innermost local binding, or the global
+ binding if there is no local binding.
+- *lexical scoping* - .all Emacs Lisp source files and the *scratch* buffer use lexical scoping. ( can be
+ enabled on a per-buffer basis. buffer-local variable ‘lexical-binding’ to a non-nil value. or ;; -*-
+ lexical-binding: t -*- in library)
+
+local
+- function arguments
+- *local bindings*
+
+*Generalized Variables* - special places that accept assignment with *setf*. (setf (car a) b)
+** usage
+*** global or global binding:
+- (setq x '(a b)) - evaluate only second, set global,  replaces the variable
+- (setq-default [VAR VALUE]...) - If a variable is buffer-local, then setq sets its local value in the current
+ buffer. setq-default sets the global default value.
+- (setf PLACE VAL PLACE VAL ...) - macro
+- (set 'x '(a b)) - both evaluated first ( same effect as setq). Function.
+- *defvar* symbol [value [doc-string]] - global, announces your intention
+  - (defvar bar 23 "The normal weight of a bar.")
+  - for
+    - it informs people that is _intended_ to be used as a variable
+    - it informs the Lisp system of this, optionally supplying an initial value and a documentation string.
+    - it provides information to programming tools such as ‘etags’, allowing them to find where the variable was defined.
+- *defconst* symbol value [doc-string] - variant for constants, constant is not enforced, may be changed!
+  - (defconst zsh-shell "/usr/bin/zsh")
+- *setq-default* - for buffer, macro: set-default
+#+begin_src elisp :results output :exports both :eval no
+(defvar a 3)
+(print a)
+(defvar a 4) ;; second ignored
+(print a)
+#+end_src
+
+#+RESULTS:
+:
+: 3
+:
+: 3
+*** reference
+#+begin_src elisp :results output :exports both :eval no
+(setq a 3)
+(setq v 'a)
+(set v 2) ; v is evaluated first
+(print a)
+#+end_src
+
+#+RESULTS:
+:
+: 2
+
+*** local:
+- *setq-local* - macro: ? + make-local-variable
+- *let* (bindings…) forms… -  The local bindings set up by let will be in effect only within the body of forms. <<let>>
+  - bindigs - set of symbols, the order of _bindings_ is unspecified.
+  - value-forms - are evaluated in the order they appear and before binding any of the symbols to them.
+  - return: value is the value of the last form in forms.
+  - ex. (let ((x 2)(y 'b)(z 'c)) (print x))
+- let* - like let, but it binds each variable right after computing its local value, with order.
+- (boundp 'sym) - Test if variable is defined
+- *symbolp* Test if variable sym is a symbol
+- *symbol-value* - returns the value stored in SYMBOL’s value cell.
+  - (symbol-value 'abracadabra)
+- *defvar-local* - buffer-local variable, macro: defvar + make-variable-buffer-local
+- *buffer-local-value* - get buffer-local variable from another buffer
+- setq-default
+- (setq-default left-margin-width 10 right-margin-width 8)
+#+begin_src elisp :results output :exports both :eval no
+(defvar ssss (+ 1 1))
+(print ssss)
+#+end_src
+
+#+RESULTS:
+:
+: 2
+
+** Dynamic Scoping (Local Variables) and lexical scoping
+- (makunbound 'x)        ; Void the local binding.
+
+#+begin_src elisp :results output
+(print (let ((x 1) (y 10)) (+ (* 4 x) (* 5 y)) ))
+;; (print x) ;; Symbol's value as variable is void: x
+;; (print y)
+#+end_src
+
+#+RESULTS:
+:
+: 54
+
+Problem of dynamic scoping, that lexical scoping is fixing:
+#+begin_src elisp :results output :exports both :eval no
+(defun getx ()
+  x)            ; x is used free in this function.
+
+(let ((x 1))    ; x is lexically bound.
+  (getx)) ;; error→ Symbol's value as variable is void: x
+#+end_src
+
+** Generalized Variables
+setf [place form] ...
+
+- aref :: Return the element of ARRAY at index IDX. ARRAY: vector, a string, a char-table, a bool-vector, a record,
+or a byte-code object.
+- car ::  first element of list
+- caar :: (car (car
+- cadr :: (car (cdr
+- cdr :: second and left of list
+- cdar :: (cdr (car
+- cddr :: (cdr (cdr
+- elt :: Return element of SEQUENCE at index N.
+- get :: Return the value of SYMBOL’s PROPNAME property.
+- gethash :: Look up KEY in TABLE and return its associated value.
+- nth :: Return the Nth element of LIST.
+- nthcdr :: Take cdr N times on LIST, return the result.
+- symbol-function :: Return SYMBOL’s function definition, or nil if that is void.
+- symbol-plist :: .
+- symbol-value :: .
+** ex
+z is bound to the old value of y, which is 2, not the new value of y, which is 1.
+#+begin_src elisp
+(setq y 2)
+(let ((y 1) ;; define y
+      (z y)) ;; define z
+  (list y z)) ;; evaluate
+(list y z) ;; error z is not defined
+#+end_src
+
+#+RESULTS:
+| 1 | 2 |
+
+#+begin_src elisp
+(let (aaa) (setq aaa 2) (list aaa))
+#+end_src
+
+#+RESULTS:
+| 2 |
+
+* Control structures: sequencing, conditions, Iteration
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Control-Structures.html
+** conditions
+- cond (cond   (test1    action1)   (test2    action2) (condition body-forms…) ... )
+  - (condition body-forms…)
+- when (when (test-clause) (action1) (action2) ... ) - alternative to if without else and requirement for (progn
+- if (if (test-clause) (then-action1) (else-action2))
+- case (case  (keyform) ((key1)   (action1   action2 ...) ((key2)   (action1   action2 ...) ) ... )
+- (not),
+- (and), If no arg yields nil, return the last arg’s value.
+- (or), (xor)
+- (unless cond - (when nil
+
+*** test-clause
+- (null nil/t)
+- Comparison Operations
+  - = 	Checks if the values of the operands are all equal or not, if yes then condition becomes true. 	(= A B) is not true.
+  - /= 	Checks if the values of the operands are all different or not, if values are not equal then condition becomes true. 	(/= A B) is true.
+  - > 	Checks if the values of the operands are monotonically decreasing. 	(> A B) is not true.
+  - < 	Checks if the values of the operands are monotonically increasing. 	(< A B) is true.
+  - >= 	Checks if the value of any left operand is greater than or equal to the value of next right operand, if yes then condition becomes true. 	(>= A B) is not true.
+  - <= 	Checks if the value of any left operand is less than or equal to the value of its right operand, if yes then condition becomes true. 	(<= A B) is true.
+  - max 	It compares two or more arguments and returns the maximum value. 	(max A B) returns 20
+  - min 	It compares two or more arguments and returns the minimum value. 	(min A B) returns 10
+- Logical Operations
+  - and
+  - or
+  - not
+- any: (not (cl-every 'null))
+- all:
+- (cl-every 'booleanp) ; nil or t
+
+| a     | b     | eq  | eql | \=    | string= | equal | equalp |
+|-------+-------+-----+-----+-------+---------+-------+--------|
+| 5     | 5     | t   | t   | t     | error   | t     | t      |
+| 5     | 5.0   | nil | t   | t     | error   | nil   | t      |
+| “a”   | “a”   | nil | nil | error | t       | t     | t      |
+| “a”   | ‘a    | nil | nil | error | t       | nil   | nil    |
+| a     | a     | t   | t   | error | error   | t     | t      |
+| “a”   | “A”   | nil | nil | error | nil     | nil   | t      |
+| (1 2) | (1 2) | nil | nil | error | error   | t     | t      |
+*** if else
+#+begin_src elisp :results output
+(if (> 3 5)
+  ;; if case
+    (print "< 3 5")
+  ;; else case
+    (print ">= 3 5")
+    (print "else again")
+    )
+
+; else if:
+(if  (> 3 5) ; test-expression1
+    (print "> 3 5") ; then-expression1
+    (if (= 3 5) ; test-expression2
+        (print "== 3 5") ; then-expression2
+        (print "/= 3 5") ; else-expression2
+      )
+    )
+
+;; ; else if 2:
+(cond ( (= 1 0) ; test-expression1 ; if true - Any remaining clauses are ignored.
+       (print "=x 1 0") ; then-expression1
+       )
+      ((>  3 3) ; test-expression2
+       ; then-expression2
+       (print "> 3 3")
+       )
+      (t (print "default") ; else-expression2 or default expression
+       )
+      )
+#+end_src
+
+#+RESULTS:
+:
+: ">= 3 5"
+:
+: "else again"
+:
+: "/= 3 5"
+:
+: "default"
+
+*** comparison
+#+begin_src elisp :results output :exports both :eval no
+;; Compare Numbers
+(setq a 2)
+(print (= 2 (+ a 1)))
+(print (= 2 (+ 1 1)))
+
+;; Compare Symbols and Numbers
+(print (eq a 2))
+
+;; Compare Elements of a List
+(print (equal (list 1 2 3 4) (list 1 2 3 4)))
+
+(print "Compare Strings")
+(print (string= "hello" "hello"))
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+nil
+
+t
+
+t
+
+t
+
+"Compare Strings"
+
+t
+#+end_example
+
+*** nil and empty
+nil is equivalent to the boolean value false, there is no need to compare to it explicitly.
+
+empty list is equivalent to nil
+
+invert true to false: (null) or (not)
+- (null '()) =>  T
+- (null nil) =>  T
+- (null t) =>  NIL
+- (null 1) =>  NIL
+
+#+begin_src elisp
+(if nil
+    (print 'true)
+  'very-false)
+
+#+end_src
+
+#+RESULTS:
+: very-false
+
+*** cond
+#+begin_src elisp :results output :exports both :eval no
+(cond
+     (win (select-window win))
+     (alive-p (switch-to-buffer last-buffer))
+     (t (dired (cdr item))))
+#+end_src
+** case
+*** cond
+#+begin_src elisp :results output :exports both :eval no
+(setq x "s")
+(cond ((numberp x) (print x))
+      ((stringp x) (print "wtf"))
+)
+#+end_src
+
+#+RESULTS:
+:
+: "wtf"
+
+*** cl-case <<cl-case>>
+#+begin_src elisp :results output
+(defun test-cl-case (operation x y)
+  (cl-case operation
+    (:mul (* x y))
+    (:add (+ x y))
+    (:sub (- x y))
+    (:div (/ x y))
+    (otherwise nil)))
+
+(print (test-cl-case :mul 2 10))
+(print (test-cl-case :sub 10 2))
+(print (test-cl-case :add 10 2))
+(print (test-cl-case :div 10 2))
+#+end_src
+
+#+RESULTS:
+:
+: 20
+:
+: 8
+:
+: 12
+:
+: 5
+
+*** pcase
+#+begin_src elisp :results value :exports both :eval no
+
+(pcase "string here"
+  ;; string
+  ((and (pred stringp) msg)
+   (message "%s" msg))
+
+  ;; symbol
+  ('success       (message "Done!"))
+  ('would-block   (message "Sorry, can't do it now"))
+  ('read-only     (message "The shmliblick is read-only"))
+  ('access-denied (message "You do not have the needed rights"))
+
+  ;; default
+  (code           (message "Unknown return code %S" code)))
+
+#+end_src
+
+#+RESULTS:
+: string here
+
+** loops
+*** while
+#+begin_src elisp :results output
+(setq num 0)
+(while (< num 4)
+  (print (format "Iteration %d." num))
+  (setq num (1+ num))
+  )
+#+end_src
+
+#+RESULTS:
+:
+: "Iteration 0."
+:
+: "Iteration 1."
+:
+: "Iteration 2."
+:
+: "Iteration 3."
+
+*** cl-loop
+- require 'cl-lib
+#+begin_src elisp :results output :exports both :eval no
+(cl-loop for n from 2 below 9 by 1
+      do (print n))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+#+end_example
+
+Cycle with enumeration:
+#+begin_src elisp :results none :exports code :eval no
+(cl-loop for pair in clist
+           for i from 1
+           when (string-equal (cdr pair) value)
+           do (cl-return (nth i clist))
+           finally return nil))
+#+end_src
+*** dolist
+#+begin_src elisp :results output :exports both :eval no
+(dolist (h (number-sequence 4 6))
+        (print h)
+)
+
+#+end_src
+
+#+RESULTS:
+:
+: 4
+:
+: 5
+:
+: 6
+
+#+begin_src elisp :results output
+(dolist (h '(a b c))
+  (print h))
+#+end_src
+
+#+RESULTS:
+:
+: a
+:
+: b
+:
+: c
+
+#+begin_src elisp :results output
+;; (dolist (h string("abc"))
+;;   (print h))
+(print (string-to-char "asd"))
+#+end_src
+
+#+RESULTS:
+:
+: 97
+
+*** dotimes
+#+begin_src elisp :results output
+(dotimes (i 3) (print i))
+#+end_src
+
+#+RESULTS:
+:
+: 0
+:
+: 1
+:
+: 2
+
+#+begin_src elisp :results output
+(do (variable-definition*)
+    (end-test-form result-form*)
+  statement*)
+
+#+end_src
+
+#+RESULTS:
+:
+: 110
+
+*** usecase add-hook group of hooks
+#+begin_src elisp :results output :exports both :eval no
+
+#+end_src
+*** links
+https://www.gnu.org/software/emacs/manual/html_node/eintr/Loops-_0026-Recursion.html
+
+* Functions
+** progn
+- (progn BODY...) - Eval BODY forms sequentially and return value of last one.
+- prog1 for instance evaluates all expressions and returns the value of the first
+- prog2 evaluates all expressions and returns the value of the second
+** defun
+- defines the symbol name as a function with argument list args
+- Neither name nor args should be quoted.
+- The return value of defun is undefined.
+- Careful! defun redefines even primitive functions such as car without any hesitation or notification.
+- fmakunbound - undefine
+
+(defun function-name (a &optional b &rest c)
+  "optional-documentation..."
+  (interactive argument-passing-info)
+  (indent indent-spec) ; declare Form
+  body...)
+** arguments
+arguments can have clauses or markers: (required-vars…  [&optional [optional-vars…]]  [&rest rest-var])
+  - &optional
+  - &rest - list of arguemnts
+
+#+begin_src elisp :results output :exports both :eval no
+(defun a (&optional v)
+       (print v)
+)
+(a)
+#+end_src
+
+#+RESULTS:
+:
+: nil
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html
+** (&rest args) unrolling
+: (seq-let (managed-major-mode project class contact language-id) (car args) ... )
+** Function Calling
+- funcall (function &rest arguments)
+- apply (function &rest arguments) - last arg as list of args
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html
+- funcall-interactively
+#+begin_src elisp :results output :exports both :eval no
+(print (funcall 'list '(1 2 3)))
+(print (apply 'list '(1 2 3)))
+#+end_src
+
+#+RESULTS:
+:
+: ((1 2 3))
+:
+: (1 2 3)
+
+#+begin_src elisp :results output :exports both :eval no
+(defun a (&optional v foo  c d &rest e)
+       (interactive)
+       (print (list v foo c d e)))
+(a 1 2 3 4 5)
+(defun b (&rest e)
+       "function proxy"
+       (interactive)
+       (if (interactive-p)
+           ;; (funcall-interactively 'a e)
+           ;; (call-interactively 'a)
+           (apply 'funcall-interactively 'a e)
+         ;;else
+         (apply 'a e))
+  ;; (print e)
+)
+(print (vector (list 1 2 3 4) (list 1 2 3 4)))
+(call-interactively 'a)
+(call-interactively 'b)
+(b 1 2 3 4 5)
+(print "----")
+(funcall-interactively 'a 1 2 3 4 5)
+(funcall-interactively 'b 1 2 3 4 5)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+
+(1 2 3 4 (5))
+
+[(1 2 3 4) (1 2 3 4)]
+
+(nil nil nil nil nil)
+
+(nil nil nil nil nil)
+
+(1 2 3 4 (5))
+
+"----"
+
+(1 2 3 4 (5))
+
+(1 2 3 4 (5))
+#+end_example
+
+#+begin_src elisp
+(defun averagenum (n1 n2 n3 n4)
+  (/ ( + n1 n2 n3 n4) 4)
+  )
+(averagenum 2 3 4 10 )
+;; 4
+
+
+(setq f 'list)
+;;     ⇒ list
+
+(funcall f 'x 'y 'z)
+  ;;   ⇒ (x y z)
+#+end_src
+
+#+begin_src elisp
+
+(defun bar (n) (+ n 2))
+(symbol-function 'bar)
+;;     ⇒ (lambda (n) (+ n 2))
+
+(fset 'baz 'bar)
+  ;;   ⇒ bar
+
+(symbol-function 'baz)
+    ;; ⇒ bar
+
+#+end_src
+** Named parameters:
+To be able to supply arguments by name, we need to
+- declare them with *&key <name>*
+- we set them with *:name <value>*
+
+Default values to key parameters:
+- *&key (<name> <value>)*
+
+#+begin_src elisp :results output :exports both :eval no
+(defun hello (name &key happy)())
+(hello "me" :happy t)
+
+(defun hello (&optional name &key happy)())
+(hello "me" :happy t)
+#+end_src
+
+#+RESULTS:
+
+** lambda
+- A lambda expression, by itself, has no name; it is an anonymous function.
+- result is a closure object
+- they are more commonly associated with symbols to make named functions
+- A lambda form cannot be evaluated and it must appear only where LISP expects to find a function.
+
+
+Macro: lambda args [doc] [interactive] body…
+
+(lambda (x) (* x x))
+     ⇒ (lambda (x) (* x x))
+*** Inline Functions
+- just like an ordinary function, except for one thing: when you byte-compile a call to the function the
+function’s definition is expanded into the caller.
+- calls run faster
+- it reduces flexibility; if you change the definition of the function, calls already inlined still use the
+  old definition until you recompile them.
+
+defsubst name args [doc] [declare] [interactive] body…
+*** Special Form: function function-object
+- returns function-object without evaluating it
+- it is similar to quote
+- function-object is a valid lambda expression, this has two effects
+  - When the code is byte-compiled, function-object is compiled into a byte-code function object
+  - When lexical binding is enabled, function-object is converted into a closure
+
+All equal:
+(lambda (x) (* x x))
+(function (lambda (x) (* x x)))
+#'(lambda (x) (* x x))
+
+** closure
+A closure is a function that also carries a record of the lexical environment that existed when the function
+ was defined. When it is invoked, any lexical variable references within its definition use the retained
+ lexical environment.
+
+Lambda macro or the function special form or the #' syntax (see Anonymous Functions), is automatically
+ converted into a closure When lexical binding is enabled.
+** Interactive Functions
+ - A Lisp function becomes a command when its body contains, at top level, a form that calls the
+   special form `(interactive...)’.
+ - This special form does nothing when executed, but its presence in the function definition
+   indicates that interactive calling is permitted.
+ - Its argument controls the reading of the function arguments in an interactive call.
+ - In interactive function all arguments should be after &optional or &rest to be called with (call-interactively
+
+(interactive &optional arg-descriptor &rest modes)
+- arg-descriptor: a string,  sequence of elements separated by newlines
+  - P - raw prefix
+  - p - numeric prefix
+
+(call-interactive mode) - will switch off mode if mode is on.
+*** links
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Interactive-Codes.html
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html
+*** ex
+#+begin_src elisp :results output :exports both :eval no
+(defun hello ()
+       "Hello World and you can call it via M-x hello."
+       (interactive)
+       (print "Hello World!"))
+(call-interactively 'hello)
+#+end_src
+
+#+RESULTS:
+:
+: "Hello World!"
+
+#+begin_src elisp :results output :exports both :eval no
+(defun hello (&optional arg arg2)
+       (interactive "P\np")
+       ;; (print "%s" arg)
+       (if  (eq arg2 4)
+           (print "asd"))
+       (print (list arg arg2 arg3))
+)
+(funcall-interactively 'hello '(1) 2 3)
+(apply 'funcall-interactively 'hello '(nil 2))
+;; use: C-u M-x hello
+#+end_src
+
+#+RESULTS:
+:
+: ((1) 2 (3))
+:
+: (nil 2 nil)
+
+** arguments
+- (lambda (a b c) (+ a b c)) - 3 arguments
+- keyword &optional before the optional arguments
+- To specify a list of zero or more extra arguments, include the keyword &rest before one final argument.
+- (a b &optional c d &rest e) - here c and d optional and e is a list
+
+** Functions with Property List argument
+#+begin_src elisp :results output
+(defun make-shell-interface (&rest params)
+  "
+  Create a shell interface.
+
+  Possible parameters:
+
+    :name      Name of shell
+    :type      ['sh, 'bash, ...]
+    :path      Path to program
+    :buffer    Name of buffer
+
+  "
+  (let
+       ((name   (plist-get params :name ))
+        (type   (plist-get params :type))
+        (path   (plist-get params :path))
+        (buffer (plist-get params :buffer)))
+    (list
+     (cons 'name buffer)
+     (cons 'type type)
+     (cons 'path path)
+     (cons 'buffer buffer))))
+
+
+(print (make-shell-interface :name "pylaucher" :path "/usr/bin/python" :type 'sh :buffer "pyshell"))
+;; ((name . "pyshell")
+;;  (type . sh)
+;;  (path . "/usr/bin/python")
+;;  (buffer . "pyshell"))
+
+(print (make-shell-interface :name "pylaucher" :path "/usr/bin/python" :type 'sh))
+(print (make-shell-interface :name "pylaucher" :path "/usr/bin/python" :type 'bash))
+;; ((name)
+;;  (type . bash)
+;;  (path . "/usr/bin/python")
+;;  (buffer))
+
+;; ELISP> (make-shell-interface :name "pylaucher" :path "/usr/bin/python")
+;; ((name)
+;;  (type)
+;;  (path . "/usr/bin/python")
+;;  (buffer))
+
+;; ELISP> (make-shell-interface :name "pylaucher" )
+;; ((name)
+;;  (type)
+;;  (path)
+;;  (buffer))
+
+;; ELISP> (make-shell-interface  )
+;; ((name)
+;;  (type)
+;;  (path)
+;;  (buffer))
+
+;; ELISP> (make-shell-interface :buffer "pyshell"  :path "/usr/bin/python" :type 'sh :name "pylaucher")
+;; ((name . "pyshell")
+;;  (type . sh)
+;;  (path . "/usr/bin/python")
+;;  (buffer . "pyshell"))
+
+#+end_src
+
+#+RESULTS:
+:
+: ((name . "pyshell") (type . sh) (path . "/usr/bin/python") (buffer . "pyshell"))
+:
+: ((name) (type . sh) (path . "/usr/bin/python") (buffer))
+
+** return
+(info "(elisp) Nonlocal Exits").
+- Throw
+- block (info "(cl) Blocks and Exits")
+- cl-defun
+- defun*
+#+begin_src elisp :results output :exports both :eval no
+(defun my-func ()
+  "Simplistic `catch'/`throw' example."
+  (catch 'my-early-return
+    (when t
+      (throw 'my-early-return "this is the short-circuit result of catch"))
+    "this is the fallback result of catch"))
+
+#+end_src
+** by reference or by value?
+Passed by assignment, new reference created at argument.
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html
+
+Mutability defines ability of functions to have side effect to argument.
+
+If there is exist a function that may modify object then it may be considered as may be affected by side effect.
+** functions that do nothin
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Calling-Functions.html
+
+- identity argument -> argument
+- ignore &rest arguments -> nil
+- always &rest arguments -> t
+* Structures
+- *Records* is to allow programmers to create objects with new types that are not built into Emacs.  They are
+ used as the underlying representation of cl-defstruct and defclass instances.
+- defclass
+- cl-defstruct
+- *vectors* are there if you need random access and also occupy less space.  general-purpose array whose elements can be any Lisp objects
+  - used as internal structure for: kbd, symbols, byte-compiled function
+* printing
+- print - Print a newline at end.
+- princ - does not add newline at end.  intended to produce output that is readable by people
+- prin1 - does not add newline at end.
+- format
+- message - Print a Format String to the Messages Buffer.
+- insert - Instert string to current buffer, at cursor position.
+#+begin_src elisp :results output
+(princ '("as" "asd"))
+(print '("as" "asd"))
+(pp '("as" "asd"))
+#+end_src
+
+#+RESULTS:
+: (as asd)
+: ("as" "asd")
+: ("as" "asd")
+
+#+begin_src elisp
+(setq xbuff (generate-new-buffer "*my output*"))
+
+(print "something" xbuff)
+
+(switch-to-buffer xbuff )
+#+end_src
+* Macros
+- expansion - Lisp expression which will in turn compute the value.
+
+macro cannot be called with /apply/, /mapcar/ and so on
+
+
+(macroexpand - expands form, if it is a macro call. If the result is another macro call, it is expanded in
+ turn, until something which is not a macro call results
+
+#+begin_src elisp
+(defmacro inc (var)
+   (list 'setq var (list '1+ var)))
+(setq x 2)
+(defun z(c)
+    (inc c))
+(inc x)
+(z 3)
+#+end_src
+
+#+RESULTS:
+: 4
+
+#+begin_src elisp
+
+(defmacro setq2 (v1 v2 e)
+  (list 'progn (list 'setq v1 e) (list 'setq v2 e)))
+
+(setq z 1)
+
+(setq2 x y (+ z 3))
+
+#+end_src
+
+#+RESULTS:
+: 4
+
+#+begin_src elisp :results output :exports both :eval no
+(defmacro setq2 (v1 v2 e)
+  (list 'progn (list 'setq v1 e) (list 'setq v2 e)))
+
+(print (macroexpand '(setq2 x y (+ x 2)) ) )
+#+end_src
+
+#+RESULTS:
+:
+: (progn (setq x (+ x 2)) (setq y (+ x 2)))
+
+** inline function
+function’s definition is expanded into the caller
+: defsubst name args [doc] [declare] [interactive] body…
+
+inline it as a compiler macro - more efficient.
+: define-inline name args [doc] [declare] body… ¶
+- (inline-quote expression) -
+- inline-letevals (bindings…) body…  - This provides a convenient way to ensure that the arguments to an inlined function are evaluated exactly once, as well as to create local variables.
+- inline-const-p expression - Return non-nil if the value of expression is already known.
+- inline-const-val expression - Return the value of expression.
+- inline-error format &rest args - Signal an error, formatting args according to format.
+
+#+begin_src elisp
+(define-inline myaccessor (obj)
+  (inline-letevals (obj)
+    (inline-quote (if (foo-p ,obj) (aref (cdr ,obj) 3) (aref ,obj 2)))))
+
+;; equal to:
+(defsubst myaccessor (obj)
+  (if (foo-p obj) (aref (cdr obj) 3) (aref obj 2)))
+#+end_src
+* regex
+** characters:
+- special
+- ordinary
+
+normal escaping \[, for lisp: "\\[", also:"\n", "[ [:space:] ]"
+
+** commands
+*** rx
+- (rx ...
+- replace-regexp is for interactive use.
+- In elisp you should use re-search-forward and replace-match to do things
+#+begin_src elisp :results output :exports both :eval no
+(print (rx bol
+  (zero-or-more blank)
+  (one-or-more digit)
+  ":"))
+#+end_src
+
+#+RESULTS:
+:
+: "^[[:blank:]]*[[:digit:]]+:"
+
+*** search
+- search-forward
+- re-search-forward
+- string-match
+- (looking-at "" ) - after point matches regular, does update the *match data*
+- (looking-back "\n\\** ?" 2) - before point matches regular
+
+Every successful *search* sets the *match data*. Match data normally describe the most recent search only.
+- (match-string NUM &optional STRING)
+  - NUM=0 - entire match
+  - NUM>0 - subexpression ‘\(…\)’ in match
+- replace-match
+- match-data
+- set-match-data
+- string-match-p - do not modify match-data
+
+#+begin_src elisp :results output :exports both :eval no
+(match-string NUM &optional STRING)
+#+end_src
+*** TODO matching
+
+
+
+** special characters
+-  .        any character (but newline)
+-  *        previous character or group, repeated 0 or more time
+-  +        previous character or group, repeated 1 or more time
+-  ?        previous character or group, repeated 0 or 1 time
+- *?, +?, and ?? are non-greedy versions of *, +, and ?
+-  ^        start of line
+-  $        end of line
+-  [...]    any character between brackets
+-  [^..]    any character not in the brackets
+-  [a-z]    any character between a and z
+-  \        prevents interpretation of following special char
+-  \|       or
+-  \w       word constituent
+-  \b       word boundary
+-  \sc      character with c syntax (e.g. \s- for whitespace char)
+-  \( \)    start/end of group
+-  \&lt; \&gt;    start/end of word (faulty rendering: backslash + less-than and backslash + greater-than)
+-  \_< \_>  start/end of symbol
+-  \` \'    start/end of buffer/string
+-  \1       string matched by the first group
+-  \n       string matched by the nth group
+-  \{3\}    previous character or group, repeated 3 times
+-  \{3,\}   previous character or group, repeated 3 or more times
+-  \{3,6\}  previous character or group, repeated 3 to 6 times
+-  \=       match succeeds if it is located at point
+
+** groups
+C-u C-x = to display the category of the character under the cursor.
+- \ca      ascii character
+- \Ca      non-ascii character (newline included)
+- \cl      latin character
+- \cg      greek character
+- [:digit:]  a digit, same as [0-9]
+- [:alpha:]  a letter (an alphabetic character)
+- [:alnum:]  a letter or a digit (an alphanumeric character)
+- [:upper:]  a letter in uppercase
+- [:lower:]  a letter in lowercase
+- [:graph:]  a visible character
+- [:print:]  a visible character plus the space character
+- [:space:]  a whitespace character, as defined by the syntax table, but typically  [ \t\r\n\v\f ], which includes the newline character
+- [:blank:]  a space or tab character
+- [:xdigit:] an hexadecimal digit
+- [:cntrl:]  a control character
+- [:ascii:]  an ascii character
+- [:nonascii:]  any non ascii character
+- \s-   whitespace character
+- \sw   word constituent
+- \s_   symbol constituent
+- \s.   punctuation character
+- \s(   open delimiter character
+- \s)   close delimiter character
+- \s"   string quote character
+- \s\   escape character
+- \s/   character quote character
+- \s$   paired delimiter
+- \s'   expression prefix
+- \s<   comment starter
+- \s>   comment ender
+- \s!   generic comment delimiter
+- \s|   generic string delimiter
+- \W, \B, and \Sc match any character that does not match \w, \b, and \sc.
+
+#+begin_src elisp :results output :exports both :eval no
+;; (print (string-match-p "^[:print:]+" "fsd"))
+(print (string-match-p "^[[:print:]]$" "f"))
+;; (print (string-match-p "^a+" "fsd"))
+#+end_src
+
+#+RESULTS:
+:
+: 0
+
+** links
+- https://www.emacswiki.org/emacs/RegularExpression
+- https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html
+* paths
+*default-directory* - buffer-local variable with directory of current buffer file.
+* Emacs Code Conventions
+- M-x checkdoc.
+** variable name conventions
+‘...-hook’
+     The variable is a normal hook (*note Hooks::).
+
+‘...-function’
+     The value is a function.
+
+‘...-functions’
+     The value is a list of functions.
+
+‘...-form’
+     The value is a form (an expression).
+
+‘...-forms’
+     The value is a list of forms (expressions).
+
+‘...-predicate’
+     The value is a predicate—a function of one argument that returns
+     non-‘nil’ for success and ‘nil’ for failure.
+
+‘...-flag’
+     The value is significant only as to whether it is ‘nil’ or not.
+     Since such variables often end up acquiring more values over time,
+     this convention is not strongly recommended.
+
+‘...-program’
+     The value is a program name.
+
+‘...-command’
+     The value is a whole shell command.
+
+‘...-switches’
+     The value specifies options for a command.
+
+‘PREFIX--...’
+     The variable is intended for internal use and is defined in the
+     file ‘PREFIX.el’.  (Emacs code contributed before 2018 may follow
+     other conventions, which are being phased out.)
+
+‘...-internal’
+     The variable is intended for internal use and is defined in C code.
+     (Emacs code contributed before 2018 may follow other conventions,
+     which are being phased out.)
+** commands
+- (;) - comment on the same line
+- (;;) - comment on the new line
+** recommendation
+- All the variables should be let-bound; otherwise, you're altering global values.
+- Code is not indented and hard to read.  Normally, sexp indentation in Emacs is aggressive enough that it
+ takes effort to make code look like this, rather than to make it right.
+- Use when instead of if, progn.
+
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html
+- https://github.com/bbatsov/emacs-lisp-style-guide
+- C mostly https://www.gnu.org/prep/standards/standards.html
+- https://www.math.utah.edu/docs/info/elisp_38.html
+* examples
+1s
+#+BEGIN_SRC lisp
+ (list 1 2 (quote foo))
+ (setq x (+ x 1)) = (incf x)
+
+
+ ;;;; COMMENT-EXAMPLE function
+ ;;; This function is useless
+ ;;; except demonstrate comments.
+
+ (defun asdas (x y)	;X is anything
+	 ;; X is now not a list
+	 ((sumbolp x)
+
+
+#+END_SRC
+* USE CASES
+sort numbers:
+- (sort '(1 2 3) '(lambda (a b) (< a b)))
+- (sort '(2 4 7 3 9 1 5 4 6 3 8) #'<)
+** measure time of execution of any function
+#+begin_src elisp :results output :exports both :eval no
+(defun my/time-call (time-call &rest args)
+  (message "Ohai %s" args)
+  (let ((start-time (float-time))
+        (org-babel-python-command "/usr/bin/timeout 15 python")
+        )
+    (apply time-call args)
+    (message "Call took %f seconds" (- (float-time) start-time)))
+  )
+(advice-add 'org-babel-python-evaluate-external-process :around #'my/time-call)
+#+end_src
+** working with tabular data
+Save to .org file
+#+NAME: students-multiple-grade
+   | Name    | Math | English | Science |
+   |---------+------+---------+---------|
+   | Alice   | A    | B       | C       |
+   | Bob     | B    | A       | B       |
+   | Charlie | C    | A       | A       |
+
+#+begin_src elisp :var students=students-multiple-grade :results output :exports both :eval no
+(mapc (lambda (student)
+        (let ((name (car student))
+              (math (nth 1 student))
+              (english (nth 2 student))
+              (science (nth 3 student)))
+        (with-temp-buffer
+          (insert (concat "Name: " name "\n"))
+          (insert (concat "Math: " math "\nEnglish: " english "\nScience: " science "\n"))
+          (write-region (point-min) (point-max) (concat name ".org"))
+          ;; Export PDF
+          ;; (find-file (concat name ".org"))
+          ;; (org-latex-export-to-pdf)
+          )))
+      students)
+(print "Operation finished.")
+#+end_src
+
+#+RESULTS:
+:
+: "Operation finished."
+
+: Wrote /home/u/tmp/Alice.org
+: Wrote /home/u/tmp/Bob.org
+: Wrote /home/u/tmp/Charlie.org
+
+* Emacs Lisp
+s
+- introduction https://www.gnu.org/software/emacs/manual/html_mono/eintr.html
+- short http://ergoemacs.org/emacs/elisp_basics.html
+
+- function may reference local varibles in the scope it is called from, but not in the scope it was defined.
+- REPL mode: M-x ielm
+- cl.el
+- .elc  - byte compiled code
+- (message "hi %d")    ; %d number, %s string %S - lisp expression. - to buffer "*Messages*" C-h e
+- (if nil "yes" "no") ; "no" ; (), '(), (list)
+- (if t "yes" "no") ; "yes"; 0, "", [] - vector of 0 elements
+- (not (and (or (< (<= (>= (= (/= not equal. Comparing strings: (equal (string-equal
+- (equal - if same type and value
+- (eq - if same Lisp object
+
+** help
+- get help:
+  - F1 f
+  - F1 S - descrybe symbol
+** Keys:
+ - <TAB>	Indent line
+ - M-C-\	Indent region
+ - M-;	Comment
+ - C-x ;	Set comment column
+ - <ESC> <TAB> Completion for Symbol Names
+ Info:
+ - C-h S	Info documentation for symbol
+ - M-x woman or man   for operation system command, library function or system call.
+ - C-h f	Emacs Lisp functions
+ - c-h v	Emacs Lisp variable
+ - C-x C-e	eval-last-sexp - Evaluate the expression to the left of cursor.
+** Commands
+- C-M-x (eval-defun)
+- M-: (eval-expression)
+
+** ask user input
+#+begin_src lisp
+(if (y-or-n-p "Do it?")
+    (progn
+      ;; code to do something here
+    )
+  (progn
+    ;; code if user answered no.
+  )
+)
+#+end_src
+** suppress messages by function and subfunctions
+#+begin_src elisp :results none :exports code :eval no
+(defun suppress-messages (old-fun &rest args)
+  (cl-flet ((silence (&rest args1) (ignore)))
+    (advice-add 'message :around #'silence)
+    (unwind-protect
+         (apply old-fun args)
+      (advice-remove 'message #'silence))))
+(advice-add 'server-execute :around #'suppress-messages)
+#+end_src
+** execute shell command
+https://www.eigenbahn.com/2020/01/19/painless-emacs-shell-commands
+** defcustom
+right way to set it in .emacs:
+- (setopt global-subword-mode t)  if you have emacs 29 or later                                                                           Wed
+- or (customize-set-variable global-subword-mode t)
+
+#+begin_src elisp
+(defcustom text-mode-hook nil
+  "Normal hook run when entering Text mode and many related modes."
+  :type 'hook ;; tells Emacs the kind of data to which text-mode-hook should be set and how to display the value in a Customization buffer.
+  :options '(turn-on-auto-fill flyspell-mode) ;; keyword specifies a suggested list of values for the variable
+  :group 'wp) ;;  in which group the variable is located.
+
+# Emacs automaically manage this with M-x customize
+(custom-set-variables  '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify)))
+#+end_src
+** map
+src/fns.c
+
+(mapc FUNCTION SEQUENCE)	Apply FUNCTION to each element of SEQUENCE for side effects only.
+
+(mapcar FUNCTION SEQUENCE)	Apply FUNCTION to each element of SEQUENCE, and make a list of the results.
+
+#+begin_src elisp :results output :exports both :eval no
+(setq full-range '(1 2 3 4))
+(setq re (mapcar (lambda (arg) (/ arg 2)) full-range))
+(print re)
+#+end_src
+
+#+RESULTS:
+:
+: (0 1 1 2)
+
+** buffers
+- buffer-string - get buffer text as string with properties
+- (buffer-substring-no-properties (point-min) (point-max)
+- (buffer-name)
+** cl-loop
+cl-macs.el
+
+(cl-loop for handler in some_list
+   until (condition-case ...
+** convetions and style guide
+comments:
+- ; - used at the end of line
+- ;; - used in code as separate line
+- ;;; We use them for comments that should be considered a heading by Outline minor mode.
+-  on’t end headings with a colon : or any other punctuation.
+
+naming:
+- Prefix unused local (lexically scoped) variables with _. (lambda (x _y) x)
+- -- to denote private top-level definitions . =projectile--private-fun=
+- lowercas with - separator: some-var
+- name of program as a prefix with ‘-’ separator
+  - exceptions: ‘list-prefix’, ‘define-...-prefix-...’
+  - you may use two or three alternative common prefixes
+
+functions:
+- “xxx-p” - check if true
+- Constructs that define a function or variable should be macros, not functions, and their names should start
+  with ‘define-’.
+- Use =lambdas= for local bindings and function calls, not for hooks or global variables.
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Coding-Conventions.html
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html
+- https://github.com/bbatsov/emacs-lisp-style-guide
+
+
+naming variables:
+- if the purpose of a variable is to store a single function, give it a name that ends in ‘-function’
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips-for-Defining.html
+
+major mode: https://www.gnu.org/software/emacs/manual/html_node/elisp/Major-Mode-Conventions.html
+
+minor mode: https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Mode-Conventions.html
+
+** advices-reverence
+Look at apply, all after FUNCTION is arguments that FUNCTION should handle. r = &rest args
+- :around        (lambda (&rest r) (apply FUNCTION *OLDFUN* r))
+- :before        (lambda (&rest r) (apply FUNCTION r) (apply *OLDFUN* r))
+- :after         (lambda (&rest r) (prog1 (apply OLDFUN r) (apply FUNCTION r)))
+- :override      (lambda (&rest r) (apply FUNCTION r))
+- :after-until   (lambda (&rest r) (or (apply OLDFUN r) (apply FUNCTION r)))
+- :after-while   (lambda (&rest r) (and (apply OLDFUN r) (apply FUNCTION r)))
+- :before-until  (lambda (&rest r) (or (apply FUNCTION r) (apply OLDFUN r)))
+- :before-while  (lambda (&rest r) (and (apply FUNCTION r) (apply OLDFUN r)))
+- :filter-args   (lambda (&rest r) (apply OLDFUN (funcall FUNCTION r)))
+- :filter-return (lambda (&rest r) (funcall FUNCTION (apply OLDFUN r)))
+
+:around
+- (orig-fun &rest args)
+
+:override
+- (&rest args)
+** functional programming - stream of data
+
+
+Transducers https://codeberg.org/fosskers/transducers.el
+- change calls
+
+cl-lib, dash - alternatives
+
+elpa stream - orthogonal
+
+seq/generics
+** testing
+*** ERT: Emacs Lisp Regression Testing
+build-in [[file:/usr/share/emacs/29.1/lisp/emacs-lisp/ert.el]]
+- C-h i m ert RET
+- $info ert
+**** ex
+#+begin_src elisp :results output :exports both :eval no
+(require 'ert)
+;; (require 'tested-module)
+(ert-deftest csv-tests-end-of-field ()
+  (with-temp-buffe
+   (should (= (+ 1 2) 4)))
+)
+;; execute test programmatically
+(ert-run-tests-interactively "csv-tests-end-of-field")
+#+end_src
+
+#+RESULTS:
+
+
+**** links
+https://www.emacswiki.org/emacs/UnitTesting
+* MELPA
+https://github.com/melpa/melpa
+
+- M-x package-recipe-mode
+- M-x package-build-current-recipie
+- fork https://github.com/melpa/melpa/
+- git clone own/melpa
+- git branch recipe
+- git checkout recipe
+- git cp ~/recipe own/melpa/recipies/
+- git add
+- git push
+** lint
+- http://github.com/purcell/package-lint
+
+M-x package-install package-lint
+
+usage: package-lint-current-buffer
+** byte-compile
+M-x byte-compile-file
+* errors handling - errors and throws and how to catch them
+** terms
+- signal and error - exception. Errors can be signaled only by Lisp primitives (including *signal* and *error*
+ functions)
+- cleanup expressions - catch for exception
+- error symbol - describes what kind of error it is, and which describes also a list of condition name. Each
+ error symbol has a set of parent *error conditions* that is a list of symbols:  error symbol itself and the symbol *error*.
+  - error symbol may and may not "error conditions".
+
+*unwind-protect* - expressions to be evaluated in case of error.
+
+*condition-case* - error handlers to recover control in case of error.
+- ignore-errors
+*CONDITION-NAME* - in condition-case part of handlers
+** error symbols
+(define-error
+
+Properties:
+- error-conditions
+- error-message
+
+Main errors:
+- error - also condition for almost all errors.
+- quit - don't have *error* condition
+- minibuffer-quit - don't have *error* condition
+
+some errors:
+- args-out-of-range
+- wrong-type-argument
+- wrong-number-of-arguments
+- void-variable
+- void-function
+- user-error
+** functions
+- (error STRING &rest ARGS) - make error with 'error symbol.
+- (signal ERROR-SYMBOL DATA) - An error symbol is a symbol with DATA.
+- (user-error FORMAT &rest ARGS) - like error but use symbol 'user-error
+ ‘error-conditions’ property that is a list of condition names.
+** condition case
+(condition-case VAR BODYFORM &rest HANDLERS) - Regain control when an error is signaled. When a handler
+ handles an error, control returns to the ‘condition-case’ and it executes the handler’s BODY... with VAR
+ bound to (ERROR-SYMBOL . SIGNAL-DATA) from the error.
+- *protected-form* - body
+- *handlers* -  (CONDITION-NAME BODY...) or (:success BODY...)
+  - condition - *condition name* of t matches any condition.
+#+begin_src elisp :results output :exports both :eval no
+(define-error 'new-error "A new error")
+(condition-case e
+  (signal 'wrong-type-argument "wtf")
+  ('out-of-range (print "aa"))
+  ;; ('error (print "tf"))
+  ('wrong-type-argument (print "cc"))
+)
+(print (get 'wrong-type-argument 'error-conditions))
+(print (get 'wrong-type-argument 'error-message))
+#+end_src
+
+#+RESULTS:
+:
+: "cc"
+:
+: (wrong-type-argument error)
+:
+: "Wrong type argument"
+
+#+begin_src elisp :results output :exports both :eval no
+;; catching any error and return nil if an error occurs:
+;; handl erros that was thrown for ex. with ~(error "On last item")~
+(condition-case nil
+    (load "asd")
+  (error nil))
+
+;; catch error and print
+(condition-case nil
+    (load "asd")
+  (error (print "error!")))
+
+;; debug and any error:
+(condition-case nil
+    (load "asd")
+  ((debug error) nil))
+
+(ignore-errors  (load "asd"))
+#+end_src
+
+#+RESULTS:
+:
+: "error!"
+** catch and throw
+entirely *separate!* from errors and conditions.
+- catch tag body
+- throw tag value,  value is used as the value to return from that catch.
+#+begin_src elisp :results output :exports both :eval no
+(defun foo-outer ()
+  (catch 'foo
+    (foo-inner)
+    )
+)
+
+(defun foo-inner ()
+  (throw 'foo t))
+(foo-outer)
+#+end_src
+
+#+RESULTS:
+
+** unwind-protect
+(unwind-protect BODYFORM UNWINDFORMS...)
+- executes body-form with a guarantee that the cleanup-forms will be evaluated if control leaves
+- it permits you to make the data consistent again in the event of an *error* or *throw*.
+** logging construction
+Open *Warnings* buffer and output error there:
+#+begin_src elisp :results output :exports both :eval no
+(condition-case err
+    (eval '(car) t)
+  (error
+   (display-warning
+    (format "Error: %s\n"
+            err)
+    :error)
+   nil))
+#+end_src:
+
+** links
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Errors.html
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Standard-Errors.html
+-
+* Error messages
+** wrong-type-argument
+symbol hello, not a number:
+#+begin_src elisp :results output :exports both :eval no
+(condition-case a
+    (+ 2 nil)
+  (error (print a)))
+
+
+#+end_src
+
+#+RESULTS:
+:
+: (wrong-type-argument number-or-marker-p nil)
+
+:
+
+Wrong type argument: listp, notmuch-show-save-part
+
+
+https://www.gnu.org/software/emacs/manual/html_node/eintr/Wrong-Type-of-Argument.html
+** Lisp error: (invalid-function
+
+** nil in debugger, Why nil if it is not nil?
+: Debugger entered--Lisp error: (wrong-type-argument number-or-marker-p nil)
+: * ediff-recenter-one-window(B)
+
+Error is actually in defsubst inside of this function, it is like a bug because of inline function.
+* Emacs API
+** terms
+- Emacs Terminology 	Description
+- Point 	Cursor position, number of characters from beggining of the buffer to current cursor position.
+- Mark 	Beginning of the selected area.
+- Region 	Selected area/ text
+- Buffer 	Place where the user edit something. Not all buffers are bound to a file.
+- Frame 	The current window of emacs. Windows are grouped into frames. Each frame contains at least one window.
+- Windows Each frame can be split in sections that Emacs documentation calls windows. subdivide a frame into
+ multiple, non-overlapping windows.
+- Fill 	Word Wrap
+- Yank 	Copy
+- Kill Region 	Cut
+- Kill Ring 	Clipboard
+- Kill Buffer 	Close Buffer
+- Mode Line 	Status Bar
+- Font Locking 	Syntax Coloring
+** Pointer
+- (point) - current position
+- (goto-char position)
+- (line-beginning-position &optional N) scan forward N - 1 lines first.
+- (beginning-of-line) - move cursor
+- (forward-line)
+- (next-line)
+- (current-column) - get position from begining of line
+- (current-indentation) - get position from begining of line where text exist (not white spaces)
+(count-lines ? ?)
+
+http://xahlee.info/emacs/emacs/elisp_all_about_lines.html
+** Marker
+The idea is that a marker positioned between two characters remains between those two characters despite
+ insertion and deletion elsewhere in the buffer.
+Marker:
+- the marker position :: position in buffer at the begining -  Insertion and deletion of text in the buffer relocate the marker.
+- the marker buffer :: .
+- the insertion type :: define behavion when text was inserter right at marker position.
+** Buffers
+- (current-buffer)
+- (with-current-buffer BUFFER-OR-NAME &rest BODY) ;; Temporarily make a buffer current.
+- (set-buffer BUFFER-OR-NAME) - Make a buffer current. (but does not make it visible.) Return that buffer object. switch-to-buffer or pop-to-buffer.
+- (save-current-buffer &rest BODY) - Execute BODY, then restore the current buffer that is before this function call.
+- (with-temp-buffer &rest BODY) - Create a temporary buffer, and evaluate BODY, return the last expression.
+- (buffer-name BUFFER) - Return the name of BUFFER, as a string.
+- (buffer-live-p b) - Return t if OBJECT is a buffer which has not been killed.
+http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html
+
+*** create temp copy
+#+begin_src elisp :results output :exports both :eval no
+(defun ss ()
+  (let ((buffer (get-buffer-create " *temp*"))
+        (orbuf (current-buffer))
+        (p (point)))
+    (save-excursion
+      (with-current-buffer buffer
+        (insert (with-current-buffer orbuf (buffer-string))) ;; insert text from orbuf to this
+        (goto-char p)
+        ;; now we are at the copy
+        (print (point))
+))))
+#+end_src
+*** get value from buffer
+two ways:
+- (provided-mode-derived-p (buffer-local-value 'major-mode (current-buffer)) 'dired-mode)
+- (with-current-buffer (current-buffer) (derived-mode-p 'dired-mode))
+*** links
+http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html
+** Windows
+- (window-prev-buffers) - Return buffers previously shown in WINDOW.
+- *window tree* - Windows on the same frame
+- *root window* - The root node of a window tree.
+- *live window* -  leaf nodes, acutally showing buffer. returned by (window-list)
+- *selected window* - one of leaf nodes that is active.
+- *internal window* - organizing the relationships between live windows
+- *minibuffer window* - not part of its frame’s window tree, but is sibling window of the frame’s root window
+- *Window Parameters* - associated additional information with window.
+- *window-point/pos* - saved state of (point) in window, by default used by *window-in-direction* as reference.
+- *reference position* - used as a source to decide a target in direction.
+- *main-window* - used to distinguish window from windows marked as window-side/slot, returned by
+ (window-main-window). is either a “normal” live window or specifies the area containing all the normal
+ windows.
+- *display-start or just start* - buffer position that specifies where in the buffer display should start to display text at screen.
+*** side windows
+C-x w s	window-toggle-side-windows
+(scroll-right)
+** Frames
+https://elpa.gnu.org/packages/posframe.html
+** temporary files
+- (make-temp-file) - This function creates a temporary file or directory and returns its name, and may insert
+ text in it.
+
+- org-babel-temp-file - Create a temporary file
+- org-babel-process-file-name - Prepare NAME to be used in an external process and return new name
+- org-babel-eval-read-file - Return the contents of FILE as a string.
+
+- with-temp-file file body - evaluates the BODY forms with a temporary buffer as the current buffer; then, at the end,
+ it writes the buffer contents into file FILE.
+- append-to-file - This function appends the contents of the region delimited by START and END in the current
+ buffer to the end of file FILENAME.
+- write-region - This function writes the region delimited by START and END in the current buffer into the
+ file specified by FILENAME. or write string.
+
+Notes
+- ‘append-to-file’ and ‘write-region’ - Don’t use these functions to write to files that are being visited
+*** ex
+#+begin_src elisp
+(make-temp-file
+            (expand-file-name PREFIX
+                              (or small-temporary-file-directory
+                                  temporary-file-directory)))
+#+end_src
+
+#+begin_src elisp
+(write-region <STRING> nil <FILENAME> 'append)
+#+end_src
+
+#+begin_src elisp
+(defun my-append-string-to-file (s filename)
+  (with-temp-buffer
+    (insert s)
+    (write-region (point-min) (point-max) filename t)))
+#+end_src
+*** links
+- [[info:elisp#Unique File Names]]
+- [[info:elisp#Writing to Files]]
+** lines
+(count-lines (point-min) (point-max))
+** cleanup - temporary buffer
+*unwind-protect* executes *body-form* with a guarantee that the *cleanup-forms* will be evaluated if control leaves
+ body-form,
+#+begin_src elisp :results output :exports both :eval no
+(let ((buffer (get-buffer-create " *temp*")))
+  (with-current-buffer buffer
+    (unwind-protect
+        (insert "asd") ; body-frm
+      (kill-buffer buffer) ; cleanup-form
+      )))
+#+end_src
+
+#+RESULTS:
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Cleanups.html
+
+** highlight character at point
+#+begin_src elisp :results output :exports both :eval no
+(let ((ol (make-overlay (point) (1+ (point)))))
+  (overlay-put ol 'face '(:background "dark red")))
+#+end_src
+
+** modes
+variables:
+- mode-name - name of current major mode: "Help"
+- major-mode - name of current major mode: help-mode
+- mode-line-buffer-identification
+
+minor mode is buffer-local or global:
+: (local-variable-if-set-p 'show-paren-mode)
+
+there's nothing stopping you giving a global mode a buffer-local value(to check really global):
+: (with-temp-buffer
+:   (local-variable-if-set-p 'show-paren-mode))
+
+** Call external asynchronous
+*** async-shell-command
+(async-shell-command COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER)
+- OUTPUT-BUFFER is default of `shell-command-buffer-name-async' variable - name of a buffer or buffer or nil. That buffer is in shell mode.
+- To not display buffer: To run COMMAND without displaying the output in a window you can
+configure ‘display-buffer-alist’ to use the action
+‘display-buffer-no-window’ for the buffer given by
+‘shell-command-buffer-name-async’.
+*** call-process-shell-command
+(call-process-shell-command (concat "timeout 15 bash -c \"while true; do " play-sound "; sleep 2.9 ; done \"") nil 0)
+without return
+
+*** TODO https://github.com/tkf/python-epc
+Allow to create server.
+*** TODO https://www.gnu.org/software/emacs/manual/html_node/elisp/JSONRPC.html
+** Timer
+(current-time) Elisp is a way to represent the number of seconds since the epoch (January 1, 1970, 00:00:00
+ UTC)
+- HIGH: This represents the upper bits of the timestamp, typically the higher 16 bits of a 32-bit integer.
+- LOW: This represents the lower bits of the timestamp, typically the lower 16 bits of a 32-bit integer.
+- USEC: This represents the microseconds (millionths of a second) since the epoch.
+- PSEC: This represents the picoseconds (trillionths of a second) since the epoch.
+
+To show epoch in seconds:
+: (print (time-convert (current-time) 'integer))
+To show saved Timer (run-at-time) in epoch:
+: (print (time-convert '(26277 20928) 'integer))
+To show saved Timer as readable string:
+: (print (current-time-string (time-convert '(26277 20928) 'integer)))
+** autoload
+** links
+- http://www.blogbyben.com/2011/04/10-concepts-emacs-newbie-should-master.html
+* Libraries - popular
+- DamienCassou/hierarchy: Emacs library to create, query, navigate and display
+- magnars/dash.el: A modern list library for Emacs hierarchy structures
+
+** build in
+- seq.el
+- map.el
+* links
+- Common Lisp the Language, 2nd Edition https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node1.html
+- https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html
+- free books https://www.linuxlinks.com/excellent-free-books-learn-lisp/
+- free tutorials https://www.linuxlinks.com/excellent-free-tutorials-learn-lisp/
+- http://landoflisp.com/

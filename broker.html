@@ -1,0 +1,3192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:27 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9ae52ac">1. english</a></li>
+<li><a href="#org15c9d7f">2. личные правила</a>
+<ul>
+<li><a href="#org7f89f59">2.1. прогнозирование</a>
+<ul>
+<li><a href="#orgb041507">2.1.1. бабы говорят</a></li>
+</ul>
+</li>
+<li><a href="#orgfafbee9">2.2. Investing Tips</a></li>
+</ul>
+</li>
+<li><a href="#org4b21fea">3. top<sub>русорсов</sub></a></li>
+<li><a href="#orga880077">4. брокер</a>
+<ul>
+<li><a href="#org167d18b">4.1. счет у брокера</a></li>
+<li><a href="#orged58471">4.2. депозиторий для акций</a></li>
+</ul>
+</li>
+<li><a href="#org4912538">5. QUICK</a>
+<ul>
+<li><a href="#org8233593">5.1. таблица текущих торгов</a></li>
+<li><a href="#orga775c50">5.2. <span class="todo TODO">TODO</span> диаграмма</a></li>
+<li><a href="#org1b6f0c2">5.3. Tinkoff mobile apple</a></li>
+<li><a href="#org1d59e1c">5.4. горячие клавиши</a></li>
+<li><a href="#orgd636869">5.5. заявки</a></li>
+</ul>
+</li>
+<li><a href="#org4a97ffe">6. участники</a></li>
+<li><a href="#orge5893f7">7. новостные каналы</a></li>
+<li><a href="#org851b925">8. стибильность банка</a></li>
+<li><a href="#org52fe838">9. теория</a>
+<ul>
+<li><a href="#orge54fa21">9.1. Финансовые инструменты</a></li>
+<li><a href="#orgf833e84">9.2. Япо́нские све́чи</a></li>
+<li><a href="#org6c1d052">9.3. Trading System</a></li>
+<li><a href="#org721d9d2">9.4. books - спекулятивный трейдинг</a></li>
+<li><a href="#org1c19989">9.5. https://www.youtube.com/watch?v=wY7DG0wM8j0</a></li>
+<li><a href="#orgb7e0ed1">9.6. Пример торговой системы “Обзор рынка РФ” с Рустемом Ибрагимовым.</a></li>
+<li><a href="#org26a070b">9.7. стакан</a></li>
+<li><a href="#org66c3d5b">9.8. девольвация рубля</a></li>
+<li><a href="#orgdfec14a">9.9. CAPM Модель оценки финансовых активов (Capital Assets Pricing Model)</a></li>
+<li><a href="#org39e63ff">9.10. Дивидендная отсечка - как причина падения цены (дивидендный гэп)</a>
+<ul>
+<li><a href="#orgbdff48a">9.10.1. пример</a></li>
+</ul>
+</li>
+<li><a href="#orge3a8173">9.11. Байбэк</a></li>
+</ul>
+</li>
+<li><a href="#orgce71f8c">10. Инструменты</a>
+<ul>
+<li><a href="#org70239db">10.1. облигации</a></li>
+<li><a href="#org6ef0c7c">10.2. ВДО высокодоходные облигации</a></li>
+</ul>
+</li>
+<li><a href="#orgb219dd5">11. Секторы</a>
+<ul>
+<li><a href="#org3468eb4">11.1. IT</a></li>
+<li><a href="#org6c47b43">11.2. Строительство</a></li>
+<li><a href="#orgc113de2">11.3. металлургия</a></li>
+<li><a href="#org8ad3cfb">11.4. нефть и газ</a></li>
+<li><a href="#org7fcba32">11.5. Энергетика</a></li>
+<li><a href="#org80a0fcf">11.6. телекоммуникация</a></li>
+<li><a href="#orge2a2c88">11.7. банки</a></li>
+<li><a href="#orga9d35f5">11.8. нефтехимия</a></li>
+<li><a href="#orgbefa412">11.9. фармацевтика</a></li>
+<li><a href="#orgef83c58">11.10. кибербезопасность</a></li>
+<li><a href="#org07c5e88">11.11. лесопромышленный</a></li>
+</ul>
+</li>
+<li><a href="#org01d1152">12. Cрочный рынок</a>
+<ul>
+<li><a href="#org6244164">12.1. теория</a></li>
+<li><a href="#orgcb1721e">12.2. фьючерс</a>
+<ul>
+<li><a href="#org0399db6">12.2.1. характеристики фьючесов</a></li>
+<li><a href="#orgcd52fe5">12.2.2. популярные фьючерсы</a></li>
+<li><a href="#org562c0ac">12.2.3. товары https://www.moex.com/s202</a></li>
+<li><a href="#org35fde02">12.2.4. Фьючерсы на ОФЗ</a></li>
+</ul>
+</li>
+<li><a href="#orgf0de692">12.3. опцион</a></li>
+<li><a href="#orga64424b">12.4. Crude Oil</a></li>
+</ul>
+</li>
+<li><a href="#orgca850da">13. Валюты Currencies</a>
+<ul>
+<li><a href="#orgcb7cd3b">13.1. U.S. Dollar Index (USDX, DXY, DX, or, informally, the "Dixie") - relative to a basket of foreign</a></li>
+<li><a href="#org85cc584">13.2. валюты</a></li>
+<li><a href="#orgbb2893c">13.3. курс рубля</a></li>
+</ul>
+</li>
+<li><a href="#org8198587">14. Индексы акций</a>
+<ul>
+<li><a href="#org160fab4">14.1. рейтинги</a></li>
+<li><a href="#orgced629b">14.2. опережающие индексы</a></li>
+</ul>
+</li>
+<li><a href="#orga21f765">15. мировые индексы Биржи</a></li>
+<li><a href="#orga4ff88f">16. Индикаторы - профессиональные</a></li>
+<li><a href="#org2d1a90d">17. Фундаментальный анализ</a>
+<ul>
+<li><a href="#org558df19">17.1. Показатели Компании</a></li>
+<li><a href="#orgaace0d4">17.2. Показатели Страны</a>
+<ul>
+<li><a href="#orgfccf8b0">17.2.1. расчет уровня инфляции - ИПЦ и дефлятор ВВП</a></li>
+<li><a href="#org75a5406">17.2.2. платежный баланс</a></li>
+</ul>
+</li>
+<li><a href="#org2094003">17.3. общемировые показатели</a></li>
+<li><a href="#org00a5dd0">17.4. Russian indexes</a></li>
+</ul>
+</li>
+<li><a href="#org0c288b8">18. Машенничество</a>
+<ul>
+<li><a href="#org4449deb">18.1. pump&amp;dump (накачать и сбросить)</a></li>
+</ul>
+</li>
+<li><a href="#org3627e9e">19. Налог и ИИС</a>
+<ul>
+<li><a href="#orgb04461e">19.1. Индивидуальный инвестиционный счё</a></li>
+<li><a href="#org0f2f9ff">19.2. <span class="todo TODO">TODO</span> тип А</a></li>
+<li><a href="#orgae6da43">19.3. тип Б</a></li>
+</ul>
+</li>
+<li><a href="#orga09a449">20. Корреляции</a></li>
+<li><a href="#org5f63e50">21. Риск менеджмент</a>
+<ul>
+<li><a href="#orgfec4854">21.1. Виды</a></li>
+</ul>
+</li>
+<li><a href="#org70a177f">22. Опасности</a></li>
+<li><a href="#org5d36818">23. terms</a></li>
+<li><a href="#org35050cc">24. lstm</a>
+<ul>
+<li><a href="#org294cbcf">24.1. TODO</a></li>
+<li><a href="#org6b60b6b">24.2. artice https://www.datacamp.com/community/tutorials/lstm-python-stock-market</a></li>
+<li><a href="#org922e93e">24.3. психологические аспекты</a></li>
+<li><a href="#org39fc831">24.4. формы биологической памяти</a></li>
+</ul>
+</li>
+<li><a href="#orgddd7dd6">25. msk</a></li>
+<li><a href="#orgca75f84">26. голубые фишки</a></li>
+<li><a href="#orgf724b46">27. китайские компании</a>
+<ul>
+<li><a href="#orgb2db036">27.1. Alibaba Group, Alibaba (HK)</a></li>
+</ul>
+</li>
+<li><a href="#org8392940">28. ключевые даты</a></li>
+<li><a href="#org5d4e1e3">29. covid</a></li>
+<li><a href="#orgcaab71b">30. венчур Venture ['venʧə]</a>
+<ul>
+<li><a href="#org88f3908">30.1. terms</a></li>
+<li><a href="#orge0218cb">30.2. startup scoring</a></li>
+<li><a href="#orgf54da33">30.3. (old)телемедицина</a></li>
+</ul>
+</li>
+<li><a href="#org853a808">31. crypto</a>
+<ul>
+<li><a href="#org59d2b96">31.1. terms</a></li>
+<li><a href="#orge891fbd">31.2. plan</a></li>
+<li><a href="#org276107a">31.3. buy with KYC</a></li>
+<li><a href="#org46912c5">31.4. ru exchangers list</a>
+<ul>
+<li><a href="#orgf8ee646">31.4.1. AML</a></li>
+</ul>
+</li>
+<li><a href="#org709285b">31.5. exchange crypto</a></li>
+<li><a href="#org93253ea">31.6. map</a>
+<ul>
+<li><a href="#orge584d3c">31.6.1. atms</a></li>
+<li><a href="#org7255aee">31.6.2. ATM https://www.btcatm.ru</a></li>
+</ul>
+</li>
+<li><a href="#org87db5f4">31.7. DeFi: Decentralized Finance</a>
+<ul>
+<li><a href="#org9a27806">31.7.1. terms</a></li>
+<li><a href="#orgd4604bd">31.7.2. weaks</a></li>
+</ul>
+</li>
+<li><a href="#orgd62344a">31.8. To ensure that a Bitcoin transaction was successfully transferred from your wallet to someone else's, follow these steps:</a></li>
+<li><a href="#orgc5820d6">31.9. links</a></li>
+</ul>
+</li>
+<li><a href="#orgab8ec7f">32. receive money in Russia</a>
+<ul>
+<li><a href="#orgb8d5afe">32.1. AI answer (bad)</a></li>
+<li><a href="#org179872b">32.2. limits CB</a></li>
+</ul>
+</li>
+<li><a href="#org21194a0">33. причины падения российских рынков</a></li>
+<li><a href="#orgcd24db0">34. ключевая ставка</a></li>
+<li><a href="#org8f77fba">35. Financial Statement Modeling</a></li>
+<li><a href="#org564bd63">36. quantitative finance</a></li>
+<li><a href="#org6972e9d">37. оценка эффективности торговых стратегий</a></li>
+<li><a href="#org3b09800">38. strategy AI</a>
+<ul>
+<li><a href="#orgb30af68">38.1. trnslateion</a></li>
+<li><a href="#org2ecfc6c">38.2. s1</a></li>
+<li><a href="#org77e5891">38.3. s2</a></li>
+</ul>
+</li>
+<li><a href="#org3dcee90">39. Эквивалент предельного размера разрешенной суммы перевода в доллары США пересчитывается по официальному курсу иностранных валют к рублю, установленному Банком России, на дату поручения клиента на осуществление перевода.</a></li>
+<li><a href="#orge4d4453">40. Real-time gross settlement (RTGS)</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 100;-</b>-
+kski
+nikkei 225
+csi300
+</p>
+
+<p>
+eu
+ftse 100
+cac 40
+dax
+</p>
+
+<p>
+Процентное изменение: <b>((V2-V1)/V1) × 100</b>. Где V1 – старое значение, а V2 – новое
+</p>
+<div id="outline-container-org9ae52ac" class="outline-2">
+<h2 id="org9ae52ac"><span class="section-number-2">1.</span> english</h2>
+<div class="outline-text-2" id="text-1">
+<dl class="org-dl">
+<dt>Financial institutions [faɪˈnænʃəl] [ɪnstɪˈtjuːʃn]</dt><dd>banking institutions</dd>
+<dt>deposit [dɪˈpɔzɪt]</dt><dd>вклад Depository institutions - кредитная организация</dd>
+<dt>loan [ləʊn]</dt><dd>ссыды, кредиты</dd>
+<dt>fraud  [frɔːd]</dt><dd>мошенничество</dd>
+<dt>swipe [swaɪp]</dt><dd>Swipe your card, please. Paid $300,000 on swipe fees. swipe machines - проводя черной полосой карты</dd>
+<dt>equity [ˈekwɪtɪ]</dt><dd>капитал</dd>
+<dt>retail store [ˈriːteɪl] [stɔːz]</dt><dd>розничный магазин.</dd>
+<dt>pricing [ˈpraɪsɪŋ]</dt><dd>ценообразование</dd>
+<dt>Stock market  [stɒk ˈmɑːkɪt]</dt><dd>фондовая биржа</dd>
+<dt>stock</dt><dd>акция</dd>
+<dt>share</dt><dd>акция</dd>
+<dt>outstanding shares</dt><dd>размещенные акции</dd>
+<dt>bonds</dt><dd>облигации</dd>
+<dt>futures</dt><dd>фьючерсы</dd>
+<dt>commodity  <i>kəˈmädədē</i></dt><dd>товар, сырье</dd>
+<dt>security  [sɪˈkjʊərɪtɪ]</dt><dd>ценная бумага</dd>
+<dt>equity  [ˈekwɪtɪ]</dt><dd>капитал</dd>
+<dt>revenue [ˈrevɪnjuː]</dt><dd>доход
+<dl class="org-dl">
+<dt>net income [net ˈɪnkʌm]</dt><dd>чистый доход</dd>
+</dl></dd>
+<dt>collateral</dt><dd>залог, обпеспечени</dd>
+<dt>margin trading <i>ˈmärjən</i></dt><dd>the collateral that a holder of a financial instrument has to deposit
+with a counterparty/broker/echange organization to cover some or all of the credit risk the holder
+poses for the counterparty.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org15c9d7f" class="outline-2">
+<h2 id="org15c9d7f"><span class="section-number-2">2.</span> личные правила</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>Покупай на историях(несколько сценариев) - продавай на фактах(сценарии исчерпаны))</b> @ RBK
+</p>
+<ul class="org-ul">
+<li>сначала определи это какое событие запланированное или случайное, если запланированное то как</li>
+</ul>
+<p>
+<b>Не делать ставку без стоплоса!!!</b>
+<b>Всегда иметь свободные деньги на случай крупной новости и временной паники</b>
+<b>Есть два диапазона - долгосрочный и краткосрочный, на краткосрочном технический анализ</b>
+<b>глобальные новости развиваются по дням</b>
+<b>сначала реакция проффесионалов, потом всех</b>
+</p>
+</div>
+
+<div id="outline-container-org7f89f59" class="outline-3">
+<h3 id="org7f89f59"><span class="section-number-3">2.1.</span> прогнозирование</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>поиск коррекционного отката, по</li>
+</ol>
+
+<p>
+Предвидеть новостные сигналы и сопоставить для каждого движение вверхи или! вниз
+</p>
+
+<p>
+<b>тренд резко не меняет направление - нужна фаза стагнации или отката</b>
+</p>
+
+<p>
+<b>контр-трендово не шортят - риск</b>
+</p>
+
+<p>
+<b>риск к прибыли должен быть больше чем 3 к 1</b>
+</p>
+
+<p>
+<b>On balance volume - не работает на фьючерсных контрактах</b>
+</p>
+
+<p>
+<b>после стопосъемного шипа тренд идет в противоположную сторону</b>
+</p>
+
+<p>
+<b>медвежья дивиргения - рост - признак слабости(RSI, OnBalanceVolume) - будет падение</b>
+<b>бычья дивиргенция - падание - признак слабости - будет рост</b>
+</p>
+
+<p>
+<b>три волны падения и с коррекциями - завершение падающего тренда</b>
+</p>
+
+<p>
+<b>разворотный паттерн - двойное основание</b>
+</p>
+
+<ul class="org-ul">
+<li>фон диктует тренд</li>
+<li>корреляция диктует тренд</li>
+<li>4 процента - бери</li>
+<li>коррекция - приритет над трендом имеет 15 минутная 200 дневная средняя</li>
+<li>кризис - покупают тяжелую промушленность и золото</li>
+<li>не кризис - инновации</li>
+<li>с утра - по тренду - потом - коррекция</li>
+<li>перед рискованным событием увеличивается волатильность, тренд сохраняется</li>
+<li>сходящийся треугольник - после резкого испуга.</li>
+<li>боковик - готовится к скачку</li>
+</ul>
+</div>
+
+<div id="outline-container-orgb041507" class="outline-4">
+<h4 id="orgb041507"><span class="section-number-4">2.1.1.</span> бабы говорят</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>Если волатильность низкая, значит книга заказов на бирже сбалансирована, то есть цена не изменится, пока
+торговый объем останется прежним. Если же внезапно увеличится число продавцов или покупателей, то цена может
+резко измениться.</li>
+<li>Если волатильность высокая, входить в рынок очень опасно. Нужно понимать, что сейчас уже поезд упущен, и
+ждать следующего удобного момента для входа в рынок.</li>
+<li>Если волатильность снижается. Низкая и снижающаяся волатильность характерны для роста цены. Если
+волатильность продолжает снижаться, это может быть «бычьим» признаком.</li>
+<li>Если волатильность растет, это говорит об усилении нервозности на рынке. Рынок предлагает хорошие
+возможности для открытия позиций, но и риски потерь становятся выше.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfafbee9" class="outline-3">
+<h3 id="orgfafbee9"><span class="section-number-3">2.2.</span> Investing Tips</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>Patience - Understand risks</li>
+<li>Diversification</li>
+<li>Planning - Invest don’t speculate</li>
+<li>Long-term - Determine your goals</li>
+<li>research - Stick to your plan</li>
+<li>risk/reward - Invest regularly</li>
+<li>Don't be afraid to ask for help</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b21fea" class="outline-2">
+<h2 id="org4b21fea"><span class="section-number-2">3.</span> top<sub>русорсов</sub></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><a href="https://smart-lab.ru">https://smart-lab.ru</a></li>
+<li><a href="http://blog.gazprombank.investments/">http://blog.gazprombank.investments/</a></li>
+<li>раскрытие информации <a href="https://e-disclosure.ru">https://e-disclosure.ru</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga880077" class="outline-2">
+<h2 id="orga880077"><span class="section-number-2">4.</span> брокер</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org167d18b" class="outline-3">
+<h3 id="org167d18b"><span class="section-number-3">4.1.</span> счет у брокера</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+денежные средства хранятся на обособленных счетах брокеров, т.е. брокер к ним не имеет юридического
+доступа, а значит, не может расходовать или переводить данные средства. Кроме того, на эти средства
+не может быть наложен арест по обязательствам брокера. Т.е. банкротство брокера с юридической точки
+зрения также не распространяется и на денежную часть Ваших средств.
+</p>
+</div>
+</div>
+<div id="outline-container-orged58471" class="outline-3">
+<h3 id="orged58471"><span class="section-number-3">4.2.</span> депозиторий для акций</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Номинальный держатель — это такое лицо, на счет которого записаны акции, реальным владельцем которых
+оно не является. Например депозитарий. Это лицо, в свою очередь, хранит информацию о реальных
+владельцах.
+</p>
+<ul class="org-ul">
+<li>Ценные бумаги хранятся не на счетах брокера, а на счетах депо в депозитарии.</li>
+<li>Это отдельная организация, обладающая лицензией ЦБ РФ на ведение депозитарной деятельности.</li>
+<li><p>
+Обычно услуги депозитария включены в стоимость услуг брокера, а сам депозитарий является
+обособленным подразделением брокера
+</p>
+
+<p>
+Если Вы заключили с брокером <b>соглашение</b> о предоставлении Ваших <b>ценных бумаг в залог для операций
+ брокера</b>, то в данном случае Вы рискуете потерять свои ценные бумаги при банкротстве брокера.
+</p></li>
+</ul>
+
+<p>
+Компания-эмитент
+(например «Эпл»)
+↑
+Компания-регистратор
+(т. н. transfer agent)
+↑
+Американский центральный депозитарий
+(DTC)
+↑
+Цепочка других депозитариев
+↑
+Депозитарий Брокера или отдельный
+↑
+Клиент
+(вы)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4912538" class="outline-2">
+<h2 id="org4912538"><span class="section-number-2">5.</span> QUICK</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Система заказ данных</li>
+<li>окна</li>
+<li>установить горячую клавишу для "Изменить интервал в диаграмма"</li>
+</ol>
+</div>
+<div id="outline-container-org8233593" class="outline-3">
+<h3 id="org8233593"><span class="section-number-3">5.1.</span> таблица текущих торгов</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Класс</li>
+<li>Инструмент сокр</li>
+<li>Цена послед</li>
+<li>% измен закр</li>
+<li>макс цена</li>
+<li>мин цена</li>
+<li>оборот</li>
+<li>ISIN - ?????</li>
+<li>валюта</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga775c50" class="outline-3">
+<h3 id="orga775c50"><span class="section-number-3">5.2.</span> <span class="todo TODO">TODO</span> диаграмма</h3>
+</div>
+<div id="outline-container-org1b6f0c2" class="outline-3">
+<h3 id="org1b6f0c2"><span class="section-number-3">5.3.</span> Tinkoff mobile apple</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+RSI базовые значения уровней 70 30
+MA 25 и 50
+EMA 25 и 50
+MACD
+Stochastic - используются уровни 80- перекупленности и 20 - ориентир перепроданности
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d59e1c" class="outline-3">
+<h3 id="org1d59e1c"><span class="section-number-3">5.4.</span> горячие клавиши</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>Ctrl+E редактировать окно/график</li>
+<li>F6 в стакане - стоп заявка</li>
+<li>Alt+1/2/3/4/5 - переключение между закладками</li>
+<li>Ctrl+N - копировать окно</li>
+<li>Ctrl+H - редактор горячих клавиш</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd636869" class="outline-3">
+<h3 id="orgd636869"><span class="section-number-3">5.5.</span> заявки</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+<b>stop-limit</b>
+</p>
+<ul class="org-ul">
+<li>Sell - если слишком сильно упадет ПРОДАЕМ
+<ul class="org-ul">
+<li>проскальзывание - цену продажи выставляем МЕНЬШЕ предела, чтобы успеть найти покупателей</li>
+</ul></li>
+<li>Buy - если ожидаем пробой вверх ПОКУПАЕМ
+<ul class="org-ul">
+<li>проскальзывание - цену покупки выставляем БОЛЬШЕ предела, чтобы успеть найти продавцов</li>
+</ul></li>
+</ul>
+
+<p>
+<b>take-profit</b> -
+</p>
+<ul class="org-ul">
+<li>Sell - если достаточно выросла ПРОДАЕМ (lot 10 - в одном лоте 10 акций)
+<ul class="org-ul">
+<li>offset from max - маленькие падения в низ в течении которого заявка не будет активироваться
+<ul class="org-ul">
+<li>слишком маленькое - продажа сразу на первой волне (2 копеек)</li>
+<li>слишком большое - слишком сильно упадет после большого скачка и будет продана по меньшей цене (3копеек)</li>
+</ul></li>
+<li>protective spread - отступ вниз по которой активированная заявка попадет в рынок (как проскальзывание)</li>
+</ul></li>
+<li>Buy - для short</li>
+</ul>
+
+<p>
+<b>стоп-лосс</b>
+</p>
+<ul class="org-ul">
+<li>ниже нижнего price-channel</li>
+<li>особенно важны при покупке выше средней-200-дневной</li>
+<li>в кризис стоп-лоссы смитаются волатильностью</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4a97ffe" class="outline-2">
+<h2 id="org4a97ffe"><span class="section-number-2">6.</span> участники</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+доля биржевых операций профучастников
+</p>
+<ul class="org-ul">
+<li>77% - фондовом рынке</li>
+<li>83% - рынке репо</li>
+<li>53% - валютном рынке</li>
+</ul>
+
+
+<p>
+Вообще
+</p>
+<ul class="org-ul">
+<li>Высокочастотные роботы (HFT)</li>
+<li>Скальперы - внутри дня
+<ul class="org-ul">
+<li>на лучший бид и  потом сразу на лучший аском</li>
+<li>отскок от крупного офферта</li>
+<li>после разъедания крупного офферта будет резкое движение в его сторону от стоп-лосов</li>
+</ul></li>
+<li><b>Маркетмейкеры и торговые алгоритмы</b> Маркетмейкеры - продают кода покупают и покупают когда
+продают - пользуются льготами биржи</li>
+<li><b>Частные инвесторы и профессиональные трейдеры</b></li>
+<li><b>Крупные игроки и инвестиционные фонды</b></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5893f7" class="outline-2">
+<h2 id="orge5893f7"><span class="section-number-2">7.</span> новостные каналы</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>РБК</li>
+<li>интерфакс - зона справедливых цен</li>
+<li>блумберг</li>
+<li>новости IT госрегулирование <a href="https://www.gazeta.ru/tech/government.shtml">https://www.gazeta.ru/tech/government.shtml</a></li>
+<li>Российская Газета <a href="https://rg.ru/tema/ekonomik/">https://rg.ru/tema/ekonomik/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org851b925" class="outline-2">
+<h2 id="org851b925"><span class="section-number-2">8.</span> стибильность банка</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<a href="https://mainfin.ru/banki/rating?sort=assets_netto">https://mainfin.ru/banki/rating?sort=assets_netto</a>
+Основные показатели
+</p>
+<ul class="org-ul">
+<li>Активы нетто, тыс. руб.</li>
+<li>Депозиты физ.лиц, тыс. руб.</li>
+<li>Кредиты физ.лиц, тыс. руб.</li>
+</ul>
+
+<p>
+Уралсиб <a href="https://www.banki.ru/banks/ratings/?BANK_ID=63520">https://www.banki.ru/banks/ratings/?BANK_ID=63520</a>
+</p>
+<ul class="org-ul">
+<li>активы    531 386 135</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org52fe838" class="outline-2">
+<h2 id="org52fe838"><span class="section-number-2">9.</span> теория</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li><b>Фьючерс</b> (futures contract или англ. futures) - контрактами на покупку или продажу в будущем базового актива</li>
+<li>(Short) <b>шорт</b> (сокращенное от английского short selling) – это продажа участником рынка акций или другого
+инвестиционного инструмента, которыми он не владеет</li>
+<li>Лонговать - купить, подождать пока цена понимится</li>
+<li>зона поддержки - нижняя price channel</li>
+</ul>
+
+<p>
+C 2009 брокерам запрещено допускать шорты по акциям цена которых снизилась больше 3% от стоимости закрытия
+</p>
+
+<p>
+Пики торгов -  на открытии и в момент выхода статистики
+</p>
+</div>
+<div id="outline-container-orge54fa21" class="outline-3">
+<h3 id="orge54fa21"><span class="section-number-3">9.1.</span> Финансовые инструменты</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>Рыночные инструменты:
+<ul class="org-ul">
+<li>биржевые инструменты
+<ul class="org-ul">
+<li>Московская биржа</li>
+<li>Биржа СПБ</li>
+<li>NYSE</li>
+<li>LSE</li>
+</ul></li>
+<li>внебиржевые
+<ul class="org-ul">
+<li>ФОРЕКС - размер сделок $2 млн.
+<ul class="org-ul">
+<li>брокер - для крупных клиентов</li>
+<li>диллер - ларек</li>
+</ul></li>
+<li>еврооблигации - есть и на московской бирже</li>
+</ul></li>
+</ul></li>
+<li>ПИФы и доверительное управление</li>
+<li>страховые продукты
+<ul class="org-ul">
+<li>накопительное страхование  НСЖ и снвестиционно ИСЖ</li>
+<li>unit linked (ULIP) - с иностранной компанией - страховка и инвестиционный фонд</li>
+</ul></li>
+</ul>
+
+
+<p>
+Ценные бумаги
+</p>
+<ul class="org-ul">
+<li>долговые
+<ul class="org-ul">
+<li>облигации</li>
+<li>векселя</li>
+<li>деньги</li>
+<li>депозиты</li>
+</ul></li>
+<li>долевые
+<ul class="org-ul">
+<li>акции</li>
+<li>паи</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf833e84" class="outline-3">
+<h3 id="orgf833e84"><span class="section-number-3">9.2.</span> Япо́нские све́чи</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Отражают не только цену, но и её волатильность
+</p>
+<ul class="org-ul">
+<li>Верхняя и нижняя граница тени отображает максимум и минимум цены за соответствующий период.</li>
+<li>Границы тела отображают цену открытия и закрытия.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6c1d052" class="outline-3">
+<h3 id="org6c1d052"><span class="section-number-3">9.3.</span> Trading System</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+<a href="https://relaxedtrader.com/trading-system-works-future/">https://relaxedtrader.com/trading-system-works-future/</a>
+</p>
+
+<p>
+good:
+</p>
+<ul class="org-ul">
+<li>Lots of samples</li>
+<li>Out of sample testing looks like in sample testing</li>
+<li>Factor in commission and slippage</li>
+<li>System trades a with lower number of shares in volatile markets</li>
+</ul>
+
+<p>
+Minimum Requirements For A Robust System:
+</p>
+<ul class="org-ul">
+<li>Minimum 100 trades</li>
+<li>At least 10 years of data</li>
+<li>Statistical significance of 30 ( profit factor * number of samples ^ 0.5 )</li>
+<li>20% of data used for "out of sample" (OOS) testing</li>
+<li>OOS Profit Factor  / In Sample Profit Factor &gt;= 70%</li>
+<li>Net profit / Max drawdown &gt;= 10</li>
+<li>Profit factor &gt;= 2</li>
+</ul>
+
+<p>
+System Score = Profit Factor * Number Of Trades ^ ( 0.5 )  * ( Net Profit / Max Drawdown ) * ( Out Of Sample Profit Factor / In Sample Profit Factor )
+</p>
+
+
+<p>
+<b>Profit factor</b> = (gross winning trades) / (gross losing trades) or = (Win rate x average win) / (Loss rate x average loss)
+</p>
+
+<p>
+Main trading systems:
+</p>
+<ul class="org-ul">
+<li><b>Mean Reversion</b> - следим за средней показывающй тренд и когда она меняет направление на определенное
+значение - покупаем или продаем. - does not work with a trend following market</li>
+<li><b>trend following</b> - следуем по тренду не отклоняясь</li>
+</ul>
+
+<p>
+The only real Holy Grail in trading is the use of multiple systems trading different asset classes.
+</p>
+</div>
+</div>
+<div id="outline-container-org721d9d2" class="outline-3">
+<h3 id="org721d9d2"><span class="section-number-3">9.4.</span> books - спекулятивный трейдинг</h3>
+<div class="outline-text-3" id="text-9-4">
+<ul class="org-ul">
+<li>Технический анализ финансовых рынков - Джон Дж. Мэрфи (Азбука технического анализа)</li>
+<li>Чарльз ЛеБо, Дэвид В. Лукас "Компьютерный анализ фьючерсных рынков" (Индикаторный технический
+анализ, без фигур)</li>
+<li>В. Тарп "Трейдинг - ваш путь к финансовой свободе" (универсальная)</li>
+<li>Психология трейдинга. Инструменты и методы принятия решений. Бретт Стинбарджер (психологические
+проблемы)</li>
+<li>Куртис Фейс. Путь Черепах. Из дилетантов в легендарные трейдеры (поучительная история, дух спекулятивного трейдинга)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1c19989" class="outline-3">
+<h3 id="org1c19989"><span class="section-number-3">9.5.</span> <a href="https://www.youtube.com/watch?v=wY7DG0wM8j0">https://www.youtube.com/watch?v=wY7DG0wM8j0</a></h3>
+<div class="outline-text-3" id="text-9-5">
+<ul class="org-ul">
+<li>60% - Психология трейдинга</li>
+<li>30% - определение размера позиции - risk management, money management</li>
+<li>10% - развитость системы - точка входа и выхода</li>
+</ul>
+
+<p>
+Неудачи - игнорирование 60 30 и не имеют системы
+</p>
+
+<p>
+Торговая система - это набор правил - алгоритм действия трейдера в рыночных ситуациях
+</p>
+<ul class="org-ul">
+<li>момент открытия закрытия позиции</li>
+<li>размер открываемой позиции</li>
+</ul>
+
+<p>
+Торговая система - условная система отсчета, система координат <b>относительно которой</b> трейдер 1)
+определяет ситуацию 2) принимает решение
+</p>
+
+<p>
+Торговая система выстраенная на основе:
+</p>
+<ul class="org-ul">
+<li>технического анализа - спекулятивная (пример Ричард Деннис)</li>
+<li>фундаментального анализа - инвестиционная (пример Уорен Баффет)</li>
+</ul>
+
+<p>
+Создание торговой системы:
+</p>
+<ol class="org-ol">
+<li>выбор стратегии</li>
+<li>подбор команлы тех индикаторов под стратегию. Каждый выполняет свою роль. Все - как единое целое.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb7e0ed1" class="outline-3">
+<h3 id="orgb7e0ed1"><span class="section-number-3">9.6.</span> Пример торговой системы “Обзор рынка РФ” с Рустемом Ибрагимовым.</h3>
+<div class="outline-text-3" id="text-9-6">
+<ul class="org-ul">
+<li>годовая доходность ~50%</li>
+<li>максимальная просадка по счету 30% ниже 20% не опускался</li>
+<li>60% сделок убыточно. 40% прибыльные - не количество а качество - выжать максимальную прибыль из сделки</li>
+<li>дисциплина - не каждый месяц или даже год</li>
+</ul>
+
+<p>
+находим точку входа, берем точку выхода по скользящей средней или где видим и ждем, ставим стоп лос - период от недели до полугода
+</p>
+<ul class="org-ul">
+<li>не более 6% от капитала</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org26a070b" class="outline-3">
+<h3 id="org26a070b"><span class="section-number-3">9.7.</span> стакан</h3>
+<div class="outline-text-3" id="text-9-7">
+<ul class="org-ul">
+<li>биржевой стакан - дает нам информацию о лимитных заявках на рынке</li>
+<li>лента обезличенных сделок — о том, на какие объемы были заключены сделки по различным ценам.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org66c3d5b" class="outline-3">
+<h3 id="org66c3d5b"><span class="section-number-3">9.8.</span> девольвация рубля</h3>
+<div class="outline-text-3" id="text-9-8">
+<ul class="org-ul">
+<li>Фьючерс "доллар/рубль" или Si</li>
+<li>ETF на еврооблигации российских корпоративных эмитентов (FXRU)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdfec14a" class="outline-3">
+<h3 id="orgdfec14a"><span class="section-number-3">9.9.</span> CAPM Модель оценки финансовых активов (Capital Assets Pricing Model)</h3>
+<div class="outline-text-3" id="text-9-9">
+<p>
+модель, описывающая связь ожидаемой доходности портфеля ценных бумаг со степенью его риска.
+</p>
+
+<p>
+Согласно САРМ, инвесторы вознаграждаются за рыночный риск, но их нерыночный риск не
+компенсируется. Модель САРМ является основой современной теории цен на финансовых рынках.
+</p>
+</div>
+</div>
+<div id="outline-container-org39e63ff" class="outline-3">
+<h3 id="org39e63ff"><span class="section-number-3">9.10.</span> Дивидендная отсечка - как причина падения цены (дивидендный гэп)</h3>
+<div class="outline-text-3" id="text-9-10">
+<p>
+с утра 2 октября 2020 Сбербанк 8% обвал. пик - 10:00
+</p>
+<ul class="org-ul">
+<li>Последний день покупки - 1 окт 2020</li>
+<li>Дата закрытия реестра - 5 окт 2020</li>
+</ul>
+
+<p>
+Дивиденды обычно указываются в рублях на одну акцию. Иногда в Доля дивидендов от чистой прибыли (по
+МСФО).
+</p>
+
+<p>
+дивиденды должны заплатить в течение 25 рабочих дней с даты фиксации реестра.
+</p>
+
+<p>
+Информация о дивидендах:
+</p>
+<ul class="org-ul">
+<li>карточка эмитента на мос бирже <a href="https://www.moex.com/ru/listing/emidocs.aspx?id=1399">https://www.moex.com/ru/listing/emidocs.aspx?id=1399</a></li>
+<li>На сайте центра обязательного раскрытия корпоративной информации. <a href="https://www.e-disclosure.ru/portal/company.aspx?id=564">https://www.e-disclosure.ru/portal/company.aspx?id=564</a></li>
+<li>на офф сайте компании</li>
+</ul>
+
+<p>
+Размер дивидендов решается на собрании акционеров:
+</p>
+<ul class="org-ul">
+<li>годовое общее собрание акционеров — ГОСА</li>
+<li>внеочередное общее собрание акционеров — ВОСА</li>
+</ul>
+</div>
+
+<div id="outline-container-orgbdff48a" class="outline-4">
+<h4 id="orgbdff48a"><span class="section-number-4">9.10.1.</span> пример</h4>
+<div class="outline-text-4" id="text-9-10-1">
+<p>
+13 августа	Заседание совета директоров и публикация протокола с размером дивидендов
+19 сентября	ВОСА, акционеры одобрили выплату дивидендов
+20 сентября	Опубликована информация о дивидендах — размер и дата фиксации реестра
+27 сентября	Последний день, когда можно купить акции, чтобы получить дивиденды (закладываем время на операции на самой бирже и выходные)
+1 октября	Дата фиксации под дивиденды
+9 октября	Деньги зачислены на брокерский счет
+6 ноября	«Норильский никель» завершил выплаты
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge3a8173" class="outline-3">
+<h3 id="orge3a8173"><span class="section-number-3">9.11.</span> Байбэк</h3>
+<div class="outline-text-3" id="text-9-11">
+<ul class="org-ul">
+<li><a href="https://bcs-express.ru/buybacks">https://bcs-express.ru/buybacks</a></li>
+</ul>
+<p>
+Байбэк – (от англ. buyback) обратный выкуп эмитентом собственных акций. Это ситуация, когда компания
+выкупает акции у действующих акционеров на открытом рынке. По итогам данной процедуры количество
+свободно обращающихся бумаг уменьшается, что в свою очередь может приводить к росту стоимости акций
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce71f8c" class="outline-2">
+<h2 id="orgce71f8c"><span class="section-number-2">10.</span> Инструменты</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org70239db" class="outline-3">
+<h3 id="org70239db"><span class="section-number-3">10.1.</span> облигации</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+время
+</p>
+<ul class="org-ul">
+<li>еще какие-то</li>
+<li>среднесрочные - до 5 лет</li>
+<li>долгосрочные более 5 лет</li>
+</ul>
+
+<p>
+как выбирать
+1 кредитный рейтинг
+2 обеспечение - в случае банкротсвта
+3 дюрация - насколько цента облигация  чувствительна к изменению процентной ставки
+</p>
+
+<p>
+как заработать
+купон - процент от номинации которая платится держателю
+разница в цене
+участие в первичном размещении - цена зависит от количечтва участников и эмитента
+</p>
+
+<p>
+13 процентов, льгота не менее 3 лет
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6ef0c7c" class="outline-3">
+<h3 id="org6ef0c7c"><span class="section-number-3">10.2.</span> ВДО высокодоходные облигации</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+<a href="https://овкладах.рф/obligatsii/vysokodohodnye/">https://овкладах.рф/obligatsii/vysokodohodnye/</a>
+два типа:
+</p>
+<ul class="org-ul">
+<li>биржевые</li>
+<li>коммерческие высокодоходные облигации.</li>
+</ul>
+
+<p>
+Отрасли-лидеры по размещению ВДО:
+</p>
+<ul class="org-ul">
+<li>лизинг</li>
+<li>микрофинансовые организации</li>
+<li>девелопмент</li>
+</ul>
+
+<p>
+Главная опасность – дефолт. Рыночного риска, как такового, нет
+Источник: <a href="https://xn--80aaej2ags6d.xn--p1ai/obligatsii/vysokodohodnye/">https://xn--80aaej2ags6d.xn--p1ai/obligatsii/vysokodohodnye/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb219dd5" class="outline-2">
+<h2 id="orgb219dd5"><span class="section-number-2">11.</span> Секторы</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+коды всех акций <a href="https://www.moex.com/ru/marketdata/archive/#/engine=stock&amp;market=index&amp;data_type=trades&amp;data_interval=current&amp;data_format=csv&amp;year=2020">https://www.moex.com/ru/marketdata/archive/#/engine=stock&amp;market=index&amp;data_type=trades&amp;data_interval=current&amp;data_format=csv&amp;year=2020</a>
+</p>
+<ul class="org-ul">
+<li>лидеры <a href="https://www.finam.ru/analysis/leaders/">https://www.finam.ru/analysis/leaders/</a></li>
+<li>Отрасли <a href="https://www.finam.ru/analysis/bundle00008/?mode=0">https://www.finam.ru/analysis/bundle00008/?mode=0</a>
+<ul class="org-ul">
+<li><a href="https://www.finam.ru/analysis/bundle00004/?mode=0">https://www.finam.ru/analysis/bundle00004/?mode=0</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org3468eb4" class="outline-3">
+<h3 id="org3468eb4"><span class="section-number-3">11.1.</span> IT</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+<a href="https://investcafe.ru/blogs/64668638/posts/41984">https://investcafe.ru/blogs/64668638/posts/41984</a>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">YNDX</td>
+<td class="org-left">Яндекс</td>
+</tr>
+
+<tr>
+<td class="org-left">QIWI</td>
+<td class="org-left">QIWΙ</td>
+</tr>
+</tbody>
+</table>
+<p>
+Яндекс", МТС и "Ростелеком"
+</p>
+
+
+<ul class="org-ul">
+<li>Mail.ru Group (MCX:MAILDR)</li>
+<li>HeadHunter (NASDAQ:HHR)</li>
+<li>Ozon (NASDAQ:OZON)</li>
+<li><p>
+Яндекс MCX:YNDX)
+</p>
+
+<p>
+Яндекс – 10,724 млрд долларов
+Mail.ru Group – 5,362 млрд долларов
+AVITO – 3,85 млрд долларов
+Wildberries – 1,2 млрд долларов
+Ozon Group – 694 млн долларов
+HeadHunter – 299 млн долларов
+Ситилинк – 245 млн долларов
+2ГИС – 243 млн долларов
+Lamoda – 226 млн долларов
+ivi.ru – 204 млн долларов
+Aviasales – 196 млн долларов
+Profi.ru – 151 млн долларов
+ОнлайнТрейд.ру – 110 млн долларов
+Skyeng – 109 млн долларов
+1С-Битрикс – 106 млн долларов
+TalentTech – 97 млн долларов
+Циан Групп – 96 млн долларов
+B2B-Center – 95 млн долларов
+Superjob – 93 млн долларов
+YouDo – 88 млн долларов
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6c47b43" class="outline-3">
+<h3 id="org6c47b43"><span class="section-number-3">11.2.</span> Строительство</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+ГК "Самолет", ГК "ПИК", Группы ЛСР и Группы "Эталон"
+</p>
+
+<ul class="org-ul">
+<li>ПАО  Группа ЛСР  ао (LSRG)  - редевелопмента  территории в  Москве, производства  стройматериалов, добычи  и
+переработки нерудных ископаемых, девелопмента и строительства недвижимости</li>
+<li>ПАО Группа Компаний ПИК (PIKK) - строительная компания ( доставка еды)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc113de2" class="outline-3">
+<h3 id="orgc113de2"><span class="section-number-3">11.3.</span> металлургия</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+Золото
+</p>
+<ul class="org-ul">
+<li>Полюс</li>
+<li>Полиметалл</li>
+</ul>
+<p>
+Ост
+</p>
+<ul class="org-ul">
+<li>Мечел ао/ ап</li>
+<li>ГМКНорНик - палладий, конкурент ЮАР</li>
+<li>Северсталь - конкурент ЕВРАЗ</li>
+<li>ММК</li>
+<li>НЛМК</li>
+<li>Распадская</li>
+<li>Алроса</li>
+<li>Русал</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8ad3cfb" class="outline-3">
+<h3 id="org8ad3cfb"><span class="section-number-3">11.4.</span> нефть и газ</h3>
+<div class="outline-text-3" id="text-11-4">
+<ul class="org-ul">
+<li>Лукойл</li>
+<li>Газпром</li>
+<li>Роснефть</li>
+<li>Сургут ао/ап</li>
+<li>Татнефть ао/пр</li>
+<li>Новатек</li>
+<li>Газпромнефть</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7fcba32" class="outline-3">
+<h3 id="org7fcba32"><span class="section-number-3">11.5.</span> Энергетика</h3>
+<div class="outline-text-3" id="text-11-5">
+<ul class="org-ul">
+<li>ИнтерРАО</li>
+<li>ФСК ЕЭС</li>
+<li>РусГидро</li>
+<li>Россети ао</li>
+<li>Мосэнерго</li>
+<li>ОГК-2</li>
+<li>Юнипро</li>
+<li>ТГК-1</li>
+<li>МРСК Ур</li>
+<li>Ленэнерго- п</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org80a0fcf" class="outline-3">
+<h3 id="org80a0fcf"><span class="section-number-3">11.6.</span> телекоммуникация</h3>
+<div class="outline-text-3" id="text-11-6">
+<ul class="org-ul">
+<li>Ростелеком</li>
+<li>МТС</li>
+<li>Мегафон</li>
+<li>Система</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge2a2c88" class="outline-3">
+<h3 id="orge2a2c88"><span class="section-number-3">11.7.</span> банки</h3>
+<div class="outline-text-3" id="text-11-7">
+<ul class="org-ul">
+<li>Сбербанк</li>
+<li>ВТБ</li>
+<li>Мосбиржа</li>
+<li>Тиньков -TCSG- ТиСиЭс Груп Холдинг ПиЭлСи -  Т+: Акции и ДР</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga9d35f5" class="outline-3">
+<h3 id="orga9d35f5"><span class="section-number-3">11.8.</span> нефтехимия</h3>
+<div class="outline-text-3" id="text-11-8">
+<ul class="org-ul">
+<li>Акрон</li>
+<li>Фосагро</li>
+<li>Уралкалий</li>
+<li>НКНХ ао/ап</li>
+</ul>
+
+<p>
+разное
+</p>
+<ul class="org-ul">
+<li>AGRO гдр</li>
+<li>Аэрофлот</li>
+<li>Яндекс</li>
+<li>Дикси</li>
+<li>Детский мир</li>
+<li>Магнит</li>
+<li>ТМК</li>
+<li>Русолово</li>
+<li>ЛСР</li>
+<li>Лента</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbefa412" class="outline-3">
+<h3 id="orgbefa412"><span class="section-number-3">11.9.</span> фармацевтика</h3>
+<div class="outline-text-3" id="text-11-9">
+<ul class="org-ul">
+<li>iФармсинтез - полный цикл создания новых эффективных лекарственных средств</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgef83c58" class="outline-3">
+<h3 id="orgef83c58"><span class="section-number-3">11.10.</span> кибербезопасность</h3>
+<div class="outline-text-3" id="text-11-10">
+<ul class="org-ul">
+<li>Positive Technologies MCX: POSI</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org07c5e88" class="outline-3">
+<h3 id="org07c5e88"><span class="section-number-3">11.11.</span> лесопромышленный</h3>
+<div class="outline-text-3" id="text-11-11">
+<ul class="org-ul">
+<li>Segezha Group - Сегежа Групп (Sgzh)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org01d1152" class="outline-2">
+<h2 id="org01d1152"><span class="section-number-2">12.</span> Cрочный рынок</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li><a href="https://www.bloomberg.com/markets/commodities">https://www.bloomberg.com/markets/commodities</a></li>
+<li><a href="https://www.moex.com/ru/derivatives/">https://www.moex.com/ru/derivatives/</a></li>
+</ul>
+
+<p>
+Bloomberg Commodity Index
+</p>
+</div>
+<div id="outline-container-org6244164" class="outline-3">
+<h3 id="org6244164"><span class="section-number-3">12.1.</span> теория</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+FORTS(«Фьючерсы и Опционы Российской Торговой Системы», Futures &amp; Options of RTS). Это часть
+Московской биржи и позволяет игрокам использовать в качестве рабочих инструментов фьючерсные и
+опционные контракты.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcb1721e" class="outline-3">
+<h3 id="orgcb1721e"><span class="section-number-3">12.2.</span> фьючерс</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+<b>Покупка фьючерса</b> - подешевели - убыток (ставка на рост)
+</p>
+<ul class="org-ul">
+<li>Представим, что вы купили 10 фьючерсов на акции по 5500 рублей и к моменту исполнения контракта акции стоят 5000 рублей.</li>
+<li>При поставочном контракте вы будете обязаны купить 10 акций по 5500 рублей. Вы потратите 55 000
+рублей, и в вашем портфеле появятся 10 акций общей стоимостью 50 000 рублей. Убыток 5000.</li>
+<li>При расчетном контракте у вас не появится никаких акций — биржа просто рассчитает ваш убыток и
+спишет со счета 5000 рублей.</li>
+<li>При поставочном нужно будет купить акции и если не хватит денег - штрафные санкции.</li>
+</ul>
+
+<p>
+<b>Продажа</b> - подешевели - прибыль (ставка на падение)
+</p>
+
+<p>
+<b>коды фьючерса</b>
+</p>
+<ul class="org-ul">
+<li><a href="https://www.moex.com/a214">https://www.moex.com/a214</a></li>
+<li>CMY - C - код базового актива(2с), M - месяц FGHJKMNQUVXZ, Y - год 0-9 (2020=0)</li>
+<li>GAZR-9.19 Тикер базового актива, месяц и год исполнения контракта.</li>
+</ul>
+
+<p>
+<b>базис фьючерсного контракта</b> - Разница между текущей ценой базового актива и соответствующей фьючерсной ценой
+</p>
+<ul class="org-ul">
+<li>бэквордация - фьючерс торгуется ниже цены базового актива</li>
+<li>контанго</li>
+</ul>
+</div>
+<div id="outline-container-org0399db6" class="outline-4">
+<h4 id="org0399db6"><span class="section-number-4">12.2.1.</span> характеристики фьючесов</h4>
+<div class="outline-text-4" id="text-12-2-1">
+<ul class="org-ul">
+<li><b>тип конртракта</b> (подтип инструмента)
+<ul class="org-ul">
+<li>Поставочный - при исполнении фьючерса вы обязаны купить непосредственно сам базовый актив.</li>
+<li>Расчетный - происходит только финансовый расчет вашей сделки</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd52fe5" class="outline-4">
+<h4 id="orgcd52fe5"><span class="section-number-4">12.2.2.</span> популярные фьючерсы</h4>
+<div class="outline-text-4" id="text-12-2-2">
+<p>
+<a href="https://www.moex.com/a214">https://www.moex.com/a214</a>
+<a href="https://greedisgood.one/fyuchersy-na-moskovskoy-birzhe">https://greedisgood.one/fyuchersy-na-moskovskoy-birzhe</a>
+</p>
+
+<ul class="org-ul">
+<li>RVI-1.21 (VIF1) - волатильность</li>
+<li>Si - курс доллар США – российский рубль</li>
+</ul>
+
+<p>
+other
+</p>
+<ul class="org-ul">
+<li>ED - курс евро – доллар США</li>
+<li>Eu - курс евро – российский рубль</li>
+<li>GAZR</li>
+<li>LKOH</li>
+<li>MIX- or MX - Индекс МосБиржи</li>
+<li>RTS- or RI - Индекс РТС</li>
+<li>SBRF - ПАО Сбербанк (о.а.)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org562c0ac" class="outline-4">
+<h4 id="org562c0ac"><span class="section-number-4">12.2.3.</span> товары <a href="https://www.moex.com/s202">https://www.moex.com/s202</a></h4>
+<div class="outline-text-4" id="text-12-2-3">
+<p>
+На сорт нефти Light Sweet Crude Oil	CL	—
+На сорт нефти марки Brent	BR	—
+Золото	GOLD	—
+Серебро	SILV	—
+Платина	PLT	—
+Палладий	PLD	—
+Алюминий	ALMN	—
+Цинк	Zn	—
+Никель	NI	—
+Медь	Co	—
+Сахар-сырец	SUGR
+Золото	GLD	Поставочный
+Серебро	SLV	—
+</p>
+
+<p>
+Источник: <a href="https://greedisgood.one/fyuchersy-na-moskovskoy-birzhe">https://greedisgood.one/fyuchersy-na-moskovskoy-birzhe</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org35fde02" class="outline-4">
+<h4 id="org35fde02"><span class="section-number-4">12.2.4.</span> Фьючерсы на ОФЗ</h4>
+<div class="outline-text-4" id="text-12-2-4">
+<p>
+2-летние	OFZ2	Поставочный
+10-летние	OF10	—
+15-летние	OF15	—
+6-летние	OFZ6	—
+4-летние	OFZ4	—
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf0de692" class="outline-3">
+<h3 id="orgf0de692"><span class="section-number-3">12.3.</span> опцион</h3>
+<div class="outline-text-3" id="text-12-3">
+<p>
+покупка или продажа по фьючерсу обязательна, в то время как опцион предоставляет на них право (а не обязанность).
+</p>
+</div>
+</div>
+<div id="outline-container-orga64424b" class="outline-3">
+<h3 id="orga64424b"><span class="section-number-3">12.4.</span> Crude Oil</h3>
+<div class="outline-text-3" id="text-12-4">
+<p>
+<a href="https://www.thebalance.com/trading-crude-oil-futures-809351">https://www.thebalance.com/trading-crude-oil-futures-809351</a>
+Производство
+</p>
+<ul class="org-ul">
+<li>бензин gasoline - примерно идет половина</li>
+<li>газ - natural gas</li>
+<li>heating oil - топочный мазут</li>
+<li>diesel fuel - поезда, судоходство, транспорт, тракторах</li>
+<li>jet fuel</li>
+</ul>
+
+<p>
+Влияет
+</p>
+<ul class="org-ul">
+<li>affect 95% of transportation -﻿ That creates higher food prices</li>
+<li>impacts 45% of industrial products and around 20% of residential useю As a result, higher oil
+prices increase the cost of everything you buy, creating inflation.</li>
+<li>Burning oil or gasoline releases the carbon dioxide. It's created a greenhouse effect. -&gt; global warming</li>
+</ul>
+
+<p>
+Виды
+</p>
+<ul class="org-ul">
+<li>WTI West Texas Intermediate - WTI sells at a $3.00-$4.00 per barrel discount to Brent</li>
+<li>Brent Blend</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgca850da" class="outline-2">
+<h2 id="orgca850da"><span class="section-number-2">13.</span> Валюты Currencies</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-orgcb7cd3b" class="outline-3">
+<h3 id="orgcb7cd3b"><span class="section-number-3">13.1.</span> U.S. Dollar Index (USDX, DXY, DX, or, informally, the "Dixie") - relative to a basket of foreign</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+currencies. (basket of U.S.)
+</p>
+<ul class="org-ul">
+<li>The Index goes up when the U.S. dollar gains "strength" when compared to other currencies</li>
+<li>value relative to following select currencies:
+<ul class="org-ul">
+<li>Euro (EUR), 57.6% weight</li>
+<li>Japanese yen (JPY), 13.6%</li>
+<li>Pound sterling (GBP), 11.9%</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85cc584" class="outline-3">
+<h3 id="org85cc584"><span class="section-number-3">13.2.</span> валюты</h3>
+<div class="outline-text-3" id="text-13-2">
+<ul class="org-ul">
+<li>HKD - Hong Kong Dollar -  official currency of the Hong Kong Special Administrative Region</li>
+<li>CHN - Chinese Yuan Renminbi</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbb2893c" class="outline-3">
+<h3 id="orgbb2893c"><span class="section-number-3">13.3.</span> курс рубля</h3>
+<div class="outline-text-3" id="text-13-3">
+<p>
+<b><b>Международный эффект Фишера пример USD/RUB</b></b>
+</p>
+<ol class="org-ol">
+<li>текущий курс рубля</li>
+<li>номинальная ставка в рублях ( гос. долг на требуемый горизонт)</li>
+<li>номинальная ставка в доллорах ( гос. долг на требуемый горизонт)</li>
+</ol>
+<p>
+они
+</p>
+<ul class="org-ul">
+<li>USD/RUB=75 руб / за 1 доллар</li>
+<li>ОФЗ 5 лет = 5.46%</li>
+<li>US Tr 5 лет = 0.32%</li>
+</ul>
+
+<p>
+будущий курс на 5 лет = 75 * (1 + 0.0546)<sup>5</sup>/ (1+0.0032)<sup>5</sup> = 96.28
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8198587" class="outline-2">
+<h2 id="org8198587"><span class="section-number-2">14.</span> Индексы акций</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<a href="https://www.moex.com/ru/index/IMOEX/about/">https://www.moex.com/ru/index/IMOEX/about/</a>
+</p>
+<ul class="org-ul">
+<li>all at one page <a href="https://www.moex.com/ru/data/?tid=3028">https://www.moex.com/ru/data/?tid=3028</a></li>
+<li>heatmap <a href="https://www.moex.com/ru/indices/heatmap">https://www.moex.com/ru/indices/heatmap</a></li>
+</ul>
+
+<p>
+VIX - Индекс волатильности и страха на рынке. CBOE Volatility Index
+</p>
+</div>
+<div id="outline-container-org160fab4" class="outline-3">
+<h3 id="org160fab4"><span class="section-number-3">14.1.</span> рейтинги</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+Environmental social and governance (ESG) investing
+</p>
+
+<p>
+Free Float Market Capitalization - the total dollar value of all of a company's outstanding shares
+ at the current market price.
+</p>
+</div>
+</div>
+<div id="outline-container-orgced629b" class="outline-3">
+<h3 id="orgced629b"><span class="section-number-3">14.2.</span> опережающие индексы</h3>
+<div class="outline-text-3" id="text-14-2">
+<ul class="org-ul">
+<li>pmi</li>
+<li>business climat and activity</li>
+<li>новостные события  отчетов компаний двигают рынок вверх</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga21f765" class="outline-2">
+<h2 id="orga21f765"><span class="section-number-2">15.</span> мировые индексы Биржи</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>DXY - strength of dollar to major currencies</li>
+</ul>
+
+<p>
+<b>RU</b>
+</p>
+<ul class="org-ul">
+<li>MOEXBC	голубые фишки</li>
+</ul>
+<p>
+<b>индекс мос биржи и индекс ртс</b> - наиболее ликвидные 50, одинаковый состав
+</p>
+<ul class="org-ul">
+<li>IMOEX		индекс мос биржи - цена акций в рублях</li>
+<li>RTSI		РТС - цена акций в долларе</li>
+<li>MCXSM 	Индекс МосБиржи средней и малой капитализации</li>
+<li>MOEXINN	Индекс МосБиржи инноваций - в секторе "Рынок инноваций и инвестиций"</li>
+<li>RGBI		государственных облигаций (ОФЗ) Московской биржи.</li>
+<li>акции мира <a href="https://www.moex.com/ru/issue.aspx?board=TQTF&amp;code=FXWO">https://www.moex.com/ru/issue.aspx?board=TQTF&amp;code=FXWO</a></li>
+<li>акции мира <a href="https://www.moex.com/ru/issue.aspx?board=TQTF&amp;code=FXRW">https://www.moex.com/ru/issue.aspx?board=TQTF&amp;code=FXRW</a></li>
+</ul>
+
+<p>
+<b>US</b>
+</p>
+<ul class="org-ul">
+<li>DJIA - Dow Jones - 30 крупнейших - 25% акций.
+<ul class="org-ul">
+<li>Наибольший вес у Boeing, UnitedHealth Group и McDonalds.</li>
+</ul></li>
+<li>S&amp;P 500 - 505 крупнейших 70% акций.
+<ul class="org-ul">
+<li>Наибольший вес — у Microsoft, Apple и Amazon.</li>
+</ul></li>
+<li>NAsdaq100 - 100 технологические и инновационные компании биржи и биржи Nasdaq Exchange.
+<ul class="org-ul">
+<li>Наибольший вес у Microsoft, Amazon и Apple.</li>
+</ul></li>
+<li>Russell 2000 - 2000 наименьших компаний</li>
+</ul>
+<p>
+<b>Europe</b>
+</p>
+<ul class="org-ul">
+<li>FTSE 100	Британия(Лондон) 101акц. наибольший вес у HSBC, Royal Dutch Shell и BP</li>
+<li>DAX		Германия  Frankfurt Stock Exchange - доходность. 30 компаний</li>
+<li>CAC 40	Франция Euronext Paris - 40 компаний</li>
+<li>Stoxx 600	расчитывается STOXX компанией - для малых и крупных компаний</li>
+<li>FTSE MIB	Только Италия. Borsa Italiana - national stock exchange.</li>
+</ul>
+<p>
+<b>Asia</b>
+</p>
+<ul class="org-ul">
+<li>NKY Nikkei 225	Япония (Токио)</li>
+<li>CSI 300	Shanghai Stock Exchange and the Shenzhen Stock Exchange(China)</li>
+<li>Hang Seng	Китай (Гонконг) 33-50 компаний</li>
+<li>Shanghai	Китай Shanghai Composite (SSEC)</li>
+<li>BSE Sensex	Indian (Bombay Stock Exchange) 30 компаний</li>
+<li>S&amp;P/ASX 200	Австралия - S&amp;P для Australian Securities Exchange. 200 компаний</li>
+<li>TPX TOPIX 	Tokyo Stock Exchange Tokyo Price Index TOPIX</li>
+</ul>
+<p>
+<b>Rates</b>
+</p>
+<ul class="org-ul">
+<li>U.S. 10 Yr</li>
+<li>Germany 10 Yr</li>
+<li>U.K. 10 Yr</li>
+<li>Australia 10 Yr</li>
+<li>Japan 10 Yr</li>
+</ul>
+<p>
+<b>FUTURES</b>
+</p>
+<ul class="org-ul">
+<li>Crude Oil(CL)	NYMEX Exchange -</li>
+<li>Brent Crude	BZ:NMX or ICE - Brend Blend</li>
+<li>WTI		West Texas Intermediate</li>
+<li>Gold</li>
+<li>Silver</li>
+<li>Палладий	производство автомобильных катализаторов</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga4ff88f" class="outline-2">
+<h2 id="orga4ff88f"><span class="section-number-2">16.</span> Индикаторы - профессиональные</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+<b>долгосрочный тренд</b>
+</p>
+<ul class="org-ul">
+<li>скользящая средняя 5, 20, 200 days</li>
+</ul>
+<p>
+<b>среднесрочный</b> 4 индикатора
+</p>
+<ul class="org-ul">
+<li>RSI - 16 - перегретость</li>
+<li>ADX 20 days
+<ul class="org-ul">
+<li>синяя - перекупленность</li>
+<li>зелен - быки</li>
+<li>красная - медведи</li>
+</ul></li>
+<li>MACD - показывает тренд</li>
+<li>on balance volume
+<ul class="org-ul">
+<li>показывает силу всплесков с точки зрения торгового оборота</li>
+<li>обороты на свечах</li>
+<li>бычий сигнал - ростет заинтересованность</li>
+</ul></li>
+</ul>
+<p>
+<b>дополнительные</b>
+</p>
+<ul class="org-ul">
+<li>stochastic - default</li>
+<li>price channel 20,60 days</li>
+<li>CCI 30 days - внизу графика - 0 100, -100 - при пробое 100 - дает сигнал на рост</li>
+<li>price channel 20 d</li>
+<li>Fractals ?</li>
+<li>линии фибоначи строятся от точки падения вниз до отскока ( и возможно показывают где волны могут стабилизироваться)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2d1a90d" class="outline-2">
+<h2 id="org2d1a90d"><span class="section-number-2">17.</span> Фундаментальный анализ</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+<a href="https://smart-lab.ru/q/shares_fundamental/">https://smart-lab.ru/q/shares_fundamental/</a>
+</p>
+</div>
+<div id="outline-container-org558df19" class="outline-3">
+<h3 id="org558df19"><span class="section-number-3">17.1.</span> Показатели Компании</h3>
+<div class="outline-text-3" id="text-17-1">
+<p>
+<a href="http://blog.gazprombank.investments/reasonable_price">http://blog.gazprombank.investments/reasonable_price</a>
+</p>
+
+<ul class="org-ul">
+<li>EBITDA (Earnings before interest, taxes, depreciation and amortization)
+<ul class="org-ul">
+<li>насколько прибыльна деятельность компании</li>
+<li>независимо от её задолженности перед различными кредиторами и государством</li>
+</ul></li>
+
+<li>P/BV - price-to-book ratio - высокое значение - информирует о высокой эффективности обращения
+акционерных средств по сравнению с требуемыми рыночными ставками доходности.
+<ul class="org-ul">
+<li>даёт понять, за сколько лет окупятся вложения в определённый проект.</li>
+<li>характеризует общую капитализацию компании/балансовую стоимость. ИЛИ ROE/r (рентабельности
+капитала) к желаемой доходности.</li>
+<li>P/B &lt; 1 — низкое значение. Акции не дооценены. Чаще всего у таких компаний имеются долги.</li>
+</ul></li>
+<li>P/E - Price–earnings ratio P/EPS - рыночной стоимости акции к годовой прибыли, полученной на акцию.
+<ul class="org-ul">
+<li>Малые значения коэффициента сигнализируют о недооценённости рассматриваемой компании, больши́е — о переоценённости.</li>
+</ul></li>
+<li>E/P - Earnings-Price Ratio - попытка справедливо оценить стоимость акций на идеальном рынке</li>
+<li>P/S - Рыночная стоимость компании/Объем продаж</li>
+<li>EV/EBITDA</li>
+<li>ROE - Return On Equity отдача от капитала</li>
+<li>DEBT/EBITDA</li>
+
+<li>R &amp; D - размер инвестиций в research and development</li>
+
+<li>ROE - рентабельность</li>
+
+<li>ROA - рентабельность собственных активов</li>
+
+<li>EPS - Earnings per share Прибыль на акцию. - (Чистая прибыль - Дивиденды) / акции находящиеся в обращении</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaace0d4" class="outline-3">
+<h3 id="orgaace0d4"><span class="section-number-3">17.2.</span> Показатели Страны</h3>
+<div class="outline-text-3" id="text-17-2">
+<ul class="org-ul">
+<li><a href="https://ru.tradingeconomics.com/russia/indicators">https://ru.tradingeconomics.com/russia/indicators</a></li>
+<li><b>Фондовые рынки</b> - MOEX или IMOEX - экономика</li>
+<li><b>Валюта</b> - к USD - показатель кризисов</li>
+<li><b>Государственные облигации 10-лет. доходность</b> - ОФЗ коррелирует с фондовым рынком</li>
+<li><b>Темп роста ВВП</b></li>
+<li><b>Уровень безработицы</b></li>
+<li><b>Уровень инфляции</b> - вывезенные к ввезенным</li>
+<li><b>Процентная ставка ЦБ</b> (Ключевая ставка) - процентная ставка, под которую центральный банк страны выдает
+кредиты коммерческим банкам.</li>
+<li><b>Государственный долг к ВВП</b></li>
+<li><b>Государственный бюджет от ВВП</b></li>
+<li><b>Индекс производственной активности PMI</b></li>
+<li><b>Индекс доверия потребителей</b> - ?
+<ul class="org-ul">
+<li><b>Розничные продажи</b> - данные появляются спустя 2 недели</li>
+</ul></li>
+</ul>
+
+<p>
+По кейнсу макроэкономики:
+</p>
+<ol class="org-ol">
+<li>ВВП - GDP</li>
+<li>уровень безработици - unemployment rate</li>
+<li>инфляции - inflation</li>
+<li>% ставки - rate</li>
+<li>Валютный курс - Exchange rate</li>
+<li>Заработная плата</li>
+<li>Фондовые индексы - Stock Indexes</li>
+</ol>
+
+<p>
+Цели государства
+</p>
+<ul class="org-ul">
+<li>рост ввп</li>
+<li>контроль инфляции</li>
+<li>полная трудовая занятость</li>
+<li>стабильность платежного баланса - движение денежных средств в виде платежей из страны в страну</li>
+</ul>
+</div>
+
+<div id="outline-container-orgfccf8b0" class="outline-4">
+<h4 id="orgfccf8b0"><span class="section-number-4">17.2.1.</span> расчет уровня инфляции - ИПЦ и дефлятор ВВП</h4>
+<div class="outline-text-4" id="text-17-2-1">
+<p>
+<b>Индекс потребительских цен</b> (ИПЦ) в США (г/г) (consumer price index, CPI)
+</p>
+<ul class="org-ul">
+<li>Основной инструмент для расчёта инфляции в США</li>
+<li>Распространенный показатель изменения стоимости жизни</li>
+</ul>
+
+<p>
+<b>дефлятор ВВП</b> - как и ПЦК, инструмент для расчёта уровня инфляции в стране
+</p>
+</div>
+</div>
+<div id="outline-container-org75a5406" class="outline-4">
+<h4 id="org75a5406"><span class="section-number-4">17.2.2.</span> платежный баланс</h4>
+<div class="outline-text-4" id="text-17-2-2">
+<ul class="org-ul">
+<li>Экспорт товаров и услуг -&gt; рост требований к нерезидентам «+»</li>
+<li>уменьшение финансовых обязательств перед нерезидентами «−»</li>
+<li>текущие операции - (торговый баланс, баланс услуг)
+<ul class="org-ul">
+<li>торговый баланс - сальдо стоимости товаров = экспорт - импорт.</li>
+</ul></li>
+<li>первичных и вторичных доходов: (оплата труда, проценты, дивиденды) полученное от резидентов других стран  +  (страховые премии, международные переводы)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2094003" class="outline-3">
+<h3 id="org2094003"><span class="section-number-3">17.3.</span> общемировые показатели</h3>
+<div class="outline-text-3" id="text-17-3">
+<ul class="org-ul">
+<li>ликвидность мировых ЦБ</li>
+<li>International business cycles</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org00a5dd0" class="outline-3">
+<h3 id="org00a5dd0"><span class="section-number-3">17.4.</span> Russian indexes</h3>
+<div class="outline-text-3" id="text-17-4">
+<p>
+Russia Small Business Index (RSBI), Индекс бизнес-ожиданий малого и среднего бизнеса (RSBI)
+</p>
+<ul class="org-ul">
+<li><a href="https://www.statista.com/statistics/1118489/russia-small-business-index/">https://www.statista.com/statistics/1118489/russia-small-business-index/</a></li>
+<li>кредиты, инвестиции, кадры, продажи</li>
+<li>Обновляется ежемесячно.</li>
+<li><a href="https://cbr.ru/develop/msp/irsbi/">https://cbr.ru/develop/msp/irsbi/</a></li>
+<li>have early access: <a href="https://www.kommersant.ru">https://www.kommersant.ru</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c288b8" class="outline-2">
+<h2 id="org0c288b8"><span class="section-number-2">18.</span> Машенничество</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+РФ: манипулирование рынком является уголовным преступлением.
+</p>
+<ul class="org-ul">
+<li>фальсификация новостей.
+<ul class="org-ul">
+<li>pump&amp;dump</li>
+</ul></li>
+<li>технические манипуляции
+<ul class="org-ul">
+<li>spoofing - заявка на покупку/продажу без реализации</li>
+<li>«Водосброс» - имеется половина в акциях на вторую половину покупает скрытно и продает явно чтобы цена упала</li>
+<li>«Стиральная доска» - провоцируют резкие непредсказуемые скачки котировок вверх и вниз.Мелкие
+спекулянты начинают беспокоиться и на всякий случай выходят из своих позиций, то есть продают
+активы.</li>
+<li>«Укачивание» - тоже только волнами</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org4449deb" class="outline-3">
+<h3 id="org4449deb"><span class="section-number-3">18.1.</span> pump&amp;dump (накачать и сбросить)</h3>
+<div class="outline-text-3" id="text-18-1">
+<ul class="org-ul">
+<li><a href="https://quote.rbc.ru/news/article/5ebeb4ef9a7947b87b7976d8">https://quote.rbc.ru/news/article/5ebeb4ef9a7947b87b7976d8</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3627e9e" class="outline-2">
+<h2 id="org3627e9e"><span class="section-number-2">19.</span> Налог и ИИС</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+Факты:
+</p>
+<ul class="org-ul">
+<li>НДФЛ: 13% с дохода</li>
+<li>В январе брокер рассчитает налог за прошлый год</li>
+</ul>
+
+<p>
+Советы
+</p>
+<ul class="org-ul">
+<li>если подождете с продажей до января, то налог возникнет только через год и вы сможете целый год пользоваться деньгами.</li>
+</ul>
+</div>
+
+<div id="outline-container-orgb04461e" class="outline-3">
+<h3 id="orgb04461e"><span class="section-number-3">19.1.</span> Индивидуальный инвестиционный счё</h3>
+<div class="outline-text-3" id="text-19-1">
+<p>
+По закону налог на доход по вкладам в рублях происходит в том случае, если процентная ставка по вкладу
+превышает ставку рефинансирования Центробанка РФ, увеличенную на 10 процентных пунктов.
+</p>
+
+
+<p>
+3 года или 1 год для инновационных - иначе ничего
+</p>
+
+<p>
+На выбор:
+</p>
+<ul class="org-ul">
+<li>Вычет в размере 13 % на вносимые средства из НДФЛ, уплаченный физическим лицом за текущий год по основному
+месту работы.</li>
+<li>Освобождение от выплаты налога на доход, полученный на ИИС (при закрытии счёта).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0f2f9ff" class="outline-3">
+<h3 id="org0f2f9ff"><span class="section-number-3">19.2.</span> <span class="todo TODO">TODO</span> тип А</h3>
+</div>
+<div id="outline-container-orgae6da43" class="outline-3">
+<h3 id="orgae6da43"><span class="section-number-3">19.3.</span> тип Б</h3>
+<div class="outline-text-3" id="text-19-3">
+<p>
+<a href="https://www.banki.ru/blog/BAY/10565.php">https://www.banki.ru/blog/BAY/10565.php</a>
+</p>
+<ul class="org-ul">
+<li>На дивиденды не распространяется.</li>
+<li>На купоны, по ставке 35% не распространяется.</li>
+<li>На купоны по ставке 13% РАСПРОСТРАНЯЕТСЯ!!!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga09a449" class="outline-2">
+<h2 id="orga09a449"><span class="section-number-2">20.</span> Корреляции</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+<a href="http://impactopia.com/">http://impactopia.com/</a>
+</p>
+<ul class="org-ul">
+<li>российские <a href="https://www.finam.ru/profile/mirovye-indeksy/tis/compare">https://www.finam.ru/profile/mirovye-indeksy/tis/compare</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f63e50" class="outline-2">
+<h2 id="org5f63e50"><span class="section-number-2">21.</span> Риск менеджмент</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+<b>риск к прибыли должен быть больше чем 3 к 1</b>
+</p>
+</div>
+
+<div id="outline-container-orgfec4854" class="outline-3">
+<h3 id="orgfec4854"><span class="section-number-3">21.1.</span> Виды</h3>
+<div class="outline-text-3" id="text-21-1">
+<dl class="org-dl">
+<dt>Рыночный риск</dt><dd>изменение курса акций</dd>
+<dt>Деловой риск</dt><dd>неопределенность в уровне реализации продукции и дохода предприятия в будущем</dd>
+<dt>Риск эмитента</dt><dd>потери позиций организации на рынке
+<ul class="org-ul">
+<li>усиления конкуренции;</li>
+<li>снижения спроса на продукцию;</li>
+<li>нерациональное управление и прочие.</li>
+</ul></dd>
+<dt>Финансовый риск (кредитный риск или риск дефолта)</dt><dd>касается предприятий с высокой нагрузкой до долгам</dd>
+<dt>Экономический и отраслевые риски</dt><dd>.
+<ul class="org-ul">
+<li>стагнации сектора в результате развития другой отрасли</li>
+<li>изменения экономических показателей страны</li>
+<li>возникновения кризиса</li>
+<li>усиления инфляции и прочие экономические показатели.</li>
+</ul></dd>
+<dt>Страновой риск</dt><dd>деятельности правительства
+<ul class="org-ul">
+<li>уровень коррупции</li>
+<li>политический срой</li>
+<li>экономическую стабильность</li>
+<li>верховенство закона</li>
+</ul></dd>
+<dt>Инфраструктурный риск</dt><dd>Например, банка или иных финансовых организаций, брокера или управляющей компании</dd>
+<dt>Процентный риск</dt><dd>Повышаются акции падают, облигации повышаются</dd>
+<dt>Инфляционный риск</dt><dd>.</dd>
+<dt>Событийный риск</dt><dd>.</dd>
+<dt>Валютный риск</dt><dd>свазан с процентным риском</dd>
+<dt>Риск ликвидности</dt><dd>.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org70a177f" class="outline-2">
+<h2 id="org70a177f"><span class="section-number-2">22.</span> Опасности</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>перегретая бочка - когда нет смысла сидеть на бочке которая непонятно когда взорвется
+<ul class="org-ul">
+<li>смутный или по тренду фон</li>
+<li>наметился тренд а ты пошел против него</li>
+<li>отсутствие отскоков - признак тренда</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5d36818" class="outline-2">
+<h2 id="org5d36818"><span class="section-number-2">23.</span> terms</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+лекции <a href="https://investcab.ru/ru/uch_centr/kurs/finbase.aspx">https://investcab.ru/ru/uch_centr/kurs/finbase.aspx</a>
+</p>
+
+<p>
+terms
+</p>
+<ul class="org-ul">
+<li>Спред – это разница между лучшим «бидом» и лучшим «аском»</li>
+<li>spoofing: обман - ложные сигналы путем покупки или продажи</li>
+<li>тик - позиция в стакане (на тик выше на тик ниже)</li>
+<li>дивергенция - расхождение показателя(в основном цены) и индикатора, когда один показатель опровергается другим</li>
+</ul>
+
+<p>
+eng
+</p>
+<dl class="org-dl">
+<dt>stock market  [stɒk]  [ˈmɑːkɪt]</dt><dd>фондовый рынок</dd>
+<dt>Candlestick chart</dt><dd>японские свечи</dd>
+<dt>DOM, Depth of Market </dt><dd>Биржевой стакан</dd>
+<dt>bid</dt><dd>предлагаемая цена покупки</dd>
+<dt>ask</dt><dd>запрашиваемая цена продажи</dd>
+<dt>offer</dt><dd>ask or bid</dd>
+</dl>
+</div>
+</div>
+
+
+<div id="outline-container-org35050cc" class="outline-2">
+<h2 id="org35050cc"><span class="section-number-2">24.</span> lstm</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>MAIN Forecasting stock prices with a feature fusion LSTM-CNN model using different representations of the
+same data <a href="https://journals.plos.org/plosone/article/authors?id=10.1371/journal.pone.0212320">https://journals.plos.org/plosone/article/authors?id=10.1371/journal.pone.0212320</a></li>
+<li>Экспорт <a href="https://www.finam.ru/profile/moex-akcii/bashneft-ank-ao/export/?market=1">https://www.finam.ru/profile/moex-akcii/bashneft-ank-ao/export/?market=1</a></li>
+<li>preperation <a href="https://machinelearningmastery.com/prepare-univariate-time-series-data-long-short-term-memory-networks/">https://machinelearningmastery.com/prepare-univariate-time-series-data-long-short-term-memory-networks/</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org294cbcf" class="outline-3">
+<h3 id="org294cbcf"><span class="section-number-3">24.1.</span> TODO</h3>
+<div class="outline-text-3" id="text-24-1">
+<ol class="org-ol">
+<li>выгрузить погоду</li>
+</ol>
+<p>
+<a href="https://rp5.ru/%D0%90%D1%80%D1%85%D0%B8%D0%B2_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D1%8B_%D0%B2_%D0%9F%D0%BE">https://rp5.ru/%D0%90%D1%80%D1%85%D0%B8%D0%B2_%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D1%8B_%D0%B2_%D0%9F%D0%BE</a>
+</p>
+<ol class="org-ol">
+<li>склеить с индеком ммвб</li>
+<li>оценить переобучение сравнивания обучающую и тестовую выборки - accuracy должны быть близки</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org6b60b6b" class="outline-3">
+<h3 id="org6b60b6b"><span class="section-number-3">24.2.</span> artice <a href="https://www.datacamp.com/community/tutorials/lstm-python-stock-market">https://www.datacamp.com/community/tutorials/lstm-python-stock-market</a></h3>
+<div class="outline-text-3" id="text-24-2">
+<p>
+train = first 1000
+test = else
+</p>
+
+<ol class="org-ol">
+<li>splitting the full series into windows. If you don't do this, the earlier data will be close to 0 and will
+not add much value to the learning process</li>
+<li>Scaling <a href="https://scikit-learn.org/0.22/modules/preprocessing.html">https://scikit-learn.org/0.22/modules/preprocessing.html</a>  scaler = MinMaxScaler()</li>
+<li>smooth the data using the exponential moving average</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org922e93e" class="outline-3">
+<h3 id="org922e93e"><span class="section-number-3">24.3.</span> психологические аспекты</h3>
+<div class="outline-text-3" id="text-24-3">
+<ul class="org-ul">
+<li>круглые цены</li>
+<li>дни выплат дивидендов</li>
+<li>дни налоговой отчетности публикации чего-то TODO</li>
+<li>крупные новости</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org39fc831" class="outline-3">
+<h3 id="org39fc831"><span class="section-number-3">24.4.</span> формы биологической памяти</h3>
+<div class="outline-text-3" id="text-24-4">
+<ul class="org-ul">
+<li>Генетическая память
+<ul class="org-ul">
+<li>память биологического вида</li>
+<li>стабильность хранения информации</li>
+</ul></li>
+<li>Иммунологическая память
+<ul class="org-ul">
+<li>после первой встречи &#x2026;  узнавать их при повторной встрече</li>
+</ul></li>
+<li>Нейрологическая память
+<ul class="org-ul">
+<li>изменения нервной системы, которые влияют на протекание будущих рефлекторных реакций</li>
+<li>энграммы - физическая привычка</li>
+<li>временное свертывание на основе существования собственного времени мозга</li>
+<li>хронотип, то есть внутренний пространственно временной образ внешнего мира</li>
+<li>типы:
+<ul class="org-ul">
+<li>Мгновенная - сенсорная менее секунды</li>
+<li>Краткосрочная - несколько секунд</li>
+<li>Долгосрочная - минуты-годыx</li>
+</ul></li>
+<li>механизмы:
+<ul class="org-ul">
+<li>Реверберационная теория - нейрон замкнут на себя или образует циклы с другими</li>
+<li>Биохимические исследования памяти - изменениями свойств РНК и ДНК и белка в нейронах</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgddd7dd6" class="outline-2">
+<h2 id="orgddd7dd6"><span class="section-number-2">25.</span> msk</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+Т+2
+</p>
+<ul class="org-ul">
+<li>означает, что списания и зачисления ценных бумаг будут происходить с задержкой в два дня</li>
+<li>В старом режиме Т0 временные разницы поставок и зачислений ценных бумаг создавали серьезные сложности при
+проведении бухгалтерских операций у иностранных инвесторов в РФ.</li>
+<li>по лимиту Т0 операция отражается мгновенно, а вот по лимиту Т2 деньги спишутся только через 2 дня.</li>
+<li>T2 фактическое владение акциями наступет через 2 дня</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca75f84" class="outline-2">
+<h2 id="orgca75f84"><span class="section-number-2">26.</span> голубые фишки</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li>Сбербанк</li>
+
+<li>ГАЗПРОМ ао - природный газ</li>
+<li>Роснефть - нефтегазовая компания, контрольный пакет акций которой принадлежит государственному АО «Роснефтегаз»</li>
+<li>ЛУКОЙЛ - нефть газ добыча переработка</li>
+<li>ГМКНорНик - первое место (40%) в мире по объему производства палладия и второе по производству (12%) никеля
+<ul class="org-ul">
+<li>планирует запустить Читинский медный проект</li>
+</ul></li>
+<li>Новатэк ао -  второй по объёмам добычи производитель природного газа в России</li>
+
+<li>VTBR -</li>
+<li>Газпром нефть ПАО</li>
+<li>Сургнфгз SNGS - нефтяных и газодобывающих компаний</li>
+<li>Татнфт ао - нефтегазодобыча, нефтепереработка, нефтегазохимия, шинный комплекс, сеть АЗС, электроэнергетика,
+разработка и производство оборудования для нефтегазовой отрасли и блок сервисных структур</li>
+
+<li>Ленэнерго LSNGP</li>
+<li>транснефть TRNFP</li>
+<li>полюс PLZL - золотодобывающая</li>
+
+<li>МТС-ао - в странах СНГ</li>
+
+<li>Яндекс</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>X5 Retail Group-гдр</li>
+<li>Магнит ао</li>
+
+<li>НЛМК ао - международная сталелитейная компания  Новолипецкий металлургический комбинат (первый)</li>
+<li>СевСт-ао -  сталелитейная и горнодобывающая компания, владеющая Череповецким металлургическим комбинатом ( второй)</li>
+<li>АЛРОСА ао - группа алмазодобывающих компаний</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf724b46" class="outline-2">
+<h2 id="orgf724b46"><span class="section-number-2">27.</span> китайские компании</h2>
+<div class="outline-text-2" id="text-27">
+</div>
+<div id="outline-container-orgb2db036" class="outline-3">
+<h3 id="orgb2db036"><span class="section-number-3">27.1.</span> Alibaba Group, Alibaba (HK)</h3>
+<div class="outline-text-3" id="text-27-1">
+<ul class="org-ul">
+<li>выручка $864.54 млрд</li>
+<li>EBITDA $154.89 млрд</li>
+</ul>
+
+<p>
+структура выручки 2021
+</p>
+<ul class="org-ul">
+<li>69% рочничная торговля в Китае</li>
+<li>7% Облачные сервисы</li>
+<li>5% Международная розничная торговля</li>
+<li>5% Логистические сервисы</li>
+<li>4% Цифровые сервисы и развлечени</li>
+<li><p>
+10% Прочие
+</p>
+
+<p>
+JD.com - concurent of Alibaba Group
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8392940" class="outline-2">
+<h2 id="org8392940"><span class="section-number-2">28.</span> ключевые даты</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>через час после начала - импульсивные</li>
+<li>16 10 - открытие S&amp;P 500</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5d4e1e3" class="outline-2">
+<h2 id="org5d4e1e3"><span class="section-number-2">29.</span> covid</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>FedEx Corporation is an American multinational delivery services</li>
+<li>Hilton Worldwide Holdings Inc.</li>
+<li>Morgans Hotel Group</li>
+</ul>
+
+<p>
+паттерны - выростут авиаперевозки
+</p>
+</div>
+</div>
+<div id="outline-container-orgcaab71b" class="outline-2">
+<h2 id="orgcaab71b"><span class="section-number-2">30.</span> венчур Venture ['venʧə]</h2>
+<div class="outline-text-2" id="text-30">
+</div>
+<div id="outline-container-org88f3908" class="outline-3">
+<h3 id="org88f3908"><span class="section-number-3">30.1.</span> terms</h3>
+<div class="outline-text-3" id="text-30-1">
+<ul class="org-ul">
+<li>MVP - Minimum viable product</li>
+<li>Google Quick Deployment Risk - giants like Google, Microsoft, or others can roll out updates to
+their current products, add the missing new feature, and kick out the startups</li>
+<li>DYOR - Do Your Own Research</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge0218cb" class="outline-3">
+<h3 id="orge0218cb"><span class="section-number-3">30.2.</span> startup scoring</h3>
+<div class="outline-text-3" id="text-30-2">
+<ol class="org-ol">
+<li>find startup</li>
+<li>pre-evaluate it
+<ul class="org-ul">
+<li>we initially found the project interesting</li>
+<li>the startup has traction and a working MVP</li>
+<li>there is a huge online translation market and a clear target audience</li>
+<li>the startup team is decent</li>
+<li>we didn't find any other red flags.</li>
+</ul></li>
+<li>score it under 220 parameters
+<ul class="org-ul">
+<li>The management team: The management team is critical to the success of any startup. Look for a team with a track record of success, strong leadership skills, and the ability to execute their vision.</li>
+<li>Market opportunity: Evaluate the size and potential of the market in which the startup is operating. Is there a clear demand for the product or service that the startup is offering?</li>
+<li>Competitive landscape: Consider the competition that the startup will face. Is the startup well positioned to compete in the market, or are there other established players that could make it difficult for the startup to gain a foothold?</li>
+<li>Product or service: Evaluate the quality and uniqueness of the startup's product or service. Does it solve a real problem or meet a real need in the market? Is it innovative and differentiated from competitors?</li>
+<li>Financial projections: Look at the startup's financial projections, including its projected revenue and profitability. Are the projections realistic and based on solid assumptions?</li>
+<li>Use of funds: Consider how the startup plans to use the funding it is seeking. Is the company's capital allocation strategy sound and aligned with its growth plans?</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf54da33" class="outline-3">
+<h3 id="orgf54da33"><span class="section-number-3">30.3.</span> (old)телемедицина</h3>
+<div class="outline-text-3" id="text-30-3">
+<p>
+medicalstartups.com
+</p>
+<ul class="org-ul">
+<li>lyra health</li>
+<li>neuronetics</li>
+<li>quartet Health</li>
+<li>Mindstrong</li>
+<li>Pear Thepeutics - приложение для выполнения предписаний врачей</li>
+</ul>
+
+
+<p>
+youtube calm - ucla health, neurostar, advanced therapy, novartics
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org853a808" class="outline-2">
+<h2 id="org853a808"><span class="section-number-2">31.</span> crypto</h2>
+<div class="outline-text-2" id="text-31">
+</div>
+<div id="outline-container-org59d2b96" class="outline-3">
+<h3 id="org59d2b96"><span class="section-number-3">31.1.</span> terms</h3>
+<div class="outline-text-3" id="text-31-1">
+<ul class="org-ul">
+<li>Maker Fees - customers who want to SELL cryptocurrencies. order that is NOT executed or
+matched immediately - highter or lower that current price.</li>
+<li>Taker Fees - customers who want to BUY cryptocurrencies.  person who picks up an existing order
+from the order book.</li>
+<li>stablecoins - see <a href="theory#MissingReference">theory#MissingReference</a></li>
+<li>USDT (Tether USD) is a multi-chain stablecoin, meaning it is issued on multiple blockchain networks.
+<ul class="org-ul">
+<li>Omni Layer (Bitcoin blockchain): USDT was first launched on the Omni Layer, a protocol built on
+top of the Bitcoin blockchain. This version of USDT is still available and widely used.</li>
+<li>Ethereum (ERC20)</li>
+<li>USDT-TRC20 is a version of the USDT stablecoin that is optimized for use on the TRON blockchain,
+offering faster transaction times, lower fees, and increased compatibility with TRON-based
+applications.</li>
+<li>EOS</li>
+</ul></li>
+<li>Биткоин-краны — это сайты или приложения, которые предоставляют возможность получить биткоины
+(сатоши) бесплатно за выполнение простых задач.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge891fbd" class="outline-3">
+<h3 id="orge891fbd"><span class="section-number-3">31.2.</span> plan</h3>
+<div class="outline-text-3" id="text-31-2">
+<p>
+buy crypto at <a href="https://www.bybit.com/en">https://www.bybit.com/en</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org276107a" class="outline-3">
+<h3 id="org276107a"><span class="section-number-3">31.3.</span> buy with KYC</h3>
+<div class="outline-text-3" id="text-31-3">
+<p>
+<a href="https://prostocash.com/sbp-rub-na-bitcoin.html">https://prostocash.com/sbp-rub-na-bitcoin.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46912c5" class="outline-3">
+<h3 id="org46912c5"><span class="section-number-3">31.4.</span> ru exchangers list</h3>
+<div class="outline-text-3" id="text-31-4">
+<ul class="org-ul">
+<li><a href="https://www.bestchange.ru/list.html">https://www.bestchange.ru/list.html</a></li>
+<li><a href="https://exchangesumo.com/">https://exchangesumo.com/</a></li>
+<li><a href="https://exnode.ru/">https://exnode.ru/</a></li>
+<li><a href="https://profinvestment.com/galaxy-coin/">https://profinvestment.com/galaxy-coin/</a></li>
+<li><a href="https://yourcryptoex.ru/">https://yourcryptoex.ru/</a>
+<ul class="org-ul">
+<li><a href="https://t.me/yourcryptoex_bot">https://t.me/yourcryptoex_bot</a></li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><a href="https://arbuz.io">https://arbuz.io</a></li>
+<li>USDT to MIR card: <a href="https://tasty-changer.com/">https://tasty-changer.com/</a></li>
+<li>crypto to crypto <a href="https://multival.is">https://multival.is</a></li>
+<li>small <a href="https://barry24.com/">https://barry24.com/</a></li>
+<li>very small MIR to crypto <a href="https://galaxy-coin.cash">https://galaxy-coin.cash</a></li>
+</ul>
+</div>
+<div id="outline-container-orgf8ee646" class="outline-4">
+<h4 id="orgf8ee646"><span class="section-number-4">31.4.1.</span> AML</h4>
+<div class="outline-text-4" id="text-31-4-1">
+<ul class="org-ul">
+<li>По запросу регулирующих и полномочных органов Пользователи обязаны проходить процедуру
+идентификации и верификации личности в соответствии с нашими политиками и требованиями
+законодательства.</li>
+<li>Мы собираем и проверяем информацию о клиентах, включая их личные данные и источники средств, и
+обновляем эту информацию по мере необходимости.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org709285b" class="outline-3">
+<h3 id="org709285b"><span class="section-number-3">31.5.</span> exchange crypto</h3>
+<div class="outline-text-3" id="text-31-5">
+<p>
+<a href="https://ff.io/">https://ff.io/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org93253ea" class="outline-3">
+<h3 id="org93253ea"><span class="section-number-3">31.6.</span> map</h3>
+<div class="outline-text-3" id="text-31-6">
+<p>
+CoinATMRadar и CoinMap
+</p>
+<ul class="org-ul">
+<li><a href="https://coinatmradar.com/">https://coinatmradar.com/</a></li>
+<li><a href="https://coinmap.org/view/#/map/55.67656809/37.62147903/14">https://coinmap.org/view/#/map/55.67656809/37.62147903/14</a></li>
+</ul>
+
+
+
+<p>
+<a href="https://www.rbc.ru/crypto/news/5ed67a609a79470d5ba9360a">https://www.rbc.ru/crypto/news/5ed67a609a79470d5ba9360a</a>
+</p>
+
+<p>
+В москва 5 штук
+</p>
+<ul class="org-ul">
+<li>Средний Староданиловский пер. 3</li>
+<li>caffee Simferopolsky proezd, 4  <a href="https://www.industrycoffee.ru">https://www.industrycoffee.ru</a> +7495 133 87 71</li>
+<li>Нижняя сыромятническая ул д11к2   рядом с Центр цифрового искусства Artplay Media Нижняя сыромятническая ул д10стр2</li>
+<li>Добрынинска Фарматен аптечный пункт</li>
+</ul>
+</div>
+
+<div id="outline-container-orge584d3c" class="outline-4">
+<h4 id="orge584d3c"><span class="section-number-4">31.6.1.</span> atms</h4>
+<div class="outline-text-4" id="text-31-6-1">
+<p>
+Zhitnaya St 10, 119049 Moscow
+</p>
+<ul class="org-ul">
+<li>Trovemat crypto ATM@DEECrypto Store&amp;Club.</li>
+<li>Opened: Mon-San: 09:00 a.m. - 06:00 p.m.</li>
+</ul>
+
+<p>
+New Arbat Avenue 8 с2, 119002 Москва
+</p>
+<ul class="org-ul">
+<li>работаем 24 ч</li>
+</ul>
+
+<p>
+Нижняя Сыромятническая улица 11 к2,
+</p>
+<ul class="org-ul">
+<li>exchange of up to 20BTC</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7255aee" class="outline-4">
+<h4 id="org7255aee"><span class="section-number-4">31.6.2.</span> ATM <a href="https://www.btcatm.ru">https://www.btcatm.ru</a></h4>
+<div class="outline-text-4" id="text-31-6-2">
+<ul class="org-ul">
+<li>до 15.000 рублей за каждую транзакцию</li>
+<li>12% от официального курса</li>
+<li>1 BTC = ₽ 12.105.358</li>
+</ul>
+
+<p>
+ТЦ Корабль
+Большая Тульская ул., 2, Москва, 115191
+Часы работы - с 8:00 до 23:00
+Метро Тульская - выход 2
+</p>
+
+<p>
+ТЦ Наутилус
+Никольская ул., 25, Москва, 109012
+Часы работы - с 10:00 до 23:00
+Метро Лубянка - выход 9 или 10
+</p>
+
+<p>
+ТЦ Таганка
+Таганская ул., 2, Москва, 109147
+Часы работы - с 9:00 до 21:00
+Метро Марксистская - выход 6
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org87db5f4" class="outline-3">
+<h3 id="org87db5f4"><span class="section-number-3">31.7.</span> DeFi: Decentralized Finance</h3>
+<div class="outline-text-3" id="text-31-7">
+<p>
+is any application that uses blockchain and cryptocurrency techniques or technology to offer
+ financial services.
+</p>
+</div>
+<div id="outline-container-org9a27806" class="outline-4">
+<h4 id="org9a27806"><span class="section-number-4">31.7.1.</span> terms</h4>
+<div class="outline-text-4" id="text-31-7-1">
+<ul class="org-ul">
+<li>ledger - A blockchain is a distributed and secured database</li>
+<li>blocks - transactions are recorded in files</li>
+<li>wallets - applications, that can send information to a blockchain.</li>
+<li>private keys - passwords</li>
+<li>tokens or cryptocurrencies - money</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd4604bd" class="outline-4">
+<h4 id="orgd4604bd"><span class="section-number-4">31.7.2.</span> weaks</h4>
+<div class="outline-text-4" id="text-31-7-2">
+<ul class="org-ul">
+<li>weaknesses in DeFi applications.</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd62344a" class="outline-3">
+<h3 id="orgd62344a"><span class="section-number-3">31.8.</span> To ensure that a Bitcoin transaction was successfully transferred from your wallet to someone else's, follow these steps:</h3>
+<div class="outline-text-3" id="text-31-8">
+<ol class="org-ol">
+<li>Check your wallet's transaction history: Look for the transaction in your wallet's history or
+ledger. Most wallets will show the transaction as "sent" or "pending" initially, and then update
+to "confirmed" once the transaction is verified on the blockchain.</li>
+<li>Verify the transaction on a blockchain explorer: Use a blockchain explorer like Blockchain.com,
+Blockchair, or Bitcoin Block Explorer to search for the transaction ID (TXID) or the recipient's
+Bitcoin address. You can find the TXID in your wallet's transaction history. If the transaction
+is confirmed, you should see it listed on the blockchain explorer with the correct details (e.g.,
+sender, recipient, amount, and confirmation status).</li>
+<li>Check the number of confirmations: Bitcoin transactions require a certain number of confirmations
+(typically 3-6) to be considered fully confirmed and irreversible. You can check the number of
+confirmations on the blockchain explorer. Once the transaction has the required number of
+confirmations, you can be reasonably sure it was successfully transferred.</li>
+<li>Wait for the recipient to confirm receipt: If possible, ask the recipient to confirm they have
+received the Bitcoin. This can provide an additional layer of assurance that the transaction was
+successful.</li>
+<li>Monitor the transaction's status: Keep an eye on the transaction's status over time. If the
+transaction is not confirmed after a reasonable amount of time (e.g., 24-48 hours), it may
+indicate an issue with the transaction or the network.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc5820d6" class="outline-3">
+<h3 id="orgc5820d6"><span class="section-number-3">31.9.</span> links</h3>
+<div class="outline-text-3" id="text-31-9">
+<ul class="org-ul">
+<li>rus <a href="https://tv.rbc.ru/tags/%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B">https://tv.rbc.ru/tags/%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B</a></li>
+<li>exnode.ru</li>
+<li><a href="https://www.kommersant.ru/">https://www.kommersant.ru/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab8ec7f" class="outline-2">
+<h2 id="orgab8ec7f"><span class="section-number-2">32.</span> receive money in Russia</h2>
+<div class="outline-text-2" id="text-32">
+<ul class="org-ul">
+<li>Банковский swift-перевод</li>
+<li>Банковские карты ближайших стран</li>
+<li>Криптовалюты, криптопроцессингом
+<ul class="org-ul">
+<li>нет механизма возврата</li>
+<li>, также никак не показать расходы</li>
+</ul></li>
+<li>Посредники и сервисы - 8 до 12%
+<ul class="org-ul">
+<li><a href="https://www.deel.com/">https://www.deel.com/</a> <a href="https://jet-pay.ru/">https://jet-pay.ru/</a>  <a href="https://www.contact-sys.com/">https://www.contact-sys.com/</a></li>
+<li>БАНК АВАНГАРД</li>
+<li>НАРОДНЫЙ ДОВЕРИТЕЛЬНЫЙ БАНК</li>
+</ul></li>
+<li><a href="https://easypayments.online/blog/top-mezhdunarodnyh-platezhnyh-sistem">https://easypayments.online/blog/top-mezhdunarodnyh-platezhnyh-sistem</a></li>
+</ul>
+
+
+<p>
+<a href="https://habr.com/ru/articles/730382/">https://habr.com/ru/articles/730382/</a>
+</p>
+</div>
+<div id="outline-container-orgb8d5afe" class="outline-3">
+<h3 id="orgb8d5afe"><span class="section-number-3">32.1.</span> AI answer (bad)</h3>
+<div class="outline-text-3" id="text-32-1">
+<ol class="org-ol">
+<li>Decentralized Solutions: decentralized finance (DeFi) platforms. Cryptocurrencies, particularly
+stablecoins like USDC or DAI, can facilitate small payments without the geographical restrictions
+imposed by traditional systems. They allow for peer-to-peer transactions that are not reliant on a
+central authority, thus bypassing conventional banking barriers.</li>
+
+<li>Alternative Payment Platforms or emerging platforms: <b>Revolut</b> or <b>TransferWise</b> (now Wise),
+which may have more flexible policies regarding international transfers. They often cater to
+smaller transactions and can provide competitive exchange rates.
+<ul class="org-ul">
+<li>USDC is designed to comply with US regulations, including anti-money laundering (AML) and
+know-your-customer (KYC) requirements.</li>
+</ul></li>
+</ol>
+
+
+<ol class="org-ol">
+<li>Digital Wallets: Platforms like PayPal or Skrill might still operate within certain regulations.</li>
+<li>Emerging Payment Solutions: Investigate new entrants into the payment space, such as <b>Mercuryo</b> or
+<b>MoonPay</b>. These services are designed to facilitate cryptocurrency transactions and could serve as
+a bridge for small payments between different countries, including Russia.</li>
+<li>Community-Based Solutions: Lastly, consider developing a community-driven payment network that
+utilizes local currencies or barter systems. This could be a radical shift from traditional
+finance, allowing individuals to transact directly based on mutual trust and value exchange,
+rather than relying on established financial institutions.</li>
+</ol>
+
+<p>
+focusing on stablecoins for stability and ease of use.
+</p>
+</div>
+</div>
+<div id="outline-container-org179872b" class="outline-3">
+<h3 id="org179872b"><span class="section-number-3">32.2.</span> limits CB</h3>
+<div class="outline-text-3" id="text-32-2">
+<ul class="org-ul">
+<li>Физические лица резиденты РФ в течение календарного месяца имеют право перевести со своего счёта в российском банке на свой счёт или другому физическому лицу за рубежом (резиденту или нерезиденту РФ), в том числе являющемуся их супругом или близким родственником (родственником прямой восходящей и нисходящей линии (родителем и ребенком, дедушкой, бабушкой и внуком/внучкой), полнородным и неполнородным (имеющим общих отца или мать) братом и сестрой, усыновителем и усыновленным) сумму в размере не более 1 миллиона долларов США или эквивалент в другой иностранной валюте*.</li>
+<li>Физические лица нерезиденты РФ из дружественных стран в течение календарного месяца имеют право перевести со своего счёта в российском банке на свой счёт или другому физическому лицу за рубежом сумму в размере не более 1 миллиона долларов США или эквивалент в другой иностранной валюте*.</li>
+
+<li>Дополнительно сверх этой суммы клиенты могут переводить на счета за рубеж денежные средства, полученные ими в качестве зарплаты по трудовым договорам и/или оплаты по гражданско-правовому договору (за выполненные работы, оказанные услуги на территории РФ), как со своих зарплатных счетов, так и с других счетов (включая счета в других российских банках), на которые суммы зарплаты или вознаграждения были перечислены с зарплатных счетов.</li>
+<li>Физические лица нерезиденты РФ из недружественных стран вправе переводить на счета за рубеж денежные средства, полученные ими в качестве зарплаты по трудовым договорам и/или оплаты по гражданско-правовому договору (за выполненные работы, оказанные услуги на территории РФ), как со своих зарплатных счетов, так и других счетов (включая счета в других российских банках), на которые суммы зарплаты или вознаграждения были перечислены с зарплатных счетов.</li>
+<li>Сохраняется запрет на переводы за рубеж физических лиц, не работающих в России, из стран, поддерживающих санкции.</li>
+</ul>
+
+<p>
+Данное ограничение установлено Банком России до 31 марта 2025 года.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21194a0" class="outline-2">
+<h2 id="org21194a0"><span class="section-number-2">33.</span> причины падения российских рынков</h2>
+<div class="outline-text-2" id="text-33">
+<ol class="org-ol">
+<li>геополитика</li>
+<li>украина - войска у границы</li>
+<li>фиксация прибыли при росте больше чем глобальные рынки</li>
+<li>снижение цены на нефть</li>
+<li>риск локдаунов в Европе</li>
+<li><a href="https://www.reuters.com/business/energy/">https://www.reuters.com/business/energy/</a></li>
+<li>непропорциональный долг Роснано</li>
+</ol>
+
+<p>
+В кризис продуктовй ритейл может переложить расходы на потребителей
+</p>
+
+
+<p>
+При увеличении инфляции ростет доходность облигаций и поэтому подает общий индекс акций
+</p>
+
+<p>
+сниженее ставки
+инфляция ростет
+ускоряется
+кредиты дерешвеют
+депозиты менее выгодны
+облигации привлекательнее
+деньги дешевее
+увеличивается ликвидность
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd24db0" class="outline-2">
+<h2 id="orgcd24db0"><span class="section-number-2">34.</span> ключевая ставка</h2>
+<div class="outline-text-2" id="text-34">
+<p>
+жесткая денежно кредитная политика - увеличение ставки - чтобы сдержать инфляцию
+</p>
+
+<p>
+при понижении ставки
+</p>
+<ul class="org-ul">
+<li>экономика ускоряется</li>
+<li>деньги дешевеют</li>
+<li>акции интереснее</li>
+<li>пузыри появляются</li>
+<li>инфляция увеличивается</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f77fba" class="outline-2">
+<h2 id="org8f77fba"><span class="section-number-2">35.</span> Financial Statement Modeling</h2>
+<div class="outline-text-2" id="text-35">
+<ul class="org-ul">
+<li>Company Name: Apple</li>
+<li>Ticker: AAPL</li>
+<li>Latest closing share price</li>
+<li>Latest fiscal year end date 9/29/18</li>
+<li>Shares outstanding (millions)</li>
+<li>INCOME STATEMENT (at the end of fiscal year)
+<ul class="org-ul">
+<li>Revenue (Previous year's revenues x (1+revenue growth rate)</li>
+<li>Cost of sales (Plug = Revenue - Gross Profit</li>
+<li><b>Gross profit</b>
+<ul class="org-ul">
+<li>Research and development</li>
+</ul></li>
+<li>Operating profit( EBIT)</li>
+<li>Pretax profit</li>
+<li>Net income</li>
+<li>EBITDA</li>
+<li>Adjected EVITDA</li>
+</ul></li>
+<li>Growth rates &amp; margins
+<ul class="org-ul">
+<li>Revenue growth - 6%</li>
+<li>Gross profit margin</li>
+<li>R&amp;D% of sales</li>
+<li>Tax rate</li>
+</ul></li>
+<li>Balance Sheet</li>
+<li>Cash flow statement</li>
+<li>Property, plant &amp; equipment</li>
+<li>Imputing total depreciation &amp; amortization</li>
+<li>other non-current assets</li>
+<li>retained earnings</li>
+<li>Revolver (Model plug) credit line</li>
+<li>Interest expense and interest income</li>
+<li>sensitivity analysis</li>
+<li>Earnings per share
+<ul class="org-ul">
+<li>Net income</li>
+<li>Basic shares</li>
+<li>Basic EPS = Net income / Basic shares</li>
+<li>Deluted shares</li>
+<li>Deluted EPS</li>
+
+<li>$ amount of shares repurchased</li>
+<li>$ amount of new shares issued</li>
+<li>Average share price</li>
+<li>Share price increase</li>
+
+<li>Basic Shares - BOP - link to prior year basic shares - EOP</li>
+<li>Net change in basic shares = $ shares issued - $ shares repurchased)/current period average share</li>
+<li>Basic shares - EOP</li>
+<li>Basic shares - average</li>
+
+<li>Net income</li>
+<li>year over year % growth in net income</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org564bd63" class="outline-2">
+<h2 id="org564bd63"><span class="section-number-2">36.</span> quantitative finance</h2>
+<div class="outline-text-2" id="text-36">
+<p>
+Goldman Sachs <a href="https://github.com/goldmansachs/gs-quant">https://github.com/goldmansachs/gs-quant</a>
+</p>
+<ul class="org-ul">
+<li>used to facilitate derivative structuring, trading, and risk management, or as a set of</li>
+</ul>
+<p>
+statistical packages for data analytics applications.
+</p>
+</div>
+</div>
+<div id="outline-container-org6972e9d" class="outline-2">
+<h2 id="org6972e9d"><span class="section-number-2">37.</span> оценка эффективности торговых стратегий</h2>
+<div class="outline-text-2" id="text-37">
+<p>
+, сортино, фактор восстановления Sharpe Ratio, , and the Maximum Adverse
+ Excursion (MAR) or similarly, the Maximum Drawdown, often referred to in the context of recovery or
+ robustness.
+</p>
+
+<p>
+Sharpe Ratio (Шарп) - average return earned in excess of the risk-free rate per unit of total
+ volatility. It is calculated as the return of an investment minus the risk-free rate, divided by
+ the standard deviation of the investment's returns. a measure of return per unit of risk.
+</p>
+<ul class="org-ul">
+<li>by dividing the excess return of the investment over the risk-free rate by the standard deviation
+of the investment's returns: (Rp - Rf)/σp - where, Rp expected return (average return of
+investment), Rf risk-free rate (return that can be earned from a completely risk-free investment,
+such as a U.S. Treasury bond), σp - standard deviation of portfolio (measures the volatility).</li>
+<li>(Rp - Rf) - represents the additional return an investor earns for taking on the risk associated
+with the investment.</li>
+<li>Benefits: It provides a holistic view of risk-return trade-offs and allows for the comparison of
+different assets or strategies on a level playing field. However, it penalizes all volatility
+equally, including upside gains, which can be a drawback.</li>
+<li>Use Cases: The Sharpe Ratio is useful in bull markets or when evaluating strategies that
+prioritize both gains and losses. It offers a comprehensive view of risk-adjusted performance but
+may not be ideal for strategies with non-normal return distributions or those focusing primarily
+on downside risk.</li>
+</ul>
+
+<p>
+Sortino Ratio(сортино) - modification of the Sharpe Ratio that focuses solely on downside risk. It
+ measures the return per unit of negative volatility, using the downside deviation (standard
+ deviation of returns below a specified target return) instead of the total standard
+ deviation. Measure of return per unit of downside risk.
+</p>
+<ul class="org-ul">
+<li>(Rp - Rt)/σd - where, Rt - Target return or required return(ex. minimum acceptable return (MAR)),
+σd - downside deviation or std of returns that fall below the target return.
+<ul class="org-ul">
+<li>σd steps: <a href="https://en.wikipedia.org/wiki/Standard_deviation#Discrete_random_variable">https://en.wikipedia.org/wiki/Standard_deviation#Discrete_random_variable</a>
+<ol class="org-ol">
+<li>For each return below the target calculate Ri - T , where T - Target Return.</li>
+<li>Square each deviation.</li>
+<li>Add up all the squared deviations.</li>
+<li>Divide the sum by the total number of observations.</li>
+<li>Take the square root of the result.</li>
+</ol></li>
+</ul></li>
+<li>Benefits: The Sortino Ratio emphasizes harmful volatility, making it more suitable for risk-averse
+investors. It provides a clearer picture of downside risk and is particularly useful for
+strategies with positive skew in their return distributions, such as trend-following strategies.</li>
+<li>Use Cases: This ratio is optimal in bear markets or for strategies that prioritize capital
+preservation. It helps investors assess how well an investment performs relative to the downside
+volatility, ignoring the beneficial effects of upside volatility.</li>
+</ul>
+
+<p>
+Maximum Adverse Excursion (MAR) or Maximum Drawdown
+</p>
+
+<p>
+Recovery Factor -  evaluate the stability and resilience of a trading system or strategy.
+</p>
+<ul class="org-ul">
+<li>RF = net profit / maximum drawdown.
+<ul class="org-ul">
+<li>net profit - sum of all profitable trades minus the sum of all losing trades.</li>
+<li>maximum drawdown - maximum peak-to-trough decline in the value of the trading account. It
+represents the worst-case scenario in terms of losses. Maximum decline from a peak to a trough
+at any point during the period.</li>
+<li>RF &gt; 2: The system has a certain profit margin and is considered stable.</li>
+<li>RF &gt; 10: The system is highly stable and suitable for trading with larger capital.</li>
+<li>RF &lt; 2: The system's stability is questionable, and it may need to be updated or improved.</li>
+</ul></li>
+<li>The higher the value, the faster the system can recover from drawdowns. Values above 10 indicate a
+highly stable system.</li>
+</ul>
+
+<p>
+Additional Metrics
+</p>
+<ul class="org-ul">
+<li>Gain-to-Pain Ratio: The sum of all daily returns divided by the absolute value of the sum of all daily losses.</li>
+<li>Ulcer Performance Index: Measures an investment's risk-adjusted return by dividing its Compound Annual Growth Rate (CAGR) by the Ulcer Index, which quantifies the depth and duration of drawdowns.</li>
+<li>Information Ratio: Measures the excess return of a strategy relative to a benchmark, divided by the tracking error (standard deviation of the excess return).</li>
+<li>Win Rate: The percentage of profitable days or trades.</li>
+</ul>
+
+
+<p>
+“Коэффициент шарпа” (Rp - Rf)/σp расчитывается как дополнительная
+ прибыль рисковых вложений (средняя прибыль минус текущая ставка по
+ гос. облигациям) деленная на единицу риска как волатильности
+ портфеля. Хорош для бычьего рынка. “Коэффициент сортино” (Rp -
+ Rt)/σd - здесь вместо процентной ставки по облигациями используется
+ относительная минимальная доходность и волатильность расчитывается
+ только для отрицательных инвестиций, что дает отношение прибыли к
+ риску отрицательных инвестиций.  “Фактор восстановления” - это чистая
+ прибыль на рубль падения.
+</p>
+</div>
+</div>
+<div id="outline-container-org3b09800" class="outline-2">
+<h2 id="org3b09800"><span class="section-number-2">38.</span> strategy AI</h2>
+<div class="outline-text-2" id="text-38">
+<p>
+Мы разрабатываем торговую стратегию, основанную на обучении с подкреплением. Одной из ключевых задач
+ является определение корректной системы наград для открытия сделок, которая будет способствовать
+ обучению алгоритма оптимальному поведению на рынке. Для правильного применения обучения с
+ подкреплением критически важно написать функцию наград за действия. Алгоритм делает следующие
+ действия: BUY (купить актив), HOLD (ничего не делать, не продавать и не покупать) и SELL (продать
+ актив). Сделки могут быть как LONG (длинные позиции), так и SHORT (короткие позиции). В Случае
+ открытия SHORT при условии, что ранее открытых LONG сделок не было, необходимо сделать SELL. Чтобы
+ закрыть SHORT, нужно сделать BUY такое же количество актива, которое было в начале (то есть когда
+ было сделано SELL). В случае открытия LONG, при условии, что ранее открытых SHORT сделок не было,
+ необходимо сделать BUY, а для закрытия LONG – SELL.
+</p>
+
+<p>
+Задача: Сформулируйте систему наград для алгоритма такую, что агент будет награждаться при открытии
+ позиций, при HOLD и при закрытии с учётом типа сделок.  Напишите на Python фрагмент кода,
+ реализующий предложенную вами систему наград.  Укажите, какие метрики будете использовать для
+ оценки эффективности предложенной системы наград.
+</p>
+
+<p>
+Ожидаемый результат:
+</p>
+<ul class="org-ul">
+<li>Документ, описывающий концепцию системы наград и обоснование подхода.</li>
+<li>Код на Python, демонстрирующий расчет награды.</li>
+</ul>
+</div>
+
+<div id="outline-container-orgb30af68" class="outline-3">
+<h3 id="orgb30af68"><span class="section-number-3">38.1.</span> trnslateion</h3>
+<div class="outline-text-3" id="text-38-1">
+<p>
+We are developing a trading strategy using reinforcement learning. The key task is to create a
+ reward system that encourages the algorithm to behave optimally in the market. The algorithm can
+ perform BUY, HOLD, or SELL actions for LONG or SHORT trades.
+</p>
+<ul class="org-ul">
+<li>To open a SHORT, sell if no LONG was previously opened.</li>
+<li>To close a SHORT, buy the same amount sold.</li>
+<li>To open a LONG, buy if no SHORT was previously opened.</li>
+<li>To close a LONG, sell.</li>
+</ul>
+
+<p>
+Task:
+</p>
+<ul class="org-ul">
+<li>Design a reward system to reward the agent for opening, holding, and closing positions based
+on trade types. Write a Python code snippet for this system and specify the metrics to evaluate its
+effectiveness."</li>
+<li>Python demo for reward system.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2ecfc6c" class="outline-3">
+<h3 id="org2ecfc6c"><span class="section-number-3">38.2.</span> s1</h3>
+<div class="outline-text-3" id="text-38-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">reward_function</span>(action, position_type, previous_position):
+    <span style="color: #cae682;">reward</span> = 0
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> action == <span style="color: #95e454;">'BUY'</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> position_type == <span style="color: #95e454;">'LONG'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position != <span style="color: #95e454;">'SHORT'</span>:
+            <span style="color: #cae682;">reward</span> = 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for opening a LONG position</span>
+        <span style="color: #8ac6f2; font-weight: bold;">elif</span> position_type == <span style="color: #95e454;">'SHORT'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position != <span style="color: #95e454;">'LONG'</span>:
+            <span style="color: #cae682;">reward</span> = 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for opening a SHORT position</span>
+    <span style="color: #8ac6f2; font-weight: bold;">elif</span> action == <span style="color: #95e454;">'SELL'</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> position_type == <span style="color: #95e454;">'LONG'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position == <span style="color: #95e454;">'LONG'</span>:
+            <span style="color: #cae682;">reward</span> = 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for closing a LONG position</span>
+        <span style="color: #8ac6f2; font-weight: bold;">elif</span> position_type == <span style="color: #95e454;">'SHORT'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position == <span style="color: #95e454;">'SHORT'</span>:
+            <span style="color: #cae682;">reward</span> = 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for closing a SHORT position</span>
+    <span style="color: #8ac6f2; font-weight: bold;">elif</span> action == <span style="color: #95e454;">'HOLD'</span>:
+        <span style="color: #cae682;">reward</span> = 0.5  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for holding the position</span>
+
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> reward
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Example usage</span>
+<span style="color: #cae682;">action</span> = <span style="color: #95e454;">'BUY'</span>
+<span style="color: #cae682;">position_type</span> = <span style="color: #95e454;">'LONG'</span>
+<span style="color: #cae682;">previous_position</span> = <span style="color: #e5786d; font-weight: bold;">None</span>
+<span style="color: #cae682;">reward</span> = reward_function(action, position_type, previous_position)
+<span style="color: #e5786d;">print</span>(f<span style="color: #95e454;">"Reward for </span>{action}<span style="color: #95e454;"> </span>{position_type}<span style="color: #95e454;"> position: </span>{reward}<span style="color: #95e454;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Reward for BUY LONG position: 1
+</pre>
+
+
+<p>
+Metrics:
+</p>
+<ul class="org-ul">
+<li>Cumulative Reward: The total reward accumulated over a series of trades.</li>
+<li>Profit/Loss: The actual financial gain or loss resulting from the trades.</li>
+<li>Sharpe Ratio: A measure of risk-adjusted return, which can help evaluate the strategy's performance relative to its risk.</li>
+<li>Drawdown: The maximum peak-to-trough decline in the value of the portfolio, indicating the strategy's resilience to market downturns.</li>
+<li>Transaction Costs: The total costs incurred from trading activities.</li>
+<li>Win/Loss Ratio: The ratio of profitable trades to losing trades, which can indicate the strategy's overall performance.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org77e5891" class="outline-3">
+<h3 id="org77e5891"><span class="section-number-3">38.3.</span> s2</h3>
+<div class="outline-text-3" id="text-38-3">
+<p>
+Description of the Reward System Concept
+In reinforcement learning, the reward system is a crucial component that guides the agent's behavior by providing feedback in the form of rewards or penalties for its actions. Here’s how it applies to trading strategies:
+</p>
+
+<p>
+Agent: The trading algorithm or agent that interacts with the market environment[1][3][4].
+Environment: The financial market, which provides feedback in the form of profits, losses, or other performance metrics[1][3][4].
+State: The current market conditions, such as daily moving averages, high of the day, volume, etc.[1][3].
+Actions: The possible actions the agent can take, such as BUY, SELL, or HOLD[1][3][4].
+Reward: The feedback received from the environment after taking an action. This can be based on various metrics such as profit, loss, Sharpe ratio, or other performance indicators[1][3][4].
+</p>
+
+<p>
+Justification of the Approach
+Customizable Reward Function
+The reward function can be tailored to fit the specific goals of the trader. For example:
+</p>
+
+<p>
+Profit Maximization: Reward the agent for maximizing profits.
+Risk-Adjusted Returns: Use the Sharpe ratio to reward risk-adjusted returns, balancing profit and volatility[1][3][4].
+Transaction Costs: Include transaction costs to discourage frequent and frivolous trades[3].
+Unrealized Profits and Losses (PnL): Account for unrealized PnL to ensure the algorithm learns from its inaction and improves its trading policy[3].
+</p>
+
+<p>
+Dynamic Adaptation
+The reward system allows the agent to adapt dynamically to changing market conditions. By receiving feedback at each time step, the agent can adjust its policy to maximize long-term rewards. This is particularly useful in trading, where market conditions are constantly evolving[1][3][4].
+Balancing Exploration and Exploitation
+The reward system helps balance the exploration-exploitation trade-off. Initially, the agent may explore different actions randomly to learn about the environment. As it gathers more experience, it can exploit this knowledge to make more informed decisions that maximize rewards[4].
+Real-Time Decision Making
+The algorithm can make real-time trading decisions based on the reward function. By simulating multiple possible actions and estimating their returns, the agent can recommend the best sequence of actions to exploit for maximum returns[3].
+Example of a Reward Function
+Here is a simplified example of how a reward function might be implemented in Python, considering various performance metrics:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">reward_function</span>(action, position_type, previous_position, profit, sharpe_ratio, transaction_cost):
+    <span style="color: #cae682;">reward</span> = 0
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> action == <span style="color: #95e454;">'BUY'</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> position_type == <span style="color: #95e454;">'LONG'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position != <span style="color: #95e454;">'SHORT'</span>:
+            <span style="color: #cae682;">reward</span> += 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for opening a LONG position</span>
+            <span style="color: #cae682;">reward</span> += 0.5 * sharpe_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Additional reward for good risk-adjusted return</span>
+            <span style="color: #cae682;">reward</span> -= transaction_cost  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Penalty for transaction cost</span>
+        <span style="color: #8ac6f2; font-weight: bold;">elif</span> position_type == <span style="color: #95e454;">'SHORT'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position != <span style="color: #95e454;">'LONG'</span>:
+            <span style="color: #cae682;">reward</span> -= 1  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for opening a SHORT position</span>
+            <span style="color: #cae682;">reward</span> += 0.5 * sharpe_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Additional reward for good risk-adjusted return</span>
+            <span style="color: #cae682;">reward</span> -= transaction_cost  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Penalty for transaction cost</span>
+    <span style="color: #8ac6f2; font-weight: bold;">elif</span> action == <span style="color: #95e454;">'SELL'</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> position_type == <span style="color: #95e454;">'LONG'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position == <span style="color: #95e454;">'LONG'</span>:
+            <span style="color: #cae682;">reward</span> += profit  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for closing a LONG position with profit</span>
+            <span style="color: #cae682;">reward</span> += 0.5 * sharpe_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Additional reward for good risk-adjusted return</span>
+            <span style="color: #cae682;">reward</span> -= transaction_cost  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Penalty for transaction cost</span>
+        <span style="color: #8ac6f2; font-weight: bold;">elif</span> position_type == <span style="color: #95e454;">'SHORT'</span> <span style="color: #8ac6f2; font-weight: bold;">and</span> previous_position == <span style="color: #95e454;">'SHORT'</span>:
+            <span style="color: #cae682;">reward</span> += profit  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for closing a SHORT position with profit</span>
+            <span style="color: #cae682;">reward</span> += 0.5 * sharpe_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Additional reward for good risk-adjusted return</span>
+            <span style="color: #cae682;">reward</span> -= transaction_cost  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Penalty for transaction cost</span>
+    <span style="color: #8ac6f2; font-weight: bold;">elif</span> action == <span style="color: #95e454;">'HOLD'</span>:
+        <span style="color: #cae682;">reward</span> += 0.5 * sharpe_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Reward for holding the position with good risk-adjusted return</span>
+
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> reward
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Example usage</span>
+<span style="color: #cae682;">action</span> = <span style="color: #95e454;">'BUY'</span>
+<span style="color: #cae682;">position_type</span> = <span style="color: #95e454;">'LONG'</span>
+<span style="color: #cae682;">previous_position</span> = <span style="color: #e5786d; font-weight: bold;">None</span>
+<span style="color: #cae682;">profit</span> = 100
+<span style="color: #cae682;">sharpe_ratio</span> = 1.5
+<span style="color: #cae682;">transaction_cost</span> = 10
+<span style="color: #cae682;">reward</span> = reward_function(action, position_type, previous_position, profit, sharpe_ratio, transaction_cost)
+<span style="color: #e5786d;">print</span>(f<span style="color: #95e454;">"Reward for </span>{action}<span style="color: #95e454;"> </span>{position_type}<span style="color: #95e454;"> position: </span>{reward}<span style="color: #95e454;">"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Reward for BUY LONG position: -8.25
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3dcee90" class="outline-2">
+<h2 id="org3dcee90"><span class="section-number-2">39.</span> Эквивалент предельного размера разрешенной суммы перевода в доллары США пересчитывается по официальному курсу иностранных валют к рублю, установленному Банком России, на дату поручения клиента на осуществление перевода.</h2>
+</div>
+<div id="outline-container-orge4d4453" class="outline-2">
+<h2 id="orge4d4453"><span class="section-number-2">40.</span> Real-time gross settlement (RTGS)</h2>
+<div class="outline-text-2" id="text-40">
+<p>
+<b>funds transfer systems</b> - where the transfer of money or securities - from one bank to any other
+ bank. "Settlement" means that once processed, payments are final and irrevocable.
+</p>
+<ul class="org-ul">
+<li>operated by a country's central bank</li>
+</ul>
+
+<p>
+in Russia - BESP System (Banking Electronic Speed Payment System)
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:27</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

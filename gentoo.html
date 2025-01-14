@@ -1,0 +1,3644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6d5b8c8">1. community</a></li>
+<li><a href="#org0994b00">2. short help</a></li>
+<li><a href="#orga5bec10">3. emerge</a>
+<ul>
+<li><a href="#orgd440db1">3.1. output language</a></li>
+<li><a href="#org7b30b13">3.2. stupid language</a></li>
+<li><a href="#org5da32f6">3.3. save output</a></li>
+</ul>
+</li>
+<li><a href="#orgbe588b0">4. package manager  - Portage</a>
+<ul>
+<li><a href="#org0d4c215">4.1. terms</a></li>
+<li><a href="#org0227fff">4.2. system directories and files</a></li>
+<li><a href="#org3ffafca">4.3. solving conflicts</a></li>
+<li><a href="#org8f3c6d2">4.4. add remote repository</a></li>
+<li><a href="#org9e5a635">4.5. overlays</a>
+<ul>
+<li><a href="#org509f7e2">4.5.1. install from overlay</a></li>
+<li><a href="#orgd869044">4.5.2. add non-official overlay</a></li>
+<li><a href="#orgb8b0843">4.5.3. list</a></li>
+<li><a href="#orgfe3125e">4.5.4. create own</a></li>
+<li><a href="#orgb086e91">4.5.5. links</a></li>
+</ul>
+</li>
+<li><a href="#orgfa39838">4.6. socks proxy</a></li>
+<li><a href="#org2fd7bc5">4.7. issue solving</a></li>
+<li><a href="#org75f208d">4.8. add localrep or personal overlay</a></li>
+<li><a href="#org462540d">4.9. create own package and ebuild to localrep</a></li>
+<li><a href="#org483da81">4.10. add own overlay to gentoo</a></li>
+<li><a href="#org893526a">4.11. ebuilds</a>
+<ul>
+<li><a href="#org6cd153a">4.11.1. main links:</a></li>
+<li><a href="#orgf831219">4.11.2. minimal ebuild</a></li>
+<li><a href="#org52bbe63">4.11.3. terms</a></li>
+<li><a href="#org5e064d4">4.11.4. steps</a></li>
+<li><a href="#orgfa6937a">4.11.5. </a></li>
+<li><a href="#orge5a41d9">4.11.6. package in the tree(ebuild repository)</a></li>
+<li><a href="#orgcad387c">4.11.7. Ebuild Phase Functions</a></li>
+<li><a href="#org227e943">4.11.8. Predefined Read-Only Variables</a></li>
+<li><a href="#org9c47c8b">4.11.9. Ebuild-defined Variables</a></li>
+<li><a href="#org92ad41a">4.11.10. SLOT</a></li>
+<li><a href="#org1aaa8e6">4.11.11. DEPEND - RDEPEND, BDEPEND etc.</a></li>
+<li><a href="#org169b773">4.11.12. helpers</a></li>
+<li><a href="#org8fb0062">4.11.13. patches</a></li>
+<li><a href="#orgaa29112">4.11.14. fetch</a></li>
+<li><a href="#orgf70b0e0">4.11.15. debugging ebuild</a></li>
+<li><a href="#orge1e98b5">4.11.16. testing</a></li>
+<li><a href="#orgea0cb66">4.11.17. test dependencies</a></li>
+<li><a href="#orgb6d04f0">4.11.18. Troubleshooting</a></li>
+<li><a href="#org143c366">4.11.19. examples</a></li>
+<li><a href="#org113a1f5">4.11.20. links</a></li>
+</ul>
+</li>
+<li><a href="#org3c5320c">4.12. eclass</a>
+<ul>
+<li><a href="#org5e755df">4.12.1. theory</a></li>
+<li><a href="#org38010eb">4.12.2. python building</a></li>
+<li><a href="#orgc6c4e10">4.12.3. <span class="todo TODO">TODO</span> testing</a></li>
+<li><a href="#orgdf45765">4.12.4. links</a></li>
+</ul>
+</li>
+<li><a href="#org07018dc">4.13. disable unused ebuilds</a></li>
+<li><a href="#orga6da187">4.14. mirrors</a>
+<ul>
+<li><a href="#orgea46f09">4.14.1. links</a></li>
+</ul>
+</li>
+<li><a href="#org694b3b3">4.15. update security critical packages</a></li>
+<li><a href="#orgd9aef6f">4.16. (old) Portage security</a></li>
+<li><a href="#org0bb4bb5">4.17. FAQ</a></li>
+<li><a href="#org308c18c">4.18. links</a></li>
+</ul>
+</li>
+<li><a href="#orge9df7bd">5. tools</a></li>
+<li><a href="#orgf7d4c40">6. <span class="todo TODO">TODO</span> q</a></li>
+<li><a href="#org0ef1571">7. <span class="todo TODO">TODO</span> eix</a></li>
+<li><a href="#org97d97af">8. profiles</a>
+<ul>
+<li><a href="#org043603f">8.1. merged-user/split-user</a></li>
+</ul>
+</li>
+<li><a href="#orgaca7d27">9. install handbook</a>
+<ul>
+<li><a href="#org8970eda">9.1. firmware</a></li>
+<li><a href="#org3217990">9.2. chroot</a></li>
+</ul>
+</li>
+<li><a href="#orgb914624">10. install xfce4 </a></li>
+<li><a href="#org0ea5b2e">11. Dracut - disk encryption USB - full install</a>
+<ul>
+<li><a href="#org55babe0">11.1. links</a></li>
+<li><a href="#org5933e58">11.2. dracut.conf</a></li>
+<li><a href="#orgfa8050a">11.3. errors</a></li>
+<li><a href="#org9805921">11.4. change password luks.gpg</a></li>
+<li><a href="#org6ab249c">11.5. ru descryption</a></li>
+<li><a href="#orgfef83c8">11.6. EDID - video kernel mode setting</a></li>
+<li><a href="#org4b3e628">11.7. custom edid</a></li>
+<li><a href="#orga0b2a91">11.8. nvidia example Xorg</a></li>
+</ul>
+</li>
+<li><a href="#org4eaf380">12. Dracut - disk encryption USB - kernel update</a></li>
+<li><a href="#org0c3abee">13. create USB stick</a></li>
+<li><a href="#orgf9eb30f">14. python</a></li>
+<li><a href="#orgbb74c9f">15. no root Xorg</a></li>
+<li><a href="#orgdbe7d13">16. add user</a></li>
+<li><a href="#org31bef58">17. network configuration </a>
+<ul>
+<li><a href="#org8842d2c">17.1. /etc/wpa<sub>supplicant</sub>/wpa<sub>supplicant.conf</sub></a></li>
+<li><a href="#org42fae31">17.2. router</a></li>
+<li><a href="#org999378b">17.3. configure pachcard</a></li>
+</ul>
+</li>
+<li><a href="#orgbbe3575">18. audio</a>
+<ul>
+<li><a href="#org2c01da3">18.1. alsa ~/.asoundrc</a></li>
+<li><a href="#org21248ad">18.2. simplest config output hw:0,0</a></li>
+<li><a href="#org3e7af1a">18.3. hdmi output</a></li>
+<li><a href="#orga47e789">18.4. troubleshooting</a></li>
+<li><a href="#org0c9a3c0">18.5. pulseaudion</a></li>
+<li><a href="#org4f70ed9">18.6. loop back test or “hear yourself” - alsa</a></li>
+<li><a href="#orge0056a8">18.7. loop back test - pulseaudio</a></li>
+<li><a href="#org1bcc5b8">18.8. firefox and ALSA - microphone</a></li>
+<li><a href="#org947aea2">18.9. pulseaudion</a></li>
+<li><a href="#orgd89483d">18.10. links</a></li>
+</ul>
+</li>
+<li><a href="#org88e333e">19. fonts</a></li>
+<li><a href="#org3181ff7">20. linux firmware</a></li>
+<li><a href="#orgf1a9518">21. OpenRC</a></li>
+<li><a href="#org39ce5e2">22. udev brightness</a></li>
+<li><a href="#org30807e8">23. device manager udev/eudev/hal</a></li>
+<li><a href="#orga9662b4">24. parallel emerge</a></li>
+<li><a href="#org6be13f8">25. raspberry pi</a>
+<ul>
+<li><a href="#org5a939fc">25.1. kernel:</a>
+<ul>
+<li><a href="#org17dc678">25.1.1. links</a></li>
+</ul>
+</li>
+<li><a href="#org37a049f">25.2. firmware</a></li>
+<li><a href="#org5600cab">25.3. overcloking</a></li>
+</ul>
+</li>
+<li><a href="#orge2fa03c">26. soft</a>
+<ul>
+<li><a href="#org84235ae">26.1. games</a>
+<ul>
+<li><a href="#orga20caaa">26.1.1. dri</a></li>
+<li><a href="#org2bab778">26.1.2. openmw</a></li>
+<li><a href="#org56fe8f7">26.1.3. fps</a></li>
+<li><a href="#orgceab707">26.1.4. mednafen</a></li>
+<li><a href="#orga19315f">26.1.5. gemrb</a></li>
+</ul>
+</li>
+<li><a href="#orgeffd5db">26.2. media player</a></li>
+<li><a href="#orgd0edc96">26.3. ntp set time</a></li>
+</ul>
+</li>
+<li><a href="#org0e972bc">27. hdmi mirroring</a></li>
+<li><a href="#org56e90f1">28. opencl</a></li>
+<li><a href="#org1dbf054">29. all modifications:</a></li>
+<li><a href="#org7f4d02f">30. lock screen &amp; consoles</a></li>
+<li><a href="#org819755f">31. patching guide</a></li>
+<li><a href="#orgc4c3d85">32. USECASES</a></li>
+<li><a href="#org87f40c6">33. developsers githubs</a></li>
+<li><a href="#orga5dac1f">34. gcc optimization</a>
+<ul>
+<li><a href="#org1524eaa">34.1. options</a></li>
+<li><a href="#orgb8c985e">34.2. Per-package</a></li>
+<li><a href="#org9247ab1">34.3. links</a></li>
+</ul>
+</li>
+<li><a href="#org46ce311">35. diablo</a></li>
+<li><a href="#orge95ed22">36. Rust and Compiler Bootstrapping</a></li>
+<li><a href="#orgac9786b">37. links</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+news
+</p>
+<ul class="org-ul">
+<li><a href="https://fossforce.com/">https://fossforce.com/</a></li>
+<li>security news <a href="https://www.gentoo.org/support/security/">https://www.gentoo.org/support/security/</a></li>
+</ul>
+<div id="outline-container-org6d5b8c8" class="outline-2">
+<h2 id="org6d5b8c8"><span class="section-number-2">1.</span> community</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/Project:Council/Code_of_conduct">https://wiki.gentoo.org/wiki/Project:Council/Code_of_conduct</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Project:ComRel">https://wiki.gentoo.org/wiki/Project:ComRel</a></li>
+<li>annoncements <a href="https://forums.gentoo.org/viewforum.php?f=16">https://forums.gentoo.org/viewforum.php?f=16</a></li>
+<li>blogs <a href="https://planet.gentoo.org/">https://planet.gentoo.org/</a></li>
+<li><a href="https://gentoo-ev.org/">https://gentoo-ev.org/</a></li>
+</ul>
+
+<p>
+IRC
+</p>
+<ul class="org-ul">
+<li><a href="https://memleek.org/gentoo-chat.txt">https://memleek.org/gentoo-chat.txt</a> <a href="https://gentoo-chat.org/">https://gentoo-chat.org/</a></li>
+
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0994b00" class="outline-2">
+<h2 id="org0994b00"><span class="section-number-2">2.</span> short help</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet">https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet</a>
+  emerge:
+</p>
+<dl class="org-dl">
+<dt>emerge -pv</dt><dd>to check if package was installed</dd>
+<dt>emerge  &#x2013;search sci-libs/* | grep -e "^\*" -e "Description"</dt><dd>look for all packages in category</dd>
+<dt>eclean-dist</dt><dd>clear /var/cache/distfiles, /usr/portage/distfiles - DISTDIR and the PKGDIR respectively
+variables in /etc/portage/make.conf</dd>
+<dt>eclean-pkg</dt><dd>clear /usr/portage/packages, /var/cache/binpkgs</dd>
+<dt>emerge -atv</dt><dd>install package with &#x2013;ask &#x2013;tree &#x2013;verbose</dd>
+<dt>emerge &#x2013;search pck</dt><dd>search any package in names</dd>
+<dt>emerge &#x2013;info pck</dt><dd>info for any package</dd>
+<dt>emerge -s '@net-ftp'</dt><dd>search al packages in category</dd>
+<dt>(no term)</dt><dd>emerge &#x2013;ask &#x2013;oneshot sys-apps/portage</dd>
+<dt>emerge &#x2013;ask &#x2013;depclean &#x2013;verbose package -</dt><dd>find out reverse dependencies</dd>
+<dt>emerge &#x2013;ask &#x2013;autounmask =sys-libs/glibc-2.33-r1</dt><dd>emerge older version</dd>
+<dt>(no term)</dt><dd>USE="qt4 -gtk" emerge -1v app-misc/autokey</dd>
+<dt>cat /var/lib/portage/world</dt><dd>installed packages</dd>
+<dt>emerge &#x2013;resume</dt><dd>resume from package was finished (after Ctr+C)</dd>
+<dt>emerge &#x2013;resume &#x2013;skip-first</dt><dd>skip first package with couse failure &#x2013;keep-going - ignore fails</dd>
+<dt>(no term)</dt><dd>emerge @preserved-rebuild - emerge does not update the depending libraries, but put them into a set instead</dd>
+<dt>qlop -a | less</dt><dd>last installed packages</dd>
+<dt>equery list *::localre</dt><dd>installed packages from overlay</dd>
+<dt>qlist -IRv | grep localre</dt><dd>installed packages from overlay</dd>
+<dt>eix -e dev-lang/lua</dt><dd>list available stots for package</dd>
+<dt>emerge &#x2013;fuzzy-search=y &#x2013;searchdesc, -S "descr"</dt><dd>search for package by description</dd>
+</dl>
+
+
+<p>
+light (standard):
+</p>
+<pre class="example">
+emerge --ask --update --changed-use --deep @world :: update
+emerge -1vUD @world
+</pre>
+
+<p>
+hard
+</p>
+<pre class="example">
+emerge --ask --update --newuse --deep --with-bdeps=y --verbose-conflicts --tree @world :: update
+</pre>
+
+
+<p>
+equery:
+for installes:
+</p>
+<dl class="org-dl">
+<dt>equery h flag1 flag2</dt><dd>packages with specific USE flags</dd>
+<dt>equery list '*'</dt><dd>all installed packages - chech if package installed</dd>
+<dt>equery f package</dt><dd>files of package</dd>
+<dt>equery b 'ifstat'</dt><dd>belongs - list installed packages that owns FILE</dd>
+<dt>emerge app/portage-plf ; plf 'file'</dt><dd>list all packages that owns FILE</dd>
+<dt>equery g iwd-1.24</dt><dd>dependencies for iwd - "-1.24" - required</dd>
+<dt>equery d iwd-1.24</dt><dd>packages dependent on iwd</dd>
+<dt>equery l sci-libs/*</dt><dd>installed packages in category</dd>
+</dl>
+
+<p>
+for all:
+</p>
+<dl class="org-dl">
+<dt>equery m firefox</dt><dd>info and available versions</dd>
+<dt>equery m -d firefox</dt><dd>description of package</dd>
+<dt>equery meta package</dt><dd>info</dd>
+<dt>equery u package</dt><dd>package USE flags</dd>
+</dl>
+
+<p>
+which package provide file:
+</p>
+<ul class="org-ul">
+<li>emerge -av app-portage/pfl</li>
+<li>e-file YOURFILE</li>
+<li>or <a href="http://www.portagefilelist.de/site/query/file">http://www.portagefilelist.de/site/query/file</a></li>
+</ul>
+
+
+<p>
+REQUIRED<sub>USE</sub> conditions:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">foo? ( bar )</td>
+<td class="org-left">if foo is set, bar must be set</td>
+</tr>
+
+<tr>
+<td class="org-left">foo? (!bar )</td>
+<td class="org-left">if foo is set, bar must not be set</td>
+</tr>
+
+<tr>
+<td class="org-left">foo? (or (bar baz aha )</td>
+<td class="org-left">at least one must be set</td>
+</tr>
+
+<tr>
+<td class="org-left">^^ (foo bar aha)</td>
+<td class="org-left">exactly one must be set</td>
+</tr>
+
+<tr>
+<td class="org-left">?? ( foo bar aha)</td>
+<td class="org-left">no more than one may be set</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+CFLAGS per package:
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga5bec10" class="outline-2">
+<h2 id="orga5bec10"><span class="section-number-2">3.</span> emerge</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgd440db1" class="outline-3">
+<h3 id="orgd440db1"><span class="section-number-3">3.1.</span> output language</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+man -P 'less -p ^OUTPUT' emerge
+</p>
+
+<p>
+<a id="org80c8fad"></a>
+</p>
+<ul class="org-ul">
+<li>N	new</li>
+<li>NS	?</li>
+<li>R	re-emerge</li>
+<li>U	upgrade</li>
+<li>UD	downgrade</li>
+<li>#	package.mask</li>
+<li>*	missing keyword</li>
+<li>~	unstable keyword</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b30b13" class="outline-3">
+<h3 id="org7b30b13"><span class="section-number-3">3.2.</span> stupid language</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>D - deep</li>
+<li>u - update</li>
+<li>q - quiet</li>
+<li>N - newuse</li>
+<li>v - verbose</li>
+<li>a - ask</li>
+<li>1 - oneshot - do not add to world</li>
+<li>p - pretend</li>
+<li>e - emptytree - reinstall of atom and his dependencies as though no packages are currently installed</li>
+<li>s - search</li>
+<li>U - changed-use (weeker)</li>
+<li>N - newuse (stronger)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5da32f6" class="outline-3">
+<h3 id="org5da32f6"><span class="section-number-3">3.3.</span> save output</h3>
+<div class="outline-text-3" id="text-3-3">
+<pre class="example">
+emerge --ask package 2&gt;&amp;1 | tee a.txt
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe588b0" class="outline-2">
+<h2 id="orgbe588b0"><span class="section-number-2">4.</span> package manager  - Portage</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+TODO: <a href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree">https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree</a>
+variables:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;info</li>
+<li>make.defaults - /usr/share/portage/config/make.defaults</li>
+<li>make.globals - /usr/share/portage/config/make.globals</li>
+<li>/usr/share/portage/config/make.globals</li>
+<li>activated repositories/overlays:
+<ul class="org-ul">
+<li>q -o</li>
+<li>eselect repository list -i</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org0d4c215" class="outline-3">
+<h3 id="org0d4c215"><span class="section-number-3">4.1.</span> terms</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li><b>Portage</b> - package manager and distribution system (emerge command)
+<ul class="org-ul">
+<li>packages or atoms</li>
+</ul></li>
+<li><p>
+<b>ebuild repository</b>, colloquially known as an overlay - metadata files for pachages
+</p>
+<ul class="org-ul">
+<li>main Gentoo ebuild repository.</li>
+<li><b>overlays</b> not main Gentoo ebuild repository, because when they are used, they are overlay on the main</li>
+</ul>
+<p>
+(ebuild) repository, means that a package with the same name and version in the overlay will take precedence
+over that in the main ebuild repository when user installs package via emerge.
+</p>
+<ul class="org-ul">
+<li>local ebuild repository</li>
+</ul></li>
+<li>primary repository - <b>Gentoo ebuild repository</b> - Gentoo repo, ::gentoo, gentoo.git - the Portage
+tree, rsync tree, or sometimes just "the tree"
+<ul class="org-ul">
+<li>contains ebuilds</li>
+</ul></li>
+<li><b>package</b> -  examples the www-client/firefox</li>
+<li><b>category</b> - “www-client” or “sci-libs”</li>
+<li><b>ebuild</b> file - bash like
+<ul class="org-ul">
+<li>standardized through the Package Manager Specification</li>
+<li>define Ebuild Phase Functions - how to install
+<ul class="org-ul">
+<li>src<sub>unpack</sub>, src<sub>prepare</sub>, src<sub>configure</sub>, src<sub>compile</sub></li>
+</ul></li>
+<li>SRC<sub>URI</sub> - tells Portage the address to use for downloading the source tarball</li>
+<li>BDEPEND, DEPEND, and RDEPEND - dependencies</li>
+</ul></li>
+<li><b>live ebuilds</b> -  use 9999 as the version (or as the last version component)</li>
+<li><b>Gentoo rsync mirrors</b> - mirrors distribute the Gentoo ebuild repository
+<ul class="org-ul">
+<li>sync-uri variable in the [gentoo] section of repos.conf</li>
+<li><a href="https://www.gentoo.org/support/rsync-mirrors/">https://www.gentoo.org/support/rsync-mirrors/</a></li>
+</ul></li>
+<li><b>Gentoo source mirrors</b> - distribute the source archives for the software, stages and tree snapshots for installation
+<ul class="org-ul">
+<li>GENTOO<sub>MIRRORS</sub> variable in make.conf</li>
+<li><a href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a></li>
+</ul></li>
+<li>eclass is a collection of code which can be used by more than one ebuild</li>
+<li>CBUILD - The system on which the build is performed.</li>
+<li>CHOST - The system on which the package is going to be executed.</li>
+<li>BDEPEND - dependencies, programs that need to be executed during the build</li>
+<li>RDEPEND - dependencies, on built (target) system</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0227fff" class="outline-3">
+<h3 id="org0227fff"><span class="section-number-3">4.2.</span> system directories and files</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+directories
+</p>
+<ul class="org-ul">
+<li><i>usr/tmp/portage</i> or <i>var/tmp/portage</i> - extracted source files (PORTAGE<sub>TMPDIR</sub>)</li>
+<li><i>var/db/pkg</i> - config of installed packages</li>
+</ul>
+
+
+<p>
+make.conf:
+</p>
+<ul class="org-ul">
+<li>PORTDIR="<i>var/db/repos/gentoo</i>" - snapshot of Gentoo ebuild repository
+<ul class="org-ul">
+<li>/var/db/repos/gentoo/profiles/use.desc - A full description on the available USE flags</li>
+<li>/var/db/repos/gentoo/metadata/timestamp.chk  - last updated (synced)</li>
+</ul></li>
+<li>DISTDIR="/var/cache/distfiles" - is the default directory Portage uses to store source code tarballs.</li>
+<li>PKGDIR="/var/cache/binpkgs"</li>
+</ul>
+
+<p>
+default config <i>usr/share/portage/config</i>
+</p>
+<ul class="org-ul">
+<li>repos.conf - may be overwriten in /etc/portage/repos.conf/gentoo.conf</li>
+<li>make.globals - main config file defaults</li>
+</ul>
+
+<p>
+<a href="https://wiki.gentoo.org/wiki/Gentoo_specific_directories">https://wiki.gentoo.org/wiki/Gentoo_specific_directories</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3ffafca" class="outline-3">
+<h3 id="org3ffafca"><span class="section-number-3">4.3.</span> solving conflicts</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+types:
+</p>
+<ul class="org-ul">
+<li>slot conflict</li>
+<li>dependency confclit ( warning)</li>
+</ul>
+
+<p>
+search installed packages and output formatted:
+</p>
+<ul class="org-ul">
+<li>equery l kde-frameworks/* -F '$category/$name'</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f3c6d2" class="outline-3">
+<h3 id="org8f3c6d2"><span class="section-number-3">4.4.</span> add remote repository</h3>
+<div class="outline-text-3" id="text-4-4">
+<pre class="example">
+root # eselect repository add guru git git://github.com/gentoo-mirror/guru.git
+root # emaint sync -r guru
+</pre>
+
+
+<p>
+Sometime, it's convenient to temporarily configure the overlay as local repository for test purpose, this can
+ avoid frequently pushing temporary work to remote git repository.
+</p>
+
+<p>
+/etc/portage/repos.conf/my-overlay.conf
+</p>
+<pre class="example">
+[localrepo]
+location = /home/my-name/my-overlay
+priority = 100
+</pre>
+
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide">https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide</a></li>
+<li>not official search <a href="https://gpo.zugaina.org/">https://gpo.zugaina.org/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e5a635" class="outline-3">
+<h3 id="org9e5a635"><span class="section-number-3">4.5.</span> overlays</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+<div id="outline-container-org509f7e2" class="outline-4">
+<h4 id="org509f7e2"><span class="section-number-4">4.5.1.</span> install from overlay</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<ul class="org-ul">
+<li>emerge &#x2013;ask app-eselect/eselect-repository</li>
+<li>eselect repository enable N</li>
+<li>emerge &#x2013;sync</li>
+<li>emerge ??</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd869044" class="outline-4">
+<h4 id="orgd869044"><span class="section-number-4">4.5.2.</span> add non-official overlay</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<ul class="org-ul">
+<li>eselect repository add matrix git <a href="https://anongit.gentoo.org/git/repo/proj/matrix.git">https://anongit.gentoo.org/git/repo/proj/matrix.git</a></li>
+<li>root #emaint sync -r matrix</li>
+<li>root #eix-update # Regenerate eix database cache (optional)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8b0843" class="outline-4">
+<h4 id="orgb8b0843"><span class="section-number-4">4.5.3.</span> list</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<ul class="org-ul">
+<li>official eselect repostitory list <a href="https://repos.gentoo.org/">https://repos.gentoo.org/</a> <a href="https://overlays.gentoo.org/">https://overlays.gentoo.org/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe3125e" class="outline-4">
+<h4 id="orgfe3125e"><span class="section-number-4">4.5.4.</span> create own</h4>
+<div class="outline-text-4" id="text-4-5-4">
+<ul class="org-ul">
+<li>main <a href="https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide">https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository">https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb086e91" class="outline-4">
+<h4 id="orgb086e91"><span class="section-number-4">4.5.5.</span> links</h4>
+<div class="outline-text-4" id="text-4-5-5">
+<ul class="org-ul">
+<li>official overlays: eselect repostitory list <a href="https://repos.gentoo.org/">https://repos.gentoo.org/</a> <a href="https://overlays.gentoo.org/">https://overlays.gentoo.org/</a></li>
+<li>doc <a href="https://wiki.gentoo.org/wiki/Ebuild_repository">https://wiki.gentoo.org/wiki/Ebuild_repository</a></li>
+<li>non-official list <a href="https://gpo.zugaina.org/Overlays">https://gpo.zugaina.org/Overlays</a></li>
+<li>doc <a href="https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide">https://wiki.gentoo.org/wiki/Project:Overlays/Overlays_guide</a></li>
+<li>all official repositories <a href="https://gitweb.gentoo.org/">https://gitweb.gentoo.org/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfa39838" class="outline-3">
+<h3 id="orgfa39838"><span class="section-number-3">4.6.</span> socks proxy</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>net-proxy/sshuttle - to create VPN connection over ssh</li>
+</ul>
+
+<p>
+for portage: <a href="https://forums.gentoo.org/viewtopic-t-52442-start-0.html">https://forums.gentoo.org/viewtopic-t-52442-start-0.html</a>
+</p>
+<ul class="org-ul">
+<li>net-proxy/tsocks</li>
+<li>in /etc/make.conf
+<ul class="org-ul">
+<li>SYNC="rsync://rsync.us.gentoo.org/gentoo-portage"</li>
+<li>FTP<sub>PROXY</sub>="<a href="ftp://192.168.0.1:8000">ftp://192.168.0.1:8000</a>"</li>
+<li>HTTP<sub>PROXY</sub>="<a href="http://192.168.0.1">http://192.168.0.1</a>"</li>
+<li>#RSYNC<sub>PROXY</sub>="192.168.0.1:873"</li>
+</ul></li>
+<li>in /etc/socks/tsocks.conf
+<ul class="org-ul">
+<li># We can access 192.168.0.* directly</li>
+<li>local = 192.168.0.0/255.255.255.0</li>
+<li># Otherwise we use the server</li>
+<li>path {</li>
+<li>reaches = 0.0.0.0/0</li>
+<li>server = 192.168.0.1</li>
+<li>server<sub>type</sub> = 5</li>
+<li>default<sub>user</sub> = test</li>
+<li>default<sub>pass</sub> = test</li>
+<li>}</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2fd7bc5" class="outline-3">
+<h3 id="org2fd7bc5"><span class="section-number-3">4.7.</span> issue solving</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>emerge &#x2013;info</li>
+<li>eselect profile show</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org75f208d" class="outline-3">
+<h3 id="org75f208d"><span class="section-number-3">4.8.</span> add localrep or personal overlay</h3>
+<div class="outline-text-3" id="text-4-8">
+<ul class="org-ul">
+<li>emerge &#x2013;ask app-eselect/eselect-repository</li>
+<li>eselect repository create &lt;repository<sub>name</sub>&gt;  #  /var/db/repos/localrepo and /etc/portage/repos.conf/eselect-repo.conf</li>
+<li>chown -R portage:portage /var/db/repos/localrepo</li>
+<li>emerge &#x2013;ask git -iconv -pcre -perl -webdav</li>
+<li>/var/db/repos/localrepo/metadata/layout.conf:
+<ul class="org-ul">
+<li>auto-sync = false</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org462540d" class="outline-3">
+<h3 id="org462540d"><span class="section-number-3">4.9.</span> create own package and ebuild to localrep</h3>
+<div class="outline-text-3" id="text-4-9">
+<ul class="org-ul">
+<li>emerge &#x2013;ask  app-emacs/ebuild-mode</li>
+<li>mkdir /var/db/repos/localrepo/&lt;package-group&gt;</li>
+<li>cp /var/db/repos/gentoo/&lt;package-group&gt;/&lt;package&gt; /var/db/repos/localrepo/&lt;package-group&gt;/&lt;package&gt;</li>
+</ul>
+
+<ul class="org-ul">
+<li>cd /var/db/repos/localrepo/&lt;package-group&gt;/&lt;package&gt; # {CATEGORY}/{PN}</li>
+<li>one of:
+<ul class="org-ul">
+<li>cp &lt;package-group&gt;/&lt;package&gt; &lt;package-group&gt;/&lt;package&gt;-r222 # version must be more</li>
+<li>create own:
+<ul class="org-ul">
+<li>cp /var/db/repos/gentoo/skel.ebuild /var/db/repos/example<sub>repository</sub>/{CATEGORY}/{PN}</li>
+<li>emacs {P}.ebuild</li>
+<li>chown -R portage:portage /var/db/repos/localrepo</li>
+</ul></li>
+</ul></li>
+<li>pkgdev manifest ; pkgcheck scan #  to create the package's Manifest file for ebuild and # QA errors in an ebuild</li>
+<li>emerge &#x2013;ask &#x2013;verbose app-dicts/artha # test</li>
+<li>GENTOO<sub>MIRRORS</sub>="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack # test fetching and unpacking the upstream sources</li>
+<li>ebuild scrub-2.6.1.ebuild clean test install  # test suite</li>
+<li>ebuild scrub-2.6.1.ebuild clean install merge # actual install</li>
+</ul>
+
+<p>
+old
+</p>
+<ul class="org-ul">
+<li>ebuild &lt;ebuild&gt; manifest # update Manifest for .ebuild file</li>
+<li>chown -R portage:portage /var/db/repos/localrepo</li>
+<li><a href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_ebuild_repository">https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/CustomTree#Defining_a_custom_ebuild_repository</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository">https://wiki.gentoo.org/wiki/Creating_an_ebuild_repository</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/User:Shunlir/An_Overlay_Tutorial">https://wiki.gentoo.org/wiki/User:Shunlir/An_Overlay_Tutorial</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds">https://wiki.gentoo.org/wiki/Basic_guide_to_write_Gentoo_Ebuilds</a></li>
+<li><a href="https://devmanual.gentoo.org/quickstart/">https://devmanual.gentoo.org/quickstart/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org483da81" class="outline-3">
+<h3 id="org483da81"><span class="section-number-3">4.10.</span> add own overlay to gentoo</h3>
+</div>
+<div id="outline-container-org893526a" class="outline-3">
+<h3 id="org893526a"><span class="section-number-3">4.11.</span> ebuilds</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+ex. name-version.ebuild
+</p>
+</div>
+
+<div id="outline-container-org6cd153a" class="outline-4">
+<h4 id="org6cd153a"><span class="section-number-4">4.11.1.</span> main links:</h4>
+<div class="outline-text-4" id="text-4-11-1">
+<p>
+-<a href="file:///usr/lib/portage/python3.12/phase-helpers.sh">file:///usr/lib/portage/python3.12/phase-helpers.sh</a>
+</p>
+<ul class="org-ul">
+<li><a href="https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html">https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf831219" class="outline-4">
+<h4 id="orgf831219"><span class="section-number-4">4.11.2.</span> minimal ebuild</h4>
+<div class="outline-text-4" id="text-4-11-2">
+<pre class="example">
+EAPI=8
+inherit .. ???
+DESCRIPTION="Ruby grammar for Tree-sitter" # for info
+HOMEPAGE="https://github.com/tree-sitter-grammars/tree-sitter-yaml" # for info
+SRC_URI="https://github.com/tree-sitter/${PN}/archive/${TS_PV:-v${PV}}.tar.gz"
+</pre>
+
+
+<pre class="example">
+LICENSE="MIT" # for info
+SLOT="0"
+KEYWORDS="~amd64 ~x86" This variable is required to specify the architectures and platforms that the package supports.
+</pre>
+
+
+<pre class="example">
+RESTRICT="mirror bindist" # mirror - disable attempt to download from GENTOO_MIRRORS
+</pre>
+</div>
+</div>
+<div id="outline-container-org52bbe63" class="outline-4">
+<h4 id="org52bbe63"><span class="section-number-4">4.11.3.</span> terms</h4>
+<div class="outline-text-4" id="text-4-11-3">
+<dl class="org-dl">
+<dt>ebuild</dt><dd>bash scripts that are executed within a special environment.</dd>
+<dt>EAPI</dt><dd>standardization effort of ebuild file format, ebuild repository format. located at the top of the
+ebuild. (eclasses may have EAPI-conditional code)</dd>
+<dt>helpers</dt><dd>functions, can require eutils eclass or accessed directly. usage: <code>inherit autotools</code></dd>
+<dt>version specifier</dt><dd>{CATEGORY}, {PN}, and {P} represent package category, package name, and package name and
+version. ex. “sys-devel/gdb-7.3”</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org5e064d4" class="outline-4">
+<h4 id="org5e064d4"><span class="section-number-4">4.11.4.</span> steps</h4>
+<div class="outline-text-4" id="text-4-11-4">
+<ol class="org-ol">
+<li>/usr/bin/emerge -&gt; /usr/lib/python-exec/python-exec2 -&gt;  /usr/lib/python-exec/python3.11/emerge</li>
+<li>k/usr/lib/python3.11/site-packages/<sub>emerge</sub>/main.py</li>
+<li><a href="#org3fd9e32">4.11.5</a> /usr/lib/python-exec/python3.11/ebuild</li>
+<li>all files from SRC<sub>URI</sub> downloaded to /var/cache/distfiles (if exist, skip)
+<ul class="org-ul">
+<li>SRC<sub>URI</sub> tells Portage the address to use for downloading the source tarball.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgfa6937a" class="outline-4">
+<h4 id="orgfa6937a"><span class="section-number-4">4.11.5.</span> <a id="org3fd9e32"></a></h4>
+<div class="outline-text-4" id="text-4-11-5">
+<p>
+low level interface to the Portage system
+</p>
+<ul class="org-ul">
+<li>/usr/lib/python-exec/python3.11/ebuild</li>
+<li>portage.doebuild(ebuild<sub>path</sub>, action) /usr/lib/python3.11/site-packages/portage/package/ebuild/doebuild.py
+<ul class="org-ul">
+<li>_spawn<sub>phase</sub> -&gt; _doebuild<sub>spawn</sub></li>
+</ul></li>
+<li>/usr/lib/portage/python3.11/ebuild.sh</li>
+<li>/usr/lib/portage/python3.11/phase-functions.sh: _<sub>ebuild</sub><sub>main</sub></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge5a41d9" class="outline-4">
+<h4 id="orge5a41d9"><span class="section-number-4">4.11.6.</span> package in the tree(ebuild repository)</h4>
+<div class="outline-text-4" id="text-4-11-6">
+<ul class="org-ul">
+<li>Manifest - hashes</li>
+<li>20200316.ebuild</li>
+<li>99999999.ebuild</li>
+<li>metadata.xml - additional data about a package or category. use flags, maintainers</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcad387c" class="outline-4">
+<h4 id="orgcad387c"><span class="section-number-4">4.11.7.</span> Ebuild Phase Functions</h4>
+<div class="outline-text-4" id="text-4-11-7">
+<ul class="org-ul">
+<li>Package from source: pkg<sub>pretend</sub>, pkg<sub>setup</sub>, src<sub>unpack</sub>, src<sub>prepare</sub>, src<sub>configure</sub>, src<sub>compile</sub>, src<sub>test</sub> (optional, FEATURES="test"), src<sub>install</sub>, pkg<sub>preinst</sub>, pkg<sub>postinst</sub></li>
+<li>Package from binary: pkg<sub>pretend</sub>, pkg<sub>setup</sub>, pkg<sub>preinst</sub>, pkg<sub>postinst</sub></li>
+</ul>
+
+<p>
+<b>pkg<sub>prerm</sub></b> and <b>pkg<sub>postrm</sub></b> functions are called when uninstalling a package
+</p>
+
+<p>
+Between the transition from <b>pkg<sub>preinst</sub></b> to <b>pkg<sub>postinst</sub></b>, files are copied over to the live filesystem from the
+ sandboxed temporary installation location, and Portage records digests of the files installed.
+</p>
+
+
+<p>
+There is phase functions, which may be called as "default" from redefined funcions(pkg<sub>nofetch</sub>, src<sub>unpack</sub>).
+</p>
+<ul class="org-ul">
+<li>default<sub>pkg</sub><sub>nofetch</sub> - when RESTRICT="fetch"</li>
+<li>default<sub>src</sub><sub>unpack</sub></li>
+<li>default<sub>src</sub><sub>prepare</sub> - apply patches</li>
+<li>default<sub>src</sub><sub>configure</sub> <a href="https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html">https://devmanual.gentoo.org/ebuild-writing/functions/src_configure/configuring/index.html</a></li>
+<li>default<sub>src</sub><sub>compile</sub></li>
+<li>default<sub>src</sub><sub>test</sub></li>
+<li>default<sub>src</sub><sub>install</sub></li>
+</ul>
+
+<p>
+actual code located in functions: _<sub>eapi8</sub><sub>src</sub><sub>prepare</sub> &#x2026;
+</p>
+
+<p>
+files:
+</p>
+<ul class="org-ul">
+<li>/usr/lib/portage/python3.11/phase-functions.sh</li>
+<li></li>
+</ul>
+
+<p>
+<a href="https://devmanual.gentoo.org/ebuild-writing/functions/index.html">https://devmanual.gentoo.org/ebuild-writing/functions/index.html</a>
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org86b6505"></a>in code functions<br />
+<div class="outline-text-5" id="text-4-11-7-1">
+<p>
+eapply<sub>user</sub> - apply patches from /etc/portage/patches
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org227e943" class="outline-4">
+<h4 id="org227e943"><span class="section-number-4">4.11.8.</span> Predefined Read-Only Variables</h4>
+<div class="outline-text-4" id="text-4-11-8">
+<p>
+internal
+</p>
+<dl class="org-dl">
+<dt>PORTAGE<sub>TMPDIR</sub></dt><dd>from emerge &#x2013;info: PORTAGE<sub>TMPDIR</sub>="/var/tmp"</dd>
+<dt>PORTAGE<sub>BUILDDIR</sub></dt><dd>internal directory with extracter tar.gz. ex: '<i>var/tmp/portage/dev-python/flask-2.3.2</i>'</dd>
+</dl>
+
+<p>
+accessible
+</p>
+<dl class="org-dl">
+<dt>P</dt><dd>Package name and version (excluding revision, if any), for example vim-6.3.</dd>
+<dt>PN</dt><dd>Package name, for example vim.</dd>
+<dt>CATEGORY</dt><dd>Package's category, for example app-editors.</dd>
+<dt>ROOT</dt><dd>The absolute path to the root directory into which the package is to be merged.  Only allowed in pkg<sub>*</sub> phases</dd>
+<dt>DISTDIR</dt><dd>Contains the path to the directory where all the files fetched for the package are stored (.tar.gz). defined in "/var/cache/distfiles"</dd>
+<dt>A</dt><dd>All the source files for the package (excluding those which are not available because of USE flags).</dd>
+<dt>WORKDIR</dt><dd>Path to the ebuild's root build directory. For example: "${PORTAGE<sub>BUILDDIR</sub>}/work".</dd>
+<dt>T</dt><dd>Path to a temporary directory which may be used by the ebuild.  For example: "${PORTAGE<sub>BUILDDIR</sub>}/temp".</dd>
+<dt>D</dt><dd>Path to the temporary install directory. For example: "${PORTAGE<sub>BUILDDIR</sub>}/image".</dd>
+<dt>HOME</dt><dd>Path to a temporary directory for use by any programs invoked by an ebuild that may read or modify
+the home directory. For example: "${PORTAGE<sub>BUILDDIR</sub>}/homedir".</dd>
+</dl>
+
+<p>
+<a href="https://devmanual.gentoo.org/ebuild-writing/variables/index.html#predefined-read-only-variables">https://devmanual.gentoo.org/ebuild-writing/variables/index.html#predefined-read-only-variables</a>
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org74ecac1"></a>ex<br />
+<div class="outline-text-5" id="text-4-11-8-1">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #cae682;">PN</span>=slack
+<span style="color: #cae682;">PV</span>=4.36.138
+<span style="color: #e5786d;">echo</span> https://downloads.slack-edge.com/releases/linux/${<span style="color: #cae682;">PV</span>}/prod/x64/${<span style="color: #cae682;">PN</span>}-desktop-${<span style="color: #cae682;">PV</span>}-amd64.deb
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org9c47c8b" class="outline-4">
+<h4 id="org9c47c8b"><span class="section-number-4">4.11.9.</span> Ebuild-defined Variables</h4>
+<div class="outline-text-4" id="text-4-11-9">
+<p>
+EAPI 7: CHOST vs CBUILD
+</p>
+<ul class="org-ul">
+<li>CHOST - DEPEND The system on which the package is going to be executed.</li>
+<li>CBUILD - BDEPEND - The system on which the build is performed.</li>
+</ul>
+
+<p>
+dependencies
+</p>
+<dl class="org-dl">
+<dt>DEPEND</dt><dd>legacy variable that was used to specify both build-time and runtime dependencies. It is still
+supported for backwards compatibility, but it is recommended to use BDEPEND and RDEPEND instead.</dd>
+<dt>RDEPEND</dt><dd>Runtime dependencies. target platform</dd>
+<dt>BDEPEND</dt><dd>where we build, programs that will be executed during the build (not necessarily required to run it.)</dd>
+<dt>IDEPEND</dt><dd>Install Dependencies. needed during the pkg<sub>postinst</sub> phase and that can be unmerged afterwards.  not for runtime.</dd>
+<dt>PDEPEND</dt><dd>Post-Dependencies. runtime dependencies that do not strictly require being satisfied immediately. Can be merget After.</dd>
+</dl>
+
+
+<p>
+variables
+</p>
+<dl class="org-dl">
+<dt>SRC<sub>URI</sub></dt><dd>A list of source URIs for the package. Can contain USE-conditional parts, see SRC<sub>URI</sub>. From where to get tar.gz</dd>
+<dt>KEYWORDS</dt><dd>suitability and stability of both the package and the ebuild on each given arch. see <a href="#org80c8fad">3.1</a>, -* - worth trying to test on unlisted arches.</dd>
+<dt>IUSE</dt><dd>A list of all USE flags (excluding arch flags, but including USE<sub>EXPAND</sub> flags) used within the ebuild.</dd>
+<dt>SLOT</dt><dd>"0" - not needed. when package require multiple version of same app or lib. see <a href="https://devmanual.gentoo.org/general-concepts/slotting/index.html">https://devmanual.gentoo.org/general-concepts/slotting/index.html</a></dd>
+<dt>REQUIRED<sub>USE</sub></dt><dd>A list of assertions that must be met by the configuration of USE flags to be valid for this ebuild.</dd>
+<dt>RESTRICT</dt><dd>Valid values are fetch, mirror, strip, test and userpriv. see: man 5 ebuild</dd>
+<dt>S</dt><dd>Path to the temporary build directory, used by src<sub>compile</sub> and src<sub>install</sub>. Default: "\({WORKDIR}/\){P}"</dd>
+<dt>BROOT</dt><dd>BROOT is the absolute path to the root directory</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org92ad41a" class="outline-4">
+<h4 id="org92ad41a"><span class="section-number-4">4.11.10.</span> SLOT</h4>
+<div class="outline-text-4" id="text-4-11-10">
+<p>
+ebuild variable. ex. <a href="file:///var/db/repos/gentoo/dev-lang/lua/lua-5.4.6.ebuild">file:///var/db/repos/gentoo/dev-lang/lua/lua-5.4.6.ebuild</a>
+</p>
+<pre class="example">
+SLOT="5.4"
+</pre>
+
+<p>
+Allow multiple versions of a package to be installed and managed simultaneously by Portage.
+</p>
+
+<p>
+Slots may be used in ebuild with (:) :
+</p>
+<pre class="example">
+emerge --ask gentoo-kernel:6.6.21 gentoo-kernel:6.1.81
+</pre>
+
+<p>
+where 6.6.21 and 6.1.81 are two SLOTs
+</p>
+</div>
+</div>
+<div id="outline-container-org1aaa8e6" class="outline-4">
+<h4 id="org1aaa8e6"><span class="section-number-4">4.11.11.</span> DEPEND - RDEPEND, BDEPEND etc.</h4>
+<div class="outline-text-4" id="text-4-11-11">
+<ul class="org-ul">
+<li>arbitrary whitespace separated.</li>
+<li>may have versions:
+<ul class="org-ul">
+<li>&gt;=ev-libs/openssl-0.9.7d - at least version 0.9.7d</li>
+<li>~app-misc/foo-1.23 	Version 1.23 (or any 1.23-r*) is required.</li>
+<li>=app-misc/foo-1.23 	without allowing revisions</li>
+</ul></li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgfac9d3c"></a>USE in dependencies<br />
+<div class="outline-text-5" id="text-4-11-11-1">
+<p>
+foo must have bar disabled and baz enabled:
+</p>
+<pre class="example">
+app-misc/foo[-bar,baz]
+</pre>
+
+
+<p>
+Compact form 	Equivalent expanded form
+</p>
+<ul class="org-ul">
+<li>app-misc/foo[bar?] 	bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo )</li>
+<li>app-misc/foo[!bar?] 	bar? ( app-misc/foo ) !bar? ( app-misc/foo[-bar] )</li>
+<li>app-misc/foo[bar=] 	bar? ( app-misc/foo[bar] ) !bar? ( app-misc/foo[-bar] )</li>
+<li>app-misc/foo[!bar=] 	bar? ( app-misc/foo[-bar] ) !bar? ( app-misc/foo[bar] )</li>
+</ul>
+
+<p>
+For a new package version: (+) indicates that the missing flag is assumed to be enabled, (-) the opposite.
+</p>
+<pre class="example">
+&gt;=dev-libs/boost-1.48[threads(+)]
+</pre>
+
+<p>
+Treat all boost versions without the threads flag as having it enabled.
+</p>
+
+
+<p>
+doc <a href="https://devmanual.gentoo.org/general-concepts/dependencies/">https://devmanual.gentoo.org/general-concepts/dependencies/</a>
+</p>
+</div>
+</li>
+<li><a id="org30deef1"></a>Blockers<br />
+<div class="outline-text-5" id="text-4-11-11-2">
+<p>
+Пакеты, которые не должны быть установлены одновременно с пакетом, для которого определяется зависимость.
+</p>
+
+<ul class="org-ul">
+<li>weak blockers. ex. RDEPEND="!app-misc/foo"
+<ul class="org-ul">
+<li>allow to have two versions installed</li>
+<li>exempts the common files from file collision checks</li>
+</ul></li>
+<li>strong blockers. ex. RDEPEND="!!app-misc/foo"
+<ul class="org-ul">
+<li>do not allow to install</li>
+</ul></li>
+</ul>
+
+<p>
+Allow blocking specific versions: <code>RDEPEND="!&lt;app-misc/foo-1.3"</code>
+</p>
+</div>
+</li>
+
+<li><a id="org7f22bcd"></a>Slot operators: media-libs/cogl:1.0=<br />
+<div class="outline-text-5" id="text-4-11-11-3">
+<ul class="org-ul">
+<li>:=, :* - means that any slot is acceptable.</li>
+</ul>
+
+<p>
+USE-conditional dependencies:
+</p>
+<ul class="org-ul">
+<li>Should not be used for disabling a certain USE flag on a given architecture.</li>
+<li>ex.
+<ul class="org-ul">
+<li>if a given USE flag is set:
+<ul class="org-ul">
+<li>perl? ( dev-lang/perl )</li>
+</ul></li>
+<li>if a given USE flag is not set:
+<ul class="org-ul">
+<li>!perl? ( dev-lang/perl )</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orga05e743"></a>Or: Any of many<br />
+<div class="outline-text-5" id="text-4-11-11-4">
+<pre class="example">
+DEPEND="|| ( app-misc/foo app-misc/bar )"
+</pre>
+
+<p>
+Require foo or bar.
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org169b773" class="outline-4">
+<h4 id="org169b773"><span class="section-number-4">4.11.12.</span> helpers</h4>
+<div class="outline-text-4" id="text-4-11-12">
+<p>
+/usr/lib/portage/python3.12/phase-helpers.sh
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orga526f4b"></a>general<br />
+<div class="outline-text-5" id="text-4-11-12-1">
+<dl class="org-dl">
+<dt>assert [reason]</dt><dd>if any component is non-zero (indicating failure), calls die with reason as a failure message.</dd>
+<dt>die [reason]</dt><dd>Causes the current emerge process to be aborted. The final display will include reason.</dd>
+<dt>nonfatal &lt;helper&gt;</dt><dd>Execute helper and do not call die if it fails. The nonfatal helper is available beginning with EAPI 4.</dd>
+<dt>use &lt;USE item&gt;</dt><dd>If USE item is in the USE variable, the function will silently return 0 (aka shell
+true). If USE item is not in the USE variable, the function will silently return 1 (aka shell false). usev is
+a verbose version of use.  Example: use python &amp;&amp; python-single-r1<sub>pkg</sub><sub>setup</sub>
+<dl class="org-dl">
+<dt>usev &lt;USE item&gt;</dt><dd>Like use, but also echoes USE item when use returns true.</dd>
+<dt>(no term)</dt><dd>usex &lt;USE flag&gt; [true output] [false output] [true suffix] [false suffix]</dd>
+<dt>(no term)</dt><dd>use<sub>with</sub> &lt;USE item&gt; [configure name] [configure opt]</dd>
+<dt>(no term)</dt><dd>use<sub>enable</sub> &lt;USE item&gt; [configure name] [configure opt]    Same as use<sub>with</sub> above, except that the configure options are &#x2013;enable- instead of &#x2013;with- and &#x2013;disable- instead of &#x2013;without-. Beginning with EAPI 4, an empty configure opt argument is recognized. In EAPI 3 and earlier, an empty configure opt argument is treated as if it weren't provided.</dd>
+</dl></dd>
+<dt>(no term)</dt><dd>has &lt;item&gt; &lt;item list&gt;</dd>
+<dt>hasv &lt;item&gt; &lt;item list&gt;</dt><dd>Like has, but also echoes item when has returns true.</dd>
+<dt>(no term)</dt><dd>has<sub>version</sub> [-b] [-d] [-r] [&#x2013;host-root] &lt;category/package-version&gt;</dd>
+<dt>(no term)</dt><dd>best<sub>version</sub> [-b] [-d] [-r] [&#x2013;host-root] &lt;package name&gt;</dd>
+</dl>
+
+<p>
+for Python: <a href="https://projects.gentoo.org/python/guide/helper.html">https://projects.gentoo.org/python/guide/helper.html</a>
+</p>
+
+<p>
+python<sub>doexe</sub>, python<sub>doscript</sub>, python<sub>domodule</sub>, and python<sub>doheader</sub>: Used for installing Python executables,
+ scripts, modules, and headers respectively.
+</p>
+</div>
+</li>
+<li><a id="org2de84ab"></a>Log<br />
+<div class="outline-text-5" id="text-4-11-12-2">
+<dl class="org-dl">
+<dt>elog	</dt><dd>If you need to display a message that you wish the user to read and take notice of, then use
+elog. It works just like echo(1), but adds a little more to the output so as to catch the user's eye. The
+message will also be logged by portage for later review.</dd>
+<dt>einfo</dt><dd>Same as elog, but should be used when the message isn't important to the user (like progress or
+status messages during the build process).</dd>
+<dt>ebegin</dt><dd>Like einfo, we output a helpful message and then hint that the following operation may take some
+time to complete. Once the task is finished, you need to call eend.</dd>
+<dt>eend	</dt><dd>Followup the ebegin message with an appropriate "OK" or "!!" (for errors) marker. If status is
+non-zero, then the additional error message is displayed.</dd>
+<dt>eqawarn</dt><dd>Same as einfo, but should be used when showing a QA warning to the user.</dd>
+<dt>ewarn</dt><dd>Same as einfo, but should be used when showing a warning to the user.</dd>
+<dt>doman</dt><dd>Recognition of Language Codes in File Names</dd>
+<dt>unpack</dt><dd>Support for the xz file extension</dd>
+<dt>econf</dt><dd>./configure</dd>
+<dt>einstall</dt><dd>make install</dd>
+<dt>dodoc</dt><dd>Installs documentation files into /usr/share/doc.</dd>
+<dt>emake</dt><dd>Used for building and installing packages using the make command.</dd>
+<dt>eapply</dt><dd>Applies patches to the source code during the src<sub>prepare</sub> phase.</dd>
+<dt>doins</dt><dd>Installs files into the system, often used for installing executables and scripts.</dd>
+<dt>dobin</dt><dd>Installs binaries into the system.</dd>
+<dt>udev<sub>dorules</sub></dt><dd>Installs udev rules files into the system.</dd>
+</dl>
+
+<p>
+man 5 ebuild - full list
+</p>
+
+<p>
+<a href="https://dev.gentoo.org/~zmedico/portage/doc/man/ebuild.5.html">https://dev.gentoo.org/~zmedico/portage/doc/man/ebuild.5.html</a>
+</p>
+
+<p>
+additional in /var/db/repos/gentoo/eclass/*.eclass files
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org8fb0062" class="outline-4">
+<h4 id="org8fb0062"><span class="section-number-4">4.11.13.</span> patches</h4>
+<div class="outline-text-4" id="text-4-11-13">
+<p>
+patches - is optional directory.
+</p>
+
+<p>
+There are two types of patches - /etc/portage/patches and ebuild patches.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org103f4df"></a>etc patches<br />
+<div class="outline-text-5" id="text-4-11-13-1">
+<p>
+steps:
+</p>
+<pre class="example">
+cd /tmp/
+git clone --branch &lt;tag-name&gt; --single-branch https://github.com/example/repo.git
+cd src/
+edit
+"git diff --relative --stat -p --output=patch.patch" # cannot be used: commit and "git format-patch -1 HEAD"
+mkdir -p /etc/portage/patches/x11-misc/pcmanfm-1.2.5
+mv patch.patch /etc/portage/patches/x11-misc/pcmanfm-1.2.5/patch.patch
+</pre>
+
+
+
+<p>
+<a href="https://wiki.gentoo.org/wiki//etc/portage/patches">https://wiki.gentoo.org/wiki//etc/portage/patches</a>
+</p>
+</div>
+</li>
+<li><a id="org176f72f"></a>ebuild patches<br />
+<div class="outline-text-5" id="text-4-11-13-2">
+<p>
+files/ - path for *.patch files
+</p>
+
+<p>
+example: net-analyzer/portmon
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #cae682;">PATCHES</span>=(
+    <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">name-0.1</span>
+    <span style="color: #95e454;">"${FILESDIR}"</span>/${<span style="color: #cae682;">P</span>}-dont-umask.patch <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">93671</span>
+)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">or</span>
+<span style="color: #cae682;">PATCHES</span>=(
+    <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">name</span>
+    <span style="color: #95e454;">"${FILESDIR}"</span>/${<span style="color: #cae682;">PN</span>}-4.3-dont-umask.patch <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">93671</span>
+)
+</pre>
+</div>
+<p>
+<a href="https://devmanual.gentoo.org/ebuild-writing/misc-files/patches/index.html">https://devmanual.gentoo.org/ebuild-writing/misc-files/patches/index.html</a>
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgaa29112" class="outline-4">
+<h4 id="orgaa29112"><span class="section-number-4">4.11.14.</span> fetch</h4>
+<div class="outline-text-4" id="text-4-11-14">
+<p>
+Downloading a package's source happens before any of phases.
+</p>
+
+<p>
+If the user tries to install a <b>fetch-restricted</b> package, the package manager will not try to download it,
+ but simply check whether the corresponding archive is present in /usr/portage/distfiles
+</p>
+
+<p>
+If not, it will execute the pkg<sub>nofetch</sub> ebuild function which should print a message describing the steps
+ needed to acquire the archive.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf70b0e0" class="outline-4">
+<h4 id="orgf70b0e0"><span class="section-number-4">4.11.15.</span> debugging ebuild</h4>
+<div class="outline-text-4" id="text-4-11-15">
+<ul class="org-ul">
+<li>ebuild /path/to/your.ebuild &#x2013;check-syntax</li>
+<li>use -v with “ebuild” command</li>
+<li>/etc/portage/make.conf: PORTAGE<sub>ELOG</sub><sub>SYSTEM</sub>="echo save" -  Show messages after emerging <b>and</b> save</li>
+<li>export DEBUG=1</li>
+<li>export PORTAGE<sub>LOG</sub><sub>FILE</sub>="/path/to/logfile"</li>
+<li>emerge &#x2013;debug your-package</li>
+<li>use tools like chroot or Docker to create isolated environments.</li>
+<li>Using src<sub>test</sub> Phase</li>
+</ul>
+<p>
+<a href="https://wiki.gentoo.org/wiki/Portage_log">https://wiki.gentoo.org/wiki/Portage_log</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orge1e98b5" class="outline-4">
+<h4 id="orge1e98b5"><span class="section-number-4">4.11.16.</span> testing</h4>
+<div class="outline-text-4" id="text-4-11-16">
+<p>
+It is possible to test fetching and unpacking the upstream sources by the new ebuild, using the ebuild command:
+</p>
+<ul class="org-ul">
+<li>GENTOO<sub>MIRRORS</sub>="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack</li>
+</ul>
+
+<p>
+ebuild require modified config of /etc/portage/make.conf or /usr/share/portage/config/make.globals
+</p>
+
+<p>
+steps:
+</p>
+<ol class="org-ol">
+<li>create tmp directory:
+<ul class="org-ul">
+<li>mkdir -p /tmp/ebuildtest</li>
+<li>chown u:portage /tmp/ebuildtest</li>
+<li>chmod g+s /tmp/ebuildtest</li>
+</ul></li>
+<li>add repository with ebuild: eselect repository enable localrep. Which add /etc/portage/repos.conf/eselect-repo.conf</li>
+<li>creation of environment:
+<ol class="org-ol">
+<li>btrfs subvolume snapshot / /mnt/test # directory /mnt/test should not exist</li>
+<li>cd /mnt/test</li>
+<li>mount -t proc <i>proc proc</i></li>
+<li># mount -t sysfs <i>sys sys</i></li>
+<li>mount &#x2013;rbind <i>dev dev</i> # both places</li>
+<li>mount &#x2013;rbind <i>var/tmp</i> var/tmp # both places</li>
+<li>chroot /mnt/gentoo /bin/bash</li>
+<li>source /etc/profile</li>
+<li>mount -t proc proc /proc</li>
+<li></li>
+</ol></li>
+<li>GENTOO<sub>MIRRORS</sub>="" ebuild ./scrub-2.6.1.ebuild manifest clean unpack</li>
+<li>pkg-testing-tool &#x2013;append-emerge='&#x2013;autounmask=y' &#x2013;extra-env-file 'test.conf' &#x2013;append-required-use
+'!anonch' &#x2013;test-feature-scope once &#x2013;max-use-combinations 6 -p '=sci-libs/onnxruntime-1.18.1' &#x2013;report
+/var/tmp/portage/logs/efl-1.25.1-r11-report.json</li>
+</ol>
+
+<p>
+creation of environment:
+</p>
+<ul class="org-ul">
+<li>btrfs subvolume snapshot / /mnt/test</li>
+<li>btrfs subvolume delete /mnt/test</li>
+</ul>
+
+<p>
+execute ebuild step - pkg<sub>setup</sub>()
+</p>
+<pre class="example">
+ebuild /var/db/repos/gentoo/app-containers/lxc/lxc-4.0.6.ebuild setup
+</pre>
+</div>
+<ol class="org-ol">
+<li><a id="org9a14ef7"></a>pkgdev tatt<br />
+<div class="outline-text-5" id="text-4-11-16-1">
+<ul class="org-ul">
+<li>&#x2013;packages TARGET [TARGET &#x2026;], -p TARGET [TARGET &#x2026;]</li>
+<li>&#x2013;use-default - Prefer to use default use flags configuration</li>
+<li>&#x2013;test, -t - Include a test run for packages which define src<sub>test</sub> phase (in the ebuild or inherited from
+eclass). make.conf FEATURES="test"</li>
+</ul>
+
+<p>
+optional:
+</p>
+<ul class="org-ul">
+<li>&#x2013;job-name NAME -j NAME - just name</li>
+</ul>
+
+<p>
+kgdev tatt &#x2013;use-default &#x2013;extra-env-file test.conf -p =www-client/firefox-122.0.1 -j tatt-firefox
+</p>
+<ul class="org-ul">
+<li>/etc/portage/env/test.conf</li>
+</ul>
+
+<p>
+Feature=”test” Run package-specific tests during each merge to help make sure the package compiled properly.
+ See test in ebuild(1) and src<sub>test</sub>() in ebuild(5).  This feature implies the "test" USE flag if it is a
+ member of IUSE, either explic‐ itly or implicitly (see ebuild(5) for more information about IUSE).  The
+ "test" USE flag is also automatically disabled when the "test" feature is disabled.
+</p>
+</div>
+</li>
+<li><a id="orgf657ed0"></a>pkg-testing-tool<br />
+<div class="outline-text-5" id="text-4-11-16-2">
+<pre class="example">
+emerge --ask app-portage/pkg-testing-tools
+</pre>
+
+
+<pre class="example">
+$ pkg-testing-tool --append-emerge '--autounmask=y' --extra-env-file 'test.conf' --test-feature-scope once --max-use-combinations 6 -p '=sci-libs/onnxruntime-1.18.1'
+</pre>
+
+<p>
+under user:
+</p>
+<pre class="example">
+Permission denied: '/etc/portage/package.accept_keywords/zzz_pkg_testing_tool_h8yuhdy8'
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgea0cb66" class="outline-4">
+<h4 id="orgea0cb66"><span class="section-number-4">4.11.17.</span> test dependencies</h4>
+<div class="outline-text-4" id="text-4-11-17">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #cae682;">TEST_DEPEND</span>=<span style="color: #95e454;">"dev-util/check</span>
+<span style="color: #95e454;">             dev-util/valgrind"</span>
+
+<span style="color: #cae682; font-weight: bold;">src_test</span>() {
+    emake test
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb6d04f0" class="outline-4">
+<h4 id="orgb6d04f0"><span class="section-number-4">4.11.18.</span> Troubleshooting</h4>
+<div class="outline-text-4" id="text-4-11-18">
+<p>
+The source directory
+ '/var/tmp/portage/sci-libs/unhubbed-transformers-4.45.0/work/unhubbed-transformers-4.45.0' doesn't exist. But
+ work/unhubbed-transformers-4.45.0.dev0 exist, because we download unhubbed-transformers-4.45.0.dev0.tar.gz
+ from github.
+</p>
+<ul class="org-ul">
+<li>Solution:</li>
+</ul>
+<pre class="example">
+MY_PV="${PV}.dev0"
+MY_P="${PN}-${MY_PV}"
+S=${WORKDIR}/${MY_P} # work/...
+SRC_URI="https://github.com/Anoncheg1/${PN}/archive/refs/tags/${MY_PV}.tar.gz
+	-&gt; ${P}.gh.tar.gz"
+</pre>
+</div>
+</div>
+<div id="outline-container-org143c366" class="outline-4">
+<h4 id="org143c366"><span class="section-number-4">4.11.19.</span> examples</h4>
+<div class="outline-text-4" id="text-4-11-19">
+<ul class="org-ul">
+<li>cmake git-releasedev-libs/sexpp/sexpp-0.9.0.ebuild</li>
+<li>cmake git-r3 xdg-utilsgames-strategy/colobot/colobot-9999.ebuild</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org113a1f5" class="outline-4">
+<h4 id="org113a1f5"><span class="section-number-4">4.11.20.</span> links</h4>
+<div class="outline-text-4" id="text-4-11-20">
+<ul class="org-ul">
+<li><a href="https://devmanual.gentoo.org/quickstart/index.html">https://devmanual.gentoo.org/quickstart/index.html</a></li>
+<li>main reference for ebuild development <a href="https://devmanual.gentoo.org/index.html">https://devmanual.gentoo.org/index.html</a></li>
+<li>man 5 ebuild</li>
+<li><a href="https://devmanual.gentoo.org/eclass-reference/ebuild/">https://devmanual.gentoo.org/eclass-reference/ebuild/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c5320c" class="outline-3">
+<h3 id="org3c5320c"><span class="section-number-3">4.12.</span> eclass</h3>
+<div class="outline-text-3" id="text-4-12">
+</div>
+<div id="outline-container-org5e755df" class="outline-4">
+<h4 id="org5e755df"><span class="section-number-4">4.12.1.</span> theory</h4>
+<div class="outline-text-4" id="text-4-12-1">
+<p>
+collection of code which can be used by more than one ebuild.
+</p>
+
+<p>
+add &lt;repo&gt;/eclass/autotools.eclass in ebuild:
+</p>
+<pre class="example">
+inherit autotools
+</pre>
+
+
+<p>
+for:
+</p>
+<ul class="org-ul">
+<li>used by many ebuilds (for example, autotools, bash-completion-r1, flag-o-matic, toolchain-funcs)</li>
+<li>provide a basic build system for many similar packages (for example, perl-module, vim-plugin)</li>
+<li>handle one or a small number of packages with complex build systems (for example, kernel-2, toolchain)</li>
+</ul>
+
+<p>
+consit of:
+</p>
+<ul class="org-ul">
+<li>variables - affect the default behavior of the eclass.</li>
+<li>functions -</li>
+<li>Function Variables</li>
+<li>phase functions or Export Functions - default implementations for any of the ebuild phase functions - used to override eclass-defined defaults
+<ul class="org-ul">
+<li>simple function definition (not multiple eclass friendly)</li>
+<li>EXPORT<sub>FUNCTIONS</sub> - have their name prefixed ("namespaced") with ${ECLASS}_. 1) define ${ECLASS}<sub>src</sub><sub>compile</sub> 2) EXPORT<sub>FUNCTIONS</sub> ${ECLASS}<sub>src</sub><sub>compile</sub>
+<ul class="org-ul">
+<li>If multiple eclasses export the same function, the latest (inherited last) defined version wins.</li>
+</ul></li>
+</ul></li>
+<li>Inherit guard:</li>
+</ul>
+<pre class="example">
+if [[ -z ${_FOO_ECLASS} ]]; then _FOO_ECLASS=1 ... fi
+</pre>
+
+<ul class="org-ul">
+<li>Handling incorrect usage of an eclass: case ${EAPI} in &#x2026;</li>
+</ul>
+<p>
+recommendation is now that eclasses should not inherit other eclasses after calling EXPORT<sub>FUNCTIONS</sub>.
+</p>
+<ul class="org-ul">
+<li>inherit other eclasses</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org38010eb" class="outline-4">
+<h4 id="org38010eb"><span class="section-number-4">4.12.2.</span> python building</h4>
+<div class="outline-text-4" id="text-4-12-2">
+</div>
+<ol class="org-ol">
+<li><a id="org81643a2"></a>eclasses<br />
+<div class="outline-text-5" id="text-4-12-2-1">
+<p>
+pypi.eclass - A helper eclass to generate PyPI source URIs
+</p>
+<ul class="org-ul">
+<li>executes _pypi<sub>set</sub><sub>globals</sub> which set: SRC<sub>URI</sub> as <a href="https://files.pythonhosted.org/packages/%7Bpytag%7D/$%7Bproject::1%7D/$%7Bproject%7D/$%7Bfilename">https://files.pythonhosted.org/packages/%7Bpytag%7D/$%7Bproject::1%7D/$%7Bproject%7D/$%7Bfilename</a>}</li>
+</ul>
+<p>
+distutils-r1.eclass
+</p>
+<ul class="org-ul">
+<li>redefine phases src<sub>prepare</sub> src<sub>configure</sub> src<sub>compile</sub> src<sub>test</sub> src<sub>install</sub></li>
+<li>variables:
+<ul class="org-ul">
+<li>DISTUTILS<sub>USE</sub><sub>PEP517</sub> - complete build and install is done in python<sub>compile</sub>() just merges the temporary  install tree into the real fs. may be: setuptools, hatchling, jupyter, poetry</li>
+</ul></li>
+<li>inherit multibuild multilib multiprocessing ninja-utils toolchain-funcs
+<ul class="org-ul">
+<li>and python-r1 or python-single-r1</li>
+</ul></li>
+</ul>
+
+<p>
+multibuild.eclass - building multiple variants of packages (e.g. multilib, Python implementations).
+</p>
+
+<p>
+python-r1.eclass - A common, simple eclass for Python packages.
+</p>
+<ul class="org-ul">
+<li>inherit multibuild python-utils-r1</li>
+<li>variables:
+<ul class="org-ul">
+<li>PYTHON<sub>COMPAT</sub> - list of Python implementations the package supports. ex: ( python2<sub>7</sub> python3<sub>3,4</sub> )</li>
+<li>BUILD<sub>DIR</sub> - The current build directory. if unset, it defaults to ${S}. locally set to an implementation-specific build directory</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="orga53e0cf"></a>steps<br />
+<div class="outline-text-5" id="text-4-12-2-2">
+<ol class="org-ol">
+<li>Compiling: gpep517 build-wheel &#x2013;backend setuptools.build<sub>meta</sub> &#x2013;output-fd 3 &#x2013;wheel-dir /var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3<sub>11</sub>/wheel</li>
+
+<li>Installing to install tmp direcotyry: gpep517 install-wheel &#x2013;destdir=/var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3<sub>11</sub>/install &#x2013;interpreter=/usr/bin/python3.11 &#x2013;prefix=/usr &#x2013;optimize=all /var/tmp/portage/dev-python/flask-2.3.2/work/Flask-2.3.2-python3<sub>11</sub>/wheel/Flask-2.3.2-py3-none-any.whl</li>
+<li>install directory has venv structure</li>
+<li>installing - copying tmp install directory to /</li>
+</ol>
+</div>
+</li>
+
+<li><a id="orgcb81cc2"></a>links<br />
+<div class="outline-text-5" id="text-4-12-2-3">
+<p>
+<a href="https://github.com/projg2/python-guide/">https://github.com/projg2/python-guide/</a>
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgc6c4e10" class="outline-4">
+<h4 id="orgc6c4e10"><span class="section-number-4">4.12.3.</span> <span class="todo TODO">TODO</span> testing</h4>
+<div class="outline-text-4" id="text-4-12-3">
+<p>
+<a href="https://wiki.gentoo.org/wiki/Eclass_testing">https://wiki.gentoo.org/wiki/Eclass_testing</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf45765" class="outline-4">
+<h4 id="orgdf45765"><span class="section-number-4">4.12.4.</span> links</h4>
+<div class="outline-text-4" id="text-4-12-4">
+<p>
+<a href="https://devmanual.gentoo.org/eclass-writing/">https://devmanual.gentoo.org/eclass-writing/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org07018dc" class="outline-3">
+<h3 id="org07018dc"><span class="section-number-3">4.13.</span> disable unused ebuilds</h3>
+<div class="outline-text-3" id="text-4-13">
+<p>
+/etc/portage/package.mask:
+</p>
+<pre class="example">
+*/*::gentoo
+</pre>
+
+
+<p>
+/etc/portage/package.unmask
+</p>
+<pre class="example">
+emerge -pve --color n world &gt; /tmp/tmpe
+cat /tmp/tmpe | sed 's/.* ] \([^ ]*\).*/\1/' | grep :: | grep -o '^\w*\-\?\w*/' | sort -u | sed 's#$#*::gentoo#' &gt; /etc/portage/package.unmask
+</pre>
+
+<ul class="org-ul">
+<li>profiles, scripts, eclass</li>
+</ul>
+
+<p>
+get repository name:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;info</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga6da187" class="outline-3">
+<h3 id="orga6da187"><span class="section-number-3">4.14.</span> mirrors</h3>
+<div class="outline-text-3" id="text-4-14">
+<ul class="org-ul">
+<li>Rsync mirrors <a href="https://www.gentoo.org/support/rsync-mirrors/">https://www.gentoo.org/support/rsync-mirrors/</a>
+<ul class="org-ul">
+<li>/etc/portage/repos.conf/gentoo.conf</li>
+</ul></li>
+<li>Source mirrors <a href="https://www.gentoo.org/downloads/mirrors/">https://www.gentoo.org/downloads/mirrors/</a>
+<ul class="org-ul">
+<li>/etc/portage/make.conf</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgea46f09" class="outline-4">
+<h4 id="orgea46f09"><span class="section-number-4">4.14.1.</span> links</h4>
+<div class="outline-text-4" id="text-4-14-1">
+<p>
+<a href="https://wiki.gentoo.org/wiki/Project:Infrastructure/Mirrors">https://wiki.gentoo.org/wiki/Project:Infrastructure/Mirrors</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org694b3b3" class="outline-3">
+<h3 id="org694b3b3"><span class="section-number-3">4.15.</span> update security critical packages</h3>
+<div class="outline-text-3" id="text-4-15">
+<p>
+check if the system is up to date security-wise
+</p>
+<ul class="org-ul">
+<li>glsa-check &#x2013;list</li>
+<li>glsa-check -t all</li>
+</ul>
+<p>
+packages that will be updates:
+</p>
+<ul class="org-ul">
+<li>glsa-check -p $(glsa-check -t all)</li>
+</ul>
+<p>
+update required packages:
+</p>
+<ul class="org-ul">
+<li>glsa-check -f $(glsa-check -t all)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd9aef6f" class="outline-3">
+<h3 id="orgd9aef6f"><span class="section-number-3">4.16.</span> (old) Portage security</h3>
+<div class="outline-text-3" id="text-4-16">
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/Portage_Security">https://wiki.gentoo.org/wiki/Portage_Security</a></li>
+<li>Gentoo public keys: gpg /usr/share/openpgp-keys/gentoo-release.asc</li>
+<li>verify: gemato verify -K /usr/share/openpgp-keys/gentoo-release.asc /var/db/repos/gentoo</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0bb4bb5" class="outline-3">
+<h3 id="org0bb4bb5"><span class="section-number-3">4.17.</span> FAQ</h3>
+<div class="outline-text-3" id="text-4-17">
+<p>
+“the following features is restricted: Test”
+</p>
+<ul class="org-ul">
+<li>RESTRICT="test"</li>
+<li>typically used to prevent tests that require network access or other disallowed activities from running
+during the build process. The restriction ensures that the build procedure does not attempt to access
+external resources.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org308c18c" class="outline-3">
+<h3 id="org308c18c"><span class="section-number-3">4.18.</span> links</h3>
+<div class="outline-text-3" id="text-4-18">
+<ul class="org-ul">
+<li><a href="https://dev.gentoo.org/~zmedico/portage/doc/">https://dev.gentoo.org/~zmedico/portage/doc/</a></li>
+<li><a href="https://devmanual.gentoo.org/index.html">https://devmanual.gentoo.org/index.html</a></li>
+<li><a href="https://github.com/gentoo/portage">https://github.com/gentoo/portage</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge9df7bd" class="outline-2">
+<h2 id="orge9df7bd"><span class="section-number-2">5.</span> tools</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>ebump 	Ebuild revision bumper (more useful for developers).</li>
+<li>eclean 	Tool for cleaning repository source files and binary packages.</li>
+<li>enalyze 	Gentoo's installed packages analysis and repair tool. See man page, which states "CAUTION: This is beta software and is not yet feature complete".</li>
+<li>epkginfo 	Wrapper to equery: display metadata about a given package.</li>
+<li>equery 	Gentoo package query tool.</li>
+<li>eread 	Script to read portage log items from einfo, ewarn etc.</li>
+<li>eshowkw 	Display keywords for specified package(s).</li>
+<li>euse 	Tool to see, set and unset USE flags at various places.</li>
+<li>imlate 	Displays candidates for keywords for an architecture (more useful for developers?).</li>
+<li>revdep-rebuild 	Reverse Dependency rebuilder. Generally not necessary to run this tool anymore.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf7d4c40" class="outline-2">
+<h2 id="orgf7d4c40"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> q</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>portage utility applet</li>
+<li>collection of utilities</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ef1571" class="outline-2">
+<h2 id="org0ef1571"><span class="section-number-2">7.</span> <span class="todo TODO">TODO</span> eix</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="https://github.com/vaeth/eix">https://github.com/vaeth/eix</a></li>
+<li>app-portage/eix</li>
+</ul>
+
+<p>
+more efficient and more flexible than the <b>emerge &#x2013;search</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org97d97af" class="outline-2">
+<h2 id="org97d97af"><span class="section-number-2">8.</span> profiles</h2>
+<div class="outline-text-2" id="text-8">
+<pre class="example">
+eselect profile show
+</pre>
+
+
+<p>
+Describe:
+</p>
+<ul class="org-ul">
+<li>the current profile's running architecture</li>
+<li>default USE flags</li>
+<li>@system package ebuilds.</li>
+</ul>
+
+<p>
+files:
+</p>
+<ul class="org-ul">
+<li>/var/db/repos/gentoo/profiles</li>
+<li>/etc/portage/make.profile</li>
+</ul>
+
+<p>
+Default USE for profile:
+</p>
+<pre class="example">
+USE_ORDER="defaults:pkginternal:repo" emerge --info|grep USE
+</pre>
+</div>
+<div id="outline-container-org043603f" class="outline-3">
+<h3 id="org043603f"><span class="section-number-3">8.1.</span> merged-user/split-user</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>split-user - legacy layer</li>
+<li>merged-user - newer layer "/usr merge" where the /bin, /sbin, /lib, and /lib64 are permanently migrated to
+the /usr/bin, /usr/sbin, /usr/lib and /usr/lib64 directories respectively and /sbin and /usr/sbin are both
+actually merged to /usr/bin.</li>
+</ul>
+
+<p>
+It is required for &gt;= systemd 255 due to changes upstream, but it remains optional for other init systems.
+</p>
+
+<p>
+<a href="https://wiki.gentoo.org/wiki/Merge-usr">https://wiki.gentoo.org/wiki/Merge-usr</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaca7d27" class="outline-2">
+<h2 id="orgaca7d27"><span class="section-number-2">9.</span> install handbook</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>mkfs.ext4 -T small /dev/sda2</li>
+<li>parted /dev/sda: set 1 bios<sub>grub</sub> on # very important for GPT table</li>
+<li>gpg &#x2013;verify stage3-amd64-&lt;release&gt;-&lt;init&gt;.tar.?(bz2|xz){.DIGESTS.asc,}</li>
+<li>tar xpvf stage3-<b>.tar.xz &#x2013;xattrs-include='</b>.*' &#x2013;numeric-owner</li>
+<li>set time:
+<ul class="org-ul">
+<li>date +%Y%m%d -s "20220429"</li>
+<li>date -s "19:35"</li>
+<li>hwclock &#x2013;systohc</li>
+</ul></li>
+<li>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf # require correct date</li>
+<li>chroot!</li>
+<li>mkdir &#x2013;parents /etc/portage/repos.conf</li>
+<li>cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf</li>
+<li>nano /etc/resolv.conf: nameserver 8.8.8.8</li>
+<li>for CPU<sub>FLAGS</sub><sub>X86</sub>: emerge &#x2013;ask app-portage/cpuid2cpuflags
+<ul class="org-ul">
+<li>variant: #`echo "<b>/</b> $(cpuid2cpuflags)" &gt;&gt; /etc/portage/package.use/00cpuflags</li>
+</ul></li>
+<li>to raplace -march=native: gcc -v -E -x c /dev/null -o /dev/null -march=native 2&gt;&amp;1 | grep /cc1 | grep mtune</li>
+<li>/etc/portage/make.conf:
+<ul class="org-ul">
+<li>USE="caps X alsa ipv6 jpeg png ogg upower verify-sig -fonts -themes -nls -su -pam -qt5 -cups -fortran udev -elogind -udisks" # udev</li>
+<li>CPU<sub>FLAGS</sub><sub>X86</sub>="avx f16c mmx mmxext pclmul popcnt sse sse2 sse3 sse4<sub>1</sub> sse4<sub>2</sub> ssse3"</li>
+<li>COMMON<sub>FLAGS</sub>="-march=native -O2 -pipe"</li>
+<li>MAKEOPTS="-j2"</li>
+<li>L10N="en"</li>
+</ul></li>
+<li>emerge &#x2013;sync &#x2013;quiet</li>
+<li>build and install gentoo ???????????</li>
+<li>emerge &#x2013;ask sys-boot/grub sys-kernel/gentoo-sources</li>
+<li>install kernel and grub</li>
+<li>install dhcp client <a href="#orgc98925e">17</a></li>
+<li>Xorg/X11 confuguration <a href="#orgb3c52cf">10</a></li>
+<li>logging daemon
+<ul class="org-ul">
+<li>emerge &#x2013;ask app-admin/sysklogd or app-admin/syslog-ng</li>
+<li>rc-update add sysklogd default</li>
+<li>chmod 700 /var/log</li>
+</ul></li>
+<li>passwd larry</li>
+<li>user autologin:
+<ul class="org-ul">
+<li>/etc/inittab: c2:2345:respawn:/sbin/agetty -a larry 38400 tty2 linux</li>
+</ul></li>
+<li>timezone:
+<ul class="org-ul">
+<li>ls /usr/share/zoneinfo</li>
+<li>echo "UTC" &gt; /etc/timezone</li>
+</ul></li>
+<li>locale
+<ul class="org-ul">
+<li>cat /usr/share/i18n/SUPPORTED</li>
+<li>nano -w /etc/locale.gen</li>
+<li>locale-gen</li>
+<li>eselect locale list</li>
+</ul></li>
+<li><a href="nix#MissingReference">nix#MissingReference</a></li>
+<li>emerge &#x2013;ask app-portage/gentoolkit # equery</li>
+</ul>
+</div>
+<div id="outline-container-org8970eda" class="outline-3">
+<h3 id="org8970eda"><span class="section-number-3">9.1.</span> firmware</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+download
+</p>
+<ul class="org-ul">
+<li>links
+<ul class="org-ul">
+<li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git</a></li>
+<li><a href="https://www.kernel.org/doc/wot/">https://www.kernel.org/doc/wot/</a></li>
+<li><a href="https://keyserver2.gnupg.org/">https://keyserver2.gnupg.org/</a></li>
+<li>git <a href="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git</a></li>
+</ul></li>
+<li>gzip -d linux-firmware-20221214.tar.gz</li>
+<li>gpg &#x2013;verify linux-firmware-20221214.tar.asc</li>
+
+<li>emerge &#x2013;ask &#x2013;autounmask=y linux-firmware</li>
+<li>emerge &#x2013;ask sys-kernel/linux-firmware</li>
+<li>emerge &#x2013;ask net-wireless/wireless-regdb</li>
+<li>copy files to /lib/firmware</li>
+<li>emerge &#x2013;unmerge sys-kernel/linux-firmware</li>
+<li>set Device Drivers -&gt; Generic Driver Options -&gt; Formware loader -&gt; regulatory.db regulatory.db.p7s</li>
+</ul>
+
+
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3217990" class="outline-3">
+<h3 id="org3217990"><span class="section-number-3">9.2.</span> chroot</h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li>mount &#x2013;types proc /proc /mnt/gentoo/proc</li>
+<li>mount &#x2013;rbind /sys /mnt/gentoo/sys</li>
+<li>mount &#x2013;make-rslave /mnt/gentoo/sys</li>
+<li>mount &#x2013;rbind /dev /mnt/gentoo/dev</li>
+<li>mount &#x2013;make-rslave /mnt/gentoo/dev</li>
+<li>mount &#x2013;bind /run /mnt/gentoo/run</li>
+<li>mount &#x2013;make-slave /mnt/gentoo/run</li>
+<li>chroot /mnt/gentoo /bin/bash</li>
+<li>source /etc/profile</li>
+<li>export PS1="(chroot) ${PS1}"</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb914624" class="outline-2">
+<h2 id="orgb914624"><span class="section-number-2">10.</span> install xfce4 <a id="orgb3c52cf"></a></h2>
+<div class="outline-text-2" id="text-10">
+<ol class="org-ol">
+<li>emerge &#x2013;ask app-misc/tmux &amp;&amp; tmux</li>
+<li>/etc/portage/make.conf:
+<ul class="org-ul">
+<li>INPUT<sub>DEVICES</sub>="evdev synaptics"</li>
+<li>VIDEO<sub>CARDS</sub>="intel i915" or "amdgpu radeon"</li>
+<li>USE="X jpeg png ogg upower -qt5 -pam -su -elogind"
+<ul class="org-ul">
+<li>-qt5 - because of app-text/poppler</li>
+</ul></li>
+</ul></li>
+<li>emerge &#x2013;pretend &#x2013;verbose x11-base/xorg-server</li>
+<li>USE=-server emerge &#x2013;ask x11-base/xorgcp ????????</li>
+<li>env-update</li>
+<li>source /etc/profile</li>
+<li>echo "xfce-base/xfce4-panel -dbusmenu" &gt;&gt; /etc/portage/package.use/xfce4-panel</li>
+<li>emerge &#x2013;ask &#x2013;oneshot xfce-extra/xfce4-notifyd</li>
+<li>emerge &#x2013;ask xfce-base/xfce4-meta</li>
+<li>emerge &#x2013;ask xfce4-xkb-plugin # keyboard layouts</li>
+<li>cp -r /usr/share/X11/xorg.conf.d /etc/X11/xorg.conf.d # copy configuration files of xorg-drivers</li>
+<li>rc-service dbus start &amp;&amp; rc-update add dbus default # required for battery power management</li>
+<li>useradd -m -G users,wheel,input,audio,video,cdrom,games,usb -s /bin/bash larry</li>
+<li>or #usermod -a -G input,video larry # user should be in input,video groups</li>
+<li>$startxfce4 &#x2013; vt1 # 1 - number of current tty</li>
+<li>security:
+<ul class="org-ul">
+<li>$startx &#x2013; -nolisten tcp</li>
+<li>or:
+<ul class="org-ul">
+<li>/usr/bin/startx: defaultserverargs="-nolisten tcp"</li>
+<li>/etc/portage/make.conf:
+<ul class="org-ul">
+<li>CONFIG<sub>PROTECT</sub>="/usr/bin/startx" # To make sure that startx does not get overwritten when emerging a new version of Xorg you must protect it. Add the following line to /etc/portage/make.conf:</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>keyboard repeat delay: 200, speed: 35</li>
+</ol>
+
+
+<p>
+Testing and trouble shooting
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask x11-wm/twm x11-terms/xterm</li>
+<li>X -config /home/u/xorg.conf</li>
+<li>$X -configure # generate xorg.conf (for testing)</li>
+<li>evtest # test evdev app-misc/evtest</li>
+<li>$less .local/share/xorg/Xorg.0.log # holy grail of trouble shooting</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0ea5b2e" class="outline-2">
+<h2 id="org0ea5b2e"><span class="section-number-2">11.</span> Dracut - disk encryption USB - full install</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+steps
+</p>
+<ul class="org-ul">
+<li>we need offset for MBR with grub and boot partition. This partition will contain GRUB files, plain
+(unencrypted) kernel and kernel initrd, dracut initramfs:</li>
+<li>Partitioning GPT table (offset is a separate partition of size 1M):
+<ul class="org-ul">
+<li>parted /dev/sda
+<ul class="org-ul">
+<li>mkpart primary fat32 3 515</li>
+<li>name 2 boot</li>
+<li>set 2 BOOT on</li>
+<li>mkpart primary 515 -1</li>
+<li>name 3 lvm</li>
+<li>set 3 lvm on</li>
+<li>set 1 bios<sub>grub</sub> on # offset for MBR in GPT table</li>
+</ul></li>
+</ul></li>
+<li>Partitioning MSDOS table (offset is an empty space of size 1-10M):
+<ul class="org-ul">
+<li>fdisk /dev/sda
+<ul class="org-ul">
+<li>o</li>
+<li>n, p, 1, 20488 (10M offset, not shure how many required for grub), +300M, w - boot</li>
+<li>n, p, 2, 20488, Enter, +10G, w - swap</li>
+<li>n, p, 3, 20488, Enter, Enter - luks partition</li>
+</ul></li>
+</ul></li>
+<li>Formatting:
+<ul class="org-ul">
+<li>mkfs.vfat -F32 /dev/sdX2</li>
+<li>modprobe dm-crypt</li>
+<li>gpg variant
+<ul class="org-ul">
+<li>export GPG<sub>TTY</sub>=$(tty)</li>
+<li>dd if=/dev/urandom bs=8388607 count=1 | gpg &#x2013;symmetric &#x2013;cipher-algo AES256 &#x2013;output /mnt/key/rootkey.gpg</li>
+<li>gpg &#x2013;quiet &#x2013;decrypt /mnt/key/rootkey.gpg | cryptsetup &#x2013;type luks2 &#x2013;batch-mode &#x2013;key-file - luksFormat /dev/sdX3</li>
+<li>gpg &#x2013;quiet &#x2013;decrypt /mnt/key/rootkey.gpg | cryptsetup &#x2013;type luks2 &#x2013;batch-mode &#x2013;key-file - luksOpen /dev/sdX3 lvm</li>
+</ul></li>
+<li>cryptsetup-variant (not tested):
+<ul class="org-ul">
+<li>cryptsetup luksFormat /dev/sdZn</li>
+<li>cryptsetup luksOpen /dev/ssdZn</li>
+</ul></li>
+<li>cryptsetup luksDump /dev/sdX3 # check</li>
+</ul></li>
+<li>Create LVM inside encrypted block - for SSD TRIM require special options
+<ul class="org-ul">
+<li>vgcreate vg0 /dev/mapper/lvm  # Create volume group vg0:</li>
+<li>lvcreate -L 60G -n root vg0  # Create logical volume for /root filesystem</li>
+<li>lvcreate -L 40G -n var vg0  # Create logical volume for /var filesystem</li>
+<li>lvcreate -L 7G -n swap vg0  # Create logical volume for swap filesystem</li>
+<li>lvcreate -l 100%FREE -n home vg0  # Create logical volume for /home filesystem:</li>
+<li>cryptsetup luksHeaderBackup /dev/sdXn &#x2013;header-backup-file /tmp/efiboot/luks-header.img  # backup</li>
+</ul></li>
+<li>format
+<ul class="org-ul">
+<li>mkswap -L "swap" -n 32k /dev/mapper/vg1-swap</li>
+<li>mkfs.btrfs -L "root" -n 32k /dev/mapper/vg1-root</li>
+<li>mkfs.btrfs -L "var" -n 32k /dev/mapper/vg1-var</li>
+<li>mkfs.trfs -L "home" -n 32k /dev/mapper/vg1-home</li>
+</ul></li>
+<li>mount - require sys-fs/lvm2 +lvm
+<ul class="org-ul">
+<li>mount -o ssd,compress=lzo,discard=async <i>dev/vg0/root /mnt/gentoo</i></li>
+<li>mkdir /mnt/getnoo/var</li>
+<li>mount -o ssd,compress=lzo,discard=async <i>dev/vg0/var</i> <i>mnt/gentoo/var</i></li>
+</ul></li>
+<li>tar xpvf stage3-<b>.tar.xz &#x2013;xattrs-include='</b>.*' &#x2013;numeric-owner # v - verbose</li>
+<li>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf</li>
+<li>mkdir &#x2013;parents /mnt/gentoo/etc/portage/repos.conf</li>
+<li>cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf</li>
+<li>cp &#x2013;dereference <i>etc/resolv.conf /mnt/gentoo/etc</i></li>
+<li>nano -w /mnt/gentoo/etc/portage/make.conf
+<ul class="org-ul">
+<li>COMMON<sub>FLAGS</sub>="-march=native -O2 -pipe"</li>
+<li>MAKEOPTS="-j4"</li>
+</ul></li>
+<li>chroot! (don't forget env-update &amp;&amp; . /etc/profile )</li>
+<li>emerge-webrsync</li>
+<li>emerge &#x2013;sync &#x2013;quiet</li>
+<li>gcc -v -E -x c /dev/null -o /dev/null -march=native 2&gt;&amp;1 | grep /cc1 | grep mtune</li>
+<li>replace -march=native</li>
+<li>emerge &#x2013;ask  app-portage/cpuid2cpuflags</li>
+<li>$cpuid2cpuflags &gt;&gt; /etc/portage/make.conf</li>
+<li>emerge &#x2013;ask emacs sys-kernel/dracut sys-kernel/gentoo-sources sys-boot/grub sys-fs/lvm2 sys-fs/cryptsetup  sys-apps/busybox app-shells/dash
+app-crypt/gnupg sys-fs/btrfs-progs</li>
+<li>USE="-gtk -pango -libkms" emerge &#x2013;ask sys-boot/plymouth</li>
+<li>rc-update add lvm boot</li>
+<li>fstab</li>
+<li>sfdisk -d /dev/sda &gt; /mnt/img/sda.partition.table.txt # backup partition table</li>
+<li>findmnt &#x2013;verify &#x2013;verbose # verify fstab</li>
+<li>set time:
+<ul class="org-ul">
+<li>date +%Y%m%d -s "20220429"</li>
+<li>date -s "19:35"</li>
+<li>hwclock &#x2013;systohc</li>
+</ul></li>
+<li>configure and build Kernel <a href="nix#MissingReference">nix#MissingReference</a></li>
+<li>/etc/dracut.conf
+<ul class="org-ul">
+<li># Equivalent to -a "module"</li>
+<li># located <i>usr/lib/dracut/modules.d</i></li>
+<li>add<sub>dracutmodules</sub>+=" lvm btrfs crypt crypt-gpg dm "</li>
+<li>filesystems+=" btrfs "</li>
+<li>kernel<sub>cmdline</sub>="rd.luks.key=/luks-key.gpg:UUID=xxxxxx-xxx-xx-xx rd.luks.uuid=luks-xxxxxx-xxx-xx-xx rd.luks
+rd.lvm rd.lvm.vg=vg0 rd.lvm.lv=vg0/root root=/dev/mapper/vg0-root rootfstype=btrfs
+rootflags=rw,noatime,nodirtime,compress=lzo,ssd,space<sub>cache</sub>=v2,subvolid=5,subvol=/" # shoud work</li>
+<li>full: kernel<sub>cmdline</sub>="</li>
+<li>early<sub>microcode</sub>="no</li>
+<li>show<sub>modules</sub>="yes"</li>
+<li>rd.lvm.vg="vg0"</li>
+</ul></li>
+<li>dracut &#x2013;kver 6.1.57-gentoo &#x2013;force &#x2013;hostonly &#x2013;fstab 2&gt;drac<sub>log.txt</sub> # - to generate /boot/initramfs-6.1.57-gentoo.img</li>
+<li>grub-mkconfig -o /boot/grub/grub.cfg</li>
+<li>grub-install</li>
+<li>/etc/dracut.conf: kernel<sub>cmdline</sub> shoud be copied to /etc/default/grub:GRUB<sub>CMDLINE</sub><sub>LINUX</sub></li>
+<li>passwd # set root password</li>
+<li>useradd -m -G users,wheel,audio,video,cdrom,games,usb -s /bin/bash larry</li>
+<li>network confuguration <a href="#orgc98925e">17</a></li>
+<li>Xorg/X11 confuguration <a href="#orgb3c52cf">10</a></li>
+<li>logging daemon
+<ul class="org-ul">
+<li>emerge &#x2013;ask app-admin/sysklogd</li>
+<li>rc-update add sysklogd default</li>
+<li>chmod 700 /var/log</li>
+</ul></li>
+<li>passwd larry</li>
+<li>user autologin:
+<ul class="org-ul">
+<li>/etc/inittab: c2:2345:respawn:/sbin/agetty -a larry 38400 tty2 linux</li>
+</ul></li>
+<li>timezone:
+<ul class="org-ul">
+<li>ls /usr/share/zoneinfo</li>
+<li>echo "UTC" &gt; /etc/timezone</li>
+</ul></li>
+<li>locale
+<ul class="org-ul">
+<li>cat /usr/share/i18n/SUPPORTED</li>
+<li>nano -w /etc/locale.gen</li>
+<li>locale-gen</li>
+<li>eselect locale list</li>
+</ul></li>
+<li><a href="nix#MissingReference">nix#MissingReference</a></li>
+</ul>
+
+
+<p>
+change password:
+</p>
+<ul class="org-ul">
+<li>gpg -d /mnt/key/rootkey.gpg &gt; /mnt/key/rootkey</li>
+<li>cat /mnt/key/rootkey | gpg &#x2013;cipher-algo aes256 &#x2013;armor -c &gt; /mnt/key/rootkey<sub>sc.gpg</sub></li>
+</ul>
+
+<p>
+btrfs:
+</p>
+<ul class="org-ul">
+<li>btrfs filesystem defragment -r -v -clzo / # force mounted to compress</li>
+<li>mount -o compress=lzo,discard=async <i>dev</i>  <i>mnt</i></li>
+</ul>
+</div>
+
+<div id="outline-container-org55babe0" class="outline-3">
+<h3 id="org55babe0"><span class="section-number-3">11.1.</span> links</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+<a href="https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut.html">https://mirrors.edge.kernel.org/pub/linux/utils/boot/dracut/dracut.html</a>
+<a href="https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption">https://wiki.gentoo.org/wiki/Dm-crypt_full_disk_encryption</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org5933e58" class="outline-3">
+<h3 id="org5933e58"><span class="section-number-3">11.2.</span> dracut.conf</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+udevdir=/lib/udev
+ro<sub>mnt</sub>=yes
+omit<sub>drivers</sub>+=" i2o<sub>scsi</sub> "
+</p>
+
+
+<p>
+omit<sub>dracutmodules</sub>+=" systemd systemd-initrd dracut-systemd
+</p>
+</div>
+</div>
+<div id="outline-container-orgfa8050a" class="outline-3">
+<h3 id="orgfa8050a"><span class="section-number-3">11.3.</span> errors</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+crypt error allocating crypto tfm
+</p>
+<ul class="org-ul">
+<li>device-mapper: table : crypt error allocating crypto tfm</li>
+<li>device-mapper: ioctl: error adding target to table</li>
+<li>device-mapper: reload ioctl on failed: no such file or directory</li>
+<li>no cryptographic support in Cryptographic API &#x2014;&gt;</li>
+</ul>
+
+<p>
+grub install: WARNING: Failed to connect to lvmetad. Failling back to device scanning. ; Cannot process volume
+group luks
+</p>
+<ul class="org-ul">
+<li>in /etc/lvm/lvm.conf the following : use<sub>lvmetad</sub> = 0</li>
+<li>USE=device-manager emerge &#x2013;ask grub</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9805921" class="outline-3">
+<h3 id="org9805921"><span class="section-number-3">11.4.</span> change password luks.gpg</h3>
+<div class="outline-text-3" id="text-11-4">
+<ul class="org-ul">
+<li>export GPG<sub>TTY</sub>=$(tty)</li>
+<li>gpg &#x2013;quiet &#x2013;decrypt /mnt/key/rootkey.gpg &gt; file</li>
+<li>cat file | gpg &#x2013;symmetric &#x2013;cipher-algo AES256 &#x2013;output /mnt/key/luks-key<sub>new.gpg</sub></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6ab249c" class="outline-3">
+<h3 id="org6ab249c"><span class="section-number-3">11.5.</span> ru descryption</h3>
+<div class="outline-text-3" id="text-11-5">
+<p>
+Если вам интересно, так я обеспечиваю свою безопасность. Понимаю, что вы работаете с более серьезными задачами.
+</p>
+<ul class="org-ul">
+<li>Перепрошиваю чип с UEFI BIOS на "coreboot", это обратный инжинеринг волонтерами.</li>
+<li>Устанавливаю Gentoo, где бинарные пакеты только на первом шаге, затем они же пересобирается из исходного кода.</li>
+<li>Компилирую ядро Линукс с отключенными модулями и такими настройками, как: защита от переполнения буфера, рандомизация структур, очистка стека, отладка структур. Выборочно вставляю бинарные Блобы в ядро, когда нет альтернатив.</li>
+<li>Полное шифрование диска с помощью LUKS (Linux Unified Key Setup) структуры раздела, где берется файл-ключ шифрования размером несколько мегабайт, шифруется симметричным шифрованием (AES256) обычным паролем и помещается на флеш карту. Во время загрузки из initramfs запрашивается пароль, с флешки берется файл, расшифровывается паролем и используется как ключ для LUKS (aes-xts-plain64,256 bits). /boot раздел располагается на флешке без шифрования.</li>
+<li>/etc/fstab: proc /proc proc hidepid=2,nosuid,noexec,gid=wheel       /home на отдельном разделе с noexec,nosuid,nodev</li>
+<li>Простой фаервол с помощью iptables или nftables. Logcheck анализатор логов. Бэкап с помощью rsync.</li>
+<li>Не использую SELinux, так как под рутом вроде бы ничего не запускаю, вместо этого устанавливаю библиотеку POSIX Capabilities, которая поддерживается многими пакетами.</li>
+<li>Захожу под рутом и пользователем с разных консолей, для каждого прилажения создаю отдельного пользователя, sudo использую только для запуска таких прилажений.</li>
+<li>Изолирую прилажения с помощью чательно настроенного Firejail, чтобы исключить сбор информации о системе и кейлогеров. Аппаратная виртуализация слишком сложная в настройке, даже паравиртуализация слишком много требует.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfef83c8" class="outline-3">
+<h3 id="orgfef83c8"><span class="section-number-3">11.6.</span> EDID - video kernel mode setting</h3>
+<div class="outline-text-3" id="text-11-6">
+<p>
+<a href="https://wiki.archlinux.org/title/Kernel_mode_setting">https://wiki.archlinux.org/title/Kernel_mode_setting</a>
+</p>
+
+<p>
+emerge &#x2013;ask edid-decode read-edid
+</p>
+
+<p>
+get-edid
+</p>
+
+<p>
+get-edid -b 10 &gt; edid.bin
+</p>
+
+
+<p>
+cat edid.bin | edid-decode
+</p>
+
+<p>
+cp edid &gt; /lib/firmware/edid/edid.bin
+(add to .config)
+drm.edid<sub>firmware</sub>=edid/your<sub>edid.bin</sub>
+drm.edid<sub>firmware</sub>=VGA-1:edid/your<sub>edid.bin</sub>
+</p>
+
+<p>
+drivers/gpu/drm/drm<sub>edid</sub><sub>load.c</sub>
+</p>
+</div>
+</div>
+<div id="outline-container-org4b3e628" class="outline-3">
+<h3 id="org4b3e628"><span class="section-number-3">11.7.</span> custom edid</h3>
+<div class="outline-text-3" id="text-11-7">
+<p>
+<a href="https://kodi.wiki/view/Archive:Creating_and_using_edid.bin_via_xorg.conf">https://kodi.wiki/view/Archive:Creating_and_using_edid.bin_via_xorg.conf</a>
+xrandr &#x2013;props
+</p>
+
+<p>
+Section "Monitor"
+    Identifier "LG 42LD560"
+    VendorName "GSM"
+    ModelName "LG TV"
+</p>
+
+<p>
+    Option "UseEDID" "True"
+    Option "CustomEDID" "DFP-1:/etc/X11/LG-42LD560.edid.bin"
+EndSection
+</p>
+
+<p>
+Section "Device"
+   Identifier  "Device0"
+   BusID       "PCI:00:02:0"
+   Option      "LVDS-1" "MonitorLVDS1"
+   Option      "DP-1"   "MonitorDP1"
+   Driver      "intel"
+   Option      "CustomEDID" "DP1:/etc/X11/edid.bin"
+   Option      "UseEDID" "true"
+EndSection
+</p>
+</div>
+</div>
+<div id="outline-container-orga0b2a91" class="outline-3">
+<h3 id="orga0b2a91"><span class="section-number-3">11.8.</span> nvidia example Xorg</h3>
+<div class="outline-text-3" id="text-11-8">
+<p>
+<a href="https://wiki.gentoo.org/wiki/NVIDIA/Optimus/EDID_Xorg.conf_Example">https://wiki.gentoo.org/wiki/NVIDIA/Optimus/EDID_Xorg.conf_Example</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4eaf380" class="outline-2">
+<h2 id="org4eaf380"><span class="section-number-2">12.</span> Dracut - disk encryption USB - kernel update</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<a href="nix#MissingReference">nix#MissingReference</a>
+</p>
+<ul class="org-ul">
+<li>PYTHON="python3.8" sh ./deblob-6.6.sh | tee &gt;(tee) &gt; out.log</li>
+<li>make -j2</li>
+<li>make install</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c3abee" class="outline-2">
+<h2 id="org0c3abee"><span class="section-number-2">13.</span> create USB stick</h2>
+<div class="outline-text-2" id="text-13">
+<ol class="org-ol">
+<li>check gpg</li>
+<li>or check hash</li>
+<li>USB: dd if=/path/to/image.iso of=/dev/sdc bs=8192k</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf9eb30f" class="outline-2">
+<h2 id="orgf9eb30f"><span class="section-number-2">14.</span> python</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+PYTHON<sub>SINGLE</sub><sub>TARGET</sub>
+PYTHON<sub>TARGETS</sub>
+</p>
+
+<p>
+app-editors/vim PYTHON<sub>TARGETS</sub>: -* python2<sub>7</sub> PYTHON<sub>SINGLE</sub><sub>TARGET</sub>: -* python2<sub>7</sub>
+</p>
+
+<p>
+$profile-config list      - current stable
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb74c9f" class="outline-2">
+<h2 id="orgbb74c9f"><span class="section-number-2">15.</span> no root Xorg</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+package.use/xorg:
+x11-base/xorg-server -suid
+</p>
+
+<p>
+startx &#x2013; vt2
+</p>
+
+<p>
+~/.xinitrc
+exec startxfce4
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdbe7d13" class="outline-2">
+<h2 id="orgdbe7d13"><span class="section-number-2">16.</span> add user</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+useradd -m -G video,audio,wheel -s /bin/bash larry
+usermod -a -G video larry
+gpasswd -d larry video
+</p>
+</div>
+</div>
+<div id="outline-container-org31bef58" class="outline-2">
+<h2 id="org31bef58"><span class="section-number-2">17.</span> network configuration <a id="orgc98925e"></a></h2>
+<div class="outline-text-2" id="text-17">
+<p>
+netifrc is Gentoo's default framework for configuring and managing network interfaces
+</p>
+<ol class="org-ol">
+<li>emerge &#x2013;ask  net-misc/dhcpcd</li>
+<li>dhcpcd eth0</li>
+<li>echo 'config<sub>eth0</sub>="dhcp"' &gt; /etc/conf.d/net</li>
+<li>ln -s /etc/init.d/net.lo /etc/init.d/net.eth0</li>
+<li>rc-service net.eth0 start</li>
+<li>rc-update add dhcpcd default</li>
+<li>iptables or nftables</li>
+</ol>
+
+<p>
+wifi:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask net-wireless/iw net-wireless/wpa<sub>supplicant</sub></li>
+</ul>
+</div>
+<div id="outline-container-org8842d2c" class="outline-3">
+<h3 id="org8842d2c"><span class="section-number-3">17.1.</span> /etc/wpa<sub>supplicant</sub>/wpa<sub>supplicant.conf</sub></h3>
+<div class="outline-text-3" id="text-17-1">
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">ctrl_interface=/var/run/wpa_supplicant</span>
+<span style="color: #cae682;">eapol_version</span>=2
+<span style="color: #cae682;">country</span>=RU
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">random</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">auto_uuid=1</span>
+<span style="color: #cae682;">mac_addr</span>=1
+<span style="color: #cae682;">preassoc_mac_addr</span>=1
+
+<span style="color: #cae682;">bss_expiration_age</span>=1980
+<span style="color: #cae682;">bss_expiration_scan_count</span>=5
+
+<span style="color: #cae682;">passive_scan</span>=1
+
+<span style="color: #cae682;">network</span>={
+        <span style="color: #cae682;">ssid</span>=<span style="color: #95e454;">"TP-Link_ACC3"</span>
+        <span style="color: #cae682;">psk</span>=<span style="color: #95e454;">"60s%.!_Col"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org42fae31" class="outline-3">
+<h3 id="org42fae31"><span class="section-number-3">17.2.</span> router</h3>
+<div class="outline-text-3" id="text-17-2">
+<ul class="org-ul">
+<li>emerge &#x2013;ask net-dns/dnsmasq</li>
+<li>/etc/sysctl.conf:
+<ul class="org-ul">
+<li>net.ipv4.ip<sub>forward</sub> = 1</li>
+<li>net.ipv4.conf.default.rp<sub>filter</sub> = 1</li>
+</ul></li>
+<li>sysctl -p /etc/sysctl.conf</li>
+<li>/etc/dnsmasq.conf:
+<ul class="org-ul">
+<li>dhcp-range=eth0,192.168.0.100,192.168.0.250,72h</li>
+<li>interface=eth0</li>
+</ul></li>
+<li><i>etc/init.d</i>: ln -s net.ln net.eth0</li>
+<li>rc-service net.eth0 restart</li>
+
+<li>client:</li>
+<li><i>etc/init.d</i>: ln -s net.ln net.eth0</li>
+<li><i>etc/conf.d</i>:
+<ul class="org-ul">
+<li>config<sub>eth0</sub>="192.168.0.2/24"</li>
+<li>routes<sub>eth0</sub>="default via 192.168.0.1" # or ip route add default via 192.168.0.1 dev eth0</li>
+</ul></li>
+<li>rc-service net.eth0 restart</li>
+<li>/etc/resolv.conf: nameserver 192.168.0.1</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org999378b" class="outline-3">
+<h3 id="org999378b"><span class="section-number-3">17.3.</span> configure pachcard</h3>
+<div class="outline-text-3" id="text-17-3">
+<ol class="org-ol">
+<li>ln -s /etc/init.d/net.lo /etc/init.d/net.eth0</li>
+<li>/etc/conf.d/net: config<sub>eth0</sub>="192.168.0.2/24"</li>
+<li>rc-service net.eth0 restart</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbbe3575" class="outline-2">
+<h2 id="orgbbe3575"><span class="section-number-2">18.</span> audio</h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>add user to audio group!</li>
+<li>euse -E alsa # add alsa to /etc/portage/make.conf</li>
+<li>emerge &#x2013;ask &#x2013;changed-use &#x2013;deep @world</li>
+<li>emerge &#x2013;ask media-sound/alsa-utils</li>
+<li>alamixer # unmute Master</li>
+<li>speaker-test -c2 -t wav</li>
+<li>aplay -l # List all soundcards and digital audio devices</li>
+<li>aplay -L # List all PCMs defined</li>
+<li>arecord -L  # List all PCMs defined</li>
+<li>alsactl dump-cfg # show current full config</li>
+</ul>
+
+<p>
+microphone
+</p>
+<ul class="org-ul">
+<li>SND<sub>USB</sub><sub>AUDIO</sub> - kernel</li>
+<li>alsamixer =&gt; internal</li>
+<li>arecord -l # list capture hardware</li>
+<li>arecord -f S16<sub>LE</sub> -d 3 -r 44100 &#x2013;device="hw:0,0" -c 2 /tmp/test.wav</li>
+<li>arecord arecord -f S16<sub>LE</sub> -d 3 -f dat -V stereo -r 44100 &#x2013;device="hw:0,0" -c 2 /tmp/test.wav</li>
+<li>aplat /tmp/test.wav</li>
+</ul>
+
+<p>
+volumne control:
+</p>
+<ul class="org-ul">
+<li>amixer set Master 5%+</li>
+<li>amixer set Master 5%-</li>
+</ul>
+</div>
+
+<div id="outline-container-org2c01da3" class="outline-3">
+<h3 id="org2c01da3"><span class="section-number-3">18.1.</span> alsa ~/.asoundrc</h3>
+<div class="outline-text-3" id="text-18-1">
+<p>
+main config in /etc/asound.conf
+</p>
+</div>
+</div>
+<div id="outline-container-org21248ad" class="outline-3">
+<h3 id="org21248ad"><span class="section-number-3">18.2.</span> simplest config output hw:0,0</h3>
+<div class="outline-text-3" id="text-18-2">
+</div>
+</div>
+
+<div id="outline-container-org3e7af1a" class="outline-3">
+<h3 id="org3e7af1a"><span class="section-number-3">18.3.</span> hdmi output</h3>
+<div class="outline-text-3" id="text-18-3">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">defaults.pcm.!card 0</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">defaults.pcm.!device 3</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">pcm.!spdif {</span>
+<span style="color: #fa8072;">#          </span><span style="color: #99968b; font-style: italic;">type hw</span>
+<span style="color: #fa8072;">#          </span><span style="color: #99968b; font-style: italic;">card 0</span>
+<span style="color: #fa8072;">#          </span><span style="color: #99968b; font-style: italic;">device 3</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">}</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">pcm.!default {</span>
+<span style="color: #fa8072;">#            </span><span style="color: #99968b; font-style: italic;">type plug</span>
+<span style="color: #fa8072;">#            </span><span style="color: #99968b; font-style: italic;">slave {</span>
+<span style="color: #fa8072;">#                  </span><span style="color: #99968b; font-style: italic;">pcm "spdif"</span>
+<span style="color: #fa8072;">#            </span><span style="color: #99968b; font-style: italic;">}</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">}</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga47e789" class="outline-3">
+<h3 id="orga47e789"><span class="section-number-3">18.4.</span> troubleshooting</h3>
+<div class="outline-text-3" id="text-18-4">
+<p>
+Automatic encoder selection failed for output stream #1:2. Default encoder for format xv (codec none) is probably disabled
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org0c9a3c0" class="outline-3">
+<h3 id="org0c9a3c0"><span class="section-number-3">18.5.</span> pulseaudion</h3>
+<div class="outline-text-3" id="text-18-5">
+<p>
+pavucontrol
+</p>
+
+<p>
+<a href="https://wiki.gentoo.org/wiki/PulseAudio">https://wiki.gentoo.org/wiki/PulseAudio</a>
+</p>
+
+
+<p>
+echo "autospawn = no" &gt; ~/.config/pulse/client.conf
+pulseaudio &#x2013;kill
+</p>
+</div>
+</div>
+<div id="outline-container-org4f70ed9" class="outline-3">
+<h3 id="org4f70ed9"><span class="section-number-3">18.6.</span> loop back test or “hear yourself” - alsa</h3>
+<div class="outline-text-3" id="text-18-6">
+<div class="org-src-container">
+<pre class="src src-text">pcm.!default {
+    type plug
+    slave.pcm "hw:0,0"
+}
+
+pcm.mic {
+    type plug
+    slave.pcm "hw:1,0"
+}
+
+pcm.output {
+    type plug
+    slave.pcm "hw:0,0"
+}
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #92a65e; font-weight: bold;">pcm.!default</span> {
+    type asym
+    playback.pcm <span style="color: #95e454;">"output"</span>
+    capture.pcm <span style="color: #95e454;">"mic"</span>
+}
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">ctl.!default { # required?</span>
+<span style="color: #fa8072;">#     </span><span style="color: #99968b; font-style: italic;">type hw</span>
+<span style="color: #fa8072;">#     </span><span style="color: #99968b; font-style: italic;">card 0</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">}</span>
+
+<span style="color: #92a65e; font-weight: bold;">pcm.mic</span> {
+    type plug
+    <span style="color: #92a65e; font-weight: bold;">slave</span> {
+        pcm <span style="color: #95e454;">"hw:1,0"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Replace with your microphone device (e.g., hw:1,0)</span>
+        format S16_LE <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Optional: Set the format to 16-bit, Little Endian</span>
+        rate 48000
+        channels 1
+    }
+}
+
+<span style="color: #92a65e; font-weight: bold;">pcm.output</span> {
+    type plug
+    <span style="color: #92a65e; font-weight: bold;">slave</span> {
+        pcm <span style="color: #95e454;">"hw:0,0"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Replace with your output device (e.g., hw:0,0)</span>
+    }
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #92a65e; font-weight: bold;">pcm.dmixer</span> {
+    type dmix
+    ipc_key 1024
+    <span style="color: #92a65e; font-weight: bold;">slave</span> {
+        pcm <span style="color: #95e454;">"hw:0,0"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Adjust this to your output device</span>
+        period_time 0
+        period_size 1024
+        buffer_size 4096
+        rate 44100
+    }
+    <span style="color: #92a65e; font-weight: bold;">bindings</span> {
+        0 0
+        1 1
+    }
+}
+
+<span style="color: #92a65e; font-weight: bold;">pcm.asymed</span> {
+    type asym
+    playback.pcm <span style="color: #95e454;">"dmixer"</span>
+    capture.pcm <span style="color: #95e454;">"hw:1,0"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Adjust this to your microphone device</span>
+}
+
+<span style="color: #92a65e; font-weight: bold;">pcm.!default</span> {
+    type plug
+    slave.pcm <span style="color: #95e454;">"asymed"</span>
+}
+
+<span style="color: #92a65e; font-weight: bold;">pcm.default</span> {
+    type plug
+    slave.pcm <span style="color: #95e454;">"asymed"</span>
+}
+
+<span style="color: #92a65e; font-weight: bold;">ctl.mixer1</span> {
+    type hw
+    card 1 <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Adjust this to your card number</span>
+}
+</pre>
+</div>
+
+<p>
+working:
+</p>
+<pre class="example">
+arecord -f S16_LE -c 2 -r 44100 -D mic | aplay -f S16_LE -c 2 -r 44100 -D output
+arecord -f S16_LE -c 2 -r 44100 -D plughw:1,0 | aplay -f S16_LE -c 2 -r 44100 -D plughw:0,0
+arecord -f S16_LE -c 2 -D mic | aplay
+arecord -f S16_LE -r 44100 -c 1 -D mic | aplay
+arecord | aplay # right way to use
+</pre>
+
+
+<p>
+Recording WAVE 'stdin' : Signed 16 bit Little Endian, Rate 8000 Hz, Mono
+</p>
+
+
+<p>
+dump capabilities of mic:
+</p>
+<pre class="example">
+arecord -D plughw:1,0 --dump-hw-params
+</pre>
+</div>
+</div>
+<div id="outline-container-orge0056a8" class="outline-3">
+<h3 id="orge0056a8"><span class="section-number-3">18.7.</span> loop back test - pulseaudio</h3>
+<div class="outline-text-3" id="text-18-7">
+<pre class="example">
+parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16le --rate=8000 --channels=2 output.wav
+parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16be --rate=44100 --channels=1 | aplay --format S16_BE --rate=44100
+parec --device=alsa_input.usb-C-Media_Electronics_Inc._USB_PnP_Sound_Device-00.mono-fallback --format=s16be --rate=8000 --channels=1 | aplay --format S16_BE --rate=8000
+parec --device=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor --format=s16be --rate=8000 --channels=1 | aplay --format S16_BE --rate=8000
+</pre>
+
+<p>
+working:
+</p>
+<pre class="example">
+parec --raw | paplay --raw
+</pre>
+
+
+<p>
+pactl list sources
+pactl list sinks
+</p>
+</div>
+</div>
+<div id="outline-container-org1bcc5b8" class="outline-3">
+<h3 id="org1bcc5b8"><span class="section-number-3">18.8.</span> firefox and ALSA - microphone</h3>
+<div class="outline-text-3" id="text-18-8">
+<p>
+<a href="https://github.com/i-rinat/apulse">https://github.com/i-rinat/apulse</a>
+<a href="https://forums.gentoo.org/viewtopic-p-8582451.html?sid=d35904653f4a8f9b1b6c4334b3c4ba38">https://forums.gentoo.org/viewtopic-p-8582451.html?sid=d35904653f4a8f9b1b6c4334b3c4ba38</a>
+<a href="https://bbs.archlinux.org/viewtopic.php?id=252378">https://bbs.archlinux.org/viewtopic.php?id=252378</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org947aea2" class="outline-3">
+<h3 id="org947aea2"><span class="section-number-3">18.9.</span> pulseaudion</h3>
+<div class="outline-text-3" id="text-18-9">
+<p>
+useful configuration .config/pulse/client.conf
+</p>
+<div class="org-src-container">
+<pre class="src src-text">autospawn = no
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd89483d" class="outline-3">
+<h3 id="orgd89483d"><span class="section-number-3">18.10.</span> links</h3>
+<div class="outline-text-3" id="text-18-10">
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/ALSA">https://wiki.gentoo.org/wiki/ALSA</a></li>
+<li><a href="https://wiki.debian.org/ALSA#Troubleshooting">https://wiki.debian.org/ALSA#Troubleshooting</a></li>
+<li><a href="https://alsa.opensrc.org/MultipleCards">https://alsa.opensrc.org/MultipleCards</a></li>
+<li><a href="https://alsa.opensrc.org/Troubleshooting">https://alsa.opensrc.org/Troubleshooting</a></li>
+<li>alsa config
+<ul class="org-ul">
+<li><a href="https://www.alsa-project.org/main/index.php/Documentation">https://www.alsa-project.org/main/index.php/Documentation</a></li>
+<li><a href="https://www.alsa-project.org/alsa-doc/alsa-lib/conf.html">https://www.alsa-project.org/alsa-doc/alsa-lib/conf.html</a></li>
+<li><a href="https://www.volkerschatz.com/noise/alsa.html">https://www.volkerschatz.com/noise/alsa.html</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org88e333e" class="outline-2">
+<h2 id="org88e333e"><span class="section-number-2">19.</span> fonts</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+eselect fontconfig list
+</p>
+
+<p>
+System:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask media-fonts/dejavu</li>
+</ul>
+
+<p>
+Chinese:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask media-fonts/font-isas-misc</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3181ff7" class="outline-2">
+<h2 id="org3181ff7"><span class="section-number-2">20.</span> linux firmware</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>package distributed alongside the Linux kernel</li>
+<li>contains firmware binary blobs</li>
+</ul>
+
+<p>
+bin files should be placed to <i>lib/firmware</i>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf1a9518" class="outline-2">
+<h2 id="orgf1a9518"><span class="section-number-2">21.</span> OpenRC</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>gide <a href="https://github.com/OpenRC/openrc/blob/master/service-script-guide.md">https://github.com/OpenRC/openrc/blob/master/service-script-guide.md</a></li>
+<li><i>etc/conf.d</i> - configuration files for <i>etc/init.d</i> scripts with same name</li>
+</ul>
+
+<p>
+make two instances
+</p>
+<ul class="org-ul">
+<li>ln -s sshd /etc/init.d/sshd.eth0</li>
+<li>cp /etc/conf.d/sshd /etc/conf.d/sshd.eth0</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org39ce5e2" class="outline-2">
+<h2 id="org39ce5e2"><span class="section-number-2">22.</span> udev brightness</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+/etc/udev/rules.d/91-backlight.rules:
+</p>
+<ul class="org-ul">
+<li>ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/sh -c 'echo 150 &gt; /sys/class/backlight/radeon<sub>bl0</sub>/brightness'"</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org30807e8" class="outline-2">
+<h2 id="org30807e8"><span class="section-number-2">23.</span> device manager udev/eudev/hal</h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>hal - old device manager</li>
+<li>udev - systemd's device manager</li>
+<li></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga9662b4" class="outline-2">
+<h2 id="orga9662b4"><span class="section-number-2">24.</span> parallel emerge</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>MAKEOPTS="-jN" - parallel makes</li>
+<li>EMERGE<sub>DEFAULT</sub><sub>OPTS</sub>= "&#x2013;jobs 3 &#x2013;load-average 2.9" - parallel emerges</li>
+<li>N*K = max cpu</li>
+<li>MAKEOPTS=”-j${core} +1″ is NOT the best optimization</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6be13f8" class="outline-2">
+<h2 id="org6be13f8"><span class="section-number-2">25.</span> raspberry pi</h2>
+<div class="outline-text-2" id="text-25">
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/Raspberry_Pi/Quick_Install_Guide">https://wiki.gentoo.org/wiki/Raspberry_Pi/Quick_Install_Guide</a>
+<ul class="org-ul">
+<li>git clone &#x2013;depth 1 <a href="https://github.com/raspberrypi/firmware/">https://github.com/raspberrypi/firmware/</a></li>
+<li>boot to /boot</li>
+<li>modules to /lib</li>
+</ul></li>
+<li><a href="https://wiki.gentoo.org/wiki/Raspberry_Pi/Installation">https://wiki.gentoo.org/wiki/Raspberry_Pi/Installation</a>
+<ul class="org-ul">
+<li>emerge &#x2013;ask sys-kernel/raspberrypi-image sys-boot/raspberrypi-firmware</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>arm64</li>
+<li>Clear root password: sed -i 's/<sup>root</sup>:.*/root::::::::/' /mnt/gentoo/etc/shadow</li>
+<li>/etc/fstab</li>
+<li>for CPU<sub>FLAGS</sub><sub>X86</sub>: emerge &#x2013;ask app-portage/cpuid2cpuflags</li>
+<li>to raplace -march=native: gcc -v -E -x c /dev/null -o /dev/null -march=native 2&gt;&amp;1 | grep /cc1 | grep march</li>
+<li>/etc/portage/make.conf</li>
+<li>mkdir &#x2013;parents /etc/portage/repos.conf</li>
+<li>cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf</li>
+<li>date +%Y%m%d -s "20220429"</li>
+<li>date -s "19:35"</li>
+<li>rc-update add swclock</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org5a939fc" class="outline-3">
+<h3 id="org5a939fc"><span class="section-number-3">25.1.</span> kernel:</h3>
+<div class="outline-text-3" id="text-25-1">
+<ul class="org-ul">
+<li>emerge &#x2013;ask sys-devel/bc sys-devel/bison sys-devel/flex</li>
+<li>Platform selection - Broadcom BCM2835 family</li>
+<li>emerge &#x2013;ask sys-boot/raspberrypi-firmware or git clone &#x2013;depth 1 git://github.com/raspberrypi/linux.git</li>
+<li>make bcmrpi3<sub>defconfig</sub></li>
+<li>make bcm2711<sub>defconfig</sub></li>
+<li>CPU Power Management -&gt; SPU Frequency scaling -&gt; Default CPUFreq governor = performance</li>
+<li>make -j4 zImage modules dtbs</li>
+<li>make -j4 Image modules dtbs</li>
+<li>sudo make modules<sub>install</sub></li>
+<li>sudo cp arch/arm64/boot/dts/broadcom/*.dtb <i>boot</i></li>
+<li>sudo cp arch/arm64/boot/dts/overlays/*.dtb* <i>boot/overlays</i></li>
+<li>sudo cp arch/arm64/boot/dts/overlays/README <i>boot/overlays</i></li>
+<li>sudo cp arch/arm64/boot/Image /boot/kernel8.img</li>
+</ul>
+
+<p>
+Network support -&gt; Network opetions -&gt; The IPv6 protocol
+Network support -&gt; RF switch subsystem support
+Device drivers -&gt; Network -&gt; Broadcom FullMac WLAN driver
+</p>
+</div>
+<div id="outline-container-org17dc678" class="outline-4">
+<h4 id="org17dc678"><span class="section-number-4">25.1.1.</span> links</h4>
+<div class="outline-text-4" id="text-25-1-1">
+<ul class="org-ul">
+<li>official <a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html">https://www.raspberrypi.com/documentation/computers/linux_kernel.html</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Raspberry_Pi/Kernel_Compilation">https://wiki.gentoo.org/wiki/Raspberry_Pi/Kernel_Compilation</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Raspberry_Pi/Mainline_Kernel">https://wiki.gentoo.org/wiki/Raspberry_Pi/Mainline_Kernel</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Raspberry_Pi4_64_Bit_Install">https://wiki.gentoo.org/wiki/Raspberry_Pi4_64_Bit_Install</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org37a049f" class="outline-3">
+<h3 id="org37a049f"><span class="section-number-3">25.2.</span> firmware</h3>
+<div class="outline-text-3" id="text-25-2">
+<ul class="org-ul">
+<li>emerge sys-kernel/linux-firmware &#x2013;autounmask=y</li>
+<li></li>
+</ul>
+
+<p>
+<a href="https://github.com/raspberrypi/firmware/tree/master/boot">https://github.com/raspberrypi/firmware/tree/master/boot</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org5600cab" class="outline-3">
+<h3 id="org5600cab"><span class="section-number-3">25.3.</span> overcloking</h3>
+<div class="outline-text-3" id="text-25-3">
+<p>
+<a href="https://haydenjames.io/raspberry-pi-3-overclock/">https://haydenjames.io/raspberry-pi-3-overclock/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2fa03c" class="outline-2">
+<h2 id="orge2fa03c"><span class="section-number-2">26.</span> soft</h2>
+<div class="outline-text-2" id="text-26">
+</div>
+<div id="outline-container-org84235ae" class="outline-3">
+<h3 id="org84235ae"><span class="section-number-3">26.1.</span> games</h3>
+<div class="outline-text-3" id="text-26-1">
+</div>
+<div id="outline-container-orga20caaa" class="outline-4">
+<h4 id="orga20caaa"><span class="section-number-4">26.1.1.</span> dri</h4>
+<div class="outline-text-4" id="text-26-1-1">
+<p>
+emerge &#x2013;ask mesa-progs
+emerge &#x2013;ask dev-util/strace
+strace glxinfo
+</p>
+</div>
+</div>
+<div id="outline-container-org2bab778" class="outline-4">
+<h4 id="org2bab778"><span class="section-number-4">26.1.2.</span> openmw</h4>
+<div class="outline-text-4" id="text-26-1-2">
+<ul class="org-ul">
+<li>emerge app-arch/innoextract</li>
+</ul>
+<pre class="example">
+innoextract --exclude-temp --gog -d ./caesar3 setup_caesar3_2.0.0.9.exe
+</pre>
+</div>
+</div>
+<div id="outline-container-org56fe8f7" class="outline-4">
+<h4 id="org56fe8f7"><span class="section-number-4">26.1.3.</span> fps</h4>
+<div class="outline-text-4" id="text-26-1-3">
+<p>
+games-fps/doomsday - modern engine for Doom, Heretic, and Hexen
+</p>
+</div>
+</div>
+<div id="outline-container-orgceab707" class="outline-4">
+<h4 id="orgceab707"><span class="section-number-4">26.1.4.</span> mednafen</h4>
+<div class="outline-text-4" id="text-26-1-4">
+<p>
+mednafen.github.io/documentation
+<b>no sound</b>
+</p>
+<ul class="org-ul">
+<li>mednafen -sounddevice sexyal-literal-default</li>
+</ul>
+
+<p>
+<b>scaller</b>
+</p>
+<ul class="org-ul">
+<li>mednafen -md.special hq2x/nn2x/super2xsai/2xsai/nny2x</li>
+</ul>
+
+<p>
+<b>destination resolution</b>
+</p>
+<ul class="org-ul">
+<li>mednafen -md.stretch full/aspect</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga19315f" class="outline-4">
+<h4 id="orga19315f"><span class="section-number-4">26.1.5.</span> gemrb</h4>
+<div class="outline-text-4" id="text-26-1-5">
+<p>
+after 0.9.1 require Python 3.3 or better
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org70ba81f"></a><span class="todo TODO">TODO</span> ebuild<br />
+<div class="outline-text-5" id="text-26-1-5-1">
+<div class="org-src-container">
+<pre class="src src-ebuild"># Copyright 1999-2017 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=5
+
+PYTHON_COMPAT=( python3_7 python3_8 python3_9 python3_10 python3_11 )
+
+inherit eutils python-single-r1 cmake-utils gnome2-utils
+
+DESCRIPTION="Reimplementation of the Infinity engine"
+HOMEPAGE="http://gemrb.sourceforge.net/"
+
+if [[ ${PV} = 9999* ]]; then
+    EGIT_REPO_URI="https://github.com/gemrb/gemrb.git"
+    inherit git-r3
+elif [[ ${PV} = 6666* ]]; then
+    EGIT_REPO_URI="https://github.com/gemrb/gemrb.git"
+    EGIT_BRANCH="subviews"
+    inherit git-r3
+else
+    SRC_URI="mirror://sourceforge/gemrb/${P}.tar.gz"
+fi
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+IUSE="mixer openal opengl png sdl sdl2 truetype -vlc -debug"
+PYTHON_REQ_USE=""
+
+REQUIRED_USE="
+   opengl? ( sdl2 )
+   ^^ ( sdl sdl2 )
+"
+
+RDEPEND="
+   truetype? ( media-libs/freetype )
+   png? ( media-libs/libpng:0 )
+   mixer? (
+      sdl? ( media-libs/sdl-mixer )
+      sdl2? ( media-libs/sdl2-mixer )
+   )
+   sdl? (
+      &gt;=media-libs/libsdl-1.2[video]
+   )
+   sdl2? (
+      media-libs/libsdl2[video]
+   )
+   media-libs/libvorbis
+   openal? ( media-libs/openal )
+   opengl? ( media-libs/glew:0 )
+   vlc? ( media-video/vlc )
+   sys-libs/zlib
+   ${PYTHON_DEPS}"
+
+DEPEND="${RDEPEND}
+   virtual/pkgconfig"
+
+
+src_prepare() {
+   cmake-utils_src_prepare
+   sed -i \
+      -e '/COPYING/d' \
+      CMakeLists.txt || die
+}
+
+src_configure() {
+   CMAKE_BUILD_TYPE=$(usex debug "Debug" "None")
+   local libdir=$(get_libdir)
+
+   mycmakeargs=(
+   -DLIBDIR_SUFFIX=${libdir/lib/}
+   -DDOC_DIR=share/doc/${PF}
+   -DDISABLE_WERROR=ON
+   -DSDL_BACKEND=$(usex sdl2 "SDL2" "SDL")
+   -DOPENGL_BACKEND=$(usex opengl "OpenGL" "None")
+   $(cmake-utils_use_use mixer SDLMIXER)
+   $(cmake-utils_use_use openal OPENAL)
+   $(cmake-utils_use_use png PNG)
+   $(cmake-utils_use_use truetype FREETYPE)
+   $(cmake-utils_use_use vlc LIBVLC)
+   )
+   cmake-utils_src_configure
+}
+
+src_compile() {
+   cmake-utils_src_compile
+}
+
+src_install() {
+   cmake-utils_src_install
+   python_fix_shebang "${ED%/}"/usr/bin/extend2da.py
+}
+
+pkg_preinst() {
+   gnome2_icon_savelist
+}
+
+pkg_postinst() {
+   gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+   gnome2_icon_cache_update
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org1232c6e"></a>links<br />
+<div class="outline-text-5" id="text-26-1-5-2">
+<ul class="org-ul">
+<li><a href="https://github.com/gemrb/gemrb">https://github.com/gemrb/gemrb</a></li>
+<li>config <a href="https://github.com/gemrb/gemrb/blob/master/gemrb/GemRB.cfg.sample.in">https://github.com/gemrb/gemrb/blob/master/gemrb/GemRB.cfg.sample.in</a></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgeffd5db" class="outline-3">
+<h3 id="orgeffd5db"><span class="section-number-3">26.2.</span> media player</h3>
+<div class="outline-text-3" id="text-26-2">
+<p>
+media-video/mpv
+</p>
+</div>
+</div>
+<div id="outline-container-orgd0edc96" class="outline-3">
+<h3 id="orgd0edc96"><span class="section-number-3">26.3.</span> ntp set time</h3>
+<div class="outline-text-3" id="text-26-3">
+<p>
+client:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask net-misc/openntpd</li>
+<li>/etc/ntpd.conf:  servers 0.ru.pool.ntp.org</li>
+<li>ntpd -ds # to sync time</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0e972bc" class="outline-2">
+<h2 id="org0e972bc"><span class="section-number-2">27.</span> hdmi mirroring</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+xarndr &#x2013;output HDMI-0 &#x2013;auto &#x2013;same-as LVDS
+</p>
+</div>
+</div>
+<div id="outline-container-org56e90f1" class="outline-2">
+<h2 id="org56e90f1"><span class="section-number-2">28.</span> opencl</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>virtual/opencl</li>
+<li>emerge &#x2013;ask =dev-util/rocminfo-5.0.2 &#x2013;autounmask=y</li>
+<li>dev-libs/rocm-opencl-runtime</li>
+
+<li>HSA<sub>USERPTR</sub><sub>FOR</sub><sub>PAGED</sub><sub>MEM</sub>=0 rocminfo</li>
+<li>HSAKMT<sub>DEBUG</sub><sub>LEVEL</sub>=7 rocminfo</li>
+</ul>
+
+<p>
+Segmentation fault:
+</p>
+<ul class="org-ul">
+<li>fix VIDEO<sub>CARD</sub> or disable opencl flag from mesa</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1dbf054" class="outline-2">
+<h2 id="org1dbf054"><span class="section-number-2">29.</span> all modifications:</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>~/.bashrc</li>
+<li>~/.bash<sub>aliases</sub></li>
+<li>~/nftables</li>
+<li>~/.ssh</li>
+<li>/etc/udev/rules.d/91-backlight.rules</li>
+<li>/etc/portage/make.conf</li>
+<li>/etc/portage/package.use/*</li>
+<li>/etc/sysctl.conf</li>
+<li>~/firef*</li>
+<li>~/hotkeys.sh</li>
+<li>~/.emacs</li>
+<li>~/x-set-keys.conf</li>
+<li>create /mnt/share</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7f4d02f" class="outline-2">
+<h2 id="org7f4d02f"><span class="section-number-2">30.</span> lock screen &amp; consoles</h2>
+<div class="outline-text-2" id="text-30">
+<p>
+screen:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask x11-misc/alock</li>
+<li>alock -auth passwd</li>
+</ul>
+<p>
+consoles:
+</p>
+<ul class="org-ul">
+<li>emerge &#x2013;ask app-misc/vlock</li>
+<li>vlock -a</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org819755f" class="outline-2">
+<h2 id="org819755f"><span class="section-number-2">31.</span> patching guide</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+It's usually better, if the patch is trivial, to open a bug and note that in the ChangeLog for the overlaid
+package just before adding the package to the overlay itself, unless the patches needs to be tested for a
+while before submitting them to the ebuild maintainer.
+</p>
+
+<p>
+As soon as a patch is merged in the main tree, the ebuilds in the overlay need to go, to avoid having
+unneeded ebuilds there.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4c3d85" class="outline-2">
+<h2 id="orgc4c3d85"><span class="section-number-2">32.</span> USECASES</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+downgrade package dracut to dracut-055-r4 for dracut-056-r1:
+</p>
+<ul class="org-ul">
+<li>echo "&gt;sys-kernel/dracut-055-r4" &gt;&gt; /etc/portage/package.mask/glibc</li>
+</ul>
+
+
+<p>
+specify using the greater than operator (&gt;) prefix if it is an older package than latest stable or lesser than
+operator (&lt;) as a prefix if it is a newer one:
+</p>
+</div>
+</div>
+<div id="outline-container-org87f40c6" class="outline-2">
+<h2 id="org87f40c6"><span class="section-number-2">33.</span> developsers githubs</h2>
+<div class="outline-text-2" id="text-33">
+<ul class="org-ul">
+<li>Python packages, LLVM, Xfce <a href="https://github.com/mgorny">https://github.com/mgorny</a></li>
+<li>SELinuxProject, identity management platform, matrix, llvm, mumble-voip <a href="https://github.com/0xC0ncord">https://github.com/0xC0ncord</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga5dac1f" class="outline-2">
+<h2 id="orga5dac1f"><span class="section-number-2">34.</span> gcc optimization</h2>
+<div class="outline-text-2" id="text-34">
+<p>
+Some packages  will  fail to compile/run if the optimizations are too extreme.
+</p>
+
+<p>
+declaration is on a single line, with as little whitespace as possible to avoid issues.
+</p>
+<ul class="org-ul">
+<li>CFLAGS - C compiler</li>
+<li>CXXFLAGS - is used to refer to the C++ compiler within many buildsystems.</li>
+<li>FFLAGS - Fortran</li>
+<li>FCFLAGS - any FORTRAN compiler in more modern build systems</li>
+</ul>
+</div>
+
+<div id="outline-container-org1524eaa" class="outline-3">
+<h3 id="org1524eaa"><span class="section-number-3">34.1.</span> options</h3>
+<div class="outline-text-3" id="text-34-1">
+<dl class="org-dl">
+<dt>-march</dt><dd>processor architecture (or arch); certain kind of CPU
+<dl class="org-dl">
+<dt>-mtune and -mcpu</dt><dd>These flags are normally only used when there is no available -march option.</dd>
+</dl></dd>
+<dt>-pipe</dt><dd>use pipes instead of temporary files. it makes the compilation process faster. On systems with low
+memory, GCC might get killed.</dd>
+<dt>-O0, -O1, -O2, -O3, -Os, -Oz, -Og, and -Ofast</dt><dd><dl class="org-dl">
+<dt>-Ofast</dt><dd>-O3 plus -ffast-math, -fno-protect-parens, -fallow-store-data-races, -fstack-arrays and</dd>
+</dl>
+<p>
+-fno-semantic-interposition
+</p></dd>
+<dt>-ftree-vectorize</dt><dd>is an optimization option (default at -O3, -Ofast and -fvect-cost-model=very-cheap),
+attempts to vectorize loops using the selected ISA if possible. doesn't always improve code</dd>
+<dt>-fvect-cost-model=very-cheap</dt><dd>??</dd>
+<dt>-fomit-frame-pointer</dt><dd>turned on at all levels of -O. will make debugging hard or impossible.</dd>
+<dt>-msse, -msse2, -msse3, -mmmx, -m3dnow</dt><dd>Streaming SIMD Extensions (SSE), SSE2, SSE3, MMX, and 3DNow! instruction sets for x86 and x86-64 architectures.</dd>
+<dt>-funroll-loops and -funroll-all-loops </dt><dd>Loop unrolling. On modern processors, loop unrolling is often
+counterproductive, as the increased code size can cause more cache misses;</dd>
+<dt>-finline-functions</dt><dd>Inline expansion</dd>
+<dt>-funswitch-loops</dt><dd>Loop unswitching optimization</dd>
+</dl>
+
+<p>
+Hardening optimizations
+</p>
+<dl class="org-dl">
+<dt>-fpie</dt><dd>full ASLR for executables
+<dl class="org-dl">
+<dt>-fpic -shared</dt><dd>no text relocations for shared libraries</dd>
+</dl></dd>
+<dt>-D<sub>FORTIFY</sub><sub>SOURCE</sub>=2</dt><dd>run-time buffer overflow detection</dd>
+<dt>-D<sub>GLIBCXX</sub><sub>ASSERTIONS</sub></dt><dd>run-time bounds checking for C++ strings and containers</dd>
+<dt>-fstack-protector-strong</dt><dd>stack smashing protector</dd>
+<dt>-fstack-clash-protection</dt><dd>increased reliability of stack overflow detection</dd>
+<dt>-fcf-protection</dt><dd>control flow integrity protection</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgb8c985e" class="outline-3">
+<h3 id="orgb8c985e"><span class="section-number-3">34.2.</span> Per-package</h3>
+<div class="outline-text-3" id="text-34-2">
+<ul class="org-ul">
+<li>/etc/portage/env directory</li>
+<li>/etc/portage/package.env file.</li>
+</ul>
+
+<p>
+ex:
+</p>
+
+<p>
+/etc/portage/env/debug-cflags
+</p>
+<pre class="example">
+CFLAGS="-O2 -ggdb -pipe"
+FEATURES="${FEATURES} nostrip"
+</pre>
+
+<p>
+/etc/portage/package.env
+</p>
+<pre class="example">
+media-video/mplayer debug-cflags
+</pre>
+</div>
+</div>
+<div id="outline-container-org9247ab1" class="outline-3">
+<h3 id="org9247ab1"><span class="section-number-3">34.3.</span> links</h3>
+<div class="outline-text-3" id="text-34-3">
+<ul class="org-ul">
+<li><a href="https://wiki.gentoo.org/wiki/Safe_CFLAGS">https://wiki.gentoo.org/wiki/Safe_CFLAGS</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/GCC_optimization">https://wiki.gentoo.org/wiki/GCC_optimization</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#Optimize-Options">https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#Optimize-Options</a></li>
+<li>per package <a href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Advanced#Per-package_environment_variables">https://wiki.gentoo.org/wiki/Handbook:AMD64/Portage/Advanced#Per-package_environment_variables</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org46ce311" class="outline-2">
+<h2 id="org46ce311"><span class="section-number-2">35.</span> diablo</h2>
+<div class="outline-text-2" id="text-35">
+<ul class="org-ul">
+<li><a href="https://github.com/diasurgical/devilutionX">https://github.com/diasurgical/devilutionX</a></li>
+<li>keys <a href="https://github.com/diasurgical/devilutionX/wiki/Keyboard-Controls">https://github.com/diasurgical/devilutionX/wiki/Keyboard-Controls</a></li>
+<li>doc <a href="https://github.com/diasurgical/devilutionX/blob/master/docs/installing.md">https://github.com/diasurgical/devilutionX/blob/master/docs/installing.md</a></li>
+</ul>
+
+<pre class="example">
+emerge games-engines/devilutionx
+</pre>
+
+
+<p>
+required in ~/.local/share/diasurgical/devilution/:
+</p>
+<ul class="org-ul">
+<li>DIABDAT.MPQ, hellfire.mpq, hfmonk.mpq, hfmusic.mpq, hfvoice.mpq</li>
+<li>For Chinese, Korean, and Japanese users will also need <b>fonts.mpq</b> or the text will be missing.</li>
+<li>For Polish voice support you need <b>pl.mpq</b></li>
+<li>For Russian voice support you need <b>ru.mpq</b></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge95ed22" class="outline-2">
+<h2 id="orge95ed22"><span class="section-number-2">36.</span> Rust and Compiler Bootstrapping</h2>
+<div class="outline-text-2" id="text-36">
+<p>
+Bootstrapping compiler - when a compiler is written in own language, it have sevaral stages “0-9”.
+</p>
+
+
+<p>
+<a href="https://jyn.dev/bootstrapping-rust-in-2023/">https://jyn.dev/bootstrapping-rust-in-2023/</a>
+</p>
+
+<ul class="org-ul">
+<li>GCC</li>
+<li>LLVM</li>
+<li>Go Compiler</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac9786b" class="outline-2">
+<h2 id="orgac9786b"><span class="section-number-2">37.</span> links</h2>
+<div class="outline-text-2" id="text-37">
+<ul class="org-ul">
+<li><a href="https://devmanual.gentoo.org/index.html">https://devmanual.gentoo.org/index.html</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/User:SwifT/Complete_Handbook">https://wiki.gentoo.org/wiki/User:SwifT/Complete_Handbook</a></li>
+<li><a href="https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet">https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

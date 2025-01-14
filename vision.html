@@ -1,0 +1,3734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org29d47ed">1. best links</a></li>
+<li><a href="#org0503a3d">2. tasks</a>
+<ul>
+<li><a href="#org0e8ae28">2.1. video enhancement technologies</a></li>
+<li><a href="#orgf1a009a">2.2. vca - Video content analysis</a></li>
+</ul>
+</li>
+<li><a href="#org0f4b3ef">3. metrics</a></li>
+<li><a href="#org21a914e">4. Anisotropy image</a></li>
+<li><a href="#org183aed4">5. Computer vision</a>
+<ul>
+<li><a href="#orgaa28760">5.1. Steps of image processing:</a></li>
+<li><a href="#org4f2a7a9">5.2. CV LIBRARIES</a></li>
+<li><a href="#orgd825f56">5.3. image CV<sub>8U</sub>, CV<sub>32F</sub></a>
+<ul>
+<li><a href="#org12cb139">5.3.1. convert</a></li>
+</ul>
+</li>
+<li><a href="#org4d9b16e">5.4. Color models</a>
+<ul>
+<li><a href="#org7309075">5.4.1. CIE XYZ color space</a></li>
+<li><a href="#org0b02055">5.4.2. RGB</a></li>
+<li><a href="#org749dd23">5.4.3. HSV</a></li>
+</ul>
+</li>
+<li><a href="#org429d2e2">5.5. OpenCV techs</a>
+<ul>
+<li><a href="#org5750845">5.5.1. Histogram Equalization</a></li>
+<li><a href="#org048eaaa">5.5.2. <span class="todo TODO">TODO</span> image segmentation</a></li>
+<li><a href="#org8b1b8bd">5.5.3. <span class="todo TODO">TODO</span> extract features</a></li>
+<li><a href="#org4eb8755">5.5.4. Discrete Fourier Transform, ряд Фурье</a></li>
+</ul>
+</li>
+<li><a href="#org139328b">5.6. Основные преобразования 2 di</a>
+<ul>
+<li><a href="#org53eafa0">5.6.1. linear transformation (Linear map) - линейный оператор</a></li>
+</ul>
+</li>
+<li><a href="#org1127180">5.7. feature detection</a></li>
+<li><a href="#org7543ade">5.8. Optical Character Recognition</a></li>
+<li><a href="#orgb539044">5.9. datasets</a></li>
+<li><a href="#org685b4cb">5.10. USECASES</a>
+<ul>
+<li><a href="#orgc334924">5.10.1. rotate</a></li>
+<li><a href="#org4588825">5.10.2. boxes with check mark (check box) or with text</a></li>
+</ul>
+</li>
+<li><a href="#org30036d5">5.11. links</a></li>
+</ul>
+</li>
+<li><a href="#org4c2a507">6. OpenCV</a>
+<ul>
+<li><a href="#org0894b04">6.1. basic</a>
+<ul>
+<li><a href="#orgd72dcdf">6.1.1. DPI</a></li>
+</ul>
+</li>
+<li><a href="#orgb2d9ae4">6.2. Basic Operations</a></li>
+<li><a href="#org0844efe">6.3. imread</a></li>
+<li><a href="#orgcc22306">6.4. resize() and interpolation</a></li>
+<li><a href="#org1ae342b">6.5. help libs</a></li>
+<li><a href="#org4f42234">6.6. install</a></li>
+<li><a href="#orgf1de5aa">6.7. load save</a></li>
+<li><a href="#org41fe152">6.8. display</a></li>
+<li><a href="#org77165ca">6.9. Histogram</a></li>
+<li><a href="#orgbe16688">6.10. Normalize</a></li>
+<li><a href="#orge0c22b3">6.11. Contours</a>
+<ul>
+<li><a href="#org3087048">6.11.1. working with contours</a></li>
+<li><a href="#orgb75d770">6.11.2. get example of contour</a></li>
+</ul>
+</li>
+<li><a href="#org339a5bd">6.12. Blur</a></li>
+<li><a href="#org6f89b9b">6.13. Eroding and Dilating</a></li>
+<li><a href="#org1312c59">6.14. Features</a>
+<ul>
+<li><a href="#org464ff4f">6.14.1. algos:</a></li>
+<li><a href="#org4705091">6.14.2. matches</a></li>
+<li><a href="#orgdadfc53">6.14.3. DMatch</a></li>
+</ul>
+</li>
+<li><a href="#org67dbe78">6.15. <span class="todo TODO">TODO</span> Filtering</a></li>
+<li><a href="#orgfb9e5e9">6.16. Sobel Derivatives</a></li>
+<li><a href="#org3ef0ea1">6.17. Colors</a>
+<ul>
+<li><a href="#orga390d4f">6.17.1. channels</a></li>
+<li><a href="#orgcb0d020">6.17.2. histogram</a></li>
+</ul>
+</li>
+<li><a href="#org4ed5414">6.18. template matching</a></li>
+<li><a href="#org3cd98b1">6.19. Hough Line Transform</a></li>
+<li><a href="#org6711b20">6.20. Contrast and brightness</a></li>
+<li><a href="#orgaf1ce4e">6.21. Image Recognition and Object Detection</a></li>
+<li><a href="#orga0dd8e8">6.22. Generalized Hough Transform - object detection</a></li>
+<li><a href="#org64b8442">6.23. Cascade of Classifiers - object detection</a>
+<ul>
+<li><a href="#org1c32582">6.23.1. train</a></li>
+</ul>
+</li>
+<li><a href="#org5cda38d">6.24. DNN - object detection</a></li>
+<li><a href="#orgf2514d7">6.25. image alignment or Homography</a>
+<ul>
+<li><a href="#orgba3a2c7">6.25.1. AKAZA</a></li>
+<li><a href="#orgf7f04e7">6.25.2. findHomography</a></li>
+</ul>
+</li>
+<li><a href="#org6a40b4e">6.26. Morphological Transformations</a></li>
+<li><a href="#org16730a8">6.27. Deep Neural Network module (dnn)</a></li>
+<li><a href="#orge80c25d">6.28. USECASES</a>
+<ul>
+<li><a href="#org814983b">6.28.1. resize with black are keep ratio</a></li>
+<li><a href="#org8b16a19">6.28.2. subimage</a></li>
+<li><a href="#org1c53044">6.28.3. scale to target height</a></li>
+<li><a href="#org915a320">6.28.4. colours</a></li>
+<li><a href="#org1adffc8">6.28.5. most common colour</a></li>
+<li><a href="#org65f0319">6.28.6. max x min y</a></li>
+<li><a href="#org13fe2f5">6.28.7. Images blending-adding</a></li>
+<li><a href="#orgbca3917">6.28.8. filter contours</a></li>
+<li><a href="#orgf839b54">6.28.9. tables</a></li>
+<li><a href="#org568e101">6.28.10. rotate with PIL and Hough Lines</a></li>
+<li><a href="#org76291e9">6.28.11. PIL convert</a></li>
+<li><a href="#org0dfc043">6.28.12. rotate</a></li>
+<li><a href="#org2a72fa9">6.28.13. resize, shift-translate, shrinking with warpAffine</a></li>
+<li><a href="#org3ad550a">6.28.14. Lines</a></li>
+<li><a href="#org0226d70">6.28.15. minAreaRect</a></li>
+<li><a href="#orga04ca3a">6.28.16. detect shape of contour</a></li>
+<li><a href="#org0958b06">6.28.17. detect objects by shape (link)</a></li>
+<li><a href="#org11ecd58">6.28.18. image to batch</a></li>
+<li><a href="#org35dfe60">6.28.19. cut part of image</a></li>
+</ul>
+</li>
+<li><a href="#orgca79baf">6.29. troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="#orgf239b6c">7. MMCV</a></li>
+<li><a href="#org08f0c48">8. Abby</a></li>
+<li><a href="#orga041597">9. 2022 A Guide to Image and Video based Small Object Detection using Deep Learning : Case Study of Maritime</a>
+<ul>
+<li><a href="#org74084b9">9.1. video based</a></li>
+</ul>
+</li>
+<li><a href="#org313a709">10. Transformers architecure</a></li>
+<li><a href="#org9f29b8d">11. techniques: augmentation, super-resolution, &#x2026;</a></li>
+<li><a href="#orga560b83">12. Rusnarbank<sub>OPENCV</sub></a>
+<ul>
+<li><a href="#org08c1d7a">12.1. Redis</a></li>
+<li><a href="#org881af71">12.2. client</a></li>
+<li><a href="#orga47fe7b">12.3. dependences</a></li>
+<li><a href="#org3f6d07d">12.4. tesseract</a></li>
+<li><a href="#org7a8e664">12.5. Return JSON</a></li>
+</ul>
+</li>
+<li><a href="#orgb3c16fb">13. passport</a>
+<ul>
+<li><a href="#org1a4a267">13.1. error</a></li>
+<li><a href="#org30158e9">13.2. Расчет контрольной суммы</a></li>
+<li><a href="#orgc4c154d">13.3. passport serial number</a></li>
+<li><a href="#orgad81127">13.4. string metric for measuring the difference between two sequences</a></li>
+</ul>
+</li>
+<li><a href="#orgba0ba9c">14. captcha</a>
+<ul>
+<li><a href="#orgba0d1c0">14.1. captcha image</a></li>
+<li><a href="#orgd0eb9e6">14.2. audio capcha</a>
+<ul>
+<li><a href="#org510fe71">14.2.1. split audio file by worlds(librosa)</a></li>
+</ul>
+</li>
+<li><a href="#org763c5c1">14.3. reCAPTCHA google</a></li>
+<li><a href="#orgabef3cb">14.4. links</a></li>
+</ul>
+</li>
+<li><a href="#orgd2523a4">15. optical label</a>
+<ul>
+<li><a href="#org0493cb0">15.1. opencv</a></li>
+<li><a href="#org90787f0">15.2. qrcode</a></li>
+<li><a href="#org70a5003">15.3. segno</a></li>
+</ul>
+</li>
+<li><a href="#orga3a1998">16. OCR ICR</a>
+<ul>
+<li><a href="#org35f289d">16.1. terms</a></li>
+<li><a href="#org93dd421">16.2. Components:</a></li>
+<li><a href="#org0fdae32">16.3. optical character recognition (OCR)</a></li>
+<li><a href="#orgf124340">16.4. intelligent character recognition (ICR)</a></li>
+<li><a href="#org9b0ba0c">16.5. Forms processing</a></li>
+<li><a href="#org1f2b554">16.6. typical scheme</a></li>
+</ul>
+</li>
+<li><a href="#org81313da">17. подпись  signature (<i>ˈsɪɡnətʃər</i>;) handwritten</a>
+<ul>
+<li><a href="#orgb8e6560">17.1. soft</a></li>
+</ul>
+</li>
+<li><a href="#orga5eebff">18. 12 лучших репозиториев GitHub по компьютерному зрению</a></li>
+<li><a href="#orgef579b2">19. VR</a></li>
+<li><a href="#orgc526560">20. Система управления видеонаблюдением</a></li>
+<li><a href="#orgc99d1dc">21. Tools</a></li>
+<li><a href="#org396087f">22. barcode reader from command line</a></li>
+<li><a href="#orgc7cbdfd">23. Neural Network Models</a></li>
+<li><a href="#org80258cf">24. NEXT LEVEL</a></li>
+</ul>
+</div>
+</div>
+<p>
+-<b>- mode: Org; fill-column: 110; coding: utf-8; -</b>-
+</p>
+
+<p>
+<a href="https://stackoverflow.com/questions/40192541/how-to-detect-the-bounds-of-a-passport-page-with-opencv">https://stackoverflow.com/questions/40192541/how-to-detect-the-bounds-of-a-passport-page-with-opencv</a>
+</p>
+
+<p>
+TODO Уменьшение яркости и повышение контрастности для устранения фоновых артефактов.
+<a href="https://ru.stackoverflow.com/questions/377281/%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BE%D1%82%D1%81%D0%BA%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC-%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5">https://ru.stackoverflow.com/questions/377281/%D0%A0%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BE%D1%82%D1%81%D0%BA%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%BC-%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B5</a>
+</p>
+<div id="outline-container-org29d47ed" class="outline-2">
+<h2 id="org29d47ed"><span class="section-number-2">1.</span> best links</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+bible <a href="https://docs.opencv.org/">https://docs.opencv.org/</a>
+</p>
+
+<p>
+<a href="https://huggingface.co/learn/computer-vision-course/unit0/welcome/welcome">https://huggingface.co/learn/computer-vision-course/unit0/welcome/welcome</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0503a3d" class="outline-2">
+<h2 id="org0503a3d"><span class="section-number-2">2.</span> tasks</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0e8ae28" class="outline-3">
+<h3 id="org0e8ae28"><span class="section-number-3">2.1.</span> video enhancement technologies</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>video denoising</li>
+<li>image stabilization</li>
+<li>unsharp masking</li>
+<li>super-resolution</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf1a009a" class="outline-3">
+<h3 id="orgf1a009a"><span class="section-number-3">2.2.</span> vca - Video content analysis</h3>
+<div class="outline-text-3" id="text-2-2">
+<dl class="org-dl">
+<dt>Dynamic masking</dt><dd>Blocking a part of the video signal based on the signal itself, for example because of
+privacy concerns.</dd>
+<dt>Flame and smoke detection</dt><dd>IP cameras with intelligent video surveillance technology can be used to detect
+flame and smoke in 15–20 seconds or even less because of the built-in DSP chip. The chip processes algorithms
+that analyzes the videos captured for flame and smoke characteristics such as color chrominance, flickering
+ratio, shape, pattern and moving direction.</dd>
+<dt>Egomotion estimation</dt><dd>Egomotion estimation is used to determine the location of a camera by analyzing its
+output signal.</dd>
+<dt>Motion detection</dt><dd>Motion detection is used to determine the presence of relevant motion in the observed
+scene.</dd>
+<dt>Shape recognition</dt><dd>Shape recognition is used to recognize shapes in the input video, for example circles
+or squares. This functionality is typically used in more advanced functionalities such as object detection.</dd>
+<dt>Object detection</dt><dd>Object detection is used to determine the presence of a type of object or entity, for
+example a person or car. Other examples include fire and smoke detection.
+<dl class="org-dl">
+<dt>Small Object Detection (SOD)</dt><dd>Transformer architecture used.</dd>
+</dl></dd>
+
+<dt>Recognition</dt><dd>Face recognition and Automatic Number Plate Recognition are used to recognize, and therefore
+possibly identify, persons or cars.</dd>
+<dt>Style detection</dt><dd>Style detection is used in settings where the video signal has been produced, for example
+for television broadcast. Style detection detects the style of the production process.[9]</dd>
+<dt>Tamper detection</dt><dd>Tamper detection is used to determine whether the camera or output signal is tampered
+with.</dd>
+<dt>Video tracking</dt><dd>Video tracking is used to determine the location of persons or objects in the video
+signal, possibly with regard to an external reference grid.</dd>
+<dt>Video error level analysis</dt><dd>Video scene content tamper analysis using free software. Video Error level
+analysis (VELA)</dd>
+<dt>Object co-segmentation</dt><dd>Joint object discovery, classification and segmentation of targets in one or
+multiple related video sequences</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f4b3ef" class="outline-2">
+<h2 id="org0f4b3ef"><span class="section-number-2">3.</span> metrics</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>mean Average Precision (mAP)</li>
+<li>Frames Per Second (FPS)</li>
+<li>number of parameters</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org21a914e" class="outline-2">
+<h2 id="org21a914e"><span class="section-number-2">4.</span> Anisotropy image</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Anisotropy (ænɪˈsɒtrəpi) - different properties in different directions
+</p>
+<ul class="org-ul">
+<li>structure tensor -  matrix derived from the gradient of a function.
+<ul class="org-ul">
+<li>tensor - algebraic object that describes a <b>multilinear</b> relationship between sets of algebraic objects related to a <b>vector space</b>
+<ul class="org-ul">
+<li>Multilinear map - function of several variables that is <b>linear</b> separately in each variable. f:V1xV2.. -&gt; W
+<ul class="org-ul">
+<li>for each i, if all of the variables but Ui are held constant, then f(U1,U2..) is linear function of Ui.</li>
+</ul></li>
+</ul></li>
+<li>Gradient - of a scalar-valued differentiable function f of several variables is the vector field (or
+vector-valued function) ∇f (nabla) whose value at a point p is the vector whose components are the *partial
+derivatives of f at p.
+<ul class="org-ul">
+<li>f:Rn -&gt; R, its gradient ∇f:Rn -&gt; Rn.</li>
+<li>at point p: ∇f(p) = [ df(p)/dx1, &#x2026; df(p)/dxn ]</li>
+<li>Partial derivative - of a function of several variables is its <b>derivative</b> with respect to one of those
+variables, with the others held constant. df/dx</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+Scale space - for handling image structures at different scales - Gaussian derivative operators, can be used
+  as a basis for expressing a large class of visual operations
+</p>
+</div>
+</div>
+<div id="outline-container-org183aed4" class="outline-2">
+<h2 id="org183aed4"><span class="section-number-2">5.</span> Computer vision</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Computer vision - high-level understanding from digital images or videos
+</p>
+<ul class="org-ul">
+<li>Digital image processing - to process digital images through an algorithm.</li>
+</ul>
+</div>
+
+<div id="outline-container-orgaa28760" class="outline-3">
+<h3 id="orgaa28760"><span class="section-number-3">5.1.</span> Steps of image processing:</h3>
+<div class="outline-text-3" id="text-5-1">
+<ol class="org-ol">
+<li>image smoothed by a Gaussian kernel in a scale-space representation</li>
+<li>threshold or canny edge detection filters</li>
+<li>features extracting</li>
+<li>path around the feature - feature descriptor or feature vector. - N-jets and local histograms</li>
+<li>specific algoriths</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org4f2a7a9" class="outline-3">
+<h3 id="org4f2a7a9"><span class="section-number-3">5.2.</span> CV LIBRARIES</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>OpenCV C C++ Python</li>
+<li>Caffe C++ Python Matlab - быстрая на С++</li>
+<li>Torch7</li>
+<li>clarifai</li>
+<li>Google Vision API</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd825f56" class="outline-3">
+<h3 id="orgd825f56"><span class="section-number-3">5.3.</span> image CV<sub>8U</sub>, CV<sub>32F</sub></h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+usually numpy array of image data:
+</p>
+<ul class="org-ul">
+<li>CV<sub>8U</sub>: 1-byte unsigned integer (unsigned char).</li>
+<li>CV<sub>32S</sub>: 4-byte signed integer (int).</li>
+<li>CV<sub>32F</sub>: 4-byte floating point (float).</li>
+</ul>
+</div>
+<div id="outline-container-org12cb139" class="outline-4">
+<h4 id="org12cb139"><span class="section-number-4">5.3.1.</span> convert</h4>
+<div class="outline-text-4" id="text-5-3-1">
+<p>
+print(img.dtype)
+&gt;&gt;&gt; float32
+img.astype(np.uint8)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4d9b16e" class="outline-3">
+<h3 id="org4d9b16e"><span class="section-number-3">5.4.</span> Color models</h3>
+<div class="outline-text-3" id="text-5-4">
+</div>
+<div id="outline-container-org7309075" class="outline-4">
+<h4 id="org7309075"><span class="section-number-4">5.4.1.</span> CIE XYZ color space</h4>
+<div class="outline-text-4" id="text-5-4-1">
+<p>
+Исторически сложилось, XYZ - эталонная цветовая модель организациии CIE (commission internationale
+d'eclairage)— Международная комиссия по освещению) в 1931 году.
+</p>
+
+<p>
+Иногда используют xyY представление XYZ. Если Y = const, можно изобразить все возможные монохроматические
+цвета спектра, то они образуют собой незамкнутый контур, так называемый спектральный локус.
+</p>
+<ul class="org-ul">
+<li>Y - светлота</li>
+<li>x - X/(X+Y+Z)</li>
+<li>y - Y/(X+Y+Z)</li>
+
+<li>RGB - 24-bit - 8 bits, for red, green, and blue</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0b02055" class="outline-4">
+<h4 id="org0b02055"><span class="section-number-4">5.4.2.</span> RGB</h4>
+<div class="outline-text-4" id="text-5-4-2">
+<p>
+red, green, blue
+</p>
+<ul class="org-ul">
+<li>tupically 24-bit RGB or 32-bit RGBA colors</li>
+<li>8+8+8 (sRGB - 8 bits per channel)</li>
+</ul>
+
+<p>
+RGBA32 or ARGB - with alpha channel
+</p>
+<ul class="org-ul">
+<li>alpha channel - transparency</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org749dd23" class="outline-4">
+<h4 id="org749dd23"><span class="section-number-4">5.4.3.</span> HSV</h4>
+<div class="outline-text-4" id="text-5-4-3">
+<p>
+Сделан чтобыпроще понять человеку как сделать цвет и отдельно яркость
+</p>
+<ul class="org-ul">
+<li>hue - тон - угол [0,360] - binary [0,255]
+<ul class="org-ul">
+<li>0 - red</li>
+<li>60 yellow</li>
+<li>120 green</li>
+<li>180 blue</li>
+<li>240 dark blue</li>
+<li>300 purple</li>
+</ul></li>
+<li>saturation - насыщенность - [0,1]  - binary [0,255]</li>
+<li>value(brightness) - [0,1]  - binary [0,255]</li>
+</ul>
+
+<p>
+center - neutral - black at bottom, white at top
+</p>
+
+<p>
+hue:
+</p>
+<ul class="org-ul">
+<li>NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin</li>
+<li>(((120 - 0) * 255)/360) + 0 = 85</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org429d2e2" class="outline-3">
+<h3 id="org429d2e2"><span class="section-number-3">5.5.</span> OpenCV techs</h3>
+<div class="outline-text-3" id="text-5-5">
+</div>
+<div id="outline-container-org5750845" class="outline-4">
+<h4 id="org5750845"><span class="section-number-4">5.5.1.</span> Histogram Equalization</h4>
+<div class="outline-text-4" id="text-5-5-1">
+<p>
+<a href="http://datahacker.rs/opencv-histogram-equalization/">http://datahacker.rs/opencv-histogram-equalization/</a>
+<a href="https://ru.qaz.wiki/wiki/Histogram_equalization">https://ru.qaz.wiki/wiki/Histogram_equalization</a>
+</p>
+
+<ul class="org-ul">
+<li>inrease contrast</li>
+<li>Этот метод полезен для изображений с ярким или темным фоном и передним планом.</li>
+<li>хорошо работает с высокой глубиной цвета</li>
+<li>может увеличить контраст фонового шума и уменьшить полезный сигнал</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org048eaaa" class="outline-4">
+<h4 id="org048eaaa"><span class="section-number-4">5.5.2.</span> <span class="todo TODO">TODO</span> image segmentation</h4>
+<div class="outline-text-4" id="text-5-5-2">
+<p>
+<a href="http://datahacker.rs/007-opencv-projects-image-segmentation-with-watershed-algorithm/">http://datahacker.rs/007-opencv-projects-image-segmentation-with-watershed-algorithm/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org8b1b8bd" class="outline-4">
+<h4 id="org8b1b8bd"><span class="section-number-4">5.5.3.</span> <span class="todo TODO">TODO</span> extract features</h4>
+<div class="outline-text-4" id="text-5-5-3">
+<p>
+<a href="http://datahacker.rs/004-opencv-projects-how-to-extract-features-from-the-image-in-python/">http://datahacker.rs/004-opencv-projects-how-to-extract-features-from-the-image-in-python/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4eb8755" class="outline-4">
+<h4 id="org4eb8755"><span class="section-number-4">5.5.4.</span> Discrete Fourier Transform, ряд Фурье</h4>
+<div class="outline-text-4" id="text-5-5-4">
+<p>
+<a href="http://datahacker.rs/opencv-discrete-fourier-transform-part1/">http://datahacker.rs/opencv-discrete-fourier-transform-part1/</a>
+<a href="http://datahacker.rs/opencv-discrete-fourier-transform-part2/">http://datahacker.rs/opencv-discrete-fourier-transform-part2/</a>
+</p>
+
+<ul class="org-ul">
+<li>time-domain analysis shows how a signal changes over time</li>
+<li>frequency-domain analysis shows how the signal’s energy is distributed over a range of frequencies</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org139328b" class="outline-3">
+<h3 id="org139328b"><span class="section-number-3">5.6.</span> Основные преобразования 2 di</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+<b>Непрерывное отображение</b>
+</p>
+<ul class="org-ul">
+<li>гомеоморфизмом - имеет непрерывное обратное</li>
+</ul>
+
+<p>
+<b>Homography</b> - Проективное преобразование
+</p>
+<ul class="org-ul">
+<li>прямые в прямые</li>
+<li>Allow to manipulate n‐dim vectors in a n+1 dim space</li>
+<li>2 degrees of freedom</li>
+<li>homogeneous image coordinates = (x,y,1) - column</li>
+<li>Converting from homogeneous image coordinates (x,y,1) = (x/w,y/w)</li>
+<li>Transformation = (x,y,1) * 3x3 matrix -&gt; (x/w,y/w)</li>
+</ul>
+
+<p>
+<b>affine transformation</b>
+</p>
+<ul class="org-ul">
+<li>preserves:
+<ul class="org-ul">
+<li>points</li>
+<li>straight lines</li>
+<li>planes</li>
+<li>parallelism</li>
+</ul></li>
+<li>include: translation, scaling, homothety, similarity transformation, reflection, rotation, shear mapping,
+and compositions</li>
+<li>affine transformation matrix - последняя строка [001]</li>
+<li>projective transformation matrix</li>
+</ul>
+</div>
+
+
+
+<div id="outline-container-org53eafa0" class="outline-4">
+<h4 id="org53eafa0"><span class="section-number-4">5.6.1.</span> linear transformation (Linear map) - линейный оператор</h4>
+<div class="outline-text-4" id="text-5-6-1">
+<p>
+<b>rotation</b> point (x/y) 2 dim, θ - от x+ оси (one degree of freedom):
+</p>
+<ul class="org-ul">
+<li>[ cos -sin ]  x = x*cosθ - y*sinθ</li>
+<li>[ sin  cos ]  y = x*sinθ + y*cosθ</li>
+</ul>
+
+<p>
+<b>Reflection</b>
+</p>
+
+<p>
+<b>caling</b> by 2
+</p>
+<ul class="org-ul">
+<li>[2 0]</li>
+<li>[0 2]</li>
+</ul>
+
+<p>
+horizontal <b>shear</b> mapping - Горизонтальный сдвиг
+</p>
+<ul class="org-ul">
+<li>[1 m]</li>
+<li>[0 1]</li>
+</ul>
+
+<p>
+squeeze mapping
+</p>
+<ul class="org-ul">
+<li>[k 0]</li>
+<li>[0 1/k]</li>
+</ul>
+
+<p>
+<b>projection</b> onto the y axis:
+</p>
+<ul class="org-ul">
+<li>[0 0]</li>
+<li>[0 1]</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1127180" class="outline-3">
+<h3 id="org1127180"><span class="section-number-3">5.7.</span> feature detection</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+Types of image features:
+</p>
+<dl class="org-dl">
+<dt>Edges</dt><dd>Canny edge detector</dd>
+<dt>Corners / interest points</dt><dd>point-like features, early algorithms first performed edge detection, and then
+analysed the edges to find rapid changes in direction (corners)</dd>
+<dt>Blobs / regions of interest points</dt><dd>complementary description of image structures in terms of
+regions. Just like edge</dd>
+<dt>Ridges</dt><dd>represents an axis of symmetry has an attribute of width associated with each ridge point -
+algorithmically harder to extract</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org7543ade" class="outline-3">
+<h3 id="org7543ade"><span class="section-number-3">5.8.</span> Optical Character Recognition</h3>
+<div class="outline-text-3" id="text-5-8">
+<ul class="org-ul">
+<li><b>handwritten</b> or <b>printed text</b> into <b>machine-encoded text</b></li>
+<li>распознавание латинских символов в печатном тексте в настоящее время возможно, только если доступны чёткие
+изображения, такие, как сканированные печатные документы. Точность при такой постановке задачи превышает 99
+%</li>
+<li>рукописного «печатного» и стандартного рукописного текста, а также печатных текстов других форматов
+(особенно с очень большим числом символов) в настоящее время являются предметом активных исследований</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb539044" class="outline-3">
+<h3 id="orgb539044"><span class="section-number-3">5.9.</span> datasets</h3>
+<div class="outline-text-3" id="text-5-9">
+<p>
+Berkeley Segmentation Data Set and Benchmarks 500 (BSDS500)
+<a href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html">https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org685b4cb" class="outline-3">
+<h3 id="org685b4cb"><span class="section-number-3">5.10.</span> USECASES</h3>
+<div class="outline-text-3" id="text-5-10">
+</div>
+<div id="outline-container-orgc334924" class="outline-4">
+<h4 id="orgc334924"><span class="section-number-4">5.10.1.</span> rotate</h4>
+<div class="outline-text-4" id="text-5-10-1">
+<p>
+array([1, 2],
+[3, 4])
+</p>
+
+<p>
+np.rot90(m)
+array([2, 4],
+[1, 3]])
+</p>
+</div>
+</div>
+<div id="outline-container-org4588825" class="outline-4">
+<h4 id="org4588825"><span class="section-number-4">5.10.2.</span> boxes with check mark (check box) or with text</h4>
+<div class="outline-text-4" id="text-5-10-2">
+<ul class="org-ul">
+<li><a href="https://github.com/karolzak/boxdetect#features">https://github.com/karolzak/boxdetect#features</a></li>
+<li><a href="https://fuzzylabs.ai/blog/checkbox-detection/">https://fuzzylabs.ai/blog/checkbox-detection/</a></li>
+<li>is ticked <a href="https://stackoverflow.com/questions/62907802/best-way-to-detect-if-checkbox-is-ticked">https://stackoverflow.com/questions/62907802/best-way-to-detect-if-checkbox-is-ticked</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org30036d5" class="outline-3">
+<h3 id="org30036d5"><span class="section-number-3">5.11.</span> links</h3>
+<div class="outline-text-3" id="text-5-11">
+<ul class="org-ul">
+<li>Tesseract VS Google OCR <a href="https://fuzzylabs.ai/blog/the-battle-of-the-ocr-engines/">https://fuzzylabs.ai/blog/the-battle-of-the-ocr-engines/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Outline_of_computer_vision">https://en.wikipedia.org/wiki/Outline_of_computer_vision</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c2a507" class="outline-2">
+<h2 id="org4c2a507"><span class="section-number-2">6.</span> OpenCV</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>hpp <i>usr/include/opencv4/opencv2</i></li>
+<li>tpoint <a href="https://www.tutorialspoint.com/opencv/index.htm">https://www.tutorialspoint.com/opencv/index.htm</a></li>
+<li>doc <a href="https://www.docs.opencv.org/master/">https://www.docs.opencv.org/master/</a></li>
+<li>doc <a href="https://docs.opencv.org/4.8.0/d9/df8/tutorial_root.html">https://docs.opencv.org/4.8.0/d9/df8/tutorial_root.html</a></li>
+<li>Doc numpy <a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html">https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/OpenCV">https://ru.wikipedia.org/wiki/OpenCV</a></li>
+<li><a href="https://gitlab.rusnarbank.ru/m.smirnov/Rusnarbank_OPENCV">https://gitlab.rusnarbank.ru/m.smirnov/Rusnarbank_OPENCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/">https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/</a></li>
+<li>шпаргалка <a href="https://tproger.ru/translations/opencv-python-guide">https://tproger.ru/translations/opencv-python-guide</a></li>
+<li>imutils -  Adrian Rosebrock  <a href="https://github.com/jrosebr1/imutils">https://github.com/jrosebr1/imutils</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org0894b04" class="outline-3">
+<h3 id="org0894b04"><span class="section-number-3">6.1.</span> basic</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Region of interest (ROI)</li>
+<li>color-space conversion
+<ul class="org-ul">
+<li>RGB - 24-bit - 8 bits, for red, green, and blue</li>
+<li>HSV - hue, saturation, value. OpenCV uses HSV ranges between (0-180, 0-255, 0-255).</li>
+<li>binary images - 0,1 or 0,255</li>
+<li>gray image - single channels 8-bit image</li>
+</ul></li>
+<li>Morphological Transformations - performed on binary images</li>
+<li>Gradient filters or High-pass filters
+<ul class="org-ul">
+<li>Sobel</li>
+<li>Scharr</li>
+<li>Laplacian</li>
+</ul></li>
+<li>Thresholding filter - grayscale image -&gt; If pixel value is greater than a threshold value, it is assigned
+one value (may be white), else it is assigned another value (may be black). -&gt; grayscale or binary image AND retVal -</li>
+<li><b>bimodal image</b> is an image whose histogram has two peaks</li>
+<li>Canny edge detection - argument: min and max values - Noise Reduction, Intensity Gradient</li>
+<li>Image Pyramids - Higher level (Low resolution)
+<ol class="org-ol">
+<li>Gaussian Pyramid - higher level is formed by the contribution from 5 pixels with gaussian weights -
+rediced to one-fourth of original area MxN -&gt; M/2,N/2 - cv.pyrDown() and cv.pyrUp()</li>
+<li>Laplacian Pyramids - images are like edge images only</li>
+</ol></li>
+<li>Contours - curve joining all the continuous points - for shape analysis and object detection and recognition.</li>
+</ul>
+
+<p>
+де-факто, стандартом в области компьютерного зрения
+</p>
+<ul class="org-ul">
+<li>is written in C++ and its primary interface is in C++</li>
+<li>Python, Java and MATLAB/OCTAVE</li>
+<li>CUDA-based GPU and OpenCL-based GPU interfaces</li>
+<li>Windows, Linux, macOS, FreeBSD, NetBSD, OpenBSD</li>
+<li>Android, iOS, Maemo, BlackBerry 10</li>
+</ul>
+
+<p>
+<b>EAST</b> EAST: An Efficient and Accurate Scene Text Detector.
+</p>
+<ul class="org-ul">
+<li>OpenCV 3.4.2 and OpenCV 4</li>
+<li>arbitrary orientations</li>
+<li>720p images</li>
+</ul>
+
+<p>
+3 ways to document recognation
+</p>
+<ul class="org-ul">
+<li>AKAZE + rectangles template</li>
+<li>search rectangle by text with gradients or threshold</li>
+<li>search text in areas with tesseract detected text</li>
+</ul>
+</div>
+<div id="outline-container-orgd72dcdf" class="outline-4">
+<h4 id="orgd72dcdf"><span class="section-number-4">6.1.1.</span> DPI</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+dpi is just a number in the JPEG/TIFF/PNG header
+</p>
+
+<p>
+DPI - scale factor to convert inches coordinates into pixel coordinates and back
+</p>
+
+<p>
+OpenCV doesn't know about DPI
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb2d9ae4" class="outline-3">
+<h3 id="orgb2d9ae4"><span class="section-number-3">6.2.</span> Basic Operations</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>BGR image - 3d</li>
+<li>grayscale image - 1d</li>
+</ul>
+
+<pre class="example">
+img.shape = (height, width, channels) = (rows, cols, channels)
+cv.resize(img, (width, height))
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">import</span> cv2 <span style="color: #8ac6f2; font-weight: bold;">as</span> cv
+
+<span style="color: #cae682;">img</span> = cv.imread(<span style="color: #95e454;">'messi5.jpg'</span>)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">numpy.ndarray - type</span>
+<span style="color: #cae682;">px</span> = img[100,100]   <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">[157 166 200] - Blue, Green, Red</span>
+img.item(10,10,2)   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">red value of pixel</span>
+img.itemset((10,10,2),100)   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">set red value of pixel</span>
+<span style="color: #e5786d;">print</span>( img.shape )  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">(342, 548, 3)</span>
+<span style="color: #e5786d;">print</span>( img.size )   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">562248</span>
+<span style="color: #e5786d;">print</span>( img.dtype )  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">uint8 or cv.CV_8U</span>
+
+<span style="color: #cae682;">b</span>,<span style="color: #cae682;">g</span>,<span style="color: #cae682;">r</span> = cv.split(img) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Blue, Green, Red</span>
+<span style="color: #cae682;">b</span> = img[:,:,0] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">faster</span>
+<span style="color: #cae682;">img</span> = cv.merge((b,g,r))
+
+cv2.imshow(<span style="color: #95e454;">'image'</span>,img) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+cv2.waitKey(0)          <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+cv2.destroyAllWindows() <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+plt.imshow(img, cmap = <span style="color: #95e454;">'gray'</span>, interpolation = <span style="color: #95e454;">'bicubic'</span>)
+plt.xticks([]), plt.yticks([])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">to hide tick values on X and Y axis</span>
+plt.show()
+
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">color-space conversion</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">HSV or HSB - &#1090;&#1086;&#1085; (1-360), &#1085;&#1072;&#1089;&#1099;&#1097;&#1077;&#1085;&#1085;&#1086;&#1089;&#1090;&#1100;(0-100)(0-&#1089;&#1077;&#1088;&#1099;&#1081;), &#1103;&#1088;&#1082;&#1086;&#1089;&#1090;&#1100;(0-100)</span>
+<span style="color: #cae682;">hsv</span> = cv.cvtColor(input_image,  cv.COLOR_BGR2HSV) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">convert, cv.COLOR_BGR2GRAY</span>
+<span style="color: #cae682;">lower_blue</span> = np.array([110,50,50])
+<span style="color: #cae682;">upper_blue</span> = np.array([130,255,255])
+<span style="color: #cae682;">mask</span> = cv.inRange(hsv, lower_blue, upper_blue) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Threshold the HSV image to get only blue colors</span>
+<span style="color: #cae682;">res</span> = cv.bitwise_and(frame,frame, mask= mask) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">original minus mask</span>
+
+<span style="color: #cae682;">bgr_green</span> = np.uint8([[[0,255,0 ]]]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">BGR: Green</span>
+<span style="color: #cae682;">hsv_green</span> = cv.cvtColor(green,cv.COLOR_BGR2HSV) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">[[[ 60 255 255]]]</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">THRESH_BINARY = maxval if pix &gt; thresh else 0</span>
+<span style="color: #cae682;">ret</span>,<span style="color: #cae682;">thresh1</span> = cv.threshold(src=img, thresh=127, maxval=255, <span style="color: #e5786d;">type</span>=cv.THRESH_BINARY)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0844efe" class="outline-3">
+<h3 id="org0844efe"><span class="section-number-3">6.3.</span> imread</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>BGR order and its cv2.imshow() and cv2.imwrite() also expect images in BGR order.</li>
+<li>Other libraries, such as PIL/Pillow, scikit-image, matplotlib, pyvips store images in conventional RGB order in memory.</li>
+</ul>
+
+<p>
+img = cv.imread(p, cv.IMREAD<sub>COLOR</sub>)
+</p>
+
+<p>
+[[
+  [250 250 250] &#x2026;
+ ]
+ &#x2026;
+]
+</p>
+
+<p>
+convert to RGB:
+</p>
+<ul class="org-ul">
+<li>RGBimage = cv2.cvtColor(BGRimage, cv2.COLOR<sub>BGR2RGB</sub>)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc22306" class="outline-3">
+<h3 id="orgcc22306"><span class="section-number-3">6.4.</span> resize() and interpolation</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+<a href="https://chadrick-kwag.net/cv2-resize-interpolation-methods/">https://chadrick-kwag.net/cv2-resize-interpolation-methods/</a>
+</p>
+<ul class="org-ul">
+<li>INTER<sub>NEAREST</sub> – a nearest-neighbor interpolation</li>
+<li>INTER<sub>LINEAR</sub> – a bilinear interpolation (used by default)</li>
+<li>INTER<sub>AREA</sub> – resampling using pixel area relation. It may be a preferred method for image decimation, as it gives moire’-free results. But when the image is zoomed, it is similar to the INTER<sub>NEAREST</sub> method.</li>
+<li>INTER<sub>CUBIC</sub> – a bicubic interpolation over 4×4 pixel neighborhood</li>
+<li>INTER<sub>LANCZOS4</sub> – a Lanczos interpolation over 8×8 pixel neighborhood</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1ae342b" class="outline-3">
+<h3 id="org1ae342b"><span class="section-number-3">6.5.</span> help libs</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+<a href="https://github.com/ulikoehler/UliEngineering">https://github.com/ulikoehler/UliEngineering</a>
+<a href="https://github.com/ulikoehler/cv_algorithms">https://github.com/ulikoehler/cv_algorithms</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f42234" class="outline-3">
+<h3 id="org4f42234"><span class="section-number-3">6.6.</span> install</h3>
+<div class="outline-text-3" id="text-6-6">
+<pre class="example">
+sudo apt-get install libopencv-dev python-opencv
+</pre>
+</div>
+</div>
+<div id="outline-container-orgf1de5aa" class="outline-3">
+<h3 id="orgf1de5aa"><span class="section-number-3">6.7.</span> load save</h3>
+<div class="outline-text-3" id="text-6-7">
+<pre class="example">
+img = cv.imread('messi5.jpg', flag) # as a multi-dimensional NumPy array BGR order
+</pre>
+
+
+<p>
+flags: <a href="https://docs.opencv.org/4.1.0/d6/d87/imgcodecs_8hpp.html">https://docs.opencv.org/4.1.0/d6/d87/imgcodecs_8hpp.html</a>
+</p>
+<ul class="org-ul">
+<li>cv.IMREAD<sub>COLOR</sub> : transform to BGR colours. Any transparency of image will be neglected. It is the default flag.</li>
+<li>cv.IMREAD<sub>GRAYSCALE</sub> = 0 : Loads image in grayscale mode</li>
+<li>cv.IMREAD<sub>UNCHANGED</sub> : Loads image as such including alpha channel</li>
+</ul>
+
+<pre class="example">
+cv2.imwrite('messigray.png', crop_box)
+</pre>
+</div>
+</div>
+<div id="outline-container-org41fe152" class="outline-3">
+<h3 id="org41fe152"><span class="section-number-3">6.8.</span> display</h3>
+<div class="outline-text-3" id="text-6-8">
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">contours</span> = np.array(<span style="color: #e5786d;">list</span>(<span style="color: #e5786d;">filter</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #8ac6f2; font-weight: bold;">not</span> <span style="color: #e5786d; font-weight: bold;">None</span>, <span style="color: #8ac6f2; font-weight: bold;">self</span>.contours)))
+<span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">img</span>[:] = 255
+cv2.drawContours(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img, <span style="color: #8ac6f2; font-weight: bold;">self</span>.contours, -1, (0, 255, 0), 10)
+cv2.imshow(<span style="color: #95e454;">'image'</span>, <span style="color: #8ac6f2; font-weight: bold;">self</span>.img)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+cv2.waitKey(0)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+cv2.destroyAllWindows()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+<span style="color: #cae682;">img</span> = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.imshow(image)
+plt.axis(<span style="color: #95e454;">"off"</span>)
+plt.show()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1085;&#1077;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086;</span>
+plt.subplot(121) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1076;&#1074;&#1072; &#1080;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; &#1087;&#1086; &#1075;&#1086;&#1088;&#1080;&#1079;&#1086;&#1085;&#1090;&#1072;&#1083;&#1080;, 211 - &#1076;&#1074;&#1072; &#1080;&#1079;&#1086;&#1073;&#1088;&#1072;&#1078;&#1077;&#1085;&#1080;&#1103; &#1087;&#1086; &#1074;&#1077;&#1088;&#1090;&#1080;&#1082;&#1072;&#1083;&#1080;</span>
+plt.imshow(img)
+plt.subplot(122)
+plt.plot(hist) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1075;&#1088;&#1072;&#1092;&#1092;&#1080;&#1082;</span>
+plt.xlim([0,256]) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1086;&#1073;&#1083; &#1076;&#1086;&#1087;&#1091;&#1089; &#1079;&#1085;&#1072;&#1095; &#1086;&#1089;&#1100; X</span>
+plt.show()
+
+
+<span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">cluster_coords</span> = [[  9.  622. ],[  9.  563.5]]
+<span style="color: #cae682;">pts</span> = np.array([<span style="color: #8ac6f2; font-weight: bold;">self</span>.cluster_coords], np.int32)
+cv2.drawContours(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img, pts, -1, (0, 255, 0), 3)
+<span style="color: #cae682;">img</span> = cv2.resize(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img, (700, 800)) <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">resize if too large</span>
+cv2.imshow(<span style="color: #95e454;">'image'</span>, img)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+cv2.waitKey(0)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+cv2.destroyAllWindows()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">contour to rectangle</span>
+<span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span>, <span style="color: #cae682;">w</span>, <span style="color: #cae682;">h</span> = cv2.boundingRect(contour)
+cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77165ca" class="outline-3">
+<h3 id="org77165ca"><span class="section-number-3">6.9.</span> Histogram</h3>
+<div class="outline-text-3" id="text-6-9">
+<ul class="org-ul">
+<li>pixel value - 0-255</li>
+<li>histogram - for grayscale image mostly - intensity distribution of an image - x - 0 to 255, у - number of
+pixels</li>
+<li>BIN - number of pixel values. группировка values - [256] - количество values в одном ящике</li>
+<li>RANGE : It is the range of intensity values you want to measure. Normally, it is [0,256], ie all intensity values.</li>
+</ul>
+
+<pre class="example">
+cv.calcHist(images, channels, mask, histSize, ranges[, hist[, accumulate]])
+</pre>
+
+<ul class="org-ul">
+<li>mask : mask image. To find histogram of full image, it is given as "None".</li>
+<li>histSize : this represents our BIN count. Need to be given in square brackets. For full scale, we pass [256].</li>
+<li>ranges : this is our RANGE. Normally, it is [0,256].</li>
+</ul>
+
+<p>
+BGR:
+</p>
+<pre class="example">
+cv.calcHist(images=[img], chnnels=[i], mask=None, histSize=[256], ranges=[0, 256])
+</pre>
+
+
+<p>
+HSV:
+</p>
+<pre class="example">
+hist = cv.calcHist(images=[hue], chnnels=[0], mask=None, histSize=[2-180], ranges=[0, 180])
+</pre>
+
+<ul class="org-ul">
+<li>histSize - bins</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+<span style="color: #8ac6f2; font-weight: bold;">import</span> cv2 <span style="color: #8ac6f2; font-weight: bold;">as</span> cv
+<span style="color: #cae682;">img</span> = cv.imread(<span style="color: #95e454;">'/home/u/sources/tasks-for-job/task_for_zennolab/train.png'</span>, 0)
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">img = cv.imread('/home/u/download.jpeg', 0)</span>
+<span style="color: #cae682;">hist</span> = cv.calcHist([img],[0],<span style="color: #e5786d; font-weight: bold;">None</span>,[256],[0,256])
+plt.subplot(121)
+plt.imshow(img)
+plt.subplot(122)
+plt.plot(hist)
+plt.xlim([0,256])
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbe16688" class="outline-3">
+<h3 id="orgbe16688"><span class="section-number-3">6.10.</span> Normalize</h3>
+<div class="outline-text-3" id="text-6-10">
+<p>
+cv2.normalize(source<sub>array</sub>, destination<sub>array</sub>, alpha, beta, normType )
+</p>
+<dl class="org-dl">
+<dt>source<sub>array</sub></dt><dd>It is the input image you want to normalize.</dd>
+<dt>destination<sub>array</sub></dt><dd>The name for the output image after normalization.</dd>
+<dt>alpha</dt><dd>norm value to normalize to or the lower range boundary in case of the range normalization.</dd>
+<dt>beta</dt><dd>upper range boundary in case of the range normalization; it is not used for the norm normalization.</dd>
+<dt>normType</dt><dd>Type for the normalization of the image.
+<ul class="org-ul">
+<li>cv2.NORM<sub>MINMAX</sub></li>
+</ul></dd>
+</dl>
+
+<p>
+Don't change:
+</p>
+<pre class="example">
+norm = np.zeros((800,800)) #  blank image
+norm_image = cv2.normalize(img,norm,alpha=0,beta=255,cv2.NORM_MINMAX) # img -BGR
+</pre>
+
+
+<p>
+To convert each pixel to 0-1 range:
+</p>
+<pre class="example">
+img_normalized = cv2.normalize(img, None, 0, 1.0, cv2.NORM_MINMAX)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge0c22b3" class="outline-3">
+<h3 id="orge0c22b3"><span class="section-number-3">6.11.</span> Contours</h3>
+<div class="outline-text-3" id="text-6-11">
+<p>
+<b>cv.findContrours</b>
+</p>
+<pre class="example">
+contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE) # finding white object from black background
+</pre>
+
+<ul class="org-ul">
+<li>input - binary image - 0 - BLACK, 255 - WHITE</li>
+<li>cv.RETR<sub>TREE</sub> - contour retrieval mode -
+<ul class="org-ul">
+<li><a href="https://docs.opencv.org/4.1.0/d9/d8b/tutorial_py_contours_hierarchy.html">https://docs.opencv.org/4.1.0/d9/d8b/tutorial_py_contours_hierarchy.html</a></li>
+<li>list of contours</li>
+<li>[8, 0, -1, -1] -0: 8 next in same hoerarchy, 0 previous in same hoerarchy, -1 no child, no parent</li>
+<li>[-1, -1, 3, 1] -1: -1 no next, -1 no previous, 3 is a child, 1 is a parent</li>
+</ul></li>
+<li>cv.CHAIN<sub>APPROX</sub><sub>SIMPLE</sub> - contour approximation method -  all the boundary points are stored, or several
+<ul class="org-ul">
+<li>cv.CHAIN<sub>APPROX</sub><sub>SIMPLE</sub> - removes all redundant points and compresses the contour, thereby saving memory</li>
+</ul></li>
+<li>contours - list of all the contours. Each individual contour is a Numpy array of (x,y) coordinates</li>
+<li>example for contours parameter: [[[ 22 124] [ 57 160]]]</li>
+</ul>
+
+<pre class="example">
+contours = [numpy.array([[1,1],[10,50],[50,50]], dtype=numpy.int32) , numpy.array([[99,99],[99,60],[60,99]], dtype=numpy.int32)]
+</pre>
+
+
+
+<p>
+<b>cv.drawContours</b> - around or inside of contour
+</p>
+<pre class="example">
+cv.drawContours(img, [contours[0]], 0, (255), -1)
+</pre>
+
+<ul class="org-ul">
+<li>0 - draw first contour of [contours[0]]  (-1 - all)</li>
+<li>(255) - colour to draw</li>
+<li>-1 - thinkness - if -1 - draw inside contour</li>
+</ul>
+
+<p>
+to rectangle:
+</p>
+<pre class="example">
+x,y,w,h = cv.boundingRect(cnt)
+</pre>
+</div>
+
+<div id="outline-container-org3087048" class="outline-4">
+<h4 id="org3087048"><span class="section-number-4">6.11.1.</span> working with contours</h4>
+<div class="outline-text-4" id="text-6-11-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">img</span> = cv.imread(<span style="color: #95e454;">'/home/u/sudou2.jpg'</span>, 0)
+<span style="color: #cae682;">ret</span>, <span style="color: #cae682;">thresh</span> = cv.threshold(img, 127, 255, 0)
+<span style="color: #cae682;">contours</span>, <span style="color: #cae682;">hierarchy</span> = cv.findContours(thresh, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+cv.drawContours(img, contours, -1, (0,255,0), 3) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-1 - all, 3 - draw 4th contour</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">draw 4th contour</span>
+<span style="color: #cae682;">cnt</span> = contours[4]
+cv.drawContours(img, [cnt], 0, (0,255,0), 3)
+
+cv.imshow(<span style="color: #95e454;">'image'</span>, img)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+cv.waitKey(0)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+cv.destroyAllWindows()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">one format to another</span>
+[<span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span>, <span style="color: #cae682;">w</span>, <span style="color: #cae682;">h</span>] = cv2.boundingRect(contour)
+<span style="color: #cae682;">img</span> = img[item[1]:item[1] + item[3], item[0]: item[0] + item[2]]
+<span style="color: #cae682;">img</span> = img[y:y + h, x: x + w] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">crop rect</span>
+
+<span style="color: #cae682;">center</span>, <span style="color: #cae682;">size</span>, <span style="color: #cae682;">theta</span> = cv2.minAreaRect(coords) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">( center (x,y), (width, height), angle of rotation )</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Convert to int</span>
+<span style="color: #cae682;">center</span>, <span style="color: #cae682;">size</span> = <span style="color: #e5786d;">tuple</span>(<span style="color: #e5786d;">map</span>(<span style="color: #e5786d;">int</span>, center)), <span style="color: #e5786d;">tuple</span>(<span style="color: #e5786d;">map</span>(<span style="color: #e5786d;">int</span>, size))
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">contour with angle</span>
+<span style="color: #cae682;">rect</span> = cv2.minAreaRect(coords)
+<span style="color: #cae682;">box</span> = cv2.boxPoints(rect)
+<span style="color: #cae682;">box</span> = np.int0(box)
+<span style="color: #cae682;">img2</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.image.copy()
+cv2.drawContours(img2, [box], 0, (0, 0, 255), 2)
+cv2.imshow(<span style="color: #95e454;">'image'</span>, img2)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+cv2.waitKey(0)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+cv2.destroyAllWindows()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">EXTERNAL contours</span>
+(<span style="color: #cae682;">_</span>, <span style="color: #cae682;">cnts</span>, <span style="color: #cae682;">hierarchy</span>) = cv.findContours(image, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb75d770" class="outline-4">
+<h4 id="orgb75d770"><span class="section-number-4">6.11.2.</span> get example of contour</h4>
+<div class="outline-text-4" id="text-6-11-2">
+<pre class="example">
+# img_onechannel = img[0]
+# ret, thresh = cv.threshold(img_onechannel, 29, 255, 0)
+# contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org339a5bd" class="outline-3">
+<h3 id="org339a5bd"><span class="section-number-3">6.12.</span> Blur</h3>
+<div class="outline-text-3" id="text-6-12">
+<p>
+convolving (each element of the image is added to its local neighbors, weighted by the kernel) the
+image through a low pass filter kernel.
+</p>
+
+<dl class="org-dl">
+<dt>Blur (Averaging) - cv.blur</dt><dd>pixel replecead by the average of all the pixels in the kernel area</dd>
+<dt>cv.GaussianBlur</dt><dd></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org6f89b9b" class="outline-3">
+<h3 id="org6f89b9b"><span class="section-number-3">6.13.</span> Eroding and Dilating</h3>
+<div class="outline-text-3" id="text-6-13">
+<dl class="org-dl">
+<dt>Dilation</dt><dd>make white lines FAT</dd>
+<dt>Erosion</dt><dd>make THIN</dd>
+</dl>
+
+<p>
+<a href="https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html">https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org1312c59" class="outline-3">
+<h3 id="org1312c59"><span class="section-number-3">6.14.</span> Features</h3>
+<div class="outline-text-3" id="text-6-14">
+<p>
+Good features: corners, &#x2026;
+</p>
+
+<ul class="org-ul">
+<li>Feature Detection - create</li>
+<li>Feature Description -  describe the region around the feature so that it can find it in other images</li>
+<li>Feature matching</li>
+</ul>
+</div>
+<div id="outline-container-org464ff4f" class="outline-4">
+<h4 id="org464ff4f"><span class="section-number-4">6.14.1.</span> algos:</h4>
+<div class="outline-text-4" id="text-6-14-1">
+<ul class="org-ul">
+<li>Harris Corner Detection - |R| is small-&gt;flat, R&lt;0 -&gt; edge, R is large -&gt; corner - rotation-invariant, not scale invariant.</li>
+<li>cv.goodFeaturesToTrack() - find corners for - for tracking - rotation-invariant, not scale invariant.</li>
+<li><p>
+SIFT - scale invariant.
+</p>
+<ul class="org-ul">
+<li>Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the</li>
+</ul>
+<p>
+meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of
+keypoints etc.
+</p></li>
+<li>SURF - speeded-up version of SIFT</li>
+<li>ORB is much faster than SURF and SIFT and ORB descriptor works better than SURF</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4705091" class="outline-4">
+<h4 id="org4705091"><span class="section-number-4">6.14.2.</span> matches</h4>
+<div class="outline-text-4" id="text-6-14-2">
+<p>
+<b>Brute-Force Matcher</b> one feature from 1 set match with all other features in second set. Closes is returned.
+</p>
+<ul class="org-ul">
+<li>bf = cv.BFMatcher(cv.NORM<sub>HAMMING</sub>, crossCheck=True)</li>
+<li>match alternatives:
+<ul class="org-ul">
+<li>DMatch - result of  bf.match(des1,des2)</li>
+<li>BFMatcher.knnMatch() to get k best matches, so we can apply ratio test.</li>
+</ul></li>
+</ul>
+
+<p>
+<b>FLANN Matcher</b> - faster, uses Approximate Nearest Neighbors
+</p>
+
+
+<p>
+matcher.match(queryDescriptors,trainDescriptors)
+</p>
+
+<p>
+<a href="https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html">https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgdadfc53" class="outline-4">
+<h4 id="orgdadfc53"><span class="section-number-4">6.14.3.</span> DMatch</h4>
+<div class="outline-text-4" id="text-6-14-3">
+<pre class="example">
+kp1, des1 = sift.detectAndCompute(img1,None)
+</pre>
+
+
+<p>
+kp1 - (&lt; cv2.KeyPoint 0x7f214cbb2d90&gt;, &lt; cv2.KeyPoint 0x7f214cf18ae0&gt;,  &#x2026;)
+</p>
+
+<p>
+des1 - distances matrix
+</p>
+
+<pre class="example">
+matches = flann.knnMatch(des1,des2,k=2)
+</pre>
+
+
+<p>
+matches - (&lt; cv2.DMatch 0x7f214c2362d0&gt;, &lt; cv2.DMatch 0x7f214c236510&gt;)
+</p>
+
+<p>
+source and target points:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">for</span> m, n <span style="color: #8ac6f2; font-weight: bold;">in</span> nn_matches:
+    matched1.append(kpts1[m.queryIdx])
+    matched2.append(<span style="color: #8ac6f2; font-weight: bold;">self</span>.kpts2[m.trainIdx])
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">ordered lists</span>
+<span style="color: #cae682;">src_pts</span> = [i.pt <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> matched1]
+<span style="color: #cae682;">dst_pts</span> = [i.pt <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> matched2]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org67dbe78" class="outline-3">
+<h3 id="org67dbe78"><span class="section-number-3">6.15.</span> <span class="todo TODO">TODO</span> Filtering</h3>
+</div>
+<div id="outline-container-orgfb9e5e9" class="outline-3">
+<h3 id="orgfb9e5e9"><span class="section-number-3">6.16.</span> Sobel Derivatives</h3>
+<div class="outline-text-3" id="text-6-16">
+<p>
+express pixel intensity changes
+</p>
+</div>
+</div>
+<div id="outline-container-org3ef0ea1" class="outline-3">
+<h3 id="org3ef0ea1"><span class="section-number-3">6.17.</span> Colors</h3>
+<div class="outline-text-3" id="text-6-17">
+<ul class="org-ul">
+<li><a href="https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/">https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/</a></li>
+</ul>
+</div>
+<div id="outline-container-orga390d4f" class="outline-4">
+<h4 id="orga390d4f"><span class="section-number-4">6.17.1.</span> channels</h4>
+<div class="outline-text-4" id="text-6-17-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">color</span> = (<span style="color: #95e454;">'b'</span>, <span style="color: #95e454;">'g'</span>, <span style="color: #95e454;">'r'</span>)
+<span style="color: #8ac6f2; font-weight: bold;">for</span> i, col <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">enumerate</span>(color):
+<span style="color: #cae682;">b</span> = (np.ones((500, 500)) * characters[0]).astype(np.uint8)
+        <span style="color: #cae682;">g</span> = (np.ones((500,500)) * characters[1]).astype(np.uint8)
+        <span style="color: #cae682;">r</span> = (np.ones((500, 500)) * characters[2]).astype(np.uint8)
+<span style="color: #cae682;">b</span> = img[:,:, 0]
+<span style="color: #cae682;">g</span> = img[:,:, 1]
+<span style="color: #cae682;">r</span> = img[:,:, 2]
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">back to image</span>
+<span style="color: #cae682;">b</span> = np.ones((500, 500)).astype(np.uint8)
+<span style="color: #cae682;">g</span> = np.ones((500,500)).astype(np.uint8)
+<span style="color: #cae682;">r</span> = np.ones((500, 500).astype(np.uint8)
+
+bgr = np.dstack((b, g, r))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb0d020" class="outline-4">
+<h4 id="orgcb0d020"><span class="section-number-4">6.17.2.</span> histogram</h4>
+<div class="outline-text-4" id="text-6-17-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">gray histogram</span>
+<span style="color: #cae682;">hist</span> = cv2.calcHist([gray], [0], <span style="color: #e5786d; font-weight: bold;">None</span>, [256], [0, 256])
+plt.figure()
+plt.title(<span style="color: #95e454;">"Grayscale Histogram"</span>)
+plt.xlabel(<span style="color: #95e454;">"Bins"</span>)
+plt.ylabel(<span style="color: #95e454;">"# of Pixels"</span>)
+plt.plot(hist)
+plt.xlim([0, 256])
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Colours flattened histogram</span>
+<span style="color: #8ac6f2; font-weight: bold;">for</span> (chan, color) <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">zip</span>(chans, colors):
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">create a histogram for the current channel and</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">concatenate the resulting histograms for each</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">channel</span>
+        <span style="color: #cae682;">hist</span> = cv2.calcHist([chan], [0], <span style="color: #e5786d; font-weight: bold;">None</span>, [256], [0, 256])
+        features.extend(hist)
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">plot the histogram</span>
+        plt.plot(hist, color = color)
+        plt.xlim([0, 256])
+plt.show()
+
+
+
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Select objects by colour</span>
+   <span style="color: #cae682;">lower</span> = np.array([120, 57, 110])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- Lower range -- RGB</span>
+    <span style="color: #cae682;">upper</span> = np.array([180, 136, 170])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">-- Upper range --</span>
+    <span style="color: #cae682;">mask</span> = cv.inRange(img, lower, upper)
+    <span style="color: #cae682;">res</span> = cv.bitwise_and(img, img, mask=mask)
+    cv.imshow(<span style="color: #95e454;">"images"</span>, np.hstack([img, res]))
+    cv.waitKey(0)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4ed5414" class="outline-3">
+<h3 id="org4ed5414"><span class="section-number-3">6.18.</span> template matching</h3>
+<div class="outline-text-3" id="text-6-18">
+<ul class="org-ul">
+<li>it does not work for rotated or scaled versions of the template</li>
+<li>inefficient when calculating the pattern correlation image for medium to large images</li>
+</ul>
+
+<p>
+Binary-string descriptors: ORB, BRIEF, BRISK, FREAK, AKAZE, etc.
+</p>
+<ul class="org-ul">
+<li>use FLANN + LSH index or Brute Force + Hamming distance.</li>
+</ul>
+
+<p>
+Floating-point descriptors: SIFT, SURF, GLOH, etc.
+</p>
+<ul class="org-ul">
+<li>Hamming distance as opposed to Euclidean distance used for floating-point descriptors.</li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><a href="https://docs.opencv.org/4.8.0/de/da9/tutorial_template_matching.html">https://docs.opencv.org/4.8.0/de/da9/tutorial_template_matching.html</a></li>
+<li><a href="https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html">https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3cd98b1" class="outline-3">
+<h3 id="org3cd98b1"><span class="section-number-3">6.19.</span> Hough Line Transform</h3>
+<div class="outline-text-3" id="text-6-19">
+<p>
+image, rho, theta, threshold, lines=None, srn=None, stn=None, min<sub>theta</sub>=None, max<sub>theta</sub>=None
+</p>
+<ul class="org-ul">
+<li>image-edges: Output of the edge detector.</li>
+<li>rho: Distance resolution of the accumulator in pixels. = 1</li>
+<li>theta: Angle resolution of the accumulator in radians. = np.pi/180</li>
+<li>threshold: Accumulator threshold parameter. Only those lines are returned that get enough votes</li>
+<li>lines: A vector to store the coordinates of the start and end of the line. Each line is represented by a 2
+or 3 element vector</li>
+<li>stn, srn: For the multi-scale Hough transform,</li>
+<li>min<sub>theta</sub>: For standard and multi-scale Hough transform, minimum angle to check for lines. Must fall between
+0 and max<sub>theta</sub>.</li>
+<li>max<sub>theta</sub>: For standard and multi-scale Hough transform, maximum angle to check for lines. Must fall between
+min<sub>theta</sub> and CV<sub>PI</sub></li>
+</ul>
+
+
+<p>
+threshold: The minimum number of intersecting points to detect a line.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">img</span> = cv.imread(<span style="color: #95e454;">'/home/u/download.jpeg'</span>, 0)
+<span style="color: #cae682;">edges</span> = cv.Canny(img,50,150,apertureSize = 3)
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">lines = cv.HoughLines(edges,1,np.pi/180,200)</span>
+<span style="color: #cae682;">lines</span> = cv.HoughLinesP(edges,1,np.pi/180,100,minLineLength=100,maxLineGap=10)
+
+<span style="color: #8ac6f2; font-weight: bold;">for</span> line <span style="color: #8ac6f2; font-weight: bold;">in</span> lines:
+    <span style="color: #cae682;">x1</span>,<span style="color: #cae682;">y1</span>,<span style="color: #cae682;">x2</span>,<span style="color: #cae682;">y2</span> = line[0]
+    cv.line(img,(x1,y1),(x2,y2),(0,255,0),2)
+
+plt.imshow(img)
+plt.show()
+
+
+
+<span style="color: #cae682;">gray</span> = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+<span style="color: #cae682;">edges</span> = cv.Canny(gray,50,150, apertureSize = 3)
+<span style="color: #e5786d;">print</span>(edges.shape)
+<span style="color: #cae682;">lines</span> = cv.HoughLines(edges,1,np.pi/180,120)
+<span style="color: #e5786d;">print</span>(lines)
+<span style="color: #8ac6f2; font-weight: bold;">for</span> line <span style="color: #8ac6f2; font-weight: bold;">in</span> lines:
+    <span style="color: #cae682;">rho</span>, <span style="color: #cae682;">theta</span> = line[0]
+    <span style="color: #cae682;">a</span> = np.cos(theta)
+    <span style="color: #cae682;">b</span> = np.sin(theta)
+    <span style="color: #cae682;">x0</span> = a*rho
+    <span style="color: #cae682;">y0</span> = b*rho
+    <span style="color: #cae682;">x1</span> = <span style="color: #e5786d;">int</span>(x0 + 1000*(-b))
+    <span style="color: #cae682;">y1</span> = <span style="color: #e5786d;">int</span>(y0 + 1000*(a))
+    <span style="color: #cae682;">x2</span> = <span style="color: #e5786d;">int</span>(x0 - 1000*(-b))
+    <span style="color: #cae682;">y2</span> = <span style="color: #e5786d;">int</span>(y0 - 1000*(a))
+    cv.line(img,(x1,y1),(x2,y2),(0,0,255),2)
+
+<span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">plt.imshow(edges)</span>
+plt.imshow(img)
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6711b20" class="outline-3">
+<h3 id="org6711b20"><span class="section-number-3">6.20.</span> Contrast and brightness</h3>
+<div class="outline-text-3" id="text-6-20">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> cv2 <span style="color: #8ac6f2; font-weight: bold;">as</span> cv
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">funcBrightContrast</span>(bright=0):
+    <span style="color: #cae682;">bright</span> = cv.getTrackbarPos(<span style="color: #95e454;">'bright'</span>, <span style="color: #95e454;">'Life2Coding'</span>)
+    <span style="color: #cae682;">contrast</span> = cv.getTrackbarPos(<span style="color: #95e454;">'contrast'</span>, <span style="color: #95e454;">'Life2Coding'</span>)
+
+    <span style="color: #cae682;">effect</span> = apply_brightness_contrast(img, bright, contrast)
+    cv.imshow(<span style="color: #95e454;">'Effect'</span>, effect)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">apply_brightness_contrast</span>(input_img, brightness=255, contrast=127):
+    <span style="color: #cae682;">brightness</span> = <span style="color: #e5786d;">map</span>(brightness, 0, 510, -255, 255)
+    <span style="color: #cae682;">contrast</span> = <span style="color: #e5786d;">map</span>(contrast, 0, 254, -127, 127)
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> brightness != 0:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> brightness &gt; 0:
+            <span style="color: #cae682;">shadow</span> = brightness
+            <span style="color: #cae682;">highlight</span> = 255
+        <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+            <span style="color: #cae682;">shadow</span> = 0
+            <span style="color: #cae682;">highlight</span> = 255 + brightness
+        <span style="color: #cae682;">alpha_b</span> = (highlight - shadow) / 255
+        <span style="color: #cae682;">gamma_b</span> = shadow
+
+        <span style="color: #cae682;">buf</span> = cv.addWeighted(input_img, alpha_b, input_img, 0, gamma_b)
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+        <span style="color: #cae682;">buf</span> = input_img.copy()
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> contrast != 0:
+        <span style="color: #cae682;">f</span> = <span style="color: #e5786d;">float</span>(131 * (contrast + 127)) / (127 * (131 - contrast))
+        <span style="color: #cae682;">alpha_c</span> = f
+        <span style="color: #cae682;">gamma_c</span> = 127 * (1 - f)
+
+        <span style="color: #cae682;">buf</span> = cv.addWeighted(buf, alpha_c, buf, 0, gamma_c)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv2.putText(buf, 'B:{},C:{}'.format(brightness, contrast), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)</span>
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> buf
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">map</span>(x, in_min, in_max, out_min, out_max):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d;">int</span>((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">__name__</span> == <span style="color: #95e454;">'__main__'</span>:
+    <span style="color: #cae682;">original</span> = cv.imread(<span style="color: #95e454;">"/mnt/hit4/hit4user/PycharmProjects/cnn/samples/passport_and_vod/0/2019080129-2-0.png"</span>, 1)
+    <span style="color: #cae682;">original</span> = cv.resize(original, (900, 900))
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">my</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">tmp = apply_brightness_contrast(original, brightness=230, contrast=255)</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.imshow('a', tmp)</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.waitKey(0)</span>
+
+    <span style="color: #cae682;">img</span> = original.copy()
+
+    cv.namedWindow(<span style="color: #95e454;">'Life2Coding'</span>, 1)
+
+    <span style="color: #cae682;">bright</span> = 255
+    <span style="color: #cae682;">contrast</span> = 127
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Brightness value range -255 to 255</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Contrast value range -127 to 127</span>
+
+    cv.createTrackbar(<span style="color: #95e454;">'bright'</span>, <span style="color: #95e454;">'Life2Coding'</span>, bright, 2 * 255, funcBrightContrast)
+    cv.createTrackbar(<span style="color: #95e454;">'contrast'</span>, <span style="color: #95e454;">'Life2Coding'</span>, contrast, 2 * 127, funcBrightContrast)
+    funcBrightContrast(0)
+    cv.imshow(<span style="color: #95e454;">'Life2Coding'</span>, original)
+    cv.waitKey(0)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf1ce4e" class="outline-3">
+<h3 id="orgaf1ce4e"><span class="section-number-3">6.21.</span> Image Recognition and Object Detection</h3>
+<div class="outline-text-3" id="text-6-21">
+<ul class="org-ul">
+<li><a href="https://www.learnopencv.com/image-recognition-and-object-detection-part1/">https://www.learnopencv.com/image-recognition-and-object-detection-part1/</a></li>
+<li><a href="https://habr.com/ru/post/208090/">https://habr.com/ru/post/208090/</a></li>
+<li><a href="https://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/">https://www.pyimagesearch.com/2014/11/10/histogram-oriented-gradients-object-detection/</a></li>
+</ul>
+
+<p>
+History:
+</p>
+<ul class="org-ul">
+<li>2001 face detection Viola and Jones algorithm</li>
+<li>2005  Histograms of Oriented Gradients (HOG)</li>
+<li>2012  ImageNet</li>
+</ul>
+
+<p>
+Methods:
+</p>
+<ol class="org-ol">
+<li>Preprocessing
+<ul class="org-ul">
+<li>cropped</li>
+<li>resizing</li>
+<li>RGB to gray</li>
+<li>gamma correction</li>
+</ul></li>
+<li><p>
+Filtering OR Feature Extraction
+</p>
+<ul class="org-ul">
+<li>Бинаризация по порогу (threshold)</li>
+<li>Haar-like features introduced by Viola and Jones</li>
+<li>Histograms of Oriented Gradients (HOG)</li>
+<li>Scale-Invariant Feature Transform ( SIFT )</li>
+<li>Speeded Up Robust Feature ( SURF )</li>
+<li>Фурье, ФНЧ, ФВЧ</li>
+<li>вейвлет-анализом называется поиск произвольного паттерна на изображении при помощи свёртки с моделью этого паттерна</li>
+<li>Edge detector (Мат аппарат - контурный анализ)
+<ul class="org-ul">
+<li>Оператор Кэнни</li>
+<li>Оператор Собеля</li>
+<li>Оператор Лапласа</li>
+<li>Оператор Прюитт</li>
+<li>Оператор Робертса</li>
+</ul></li>
+<li>Особые точки <a href="https://en.wikipedia.org/wiki/Feature_detection_(computer_vision)">https://en.wikipedia.org/wiki/Feature_detection_(computer_vision)</a>
+<ul class="org-ul">
+<li>Первый класс. Особые точки, являющиеся стабильными на протяжении секунд.
+<ul class="org-ul">
+<li>локальные максимумы изображения</li>
+<li>углы на изображении (лучший из детекторов, пожалуй, детектор Хариса)</li>
+<li>точки в которых достигается максимумы дисперсии</li>
+<li>определённые градиенты</li>
+</ul></li>
+<li>Второй класс. Особые точки, являющиеся стабильными при смене освещения и небольших движениях объекта.
+<ul class="org-ul">
+<li>некоторые вейвлеты, как база для точек</li>
+<li>точки, найденные методом HOG</li>
+</ul></li>
+<li>Третий класс. Стабильные точки.
+<ul class="org-ul">
+<li>SURF, SIFT - К сожалению эти методы запатентованы. Хотя, в России патентовать алгоритмы низя, так что
+для внутреннего рынка пользуйтесь.</li>
+<li>KAZE and A-KAZE - no patent</li>
+</ul></li>
+</ul></li>
+<li>Mathematical morphology</li>
+</ul>
+<p>
+of the shape and aim to find out its location and orientation in the image
+</p></li>
+<li>Trainging Classificator</li>
+<li>Faster R-CNN has two networks: region proposal network (RPN) for generating region proposals and a network
+using these proposals to detect objects.</li>
+</ol>
+
+
+<p>
+<b>HOG Histograms of Oriented Gradients</b> метод гистограмм направленных градиентов
+</p>
+<ul class="org-ul">
+<li>based on the idea: that local <b>object appearance</b> can be effectively described by the distribution ( histogram
+) of edge directions ( oriented gradients )</li>
+<li>64 x 128 x 3 = 24,576 which is reduced to 3780</li>
+</ul>
+
+<p>
+<b>Mathematical morphology</b>
+</p>
+<ul class="org-ul">
+<li>это простейшие операции наращивания и эрозии бинарных изображений</li>
+</ul>
+
+<p>
+<b>Template matchong and Object detection</b>
+</p>
+<ul class="org-ul">
+<li>Hough transform:  cv.HoughCircles, cv.HoughLines, cv.HoughLinesP</li>
+<li>Generalized Hough Transform - cv::GeneralizedHoughBallard, cv::GeneralizedHoughGuil. - we have knowledge of
+the shape and aim to find out its location and orientation in the image.</li>
+
+<li><a href="https://habr.com/ru/post/113626/">https://habr.com/ru/post/113626/</a></li>
+<li><a href="http://wiki.technicalvision.ru/index.php/%D0%9C%D0%BE%D1%80%D1%84%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%BD%D0%B0_%D0%B1%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D1%85_%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D1%85">http://wiki.technicalvision.ru/index.php/%D0%9C%D0%BE%D1%80%D1%84%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%BD%D0%B0_%D0%B1%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D1%85_%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%D1%85</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga0dd8e8" class="outline-3">
+<h3 id="orga0dd8e8"><span class="section-number-3">6.22.</span> Generalized Hough Transform - object detection</h3>
+<div class="outline-text-3" id="text-6-22">
+<ul class="org-ul">
+<li>cv::GeneralizedHoughBallard - find exactly</li>
+<li>cv::GeneralizedHoughGuil - very slow, find same, not exactly</li>
+</ul>
+
+<p>
+<a href="https://docs.opencv.org/4.8.0/da/ddc/tutorial_generalized_hough_ballard_guil.html">https://docs.opencv.org/4.8.0/da/ddc/tutorial_generalized_hough_ballard_guil.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org64b8442" class="outline-3">
+<h3 id="org64b8442"><span class="section-number-3">6.23.</span> Cascade of Classifiers - object detection</h3>
+<div class="outline-text-3" id="text-6-23">
+<p>
+disabled since OpenCV 4.0!!! via DNN provides much better results
+</p>
+
+<p>
+Haar features. paper, "Rapid Object Detection using a Boosted Cascade of Simple Features" in 2001
+</p>
+
+<p>
+require usage: <b>media-libs/opencv gtk3 opencvapps</b>
+</p>
+</div>
+<div id="outline-container-org1c32582" class="outline-4">
+<h4 id="org1c32582"><span class="section-number-4">6.23.1.</span> train</h4>
+<div class="outline-text-4" id="text-6-23-1">
+<p>
+<b>training window size</b> - the average size of your object
+</p>
+
+<ul class="org-ul">
+<li>positive - opencv<sub>createsamples</sub>
+<ul class="org-ul">
+<li>"file of list": file instances<sub>count</sub> x y width height</li>
+<li>img/img2.jpg  2  100 200 50 50   50 30 25 25</li>
+</ul></li>
+<li>negative
+<ul class="org-ul">
+<li>"file of list": one image path per line</li>
+<li>different sizes - each image should be equal or larger than the desired "training window size"</li>
+</ul></li>
+</ul>
+
+<p>
+/negative
+  img1.jpg
+  img2.jpg
+neg.txt
+</p>
+
+<p>
+/positive
+  img1.jpg
+  img2.jpg
+pos.dat
+</p>
+
+<p>
+positives: The object instances are taken from the given images, by cutting out the supplied bounding boxes
+ from the original images. Then they are resized to target samples size (defined by -w and -h) and stored in
+ output vec-file, defined by the -vec parameter. No distortion is applied, so the only affecting arguments are
+ -w, -h, -show and -num.
+</p>
+<ol class="org-ol">
+<li>opencv<sub>createsamples</sub> -info pos.dat
+<ul class="org-ul">
+<li>-vec &lt;vec<sub>file</sub><sub>name</sub>&gt; : Name of the output file containing the positive samples for training.</li>
+<li>-num &lt;number<sub>of</sub><sub>samples</sub>&gt; : Number of positive samples to generate.</li>
+<li>-maxidev &lt;max<sub>intensity</sub><sub>deviation</sub>&gt; : Maximal intensity deviation of pixels in foreground samples.</li>
+<li>-show : Useful debugging option. If specified, each sample will be shown. Pressing Esc will continue the samples creation process without showing each sample.</li>
+<li>-w &lt;sample<sub>width</sub>&gt; : Width (in pixels) of the output samples.</li>
+<li>-h &lt;sample<sub>height</sub>&gt; : Height (in pixels) of the output samples.</li>
+</ul></li>
+</ol>
+<pre class="example">
+opencv_createsamples -info pos.dat -vec a.txt -num 2 -maxidev 100 -show -w 200 -h 200
+</pre>
+
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li>training <a href="https://docs.opencv.org/4.8.0/dc/d88/tutorial_traincascade.html">https://docs.opencv.org/4.8.0/dc/d88/tutorial_traincascade.html</a></li>
+<li>detection <a href="https://docs.opencv.org/4.8.0/db/d28/tutorial_cascade_classifier.html">https://docs.opencv.org/4.8.0/db/d28/tutorial_cascade_classifier.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5cda38d" class="outline-3">
+<h3 id="org5cda38d"><span class="section-number-3">6.24.</span> DNN - object detection</h3>
+<div class="outline-text-3" id="text-6-24">
+<p>
+convert to ONNX ( torch.onnx.export) -&gt; .onnx -&gt; cv.dnn.readNetFromONNX.
+links
+</p>
+<ul class="org-ul">
+<li><a href="https://docs.opencv.org/4.8.0/d2/d58/tutorial_table_of_content_dnn.html">https://docs.opencv.org/4.8.0/d2/d58/tutorial_table_of_content_dnn.html</a></li>
+<li><a href="https://docs.opencv.org/4.x/dc/d70/pytorch_cls_tutorial_dnn_conversion.html">https://docs.opencv.org/4.x/dc/d70/pytorch_cls_tutorial_dnn_conversion.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf2514d7" class="outline-3">
+<h3 id="orgf2514d7"><span class="section-number-3">6.25.</span> image alignment or Homography</h3>
+<div class="outline-text-3" id="text-6-25">
+<ul class="org-ul">
+<li>types of motions <img src="https://www.learnopencv.com/wp-content/uploads/2015/07/motion-models.jpg" alt="motion-models.jpg" /></li>
+<li>Homography <a href="https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/">https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/</a></li>
+</ul>
+<p>
+Small text:
+</p>
+<ul class="org-ul">
+<li>minAreaRect <a href="https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/">https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/</a></li>
+</ul>
+
+<p>
+Homography require template and doc<sub>type</sub>
+</p>
+<ul class="org-ul">
+<li><a href="https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/">https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/</a></li>
+</ul>
+
+<p>
+steps:
+</p>
+<ul class="org-ul">
+<li>Extract features: Commecricla(SURF or SIFT), Free(KAZΑ)</li>
+<li>Match the features (FLANN or BruteForce&#x2026;) and filter the matchings</li>
+<li>Find the geometrical transformation (RANSAC or LMeds&#x2026;)</li>
+</ul>
+</div>
+
+<div id="outline-container-orgba3a2c7" class="outline-4">
+<h4 id="orgba3a2c7"><span class="section-number-4">6.25.1.</span> AKAZA</h4>
+<div class="outline-text-4" id="text-6-25-1">
+<ul class="org-ul">
+<li><a href="https://docs.opencv.org/3.4.8/db/d70/tutorial_akaze_matching.html">https://docs.opencv.org/3.4.8/db/d70/tutorial_akaze_matching.html</a></li>
+<li><a href="https://stackoverflow.com/questions/47496287/how-would-i-use-orb-detector-with-image-homography">https://stackoverflow.com/questions/47496287/how-would-i-use-orb-detector-with-image-homography</a></li>
+<li><a href="https://docs.opencv.org/2.4/doc/tutorials/features2d/feature_homography/feature_homography.html">https://docs.opencv.org/2.4/doc/tutorials/features2d/feature_homography/feature_homography.html</a></li>
+<li><a href="http://www.programmersought.com/article/3078224152/">http://www.programmersought.com/article/3078224152/</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">class</span> <span style="color: #92a65e; font-weight: bold;">KazeCropper</span>:
+
+    <span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">__init__</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, img_orig, nn_match_ratio=0.72):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> img_orig <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #e5786d; font-weight: bold;">None</span>:
+            <span style="color: #e5786d;">print</span>(<span style="color: #95e454;">'Could not open or find the image!'</span>)
+
+        <span style="color: #cae682;">height</span> = 674  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">average prep</span>
+        <span style="color: #cae682;">width</span> = 998  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">average</span>
+        <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">img_orig</span> = img_orig
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(img_orig.shape) == 2 <span style="color: #8ac6f2; font-weight: bold;">or</span> img_orig.shape[2] == 1:
+            <span style="color: #cae682;">gray</span> = img_orig
+        <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+            <span style="color: #cae682;">gray</span> = cv.cvtColor(img_orig, cv.COLOR_BGR2GRAY)
+
+
+        <span style="color: #cae682;">gray</span> = imutils.resize(gray, width=width)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">resized</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">CLAHE (Contrast Limited Adaptive Histogram Equalization)</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">clahe = cv.createCLAHE(clipLimit=0.2, tileGridSize=(30,30))</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">clahe.apply(lab_planes[0])</span>
+
+        <span style="color: #cae682;">gray</span> = cv.fastNlMeansDenoising(gray, h=5, templateWindowSize=10)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">denoise</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.imshow('image', self.img_orig)  # show image in window</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.waitKey(0)  # wait for any key indefinitely</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.destroyAllWindows()  # close window q</span>
+        <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">akaze</span> = cv.AKAZE_create()
+
+        <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">kpts2</span>, <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">desc2</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.akaze.detectAndCompute(gray, <span style="color: #e5786d; font-weight: bold;">None</span>)
+
+        <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">matcher</span> = cv.DescriptorMatcher_create(cv.DescriptorMatcher_BRUTEFORCE_HAMMING)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">self.matcher = cv.DescriptorMatcher_create(cv.DescriptorMatcher_BRUTEFORCE_HAMMINGLUT)</span>
+        <span style="color: #8ac6f2; font-weight: bold;">self</span>.<span style="color: #cae682;">nn_match_ratio</span> = nn_match_ratio  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">0.75  # Nearest neighbor matching ratio</span>
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">private</span>
+    <span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">transform</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, img, wider: <span style="color: #e5786d;">float</span> = 1) -&gt; ():
+
+        <span style="color: #cae682;">kpts1</span>, <span style="color: #cae682;">desc1</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.akaze.detectAndCompute(img, <span style="color: #e5786d; font-weight: bold;">None</span>)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">kpts2, desc2 = self.akaze.detectAndCompute(self.img_orig, None)</span>
+
+        <span style="color: #cae682;">nn_matches</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.matcher.knnMatch(desc1, <span style="color: #8ac6f2; font-weight: bold;">self</span>.desc2, 2)
+
+        <span style="color: #cae682;">matched1</span> = []
+        <span style="color: #cae682;">matched2</span> = []
+
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> m, n <span style="color: #8ac6f2; font-weight: bold;">in</span> nn_matches:
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> m.distance &lt; <span style="color: #8ac6f2; font-weight: bold;">self</span>.nn_match_ratio * n.distance:
+                matched1.append(kpts1[m.queryIdx])
+                matched2.append(<span style="color: #8ac6f2; font-weight: bold;">self</span>.kpts2[m.trainIdx])
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">DEBUG</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print('A-KAZE Matching Results')</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print('*******************************')</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print('# Keypoints 1:                        \t', len(kpts1))</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print('# Keypoints 2:                        \t', len(self.kpts2))</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print('# Matches:                            \t', len(matched1))  # must be &gt; 90</span>
+
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(matched1) &lt; 60:
+            sys.stderr.write(<span style="color: #95e454;">"Error: Not enough matches"</span>)
+            <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">None</span>, <span style="color: #e5786d; font-weight: bold;">None</span>, <span style="color: #e5786d;">len</span>(matched1)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">extract the matched keypoints</span>
+        <span style="color: #cae682;">src_pts</span> = np.float32([i.pt <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> matched1]).reshape(-1, 1, 2)
+        <span style="color: #cae682;">dst_pts</span> = np.float32([i.pt <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> matched2]).reshape(-1, 1, 2)
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">find homography matrix and do perspective transform</span>
+        <span style="color: #cae682;">M</span>, <span style="color: #cae682;">mask</span> = cv.findHomography(src_pts, dst_pts, cv.RANSAC, 2)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">2</span>
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">apply transformation</span>
+        <span style="color: #cae682;">img</span> = cv.warpPerspective(img, M, (<span style="color: #e5786d;">int</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[1] * wider), <span style="color: #e5786d;">int</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[0] * wider)))
+
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> img, M, <span style="color: #e5786d;">len</span>(matched1)
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">public</span>
+    <span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">crop</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, image) -&gt; <span style="color: #e5786d;">any</span>:
+        <span style="color: #f08080; font-style: italic;">""" Double transformation of image to match template</span>
+
+<span style="color: #f08080; font-style: italic;">        :param image:</span>
+<span style="color: #f08080; font-style: italic;">        :return: image</span>
+<span style="color: #f08080; font-style: italic;">        """</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> image <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #e5786d; font-weight: bold;">None</span> <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #e5786d; font-weight: bold;">None</span>:
+            sys.stderr.write(<span style="color: #95e454;">'Could not open or find the images!'</span>)
+            <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">None</span>
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">prepare incoming image</span>
+        <span style="color: #cae682;">img</span> = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
+        <span style="color: #cae682;">img</span> = cv.fastNlMeansDenoising(img, h=2, templateWindowSize=4)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">denoise</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Get transformation matrix</span>
+        <span style="color: #cae682;">img</span>, <span style="color: #cae682;">m1</span>, <span style="color: #cae682;">mcount</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.transform(img, wider=1.5)
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> mcount &lt; 60:
+            <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">None</span>
+        <span style="color: #cae682;">img</span>, <span style="color: #cae682;">m2</span>, <span style="color: #cae682;">mcount</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.transform(img, wider=1)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">no change</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> mcount &lt; 60:
+            <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">None</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Apply transformation to original image</span>
+        <span style="color: #cae682;">img</span> = cv.warpPerspective(image, m1, (<span style="color: #e5786d;">int</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[1] * 1.5), <span style="color: #e5786d;">int</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[0] * 1.5)))
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.imshow("found1", img)</span>
+        <span style="color: #cae682;">img</span> = cv.warpPerspective(img, m2, (<span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[1], <span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig.shape[0]))
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> img
+
+    <span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">match</span>(<span style="color: #8ac6f2; font-weight: bold;">self</span>, image, k=2) -&gt; <span style="color: #e5786d;">int</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> image <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #e5786d; font-weight: bold;">None</span> <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #8ac6f2; font-weight: bold;">self</span>.img_orig <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #e5786d; font-weight: bold;">None</span>:
+            sys.stderr.write(<span style="color: #95e454;">'Could not open or find the images!'</span>)
+            <span style="color: #8ac6f2; font-weight: bold;">return</span> 0
+
+        <span style="color: #cae682;">kpts1</span>, <span style="color: #cae682;">desc1</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.akaze.detectAndCompute(image, <span style="color: #e5786d; font-weight: bold;">None</span>)
+        <span style="color: #cae682;">nn_matches</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.matcher.knnMatch(desc1, <span style="color: #8ac6f2; font-weight: bold;">self</span>.desc2, 2)
+        <span style="color: #cae682;">matched1</span> = []
+
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> m, n <span style="color: #8ac6f2; font-weight: bold;">in</span> nn_matches:
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> m.distance &lt; <span style="color: #8ac6f2; font-weight: bold;">self</span>.nn_match_ratio * n.distance:
+                matched1.append(kpts1[m.queryIdx])
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d;">len</span>(matched1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf7f04e7" class="outline-4">
+<h4 id="orgf7f04e7"><span class="section-number-4">6.25.2.</span> findHomography</h4>
+<div class="outline-text-4" id="text-6-25-2">
+<ul class="org-ul">
+<li>может быть полезным <a href="https://web-answers.ru/c/python-opencv-ispolzujte-findhomography-i.html">https://web-answers.ru/c/python-opencv-ispolzujte-findhomography-i.html</a></li>
+</ul>
+<pre class="example">
+cv.findHomography(src_pts, dst_pts, cv.RANSAC, 5.0)
+</pre>
+
+
+<p>
+Normal
+</p>
+<ul class="org-ul">
+<li>srcPoints -</li>
+<li>dstPoints -</li>
+</ul>
+<p>
+Special
+</p>
+<ul class="org-ul">
+<li>method -
+<ul class="org-ul">
+<li>0 - a regular method using all the points</li>
+<li>CV<sub>RANSAC</sub> - RANSAC-based robust method</li>
+<li>CV<sub>LMEDS</sub> - Least-Median robust method</li>
+</ul></li>
+<li>ransacReprojThreshold (used in the RANSAC method only) - Maximum allowed reprojection error to treat a point pair as an inlier</li>
+<li>mask: Any = None,</li>
+<li>maxIters: Any = None,</li>
+<li>confidence: Any = None</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a40b4e" class="outline-3">
+<h3 id="org6a40b4e"><span class="section-number-3">6.26.</span> Morphological Transformations</h3>
+<div class="outline-text-3" id="text-6-26">
+<p>
+<a href="https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html">https://docs.opencv.org/master/d9/d61/tutorial_py_morphological_ops.html</a>
+</p>
+<ul class="org-ul">
+<li>Erosion - уменьшить толщину как Convolution</li>
+<li>Dilation - утолщить</li>
+<li>Opening - cv.morphologyEx(img, cv.MORPH<sub>OPEN</sub>, kernel) - erosion followed by dilation
+<ul class="org-ul">
+<li>remove noise outside</li>
+<li>find out horizontal or vertical lines</li>
+</ul></li>
+<li>Clothing - cv.morphologyEx(img, cv.MORPH<sub>CLOSE</sub>, kernel) - Dilation followed by Erosion
+<ul class="org-ul">
+<li>to remove small points inside large one</li>
+<li>to group contours</li>
+</ul></li>
+
+<li>Morphological Gradient</li>
+<li>Top Hat</li>
+<li>Black Hat</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org16730a8" class="outline-3">
+<h3 id="org16730a8"><span class="section-number-3">6.27.</span> Deep Neural Network module (dnn)</h3>
+<div class="outline-text-3" id="text-6-27">
+<ol class="org-ol">
+<li>Pros:
+<ul class="org-ul">
+<li>легковесности решения</li>
+<li>легче перенос на другие платформы</li>
+<li>упрощает процедуру создания гибридных алгоритмов</li>
+<li>загрузка и запуск моделья - Caffe, TensorFlow или Torch - Поддерживаются все основные слои</li>
+</ul></li>
+<li>Cons:
+<ul class="org-ul">
+<li>только возможность выполнения прямого прохода (forward pass)</li>
+<li>преобразует модели из различных фреймворков в свое внутреннее представление, возникают вопросы сохранения качества</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orge80c25d" class="outline-3">
+<h3 id="orge80c25d"><span class="section-number-3">6.28.</span> USECASES</h3>
+<div class="outline-text-3" id="text-6-28">
+</div>
+<div id="outline-container-org814983b" class="outline-4">
+<h4 id="org814983b"><span class="section-number-4">6.28.1.</span> resize with black are keep ratio</h4>
+<div class="outline-text-4" id="text-6-28-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">resize_image</span>(img, size=(28,28)):
+
+    <span style="color: #cae682;">h</span>, <span style="color: #cae682;">w</span> = img.shape[:2]
+    <span style="color: #cae682;">c</span> = img.shape[2] <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(img.shape)&gt;2 <span style="color: #8ac6f2; font-weight: bold;">else</span> 1
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> h == w:
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> cv2.resize(img, size, cv2.INTER_AREA)
+
+    <span style="color: #cae682;">dif</span> = h <span style="color: #8ac6f2; font-weight: bold;">if</span> h &gt; w <span style="color: #8ac6f2; font-weight: bold;">else</span> w
+
+    <span style="color: #cae682;">interpolation</span> = cv2.INTER_AREA <span style="color: #8ac6f2; font-weight: bold;">if</span> dif &gt; (size[0]+size[1])//2 <span style="color: #8ac6f2; font-weight: bold;">else</span>
+                    cv2.INTER_CUBIC
+
+    <span style="color: #cae682;">x_pos</span> = (dif - w)//2
+    <span style="color: #cae682;">y_pos</span> = (dif - h)//2
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">len</span>(img.shape) == 2:
+        <span style="color: #cae682;">mask</span> = np.zeros((dif, dif), dtype=img.dtype)
+        <span style="color: #cae682;">mask</span>[y_pos:y_pos+h, x_pos:x_pos+w] = img[:h, :w]
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+        <span style="color: #cae682;">mask</span> = np.zeros((dif, dif, c), dtype=img.dtype)
+        <span style="color: #cae682;">mask</span>[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
+
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> cv2.resize(mask, size, interpolation)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8b16a19" class="outline-4">
+<h4 id="org8b16a19"><span class="section-number-4">6.28.2.</span> subimage</h4>
+<div class="outline-text-4" id="text-6-28-2">
+<p>
+roi=im[y:y+h,x:x+w]
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">contours</span>, <span style="color: #cae682;">hierarchy</span> = cv.findContours(img_with_squares, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get rectangle points:</span>
+<span style="color: #cae682;">cnt</span> = contours[0]
+<span style="color: #cae682;">x</span>,<span style="color: #cae682;">y</span>,<span style="color: #cae682;">w</span>,<span style="color: #cae682;">h</span> = cv.boundingRect(cnt)
+<span style="color: #cae682;">roi</span> = img[y:y+h,x:x+w]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1c53044" class="outline-4">
+<h4 id="org1c53044"><span class="section-number-4">6.28.3.</span> scale to target height</h4>
+<div class="outline-text-4" id="text-6-28-3">
+<p>
+def img<sub>to</sub><sub>small</sub>(img, height<sub>target</sub>=575):  # TODO: resize by smallest dimension
+    scale<sub>percent</sub> = round(height<sub>target</sub> / img.shape[1], 3)
+    width = int(img.shape[1] * scale<sub>percent</sub>)
+    height = int(img.shape[0] * scale<sub>percent</sub>)
+    dim = (width, height)
+    img<sub>resized</sub> = cv.resize(img, dim)
+    return img<sub>resized</sub>, scale<sub>percent</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org915a320" class="outline-4">
+<h4 id="org915a320"><span class="section-number-4">6.28.4.</span> colours</h4>
+<div class="outline-text-4" id="text-6-28-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgf964048"></a>RGB<br />
+<div class="outline-text-5" id="text-6-28-4-1">
+<p>
+Y = 0.299 R + 0.587 G + 0.114 B
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">img</span> = cv2.imread(rgbImageFileName) <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">BGR default</span>
+<span style="color: #cae682;">b1</span> = img[:,:,0] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Gives **Blue**</span>
+<span style="color: #cae682;">b2</span> = img[:,:,1] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Gives Green</span>
+<span style="color: #cae682;">b3</span> = img[:,:,2] <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Gives **Red**</span>
+<span style="color: #cae682;">img</span> = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgb3c5bef"></a>visualize HSV range<br />
+<div class="outline-text-5" id="text-6-28-4-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">import</span> cv2
+
+<span style="color: #cae682;">lower_b</span> = np.array([110,50,50])
+<span style="color: #cae682;">upper_b</span> = np.array([130,255,255])
+
+<span style="color: #cae682;">s_gradient</span> = np.ones((500,1), dtype=np.uint8)*np.linspace(lower_b[1], upper_b[1], 500, dtype=np.uint8)
+<span style="color: #cae682;">v_gradient</span> = np.rot90(np.ones((500,1), dtype=np.uint8)*np.linspace(lower_b[1], upper_b[1], 500, dtype=np.uint8))
+<span style="color: #cae682;">h_array</span> = np.arange(lower_b[0], upper_b[0]+1)
+
+<span style="color: #8ac6f2; font-weight: bold;">for</span> hue <span style="color: #8ac6f2; font-weight: bold;">in</span> h_array:
+    <span style="color: #cae682;">h</span> = hue*np.ones((500,500), dtype=np.uint8)
+    <span style="color: #cae682;">hsv_color</span> = cv2.merge((h, s_gradient, v_gradient))
+    <span style="color: #cae682;">rgb_color</span> = cv2.cvtColor(hsv_color, cv2.COLOR_HSV2BGR)
+    cv2.imshow(<span style="color: #95e454;">''</span>, rgb_color)
+    cv2.waitKey(250)
+
+cv2.destroyAllWindows()
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org379c36b"></a>contours to rectanges and draw with numbers<br />
+<div class="outline-text-5" id="text-6-28-4-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">contours</span>, <span style="color: #cae682;">hierarchy</span> = cv.findContours(img_with_squares, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get rectangle points:</span>
+    <span style="color: #cae682;">rects</span> = []
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> cnt <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #cae682;">contours</span>:  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cnt = contours[0]</span>
+        <span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span>, <span style="color: #cae682;">w</span>, <span style="color: #cae682;">h</span> = cv.boundingRect(cnt)
+        ret.append((x, y, w, h))
+<span style="color: #8ac6f2; font-weight: bold;">for</span> i, rec <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">enumerate</span>(rects):
+        <span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span>, <span style="color: #cae682;">w</span>, <span style="color: #cae682;">h</span> = rec
+        cv.rectangle(img_r, (x, y), (x + w, y + h), color=(0, 255, 0), thickness=2)
+        cv.putText(img_r, <span style="color: #e5786d;">str</span>(i),
+                   org=(x + i * 40, y - 10),
+                   fontFace=cv.FONT_HERSHEY_PLAIN,
+                   fontScale=3,
+                   color=(0, 255, 0),
+                   thickness=2)
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org1adffc8" class="outline-4">
+<h4 id="org1adffc8"><span class="section-number-4">6.28.5.</span> most common colour</h4>
+<div class="outline-text-4" id="text-6-28-5">
+<div class="org-src-container">
+<pre class="src src-python">        <span style="color: #cae682;">ntmp</span> = cv2.pyrDown(<span style="color: #8ac6f2; font-weight: bold;">self</span>.image)
+        <span style="color: #cae682;">tmp</span> = cv2.pyrDown(tmp)
+        <span style="color: #cae682;">tmp</span> = cv2.pyrDown(tmp)
+        <span style="color: #cae682;">tmp</span> = cv2.pyrDown(tmp)
+        <span style="color: #cae682;">b</span>, <span style="color: #cae682;">g</span>, <span style="color: #cae682;">r</span> = cv2.split(tmp)
+        <span style="color: #cae682;">bc</span> = <span style="color: #e5786d;">int</span>(np.bincount(b[0]).argmax())  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">most common colours</span>
+        <span style="color: #cae682;">gc</span> = <span style="color: #e5786d;">int</span>(np.bincount(g[0]).argmax())
+        <span style="color: #cae682;">rc</span> = <span style="color: #e5786d;">int</span>(np.bincount(r[0]).argmax())
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org65f0319" class="outline-4">
+<h4 id="org65f0319"><span class="section-number-4">6.28.6.</span> max x min y</h4>
+<div class="outline-text-4" id="text-6-28-6">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">minmax_unmodified</span> = np.prod(<span style="color: #8ac6f2; font-weight: bold;">self</span>.cluster_coords, axis=1)
+
+        <span style="color: #cae682;">minx_miny</span> = np.argmin(minmax_unmodified)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1074;&#1077;&#1088;&#1093;&#1085;&#1080;&#1081; &#1083;&#1077;&#1074;&#1099;&#1081;</span>
+        <span style="color: #cae682;">maxx_maxy</span> = np.argmax(minmax_unmodified)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1074;&#1077;&#1088;&#1093;&#1085;&#1080;&#1081; &#1087;&#1088;&#1072;&#1074;&#1099;&#1081;</span>
+
+        <span style="color: #cae682;">ccopy</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.cluster_coords.copy()
+        <span style="color: #cae682;">ccopy</span> = np.where(ccopy == 0, 0.01, ccopy)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">devide by zero</span>
+        <span style="color: #cae682;">ccopy</span>[:, 1] = np.reciprocal(ccopy[:, 1])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Y^-1, ???????? X/Y</span>
+        <span style="color: #cae682;">minx_maxy</span> = np.argmin(np.prod(ccopy, axis=1))
+
+        <span style="color: #cae682;">ccopy</span> = <span style="color: #8ac6f2; font-weight: bold;">self</span>.cluster_coords.copy()
+        <span style="color: #cae682;">ccopy</span> = np.where(ccopy == 0, 0.01, ccopy)
+        <span style="color: #cae682;">ccopy</span>[:, 0] = np.reciprocal(ccopy[:, 0])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">X^-1, ???????? Y/X</span>
+        <span style="color: #cae682;">maxx_miny</span> = np.argmin(np.prod(ccopy, axis=1))
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086; &#1080;&#1085;&#1076;&#1077;&#1082;&#1089;&#1072;&#1084;</span>
+        <span style="color: #cae682;">corners</span> = np.rint(<span style="color: #8ac6f2; font-weight: bold;">self</span>.cluster_coords[[minx_miny, maxx_miny, maxx_maxy, minx_maxy, minx_miny]]).astype(np.<span style="color: #e5786d;">int</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org13fe2f5" class="outline-4">
+<h4 id="org13fe2f5"><span class="section-number-4">6.28.7.</span> Images blending-adding</h4>
+<div class="outline-text-4" id="text-6-28-7">
+<p>
+<a href="https://docs.opencv.org/4.2.0/d0/d86/tutorial_py_image_arithmetics.html">https://docs.opencv.org/4.2.0/d0/d86/tutorial_py_image_arithmetics.html</a>
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgc1e55a9"></a>gray bitwise<br />
+<div class="outline-text-5" id="text-6-28-7-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">sign</span> = cv.imread(filename, cv.IMREAD_GRAYSCALE)
+            <span style="color: #cae682;">sign</span> = 255 - sign
+            <span style="color: #cae682;">ret</span>, <span style="color: #cae682;">sign</span> = cv.threshold(sign, 60, 255, cv.THRESH_TOZERO)
+
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">RANDOM SHIFT SING TODO: random resize</span>
+            <span style="color: #cae682;">M</span> = np.float32([[(random.random() + 0.2) * 1.7, 0, random.randint(-70, 70)],
+                            [0, (random.random() + 0.2) * 1.7, random.randint(-70, 70)]])
+            <span style="color: #cae682;">sign</span> = cv.warpAffine(sign, M, sign.shape)
+
+            cv.imshow(<span style="color: #95e454;">'image'</span>, sign)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">show image in window</span>
+            cv.waitKey(0)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">wait for any key indefinitely</span>
+            cv.destroyAllWindows()  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">close window</span>
+
+            <span style="color: #cae682;">sign</span> = 255 - sign
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">random brightness</span>
+            <span style="color: #cae682;">ret</span>, <span style="color: #cae682;">sign</span> = cv.threshold(sign, random.randint(60, 200), 255, cv.THRESH_TOZERO)
+            <span style="color: #cae682;">h</span> = 300
+            <span style="color: #cae682;">w</span> = 300
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">random subimage</span>
+            <span style="color: #cae682;">alt</span> = random.randint(-280, +50)
+            <span style="color: #cae682;">y</span> = random.randint(0, height - h - alt)
+            <span style="color: #cae682;">x</span> = random.randint(0, width - w - alt)
+            <span style="color: #cae682;">subdoc</span> = doc[y:y + h + alt, x:x + w + alt]
+            <span style="color: #cae682;">subdoc</span> = cv.resize(subdoc, dsize=(h, w))
+            <span style="color: #cae682;">sign</span> = cv.resize(sign, dsize=(h, w))
+            <span style="color: #cae682;">sign_b</span> = sign
+            <span style="color: #cae682;">sign</span> = cv.bitwise_and(subdoc, subdoc, mask=sign)
+            <span style="color: #cae682;">sign</span> = cv.bitwise_and(sign, sign_b)
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgbca3917" class="outline-4">
+<h4 id="orgbca3917"><span class="section-number-4">6.28.8.</span> filter contours</h4>
+<div class="outline-text-4" id="text-6-28-8">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">contours to points</span>
+<span style="color: #cae682;">c_points</span> = []
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> a <span style="color: #8ac6f2; font-weight: bold;">in</span> contours:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> aa <span style="color: #8ac6f2; font-weight: bold;">in</span> a:
+            c_points.append([aa[0][0], aa[0][1]])
+<span style="color: #cae682;">c_points</span> = np.array(c_points)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">crop image</span>
+<span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span>, <span style="color: #cae682;">w</span>, <span style="color: #cae682;">h</span> = rect
+<span style="color: #cae682;">croped</span> = img[y:y + h, x:x + w].copy()
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter points</span>
+        <span style="color: #cae682;">contours</span>, <span style="color: #cae682;">hierarchy</span> = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">range</span>(<span style="color: #e5786d;">len</span>(contours)):
+            <span style="color: #cae682;">nxt</span>, <span style="color: #cae682;">prev</span>, <span style="color: #cae682;">first_child</span>, <span style="color: #cae682;">parent</span> = hierarchy[0, i]
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> first_child == -1:  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter very small</span>
+                <span style="color: #cae682;">contours</span>[i] = <span style="color: #e5786d; font-weight: bold;">None</span>
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> nxt == -1 <span style="color: #8ac6f2; font-weight: bold;">or</span> prev == -1:  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter very large</span>
+                <span style="color: #cae682;">contours</span>[i] = <span style="color: #e5786d; font-weight: bold;">None</span>
+
+        <span style="color: #cae682;">contours</span> = np.array(<span style="color: #e5786d;">list</span>(<span style="color: #e5786d;">filter</span>(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: x <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #8ac6f2; font-weight: bold;">not</span> <span style="color: #e5786d; font-weight: bold;">None</span>, contours)))  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">filter</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf839b54" class="outline-4">
+<h4 id="orgf839b54"><span class="section-number-4">6.28.9.</span> tables</h4>
+<div class="outline-text-4" id="text-6-28-9">
+<p>
+corner detection vs
+I suggest you detect the lines instead, e.g. using Hough transform, followed by edge chaining, followed by robust line fitting on each chain.
+</p>
+</div>
+</div>
+<div id="outline-container-org568e101" class="outline-4">
+<h4 id="org568e101"><span class="section-number-4">6.28.10.</span> rotate with PIL and Hough Lines</h4>
+<div class="outline-text-4" id="text-6-28-10">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">rotate_image</span>(img) -&gt; np.array:
+    <span style="color: #f08080; font-style: italic;">""" HoughLines and PIL used """</span>
+    <span style="color: #cae682;">edges</span> = cv.Canny(img, 150, 250, apertureSize=3)
+    <span style="color: #cae682;">lines</span> = cv.HoughLinesP(edges, 2, np.pi / 180, 100, minLineLength=300, maxLineGap=10)
+    <span style="color: #8ac6f2; font-weight: bold;">import</span> math
+
+    <span style="color: #cae682;">angles1</span> = []
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">angles2 = []</span>
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> lines <span style="color: #8ac6f2; font-weight: bold;">is</span> <span style="color: #8ac6f2; font-weight: bold;">not</span> <span style="color: #e5786d; font-weight: bold;">None</span>:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> line <span style="color: #8ac6f2; font-weight: bold;">in</span> lines:
+            <span style="color: #cae682;">x1</span>, <span style="color: #cae682;">y1</span>, <span style="color: #cae682;">x2</span>, <span style="color: #cae682;">y2</span> = line[0]
+            <span style="color: #cae682;">angle</span> = math.atan2(x2 - x1, y2 - y1)
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(angle)</span>
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">cv.line(img, (x1, y1), (x2, y2), (0, 255, 0), 2)</span>
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">abs</span>(angle) &lt; 2:
+                angles1.append(angle)
+            <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">if abs(angle) &gt; 2:</span>
+            <span style="color: #fa8072;">#     </span><span style="color: #99968b; font-style: italic;">angles2.append(angle)</span>
+
+        <span style="color: #cae682;">median1_radian</span> = np.median(angles1)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">median2_radian = np.median(angles1)</span>
+
+        <span style="color: #8ac6f2; font-weight: bold;">from</span> PIL <span style="color: #8ac6f2; font-weight: bold;">import</span> Image
+
+        <span style="color: #cae682;">img</span> = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+        <span style="color: #cae682;">pil_image</span>: Image.Image = Image.fromarray(img)
+
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">if len(angles1) &gt; len(angles2):</span>
+        <span style="color: #cae682;">mr</span> = median1_radian
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">print(mr)</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">else:</span>
+        <span style="color: #fa8072;">#     </span><span style="color: #99968b; font-style: italic;">mr = median2_radian</span>
+        <span style="color: #cae682;">pil_image</span> = pil_image.rotate(math.degrees(math.pi/2 - mr), Image.NEAREST, fillcolor=(220,220,220))  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">nearest not working</span>
+        <span style="color: #cae682;">img</span> = np.array(pil_image)
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Convert RGB to BGR</span>
+        <span style="color: #cae682;">img</span> = img[:, :, ::-1].copy()
+
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> img
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org76291e9" class="outline-4">
+<h4 id="org76291e9"><span class="section-number-4">6.28.11.</span> PIL convert</h4>
+<div class="outline-text-4" id="text-6-28-11">
+<p>
+OpenCV to PIL Image:
+</p>
+<ul class="org-ul">
+<li>img = np.array(pil<sub>image</sub>)</li>
+<li># img = img[:, :, ::-1].copy()</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0dfc043" class="outline-4">
+<h4 id="org0dfc043"><span class="section-number-4">6.28.12.</span> rotate</h4>
+<div class="outline-text-4" id="text-6-28-12">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">center</span> = (img.shape[1] // 2, img.shape[0] // 2)
+<span style="color: #cae682;">scale</span> = 1.03
+<span style="color: #cae682;">angle</span> = degree
+<span style="color: #cae682;">rot_mat</span> = cv.getRotationMatrix2D(center, angle, scale)
+<span style="color: #cae682;">img</span> = cv.warpAffine(img, rot_mat, (img.shape[1], img.shape[0]), borderMode=cv.BORDER_REPLICATE)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2a72fa9" class="outline-4">
+<h4 id="org2a72fa9"><span class="section-number-4">6.28.13.</span> resize, shift-translate, shrinking with warpAffine</h4>
+<div class="outline-text-4" id="text-6-28-13">
+<p>
+<a href="http://datahacker.rs/003-how-to-resize-translate-flip-and-rotate-an-image-with-opencv/">http://datahacker.rs/003-how-to-resize-translate-flip-and-rotate-an-image-with-opencv/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3ad550a" class="outline-4">
+<h4 id="org3ad550a"><span class="section-number-4">6.28.14.</span> Lines</h4>
+<div class="outline-text-4" id="text-6-28-14">
+</div>
+<ol class="org-ol">
+<li><a id="orge8ff49c"></a>remove vertical horizontal lines<br />
+<div class="outline-text-5" id="text-6-28-14-1">
+<p>
+V = cv.Sobel(thresh, cv.CV<sub>8U</sub>, dx=1, dy=0)  # vertical lines
+H = cv.Sobel(thresh, cv.CV<sub>8U</sub>, dx=0, dy=1)  # horizontal lines
+mask = np.zeros(gray.shape[:2], dtype=np.uint8)
+contours = cv.findContours(V, cv.RETR<sub>LIST</sub>, cv.CHAIN<sub>APPROX</sub><sub>SIMPLE</sub>)[1]
+height = gray.shape[0]
+for cnt in contours:
+    (x, y, w, h) = cv.boundingRect(cnt)
+</p>
+
+<p>
+    if h &gt; height / 3 and w &lt; 40:
+	cv.drawContours(mask, [cnt], -1, 255, -1)
+img2 = cv.resize(mask, (900, 900))
+cv.imshow("ROI", img2)
+cv.waitKey(0)
+cv.destroyAllWindows()
+mask = cv.morphologyEx(mask, cv.MORPH<sub>DILATE</sub>, None, iterations=3)
+img2 = cv.resize(mask, (900, 900))
+cv.imshow("ROI", img2)
+cv.waitKey(0)
+cv.destroyAllWindows()
+thresh[mask == 255] = 0
+</p>
+</div>
+</li>
+<li><a id="orgead5e02"></a>remove small lines<br />
+<div class="outline-text-5" id="text-6-28-14-2">
+<div class="org-src-container">
+<pre class="src src-python"> <span style="color: #cae682;">linek</span> = cv.zeroes((27, 27), dtype=np.uint8)
+ <span style="color: #cae682;">linek</span>[..., 13] = 1
+ <span style="color: #cae682;">linek</span>[13, ...] = 1
+ <span style="color: #cae682;">x</span> = cv.morphologyEx(thresh_save, cv.MORPH_OPEN, linek, iterations=1)
+ <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">or</span>
+ <span style="color: #cae682;">cross</span> = cv.getStructuringElement(cv.MORPH_CROSS, (27, 27))
+ <span style="color: #cae682;">x</span> = cv.morphologyEx(thresh_save, cv.MORPH_OPEN, cross, iterations=1)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orge3a13dd"></a>find out lines (short one) &amp; boxes<br />
+<div class="outline-text-5" id="text-6-28-14-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">left only vertical lines</span>
+<span style="color: #cae682;">vertical_kernel</span> = cv2.getStructuringElement(cv2.MORPH_RECT, (1,15))
+<span style="color: #cae682;">vertical</span> = cv2.morphologyEx(img_bin, cv2.MORPH_OPEN, vertical_kernel, iterations=1)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">left only horizontal lines</span>
+<span style="color: #cae682;">horizontal_kernel</span> = cv2.getStructuringElement(cv2.MORPH_RECT, (15,1))
+<span style="color: #cae682;">horizontal</span> = cv2.morphologyEx(img_bin, cv2.MORPH_OPEN, horizontal_kernel, iterations=1)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">left only this lines</span>
+<span style="color: #cae682;">img_opened</span> = cv2.addWeighted(vertical, 0.5, horizontal, 0.5, 0.0)
+<span style="color: #cae682;">_</span>, <span style="color: #cae682;">img_opened</span> = cv2.threshold(img_opened, 0, 255, cv2.THRESH_BINARY)
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">find out boxes</span>
+<span style="color: #cae682;">CANNY_KERNEL_SIZE</span> = 100
+<span style="color: #cae682;">img_canny</span> = cv2.Canny(img, CANNY_KERNEL_SIZE, CANNY_KERNEL_SIZE)
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org0226d70" class="outline-4">
+<h4 id="org0226d70"><span class="section-number-4">6.28.15.</span> minAreaRect</h4>
+<div class="outline-text-4" id="text-6-28-15">
+<ul class="org-ul">
+<li>rect = cv.minAreaRect(save<sub>contour</sub>)</li>
+<li>((196., 471.), (358., 423.), -3.)</li>
+<li>width = int(rect[1][0])</li>
+<li>height = int(rect[1][1])</li>
+<li>rect[0] - center</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga04ca3a" class="outline-4">
+<h4 id="orga04ca3a"><span class="section-number-4">6.28.16.</span> detect shape of contour</h4>
+<div class="outline-text-4" id="text-6-28-16">
+<div class="org-src-container">
+<pre class="src src-python"> <span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> cnts:
+        cv.contourArea(c)
+        <span style="color: #cae682;">area</span> = cv.contourArea(c)
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> 1000 &lt; area &lt; 2100:
+            <span style="color: #cae682;">peri</span> = cv.arcLength(c, <span style="color: #e5786d; font-weight: bold;">True</span>)
+            <span style="color: #cae682;">approx</span> = cv.approxPolyDP(c, 0.04 * peri, <span style="color: #e5786d; font-weight: bold;">True</span>)
+            <span style="color: #e5786d;">print</span>(area, <span style="color: #e5786d;">len</span>(approx)) <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">len(approx) - vertices</span>
+            newc.append(c)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0958b06" class="outline-4">
+<h4 id="org0958b06"><span class="section-number-4">6.28.17.</span> detect objects by shape (link)</h4>
+<div class="outline-text-4" id="text-6-28-17">
+<p>
+<a href="https://circuitdigest.com/tutorial/image-segmentation-using-opencv">https://circuitdigest.com/tutorial/image-segmentation-using-opencv</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org11ecd58" class="outline-4">
+<h4 id="org11ecd58"><span class="section-number-4">6.28.18.</span> image to batch</h4>
+<div class="outline-text-4" id="text-6-28-18">
+<div class="org-src-container">
+<pre class="src src-python">    <span style="color: #cae682;">im</span> = cv.imread(<span style="color: #95e454;">'./train/passport_ranee/_0_353.png'</span>)
+    <span style="color: #cae682;">im</span> = cv.cvtColor(im, cv.COLOR_BGR2GRAY)
+    <span style="color: #cae682;">im</span> = im.reshape(im.shape + (1,))  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">channels</span>
+    <span style="color: #cae682;">im</span> = im.reshape((1,) + im.shape)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">batches</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org35dfe60" class="outline-4">
+<h4 id="org35dfe60"><span class="section-number-4">6.28.19.</span> cut part of image</h4>
+<div class="outline-text-4" id="text-6-28-19">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">get_rectangle</span>(img, rect):
+    <span style="color: #f08080; font-style: italic;">"extract rectangle and return rectangle image"</span>
+    <span style="color: #cae682;">xy1</span>, <span style="color: #cae682;">xy2</span> = rect
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> img[xy1[1]:xy2[1],xy1[0]:xy2[0],:]
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgca79baf" class="outline-3">
+<h3 id="orgca79baf"><span class="section-number-3">6.29.</span> troubleshooting</h3>
+<div class="outline-text-3" id="text-6-29">
+<p>
+error: (-215:Assertion failed) npoints &gt; 0 in function 'drawContours'
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf239b6c" class="outline-2">
+<h2 id="orgf239b6c"><span class="section-number-2">7.</span> MMCV</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+OpenMMLab - company name and platform
+</p>
+<ul class="org-ul">
+<li>MMEngine - provide universal training and evaluation engine</li>
+<li>MMCV - neural network operators and data transforms, which serves as a foundation of the whole project</li>
+</ul>
+
+<p>
+provide:
+</p>
+<ul class="org-ul">
+<li>Image/Video processing</li>
+<li>Image and annotation visualization</li>
+<li>Image transformation</li>
+<li>Various CNN architectures</li>
+<li>High-quality implementation of common CPU and CUDA ops</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org08f0c48" class="outline-2">
+<h2 id="org08f0c48"><span class="section-number-2">8.</span> Abby</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+ABBYY FineReader
+</p>
+<ul class="org-ul">
+<li>Optical Character Recognition – OCR</li>
+<li>Машинное Обучение на шаблонах документах.</li>
+</ul>
+<p>
+1С Скан-Загрузке документов
+</p>
+<ul class="org-ul">
+<li><p>
+распознование качественных сканов без обучения
+</p>
+
+<p>
+классификации неструктурированных документов в соответствии задачами организации
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga041597" class="outline-2">
+<h2 id="orga041597"><span class="section-number-2">9.</span> 2022 A Guide to Image and Video based Small Object Detection using Deep Learning : Case Study of Maritime</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Surveillance <a href="https://arxiv.org/pdf/2207.12926.pdf">https://arxiv.org/pdf/2207.12926.pdf</a>
+</p>
+</div>
+<div id="outline-container-org74084b9" class="outline-3">
+<h3 id="org74084b9"><span class="section-number-3">9.1.</span> video based</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+if architecture depend essentially on the static object detection - leads to sub-optimal results since the
+ training of the object detector does not take advantage of temporal information.
+</p>
+
+<ul class="org-ul">
+<li>3D-CNN - A vidio is divided into a n-frame clips
+<ul class="org-ul">
+<li>used for 3D object detection, action recognition, anomaly detection, etc.., feature extractor with Faster R-CNN to detect</li>
+</ul></li>
+</ul>
+<p>
+and localize smoke.
+</p>
+<ul class="org-ul">
+<li>CNN-RNN - each frame in 2D-CNN -&gt; RNN</li>
+<li>Two-streams -  1) frame, 2) multiple flows</li>
+<li>Vision Transformer - Frame/clip tokenization -&gt; 2D/3D embedding layers -&gt; Transformer Encoder -&gt; Detection Heads</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org313a709" class="outline-2">
+<h2 id="org313a709"><span class="section-number-2">10.</span> Transformers architecure</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>model the interactions between pairwise locations in the input image.  it is well</li>
+</ul>
+<p>
+established that context is a major source of information to detect and recognize small objects both in humans
+ and computational model.
+</p>
+</div>
+</div>
+<div id="outline-container-org9f29b8d" class="outline-2">
+<h2 id="org9f29b8d"><span class="section-number-2">11.</span> techniques: augmentation, super-resolution, &#x2026;</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>augmentation</li>
+<li>super-resolution</li>
+<li>multi-scale feature learning</li>
+<li>context learning</li>
+<li>attention-based learning</li>
+<li>region proposal</li>
+<li>loss function regularization</li>
+<li>leveraging auxiliary tasks</li>
+<li>spatiotemporal feature aggregation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga560b83" class="outline-2">
+<h2 id="orga560b83"><span class="section-number-2">12.</span> Rusnarbank<sub>OPENCV</sub></h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li><a href="https://gitlab.rusnarbank.ru/m.smirnov/Rusnarbank_OPENC">https://gitlab.rusnarbank.ru/m.smirnov/Rusnarbank_OPENC</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/">https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/</a></li>
+
+<li>docker-compose build</li>
+</ul>
+
+<p>
+input: PDF only
+</p>
+
+<p>
+MainOpenCV.py
+</p>
+<ol class="org-ol">
+<li>ScanerFixClass - Class
+<ol class="org-ol">
+<li>HoughCheck() преобразование Хафа (Hough Transform)
+<ul class="org-ul">
+<li>вычисления угла наклона по прямым линиям - self.degree</li>
+<li>выпрямление - imutils - self.image</li>
+<li><b>TODO:</b> если текст не распознается, перевернуть 180%</li>
+</ul></li>
+<li>RotatedRectWithMaxArea() - вычисления повернутого прямоугольника с максимальной площадью
+<ul class="org-ul">
+<li>self.RectWithMaxArea</li>
+</ul></li>
+<li>CropAroundCenter() - отсечения от изображения всего лишнего
+<ul class="org-ul">
+<li>self.image</li>
+</ul></li>
+<li>DetectBox() - для обрезки белых областей со всех сторон изображения
+<ul class="org-ul">
+<li>детектора границ Canny</li>
+</ul></li>
+</ol></li>
+<li>GetDocumentType - Class
+<ol class="org-ol">
+<li>textboxes = UtilModule.UtilClass.GetText(image) - координаты боксов с текстом</li>
+<li>get<sub>type</sub><sub>by</sub><sub>text</sub>()
+<ul class="org-ul">
+<li>вырезаем изображение для каждого бокса</li>
+<li>pytesseract.image<sub>to</sub><sub>string</sub></li>
+<li>ищим текст в каждом боксе, совпал - это такой-то документ, break</li>
+</ul></li>
+</ol></li>
+<li>ParserClass - Class</li>
+<li>PageProcessing(image<sub>path</sub>) - основная функция
+<ul class="org-ul">
+<li>ScanerFixClass(image)</li>
+<li>GetDocumentType(fix<sub>obj.image</sub>)</li>
+<li>ParserClass(image, type) - возвращает return<sub>dict</sub></li>
+</ul></li>
+<li>MainProcessingClass
+<ul class="org-ul">
+<li>_<sub>init</sub>__ (file<sub>pdf</sub>) создает Redis</li>
+<li>UtilModule.UtilClass.PdfToPng -&gt; fileslist</li>
+<li>PageProcessing(id<sub>img</sub>, image<sub>path</sub>) -&gt; resilt[id<sub>img</sub>] = res</li>
+</ul></li>
+</ol>
+</div>
+
+<div id="outline-container-org08c1d7a" class="outline-3">
+<h3 id="org08c1d7a"><span class="section-number-3">12.1.</span> Redis</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+один порт, один Redis, несколько workers
+</p>
+</div>
+</div>
+<div id="outline-container-org881af71" class="outline-3">
+<h3 id="org881af71"><span class="section-number-3">12.2.</span> client</h3>
+<div class="outline-text-3" id="text-12-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> requests
+<span style="color: #cae682;">files</span> = {<span style="color: #95e454;">'pdf'</span>: <span style="color: #e5786d;">open</span>(r<span style="color: #95e454;">"C:\Users\Chepilev_VS\Downloads\Rusnarbank_OPENCV-master\examples\bad\1_2_2018.pdf"</span>, <span style="color: #95e454;">'rb'</span>)}
+<span style="color: #cae682;">job_id</span> = requests.post(<span style="color: #95e454;">"http://localhost:5000/upload"</span>, files=files).json()[<span style="color: #95e454;">"id"</span>]
+<span style="color: #cae682;">result</span> = requests.get(<span style="color: #95e454;">"http://localhost:5000/get?id="</span>+job_id).json()
+<span style="color: #e5786d;">print</span>(result)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga47fe7b" class="outline-3">
+<h3 id="orga47fe7b"><span class="section-number-3">12.3.</span> dependences</h3>
+<div class="outline-text-3" id="text-12-3">
+<p>
+git+<a href="https://github.com/GeorgiyDemo/cv_algorithms.git">https://github.com/GeorgiyDemo/cv_algorithms.git</a> - OpenCV algorithms are are not available
+</p>
+<ul class="org-ul">
+<li>OpenCV 3</li>
+<li>?</li>
+</ul>
+<p>
+git+<a href="https://github.com/GeorgiyDemo/UliEngineering.git">https://github.com/GeorgiyDemo/UliEngineering.git</a>
+</p>
+<ul class="org-ul">
+<li>Electronics Engineering ?</li>
+</ul>
+<p>
+redis==3.1.0
+</p>
+<ul class="org-ul">
+<li>Резидентная NoSQL СУБД</li>
+</ul>
+<p>
+opencv-python==3.4.5.20
+imutils==0.5.2
+</p>
+<ul class="org-ul">
+<li>displaying Matplotlib images easier with OpenCV</li>
+<li>image processing - translation, rotation, resizing, skeletonization</li>
+</ul>
+<p>
+pytesseract==0.2.6
+requests==2.21.0
+pdf2image==1.4.0
+PyYAML==3.13
+networkx==2.2
+scipy==1.2.0
+toolz==0.9.0
+rq==0.13.0
+sentry-sdk==0.7.10
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3f6d07d" class="outline-3">
+<h3 id="org3f6d07d"><span class="section-number-3">12.4.</span> tesseract</h3>
+<div class="outline-text-3" id="text-12-4">
+<ul class="org-ul">
+<li>debian testing</li>
+<li>apt-get install tesseract-ocr-rus</li>
+<li>/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a8e664" class="outline-3">
+<h3 id="org7a8e664"><span class="section-number-3">12.5.</span> Return JSON</h3>
+<div class="outline-text-3" id="text-12-5">
+<ul class="org-ul">
+<li>MainOpenCV.py:323 {'1':('1', OUTPUT<sub>OBJ</sub>)}</li>
+<li>OKUD.py OKUD<sub>0710001</sub> class <span class="underline"><span class="underline">init</span></span> -&gt; 240 -&gt; 217 -&gt; 111</li>
+<li>MatrixToJson.py:104 ToJSON class - property JSON -&gt; 272
+<ul class="org-ul">
+<li>SmallTableProcessing() - 'info': self.small<sub>table</sub> в основном self.JSON</li>
+<li>суммируем в Processing() or FiveDocProcessing()(для продолжения листа)</li>
+<li>self.JSON = {'qc': 2, 'document<sub>type</sub>': '1', "period": [matrix]}</li>
+<li>данные основной таблицы matrix:
+<ul class="org-ul">
+<li>столбцы по датам {'31122016': {'hindex': 5, 'codes': []}}
+<ul class="org-ul">
+<li>hindex - номер столбца от левого края, начиная с какого - хз</li>
+<li>codes -</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+JSON - {
+            "status": "ready",
+            "pages": [OUTPUT<sub>OBJ</sub>, OUTPUT<sub>OBJ</sub> &#x2026;.]
+        }
+</p>
+
+<p>
+where OUTPUT<sub>OBJ</sub> = {"qc":0, }
+л
+</p>
+
+<p>
+Успешные ответы
+</p>
+<ul class="org-ul">
+<li>{"status": "ready", "pages": "&#x2026;"}  - первый ответ get</li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb3c16fb" class="outline-2">
+<h2 id="orgb3c16fb"><span class="section-number-2">13.</span> passport</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+rec:
+</p>
+<ul class="org-ul">
+<li><a href="https://www.pyimagesearch.com/2015/11/30/detecting-machine-readable-zones-in-passport-images/">https://www.pyimagesearch.com/2015/11/30/detecting-machine-readable-zones-in-passport-images/</a></li>
+<li><a href="https://habr.com/ru/post/208090/">https://habr.com/ru/post/208090/</a></li>
+</ul>
+
+
+<p>
+colour:
+</p>
+<ul class="org-ul">
+<li><a href="http://www.compvision.ru/forum/index.php?/topic/1568-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0-opencv/">http://www.compvision.ru/forum/index.php?/topic/1568-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0-opencv/</a></li>
+
+<li>automatic adj for OCR <a href="https://stackoverflow.com/questions/56905592/automatic-contrast-and-brightness-adjustment-of-a-color-photo-of-a-sheet-of-pape">https://stackoverflow.com/questions/56905592/automatic-contrast-and-brightness-adjustment-of-a-color-photo-of-a-sheet-of-pape</a></li>
+</ul>
+
+<p>
+rectangle:
+</p>
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/26583649/opencv-c-rectangle-detection-which-has-irregular-side">https://stackoverflow.com/questions/26583649/opencv-c-rectangle-detection-which-has-irregular-side</a></li>
+<li>OpenCV shape detection <a href="https://www.pyimagesearch.com/2016/02/08/opencv-shape-detection/">https://www.pyimagesearch.com/2016/02/08/opencv-shape-detection/</a></li>
+<li><a href="https://robotclass.ru/tutorials/opencv-detect-rectangle-angle/">https://robotclass.ru/tutorials/opencv-detect-rectangle-angle/</a></li>
+<li><a href="https://towardsdatascience.com/object-detection-with-neural-networks-a4e2c46b4491">https://towardsdatascience.com/object-detection-with-neural-networks-a4e2c46b4491</a></li>
+<li><a href="https://github.com/jrieke/shape-detection">https://github.com/jrieke/shape-detection</a></li>
+
+<li>MRZ <a href="https://web.archive.org/web/20140801191250/http://www.fms.gov.ru/upload/iblock/fe3/prikaz_mchz279.pdf">https://web.archive.org/web/20140801191250/http://www.fms.gov.ru/upload/iblock/fe3/prikaz_mchz279.pdf</a></li>
+<li><a href="https://github.com/Shreeshrii/tessdata_ocrb">https://github.com/Shreeshrii/tessdata_ocrb</a></li>
+<li>Машиночитаемая запись МЧЗ</li>
+<li>двух строк по 44 символа</li>
+<li>Шрифт  OCR-B type 1 (Стандарт ИСО 1073/II).</li>
+<li>верхняя строка 6-44 модернизированный клер</li>
+<li>10, 20, 28, 43, 44 нижней строки МЧЗ содержат контрольные цифры.</li>
+
+<li>top
+<ul class="org-ul">
+<li>1-2 PN Passport National - Тип документа</li>
+<li>3-5 RUS - код ИКАО</li>
+<li>6-44 BAQRAMOV&lt;&lt;AMIR&lt;IL9GAM&lt;&lt;0GLY&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; - БАЙРАМОВ \n АМИР \n ИЛЬГАМ - ОГЛЫ
+<ul class="org-ul">
+<li>дефис = '&lt;' - знак заполнитель</li>
+<li>имя сокращается на букве, которая является 42 знаком строки, знака-заполнителя вносится первая буква отчества.</li>
+<li>фамилия сокращается на букве, которая является 39 знаком строки, после двух знаков-заполнителей
+последовательно вносятся первая буква имени, знак-заполнитель, первая буква отчества</li>
+</ul></li>
+</ul></li>
+<li>bottom
+<ul class="org-ul">
+<li>1-9 460123456 - серии 4601 № 123456</li>
+<li>10 Контрольная цифра - по 1-9</li>
+<li>11-13 RUS</li>
+<li>14-19 YYMMDD 931207 - 1993.12.07 - Дата рождения</li>
+<li>20 Контрольная цифра - по 14-19</li>
+<li>21 F or M - женский, мужской</li>
+<li>22-27 Дата истечения срока действия или все &lt;, вместе с контрольной ццифрой</li>
+<li>28 Контрольная цифра or &lt;</li>
+<li>29 Последняя цифра серии</li>
+<li>30-35 YYMMDD Дата выдачи паспорта</li>
+<li>36-41 Код подразделения</li>
+<li>42 &lt; в контрольной сумме учитывается как 0</li>
+<li>43 Контрольная цифра 29-42</li>
+<li>44 Контрольная цифра 1-10, 14-20, 22-28, 29-43</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org1a4a267" class="outline-3">
+<h3 id="org1a4a267"><span class="section-number-3">13.1.</span> error</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+<a href="rq.worker:opencv-tasks">rq.worker:opencv-tasks</a>: file (7120f9a5-7fde-41ba-96f4-ef1da72c5c1d)
+</p>
+
+<p>
+Traceback (most recent call last):
+return method<sub>number</sub><sub>list</sub>[method<sub>number</sub>](obj).OUTPUT<sub>OBJ</sub>
+File "/code/parsers/multiparser.py", line 22, in passport<sub>and</sub><sub>drivelicense</sub>
+aop = passport<sub>main</sub><sub>page</sub>(img<sub>cropped</sub>)
+File "/code/parsers/passport.py", line 162, in passport<sub>main</sub><sub>page</sub>
+res<sub>i</sub> = fio<sub>checker.double</sub><sub>query</sub><sub>name</sub>(anonymous<sub>return.OUTPUT</sub><sub>OBJ</sub>['MRZ']['mrz<sub>i</sub>'], i<sub>pass</sub>)
+File "/code/groonga.py", line 248, in double<sub>query</sub><sub>name</sub>
+return FIOChecker.<sub>get</sub><sub>appropriate</sub>(items1, word1)
+File "/code/groonga.py", line 236, in _double<sub>query</sub>
+equal = [x for x in items if x[2] <code>= 4]  # score
+File "/code/groonga.py", line 129, in &lt;listcomp&gt;
+ERROR:root:Uncatched exception in ParserClass
+return self._double_query(word1, word2, self.names_table)
+File "/code/groonga.py", line 129, in _get_appropriate
+equal = [x for x in items if x[2] =</code> 4]  # score
+KeyError: 2
+File "/code/MainOpenCV.py", line 40, in parser<sub>call</sub>
+</p>
+</div>
+</div>
+<div id="outline-container-org30158e9" class="outline-3">
+<h3 id="org30158e9"><span class="section-number-3">13.2.</span> Расчет контрольной суммы</h3>
+<div class="outline-text-3" id="text-13-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">data</td>
+<td class="org-left">5 1 0 5 0 9</td>
+</tr>
+
+<tr>
+<td class="org-left">weight</td>
+<td class="org-left">7 3 1 7 3 1</td>
+</tr>
+
+<tr>
+<td class="org-left">after multiply</td>
+<td class="org-left">35 3 0 35 0 9</td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Сумма результатов 35 + 3 + 0 + 35 +0 +9 = 82</li>
+<li>82 / 10 =8, остаток деления 2</li>
+<li>2</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>361753650</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #cae682;">a</span>=np.array([3,6,1,7,5,3,6,5,0])
+<span style="color: #cae682;">b</span>=np.array([7,3,1,7,3,1,7,3,1])
+np.<span style="color: #e5786d;">sum</span>(a*b)%10
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc4c154d" class="outline-3">
+<h3 id="orgc4c154d"><span class="section-number-3">13.3.</span> passport serial number</h3>
+<div class="outline-text-3" id="text-13-3">
+<ul class="org-ul">
+<li><a href="http://ukrainian-passport.com/blog/everything-you-have-to-know-about-the-russian-passport/">http://ukrainian-passport.com/blog/everything-you-have-to-know-about-the-russian-passport/</a></li>
+<li>consists of two signs and refers to the code assigned to the appropriate area (region) of the Russian Federation.</li>
+<li>indicates the year of passport issue</li>
+<li>passport serial number - six signs</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad81127" class="outline-3">
+<h3 id="orgad81127"><span class="section-number-3">13.4.</span> string metric for measuring the difference between two sequences</h3>
+<div class="outline-text-3" id="text-13-4">
+<ul class="org-ul">
+<li>коэффициент Танимото <a href="https://grishaev.me/2012/10/05/1/">https://grishaev.me/2012/10/05/1/</a></li>
+<li><a href="https://habr.com/en/post/341148/">https://habr.com/en/post/341148/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba0ba9c" class="outline-2">
+<h2 id="orgba0ba9c"><span class="section-number-2">14.</span> captcha</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-orgba0d1c0" class="outline-3">
+<h3 id="orgba0d1c0"><span class="section-number-3">14.1.</span> captcha image</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+<a href="https://bestofphp.com/repo/Gregwar-Captcha-php-image-processing">https://bestofphp.com/repo/Gregwar-Captcha-php-image-processing</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd0eb9e6" class="outline-3">
+<h3 id="orgd0eb9e6"><span class="section-number-3">14.2.</span> audio capcha</h3>
+<div class="outline-text-3" id="text-14-2">
+<p>
+speech recognition model
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/openai/whisper">https://github.com/openai/whisper</a>
+<ul class="org-ul">
+<li>download models: <a href="https://github.com/openai/whisper/blob/main/whisper/__init__.py">https://github.com/openai/whisper/blob/main/whisper/__init__.py</a></li>
+</ul></li>
+<li><a href="https://github.com/chussong/pocketsphinx">https://github.com/chussong/pocketsphinx</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org510fe71" class="outline-4">
+<h4 id="org510fe71"><span class="section-number-4">14.2.1.</span> split audio file by worlds(librosa)</h4>
+<div class="outline-text-4" id="text-14-2-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> librosa
+<span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">from</span> typing <span style="color: #8ac6f2; font-weight: bold;">import</span> List
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">own</span>
+<span style="color: #8ac6f2; font-weight: bold;">from</span> utils <span style="color: #8ac6f2; font-weight: bold;">import</span> Captcha
+
+<span style="color: #cae682;">ALPHABET</span> = (<span style="color: #95e454;">'2'</span>, <span style="color: #95e454;">'4'</span>, <span style="color: #95e454;">'5'</span>, <span style="color: #95e454;">'6'</span>, <span style="color: #95e454;">'7'</span>, <span style="color: #95e454;">'8'</span>, <span style="color: #95e454;">'9'</span>, <span style="color: #95e454;">'&#1073;'</span>, <span style="color: #95e454;">'&#1074;'</span>, <span style="color: #95e454;">'&#1075;'</span>, <span style="color: #95e454;">'&#1076;'</span>, <span style="color: #95e454;">'&#1078;'</span>, <span style="color: #95e454;">'&#1082;'</span>, <span style="color: #95e454;">'&#1083;'</span>, <span style="color: #95e454;">'&#1084;'</span>, <span style="color: #95e454;">'&#1085;'</span>, <span style="color: #95e454;">'&#1087;'</span>, <span style="color: #95e454;">'&#1088;'</span>, <span style="color: #95e454;">'&#1089;'</span>, <span style="color: #95e454;">'&#1090;'</span>)
+<span style="color: #cae682;">ALPHABET_FEATURE</span> = [105.0, 160.0, 74.0, 76.0, 94.0, 146.0, 148.0, 86.0, 106.0, 92.0, 90.0, 83.0, 91.0, 99.0, 104.0, 96.0, 87.0, 79.0, 65.0, 87.0]
+<span style="color: #cae682;">FEATURE_RMS_T</span> = 0.093
+<span style="color: #cae682;">FEATURE_RMS_P</span> = 0.086
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">splitbysilence</span>(y):
+    <span style="color: #cae682;">td</span> = 18.2
+    <span style="color: #cae682;">hop_length</span> = 9
+    <span style="color: #cae682;">intervals</span> = librosa.effects.split(y, top_db=td, hop_length=hop_length)
+    <span style="color: #cae682;">pieces</span> = []
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> iv <span style="color: #8ac6f2; font-weight: bold;">in</span> intervals:
+        <span style="color: #cae682;">p</span> = y[iv[0]:iv[1]]
+        <span style="color: #cae682;">pa</span>, <span style="color: #cae682;">_</span> = librosa.effects.trim(p, ref=0.45, top_db=20, hop_length=3)
+        pieces.append(pa)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> pieces
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">get_alpha_by_feature</span>(f: <span style="color: #e5786d;">float</span> <span style="color: #8ac6f2; font-weight: bold;">or</span> List[<span style="color: #e5786d;">float</span>]) -&gt; <span style="color: #e5786d;">str</span>:
+    <span style="color: #8ac6f2; font-weight: bold;">global</span> ALPHABET, ALPHABET_FEATURE
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(f, <span style="color: #e5786d;">float</span>):
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> ALPHABET[ALPHABET_FEATURE.index(f)]
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+        <span style="color: #cae682;">a</span> = [ALPHABET[ALPHABET_FEATURE.index(fi)] <span style="color: #8ac6f2; font-weight: bold;">for</span> fi <span style="color: #8ac6f2; font-weight: bold;">in</span> f]
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">''</span>.join(a)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">calc_feature</span>(sound: np.ndarray, sr):
+    <span style="color: #cae682;">f_d</span> = librosa.get_duration(y=sound)
+    <span style="color: #cae682;">f_mfcc</span> = np.mean(librosa.feature.mfcc(y=sound, sr=sr, n_fft=100, n_mfcc=20))
+    <span style="color: #cae682;">f_2</span> = np.median(librosa.feature.rms(y=sound, hop_length=100))
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> (<span style="color: #e5786d;">abs</span>(f_mfcc) + f_d*1000 + f_2*800)//4   <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">4 is enough</span>
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">calc_features</span>(c: Captcha <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #e5786d;">str</span>) -&gt; List[<span style="color: #e5786d;">int</span>] <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #e5786d;">int</span>:
+    <span style="color: #f08080; font-style: italic;">""" c file math """</span>
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">isinstance</span>(c, Captcha):
+        <span style="color: #cae682;">y</span>, <span style="color: #cae682;">sr</span> = librosa.load(c.filepath)
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>:
+        <span style="color: #cae682;">y</span>, <span style="color: #cae682;">sr</span> = librosa.load(c)
+    <span style="color: #cae682;">split</span> = splitbysilence(y)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> [calc_feature(sound, sr) <span style="color: #8ac6f2; font-weight: bold;">for</span> sound <span style="color: #8ac6f2; font-weight: bold;">in</span> split]
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">max_db</span>(y, n_fft=2048):
+    <span style="color: #cae682;">s</span> = librosa.stft(y, n_fft=n_fft, hop_length=n_fft // 2)
+    <span style="color: #cae682;">d</span> = librosa.amplitude_to_db(np.<span style="color: #e5786d;">abs</span>(s), ref=np.<span style="color: #e5786d;">max</span>)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> np.<span style="color: #e5786d;">max</span>(<span style="color: #e5786d;">abs</span>(d))
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">get_alpphabet_feature</span>(alphabet: <span style="color: #e5786d;">str</span> <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #e5786d;">list</span>, captchas_solved: List[Captcha]):
+    <span style="color: #f08080; font-style: italic;">""" alpha_features = get_alpphabet_feature(ALPHABET, captchas) """</span>
+    <span style="color: #cae682;">features</span> = []
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> a <span style="color: #8ac6f2; font-weight: bold;">in</span> alphabet:
+        <span style="color: #8ac6f2; font-weight: bold;">for</span> c <span style="color: #8ac6f2; font-weight: bold;">in</span> captchas_solved:
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> a <span style="color: #8ac6f2; font-weight: bold;">in</span> c.salvation:
+                <span style="color: #cae682;">y</span>, <span style="color: #cae682;">sr</span> = librosa.load(c.filepath)
+                <span style="color: #cae682;">pieces</span> = splitbysilence(y)
+                <span style="color: #cae682;">position</span> = c.salvation.index(a)
+                <span style="color: #cae682;">sound</span>: np.ndarray = pieces[position]
+                <span style="color: #cae682;">f</span> = calc_feature(sound, sr)
+                features.append(f)
+                <span style="color: #8ac6f2; font-weight: bold;">break</span>
+    <span style="color: #8ac6f2; font-weight: bold;">assert</span> <span style="color: #e5786d;">len</span>(features) == <span style="color: #e5786d;">len</span>(alphabet)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> features
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">audio_decode</span>(file_patch: <span style="color: #e5786d;">str</span>) -&gt; <span style="color: #e5786d;">str</span>:
+    <span style="color: #cae682;">y</span>, <span style="color: #cae682;">sr</span> = librosa.load(file_patch)
+    <span style="color: #cae682;">yl</span> = splitbysilence(y)
+    <span style="color: #cae682;">features</span>: <span style="color: #e5786d;">list</span> = [calc_feature(sound, sr) <span style="color: #8ac6f2; font-weight: bold;">for</span> sound <span style="color: #8ac6f2; font-weight: bold;">in</span> yl]
+    <span style="color: #cae682;">sol</span> = get_alpha_by_feature(features)
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> i, ch <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">enumerate</span>(sol):
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #95e454;">'&#1087;'</span> == ch <span style="color: #8ac6f2; font-weight: bold;">or</span> <span style="color: #95e454;">'&#1090;'</span> == ch:
+            <span style="color: #cae682;">sol_l</span> = <span style="color: #e5786d;">list</span>(sol)
+            <span style="color: #cae682;">f</span> = np.median(librosa.feature.rms(y=yl[i], hop_length=100))
+            <span style="color: #8ac6f2; font-weight: bold;">if</span> <span style="color: #e5786d;">round</span>(<span style="color: #e5786d;">float</span>(f), 3) == FEATURE_RMS_P:
+                <span style="color: #cae682;">sol_l</span>[i] = <span style="color: #95e454;">'&#1087;'</span>
+            <span style="color: #8ac6f2; font-weight: bold;">elif</span> <span style="color: #e5786d;">round</span>(<span style="color: #e5786d;">float</span>(f), 3) == FEATURE_RMS_T:
+                <span style="color: #cae682;">sol_l</span>[i] = <span style="color: #95e454;">'&#1090;'</span>
+            <span style="color: #cae682;">sol</span> = <span style="color: #95e454;">''</span>.join(sol_l)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> sol
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org763c5c1" class="outline-3">
+<h3 id="org763c5c1"><span class="section-number-3">14.3.</span> reCAPTCHA google</h3>
+<div class="outline-text-3" id="text-14-3">
+<ul class="org-ul">
+<li>Version 2 ~2013, also asked users to decipher text or match images if the analysis of cookies and canvas
+rendering suggested the page was being downloaded automatically.
+<ul class="org-ul">
+<li>behavioral analysis of the browser's interactions to predict whether the user was a human or a bot</li>
+</ul></li>
+<li>version 3, at the end of 2019,  reCAPTCHA will never interrupt users and is intended to run automatically when users load pages
+or click buttons.</li>
+</ul>
+
+<p>
+On May 26, 2012, Adam, C-P and Jeffball - accuracy rate of 99.1% analyse the audio version of reCAPTCHA
+</p>
+<ul class="org-ul">
+<li>after: the audio version was increased in length from 8 seconds to 30 seconds, and is much more difficult to
+understand, both for humans as well as bots.</li>
+<li>after: 60.95% and 59.4% respectively</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgabef3cb" class="outline-3">
+<h3 id="orgabef3cb"><span class="section-number-3">14.4.</span> links</h3>
+<div class="outline-text-3" id="text-14-4">
+<p>
+<a href="https://habr.com/en/post/241145/">https://habr.com/en/post/241145/</a>
+<a href="https://habr.com/en/post/241263/">https://habr.com/en/post/241263/</a>
+cnn <a href="https://medium.com/swlh/captcha-recognition-44522c2fe9c">https://medium.com/swlh/captcha-recognition-44522c2fe9c</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd2523a4" class="outline-2">
+<h2 id="orgd2523a4"><span class="section-number-2">15.</span> optical label</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>QRCode origian work - Yue Liu, Ju Yang, Mingjun Liu, “Recognition of QR Code with mobile phones,” Control
+and Decision Conference, CCDC 2008. Chinese, pp. 203 - 206, 2-4
+July 2008. <a href="https://www.scribd.com/document/79038295/Recognition-of-QR-Code-With-Mobile-Phones">https://www.scribd.com/document/79038295/Recognition-of-QR-Code-With-Mobile-Phones</a></li>
+</ul>
+<p>
+types <a href="https://en.wikipedia.org/wiki/Barcode">https://en.wikipedia.org/wiki/Barcode</a>
+</p>
+<ul class="org-ul">
+<li>FonCode <a href="https://arxiv.org/pdf/1707.09418v1.pdf">https://arxiv.org/pdf/1707.09418v1.pdf</a></li>
+<li>2d barcode comparision <a href="https://medium.com/dynamsoft/what-is-the-difference-between-qr-code-pdf417-and-datamatrix-39f4db881388">https://medium.com/dynamsoft/what-is-the-difference-between-qr-code-pdf417-and-datamatrix-39f4db881388</a></li>
+<li>Data Matrix vs QR Code <a href="https://www.laserax.com/blog/data-matrix-vs-qr-codes">https://www.laserax.com/blog/data-matrix-vs-qr-codes</a></li>
+<li>barcode and error correction <a href="http://www.labelingnews.com/2012/12/barcodes-and-error-correction/">http://www.labelingnews.com/2012/12/barcodes-and-error-correction/</a></li>
+<li>Data Matrix quality verification accordance with ISO/IEC 15416 <a href="http://www.datamatrixcode.net/data-matrix-code-quality-verification/">http://www.datamatrixcode.net/data-matrix-code-quality-verification/</a></li>
+<li>Data Matrix NN <a href="https://www.researchgate.net/publication/341220437_Detection_of_Data_Matrix_Encoded_Landmarks_in_Unstructured_Environments_using_Deep_Learning">https://www.researchgate.net/publication/341220437_Detection_of_Data_Matrix_Encoded_Landmarks_in_Unstructured_Environments_using_Deep_Learning</a></li>
+<li>detect data matrix <a href="https://github.com/NaturalHistoryMuseum/gouda/">https://github.com/NaturalHistoryMuseum/gouda/</a></li>
+<li>generators <a href="https://blog.jonasneubert.com/2019/01/23/barcode-generation-python/">https://blog.jonasneubert.com/2019/01/23/barcode-generation-python/</a></li>
+<li>Best Practives <a href="https://www.codeproject.com/Articles/20940/Using-Barcodes-in-Documents-Best-Practices">https://www.codeproject.com/Articles/20940/Using-Barcodes-in-Documents-Best-Practices</a></li>
+</ul>
+</div>
+<div id="outline-container-org0493cb0" class="outline-3">
+<h3 id="org0493cb0"><span class="section-number-3">15.1.</span> opencv</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+opencv 4.x new <a href="https://stackoverflow.com/questions/53906178/how-opencv-4-x-api-is-different-from-previous-version">https://stackoverflow.com/questions/53906178/how-opencv-4-x-api-is-different-from-previous-version</a>
+</p>
+
+<p>
+install from source opencv <a href="https://docs.opencv.org/3.4.11/d2/de6/tutorial_py_setup_in_ubuntu.html">https://docs.opencv.org/3.4.11/d2/de6/tutorial_py_setup_in_ubuntu.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org90787f0" class="outline-3">
+<h3 id="org90787f0"><span class="section-number-3">15.2.</span> qrcode</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+<a href="https://github.com/lincolnloop/python-qrcode">https://github.com/lincolnloop/python-qrcode</a>
+</p>
+
+<p>
+import qrcode
+img = qrcode.make('Some data here')
+img.save('path')
+</p>
+</div>
+</div>
+<div id="outline-container-org70a5003" class="outline-3">
+<h3 id="org70a5003"><span class="section-number-3">15.3.</span> segno</h3>
+</div>
+</div>
+<div id="outline-container-orga3a1998" class="outline-2">
+<h2 id="orga3a1998"><span class="section-number-2">16.</span> OCR ICR</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-org35f289d" class="outline-3">
+<h3 id="org35f289d"><span class="section-number-3">16.1.</span> terms</h3>
+<div class="outline-text-3" id="text-16-1">
+<ul class="org-ul">
+<li>handprinted text - characters are written separately, is not about “cursive handwriting”</li>
+<li>handwriting</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93dd421" class="outline-3">
+<h3 id="org93dd421"><span class="section-number-3">16.2.</span> Components:</h3>
+<div class="outline-text-3" id="text-16-2">
+<ul class="org-ul">
+<li>optical character recognition (OCR) for machine print</li>
+<li>optical mark reading (OMR) for check/mark sense boxes</li>
+<li>bar code recognition (BCR) for barcodes</li>
+<li>and intelligent character recognition (ICR) for hand print.</li>
+<li>MICR – Magnetic ink character recognition</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0fdae32" class="outline-3">
+<h3 id="org0fdae32"><span class="section-number-3">16.3.</span> optical character recognition (OCR)</h3>
+</div>
+<div id="outline-container-orgf124340" class="outline-3">
+<h3 id="orgf124340"><span class="section-number-3">16.4.</span> intelligent character recognition (ICR)</h3>
+<div class="outline-text-3" id="text-16-4">
+<p>
+recognizes different handwriting styles and fonts to intelligently interpret data on forms and physical
+ documents
+</p>
+
+<p>
+use of continuously improving algorithms to collect more information about the variances in hand-printed
+characters and more precisely identify them.
+</p>
+
+<p>
+<b>intelligent word recognition</b> (IWR) focuses on reading a word in context rather than recognizing individual
+characters. is optimized for processing real-world documents that contain mostly free-form, hard-to-recognize
+data fields that are inherently unsuitable for ICR. (evolved version of ICR)
+</p>
+
+<p>
+<b>Robotic Process Automation</b> (RPA) is a technique that automates the configuration of Intelligent character
+ recognition software and ensures that operations are completed without errors.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b0ba0c" class="outline-3">
+<h3 id="org9b0ba0c"><span class="section-number-3">16.5.</span> Forms processing</h3>
+<div class="outline-text-3" id="text-16-5">
+<p>
+hard copy data is filled out by humans and then "captured" from their respective fields
+</p>
+<ul class="org-ul">
+<li>information entered into data fields</li>
+<li><b>map</b> of the document, detailing where the data fields are located within the form or document</li>
+</ul>
+
+<p>
+steps
+</p>
+<ol class="org-ol">
+<li><p>
+Assessment of the form structure - to analyze the type of form. Types of forms:
+</p>
+<ul class="org-ul">
+<li>Fixed forms - data always found</li>
+<li>Semi-structured (or unstructured) form - the location of the data and fields holding the data vary from</li>
+</ul>
+<p>
+document to document. Ex: letters, contracts, and invoices.
+</p></li>
+<li></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1f2b554" class="outline-3">
+<h3 id="org1f2b554"><span class="section-number-3">16.6.</span> typical scheme</h3>
+<div class="outline-text-3" id="text-16-6">
+
+<div id="orga5862fd" class="figure">
+<p><img src="imgs/ocr.png" alt="ocr.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org81313da" class="outline-2">
+<h2 id="org81313da"><span class="section-number-2">17.</span> подпись  signature (<i>ˈsɪɡnətʃər</i>;) handwritten</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>2017 SigNet: Convolutional Siamese Network for Writer Independent Offline SignatureVerification <a href="https://arxiv.org/pdf/1707.02131.pdf">https://arxiv.org/pdf/1707.02131.pdf</a>
+<ul class="org-ul">
+<li><a href="https://github.com/uniyalvipin/signature-recognition">https://github.com/uniyalvipin/signature-recognition</a></li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Signature_recognition">https://en.wikipedia.org/wiki/Signature_recognition</a></li>
+<li><a href="https://ru.qaz.wiki/wiki/Handwriting_recognition">https://ru.qaz.wiki/wiki/Handwriting_recognition</a></li>
+<li>Wet signatures -  person's name written in their own hand with ink (чернилами)</li>
+<li>Biometric Signature == handwritten signature</li>
+<li>forged - подделанный</li>
+<li>offline signature verification or static</li>
+<li>Почерковедческая экспертиза ( Верификация подписи)</li>
+<li>«Подпись» — это собственноручное написание лицом собственной фамилии, имени, инициалов или их частей (элементов), как правило содержащее индивидуальные особенности, позволяющие визуально отличить подпись одного человека от подписи другого.</li>
+<li>«роспись» применяется для подтверждения факта ознакомления работника с какой-либо информацией или документом, уже составленным и подписанным другими лицами.</li>
+<li><a href="http://irsit.ru/files/article/199.pdf">http://irsit.ru/files/article/199.pdf</a></li>
+<li><a href="https://cyberleninka.ru/article/n/algoritmy-verefikatsii-rukopisnyh-podpisey-na-osnove-neyronnyh-setey">https://cyberleninka.ru/article/n/algoritmy-verefikatsii-rukopisnyh-podpisey-na-osnove-neyronnyh-setey</a></li>
+
+<li>electronic signature <a href="https://www.mobbeel.com/en/blog/eidas-types-of-electronic-signature-biometric-signature/">https://www.mobbeel.com/en/blog/eidas-types-of-electronic-signature-biometric-signature/</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgb8e6560" class="outline-3">
+<h3 id="orgb8e6560"><span class="section-number-3">17.1.</span> soft</h3>
+<div class="outline-text-3" id="text-17-1">
+<ul class="org-ul">
+<li>abby</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5eebff" class="outline-2">
+<h2 id="orga5eebff"><span class="section-number-2">18.</span> 12 лучших репозиториев GitHub по компьютерному зрению</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Список из наиболее важных Awesome репозиториев GitHub, посвященных компьютерному зрению, которые
+охватывают широкий спектр исследовательских и образовательных тем. Огромный кладезь знаний из
+области CV.
+</p>
+
+<ol class="org-ol">
+<li>Awesome Computer Vision <a href="https://github.com/jbhuang0604/awesome-computer-vision">https://github.com/jbhuang0604/awesome-computer-vision</a></li>
+<li>Computer Vision Tutorials by Roboflow <a href="https://github.com/roboflow/notebooks">https://github.com/roboflow/notebooks</a></li>
+<li>Transformer in Vision <a href="https://github.com/Yangzhangcst/Transformer-in-Computer-Vision">https://github.com/Yangzhangcst/Transformer-in-Computer-Vision</a></li>
+<li>Awesome Referring Image Segmentation <a href="https://github.com/MarkMoHR/Awesome-Referring-Image-Segmentation">https://github.com/MarkMoHR/Awesome-Referring-Image-Segmentation</a></li>
+<li>Awesome Vision Language Pretraining Papers <a href="https://github.com/yuewang-cuhk/awesome-vision-language-pretraining-papers">https://github.com/yuewang-cuhk/awesome-vision-language-pretraining-papers</a></li>
+<li>Awesome Vision and Language</li>
+<li>Awesome Temporal Action Detection</li>
+<li>Awesome Masked Autoencoders</li>
+<li>Awesome Visual Transformer</li>
+<li>Transformer-Based Visual Segmentation <a href="https://github.com/lxtGH/Awesome-Segmentation-With-Transformer">https://github.com/lxtGH/Awesome-Segmentation-With-Transformer</a></li>
+<li>CVPR 2023 Paper with Code <a href="https://github.com/amusi/CVPR2023-Papers-with-Code">https://github.com/amusi/CVPR2023-Papers-with-Code</a></li>
+<li>Awesome Deepfakes Detection <a href="https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detec">https://github.com/Daisy-Zhang/Awesome-Deepfakes-Detec</a></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgef579b2" class="outline-2">
+<h2 id="orgef579b2"><span class="section-number-2">19.</span> VR</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+за счёт <b>иммерсивных устройств</b>, таких как знакомые всем VR-очки. Очки отслеживают вращение головы.
+</p>
+<ul class="org-ul">
+<li>Dop: перчатки, наушники, генераторы запахов.</li>
+</ul>
+
+<p>
+projects:
+</p>
+<ul class="org-ul">
+<li>Google Street View от Google Maps</li>
+<li>Half-Life: Alyx.</li>
+</ul>
+
+<p>
+дополненная (AR), смешанная (MR) и расширенная (XR)
+</p>
+
+<p>
+Популярные метавселенные:
+</p>
+<ul class="org-ul">
+<li><a href="https://decentraland.org/">https://decentraland.org/</a></li>
+<li><a href="https://recroom.com/">https://recroom.com/</a></li>
+<li><a href="https://mootup.com/">https://mootup.com/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc526560" class="outline-2">
+<h2 id="orgc526560"><span class="section-number-2">20.</span> Система управления видеонаблюдением</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+обеспечивает управление распределением видеоданных между источниками и приемниками системы видеонаблюдения
+</p>
+<ul class="org-ul">
+<li>источники - IP-камеры,видеосерверы (видеоэнкодеры)</li>
+<li>программного детектора движения и а также детектора движения, реализованного на борту IP-камеры, при условии
+его соответствия спецификации ONVIF.</li>
+<li><p>
+интеллектуального анализа видеоданных (VCA Video content analysis):
+</p>
+<ul class="org-ul">
+<li>событий, как вторжение в зону/выход из зоны, остановка, «праздношатание», пересечение линии, недопустимое</li>
+</ul>
+<p>
+направление движения, оставленный/унесенный предмет
+</p>
+<ul class="org-ul">
+<li>Классификатор объектов на основе нейросети – детектор присутствия людей в кадре</li>
+<li>Распознавание автомобильных номеров</li>
+<li>Распознавание номеров вагонов и локомотивов, алгоритм на основе нейросети;</li>
+<li>Распознавание лиц, алгоритм на основе нейросети</li>
+</ul></li>
+</ul>
+
+<p>
+стандартов сжатия видеопотоков MJPEG, MPEG-4, H.264, H.265
+</p>
+
+<p>
+параметры видеопотоков, формируемых IP-камерами Разрешение – до 8 Мп (3840 x 2160), скорость – до 60 к/с
+</p>
+
+<p>
+layers
+</p>
+<ul class="org-ul">
+<li>Cloud - Analytics and Storage</li>
+<li>fog - Models processing, uploading and feedback</li>
+<li>edge - camers - Data Acquisition, Feature Extraction</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc99d1dc" class="outline-2">
+<h2 id="orgc99d1dc"><span class="section-number-2">21.</span> Tools</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+ROS2, wiki.ros.org - meta-operating system for your robot. runtime "graph" is a peer-to-peer network of processes
+ (potentially distributed across machines)
+</p>
+
+<p>
+Unity, Unity engine - software development kit for games  and other simulations.
+</p>
+
+<p>
+Agroflow + Postgresql for versioning of date
+</p>
+
+<p>
+RViz - rviz is a 3D visualizer for the Robot Operating System (ROS) framework.
+</p>
+
+<p>
+clearml
+</p>
+</div>
+</div>
+<div id="outline-container-org396087f" class="outline-2">
+<h2 id="org396087f"><span class="section-number-2">22.</span> barcode reader from command line</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+emerge &#x2013;ask media-gfx/zbar
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">xfce4-screenshooter -f -s /tmp/a.png
+
+convert /tmp/a.png +repage -threshold 50% -morphology open square:1 /tmp/output.png
+
+<span style="color: #cae682;">cropvals</span>=<span style="color: #fa8072;">`magick /tmp/output.png \</span>
+<span style="color: #fa8072;">-auto-threshold otsu \</span>
+<span style="color: #fa8072;">-morphology open square:7 \</span>
+<span style="color: #fa8072;">-bordercolor black -border 1 -fill white -draw "color 0,0 floodfill" -alpha off \</span>
+<span style="color: #fa8072;">-shave 1x1 \</span>
+<span style="color: #fa8072;">-type bilevel \</span>
+<span style="color: #fa8072;">-define connected-components:verbose=true \</span>
+<span style="color: #fa8072;">-define connected-components:exclude-header=true \</span>
+<span style="color: #fa8072;">-define connected-components:mean-color=true \</span>
+<span style="color: #fa8072;">-connected-components 8 ccl.png | grep "gray(0)" | head -n 1 | awk '{print $2}'`</span>
+<span style="color: #e5786d;">echo</span> $<span style="color: #cae682;">cropvals</span>
+
+magick /tmp/output.png <span style="color: #95e454;">\</span>
+-crop $<span style="color: #cae682;">cropvals</span> +repage <span style="color: #95e454;">\</span>
+-auto-threshold otsu <span style="color: #95e454;">\</span>
+-morphology open square:1 /tmp/qcode.png
+
+zbarimg /tmp/qcode.png 2&gt;&amp;1 | head
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7cbdfd" class="outline-2">
+<h2 id="orgc7cbdfd"><span class="section-number-2">23.</span> Neural Network Models</h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>Screen parsing tool. - Images of Web page to structured format.
+<ul class="org-ul">
+<li>interactable regions location and captions of icons on its potential functionality.</li>
+<li><a href="https://huggingface.co/microsoft/OmniParser">https://huggingface.co/microsoft/OmniParser</a></li>
+<li>can be used to construct an GUI agent based on LLMs that is actionable.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org80258cf" class="outline-2">
+<h2 id="org80258cf"><span class="section-number-2">24.</span> NEXT LEVEL</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+self-supervised learning, vision transformers, unsupervised object detection, CLIP based text-image scoring, VQA
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

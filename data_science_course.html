@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1a8a079">1. профессия</a>
+<ul>
+<li><a href="#orgbdcd36a">1.1. levels</a></li>
+<li><a href="#org8a24756">1.2. project</a></li>
+<li><a href="#org5949acc">1.3. Data Science можно разделить на три основных составляющих:</a></li>
+<li><a href="#orge3b9b9a">1.4. Data Science math</a></li>
+</ul>
+</li>
+<li><a href="#orgf5f6882">2. задаче машинного обучения</a></li>
+<li><a href="#orge76cf9b">3. визуализация данных</a>
+<ul>
+<li><a href="#org9eb4f6d">3.1. matplotlib</a></li>
+<li><a href="#orgc7b43d2">3.2. plotly</a></li>
+<li><a href="#org4cc7bf9">3.3. рекомендации</a></li>
+</ul>
+</li>
+<li><a href="#orgc3746a1">4. EDA Exploratory Data Analysis</a></li>
+<li><a href="#org5f9af33">5. <span class="todo TODO">TODO</span> Задачи оптимизации II</a></li>
+<li><a href="#orga0cfa34">6. Математический анализ в контексте задачи оптимизации. Часть III</a>
+<ul>
+<li><a href="#orgc160b8b">6.1. practic gradient1</a></li>
+<li><a href="#orgd94560b">6.2. practic gradient2</a></li>
+<li><a href="#orgdd193fe">6.3. practic newton</a></li>
+</ul>
+</li>
+<li><a href="#orgee6756c">7. Линейное программирование</a>
+<ul>
+<li><a href="#orgd76dc8a">7.1. scipy example</a></li>
+</ul>
+</li>
+<li><a href="#org8087815">8. https://www.kaggle.com/competitions/nyc-taxi-trip-duration/overview</a></li>
+<li><a href="#orgf07a5eb">9. Bayes classifier байесовский классификатор</a>
+<ul>
+<li><a href="#org16667ba">9.1. веротяность, условная вероятность</a></li>
+<li><a href="#orgae2ee81">9.2. примеры</a></li>
+<li><a href="#orgbc8686d">9.3. <span class="todo TODO">TODO</span> Разбиение вероятностного пространства</a></li>
+<li><a href="#org6b495dc">9.4. Naive Bayes Classifier, NBC Наивный байесовский классификатор НБК</a>
+<ul>
+<li><a href="#org827efee">9.4.1. cons</a></li>
+<li><a href="#org57c5bab">9.4.2. pros</a></li>
+<li><a href="#orgee8524d">9.4.3. sklearn</a></li>
+<li><a href="#orgb018d1c">9.4.4. training</a></li>
+<li><a href="#org19ece81">9.4.5. links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org295d7aa">10. деревья решений</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+
+<p>
+skillFactory.ru
+<a href="https://lms.skillfactory.ru/">https://lms.skillfactory.ru/</a>
+</p>
+
+<p>
+Профессия Data Science
+</p>
+
+<div id="outline-container-org1a8a079" class="outline-2">
+<h2 id="org1a8a079"><span class="section-number-2">1.</span> профессия</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgbdcd36a" class="outline-3">
+<h3 id="orgbdcd36a"><span class="section-number-3">1.1.</span> levels</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Junior. Специалист начального уровня, который может успешно выполнять задачи, время от времени прибегая к помощи со стороны коллег.</li>
+<li>Middle. Специалист среднего уровня, который может самостоятельно реализовать поставленную задачу от начала и до конца.</li>
+<li>Senior.Специалист с глубокими знаниями в определенной области Data Science, который имеет опыт разработки и внедрения целостных решений, способен предложить несколько способов выполнения задачи и знает, чем они хороши и чем плохи.</li>
+<li>Lead. Специалист, который руководит командой Data Science, умеет переводить бизнес-задачи в технические, разделять задачи на составляющие и планировать работу команды, а также управлять взаимоотношениями в команде и решать проблемы взаимодействия со смежными командами.</li>
+</ul>
+
+<p>
+Senior и Lead равнозначные - первый технические навыки, второй управленческие
+</p>
+
+<p>
+Чтобы Middle-специалисту стать специалистом уровня Senior, нужно:
+</p>
+<ul class="org-ul">
+<li>в деталях разобраться в какой-то области Data Science;</li>
+<li>получить опыт полного цикла решения задач — от общения с бизнес-заказчиками до измерения эффектов от внедрения.</li>
+</ul>
+
+<p>
+Middle/Senior → Lead
+</p>
+<ul class="org-ul">
+<li>больше развивать менеджерские компетенции — навыки управления проектами и командами;</li>
+<li>уметь разрешать и предупреждать конфликтные ситуации;</li>
+<li>научиться брать на себя ответственность за работу других.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a24756" class="outline-3">
+<h3 id="org8a24756"><span class="section-number-3">1.2.</span> project</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Опишем процесс работы над проектом в Data Science по методологии CRISP-DM <a href="https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining">https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining</a>
+</p>
+<ul class="org-ul">
+<li><a href="https://arxiv.org/pdf/1709.09003.pdf">https://arxiv.org/pdf/1709.09003.pdf</a></li>
+
+<li>Постановка задачи (Business Understanding)
+<ul class="org-ul">
+<li>Какой показатель бизнеса мы сможем улучшить?</li>
+<li>Какие рычаги у нас есть, чтобы его улучшать?</li>
+<li>Какие данные нам нужны? Доступны ли они?</li>
+<li>Какие инсайты или предсказания мы хотим получить от модели/алгоритма?</li>
+</ul></li>
+<li>Исследование данных (Data Understanding)</li>
+<li>Подготовка данных (Data Preparation)</li>
+<li>Построение модели (Modeling)</li>
+<li>Оценка модели (Evaluation)</li>
+<li>Внедрение (Deployment)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5949acc" class="outline-3">
+<h3 id="org5949acc"><span class="section-number-3">1.3.</span> Data Science можно разделить на три основных составляющих:</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Data Engineering (инжинирия данных) - обеспечение надёжности
+обработки данных. Инженеры данных умеют загружать большие объёмы
+данных в базы, настраивать потоки данных между системами и делать
+так, чтобы расчёты производились быстро и с минимальными
+вычислительными ресурсами.
+<ul class="org-ul">
+<li>инженеры данных или дата-инженеры</li>
+</ul></li>
+<li>Data Analytics (анализ данных) - Практика исследования,
+использования и интерпретации данных для решения задач бизнеса -
+выгружать нужные данные из базы, формировать из них понятные отчёты,
+ставить правильные вопросы и корректно отвечать на них.
+<ul class="org-ul">
+<li>аналитики данных или дата-аналитики</li>
+</ul></li>
+<li>Machine Learning (машинное обучение) - автоматического принятия решений
+<ul class="org-ul">
+<li>дата-сайентисты, профессионал по машинному обучению.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge3b9b9a" class="outline-3">
+<h3 id="orge3b9b9a"><span class="section-number-3">1.4.</span> Data Science math</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>линейной алгебре;</li>
+<li>математической статистике;</li>
+<li>оптимизации.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5f6882" class="outline-2">
+<h2 id="orgf5f6882"><span class="section-number-2">2.</span> задаче машинного обучения</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Регрессия</li>
+<li>Классификация</li>
+<li>Кластеризация</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge76cf9b" class="outline-2">
+<h2 id="orge76cf9b"><span class="section-number-2">3.</span> визуализация данных</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>pandas</li>
+<li>matplotlib - старая,  изначально разрабатывалась для научных вычислений</li>
+<li>seaborn</li>
+<li>plotly - новая, новым коммерческим продуктом с бесплатной версией, который создавался специально для Data Science</li>
+</ul>
+</div>
+<div id="outline-container-org9eb4f6d" class="outline-3">
+<h3 id="org9eb4f6d"><span class="section-number-3">3.1.</span> matplotlib</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+ДОБАВЛЕНИЕ ИНФОРМАТИВНОСТИ В ГРАФИКИ
+</p>
+
+<ul class="org-ul">
+<li>axes.set<sub>title</sub>() — заголовок диаграммы, а также его настройки (например, параметр fontsize отвечает за размер шрифта);</li>
+<li>axes.set<sub>xlabel</sub>() — название оси абсцисс;</li>
+<li>axes.set<sub>ylabel</sub>() — название оси ординат;</li>
+<li>axes.set<sub>xticks</sub>() — установка отметок на оси абсцисс;</li>
+<li>axes.set<sub>yticks</sub>() — установка отметок на оси ординат;</li>
+<li>axes.xaxis.set<sub>tick</sub><sub>params</sub>() — управление параметрами отметок на оси абсцисс (например, параметр rotation отвечает за поворот отметок в градусах);</li>
+<li>axes.yaxis.set<sub>tick</sub><sub>params</sub>() — управление параметрами отметок на оси ординат;</li>
+<li>axes.legend() — отображение легенды;</li>
+<li>axes.grid() — установка сетки.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7b43d2" class="outline-3">
+<h3 id="orgc7b43d2"><span class="section-number-3">3.2.</span> plotly</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>позволяет строить интерактивные графики</li>
+<li>строить интерактивную 3D-визуализацию, карту мира и многое другое.</li>
+<li>"тяжёлая артиллерия"</li>
+<li>отрисовываются медленно и очень сильно нагружают видеокарту</li>
+<li>бесплатную версию библиотеки разрешено применять в коммерческих продуктах.</li>
+</ul>
+
+<p>
+новых оптимизированных модули и надстройки в Plotly
+</p>
+<ul class="org-ul">
+<li>express <a href="https://plotly.com/python/plotly-express/">https://plotly.com/python/plotly-express/</a></li>
+<li>cufflinks <a href="https://github.com/santosjorge/cufflinks">https://github.com/santosjorge/cufflinks</a></li>
+</ul>
+
+<p>
+С помощью экспресс-режима (px)
+</p>
+<ul class="org-ul">
+<li>line() — линейные графики;</li>
+<li>histogram() — гистограммы;</li>
+<li>scatter() — диаграммы рассеяния;</li>
+<li>box() — коробчатые диаграммы;</li>
+<li>bar() — столбчатые диаграммы;</li>
+<li>pie() — круговые диаграммы.</li>
+</ul>
+
+<p>
+treemap() - как тепловая карта московской биржи
+</p>
+</div>
+</div>
+<div id="outline-container-org4cc7bf9" class="outline-3">
+<h3 id="org4cc7bf9"><span class="section-number-3">3.3.</span> рекомендации</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+linear plot отлично подходит, если набор данных непрерывен (как мы уже видели раньше, обычно это временной
+ряд). График используется для определения тенденций во временном ряду и сравнения нескольких рядов между
+собой.
+</p>
+<ul class="org-ul">
+<li>Не используйте график, если набор данных дискретный (менее 20 наблюдений) — в таком случае лучше воспользуйтесь столбчатой диаграммой.</li>
+<li>Время всегда отображается по оси абсцисс и разбивается на равные интервалы.</li>
+<li>Если даты сливаются, используйте наклон в 45 градусов.</li>
+<li>Не используйте график для сравнения рядов, если их больше 7-10 — график станет нечитабельным. Попробуйте уменьшить число категорий.</li>
+</ul>
+
+<p>
+Гистограммы histogram) часто применяются для разведывательного анализа данных (EDA), так как они дают информацию о
+распределении признака. С их помощью можно сразу определить диапазон изменения признака, его модальное
+значение (пик гистограммы), а также найти «пеньки», которые выбиваются от непрерывного распределения
+гистограммы, — аномалии.
+</p>
+<ul class="org-ul">
+<li>Не стоит строить гистограмму, если наблюдений мало — распределение окажется далёким от действительного и вы просто сделаете ложные выводы. По статистике, для того, чтобы гистограмма хоть как-то оценивала истинное распределение, нужно как минимум 30 наблюдений (на практике нужно хотя бы 100).</li>
+<li>Попробуйте (ради эксперимента) построить пять-семь гистограмм на одном графике для их сравнения по категориям (например, страны). ⛔ На практике так делать не нужно. Для сравнения параметров распределений по категориям предназначена коробчатая диаграмма (boxplot).</li>
+<li>Если вы всё же хотите сравнить гистограммы между собой, предварительно обязательно приведите признаки к одной шкале (мы делали это, когда сравнивали ежедневную заболеваемость коронавирусом в процентах от населения страны). Если этого не сделать, распределения окажутся несопоставимыми.</li>
+</ul>
+
+<p>
+Диаграмма рассеяния (scatter plot) и её производные — jointplot (гистограммы с рассеянием), kdeplot (диаграмма плотностей) и bubble plot (пузырьковая диаграмма) — предназначены для выявления взаимосвязи между двумя (или в случае 3D — тремя) признаками.
+</p>
+<ul class="org-ul">
+<li>Не используйте диаграммы рассеяния на маленьком наборе данных. Здесь ситуация та же, что и с гистограммами.</li>
+<li>Не стоит использовать расцветку и размер точек для признаков с большим числом уникальных категорий.</li>
+<li>В случае если вы не видите зависимостей в данных, попробуйте использовать логарифмическую шкалу по оси абсцисс (по оси абсцисс и ординат в случае 3D-графика). Во всех библиотеках в методе есть параметр log, значение которого нужно установить на True.</li>
+</ul>
+
+
+<p>
+Почему логарифмическая шкала?
+</p>
+<ul class="org-ul">
+<li>во-первых, отбрасывает отрицательные значения</li>
+<li>во-вторых, «приземляет» более высокие значения — зависимость становится более гладкой, и её становится легче
+просматривать. При этом логарифмирование не искажает исходную зависимость: то есть если на исходных данных
+был тренд роста признака А от признака Б, то на логарифмированных данных этот тренд сохранится.</li>
+</ul>
+
+<p>
+Круговая диаграмма (pie chart) показывает структуру признака, то есть процентную долю каждого из возможных значений признака.
+</p>
+<ul class="org-ul">
+<li>Сумма значений в круге всегда должна равняться единице, то есть всегда должно быть целое и его части (например, отношение числа заболевших вирусом по странам к общему количеству населения).</li>
+<li>С помощью круговой диаграммы нельзя сравнить средний чек в ресторанах — эти средние не являются частью единого целого. Однако можно сравнить число сотрудников в этих ресторанах, так как они являются частью одной совокупности.</li>
+<li>Не визуализируйте секторы, близкие к 0, — их невозможно сравнить друг с другом.</li>
+<li>Не делайте больше 6-8 секторов — воспринимать информацию будет сложно. Если компонентов больше, выделите ТОП-6-8, а остальные обозначьте как «прочие».</li>
+<li>Всегда отображайте легенду либо подписи категорий внутри секторов.</li>
+<li>Если важно выделить часть графика, «вытащите» его из центра.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc3746a1" class="outline-2">
+<h2 id="orgc3746a1"><span class="section-number-2">4.</span> EDA Exploratory Data Analysis</h2>
+</div>
+
+
+<div id="outline-container-org5f9af33" class="outline-2">
+<h2 id="org5f9af33"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Задачи оптимизации II</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Оптимизация функций — это задача нахождения набора входных данных целевой функции (то есть её аргументов),
+которые приводят к минимуму или максимуму функции.
+</p>
+
+<p>
+Задачу на нахождение максимума можно свести к задаче на нахождение минимума
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga0cfa34" class="outline-2">
+<h2 id="orga0cfa34"><span class="section-number-2">6.</span> Математический анализ в контексте задачи оптимизации. Часть III</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+методы оптимизации
+</p>
+<ul class="org-ul">
+<li>методы нулевого порядка (их работа основана на оценке значений самой целевой функции в разных точках);</li>
+<li>методы первого порядка ( + первые производные);</li>
+<li>методы второго порядка ( + значение градиента, и гессиан (матрицу Гессе)).</li>
+</ul>
+
+<p>
+«оракул первого порядка» или «оракул нулевого порядка» - компоненты алгоритма, которые находят информацию на
+каждом шаге для метода соответствующего порядка.
+</p>
+
+<p>
+momentum - популярная вариация — градиентного спуска
+</p>
+
+<p>
+Синаптическая пластичность — это понятие, которое используется для описания того, как формируются и
+укрепляются нейронные связи после получения новой информации.
+</p>
+
+<p>
+функцией стоимости - оценка еффективности нейронной сети
+</p>
+
+<p>
+Обратное распространение (backpropagation) — Операции обратного распространения вычисляют частную производную
+функции стоимости по отношению к весам и активациям предыдущего слоя, чтобы определить, какие значения влияют
+на градиент функции стоимости.  результат, итеративно корректируются для уменьшения функции стоимости.
+</p>
+
+<p>
+скорость обучения (или темп обучения или шаг градиентного спуска) - параметр метода оптимизации.
+</p>
+
+<p>
+седловых точках (типа как локальный минимум), где градиент равен нулю.
+</p>
+
+<p>
+типу градиентного спуска:
+</p>
+<ul class="org-ul">
+<li>Batch Gradient Descent;</li>
+<li>Stochastic Gradient Descent;</li>
+<li>Mini-batch Gradient Descent.</li>
+</ul>
+
+<p>
+Batch Gradient Descent
+</p>
+<ul class="org-ul">
+<li>хорошо работает, если мы рассматриваем выпуклые или относительно гладкие функции ошибки
+<ul class="org-ul">
+<li>у линейной или логистической регрессии</li>
+</ul></li>
+</ul>
+
+<p>
+Stochastic Gradient Descent
+</p>
+<ul class="org-ul">
+<li>реализации стохастического спуска вычисляются градиенты не для всей выборки, а только для случайно выбранной единственной точки</li>
+<li>Сильные колебания в обновлении параметров модели</li>
+</ul>
+
+<p>
+Mini-batch Gradient Descent
+</p>
+<ul class="org-ul">
+<li>Колебания зависят от размера подвыборки (увеличиваются с уменьшением её объема)</li>
+</ul>
+
+
+<p>
+AdaGrad - параметры, которые сильно обновляются каждый раз, начинают обновляться слабее.
+</p>
+<ul class="org-ul">
+<li>Однако снижение скорости обучения в AdaGrad иногда происходит слишком радикально, и она практически
+обнуляется. Чтобы решить эту проблему, были созданы алгоритмы RMSProp, AdaDelta, Adam и некоторые другие.</li>
+<li><a href="https://ruder.io/optimizing-gradient-descent/index.html#adagrad">https://ruder.io/optimizing-gradient-descent/index.html#adagrad</a></li>
+<li><a href="https://habr.com/ru/post/318970/">https://habr.com/ru/post/318970/</a></li>
+</ul>
+
+<p>
+sklearn.linear<sub>model.LogisticRegression</sub>
+</p>
+<ul class="org-ul">
+<li><b>newton-cg</b> - алгоритм работает быстрее, чем градиентный спуск, и тратит меньше времени для достижения
+минимума, однако у него есть и определённые недостатки, о которых мы поговорим позже.</li>
+<li><b>lbfgs</b></li>
+<li><b>liblinear</b></li>
+<li><b>sag</b> -  вариациями стохастического градиентного спуска</li>
+<li><b>saga</b> -  вариациями стохастического градиентного спуска</li>
+</ul>
+
+<p>
+newton-cg - Метод Ньютона - для x вычисляется f(x), строится касательная, и в точке пересечения касательной с
+осью Ox, строится новая точка, к которой также строится касательная, и так далее.
+</p>
+<ul class="org-ul">
+<li>Изначально использовался для решения уравнения f(x) = 0</li>
+<li>уравнение касательной y = f'(xn)(x-xn)+f(xn)</li>
+<li>нам нужно попасть в y=0</li>
+<li>0 = f'(xn)*(xn+1 - xn) + f(xn)</li>
+<li>xn+1 - xn = - f(xn)/f'(xn)</li>
+<li>xn+1  = xn - f(xn)/f'(xn)</li>
+<li>чтобы найти точки минимума/максимума нужно решать f'(x)=0
+<ul class="org-ul">
+<li>xn+1 = xn - f'(xn)/f''(xn)</li>
+</ul></li>
+<li>Метод Ньютона, если считать в количестве итераций, в многомерном случае (с гессианом) работает быстрее градиентного спуска.</li>
+<li>легко попасть в максимум или седловую точку. Особенно ярко это видно на невыпуклых функциях с большим количеством переменных, так как у таких функций
+седловые точки встречаются намного чаще экстремумов.</li>
+<li>подходит для В линейной регрессии или при решении задачи классификации с помощью метода опорных векторов или
+логистической регрессии</li>
+<li>отсутствия необходимости в настройке гиперпараметра шага</li>
+</ul>
+
+<p>
+квазиньютоновскими методами - среднее между градиентный спуском и методом Ньютона (методы опртимизации первого порядка)
+</p>
+<ul class="org-ul">
+<li>симметричная коррекция ранга 1 (SR1);</li>
+<li>схема Дэвидона — Флетчера — Пауэлла (DFP);</li>
+<li>схема Бройдена — Флетчера — Гольдфарба — Шанно (BFGS).
+<ul class="org-ul">
+<li>вариации для экономии памяти (так как во время их реализации хранится ограниченное количество информации)
+<ul class="org-ul">
+<li>L-BFGS;</li>
+<li>L-BFGS-B. - является лишь улучшенной версией L-BFGS для работы с ограничениями.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgc160b8b" class="outline-3">
+<h3 id="orgc160b8b"><span class="section-number-3">6.1.</span> practic gradient1</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">fun</span>(x, y, a=1, b=1):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> a * (x ** 2) + b * (y ** 2)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">grad</span>(x, y, a=1, b=1):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> np.array([2 * a * x, 2 * b * y])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">df/dx df/dy</span>
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">grad_descend</span>(grad, step_size=0.2, num_steps=30):
+    <span style="color: #cae682;">lst</span> = []
+    <span style="color: #cae682;">x</span> = np.random.uniform(0, 3, size=2)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">array([2.26419079, 0.06810665])</span>
+    lst.append(x)
+    <span style="color: #8ac6f2; font-weight: bold;">for</span> i <span style="color: #8ac6f2; font-weight: bold;">in</span> <span style="color: #e5786d;">range</span>(num_steps):
+        <span style="color: #cae682;">x</span> = x - step_size * grad(lst[-1][0], lst[-1][1])  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get last two values</span>
+        lst.append(x)
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> np.array(lst)
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">plot_grad</span>(fun, trace):
+    <span style="color: #cae682;">fig</span> = plt.figure(figsize=(10, 8))
+    <span style="color: #cae682;">x_</span> = np.linspace(-1, 1, 100)
+    <span style="color: #cae682;">y_</span> = np.linspace(-1, 1, 100)
+    <span style="color: #cae682;">x</span>, <span style="color: #cae682;">y</span> = np.meshgrid(x_, y_)  <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">hack to display function on grid</span>
+    <span style="color: #cae682;">z</span> = fun(x, y)
+    <span style="color: #cae682;">ax</span> = fig.add_subplot(1, 1, 1, projection=<span style="color: #95e454;">'3d'</span>)
+    ax.plot_surface(x, y, z, alpha=0.6)
+    ax.contour(x, y, z, zdir=<span style="color: #95e454;">'z'</span>, offset=z.<span style="color: #e5786d;">min</span>())
+    <span style="color: #cae682;">z_trace</span> = fun(trace[:, 0], trace[:, 1])
+    ax.plot(trace[:, 0], trace[:, 1], z_trace, <span style="color: #95e454;">"o-"</span>)
+    ax.set_xlim(x.<span style="color: #e5786d;">min</span>(), x.<span style="color: #e5786d;">max</span>())
+    ax.set_ylim(y.<span style="color: #e5786d;">min</span>(), y.<span style="color: #e5786d;">max</span>())
+    ax.set_zlim(z.<span style="color: #e5786d;">min</span>(), z.<span style="color: #e5786d;">max</span>())
+    plt.show()
+
+
+<span style="color: #cae682;">trace</span> = grad_descend(grad, 0.1, 20)
+plot_grad(fun, trace=trace)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd94560b" class="outline-3">
+<h3 id="orgd94560b"><span class="section-number-3">6.2.</span> practic gradient2</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">from</span> scipy <span style="color: #8ac6f2; font-weight: bold;">import</span> optimize
+optimize.minimize(<span style="color: #8ac6f2; font-weight: bold;">lambda</span> x: f(*x), x0=(0, 0))
+
+<span style="color: #8ac6f2; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #8ac6f2; font-weight: bold;">import</span> SGDRegressor
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdd193fe" class="outline-3">
+<h3 id="orgdd193fe"><span class="section-number-3">6.3.</span> practic newton</h3>
+<div class="outline-text-3" id="text-6-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">import</span> numpy <span style="color: #8ac6f2; font-weight: bold;">as</span> np
+<span style="color: #8ac6f2; font-weight: bold;">from</span> matplotlib <span style="color: #8ac6f2; font-weight: bold;">import</span> pyplot <span style="color: #8ac6f2; font-weight: bold;">as</span> plt
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">func1</span>(x):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> 3*x**2 - 6*x -45
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">func2</span>(x):
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> 6*x - 6
+
+<span style="color: #cae682;">init_value</span> = 42
+<span style="color: #cae682;">iter_count</span> = 0
+<span style="color: #cae682;">x_curr</span> = init_value
+<span style="color: #cae682;">epsilon</span> = 0.0001
+<span style="color: #cae682;">f</span> = func1(x_curr)
+
+<span style="color: #8ac6f2; font-weight: bold;">while</span> (<span style="color: #e5786d;">abs</span>(f) &gt; epsilon):
+    <span style="color: #cae682;">f</span> = func1(x_curr)
+    <span style="color: #cae682;">f_prime</span> = func2(x_curr)
+    <span style="color: #cae682;">x_curr</span> = x_curr - (f)/(f_prime)
+    <span style="color: #cae682;">iter_count</span> += 1
+    <span style="color: #e5786d;">print</span>(x_curr)
+
+<span style="color: #8ac6f2; font-weight: bold;">from</span> scipy.optimize <span style="color: #8ac6f2; font-weight: bold;">import</span> newton
+<span style="color: #cae682;">a</span> = newton(func=func1,x0=50,fprime=func2, tol=0.0001)
+<span style="color: #e5786d;">print</span>(<span style="color: #95e454;">'newton'</span>, a)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee6756c" class="outline-2">
+<h2 id="orgee6756c"><span class="section-number-2">7.</span> Линейное программирование</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+один из наиболее часто встречающихся случаев задачи условной оптимизации — задачу линейного программирования.
+</p>
+
+<p>
+Линейное программирование — это метод оптимизации для системы линейных ограничений и линейной целевой функции,
+а все переменные неотрицательны.
+</p>
+<ul class="org-ul">
+<li>В производстве — чтобы рассчитать человеческие и технические ресурсы и минимизировать стоимость итоговой продукции.</li>
+<li>При составлении бизнес-планов — чтобы решить, какие продукты продавать и в каком количестве, чтобы максимизировать прибыль.</li>
+<li>В логистике — чтобы определить, как использовать транспортные ресурсы для выполнения заказов за минимальное время.</li>
+<li>В сфере общепита — чтобы составить расписание для официантов.</li>
+</ul>
+
+<p>
+Целочисленным линейным программированием (ЦЛП) называется вариация задачи линейного программирования, когда
+все переменные — целые числа.
+</p>
+
+<p>
+Пример задачи:
+</p>
+<ul class="org-ul">
+<li>Система:
+<ul class="org-ul">
+<li>2*x+4*y&lt;=220</li>
+<li>3*x+2*y&lt;=150</li>
+<li>x&gt;=0</li>
+<li>y&gt;=0</li>
+</ul></li>
+<li>целевая функция:
+<ul class="org-ul">
+<li>p(x,y) = 4*x+3*y - найти максимальное возможное значение этой функции и точка должна удовлетворять системе</li>
+</ul></li>
+</ul>
+
+<p>
+Решать можно хоть на коленке с линейкой.
+</p>
+
+<p>
+Для решения програмно:
+</p>
+<ul class="org-ul">
+<li>формулируйте задачу именно в формате поиска минимума: min(-4*x-3*y)</li>
+<li>c = [-4 ; -3 ]</li>
+<li>A = [ [2 ; 4] ; [3 ; 2] ]</li>
+<li>b = [ 220 ; 150 ]</li>
+<li>задача стала:
+<ul class="org-ul">
+<li>min (c<sup>T</sup> * x)</li>
+<li>A*x&lt;=b</li>
+</ul></li>
+</ul>
+
+<p>
+Библиотеки Python:
+</p>
+<ul class="org-ul">
+<li>SciPy - не умеет решать задачи целочисленного линейного программирования
+<ul class="org-ul">
+<li>from scipy.optimize import linprog</li>
+</ul></li>
+<li>CVXPY -
+<ul class="org-ul">
+<li></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgd76dc8a" class="outline-3">
+<h3 id="orgd76dc8a"><span class="section-number-3">7.1.</span> scipy example</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+У нас есть 6 товаров с заданными ценами на них и заданной массой.  Вместимость сумки, в которую мы можем
+положить товары, заранее известна и равна 15 кг.  Какой товар и в каком объёме необходимо взять, чтобы сумма
+всех цен товаров была максимальной?
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #cae682;">values</span> = [4, 2, 1, 7, 3, 6] <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">&#1089;&#1090;&#1086;&#1080;&#1084;&#1086;&#1089;&#1090;&#1080; &#1090;&#1086;&#1074;&#1072;&#1088;&#1086;&#1074;</span>
+<span style="color: #cae682;">weights</span> = [5, 9, 8, 2, 6, 5] <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">&#1074;&#1077;&#1089; &#1090;&#1086;&#1074;&#1072;&#1088;&#1086;&#1074;</span>
+<span style="color: #cae682;">C</span> = 15 <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">&#1074;&#1084;&#1077;&#1089;&#1090;&#1080;&#1084;&#1086;&#1089;&#1090;&#1100; &#1089;&#1091;&#1084;&#1082;&#1080;</span>
+<span style="color: #cae682;">n</span> = 6 <span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">&#1082;&#1086;&#1083;&#1080;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086; &#1090;&#1086;&#1074;&#1072;&#1088;&#1086;&#1074;</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org8087815" class="outline-2">
+<h2 id="org8087815"><span class="section-number-2">8.</span> <a href="https://www.kaggle.com/competitions/nyc-taxi-trip-duration/overview">https://www.kaggle.com/competitions/nyc-taxi-trip-duration/overview</a></h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Бизнес-задача: определить характеристики и с их помощью спрогнозировать длительность поездки на такси.
+</p>
+<ul class="org-ul">
+<li>построить модель машинного обучения, которая на основе предложенных характеристик клиента будет
+предсказывать числовой признак — время поездки такси, то есть решить задачу регрессии.</li>
+</ul>
+
+<p>
+OSRM (Open Source Routing Machine) — это открытый бесплатный ресурс, который активно используется во многих
+сервисах, предполагающих построение кратчайшего маршрута. Он позволяет не только построить оптимальный
+кусочно-линейный путь из точки А в точку B, но также узнать его примерную длительность, длину, а также
+подробную информацию о количестве шагов, которые необходимо преодолеть по пути (количество поворотов). У
+данного сервиса есть API, с которым вы можете познакомиться в документации.
+</p>
+<ul class="org-ul">
+<li><a href="https://www.thinkdatascience.com/post/2020-03-03-osrm/osrm/">https://www.thinkdatascience.com/post/2020-03-03-osrm/osrm/</a></li>
+<li>Время поездки, вычисляемое с помощью OSRM, не является истинным временем поездки, так как оно вычисляется по
+кратчайшему пути при идеальных условиях: отсутствие пробок, погодных влияний и других внешних факторов.</li>
+</ul>
+
+<p>
+расстояние по формуле Хаверсина.
+</p>
+<ul class="org-ul">
+<li><a href="http://espressocode.top/haversine-formula-to-find-distance-between-two-points-on-a-sphere/">http://espressocode.top/haversine-formula-to-find-distance-between-two-points-on-a-sphere/</a></li>
+<li>Данная формула определяет кратчайшее расстояние между двумя точками на сфере, если известны широта и долгота
+каждой из точек.</li>
+</ul>
+
+<p>
+функция для вычисления угла направления движения (в градусах).
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">get_haversine_distance</span>(lat1, lng1, lat2, lng2):
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1080;&#1084; &#1091;&#1075;&#1083;&#1099; &#1074; &#1088;&#1072;&#1076;&#1080;&#1072;&#1085;&#1099;</span>
+    <span style="color: #cae682;">lat1</span>, <span style="color: #cae682;">lng1</span>, <span style="color: #cae682;">lat2</span>, <span style="color: #cae682;">lng2</span> = <span style="color: #e5786d;">map</span>(np.radians, (lat1, lng1, lat2, lng2))
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1088;&#1072;&#1076;&#1080;&#1091;&#1089; &#1047;&#1077;&#1084;&#1083;&#1080; &#1074; &#1082;&#1080;&#1083;&#1086;&#1084;&#1077;&#1090;&#1088;&#1072;&#1093;</span>
+    <span style="color: #cae682;">EARTH_RADIUS</span> = 6371
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1089;&#1095;&#1080;&#1090;&#1072;&#1077;&#1084; &#1082;&#1088;&#1072;&#1090;&#1095;&#1072;&#1081;&#1096;&#1077;&#1077; &#1088;&#1072;&#1089;&#1089;&#1090;&#1086;&#1103;&#1085;&#1080;&#1077; h &#1087;&#1086; &#1092;&#1086;&#1088;&#1084;&#1091;&#1083;&#1077; &#1061;&#1072;&#1074;&#1077;&#1088;&#1089;&#1072;&#1081;&#1085;&#1072;</span>
+    <span style="color: #cae682;">lat_delta</span> = lat2 - lat1
+    <span style="color: #cae682;">lng_delta</span> = lng2 - lng1
+    <span style="color: #cae682;">d</span> = np.sin(lat_delta * 0.5) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(lng_delta * 0.5) ** 2
+    <span style="color: #cae682;">h</span> = 2 * EARTH_RADIUS * np.arcsin(np.sqrt(d))
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> h
+
+
+<span style="color: #8ac6f2; font-weight: bold;">def</span> <span style="color: #cae682; font-weight: bold;">get_angle_direction</span>(lat1, lng1, lat2, lng2):
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1087;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;&#1080;&#1084; &#1091;&#1075;&#1083;&#1099; &#1074; &#1088;&#1072;&#1076;&#1080;&#1072;&#1085;&#1099;</span>
+    <span style="color: #cae682;">lat1</span>, <span style="color: #cae682;">lng1</span>, <span style="color: #cae682;">lat2</span>, <span style="color: #cae682;">lng2</span> = <span style="color: #e5786d;">map</span>(np.radians, (lat1, lng1, lat2, lng2))
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">&#1089;&#1095;&#1080;&#1090;&#1072;&#1077;&#1084; &#1091;&#1075;&#1086;&#1083; &#1085;&#1072;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103; &#1076;&#1074;&#1080;&#1078;&#1077;&#1085;&#1080;&#1103; alpha &#1087;&#1086; &#1092;&#1086;&#1088;&#1084;&#1091;&#1083;&#1077; &#1091;&#1075;&#1083;&#1072; &#1087;&#1077;&#1083;&#1077;&#1085;&#1075;&#1072;</span>
+    <span style="color: #cae682;">lng_delta_rad</span> = lng2 - lng1
+    <span style="color: #cae682;">y</span> = np.sin(lng_delta_rad) * np.cos(lat2)
+    <span style="color: #cae682;">x</span> = np.cos(lat1) * np.sin(lat2) - np.sin(lat1) * np.cos(lat2) * np.cos(lng_delta_rad)
+    <span style="color: #cae682;">alpha</span> = np.degrees(np.arctan2(y, x))
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> alpha
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgf07a5eb" class="outline-2">
+<h2 id="orgf07a5eb"><span class="section-number-2">9.</span> Bayes classifier байесовский классификатор</h2>
+<div class="outline-text-2" id="text-9">
+<pre class="example">
+"intersection" "∩"
+</pre>
+</div>
+<div id="outline-container-org16667ba" class="outline-3">
+<h3 id="org16667ba"><span class="section-number-3">9.1.</span> веротяность, условная вероятность</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+условная вероятность и теорема Байеса являются фундаментом для байесовского классификатора
+</p>
+<ul class="org-ul">
+<li>случайным экспериментом - эксперимент, результат которого не детерминирован изначально</li>
+<li>элементарный исход - исхода случайного эксперимента</li>
+<li>пространством элементарных исходов - омега Ω</li>
+</ul>
+
+<p>
+P(A) = n/N - <b>вероятность</b> А
+</p>
+<ul class="org-ul">
+<li>n - равновероятные элементарные исходы, составляющие событие A,</li>
+<li>N - все возможные элементарные исходы</li>
+</ul>
+
+<p>
+<b>Дополнение события А</b> - это неболагоприятные события для А. У дополнения А и самого А нет общих исходов - они
+ взаимоисключающие, называют <b>несовместные</b>. (черта над А, у нас ^A)
+</p>
+<ul class="org-ul">
+<li>P(A) - P(<sup>A</sup>) = 1</li>
+<li>1 - 0.7 = 0.3 - 0.7 и 0.3 вероятности 2 взаимоисключающих событий</li>
+</ul>
+
+<p>
+вероятность двух несовместимых событий в одном эксперименте
+</p>
+<ul class="org-ul">
+<li>P(A U B ) = P(A) + P(B) - где А и B - несовместимые</li>
+</ul>
+
+<p>
+вероятность двух независимых событий в двух разных экспериментах или пересечение в одном
+</p>
+<ul class="org-ul">
+<li>P(A ∩ B) = P(A) * P(B)</li>
+<li>если равенство выполняется, то события <b>независимы</b></li>
+</ul>
+
+<p>
+вероятность двух совместимых событий в двух разных экспериментах
+</p>
+<ul class="org-ul">
+<li>P(A U B) = P(A) + P(B) - P(A ∩ B)</li>
+</ul>
+
+<p>
+Разбиение вероятностного пространства — это взаимоисключающие и совместно исчерпывающие события
+</p>
+
+<p>
+Услованая вероятность P(B|A) - вероятность B при условии A уже произошло
+</p>
+<ul class="org-ul">
+<li>P(B|A) = P(A and B) / P(A)
+<ul class="org-ul">
+<li>где P(A and B) - вероятность что произошло А и затем B</li>
+</ul></li>
+<li>P(A and B) = P(A) * P(B|A)</li>
+<li>если это один эксперимент, то скорее всего P(A and B) = P(A)</li>
+</ul>
+
+<p>
+Precision = P(real=1&amp;pred=1|pred=1) = tp/(tp+fp)
+Recall = P(real=1&amp;pred=1|real=1) = tp/(tp+fn)
+Specificity = P(real=0&amp;pred=0|pred=0)
+</p>
+
+<p>
+Cобытия A и B называются <b>независимыми</b>, если вероятность их пересечения равна произведению вероятностей
+</p>
+<ul class="org-ul">
+<li>P(A and B) = P(A) * P(B|A)</li>
+</ul>
+
+<p>
+Вероятность, что случайно выбранный человек пьёт кофе, равна сумме вероятности, что человек пьёт кофе и
+  является мужчиной, и вероятности, что человек пьет кофе и является женщиной.
+</p>
+
+<p>
+Теорема Байеса - позволяет «переставить причину и следствие»
+</p>
+<ul class="org-ul">
+<li>P(A|B) = ( P(B|A)*P(A) ) / P(B)</li>
+<li>из P(B|A) можно получить P(A|B)</li>
+<li>P(A and B) = P(A) * P(B|A) = P(B) * P(A|B)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgae2ee81" class="outline-3">
+<h3 id="orgae2ee81"><span class="section-number-3">9.2.</span> примеры</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+34 всего
+</p>
+<ul class="org-ul">
+<li>14 ди</li>
+<li>16 ст</li>
+<li>4 обе</li>
+<li>8 ни одной</li>
+</ul>
+
+<p>
+ди или ст или ди и ст ?
+</p>
+<ul class="org-ul">
+<li>P(A U B) = P(A) + P(B) - P(A ∩ B)</li>
+<li>14/34+16/34-4/34</li>
+</ul>
+
+
+<p>
+два раза бросаем монету 00 01 10 11
+2/4 = 0.5 = один раз из них орел
+0.5*0.5 = 0.25 = 1/4 - вероятность, что два раза орел
+</p>
+
+<p>
+два раза бросаем монету
+P(A|B) = 1/2
+P(A и B) = P(A) * P(B|A) = 1/2 *1/2 = 1/4
+Проверка на независимость 1/4 = 1/4 - независимы
+</p>
+
+<p>
+Кубик
+</p>
+<ul class="org-ul">
+<li>чет 3/6 , &gt;=3 4/6
+<ul class="org-ul">
+<li>чет+&gt;=3 = 2/6</li>
+<li>3/6*4/6 = 2/6 -&gt; независимые события</li>
+</ul></li>
+<li>чет 3/6, не больше 2 очков 2/6
+<ul class="org-ul">
+<li>чет+&lt;=2 = 1/6</li>
+<li>3/6*2/6 = 1/6 -&gt; независимые события</li>
+</ul></li>
+<li>чет 3/6 , нечет 3/6
+<ul class="org-ul">
+<li>чет+нечет=0 -&gt; взаимоисключающие</li>
+</ul></li>
+</ul>
+
+<p>
+вероятность, что при подбрасывании два раза шарика они два окажутся верными = при одинарном бросании
+    выполнится оба условия
+</p>
+
+<p>
+кубик чет 3/6 , нечет 3/6
+</p>
+<ul class="org-ul">
+<li>чет+нечет = 0</li>
+<li>3/6*3/6 = 0.25 -</li>
+<li>0.25 != 0 -&gt; зависимые</li>
+</ul>
+
+<p>
+Брошены две игральные кости. Найти вероятность того, что сумма выпавших очков равна четырем
+</p>
+<ul class="org-ul">
+<li>1 3, 2 2, 3, 1</li>
+<li>всего исходов 6*6=36</li>
+<li>благоприятных = 3</li>
+</ul>
+<p>
+= 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc8686d" class="outline-3">
+<h3 id="orgbc8686d"><span class="section-number-3">9.3.</span> <span class="todo TODO">TODO</span> Разбиение вероятностного пространства</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+Разбиение вероятностного пространства — это взаимоисключающие и совместно исчерпывающие события
+</p>
+</div>
+</div>
+<div id="outline-container-org6b495dc" class="outline-3">
+<h3 id="org6b495dc"><span class="section-number-3">9.4.</span> Naive Bayes Classifier, NBC Наивный байесовский классификатор НБК</h3>
+<div class="outline-text-3" id="text-9-4">
+<ul class="org-ul">
+<li>простота, как идейная, так и алгоритмическая.</li>
+<li>основанный на том, что все признаки модели независимы.</li>
+<li>bag of words assumption</li>
+</ul>
+
+<p>
+multinomial naive Bayes classifier - linear classifier
+</p>
+
+
+<p>
+naive Bayes assumpiton: P(f1,f2,f3|c) = P(f1|c)*P(f2|c)*P(f3|c)
+</p>
+
+<p>
+Вероятность, что документ относится к классу
+</p>
+<ul class="org-ul">
+<li>P(c1) = argmax P(c|d) , где argmax - для всех c классов, документа dk</li>
+<li>P(c1) = argmax P(d|c)*P(c)</li>
+<li>P(c1) = argmax P(f1,f2,f3|c)*P(c) , где argmax - для всех c классов, f1f2 - feature of d
+<ul class="org-ul">
+<li>P(f1|c), P(f2|c) - are independent and hence can be 'naively' multiplied (Наивное предположение Байеса)</li>
+</ul></li>
+<li>P(c1) = argmax P(c) * П P(f|c) , где П для всех f features</li>
+<li>P(c1) = argmax log(P(c)) + ∑log(P(w|c)), argmax for all c, ∑ for all positions of word w</li>
+</ul>
+</div>
+
+<div id="outline-container-org827efee" class="outline-4">
+<h4 id="org827efee"><span class="section-number-4">9.4.1.</span> cons</h4>
+<div class="outline-text-4" id="text-9-4-1">
+<ul class="org-ul">
+<li>Предположение о независимых признаках не выполняется на практике практически никогда.</li>
+<li>Если нет обучающего набора данных для какого-то из классов, это приводит к нулевой апостериорной вероятности и модель не может сделать прогноза.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org57c5bab" class="outline-4">
+<h4 id="org57c5bab"><span class="section-number-4">9.4.2.</span> pros</h4>
+<div class="outline-text-4" id="text-9-4-2">
+<ul class="org-ul">
+<li>Алгоритм не только прост для понимания и реализации, но также даёт достаточно точные оценки и быстро работает.</li>
+<li>Наивный Байес имеет низкую вычислительную сложность.</li>
+<li>Он может эффективно работать с большим набором данных.</li>
+<li>Его можно использовать с задачами прогнозирования нескольких классов, то есть в задачах мультиклассовой классификации.</li>
+<li>Если выполнено предположение о независимости признаков, то НБК даёт более высокое качество, чем логистическая регрессия и многие другие модели.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgee8524d" class="outline-4">
+<h4 id="orgee8524d"><span class="section-number-4">9.4.3.</span> sklearn</h4>
+<div class="outline-text-4" id="text-9-4-3">
+<ul class="org-ul">
+<li>GaussianNB — самый простой вариант, работает с непрерывными признаками;</li>
+<li>MultinomialNB  — работает с категориальными признаками, текстами и несбалансированными выборками;</li>
+<li>ComplementNB — улучшенная версия MultinomialNB, стабильно показывает более высокое качество в задачах классификации текстов;</li>
+<li>BernoulliNB — версия для работы с бинарными признаками;</li>
+<li>CategoricalNB — работает с категориальными признаками, предполагает кодировку данных через OrdinalEncoder.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb018d1c" class="outline-4">
+<h4 id="orgb018d1c"><span class="section-number-4">9.4.4.</span> training</h4>
+<div class="outline-text-4" id="text-9-4-4">
+<ul class="org-ul">
+<li>P(f1|c),P(f2|c) we’ll assume a feature is just the existence of a word in the document’s bag of</li>
+</ul>
+<p>
+words.
+</p>
+<ul class="org-ul">
+<li>P(w1|c) - fraction of times the word w appears among all words in all documents of category c</li>
+<li>first concatenate all documents with category c into one big “category c” text.</li>
+<li>we use the frequency of w in this concatenated document</li>
+<li>P(w1|c) = count(w1,c)/∑count(w,c), ∑ for all w</li>
+<li>if we dont have w1 in training class -&gt; П - will give 0
+<ul class="org-ul">
+<li>solution is the add-one (Laplace) smoothing</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org19ece81" class="outline-4">
+<h4 id="org19ece81"><span class="section-number-4">9.4.5.</span> links</h4>
+<div class="outline-text-4" id="text-9-4-5">
+<ul class="org-ul">
+<li><a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf">https://web.stanford.edu/~jurafsky/slp3/4.pdf</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org295d7aa" class="outline-2">
+<h2 id="org295d7aa"><span class="section-number-2">10.</span> деревья решений</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+CART (Classification and Regression Tree) — это алгоритм, предназначенный для построения бинарных деревьев
+ решений. предназначен как для задач классификации, так и для задач регрессии. в sklearn
+</p>
+
+<p>
+решающие пни — деревья глубины 1 (строится на номере признака и решающем значении для него)
+</p>
+
+<p>
+корневая вершина является родительской, а две другие — её потомками.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

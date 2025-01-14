@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5db0541">1. TODO: https://telegra.ph/Podlodka-PHP-Crew-2022-11-06</a>
+<ul>
+<li><a href="#orgd6858e6">1.1. <span class="todo TODO">TODO</span> links</a></li>
+<li><a href="#org17dc384">1.2. Доклад: Управляем системой через события https://www.youtube.com/watch?v=aE-RVn7KkYg&amp;ab_channel=Podlodka</a></li>
+</ul>
+</li>
+<li><a href="#org863103b">2. Hello World</a></li>
+<li><a href="#org3f2c2c3">3. theory</a>
+<ul>
+<li><a href="#org3c6e26b">3.1. language patterns</a></li>
+<li><a href="#orgfe95a81">3.2. escaping to PHP</a></li>
+<li><a href="#org943d1d1">3.3. echo/print</a></li>
+<li><a href="#orgb2647da">3.4. comments</a></li>
+<li><a href="#org4707a28">3.5. semicolons</a></li>
+<li><a href="#org4d13666">3.6. variable</a>
+<ul>
+<li><a href="#org3314732">3.6.1. lists</a></li>
+<li><a href="#orge0709f7">3.6.2. array - associative arrays</a></li>
+<li><a href="#org81b7b45">3.6.3. example</a></li>
+</ul>
+</li>
+<li><a href="#org7475f03">3.7. functions</a></li>
+<li><a href="#orgd396644">3.8. history</a></li>
+</ul>
+</li>
+<li><a href="#orga869755">4. strings</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orge1bef45">4.0.1. heredoc</a></li>
+<li><a href="#orgd5c2b60">4.0.2. nowdoc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0567fa2">5. declare</a></li>
+<li><a href="#orgcd90111">6. class</a>
+<ul>
+<li><a href="#orgfdc7af4">6.1. trails</a></li>
+<li><a href="#org194d587">6.2. example</a></li>
+<li><a href="#orge75e088">6.3. Namespaces and backslash \</a>
+<ul>
+<li><a href="#org0ce3cc8">6.3.1. example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc287e53">7. Closure</a></li>
+<li><a href="#org13e36ef">8. keywords</a>
+<ul>
+<li><a href="#org7159fb3">8.1. include, include<sub>once</sub>, require, require<sub>once</sub></a></li>
+<li><a href="#orgef35936">8.2. echo</a></li>
+<li><a href="#orgdb7569f">8.3. global</a></li>
+</ul>
+</li>
+<li><a href="#org6457cec">9. control structures</a>
+<ul>
+<li><a href="#org8937fd9">9.1. if else</a></li>
+<li><a href="#org0d4108c">9.2. loops</a></li>
+</ul>
+</li>
+<li><a href="#orgf06e692">10. superglobal variables</a></li>
+<li><a href="#org58f50ca">11. PHP Parser</a>
+<ul>
+<li><a href="#org1cb77fc">11.1. php.ini</a></li>
+</ul>
+</li>
+<li><a href="#orgb24bfe7">12. Dependency Manager for PHP</a>
+<ul>
+<li><a href="#org31e9dd1">12.1. links</a></li>
+</ul>
+</li>
+<li><a href="#orga773766">13. frameworks</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 100;-</b>-
+</p>
+
+
+
+<p>
+<a href="https://www.php.net/">https://www.php.net/</a>
+</p>
+
+<p>
+<a href="https://books.goalkicker.com/PHPBook/PHPNotesForProfessionals.pdf">https://books.goalkicker.com/PHPBook/PHPNotesForProfessionals.pdf</a>
+<a href="https://goalkicker.com/PHPBook/PHPNotesForProfessionals.pdf">https://goalkicker.com/PHPBook/PHPNotesForProfessionals.pdf</a>
+</p>
+<div id="outline-container-org5db0541" class="outline-2">
+<h2 id="org5db0541"><span class="section-number-2">1.</span> TODO: <a href="https://telegra.ph/Podlodka-PHP-Crew-2022-11-06">https://telegra.ph/Podlodka-PHP-Crew-2022-11-06</a></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgd6858e6" class="outline-3">
+<h3 id="orgd6858e6"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> links</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Воркшоп:
+Чёрный квадрат ООП: абстракции и как их правильно готовить <a href="https://www.youtube.com/watch?v=2oLIPqJ9QS4&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=2oLIPqJ9QS4&amp;ab_channel=Podlodka</a>
+Дмитрий Кириллов (1С-Старт)
+Доклад:
+Лучшие архитектурные практики на Symfony <a href="https://www.youtube.com/watch?v=DWzHNiLx2WI&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=DWzHNiLx2WI&amp;ab_channel=Podlodka</a>
+Денис Черносов (Тинькофф)
+Доклад:
+Лучшие архитектурные практики на Laravel <a href="https://www.youtube.com/watch?v=vXLDcD4GKmY&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=vXLDcD4GKmY&amp;ab_channel=Podlodka</a>
+Адель Файзрахманов (Laravel Idea)
+Доклад:
+Применение DDD в разных фреймворках <a href="https://www.youtube.com/watch?v=etpBnh3VDa8&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=etpBnh3VDa8&amp;ab_channel=Podlodka</a>
+Сергей Пантюшин (Webinar)
+Круглый стол:
+Архитектурные Best Practices - от MVP к микросервисам <a href="https://www.youtube.com/watch?v=LNbtfvnND3k&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=LNbtfvnND3k&amp;ab_channel=Podlodka</a>
+Воркшоп:
+Версионирование API в PHP-фреймворках <a href="https://www.youtube.com/watch?v=o022x7SAlnY&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=o022x7SAlnY&amp;ab_channel=Podlodka</a>
+Олег Мифле (Skyeng)
+Публичное собеседование:
+System design <a href="https://www.youtube.com/watch?v=U2j7Nhdrk4g&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=U2j7Nhdrk4g&amp;ab_channel=Podlodka</a>
+Павел Лакосников (Авито)
+Максим Таисов (СберЗдоровье)
+Круглый стол:
+Микросервисы в PHP <a href="https://www.youtube.com/watch?v=p477UuQQl0g&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=p477UuQQl0g&amp;ab_channel=Podlodka</a>
+Антон Титов (Spiral Scout)
+Иван Матвеев (Webpors/plesk)
+Разговорный клуб:
+Антипаттерны построения архитектуры <a href="https://www.youtube.com/watch?v=XNT17NOJufY&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=XNT17NOJufY&amp;ab_channel=Podlodka</a>
+</p>
+
+
+<p>
+Полезные видео материалы
+Domain Driven Design на практике <a href="https://www.youtube.com/watch?v=snktmA1XaDs&amp;ab_channel=PHPChannel">https://www.youtube.com/watch?v=snktmA1XaDs&amp;ab_channel=PHPChannel</a>
+Сергей Пантюшин (НПО "РИТ")
+Инструкция по отпилу, или как мы сервис сессий из монолита выносили <a href="https://www.youtube.com/watch?v=tmtSK8xkjwg&amp;t=47s&amp;ab_channel=AvitoTech">https://www.youtube.com/watch?v=tmtSK8xkjwg&amp;t=47s&amp;ab_channel=AvitoTech</a>
+Павел Лакосников, Авито
+Школа магии PHP <a href="https://www.youtube.com/watch?v=1W3UR7v3sAo&amp;ab_channel=HighLoadChannel">https://www.youtube.com/watch?v=1W3UR7v3sAo&amp;ab_channel=HighLoadChannel</a>
+Александр Лисаченко (Альпари)
+Доклад:
+Какой правильный размер для микросервиса или когда стоит распиливать? <a href="https://www.youtube.com/watch?v=bWIa9a0Sf2c&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=bWIa9a0Sf2c&amp;ab_channel=Podlodka</a>
+Кирилл Ветчинкин
+Версионирование API. Единая кодовая база для всех версий <a href="https://www.youtube.com/watch?v=KccOSxI9WJw&amp;ab_channel=PHPChannel">https://www.youtube.com/watch?v=KccOSxI9WJw&amp;ab_channel=PHPChannel</a>
+Антон Золотилин (Superjob)
+Игры со временем или unixtime и UTC не панацея <a href="https://www.youtube.com/watch?v=sMgSotPy3ug&amp;ab_channel=%D0%BC%D0%B8%D1%82%D0%B0%D0%BF%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D1%8B%D1%88">https://www.youtube.com/watch?v=sMgSotPy3ug&amp;ab_channel=%D0%BC%D0%B8%D1%82%D0%B0%D0%BF%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D1%8B%D1%88</a>
+Front-End System Design <a href="https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT">https://www.youtube.com/playlist?list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT</a>
+Плейлист систем дизайна известных продуктов
+</p>
+
+
+<p>
+YouTube каналы
+ulskPHP <a href="https://www.youtube.com/channel/UCODlkh15flKLFtUQBZWtz9A/videos">https://www.youtube.com/channel/UCODlkh15flKLFtUQBZWtz9A/videos</a>
+Сообщество php программистов Ульяновск
+PHP Самара <a href="https://www.youtube.com/channel/UC3B2K4xFRSKIbq7ke0ki-tQ/videos">https://www.youtube.com/channel/UC3B2K4xFRSKIbq7ke0ki-tQ/videos</a>
+Записи докладов по PHP и близким к программированию темам.
+RND PHP <a href="https://www.youtube.com/channel/UC1KvBdMDxZpsOecra6-Kw6g/featured">https://www.youtube.com/channel/UC1KvBdMDxZpsOecra6-Kw6g/featured</a>
+</p>
+
+
+<p>
+Блоги спикеров и другие полезные материалы
+Блог:
+Дмитрий Елисеев <a href="https://elisdn.ru/">https://elisdn.ru/</a>
+о разработке сайтов и сервисов
+Подкаст:
+Пятиминутка PHP <a href="https://music.yandex.ru/album/7293227?dir=desc&amp;activeTab=about">https://music.yandex.ru/album/7293227?dir=desc&amp;activeTab=about</a>
+На Яндекс Музыке
+Статья:
+Про постфикс Interface <a href="https://verraes.net/2013/09/sensible-interfaces/">https://verraes.net/2013/09/sensible-interfaces/</a>
+Статьи:
+Описания разных известных проектов на тему проектирования <a href="http://highscalability.com/blog/category/example">http://highscalability.com/blog/category/example</a>
+Code Golf <a href="https://code.golf/fizz-buzz#php">https://code.golf/fizz-buzz#php</a>
+Игра-тренажер для решения задач наименьшим количеством строк.
+</p>
+
+
+<p>
+Рекомендованные книги
+Теория и практика языков программирования
+С. Орлов
+Гибкая разработка программ на Java и C++
+Р. Мартин
+PHP 8. Объекты, шаблоны и методики программирования
+М. Зандстра
+От монолита к микросервисам
+С. Ньюмен
+Предметно-ориентированное проектирование (DDD). Структуризация сложных программных систем
+Э. Эванс
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17dc384" class="outline-3">
+<h3 id="org17dc384"><span class="section-number-3">1.2.</span> Доклад: Управляем системой через события <a href="https://www.youtube.com/watch?v=aE-RVn7KkYg&amp;ab_channel=Podlodka">https://www.youtube.com/watch?v=aE-RVn7KkYg&amp;ab_channel=Podlodka</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Михаил Мазеин (ManyChat)
+</p>
+<ul class="org-ul">
+<li><b>Event Driven</b> architecture:
+<ul class="org-ul">
+<li>ввод и вывод или только ввод или только вывод</li>
+<li>потоки данных очень запутаны</li>
+</ul></li>
+</ul>
+
+<p>
+web site
+</p>
+<ul class="org-ul">
+<li>web site, mobile app, public api (создание заказа)-&gt; Обработчик заказов -&gt;
+<ul class="org-ul">
+<li>склад</li>
+<li>бонусы</li>
+<li>история</li>
+</ul></li>
+</ul>
+
+<p>
+web site, mobile app, public api -&gt; Order create event channel -&gt;
+</p>
+<ul class="org-ul">
+<li>event handler A -&gt;
+<ul class="org-ul">
+<li>event channel B - &gt; Handler B (обработчик склада)</li>
+<li>event channel C - &gt; Handler C (обр бонусов</li>
+<li>event channel D - &gt; Handler D (обр истории)</li>
+</ul></li>
+</ul>
+
+<p>
+event - json object:
+</p>
+<ul class="org-ul">
+<li>{event type:"order<sub>create</sub>",
+<ul class="org-ul">
+<li>"date":{</li>
+<li>"order<sub>id</sub>:  1234 }}</li>
+</ul></li>
+</ul>
+
+<p>
+Event handler A :
+</p>
+<ul class="org-ul">
+<li>logging</li>
+<li>generate 3 new events - to one right channel</li>
+</ul>
+
+<p>
+Основные элементы системы (уменьшить количество связей, обрабатывать события ассинхронно)
+</p>
+<ul class="org-ul">
+<li>Сужности и события с ними связанные
+<ul class="org-ul">
+<li>имеет состояние(заказы, пользователи, корзина покупок)</li>
+<li>событие может быть создано при создании изменении сущности ( создание заказа, удаление товара из корзины)</li>
+</ul></li>
+<li>генератор событий - реализует логику состояния сущности и генерацию события на основе изменения сущности (веб форма составления заказа)</li>
+<li>канал событий - от генератора к обработчику (файл очередь или база данных)</li>
+<li>обработчик - принимает событие из канала и бизнес логика обработки</li>
+</ul>
+
+<p>
+где
+</p>
+<ul class="org-ul">
+<li>большая система</li>
+<li>тяжелая бизнес-логика</li>
+<li>декомпаозиция на последовательные\ паралельные шаги выполнения</li>
+<li>не требуется синхронное взаимодействие с клиентов</li>
+</ul>
+
+<p>
+каналы событий (Брокер очередей/Message broker)
+</p>
+<ul class="org-ul">
+<li>RabbitMq - поддерживает подтверждение</li>
+<li>Kafka - event streaming, can save</li>
+<li>Redis - для кэширования также, лучше всего подходит для создания очередей самому</li>
+<li>SQS - облачный провайдер очереди</li>
+</ul>
+
+<p>
+BPM:
+</p>
+<ul class="org-ul">
+<li>Camunda - Camunda Modeler и написание java-кода, который обрабатывает шаги процесса, описанные на
+диаграмме ( через интерефейс интерфейс JavaDelegate) + Rest API</li>
+</ul>
+
+<p>
+самое очевидное решение для обработки очередей - демоны
+</p>
+
+<p>
+php запускается и умирает когда приходит запрос от клиента.
+</p>
+
+<p>
+PHP демон(simplified):
+</p>
+<ul class="org-ul">
+<li>reactPHP</li>
+<li>Roadrunner</li>
+<li>Composer -</li>
+<li>своя реализация:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-php">while(tru) {
+    doSomething;
+}
+</pre>
+</div>
+
+<p>
+Обработчик (например Webhook)
+</p>
+<ul class="org-ul">
+<li>валидация входа</li>
+<li>создаем сущость сообщения в БД</li>
+<li>добавляем сообщение в движокполнотекстного поиска - ассинхронно</li>
+<li>считаем статистику с учетом нового сообщения - ассинхронно</li>
+<li>делаем бизнес логику - по возможности ассинхронно, например отдать ответ по другому каналу</li>
+<li>отдаем ответ (HTTP)</li>
+</ul>
+
+<p>
+нагрузка измеряется в RPS - requests per second
+</p>
+
+<p>
+Идемпотентность - свойство системы - при применении одной и той же операции на один и тот же объект
+мы получаем одинаковый результат. Чтобы не потерять консистентность - согласованность данных друг с другом.
+</p>
+<ul class="org-ul">
+<li>прежде чем начать обратывать обработчик должен проверить, что его можно обработать</li>
+<li>проверить было ли событие уже обработано</li>
+<li>если событие не было успешно завершено - нужно правильно восстановить контекст и продолжить с нужного места</li>
+<li>для этого логирование сообщений должно быть достаточно</li>
+</ul>
+
+<p>
+Конкурентность - несокольно процессов работают с одним ресурсом
+</p>
+
+<p>
+В Debug обязательно Uid сообщения - сквозной, чтобы отслеживать жизненный путь события
+</p>
+
+<p>
+Тестиговарие - не стоит принебригать интеграционные тесты
+</p>
+
+<ul class="org-ul">
+<li>enterpriseintegrationpatterns.com</li>
+<li><a href="https://microservices.io/patterns/microservices.html">https://microservices.io/patterns/microservices.html</a></li>
+<li>refactoring.guru/design-patterns</li>
+<li>Designing Data-Intensive Applications (Martin Kleppmann)</li>
+<li>learn.microsoft.com/en-us/azure/architecture/patterns</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org863103b" class="outline-2">
+<h2 id="org863103b"><span class="section-number-2">2.</span> Hello World</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+$log = new Monolog\Logger('name');
+$log-&gt;pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::WARNING));
+
+echo 'done' ;
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$log-&gt;warning('Foo');
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f2c2c3" class="outline-2">
+<h2 id="org3f2c2c3"><span class="section-number-2">3.</span> theory</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+PHP: Hypertext Preprocessor
+</p>
+
+<p>
+web server scripting language
+</p>
+<ul class="org-ul">
+<li>был создан чтобы постоянно умирать - когда приходит запрос обрабатывает и отдает</li>
+</ul>
+</div>
+<div id="outline-container-org3c6e26b" class="outline-3">
+<h3 id="org3c6e26b"><span class="section-number-3">3.1.</span> language patterns</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Loosely typed</li>
+<li>dynamically typed</li>
+<li>whitespace insensitive</li>
+<li>case sensitive</li>
+<li>Statements are expressions terminated by semicolons ;</li>
+<li>Expressions are combinations of tokens</li>
+<li>Braces make blocks if (&#x2026;){&#x2026;}</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe95a81" class="outline-3">
+<h3 id="orgfe95a81"><span class="section-number-3">3.2.</span> escaping to PHP</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>&lt;?php&#x2026;?&gt; Canonical PHP tags</li>
+<li>&lt;?&#x2026;?&gt; Short-open (SGML-style) tags - don't work with  XML tags</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org943d1d1" class="outline-3">
+<h3 id="org943d1d1"><span class="section-number-3">3.3.</span> echo/print</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>&lt;p&gt;&lt;?= "Hello world!" ?&gt;&lt;/p&gt;</li>
+<li>&lt;p&gt;&lt;?php echo "Hello world!" ; ?&gt;&lt;/p&gt;</li>
+<li>&lt;p&gt;&lt;?php print "Hello, World!\n" ; ?&gt;&lt;/p&gt;</li>
+</ul>
+
+<p>
+all data output by PHP to an HTML page should be properly escaped to prevent XSS
+(Cross-site scripting) attacks or text corruption
+</p>
+
+<ul class="org-ul">
+<li>echo has a void return, whereas print returns an int with a value of 1</li>
+<li>echo can take multiple arguments (without parentheses only), whereas print only takes one argument</li>
+<li>echo is slightly faster than print</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2647da" class="outline-3">
+<h3 id="orgb2647da"><span class="section-number-3">3.4.</span> comments</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>#</li>
+<li>// - C++ style - <b>on</b> code</li>
+<li><i>* &#x2026;*</i> - C style - to comment <b>out</b> code.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4707a28" class="outline-3">
+<h3 id="org4707a28"><span class="section-number-3">3.5.</span> semicolons</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+no semicolon required before closing tag and after }.
+but better practice to include before closing tag
+</p>
+</div>
+</div>
+<div id="outline-container-org4d13666" class="outline-3">
+<h3 id="org4d13666"><span class="section-number-3">3.6.</span> variable</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+very good practice to initialize variables
+</p>
+
+<p>
+\[foo['bar']['baz'] means (\]foo)['bar']['baz']
+$foo-&gt;$bar['baz'] means ($foo-&gt;$bar)['baz']
+$foo-&gt;$bar['baz']() means ($foo-&gt;$bar)['baz']()
+Foo::$bar['baz']() means (Foo::$bar)['baz']()
+</p>
+
+<ul class="org-ul">
+<li>null</li>
+<li>boolean - true, false</li>
+<li>integer,</li>
+<li>float, - INF, NAN</li>
+<li>string - string is like an array of characters</li>
+<li>object</li>
+<li>resource - Resource variables hold special handles to opened files, database connections, streams, image canvas areas and</li>
+</ul>
+<p>
+the like
+</p>
+<ul class="org-ul">
+<li>array -</li>
+</ul>
+
+<p>
+default:
+</p>
+<ul class="org-ul">
+<li>Null - Unset AND unreferenced</li>
+<li>False - bool</li>
+<li>0 - float, int</li>
+<li>object(stdClass) - object</li>
+</ul>
+
+<p>
+True - not empty, not null, -1, +2, NAN
+False - empty, null, 0, str "0"
+</p>
+
+<p>
+<code>=</code> - to check whether a variable is identical to a reference value
+</p>
+
+<p>
+constants (The convention is to use UPPERCASE letters):
+</p>
+<ul class="org-ul">
+<li>const PI = 3.14; // float</li>
+<li>define("EARTH<sub>IS</sub><sub>FLAT</sub>", false); // boolean</li>
+<li>const APP<sub>LANGUAGES</sub> = ["de", "en"]; // arrays</li>
+<li>defined("PI") || define("PI", 3.1415); // "define PI if it's not yet defined"</li>
+<li>define is a runtime expression while const a compile time one.</li>
+</ul>
+</div>
+<div id="outline-container-org3314732" class="outline-4">
+<h4 id="org3314732"><span class="section-number-4">3.6.1.</span> lists</h4>
+<div class="outline-text-4" id="text-3-6-1">
+<div class="org-src-container">
+<pre class="src src-php">$info = array('кофе', 'коричневый', 'кофеин');
+$array = array(1, 1, 1, 1,  1, 8 =&gt; 1,  4 =&gt; 1, 19, 3 =&gt; 13);
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 1
+    [2] =&gt; 1
+    [3] =&gt; 13
+    [4] =&gt; 1
+    [8] =&gt; 1
+    [9] =&gt; 19
+)
+
+// Assign array values to variables
+list($a, $b, $c) = $array;
+
+// print all assigned values
+echo "a =", ($a), "\n";
+echo " b =", ($b), "\n";
+echo " c =", ($c), "\n";
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0709f7" class="outline-4">
+<h4 id="orge0709f7"><span class="section-number-4">3.6.2.</span> array - associative arrays</h4>
+<div class="outline-text-4" id="text-3-6-2">
+<p>
+$foo = array(1, 2, 3); <i>/ An array of integers
+$bar = ["A", true, 123 =&gt; 5]; /</i> Short array syntax, PHP 5.4+
+echo $bar[0];    <i>/ Returns "A"
+echo $bar[1234]; /</i> Returns null
+</p>
+</div>
+</div>
+<div id="outline-container-org81b7b45" class="outline-4">
+<h4 id="org81b7b45"><span class="section-number-4">3.6.3.</span> example</h4>
+<div class="outline-text-4" id="text-3-6-3">
+<div class="org-src-container">
+<pre class="src src-PHP">$variableName = 'foo';
+$foo = 'bar';
+// The following are all equivalent, and all output "bar":
+echo $foo;
+echo ${$variableName};
+echo $$variableName;
+//similarly,
+$variableName  = 'foo';
+$$variableName = 'bar';
+// The following statements will also output 'bar'
+echo $foo;
+echo $$variableName;
+echo ${$variableName}; # взять значение переменной, и интерпретировать как имя другой переменной
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7475f03" class="outline-3">
+<h3 id="org7475f03"><span class="section-number-3">3.7.</span> functions</h3>
+<div class="outline-text-3" id="text-3-7">
+<div class="org-src-container">
+<pre class="src src-php"> &lt;?php
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days");
+// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
+?&gt;
+
+&lt;?php declare(strict_types=1); // strict requirement
+function setHeight(int $minheight = 50) {
+  echo "The height is : $minheight &lt;br&gt;";
+}
+?&gt;
+
+ &lt;?php declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : float {
+  return $a + $b;
+}
+echo addNumbers(1.2, 5.2);
+?&gt;
+
+// pass-by-reference argument
+&lt;?php
+function add_five(&amp;$value) {
+  $value += 5;
+}
+
+$num = 2;
+add_five($num);
+echo $num;
+?&gt;
+
+// Using named arguments:
+array_fill(start_index: 0, count: 100, value: 50);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd396644" class="outline-3">
+<h3 id="orgd396644"><span class="section-number-3">3.8.</span> history</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+This trailing comma in function arguments was not permitted before 8.0.0.
+PHP 8.0.0 introduced named arguments
+</p>
+
+<p>
+Shorthand array notation available since PHP 5.4
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga869755" class="outline-2">
+<h2 id="orga869755"><span class="section-number-2">4.</span> strings</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>single quoted - ''</li>
+<li>double quoted - ""</li>
+<li>heredoc syntax</li>
+<li>nowdoc syntax</li>
+</ul>
+</div>
+<div id="outline-container-orge1bef45" class="outline-4">
+<h4 id="orge1bef45"><span class="section-number-4">4.0.1.</span> heredoc</h4>
+<div class="outline-text-4" id="text-4-0-1">
+<div class="org-src-container">
+<pre class="src src-php">echo &lt;&lt;&lt;END
+      a
+     b
+    c
+\n
+END;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5c2b60" class="outline-4">
+<h4 id="orgd5c2b60"><span class="section-number-4">4.0.2.</span> nowdoc</h4>
+<div class="outline-text-4" id="text-4-0-2">
+<div class="org-src-container">
+<pre class="src src-php">echo &lt;&lt;&lt;'EOD'
+Example of string spanning multiple lines
+using nowdoc syntax. Backslashes are always treated literally,
+e.g. \\ and \'.
+EOD;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0567fa2" class="outline-2">
+<h2 id="org0567fa2"><span class="section-number-2">5.</span> declare</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+declare(strict<sub>types</sub>=1); // function calls will respect type hints strictly
+</p>
+<ul class="org-ul">
+<li>Fatal Error: Uncaught TypeError:&#x2026;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd90111" class="outline-2">
+<h2 id="orgcd90111"><span class="section-number-2">6.</span> class</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>single inheritance</li>
+<li>access modifiers: public, private, or protected</li>
+</ul>
+
+<p>
+Traits - abstract class.  can have methods and abstract methods
+</p>
+
+<p>
+Class constants may be accessed by using the double colon operator (::) (so-called the scope
+resolution operator)
+</p>
+<ul class="org-ul">
+<li>greeting::welcome();</li>
+<li>ClassName::$staticProp;</li>
+</ul>
+</div>
+<div id="outline-container-orgfdc7af4" class="outline-3">
+<h3 id="orgfdc7af4"><span class="section-number-3">6.1.</span> trails</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+<pre class="src src-php">trait TraitName {
+  // some code...
+}
+
+class MyClass {
+  use TraitName;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org194d587" class="outline-3">
+<h3 id="org194d587"><span class="section-number-3">6.2.</span> example</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+<pre class="src src-php">class myClass {
+    public function __construct() {
+        $functionName = 'doSomething';
+        $this-&gt;$functionName('Hello World');
+    }
+    private function doSomething($string) {
+        echo $string; // Outputs "Hello World"
+    }
+}
+$pie = new myClass();
+
+$foo = new stdClass(); // create new object of class stdClass, which a predefined, empty class
+$foo-&gt;bar = "baz";
+echo $foo-&gt;bar; // Outputs "baz"
+// Or we can cast an array to an object:
+$quux = (object) ["foo" =&gt; "bar"];
+echo $quux-&gt;foo; // This outputs "bar".
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge75e088" class="outline-3">
+<h3 id="orge75e088"><span class="section-number-3">6.3.</span> Namespaces and backslash \</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>allow for better organization by grouping classes that work together to perform a task</li>
+<li>allow the same name to be used for more than one class</li>
+<li>"use other\animate;" equals "use other\animate as animate;"</li>
+</ul>
+</div>
+<div id="outline-container-org0ce3cc8" class="outline-4">
+<h4 id="org0ce3cc8"><span class="section-number-4">6.3.1.</span> example</h4>
+<div class="outline-text-4" id="text-6-3-1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+namespace \Core\Admin; // must be declared at the beginning of a file
+class Data {}
+?&gt;
+
+
+&lt;?php
+use \Core\Admin\Data; // подключаем класс
+$data1 = new Data('1'); // вызываем просто по имени
+?&gt;
+
+&lt;?php namespace Users;
+
+class Page extends \Core\Admin\Controller {}
+?&gt;
+
+&lt;?php
+use \Core\Admin as feline;
+
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc287e53" class="outline-2">
+<h2 id="orgc287e53"><span class="section-number-2">7.</span> Closure</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>use - Inheriting variables from the parent scope</li>
+<li>Anonymous functions are implemented using the Closure class.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-php">?php function getTotal($products_costs, $tax)
+    {
+        $total = 0.00;
+
+        $callback =
+            function ($pricePerItem) use ($tax, &amp;$total)
+            {
+
+                $total += $pricePerItem * ($tax + 1.0);
+            };
+
+        array_walk($products_costs, $callback);
+        return round($total, 2);
+    }
+
+?&gt;
+
+
+&lt;?php
+$message = 'hello';
+
+// No "use"
+$example = function () {
+    var_dump($message);
+};
+$example();
+
+// Inherit $message
+$example = function () use ($message) {
+    var_dump($message);
+};
+$example();
+
+// Inherited variable's value is from when the function
+// is defined, not when called
+$message = 'world';
+$example();
+
+// Reset message
+$message = 'hello';
+
+// Inherit by-reference
+$example = function () use (&amp;$message) {
+    var_dump($message);
+};
+$example();
+
+// The changed value in the parent scope
+// is reflected inside the function call
+$message = 'world';
+$example();
+
+// Closures can also accept regular arguments
+$example = function ($arg) use ($message) {
+    var_dump($arg . ' ' . $message);
+};
+$example("hello");
+
+// Return type declaration comes after the use clause
+$example = function () use ($message): string {
+    return "hello $message";
+};
+var_dump($example());
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org13e36ef" class="outline-2">
+<h2 id="org13e36ef"><span class="section-number-2">8.</span> keywords</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org7159fb3" class="outline-3">
+<h3 id="org7159fb3"><span class="section-number-3">8.1.</span> include, include<sub>once</sub>, require, require<sub>once</sub></h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+used to embed PHP code from another file
+</p>
+<ul class="org-ul">
+<li>require - If the file is not found, a fatal error is thrown and the program stops.
+<ul class="org-ul">
+<li>require<sub>once</sub> - If the file was already included previously, this statement will not include it
+again.</li>
+</ul></li>
+<li>include - If the file is not found, a warning is shown and the program continues to run.
+<ul class="org-ul">
+<li>include<sub>once</sub> - If the file was already included previously, this statement will not include it again.</li>
+</ul></li>
+</ul>
+
+<pre class="example">
+require __DIR__ . '/vendor/autoload.php';
+</pre>
+</div>
+</div>
+<div id="outline-container-orgef35936" class="outline-3">
+<h3 id="orgef35936"><span class="section-number-3">8.2.</span> echo</h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+<pre class="src src-php">echo gettype(1); // outputs "integer"
+echo gettype(true); // "boolean"
+echo "a =", ($a), "\n";
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdb7569f" class="outline-3">
+<h3 id="orgdb7569f"><span class="section-number-3">8.3.</span> global</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+globals are confusing and considered a <b>bad practice</b>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6457cec" class="outline-2">
+<h2 id="org6457cec"><span class="section-number-2">9.</span> control structures</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org8937fd9" class="outline-3">
+<h3 id="org8937fd9"><span class="section-number-3">9.1.</span> if else</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+if ($a &gt; $b) {
+    echo "a is bigger than b";
+} elseif ($a == $b) {
+    echo "a is equal to b";
+} else {
+    echo "a is smaller than b";
+}
+</p>
+
+
+<p>
+if ($a &gt; $b):
+    echo $a." is greater than ".$b;
+elseif ($a == $b): // Note the combination of the words.
+    echo $a." equals ".$b;
+else:
+    echo $a." is neither greater than or equal to ".$b;
+endif;
+</p>
+</div>
+</div>
+<div id="outline-container-org0d4108c" class="outline-3">
+<h3 id="org0d4108c"><span class="section-number-3">9.2.</span> loops</h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li>break</li>
+<li>continue</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-php"># -- while --
+$x = 1;
+while($x &lt;= 5) {
+  echo "The number is: $x &lt;br&gt;";
+  $x++;
+}
+
+# -- do while
+$x = 1;
+do {
+  echo "The number is: $x &lt;br&gt;";
+  $x++;
+} while ($x &lt;= 5);
+
+# -- for
+for ($x = 0; $x &lt;= 10; $x++) {
+  echo "The number is: $x &lt;br&gt;";
+}
+
+# -- foreach --
+$colors = array("red", "green", "blue", "yellow");
+foreach ($colors as $value) {
+  echo "$value &lt;br&gt;";
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf06e692" class="outline-2">
+<h2 id="orgf06e692"><span class="section-number-2">10.</span> superglobal variables</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+$GLOBALS
+$<sub>SERVER</sub>
+$<sub>REQUEST</sub>
+$<sub>POST</sub>
+$<sub>GET</sub>
+$<sub>FILES</sub>
+$<sub>ENV</sub>
+$<sub>COOKIE</sub>
+$<sub>SESSION</sub>
+</p>
+</div>
+</div>
+<div id="outline-container-org58f50ca" class="outline-2">
+<h2 id="org58f50ca"><span class="section-number-2">11.</span> PHP Parser</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Apache module to parse .php, .php3-8 .phtml files
+</p>
+<ul class="org-ul">
+<li>php -a - REPL</li>
+</ul>
+</div>
+<div id="outline-container-org1cb77fc" class="outline-3">
+<h3 id="org1cb77fc"><span class="section-number-3">11.1.</span> php.ini</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+/usr/local/lib/php.ini
+</p>
+
+<p>
+no critical configuration parameters that you must set in order to run PHP
+</p>
+
+<p>
+phpinfo() - helps to find location
+</p>
+
+<p>
+if you’re running PHP as an Apache module, you need to restart the Apache server to make sure that
+the changes you’ve made in the php.ini file are reflected.
+</p>
+
+
+<ul class="org-ul">
+<li>error handling directives</li>
+<li>file upload directives</li>
+<li>security related directives</li>
+<li>session directives</li>
+<li>miscellaneous directives</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb24bfe7" class="outline-2">
+<h2 id="orgb24bfe7"><span class="section-number-2">12.</span> Dependency Manager for PHP</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<b>Composer</b> is a tool for dependency management in PHP.
+</p>
+<ul class="org-ul">
+<li>main <a href="https://getcomposer.org/">https://getcomposer.org/</a></li>
+<li>packages <a href="https://packagist.org/">https://packagist.org/</a></li>
+<li><a href="https://github.com/composer/docker/blob/main/2.4/Dockerfile">https://github.com/composer/docker/blob/main/2.4/Dockerfile</a></li>
+</ul>
+
+<p>
+steps
+</p>
+<ul class="org-ul">
+<li>curl -sS <a href="https://getcomposer.org/installer">https://getcomposer.org/installer</a> -o /tmp/composer-setup.php</li>
+<li>HASH=`curl -sS <a href="https://composer.github.io/installer.sig">https://composer.github.io/installer.sig</a>`</li>
+<li>echo $HASH</li>
+<li>php -r "if (hash<sub>file</sub>('SHA384', '/tmp/composer-setup.php') <code>=</code> '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP<sub>EOL</sub>;"
+<ul class="org-ul">
+<li>echo 'ebade291fd19ad2f47ae7ebef41ac  t.py' | sha384sum -c</li>
+</ul></li>
+<li>php /tmp/composer-setup.php &#x2013;install-dir=/usr/local/bin &#x2013;filename=composer</li>
+<li>composer</li>
+<li>composer require cocur/slugify - install package to local folder "vendor"</li>
+<li>in php:</li>
+</ul>
+<pre class="example">
+require __DIR__ . '/vendor/autoload.php';
+</pre>
+</div>
+
+
+<div id="outline-container-org31e9dd1" class="outline-3">
+<h3 id="org31e9dd1"><span class="section-number-3">12.1.</span> links</h3>
+<div class="outline-text-3" id="text-12-1">
+<ul class="org-ul">
+<li>ubuntu guide <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga773766" class="outline-2">
+<h2 id="orga773766"><span class="section-number-2">13.</span> frameworks</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Symfone</li>
+<li>Laravel</li>
+<li>Yii</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:49</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

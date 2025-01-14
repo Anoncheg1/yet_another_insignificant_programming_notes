@@ -1,0 +1,1844 @@
+;-*- mode: Org; fill-column: 100;-*-
+git clone ssh://git@github.com/<user>/<repository_name>.git
+https://packages.gentoo.org/categories/dev-vcs
+* clone specific tag
+: git clone --branch <tag-name> --single-branch https://github.com/example/repo.git
+
+https://graphite.dev/guides/git-clone-specific-tag
+* investigate folder
+list files:
+: find $PWD -type f
+tree of folders:
+: ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--|/g' -e 's/^/ /' -e 's/-/|/'
+
+* http to git with Bash
+#+begin_src bash :eval no :exports code :results none
+http_to_ssh() {
+    # Usage:
+    # $ http_to_ssh https://github.com/user/repo.git
+    # $ echo https://github.com/user/repo.git | http_to_ssh
+
+    # - Read input from stdin or arguments
+    if [ $# -eq 0 ]; then
+        url=$(cat)
+    else
+        url=$1
+    fi
+
+    if [[ $url =~ ^https:// ]]; then
+        url=${url#https://} # Remove the "https://" prefix from the URL
+        url=${url%.git} # Remove any trailing ".git" from the URL
+        url=${url%/} # Remove any trailing slashes from the URL
+        # - Split the URL into parts using the "/" character as a delimiter
+        parts=(${url//\// })
+        # - Extract the owner and repository names from the URL parts
+        serv=${parts[0]} # github.com
+        owner=${parts[1]}
+        repo=${parts[2]}
+        ssh_url="git@${serv}:${owner}/${repo}.git"
+        echo "$ssh_url"
+    else
+        echo "Invalid HTTP URL" >&2
+        return 1
+    fi
+}
+#+end_src
+* pull to diff from GitHub interface
+- https://github.com/user/repository/pull/123.patch for a mail-formatted patch file.
+- https://github.com/user/repository/pull/123.diff for a unified diff file.
+
+* cheat sheet
+[[./imgs/git-commands.jpg]]
+* SHA1 (default)
+
+it defaults to using seven characters:
+: git log --oneline or --abbrev-commit
+
+At its core, the Git version control system is *a content addressable filesystem*. It uses the SHA-1
+ hash function to name content.
+-  these simple names are called “references” or “refs”; (.git/refs directory.)
+* CLA and DCO, signoff and gpg-sign
+CLA (Contributor License Agreement)
+
+Copyright transfer/assignment agreement - an agreement that transfers the copyright for a work from
+ the copyright owner to another party. ex: a video game developer who wants to pay an
+ artist(painter) to draw a boss to include in a game
+
+DCO (Developer Certificate of Origin) - way for contributors to certify that they wrote or otherwise
+ have the right to submit the code they are contributing to the project.
+- aggree to "the contributor is allowed to make the
+ contribution and that the project has the right to distribute it under its license"
+- introduced in 2004[1] by the Linux Foundation
+- Sign-off is a requirement for getting patches into the Linux kernel and a few other projects, but
+ most projects don't actually use it.
+- *Sign-off* is a line at the end of the commit message which certifies who is the author of the
+ commit. Its main purpose is to improve tracking of who did what, especially with patches.
+  - Signed-off-by: Humpty Dumpty <humpty.dumpty@example.com>
+
+-s::--signoff:: - add line to commit message to signal that you created this commit, have permission
+ to submit it, and you adhere to the project licensing.
+
+-S --gpg-sign - adds a gpg signature to the commit which requires one to have gpg installed and a
+ private key. GitHub will mark commits that you sign with the /verified/ label. If you sign your
+ tags, they will also be marked as /verified/.
+* GitLab tagline, forge
+*Forge* - a web-based collaborative software platform for both developing and sharing computer
+ applications. (after SourceForge)
+
+*GitLab tagline* - forge, AI-powered DevSecOps Platform, the complete developer platform to build,
+ scale, and deliver secure software.
+* GitHub actions - CI/CD platform
+** theory
+It uses main branch only.
+
+When you enable GitHub Actions, GitHub installs a GitHub App on your repository.
+** features
+- automatically add the appropriate labels whenever someone creates a new issue in your repository
+- provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your
+ own self-hosted runners in your own data center or cloud infrastructure
+** terms
+- event :: in repository
+- workflow :: defined by a YAML file in .github/workflows/. Triggered by: event, manually, at schedule.
+- jobs :: part of workflow, set of steps. run sequential or parallel(default) in one workflow. May depend on other job.
+- runner ::  Each job will run inside its own virtual machine or container.
+- steps :: of job. run a *script* or run an *action*. executed in order.
+- default environment variables :: that GitHub sets automatically
+- custom variables :: user definde
+- activity type :: specify which activity trigger event.
+** workflow file
+workflow is divided into *jobs*, and each job performs a set of *steps*
+
+specifies what commands or scripts to run, the default settings, the environment for the commands, etc.
+
+
+- name (optional) :: name of your workflow, if not specified GitHub sets it to the workflow file path.
+- run-name (optional) :: name for *workflow runs*, if omitted then for a workflow triggered by a
+ push or pull_request event, it is set as the commit message.
+  - ex. Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+- on :: events if just list. ex. [push, fork]
+- jobs ::
+- check-bats-version :: example job name
+- ubuntu-latest :: ex. ubuntu-latest.
+
+** examples of workflow files
+*** checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version
+#+begin_src yaml :results output pp
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+#+end_src
+
+#+RESULTS:
+#+begin_example
+{True: ['push'],
+ 'jobs': {'check-bats-version': {'runs-on': 'ubuntu-latest',
+                                 'steps': [{'uses': 'actions/checkout@v3'},
+                                           {'uses': 'actions/setup-node@v3',
+                                            'with': {'node-version': '14'}},
+                                           {'run': 'npm '
+                                                   'install '
+                                                   '-g '
+                                                   'bats'},
+                                           {'run': 'bats '
+                                                   '-v'}]}},
+ 'name': 'learn-github-actions',
+ 'run-name': '${{ github.actor }} is '
+             'learning GitHub Actions'}
+#+end_example
+
+#+begin_example
+{True: ['push'],
+ 'jobs': {'check-bats-version': {'runs-on': 'ubuntu-latest',
+                                 'steps': [{'uses': 'actions/checkout@v3'},
+                                           {'uses': 'actions/setup-node@v3',
+                                            'with': {'node-version': '14'}},
+                                           {'run': 'npm '
+                                                   'install '
+                                                   '-g '
+                                                   'bats'},
+                                           {'run': 'bats '
+                                                   '-v'}]}},
+ 'name': 'learn-github-actions',
+ 'run-name': '${{ github.actor }} is '
+             'learning GitHub Actions'}
+#+end_example
+
+** variables
+custom variable
+- *env* key in workflow file.
+  - env:\n\t DAY_OF_WEEK: Monday
+  - jobs: env:\n\t DAY_OF_WEEK: Monday
+  - jobs: steps: env:\n\t DAY_OF_WEEK: Monday
+
+- define it at the organization, repository, or environment level
+** events that trigger workflows
+: on: {release: {types: [published]}}
+: on: {schedule: [cron:  '30 5,17 * * *']}
+: "on": [push]
+
+Every event has "activity type" which describe it further.
+
+events https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
+*** frequent events:
+- push - triggered when a commit is pushed to the repository
+- pull_request - triggered when a pull request is opened or updated
+- workflow_dispatch - triggered manually by a user or API call
+- release - triggered when a new release is created. GITHUB_SHA, GITHUB_REF (refs/tags/<tag_name>)
+
+other:
+- schedule - triggered on a specified schedule (e.g. daily, weekly)
+- repository_dispatch - triggered by a custom event from an external system or API
+- page_build - triggered when a GitHub Pages site is built
+- issues - triggered when an issue is opened, edited, or labeled
+
+
+*** ex
+#+begin_src yaml :results output pp
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - 'mona/octocat'
+      - 'releases/**'
+  pull_request:
+#+end_src
+
+** secrets and variables
+Repository -> settings -> Secrets and variables -> Actions
+
+referencing secrets: ${{ secrets.GITHUB_TOKEN }}
+
+*** GITHUB_TOKEN
+*GITHUB_TOKEN* - created before each job begins, expires when a job finishes. Usage: passing the
+ token as an input to an action, or using it to make an authenticated GitHub API request. the
+ default permissions are restrictive.
+**** permissions:
+#+begin_src yaml :results output pp
+permissions:
+  actions: read|write|none
+  checks: read|write|none
+  contents: read|write|none
+  deployments: read|write|none
+  id-token: read|write|none
+  issues: read|write|none
+  discussions: read|write|none
+  packages: read|write|none
+  pages: read|write|none
+  pull-requests: read|write|none
+  repository-projects: read|write|none
+  security-events: read|write|none
+  statuses: read|write|none
+
+permissions: read-all|write-all
+permissions: {} # disable permissions
+#+end_src
+
+**** usage example:
+#+begin_src yaml :results output pp
+name: Create issue on commit
+
+on: [ push ]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue using REST API
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "Automated issue for commit: ${{ github.sha }}",
+            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+            }' \
+          --fail
+#+end_src
+** jobs
+- jobs.<job_id> - a unique string identifier.
+- jobs.<job_id>.name - a name for the job, which is displayed in the GitHub UI.
+- jobs.<job_id>.runs-on - type of machine to run the job on https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-self-hosted-runners
+- jobs.<job_id>.needs - any jobs that must complete successfully before this job will run.
+- jobs.<job_id>.steps - YAML sequence or list of tasks called steps
+*** ex
+#+begin_src yaml :results output pp
+jobs:
+  check-links: # job ID
+    name: My first job #  which is displayed in the GitHub UI. (optional)
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install -g bats
+      - name: do something important
+        run:
+#+end_src
+
+#+RESULTS:
+: {'jobs': {'check-links': {'runs-on': 'ubuntu-latest'}}}
+job runners: https://docs.github.com/en/actions/using-jobs/choosing-the-runner-for-a-job
+
+*** links
+https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobs
+** steps
+- steps[*].name - string id
+- steps[*].uses - action ex. uses: actions/checkout@v4
+- steps[*].Runs - command-line programs
+- steps[*].working-directory
+*** uses
+#+begin_src yaml :results output pp
+  # Reference a specific commit
+  - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+  # Reference the major version of a release
+  - uses: actions/checkout@v4
+  # Reference a specific version
+  - uses: actions/checkout@v4.2.0
+  # Reference a branch
+  - uses: actions/checkout@main
+
+#+end_src
+
+** actions
+https://github.com/actions/
+
+- setup-python https://github.com/actions/setup-python
+- checkout https://github.com/actions/checkout
+- stale https://github.com/actions/stale
+- setup-java https://github.com/actions/setup-java
+- setup-go https://github.com/actions/setup-go
+- pypa/gh-action-pypi-publish https://github.com/pypa/gh-action-pypi-publish
+*** checkout
+to GITHUB_WORKSPACE
+
+Only a single last commit is fetched by default.
+
+options:
+- repository :: Default: ${{ github.repository }}
+- ref :: uses the default branch
+
+*** ex
+#+begin_src yaml :results output pp
+uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
+#+end_src
+** variables
+https://docs.github.com/en/actions/learn-github-actions/variables
+
+
+reffered as $GITHUB_WORKSPACE:
+- GITHUB_WORKSPACE :: The default working directory on the runner for steps, and the default location
+ of your repository when using the checkout action.
+- RUNNER_OS ::
+
+*** secrets
+- Names must not start with the GITHUB_ prefix.
+- Names must not start with a number.
+- Names are case insensitive.
+
+${{ secrets.GITHUB_TOKEN }} - special
+
+#+begin_src yaml :results output pp
+with: # Set the secret as an input
+  super_secret: ${{ secrets.SuperSecret }}
+env: # Or as an environment variable
+  super_secret: ${{ secrets.SuperSecret }}
+#+end_src
+
+#+RESULTS:
+: {'env': {'super_secret': '${{ '
+:                          'secrets.SuperSecret '
+:                          '}}'},
+:  'with': {'super_secret': '${{ '
+:                           'secrets.SuperSecret '
+:                           '}}'}}
+
+** runs-on
+Each job runs in a fresh instance of the virtual environment specified by runs-on.
+** passing data between ...
+- actions/upload-artifact and actions/download-artifact
+- volumes - to share data between services or other steps in a job.
+- outputs -  maximum of 1 MB. The total of all outputs in a workflow run can be a maximum of 50 MB.
+** release
+1) create new release
+   - https://github.com/elgohr/Github-Release-Action
+   - gh release create --title "${INPUT_TITLE}" --generate-notes "$(date +%Y%m%d%H%M%S)"
+2) add asset to existent release
+   - gh release upload ${{ github.ref_name }} ./dist/*{.exe,.exe.sha512.txt}
+** links
+- main https://docs.github.com/en/actions
+- https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/
+- file https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+- env variables https://docs.github.com/en/actions/learn-github-actions/variables
+
+* GitHub special files
+** docs/CONTRIBUTING.md
+README.md:
+: [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+ or in your root directory
+
+think of it as a anchor for your project, around which you will build community and keep things
+ tidy. provides potential project contributors with a short guide to how they can help with your
+ project or study group
+- Project contributors - users of the file who want to know items they're welcome to tackle, and
+ tact they need in navigating the project/respecting those involved with the project
+- Project consumers - users who want to build off the project to create their own project
+** .git-blame-ignore-revs
+Contains commit hashes with big refactorings that you don't want to be shown in history of review.
+** .github/CODEOWNERS
+notifications for pull requests, for feedback
+
+path		name of owner
+** .github/SECURITY.md
+Security Policy
+
+how to report
+** .gitignore
+
+
+- .gitignore - will be added to repository
+- .git/info/exclude - without adding .gitignore to repo
+- ~/.gitignore_global - global for all repositories
+
+remove ignored files from current repository:
+- git rm -r --cached .
+- git add .
+- git commit -am 'Drop files from .gitignore'
+
+*** python .gitignore
+https://github.com/github/gitignore/blob/main/Python.gitignore
+#+begin_src text
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+#+end_src
+** TODO .gitlab-ci.yml
+obsolate?
+* Github search
+https://github.com/search/advanced
+*file*
+- filename:my_filename.txt or "path:**/your-file-name" or "path:your-file-name"
+
+*stars*
+- cats stars:>1000 matches repositories with the word "cats" that have more than 1000 stars.
+
+*filesize*
+- cats size:<10000 matches code with the word "cats" in files that are smaller than 10 KB.
+
+*dates*
+- cats created:>2016-04-29 matches issues with the word "cats" that were created after April 29, 2016.
+
+*label*
+- build label:"bug fix"
+
+*issues*
+- is:issue assignee:@me matches issues assigned to the person viewing the results
+
+exclude:
+- -org:github - not in repositories in the GitHub organization.
+- -language:javascript
+- hello NOT world matches repositories that have the word "hello" but not the word "world."
+
+*in file*
+- path:*.ipynb word
+- content:*.py language:Python symbol:GigaChat-Pro
+** links
+https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax
+* install git
+- git config --global user.email "<larry@gentoo.org>"
+- git config --global user.name "Larry the cow"
+- git config --global core.editor emacs
+- git init
+- git add .
+- git commit
+* Global settings: Author identity unknown, proxy
+
+** global config files, Anonymous
+.git/config [user] section:
+- git config user.email ""
+- git config user.name "(none)"
+
+~/.gitconfig
+git config --global --list
+git config --list    - repository config
+
+** proxy
+git supported protocols:
+- http: git clone http://domain.com/dir/repository.git
+- https: git clone https://domain.com/dir/repository.git
+- git: git clone git://domain.com/dir/repository.git
+- git over ssh: git clone git+ssh://domain.com/dir/repository.git
+
+set proxy:
+: git config --global http.proxy 'socks5://127.0.0.1:1081' # for http protocol  http://proxyuser:proxypwd@proxy.server.com:8080
+: git config --global ssh.gitproxy /path/to/bin/git-proxy.sh # for git protocol
+
+/path/to/bin/git-proxy.sh where $1 and $2 is remote host and port:
+: nc -x 127.0.0.1:1081 $1 $2
+
+
+git config --list # should look like this:
+: http.proxy=socks5://127.0.0.1:1081
+: core.gitproxy=/home/user/git-proxy.sh
+
+core.gitproxy is not working, idk why.
+
+** ssh
+Host github.com
+    ServerAliveInterval 55
+    ForwardAgent yes
+    CheckHostIP no
+    ProxyCommand nc -xlocalhost:9050 -X5 %h %p
+* revisions
+*man gitrevisions*
+- <rev> - revision - commit or blobs ("files") or trees ("directories of files") whis is conteined in commit.
+  - <sha1> - extended SHA-1 syntax
+- <describeOutput> Output from git describe; i.e. a closest tag, optionally followed by a dash and a number of commits,
+- <refname>, e.g. master, heads/master, refs/heads/master
+- [<refname>]@{<date>}
+- <refname>@{<n>}, e.g. master@{1}
+  - n-th prior value of that ref.
+- @{<n>}, e.g. @{1}
+- <rev>^[<n>], e.g. HEAD^, v1.5.1^0 - n-th parent
+  - A suffix ^ to a revision parameter means the first parent up to tree of that commit object. <rev>^ is equivalent to <rev>^1
+  - A^<n> - mean <n> parent where a commit has *more than one parent*
+  - A^0 = A
+- <rev>~[<n>], e.g. HEAD~, master~3
+  - A~2 - seond parent up to branch = A^^
+- r1 .. r2 - revision range
+  - r1..r3 = r2 r3 = r3 ^r1
+  - r1^..r3 = r1 r2 r3
+- r1 ... r2 - all parents of both
+* Definitions
+http://www.vogella.com/tutorials/Git/article.html
+https://www.tutorialspoint.com/git/git_basic_concepts.htm
+
+*Version Control System* (VCS) [ˈvɜːʃən] is a software that helps software developers to work together and
+maintain a complete history of their work.
+
+Git - distributed version control system.
+
+Repository - software storage local or remote. contains the history and branches.
+- Bare repository - git init --bare For sharing in collaborating. repository without working
+  tree. Not allow tocreate new versions. (commit i guess)
+- Local Repository - .git folder at local machine
+
+areas
+- *Working tree* - folder for the repository (tracked and untracked).
+- *staging area* (Index) - *git add* list of files with sha1 of content - tracked files.
+- *Stagging or cached* - changes that will be included in next commit. (after git add)
+
+Checkout - Updates files(remove changes) in the working tree to match the version in the index or the specified branch.
+
+Commit
+1)commit the staged changes into Git repository
+2)commit object - uniquely identifies(SHA-1 hash) a revision(state) of the repository(content). Has pointer to parent commit.
+
+If commit has miltiple parent commits - was created by merging.
+- First parent commit is the branch you were on when you merged A^, A^2 - second parent
+
+
+Version graph formed by all commits in the repository
+
+HEAD - symbolic reference. If you switch branches, the HEAD pointer points to
+the branch pointer which in turn points to a commit. If you checkout a specific
+commit, the HEAD points to this commit directly.
+
+.gitignore the root directory of your project, the ignore settings will be applied to all sub-directories automatically.
+
+Detached HEAD mode - If you checkout a commit or a tag
+
+ref - symbolic references (symrefs)
+
+Upstream branch - branch tracked on remote repository by your local remote "tracking" branches.
+- Local remote "tracking" branches - local branches that has remote associatied in .git/config
+- remote tracking branches - branches on remote version of local repository
+- "remotes" - remote repository, configured in git remote. ex. origin
+** Pull
+from remote repository instance to local one.
+** Push
+from local to remote
+** Branch
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches
+Branch - are local for the repository. A branch is a named pointer to a commit.
+
+Remote-tracking branches - there are remote branches. Looks like origin/master. not stored localy. but may be checkout.
+- “Upstream Remote” - link to original repository, allowing you to fetch updates and track changes
+  from the original repository.
+- upstream branch - the branch which tracking branch tracks. Always Remote-tracking branches.
+
+local branches - looks like master. they are stored in local repository.
+
+To have an upstream branch(tracking branches) - --track This configuration will
+tell git to show the relationship between the two branches in git status and git
+branch -v. If you clone a Git repository, your local master branch is created as
+a tracking branch for the master branch of the origin repository
+(short:_origin/master_) by Git. Always local.
+
+
+
+Default branch - named _master
+
+*Setting Upstream Tracking* - bind branch to track remote branch added as “Upstream Remote”.
+- when create new branch: git checkout -b my-local-branch origin/main
+- after creation:
+  - git branch --set-upstream-to <upstream> <local-branch>
+  - git branch --set-upstream-to upstream/main main-origin
+** TAG
+Tag - points to a commit.
+
+Lightweight tag - without properties,  annotated tag - with additional info
+
+Release tags - common applying of tag.
+
+** .git/config, remote
+Fetchurl, Pushurl - the location of the repository
+
+Remote - remote repository pointer with properties e.g. URL, branches to fetch or branches to push.
+
+Origin - default name for remote. after clone
+
+** Submodule
+Git-submodule - via a .gitmodules file located at the root of the parent
+repository.  They’re too intrusive, requiring submodules to be initialised and
+updated. And switching between branches, which is where Git really shines,
+suddenly becomes painful because submodules don’t do what you expect.
+
+git merge
+git rebase - like merge but add current branch commits at the top of rebase branch
+
+git fetch - move local Remote-tracking branche to what at remote repository. it may add commits not existing in another local branches.
+
+By default you can only push to bare repositories.
+
+release tags are labeled based on the [major].[minor].[patch] naming scheme, for example "1.0.0". Several projects also use the "v" prefix.
+the minor version is incremented if new, backwards compatible functionality is introduced to the public API and the major version is incremented if any backwards incompatible changes are introduced to the public API.
+
+To get submodules for project:
+- git checkout --recurse-submodules
+- git submodule update --depth 1 --init --checkout --recursive
+
+** cherry-pick
+act of picking a commit from a branch and applying it to another.
+
+most of this can be made with git merge
+* commands
+- git init/clone
+
+- git stash - save working directory state and allow list saves
+- git rm [file] - remove files from the index and maybe(--cached) working tree
+- git mv - move file, directory symlink, index updated, but changes must be commited
+- git add - update the Index = add files and update check-sum.
+- git clean - Remove untracked files from the working tree
+
+- git log
+- git reflog - local actions history - git reset HEAD@{index}
+- git show
+- git diff
+  - git diff HEAD = git diff - between Staging Area and HEAD commit (git diff "s" HEAD - "s"=a, HEAD=b)
+  - git diff --staged/cached HEAD - between Stagging and HEAD
+- git branch
+- git switch - switch branches
+- git checkout -switch
+- git commit
+  - --amend - replace last commit of current branch
+- git merge - combines branches
+  - git merge --abort
+
+- git revert - revert one commit and record new one
+- git reset - sets HEAD to comment (and reset index and/or working tree)
+  - --mixed - reset index but not working tree
+  - --soft - do not touch index and working tree
+  - --hard - index and working, changes are lost
+  - --merge - reset index and update files in working if they different in past commit
+  - --keep - reset index and update files in working if they dont have local changes
+- git reset file - reset file to HEAD
+
+- git remote - manage remote repositories
+- git fetch - harmless download changes
+- git pull - download changes and change working tree
+
+* GIT Branching Strategies
+- *Gitflow* - two main branches: master and develop. well for large projects with long release cycles
+- *Feature branching* - each new feature is developed on its own branch. easier to roll back changes
+ if necessary. for small projects and teams.
+- *Release branching* - new branch for each release. final testing and bug fixing on the release
+ branch before it is merged into the master branch for production. good option for projects with
+ short release cycles.
+- *Trunk-based development* - single branch, often the master branch, feature flags to isolate new
+ features until they are ready for release. move quickly and frequently release updates. requires a
+ high level of discipline. challenging to maintain backward compatibility with older releases.
+
+* branches
+switch
+- git switch branch name
+
+create
+- git branch name	# create a branch from the current branch, do not switch to it
+- git branch <name> <hash>    - <hash> is optional to which the branch pointer original points
+- git checkout [[-b|-B|--orphan] <new_branch>] [<start_point>] # git branch -f <branch> [<start-point>] ; git checkout <branch>
+  - git checkout -b name		# new branch and start at the start poing
+  - -B	<new-branch>			# <new-branch> is created if it doesn’t exist otherwise, it is reset
+- git switch -c new-branch		# git branch <new-branch> ; git switch <new-branch>
+- git switch -c dev --track master	# If the starting point is a local branch, you can force the tracking
+
+delete
+- git branch -d testing     - delete local branch
+- git branch -d -r origin/dev origin/stage origin/prod # delete  remote-tracking branches.
+- git push [remote] --delete [branch]        - delete branch in a remote repository
+
+
+list
+- get branch -r 	# remote branches (red)
+- git branch		# show local branches (green with * is current)
+- git branch -a      - lists all branches including the remote branches
+- git branch -r      - lists branches in the remote repositories
+- git branch -v		- info of tracking branches
+- git remote show origin     - show all remote and tracking branches for origin
+- git branch -vv        - to see local tracking branches.
+- git branch --merged/--no-merged [commit]	# Only list branches whose tips are reachable
+
+other
+- git branch -D name	# delete a local copy of a branch.
+- git checkout -b develop      -
+- --orphan		- no parents, totally disconnected. no commits before first
+
+- # tracking branches
+- git checkout -b newbranch origin/newbranch - setup a tracking branch called newbrach which tracks origin/newbranch
+- git branch [new_branch] origin/master
+
+- git checkout --track origin/serverfix   - create local serverfix branch tracking remote one if remote exist.
+  - git checkout serverfix   - the same
+- git branch --unset-upstream 		# Remove a current tracking relationship
+- git push -u origin feature 		# Link a branch to an upstream branch
+
+- git branch --set-upstream-to 	# set remote tracking branch
+
+** theory
+upstream tracking branch: master ⇒ origin/master
+
+by default both “git merge” and “git rebase” will use the upstream tracking branch
+
+when you checkout a new branch and you are using a remote branch as the starting point, the upstream
+ tracking branch will be setup automatically.
+* remote branches, upstream braches and symrefs
+- git remote - show "remotes" whose branches you track
+- git branch -r - remote tracking branches (branches on remote version of local repository)
+  - * - currently viewing
+  - origin/HEAD -> origin/master - default branch and current commit of origin. may be changed with: git remote set-head origin <remote> <branch>
+  - origin/master - remote branch
+- cat .git/config
+  - remote = origin - remote associated with branch (upstream configuration)
+  - merge = refs/heads/master - branch and HEAD on remote
+** kinds of symrefs
+git symbolic-ref
+- .git/HEAD, pointing at somewhere under refs/heads/ hierarchy;
+- .git/refs/remotes/{some remote name}/HEAD, pointing at somewhere under refs/remotes/{the same remote name}/ hierarchy.
+
+* User/Password locally for repository (save password in repository)
+- git config credential.helper store
+- after next push credentials will be saved
+* log
+git log
+- --oneline -
+- --graph
+- --decorate[=short|full|auto|no] lenght of ref name - default short
+
+
+git log HEAD~4..HEAD
+git log HEAD~4     - the same
+git log testing..master   - list all commints in master but not in testing
+git log master...testing   - commits reached by master or testing but not both
+# seeing the git log for the HEAD reference
+git log HEAD --
+git log -1 -- HEAD   - one last commit for HEAD file
+git log HEAD^  - one parent commit for HEAD
+* diff
+per file ++-- statistic
+git diff --stat HEAD~10..HEAD
+* merge
+*fast-forward* is merge operation when Git moves the current branch HEAD pointer to the target local
+ branch HEAD pointer, without having extra commits.
+
+merge branch
+- git checkout master
+- git merge development
+
+if CONFLICT
+1) undo
+   - git merge --abort
+   - git merge --continue
+2) resolve
+   - open conflicted file to see
+   - remove <<<<<, ==== amd >>> lines to resolve conflict
+   - git add ./path/file ( if new)
+   - git commt -m "Merge development fixed conflict"
+
+* pull request - Best Practices <<pull_request>>
+
+1) fork
+2) create branch from *develop* new “feature-X”
+   - git checkout -b new-branch-name
+3) commit to feature-X
+4) submit a pull request on feature-X. In the PR title use tags [Fix], [Feature], [Refactor], [Release], [Hotfix]
+   - Example: [Fix] Sitemap bug solved.
+   - git pull -r origin master
+   - git push origin new-branch-name
+links
+- https://gist.github.com/mikepea/863f63d6e37281e329f8
+* markdown
+GitHub Flavored Markdown with a few unique writing features (один из диалектов Markdown)
+- file.md
+** headers
+#+begin_src markdown
+# A first-level heading
+## A second-level heading
+### A third-level heading
+
+#+end_src
+** code
+#+begin_src markdown
+one word: `nano`.
+
+frase: ``Use `code` in your Markdown file.``
+
+Blocks:
+```python
+import os
+```
+#+end_src
+** all
+#+BEGIN_SRC markdown
+## The second largest heading
+###### The smallest heading
+,**This is bold text**
+> Text that is a quote
+Use `git status` to list all new or modified files that haven't yet been committed.
+```
+git status
+git add
+git commit
+```
+: This site was built using [GitHub Pages](https://pages.github.com/).
+: [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+: ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+: [![name](link to image on GH)](link to your URL)
+: <https://www.markdownguide.org>
+: <fake@example.com>
+: I love supporting the **[EFF](https://eff.org)**.
+
+List:
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+To order your list:
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+Nested Lists
+1. First list item
+   - First nested list item
+     - Second nested list item
+
+<!-- This content will not appear in the rendered Markdown -->
+
+
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Command | Description |
+| --- | --- |
+| `git status` | List all *new or modified* files |
+| `git diff` | Show file differences that **haven't been** staged |
+
+
+Align:
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+
+#+END_SRC
+** links
+- Markdown rus https://doka.guide/tools/markdown/
+- https://github.com/mattcone/markdown-guide/tree/master
+* pages
+repo -> Settings ->pages
+
+Preview:
+- https://htmlpreview.github.io/?https://github.com/Anoncheg1/awesome-chinese/blob/main/index.html
+
+HTML:
+- touch .nojekyll
+- /_site/index.html
+  - Settings -> pages https://anoncheg1.github.io/awesome-chinese/
+
+pages
+- GitHub Pages supports two Markdown processors: kramdown and GitHub's own Markdown processor, which
+  is used to render GitHub Flavored Markdown (GFM)
+
+* decentralized share
+/etc/conf.d/git-daemon
+- GIT_USER="t"
+- GIT_GROUP="t"
+- GITDAEMON_OPTS="--syslog --export-all --enable=receive-pack --base-path=/home/t/share"
+  - If desired to accept git push and allow access all direct, it needs two options
+    --enable=receive-pack and --export-all in GITDAEMON_OPTS
+
+or use sshfs to directly access folder
+* branch metodology (rus)
+- Central Workflow - one master branch
+- Forking Workflow - 1) original or main branch 2) fork branch owned by another contributor which going to suggest merges to main
+- Developer Branch Workflow - one main and every developer has one or more own branches. finally forks will be merged to main.
+- Github Flow - (good for agile teams) - extension  to provide high-level repository operations for Vincent Driessen's branching model
+  - main branch - code works and ready to deploy at any time
+  - all brancches (features) - checked by leader of the team + one more specialist then merged to main
+- Feature Branch Workflow -
+  - main - stable
+  - dev -
+  - features branches - created from dev. finally merged to dev
+- Git Flow - big projects
+  - main branch or production - stable
+  - develop - may be not stable
+  - release1-9 branches - stabilization work take place here and merged to develop and master
+  - hotfix1-9 branches - for fast solving of critical problem of production branch. merged to develop and master.
+- Issue Branch Workflow - like a "Feature Branch Workflow" but with for issues
+** link
+https://view.genial.ly/633ae76d9e26ed001866821c/interactive-content-dst-30-bonus-mdnandgitunit8
+- Vincent Driessen's branching model https://nvie.com/posts/a-successful-git-branching-model/
+* commit metodology
+consist of
+- action
+- subject
+- comments
+
+vocabulary:
+- init — инициализация;
+- add — добавление;
+- delete — удаление;
+- update — изменение;
+- fix — исправление;
+- refactor — рефакторинг кода приложения;
+- style — исправление опечаток, форматирования;
+- docs — всё, что касается документации;
+- test — всё, что связано с тестированием;
+- merged, fix conflict — слияние, решение конфликта.
+* image upload
+- Just drag and drop your image from your local pc to github readme in editable mode.
+- You can create a .github/images directory in your repo and add all your assets there. Assets added
+  here will be available on
+: https://raw.githubusercontent.com/{github_user_name}/{repo_name}/{branch}/.github/images/{asset_name}.{asset_extension}
+
+Link in README.md:
+: ![Alt Text](/assets/{asset_name}.{asset_extension})
+
+* EXAPLES
+** branch
+# switch
+git checkout origin/another_branch
+
+# merge - to master
+git checkout master
+git merge hotfix
+
+** misstake
+# remove all except untracked files
+git reset --hard
+
+# rework the changes of the last commit ONLY before commit was pushed
+git commit --amend -m "asd"
+
+# remove last commits from remote repository
+git reset --hard a43e2d13
+git push origin development --force
+
+# undo last commits
+** tags
+# create tag for HEAD
+: git tag 1.6.1 -m 'Release 1.6.1'
+# push a tag or branch called tagname
+: git push origin [tagname]
+# to explicitly push a tag and not a branch
+: git push origin tag <tagname>
+# push all tags # not recommended
+: git push --tags
+# push single tag
+: git push origin v0.1
+# delete tag locally
+: git tag -d 1.7.0
+# delete tag in remote repository
+: git push origin :refs/tags/1.7.0
+
+# show the tag
+: git show 1.6.1
+: git chechout <tag_name>
+: git tag -n
+** all
+ref~ is shorthand for ref~1 and means the commit's first parent
+ref^1 ref^2 - two parents for merge commit
+
+# Show list of changed files
+git diff-tree --name-only -r <commit_id>
+git diff HEAD^ HEAD
+
+# only show line 1 and 2 in git blame. -w parameter to ignore white spaces
+git blame -w -L 1,2 [filename]
+
+# gives a summary of the changes by author
+git shortlog
+git shortlog -s    - only users
+
+git pull = git fetch + git merge
+git pull --rebase = git fetch + git rebase - clear changes
+
+git checkout  - reset file to latest commit or stagged state
+
+git status - Displays paths that have any differences
+
+
+git config --global --list
+git config --list    - repository config
+
+
+
+git clone git://github.com/vogella/gitbook.git			git - default protocol 9148 port
+git clone http://github.com/vogella/gitbook.git			clone via HTTP
+git clone ssh://git@github.com/vogella/gitbook.git      git - name for ssh
+URL for remote: git@github.com/vogella/gitbook.git
+
+# show the details of the remote repo called origin
+git remote show origin      - get a full list of Remote references are references (pointers) in your remote repositories, including branches, tags, and so on.
+git ls-remote origin   - like above
+git remote -v
+
+
+     ###  Stagging area  ###
+git add [path] -add to staging area
+git reset [path] -remove staging area
+git diff --cached         -shows the differences between the staging area and the last commit
+git add -n .              - on’t actually add the file(s), just show if they exist and/or will be ignored.
+
+#clean
+git reset --hard     - clean stagging area but do not touch untracked files
+git clean -fdx    - remove untracked files -f force -d directories -x hidden files
+
+#reset to origin
+git fetch origin
+git reset --hard origin/master
+git checkout master
+
+
+git reset HEAD~1  - move HEAD and branch pointer - do nothing with untracked files
+Reset			Branch pointer		Working tree		Staging area
+soft			Yes					No					No
+mixed (default)	Yes					No					Yes
+hard			Yes					Yes					Yes
+
+
+git reflog - show HEAD movements and found reseted commits
+
+git show HEAD:./pom.xml   -show file
+
+
+Create patch:
+# change some content in an existing file
+echo "new content for test01" >test01
+# commit this to the branch
+git add .
+git diff -p --stat > 0001-First-commit-in-the-branch.patch
+# or
+git commit -m "first commit in the branch"
+# creates a patch --> git format-patch master
+# this creates the file:
+# patch 0001-First-commit-in-the-branch.patch
+git format-patch origin/master
+# or
+git format-patch -3 HEAD # for last 3 commits
+# Apply patch:
+# switch to the master branch
+git checkout master
+# apply the patch
+git apply 0001-First-commit-in-the-branch.patch
+# change can be committed
+git add .
+git commit -m "apply patch"
+# delete the patch file
+rm 0001-First-commit-in-the-branch.patch
+#short
+git am *.patch   -order in which the patches are applied by specifying them on the command line.
+
+
+#remove last commit
+git reset --hard HEAD~
+git commit --amend
+git push -f origin master
+
+
+#fix detached HEAD
+git checkout master
+
+
+#Subtree  https://help.github.com/articles/about-git-subtree-merges/
+git remote add -f test-subtree git@github.com:Anoncheg1/test-subtree.git
+#--no-commit perform the merge but pretend the merge failed and  do not autocommit
+# If you prefer you can squash all the commits into a single one by using the –squash switch when issuing the split command above.
+git merge -s ours --squash --no-commit --allow-unrelated-histories test-subtree/master
+	git read-tree --prefix=test-subtree/ -u test-subtree/master
+
+#pull changed subtree in parent
+git pull --allow-unrelated-histories --squash -s subtree test-subtree master
+
+#push subtree from parent
+???
+
+
+# Submodule http://www.vogella.com/tutorials/GitSubmodules/article.html
+# https://blogs.atlassian.com/2013/03/git-submodules-workflows-tips/
+# 1) always publish the submodule change before publishing the change to the superproject that references it.
+# 2) remember to commit all your changes before running git submodule update
+git submodule add [URL to Git repo]
+git submodule init
+git submodule update --remote   -remote if you need branches. updates the working tree to the commit described by the branch
+cd [submodule directory]
+git checkout master
+git pull
+# and commit parrent.
+
+# Cloning
+git clone --recursive
+
+#push submodule from parent
+#cd submodule
+git status        - check that we on master
+git checkout master      - if detached HEAD mode
+commit submodule
+cd parent
+commit parent
+git submodule update
+
+#commit main
+git submodule update
+git commit
+
+* USE CASE
+** see changes
+- git diff myfile.txt			#  haven't git added yet
+- git diff --cached myfile.txt	#  already added
+
+** branches
+remove commits to another branch
+- git checkout -b new
+- git checkout old
+- git reset --hard commit
+- git push origin --force
+
+remove commits from remote branch
+-
+
+merge range of commits
+- cherry-pick
+  - git checkout old_or_master
+  - git checkout -b new_branch
+  - git cherry-pick a..e # from development
+
+update branch from master
+1) chechout + merge + push
+   - git checkout b1
+   - git merge origin/master
+   - git push origin b1
+2) fetch + rebase
+   - git fetch
+   - git rebase origin/master
+** explore unknown repo
+- git branch -a  (all or -r remote)
+- git log --graph --oneline
+- fetch/push: git remote -v
+- authors: git shortlog --summary --numbered --email --since "2 year ago" or git shortlog -sne
+- git tag # get all tags and versons
+
+** pull forced
+git reset --hard
+git pull
+
+** delete all hisotry / remove all commits
+- git checkout --orphan latest_branch
+- git add -A
+- git commit -am "commit message"
+- git branch -D main
+- git branch -m main
+- git push -f origin main
+
+
+
+
+# old:
+git checkout --orphan latest_branch
+git add -A
+git commit -am "commit message"
+git branch -D master
+git branch -m master      -rename current branch to master
+git push -f origin master
+git branch -u origin/master master   - to track remote
+
+# apply changes on clints:
+git --work-tree="." pull --allow-unrelated-histories
+git merge
+git rebase
+** delete commits after
+- git reset --hard commit
+- git push origin HEAD --force ??????
+- git push origin +HEAD:development
+
+** check if working tree has local changes
+one of:
+- git status -s
+- git diff --name-only
+
+git diff HEAD
+
+git status -u - display untacked files
+** seach
+*in files*
+git grep WHAT
+- -n add line number
+- --count print only sum occurances
+- --heading --break  - more readable
+
+*in content of commits*
+git log -S WHAT --oneline
+
+** restore file to HEAD
+git restore file
+
+** get all authors
+- git shortlog -sn --since "2 year ago"
+** git move between commits
+- git checkout HEAD^
+- git switch - and/or git checkout master
+
+** How to Sync Your Fork with the Original Git Repository
+# Add a new remote upstream repository
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+
+# Sync your fork
+#+begin_src bash :results output
+git remote add upstream https://github.com/<aUser>/<aRepo.git>
+git fetch upstream
+git checkout master
+git merge upstream/master
+#+end_src
+** replace remote history with local
+** clone single branch and tags
+: git clone --single-branch --branch main https://github.com/username/repository.git
+: cd repository
+: git fetch --tags
+** make fork with single main and sync tags
+: git remote add upstream https://github.com/ORIGINAL-USERNAME/ORIGINAL-REPOSITORY.git
+: git fetch upstream --tags
+: git push origin --tags
+** tracking branch
+: git checkout main
+: git branch -c main main-origin
+: git push origin main-origin
+: git remote add upstream https://github.com/ORIGINAL-USERNAME/ORIGINAL-REPOSITORY.git
+: git fetch upstream (may be not needed)
+: git ls-remote --heads upstream
+: git branch -u upstream/main main-origin
+: git branch -vv
+** adding modifications at old commit
+Approach: old to new “stash apply”.
+: git checkout -b old-branch 9578c2597e2d88b6f0b304b5a05864fd613ddcc1
+: # made changed to old-branch
+: git stash
+: git checkout -b merge-branch main
+: git stash apply
+: git merge old-branch
+: # resolve conficts
+
+** patch creation and applying
+.patch file consist of:
+- Header. If a line starts with a space, Git will treat it as a continuation of the previous line,
+  rather than a new line. This is a common convention in email and other text formats, where a line
+  starting with a space indicates that it's a continuation of the previous line.
+- Diffs with one or more hunks.
+- Trailer or Footer, may have Signed-off-by line.
+: --
+: 2.45.2
+
+
+Creation:
+: commit and "git format-patch -1 HEAD" OR "git diff --stat -p > patch.patch"
+
+Applying patch:
+: git apply --stat a_file.patch
+: git apply --check a_file.patch # dry run
+: git apply a_file.patch
+
+Header.
+
+* WORKFLOWS
+** Merge changes in a big project
+Steps:
+1. Create a new dev branch
+2. Do your work on local dev branch
+3. Push dev branch from your local to central git repository
+4. Once your work is done, pull changes from master
+   - There is a race condition here, just as in CVS and Bazaar: if your mirror is not up-to-date
+   because another developer has pushed since you last updated, your push will fail.
+5. merge dev branch to the master
+6. push changes
+7. Finally, delete the dev branch from both local and central git repository
+
+Commands:
+1. git checkout -b my_branch
+2. git commit -m " "
+3. git push --set-upstream origin my_branch
+4. git checkout development
+5. git pull
+6. git merge my_branch
+7. git push
+8. git branch -d dev
+9. git branch -d -r origin/dev
+
+
+If the push fails because someone pushed since your last git pull, rebase on the latest master and push again:
+1. git pull --rebase
+2. git push
+
+https://www.emacswiki.org/emacs/GitForEmacsDevs
+** Back-porting Changes from Master to the Release Branch
+To do this, use the cherry-pick method:
+1) First use the git log command to find the commit you are looking for.
+2) Then switch to the release branch, update it, and do the cherry-pick:
+3) git pull
+4) git checkout release-25  # make sure you have the release branch checked-out
+5) git cherry-pick -xe COMMIT
+6) git show # Finally, review your back-port and push:
+7) git push
+* join commits together, merge commits, squash commits, Squash commits into one
+merge two last commits together:
+: git rebase --interactive HEAD~2
+or
+: git merge --squash bigix # Takes all commits from the bugfix branch and groups it for a 1 commit with your current branch.
+
+
+merge in history:
+: : git rebase -i <commit_hash> # after which others will be squashed
+: select commits that will be squashed
+; git push --force-with-lease
+* humor
+when the Internet connection lost: "Looks like something went wrong!"
+* Troubleshooting
+** You have divergent branches and need to specify how to reconcile them.
+- There is a merge conflict, you should one of:
+  - git merge or git pull --no-ff # create merge
+  - git rebase or git pull --rebase # temporarily removes commits from our local branch and do fast-forward
+
+- pull.rebase false :: Merge. This is the default setting. *git fetch* + *git merge* for pull
+  - When You're working on a team and need to preserve the commit history, including merge
+  commits. with many merges and conflicts.
+  - This creates a new merge commit that combines the histories of both branches.
+  - If there are conflicts, you'll need to resolve them manually, then commit the merge.
+  - steps:
+    - git config pull.rebase false
+    - git pull origin main
+- pull.rebase true :: *git fetch* + *git rebase*. This means that your local changes will be
+  replayed on top of the remote changes, creating a linear history with no merge commits. But
+  requires a force push to update the remote branch.
+  - Rewrites the commit history, which can cause problems if you've already shared your changes with others.
+  - May lose the context of merge commits, which can make it harder to understand the commit history.
+  - steps:
+    - git config pull.rebase true
+    - git pull --rebase origin main
+    - git push origin main --force
+- pull.ff only :: This configuration tells git pull to only perform fast-forward merges, which means
+ that the local branch will be updated only if it can be fast-forwarded to the remote branch. If
+ there are any divergent changes, git pull will fail and you will need to resolve the conflicts
+ manually.
+  - However, this will result in an error if a fast-forward is not possible, as indicated by the
+    message fatal: Not possible to fast-forward, aborting
+  - steps: git config pull.ff only
+
+you can always set this configuration per-branch or per-repository, depending on your specific needs.
+*** Merge strategy:
+#+begin_src conf
+# Fetch the latest changes from the remote repository
+git fetch origin
+
+# Pull and merge the remote changes into your local branch
+git pull origin main
+
+# If there are conflicts, resolve them and commit the merge
+git add <conflicted-file>
+git merge --continue
+
+# Push the updated branch to the remote repository
+git push origin main
+#+end_src
+
+*** Rebase strategy
+#+begin_src conf
+# Fetch the latest changes from the remote repository
+git fetch origin
+
+# Rebase your local changes on top of the remote branch
+git rebase origin/main
+
+# Resolve any conflicts during the rebase
+git add <conflicted-file>
+git rebase --continue
+
+# Force push the updated branch to the remote repository
+git push origin main --force
+#+end_src
+
+** Your branch and 'origin/main' have diverged
+Git think it's unrelated histories.
+#+begin_src text
+---a---b---main
+        \      \
+          x x x x   diverged, cannot be merged anymore
+          \      \
+    ---?---?---?---c(origin/main)
+#+end_src
+
+And finally, the simple resolution is: git reset --hard origin/main, if you don't care the local changes, otherwise you will lost all your work.
+
+Or try
+: git pull --depth=2.
+
+** bare clone
+"error: src refspec refs/heads/master does not match any" or "from the remote, but no such ref was fetched"
+:
+** shallow update not allowed
+If your repository was cloned with the --shallow option, it only includes a limited number of
+ commits, which can cause issues when pushing to a new remote. Solution:
+: git fetch --unshallow
+* status badge
+https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
+
+https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg
+
+: ![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
+select branch:
+: ![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
+
+event:
+: ![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
+: ![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=release)
+* python bots
+- python/miss-islington
+- python/bedevere
+- python/the-knights-who-say-ni
+* https://jonas.github.io/tig/
+- tig log    [options] [revisions] [--] [paths] :: .
+- tig show   [options] [revisions] [--] [paths] :: Open diff view using the given git-show(1) options.
+- tig reflog [options] [revisions] :: .
+- tig blame  [options] [rev] [--] path ::  given file annotated by commits
+- tig grep   [options] [pattern] :: .
+- tig refs   [options] :: .
+- tig stash  [options] ::
+- tig status :: .
+- tig < :: .
+- tig +N :: show +2 = +1 commit from HEAD
+** Keybindings
+View Switching
+- m Switch to main view.
+- d Switch to diff view.
+- l Switch to log view.
+- p Switch to pager view.
+- t Switch to (directory) tree view.
+- f Switch to (file) blob view.
+- g Switch to grep view.
+- b Switch to blame view.
+- r Switch to refs view.
+- y Switch to stash view.
+- h Switch to help view
+- s Switch to status view
+- c Switch to stage view
+* Git local server and git init --bare
+- mkdir website.git
+- git init --bare
+equal:
+- git clone ssh://user@git.example.com:/srv/git/my_project
+- git clone user@git.example.com:/srv/git/my_project.git
+- git clone user@git.example.com:/srv/git/my_project ./my_project
+- git remote add origin user@git.example.com:/srv/git/my_project.git
+
+--bare - no working tree, repository is special
+- --share - Make the repository group-writable g+sx
+
+to clone local bare folder:
+1) git clone --local proj-py.git # will crate proj-py folder
+2) touch .gitignore # create first commit to have branch
+3) git add .
+4) git commit -m "init"
+5) git push
+
+By convention, bare repository directory names end with the suffix .git.
+- If a user SSHs into a server and has write access to the /srv/git/my_project.git directory, they
+ will also automatically have push access.
+- git init --bare -shared - add group write permissions to a repository properly
+
+
+The --local option is not necessary when cloning a local repository, as Git will automatically use
+ hard links to share the object database between the two repositories.
+
+the 'master' branch is not created automatically when you initialize a Git repository. It's created
+ after you make your first commit. to solve this:
+* migrate to codeberg
+https://dontreinventbicycle.com/github-to-codeberg-howto.html
+
+1) create repository with same name.
+1) git remote set-url origin git@codeberg.org:username/repository.git
+2) git push -u origin main
+
+* CGIT - wtf is this?
+*How to find git clone link?*
+- It is common known: git://site/repo
+* Github Models
+https://docs.github.com/en/github-models
+** Rate limits
+Low
+- Requests per minute 	15
+- Requests per day 	150
+
+High
+- Requests per minute 	10
+- Requests per day 	50
+
+Tokens per request: 8000 in, 4000 out
+** models
+| Meta-Llama-3-70B-Instruct | 70-billion | 8k input · 4k output  |
+| "Mistral-large"           |            | 33k input · 4k output |
+|                           |            |                       |
+
+** usage Meta-Llama-3-70B-Instruct
+export GITHUB_TOKEN="<your-github-token-goes-here>"
+
+import ModelClient from "@azure-rest/ai-inference";
+import { AzureKeyCredential } from "@azure/core-auth";
+
+const token= process.env["GITHUB_TOKEN"];
+const endpoint = "https://models.inference.ai.azure.com";
+const modelName = "Meta-Llama-3-70B-Instruct";
+
+export async function main() {
+
+  const client = new ModelClient(
+    endpoint,
+    new AzureKeyCredential(token),
+  );
+
+  const response = await client.path("/chat/completions").post({
+    body: {
+      messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "What is the capital of France?" },
+        { role: "assistant", content: "The capital of France is Paris." },
+        { role: "user", content: "What about Spain?" },
+      ],
+      model: modelName,
+    }
+** usage with curl
+#+begin_src bash :eval no :exports code :results none
+curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $GITHUB_TOKEN" \
+    -d '{
+        "messages": [
+            {
+                "role": "system",
+                "content": ""
+            },
+            {
+                "role": "user",
+                "content": "Can you explain the basics of machine learning?"
+            }
+        ],
+        "model": "Mistral-large",
+        "temperature": 0.8,
+        "max_tokens": 2048,
+        "top_p": 0.1
+    }'
+#+end_src
+
+* Copilot Free
+vscode:extension/GitHub.copilot?referrer=docs-copilot-setup
+** What’s included
+- 2,000 intelligent code completions a month. Get context-aware code suggestions that draw
+  context from your GitHub projects  and VS Code workspace.
+- 50 Copilot Chat messages a month. Ask Copilot for help understanding code, refactoring something, or debugging an issue.
+- Choose your AI model. Pick between Claude 3.5 Sonnet or OpenAI GPT-4o.
+- Make changes to multiple files with Copilot Edits. Tackle changes across multiple files with Copilot Edits.
+- Support for the Copilot Extensions ecosystem. Access third-party agents designed for tasks such
+  as querying Stack Overflow or searching the web with Perplexity.
+- Choose where you build. Enjoy support in VS Code and across GitHub.
+** VSCODE:
+- “Use AI Features with Copilot for Free...” - unified GitHub Copilot extension (installed by default)
+- Sign in to Copilot
+
+https://code.visualstudio.com/docs/copilot/setup
+
+GitHub Copilot: This is the official GitHub Copilot extension for VSCode
+- https://plugins.jetbrains.com/plugin/17718-github-copilot
+
+Copilot Extension: This extension provides additional features and settings for GitHub Copilot, such
+ as customizable keyboard shortcuts, code snippet management, and more.
+
+third-party extensions that integrate with GitHub Copilot include:
+- TabNine: This extension provides AI-powered code completion and code suggestions, and can be used
+  in conjunction with GitHub Copilot.
+- Kite: This extension offers AI-powered code completion, code suggestions, and code review, and can
+  be used with GitHub Copilot.
+- Codeium: This extension provides AI-powered code completion, code suggestions, and code review,
+  and can be used with GitHub Copilot.
+
+** build own:
+- https://github.com/features/copilot/extensions#resources
+- https://github.com/copilot-extensions/skillset-example
+
+
+approaches:
+- skillsets approach
+- traditional agent
+* Git Large File Storage (LFS)
+https://github.com/git-lfs/git-lfs/wiki/Tutorial
+
+to test if installed:
+: git lfs install
+
+
+: git lfs track '*.bin'
+List tracked patterns (from .gitattributes):
+: git lfs track
+List tracked files:
+: git lfs ls-files
+
+Maximum file size for GitHub Free: 2 GB
+** TODO without git
+SSH version:
+#+begin_src bash :eval no :exports code :results none
+#!/usr/bin/env bash
+
+PROJECT="${1}" # your-company/or-repo/whatever
+FILEPATH="${2}" # foo/bar.tar.gz
+REF="${3:-master}" # branch
+SSHID="${4:-$HOME/.ssh/ecdsa_id}" # like $HOME/.ssh/mycompany
+
+OID="$(set -o pipefail; curl -fSL -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "https://gitlab.com/api/v4/projects/${PROJECT//\//%2F}/repository/files/${FILEPATH//\//%2F}/raw?ref=${REF}" -o - | grep '^oid' | cut -d: -f2)"
+AUTH="$(set -o pipefail; ssh -o IdentitiesOnly=yes -o IdentityFile="${SSHID}" git@gitlab.com git-lfs-authenticate "${PROJECT}.git" download | jq -er '.header.Authorization')"
+mkdir -p "${FILEPATH%%/*}"
+curl -H "Authorization: $AUTH" "https://gitlab.com/${PROJECT}.git/gitlab-lfs/objects/${OID}" -o "${FILEPATH}"
+file "${FILEPATH}"
+#+end_src
+
+HTTP version:
+#+begin_src bash :eval no :exports code :results none
+#!/usr/bin/env bash
+
+PROJECT="${1}" # your-company/or-repo/whatever
+FILEPATH="${2}" # foo/bar.tar.gz
+BRANCH="${3:-master}" # branch
+
+# get LFS file info
+IFS=$'\n' LFS_OBJECT_INFO=($(curl -fsSL -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "https://gitlab.com/api/v4/projects/${PROJECT//\//%2F}/repository/files/${FILEPATH//\//%2F}/raw?ref=${BRANCH}" -o -))
+OID="$(echo "${LFS_OBJECT_INFO[@]}" | grep -oP "oid sha256:\K[^\s]+")"
+SIZE="$(echo "${LFS_OBJECT_INFO[@]}" | grep -oP "size \K[^\s]+")"
+# request actions for given lfs objects
+LFS_OBJECT_REQUEST_JSON="$(jq -rnc --arg oid $OID --arg size $SIZE --arg ref "refs/heads/$BRANCH" '{"operation":"download","objects":[{"oid":$oid,"size":$size}],"transfers":["lfs-standalone-file","basic"],"ref":{"name": $ref }}')"
+LFS_OBJECT_ACTION_DOWNLOAD="$(set -o pipefail; curl -sSlf -H "Content-Type: application/json" -X POST -d "$JSON" "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${PROJECT}.git/info/lfs/objects/batch" | jq -er '.objects[0].actions.download')"
+AUTH="$(echo "$LFS_OBJECT_ACTION_DOWNLOAD" | jq -er '.header.Authorization')"
+DOWNLOAD_URL="$(echo "$LFS_OBJECT_ACTION_DOWNLOAD" | jq -er '.href')"
+mkdir -p "${FILEPATH%%/*}"
+curl -H "Authorization: ${AUTH}" "${DOWNLOAD_URL}" -o "${FILEPATH}"
+#+end_src
+** Alternatives
+- git-annex
+- git-bigfiles
+- git-fat
+- git-media
+- git-bigstore
+- git-sym

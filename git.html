@@ -1,0 +1,3716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9609bea">1. clone specific tag</a></li>
+<li><a href="#orgf4fccc3">2. investigate folder</a></li>
+<li><a href="#orgf68b2b7">3. http to git with Bash</a></li>
+<li><a href="#orga4e0c74">4. pull to diff from GitHub interface</a></li>
+<li><a href="#org41d1ea0">5. cheat sheet</a></li>
+<li><a href="#orgc95ec69">6. SHA1 (default)</a></li>
+<li><a href="#org820c0f7">7. CLA and DCO, signoff and gpg-sign</a></li>
+<li><a href="#org6bb4e6d">8. GitLab tagline, forge</a></li>
+<li><a href="#org5f3eb35">9. GitHub actions - CI/CD platform</a>
+<ul>
+<li><a href="#org316a8b2">9.1. theory</a></li>
+<li><a href="#org4923551">9.2. features</a></li>
+<li><a href="#org6b147a0">9.3. terms</a></li>
+<li><a href="#orge7d7932">9.4. workflow file</a></li>
+<li><a href="#org0df7293">9.5. examples of workflow files</a>
+<ul>
+<li><a href="#orgd523d39">9.5.1. checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version</a></li>
+</ul>
+</li>
+<li><a href="#org5e8cb0e">9.6. variables</a></li>
+<li><a href="#org8d756b1">9.7. events that trigger workflows</a>
+<ul>
+<li><a href="#orge15ca01">9.7.1. frequent events:</a></li>
+<li><a href="#org8b90abb">9.7.2. ex</a></li>
+</ul>
+</li>
+<li><a href="#orga65ae1a">9.8. secrets and variables</a>
+<ul>
+<li><a href="#org2531735">9.8.1. GITHUB<sub>TOKEN</sub></a></li>
+</ul>
+</li>
+<li><a href="#org2be332d">9.9. jobs</a>
+<ul>
+<li><a href="#org7e85538">9.9.1. ex</a></li>
+<li><a href="#orgaba0469">9.9.2. links</a></li>
+</ul>
+</li>
+<li><a href="#org1e40c87">9.10. steps</a>
+<ul>
+<li><a href="#org0d79b1e">9.10.1. uses</a></li>
+</ul>
+</li>
+<li><a href="#org306677f">9.11. actions</a>
+<ul>
+<li><a href="#org12c2bb1">9.11.1. checkout</a></li>
+<li><a href="#org38d8e8b">9.11.2. ex</a></li>
+</ul>
+</li>
+<li><a href="#orgc2cb61e">9.12. variables</a>
+<ul>
+<li><a href="#org7d09664">9.12.1. secrets</a></li>
+</ul>
+</li>
+<li><a href="#org1334545">9.13. runs-on</a></li>
+<li><a href="#org31a70d0">9.14. passing data between &#x2026;</a></li>
+<li><a href="#org984f488">9.15. release</a></li>
+<li><a href="#org45c0abf">9.16. links</a></li>
+</ul>
+</li>
+<li><a href="#org1caf393">10. GitHub special files</a>
+<ul>
+<li><a href="#org4831489">10.1. docs/CONTRIBUTING.md</a></li>
+<li><a href="#orgd3caf30">10.2. .git-blame-ignore-revs</a></li>
+<li><a href="#org831ac6c">10.3. .github/CODEOWNERS</a></li>
+<li><a href="#org90ac989">10.4. .github/SECURITY.md</a></li>
+<li><a href="#org310ecf4">10.5. .gitignore</a>
+<ul>
+<li><a href="#orgcfc0281">10.5.1. python .gitignore</a></li>
+</ul>
+</li>
+<li><a href="#org1b03b45">10.6. <span class="todo TODO">TODO</span> .gitlab-ci.yml</a></li>
+</ul>
+</li>
+<li><a href="#orgea804a3">11. Github search</a>
+<ul>
+<li><a href="#orgb1e2d5d">11.1. links</a></li>
+</ul>
+</li>
+<li><a href="#org6342314">12. install git</a></li>
+<li><a href="#orgb00483c">13. Global settings: Author identity unknown, proxy</a>
+<ul>
+<li><a href="#org6ebe918">13.1. global config files, Anonymous</a></li>
+<li><a href="#orga717706">13.2. proxy</a></li>
+<li><a href="#org95e8309">13.3. ssh</a></li>
+</ul>
+</li>
+<li><a href="#org15f5638">14. revisions</a></li>
+<li><a href="#orgb12fa6a">15. Definitions</a>
+<ul>
+<li><a href="#org856a8c7">15.1. Pull</a></li>
+<li><a href="#org395af59">15.2. Push</a></li>
+<li><a href="#org2aa9c3a">15.3. Branch</a></li>
+<li><a href="#orga932af5">15.4. TAG</a></li>
+<li><a href="#org0c117f1">15.5. .git/config, remote</a></li>
+<li><a href="#orgfb937e3">15.6. Submodule</a></li>
+<li><a href="#orgfbea875">15.7. cherry-pick</a></li>
+</ul>
+</li>
+<li><a href="#orgb13678b">16. commands</a></li>
+<li><a href="#org28db7e1">17. GIT Branching Strategies</a></li>
+<li><a href="#orgecccc3e">18. branches</a>
+<ul>
+<li><a href="#orgbe840f1">18.1. theory</a></li>
+</ul>
+</li>
+<li><a href="#org8d8dea8">19. remote branches, upstream braches and symrefs</a>
+<ul>
+<li><a href="#orgf3c69cf">19.1. kinds of symrefs</a></li>
+</ul>
+</li>
+<li><a href="#org574e24e">20. User/Password locally for repository (save password in repository)</a></li>
+<li><a href="#org0007fc7">21. log</a></li>
+<li><a href="#org22ab645">22. diff</a></li>
+<li><a href="#orgb486dd5">23. merge</a></li>
+<li><a href="#org2d5adf6">24. pull request - Best Practices </a></li>
+<li><a href="#orge1bc601">25. markdown</a>
+<ul>
+<li><a href="#org743ee8a">25.1. headers</a></li>
+<li><a href="#org3b4ad76">25.2. code</a></li>
+<li><a href="#org507b248">25.3. all</a></li>
+<li><a href="#orgb9b1eb2">25.4. links</a></li>
+</ul>
+</li>
+<li><a href="#orgb4cdca1">26. pages</a></li>
+<li><a href="#orgd2a783a">27. decentralized share</a></li>
+<li><a href="#orga68f2d5">28. branch metodology (rus)</a>
+<ul>
+<li><a href="#org238927c">28.1. link</a></li>
+</ul>
+</li>
+<li><a href="#orgc57ee64">29. commit metodology</a></li>
+<li><a href="#orgfd1c895">30. image upload</a></li>
+<li><a href="#orgbf94482">31. EXAPLES</a>
+<ul>
+<li><a href="#orgf044512">31.1. branch</a></li>
+<li><a href="#orgd43524e">31.2. misstake</a></li>
+<li><a href="#orgbd76045">31.3. tags</a></li>
+<li><a href="#orgb028b85">31.4. all</a></li>
+</ul>
+</li>
+<li><a href="#orga6afa4e">32. USE CASE</a>
+<ul>
+<li><a href="#orgd4b593a">32.1. see changes</a></li>
+<li><a href="#orgc08dba4">32.2. branches</a></li>
+<li><a href="#org9629cdf">32.3. explore unknown repo</a></li>
+<li><a href="#orged9a421">32.4. pull forced</a></li>
+<li><a href="#org4a2ce27">32.5. delete all hisotry / remove all commits</a></li>
+<li><a href="#org4284023">32.6. delete commits after</a></li>
+<li><a href="#org1a6910c">32.7. check if working tree has local changes</a></li>
+<li><a href="#orgfe3173d">32.8. seach</a></li>
+<li><a href="#org0671ad1">32.9. restore file to HEAD</a></li>
+<li><a href="#org8cffaef">32.10. get all authors</a></li>
+<li><a href="#orge04fa39">32.11. git move between commits</a></li>
+<li><a href="#org3397ed5">32.12. How to Sync Your Fork with the Original Git Repository</a></li>
+<li><a href="#orgd669744">32.13. replace remote history with local</a></li>
+<li><a href="#orgace125c">32.14. clone single branch and tags</a></li>
+<li><a href="#org77c9d54">32.15. make fork with single main and sync tags</a></li>
+<li><a href="#org87a6e98">32.16. tracking branch</a></li>
+<li><a href="#orged88af5">32.17. adding modifications at old commit</a></li>
+<li><a href="#org936fe91">32.18. patch creation and applying</a></li>
+</ul>
+</li>
+<li><a href="#orgb85ce17">33. WORKFLOWS</a>
+<ul>
+<li><a href="#org5f7cedf">33.1. Merge changes in a big project</a></li>
+<li><a href="#org0ccc0d3">33.2. Back-porting Changes from Master to the Release Branch</a></li>
+</ul>
+</li>
+<li><a href="#org7388d20">34. join commits together, merge commits, squash commits, Squash commits into one</a></li>
+<li><a href="#orgc42ea6a">35. humor</a></li>
+<li><a href="#orgc3720d0">36. Troubleshooting</a>
+<ul>
+<li><a href="#orgd89cb09">36.1. You have divergent branches and need to specify how to reconcile them.</a>
+<ul>
+<li><a href="#org24448b7">36.1.1. Merge strategy:</a></li>
+<li><a href="#orgad84c11">36.1.2. Rebase strategy</a></li>
+</ul>
+</li>
+<li><a href="#org0c4e7c0">36.2. Your branch and 'origin/main' have diverged</a></li>
+<li><a href="#org3e92fd1">36.3. bare clone</a></li>
+<li><a href="#org0fd79ea">36.4. shallow update not allowed</a></li>
+</ul>
+</li>
+<li><a href="#org11ed019">37. status badge</a></li>
+<li><a href="#org8f3b5dc">38. python bots</a></li>
+<li><a href="#org6352d78">39. https://jonas.github.io/tig/</a>
+<ul>
+<li><a href="#orgd593301">39.1. Keybindings</a></li>
+</ul>
+</li>
+<li><a href="#org6aedc24">40. Git local server and git init &#x2013;bare</a></li>
+<li><a href="#org0009e33">41. migrate to codeberg</a></li>
+<li><a href="#orga2a0702">42. CGIT - wtf is this?</a></li>
+<li><a href="#orgf7539ee">43. Github Models</a>
+<ul>
+<li><a href="#org026ecb7">43.1. Rate limits</a></li>
+<li><a href="#org17ef58d">43.2. models</a></li>
+<li><a href="#orgb40299c">43.3. usage Meta-Llama-3-70B-Instruct</a></li>
+<li><a href="#org27199fe">43.4. usage with curl</a></li>
+</ul>
+</li>
+<li><a href="#org972c391">44. Copilot Free</a>
+<ul>
+<li><a href="#org3add8bd">44.1. What’s included</a></li>
+<li><a href="#org4c8a98f">44.2. VSCODE:</a></li>
+<li><a href="#org4cfa119">44.3. build own:</a></li>
+</ul>
+</li>
+<li><a href="#org2521618">45. Git Large File Storage (LFS)</a>
+<ul>
+<li><a href="#orgba4cccf">45.1. <span class="todo TODO">TODO</span> without git</a></li>
+<li><a href="#orgb98a2cf">45.2. Alternatives</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 100;-</b>-
+git clone ssh://git@github.com/&lt;user&gt;/&lt;repository<sub>name</sub>&gt;.git
+<a href="https://packages.gentoo.org/categories/dev-vcs">https://packages.gentoo.org/categories/dev-vcs</a>
+</p>
+<div id="outline-container-org9609bea" class="outline-2">
+<h2 id="org9609bea"><span class="section-number-2">1.</span> clone specific tag</h2>
+<div class="outline-text-2" id="text-1">
+<pre class="example">
+git clone --branch &lt;tag-name&gt; --single-branch https://github.com/example/repo.git
+</pre>
+
+
+<p>
+<a href="https://graphite.dev/guides/git-clone-specific-tag">https://graphite.dev/guides/git-clone-specific-tag</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf4fccc3" class="outline-2">
+<h2 id="orgf4fccc3"><span class="section-number-2">2.</span> investigate folder</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+list files:
+</p>
+<pre class="example">
+find $PWD -type f
+</pre>
+
+<p>
+tree of folders:
+</p>
+<pre class="example">
+ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--|/g' -e 's/^/ /' -e 's/-/|/'
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf68b2b7" class="outline-2">
+<h2 id="orgf68b2b7"><span class="section-number-2">3.</span> http to git with Bash</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #cae682; font-weight: bold;">http_to_ssh</span>() {
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Usage:</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">$ http_to_ssh https://github.com/user/repo.git</span>
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">$ echo https://github.com/user/repo.git | http_to_ssh</span>
+
+    <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">- Read input from stdin or arguments</span>
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> [ $<span style="color: #cae682;">#</span> -eq 0 ]; <span style="color: #8ac6f2; font-weight: bold;">then</span>
+        <span style="color: #cae682;">url</span>=$(<span style="color: #fa8072;">cat</span>)
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>
+        <span style="color: #cae682;">url</span>=$<span style="color: #cae682;">1</span>
+    <span style="color: #8ac6f2; font-weight: bold;">fi</span>
+
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> [[ $<span style="color: #cae682;">url</span> =~ ^https:// ]]; <span style="color: #8ac6f2; font-weight: bold;">then</span>
+        <span style="color: #cae682;">url</span>=${<span style="color: #cae682;">url</span>#https://} <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Remove the "https://" prefix from the URL</span>
+        <span style="color: #cae682;">url</span>=${<span style="color: #cae682;">url</span>%.git} <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Remove any trailing ".git" from the URL</span>
+        <span style="color: #cae682;">url</span>=${<span style="color: #cae682;">url</span>%/} <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Remove any trailing slashes from the URL</span>
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">- Split the URL into parts using the "/" character as a delimiter</span>
+        <span style="color: #cae682;">parts</span>=(${<span style="color: #cae682;">url</span>//<span style="color: #95e454;">\/</span>/ })
+        <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">- Extract the owner and repository names from the URL parts</span>
+        <span style="color: #cae682;">serv</span>=${<span style="color: #cae682;">parts</span>[0]} <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">github.com</span>
+        <span style="color: #cae682;">owner</span>=${<span style="color: #cae682;">parts</span>[1]}
+        <span style="color: #cae682;">repo</span>=${<span style="color: #cae682;">parts</span>[2]}
+        <span style="color: #cae682;">ssh_url</span>=<span style="color: #95e454;">"git@${serv}:${owner}/${repo}.git"</span>
+        <span style="color: #e5786d;">echo</span> <span style="color: #95e454;">"$ssh_url"</span>
+    <span style="color: #8ac6f2; font-weight: bold;">else</span>
+        <span style="color: #e5786d;">echo</span> <span style="color: #95e454;">"Invalid HTTP URL"</span> &gt;&amp;2
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> 1
+    <span style="color: #8ac6f2; font-weight: bold;">fi</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4e0c74" class="outline-2">
+<h2 id="orga4e0c74"><span class="section-number-2">4.</span> pull to diff from GitHub interface</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="https://github.com/user/repository/pull/123.patch">https://github.com/user/repository/pull/123.patch</a> for a mail-formatted patch file.</li>
+<li><a href="https://github.com/user/repository/pull/123.diff">https://github.com/user/repository/pull/123.diff</a> for a unified diff file.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org41d1ea0" class="outline-2">
+<h2 id="org41d1ea0"><span class="section-number-2">5.</span> cheat sheet</h2>
+<div class="outline-text-2" id="text-5">
+
+<div id="org9b8f60f" class="figure">
+<p><img src="./imgs/git-commands.jpg" alt="git-commands.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc95ec69" class="outline-2">
+<h2 id="orgc95ec69"><span class="section-number-2">6.</span> SHA1 (default)</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+it defaults to using seven characters:
+</p>
+<pre class="example">
+git log --oneline or --abbrev-commit
+</pre>
+
+
+<p>
+At its core, the Git version control system is <b>a content addressable filesystem</b>. It uses the SHA-1
+ hash function to name content.
+</p>
+<ul class="org-ul">
+<li>these simple names are called “references” or “refs”; (.git/refs directory.)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org820c0f7" class="outline-2">
+<h2 id="org820c0f7"><span class="section-number-2">7.</span> CLA and DCO, signoff and gpg-sign</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+CLA (Contributor License Agreement)
+</p>
+
+<p>
+Copyright transfer/assignment agreement - an agreement that transfers the copyright for a work from
+ the copyright owner to another party. ex: a video game developer who wants to pay an
+ artist(painter) to draw a boss to include in a game
+</p>
+
+<p>
+DCO (Developer Certificate of Origin) - way for contributors to certify that they wrote or otherwise
+ have the right to submit the code they are contributing to the project.
+</p>
+<ul class="org-ul">
+<li>aggree to "the contributor is allowed to make the
+contribution and that the project has the right to distribute it under its license"</li>
+<li>introduced in 2004[1] by the Linux Foundation</li>
+<li>Sign-off is a requirement for getting patches into the Linux kernel and a few other projects, but
+most projects don't actually use it.</li>
+<li><b>Sign-off</b> is a line at the end of the commit message which certifies who is the author of the
+commit. Its main purpose is to improve tracking of who did what, especially with patches.
+<ul class="org-ul">
+<li>Signed-off-by: Humpty Dumpty &lt;humpty.dumpty@example.com&gt;</li>
+</ul></li>
+</ul>
+
+<p>
+-s::&#x2013;signoff:: - add line to commit message to signal that you created this commit, have permission
+ to submit it, and you adhere to the project licensing.
+</p>
+
+<p>
+-S &#x2013;gpg-sign - adds a gpg signature to the commit which requires one to have gpg installed and a
+ private key. GitHub will mark commits that you sign with the <i>verified</i> label. If you sign your
+ tags, they will also be marked as <i>verified</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org6bb4e6d" class="outline-2">
+<h2 id="org6bb4e6d"><span class="section-number-2">8.</span> GitLab tagline, forge</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<b>Forge</b> - a web-based collaborative software platform for both developing and sharing computer
+ applications. (after SourceForge)
+</p>
+
+<p>
+<b>GitLab tagline</b> - forge, AI-powered DevSecOps Platform, the complete developer platform to build,
+ scale, and deliver secure software.
+</p>
+</div>
+</div>
+<div id="outline-container-org5f3eb35" class="outline-2">
+<h2 id="org5f3eb35"><span class="section-number-2">9.</span> GitHub actions - CI/CD platform</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org316a8b2" class="outline-3">
+<h3 id="org316a8b2"><span class="section-number-3">9.1.</span> theory</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+It uses main branch only.
+</p>
+
+<p>
+When you enable GitHub Actions, GitHub installs a GitHub App on your repository.
+</p>
+</div>
+</div>
+<div id="outline-container-org4923551" class="outline-3">
+<h3 id="org4923551"><span class="section-number-3">9.2.</span> features</h3>
+<div class="outline-text-3" id="text-9-2">
+<ul class="org-ul">
+<li>automatically add the appropriate labels whenever someone creates a new issue in your repository</li>
+<li>provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your
+own self-hosted runners in your own data center or cloud infrastructure</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6b147a0" class="outline-3">
+<h3 id="org6b147a0"><span class="section-number-3">9.3.</span> terms</h3>
+<div class="outline-text-3" id="text-9-3">
+<dl class="org-dl">
+<dt>event</dt><dd>in repository</dd>
+<dt>workflow</dt><dd>defined by a YAML file in .github/workflows/. Triggered by: event, manually, at schedule.</dd>
+<dt>jobs</dt><dd>part of workflow, set of steps. run sequential or parallel(default) in one workflow. May depend on other job.</dd>
+<dt>runner</dt><dd>Each job will run inside its own virtual machine or container.</dd>
+<dt>steps</dt><dd>of job. run a <b>script</b> or run an <b>action</b>. executed in order.</dd>
+<dt>default environment variables</dt><dd>that GitHub sets automatically</dd>
+<dt>custom variables</dt><dd>user definde</dd>
+<dt>activity type</dt><dd>specify which activity trigger event.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orge7d7932" class="outline-3">
+<h3 id="orge7d7932"><span class="section-number-3">9.4.</span> workflow file</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+workflow is divided into <b>jobs</b>, and each job performs a set of <b>steps</b>
+</p>
+
+<p>
+specifies what commands or scripts to run, the default settings, the environment for the commands, etc.
+</p>
+
+
+<dl class="org-dl">
+<dt>name (optional)</dt><dd>name of your workflow, if not specified GitHub sets it to the workflow file path.</dd>
+<dt>run-name (optional)</dt><dd>name for <b>workflow runs</b>, if omitted then for a workflow triggered by a
+push or pull<sub>request</sub> event, it is set as the commit message.
+<ul class="org-ul">
+<li>ex. Deploy to \({{ inputs.deploy_target }} by @\){{ github.actor }}</li>
+</ul></dd>
+<dt>on</dt><dd>events if just list. ex. [push, fork]</dd>
+<dt>jobs</dt><dd></dd>
+
+<dt>check-bats-version</dt><dd>example job name</dd>
+<dt>ubuntu-latest</dt><dd>ex. ubuntu-latest.</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org0df7293" class="outline-3">
+<h3 id="org0df7293"><span class="section-number-3">9.5.</span> examples of workflow files</h3>
+<div class="outline-text-3" id="text-9-5">
+</div>
+<div id="outline-container-orgd523d39" class="outline-4">
+<h4 id="orgd523d39"><span class="section-number-4">9.5.1.</span> checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version</h4>
+<div class="outline-text-4" id="text-9-5-1">
+<div class="org-src-container">
+<pre class="src src-yaml">name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+</pre>
+</div>
+
+<pre class="example" id="org5c0b862">
+{True: ['push'],
+ 'jobs': {'check-bats-version': {'runs-on': 'ubuntu-latest',
+                                 'steps': [{'uses': 'actions/checkout@v3'},
+                                           {'uses': 'actions/setup-node@v3',
+                                            'with': {'node-version': '14'}},
+                                           {'run': 'npm '
+                                                   'install '
+                                                   '-g '
+                                                   'bats'},
+                                           {'run': 'bats '
+                                                   '-v'}]}},
+ 'name': 'learn-github-actions',
+ 'run-name': '${{ github.actor }} is '
+             'learning GitHub Actions'}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5e8cb0e" class="outline-3">
+<h3 id="org5e8cb0e"><span class="section-number-3">9.6.</span> variables</h3>
+<div class="outline-text-3" id="text-9-6">
+<p>
+custom variable
+</p>
+<ul class="org-ul">
+<li><b>env</b> key in workflow file.
+<ul class="org-ul">
+<li>env:\n\t DAY<sub>OF</sub><sub>WEEK</sub>: Monday</li>
+<li>jobs: env:\n\t DAY<sub>OF</sub><sub>WEEK</sub>: Monday</li>
+<li>jobs: steps: env:\n\t DAY<sub>OF</sub><sub>WEEK</sub>: Monday</li>
+</ul></li>
+
+<li>define it at the organization, repository, or environment level</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d756b1" class="outline-3">
+<h3 id="org8d756b1"><span class="section-number-3">9.7.</span> events that trigger workflows</h3>
+<div class="outline-text-3" id="text-9-7">
+<pre class="example">
+on: {release: {types: [published]}}
+on: {schedule: [cron:  '30 5,17 * * *']}
+"on": [push]
+</pre>
+
+
+<p>
+Every event has "activity type" which describe it further.
+</p>
+
+<p>
+events <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows</a>
+</p>
+</div>
+
+<div id="outline-container-orge15ca01" class="outline-4">
+<h4 id="orge15ca01"><span class="section-number-4">9.7.1.</span> frequent events:</h4>
+<div class="outline-text-4" id="text-9-7-1">
+<ul class="org-ul">
+<li>push - triggered when a commit is pushed to the repository</li>
+<li>pull<sub>request</sub> - triggered when a pull request is opened or updated</li>
+<li>workflow<sub>dispatch</sub> - triggered manually by a user or API call</li>
+<li>release - triggered when a new release is created. GITHUB<sub>SHA</sub>, GITHUB<sub>REF</sub> (refs/tags/&lt;tag<sub>name</sub>&gt;)</li>
+</ul>
+
+<p>
+other:
+</p>
+<ul class="org-ul">
+<li>schedule - triggered on a specified schedule (e.g. daily, weekly)</li>
+<li>repository<sub>dispatch</sub> - triggered by a custom event from an external system or API</li>
+<li>page<sub>build</sub> - triggered when a GitHub Pages site is built</li>
+<li>issues - triggered when an issue is opened, edited, or labeled</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org8b90abb" class="outline-4">
+<h4 id="org8b90abb"><span class="section-number-4">9.7.2.</span> ex</h4>
+<div class="outline-text-4" id="text-9-7-2">
+<div class="org-src-container">
+<pre class="src src-yaml">on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - 'mona/octocat'
+      - 'releases/**'
+  pull_request:
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga65ae1a" class="outline-3">
+<h3 id="orga65ae1a"><span class="section-number-3">9.8.</span> secrets and variables</h3>
+<div class="outline-text-3" id="text-9-8">
+<p>
+Repository -&gt; settings -&gt; Secrets and variables -&gt; Actions
+</p>
+
+<p>
+referencing secrets: ${{ secrets.GITHUB<sub>TOKEN</sub> }}
+</p>
+</div>
+
+<div id="outline-container-org2531735" class="outline-4">
+<h4 id="org2531735"><span class="section-number-4">9.8.1.</span> GITHUB<sub>TOKEN</sub></h4>
+<div class="outline-text-4" id="text-9-8-1">
+<p>
+<b>GITHUB<sub>TOKEN</sub></b> - created before each job begins, expires when a job finishes. Usage: passing the
+ token as an input to an action, or using it to make an authenticated GitHub API request. the
+ default permissions are restrictive.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org4720b74"></a>permissions:<br />
+<div class="outline-text-5" id="text-9-8-1-1">
+<div class="org-src-container">
+<pre class="src src-yaml">permissions:
+  actions: read|write|none
+  checks: read|write|none
+  contents: read|write|none
+  deployments: read|write|none
+  id-token: read|write|none
+  issues: read|write|none
+  discussions: read|write|none
+  packages: read|write|none
+  pages: read|write|none
+  pull-requests: read|write|none
+  repository-projects: read|write|none
+  security-events: read|write|none
+  statuses: read|write|none
+
+permissions: read-all|write-all
+permissions: {} # disable permissions
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orga040c04"></a>usage example:<br />
+<div class="outline-text-5" id="text-9-8-1-2">
+<div class="org-src-container">
+<pre class="src src-yaml">name: Create issue on commit
+
+on: [ push ]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create issue using REST API
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "Automated issue for commit: ${{ github.sha }}",
+            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+            }' \
+          --fail
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2be332d" class="outline-3">
+<h3 id="org2be332d"><span class="section-number-3">9.9.</span> jobs</h3>
+<div class="outline-text-3" id="text-9-9">
+<ul class="org-ul">
+<li>jobs.&lt;job<sub>id</sub>&gt; - a unique string identifier.</li>
+<li>jobs.&lt;job<sub>id</sub>&gt;.name - a name for the job, which is displayed in the GitHub UI.</li>
+<li>jobs.&lt;job<sub>id</sub>&gt;.runs-on - type of machine to run the job on <a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-self-hosted-runners">https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-self-hosted-runners</a></li>
+<li>jobs.&lt;job<sub>id</sub>&gt;.needs - any jobs that must complete successfully before this job will run.</li>
+<li>jobs.&lt;job<sub>id</sub>&gt;.steps - YAML sequence or list of tasks called steps</li>
+</ul>
+</div>
+<div id="outline-container-org7e85538" class="outline-4">
+<h4 id="org7e85538"><span class="section-number-4">9.9.1.</span> ex</h4>
+<div class="outline-text-4" id="text-9-9-1">
+<div class="org-src-container">
+<pre class="src src-yaml">jobs:
+  check-links: # job ID
+    name: My first job #  which is displayed in the GitHub UI. (optional)
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install -g bats
+      - name: do something important
+        run:
+</pre>
+</div>
+<p>
+job runners: <a href="https://docs.github.com/en/actions/using-jobs/choosing-the-runner-for-a-job">https://docs.github.com/en/actions/using-jobs/choosing-the-runner-for-a-job</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaba0469" class="outline-4">
+<h4 id="orgaba0469"><span class="section-number-4">9.9.2.</span> links</h4>
+<div class="outline-text-4" id="text-9-9-2">
+<p>
+<a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobs">https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobs</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1e40c87" class="outline-3">
+<h3 id="org1e40c87"><span class="section-number-3">9.10.</span> steps</h3>
+<div class="outline-text-3" id="text-9-10">
+<ul class="org-ul">
+<li>steps[*].name - string id</li>
+<li>steps[*].uses - action ex. uses: actions/checkout@v4</li>
+<li>steps[*].Runs - command-line programs</li>
+<li>steps[*].working-directory</li>
+</ul>
+</div>
+<div id="outline-container-org0d79b1e" class="outline-4">
+<h4 id="org0d79b1e"><span class="section-number-4">9.10.1.</span> uses</h4>
+<div class="outline-text-4" id="text-9-10-1">
+<div class="org-src-container">
+<pre class="src src-yaml">  # Reference a specific commit
+  - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+  # Reference the major version of a release
+  - uses: actions/checkout@v4
+  # Reference a specific version
+  - uses: actions/checkout@v4.2.0
+  # Reference a branch
+  - uses: actions/checkout@main
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org306677f" class="outline-3">
+<h3 id="org306677f"><span class="section-number-3">9.11.</span> actions</h3>
+<div class="outline-text-3" id="text-9-11">
+<p>
+<a href="https://github.com/actions/">https://github.com/actions/</a>
+</p>
+
+<ul class="org-ul">
+<li>setup-python <a href="https://github.com/actions/setup-python">https://github.com/actions/setup-python</a></li>
+<li>checkout <a href="https://github.com/actions/checkout">https://github.com/actions/checkout</a></li>
+<li>stale <a href="https://github.com/actions/stale">https://github.com/actions/stale</a></li>
+<li>setup-java <a href="https://github.com/actions/setup-java">https://github.com/actions/setup-java</a></li>
+<li>setup-go <a href="https://github.com/actions/setup-go">https://github.com/actions/setup-go</a></li>
+<li>pypa/gh-action-pypi-publish <a href="https://github.com/pypa/gh-action-pypi-publish">https://github.com/pypa/gh-action-pypi-publish</a></li>
+</ul>
+</div>
+<div id="outline-container-org12c2bb1" class="outline-4">
+<h4 id="org12c2bb1"><span class="section-number-4">9.11.1.</span> checkout</h4>
+<div class="outline-text-4" id="text-9-11-1">
+<p>
+to GITHUB<sub>WORKSPACE</sub>
+</p>
+
+<p>
+Only a single last commit is fetched by default.
+</p>
+
+<p>
+options:
+</p>
+<dl class="org-dl">
+<dt>repository</dt><dd>Default: ${{ github.repository }}</dd>
+<dt>ref</dt><dd>uses the default branch</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org38d8e8b" class="outline-4">
+<h4 id="org38d8e8b"><span class="section-number-4">9.11.2.</span> ex</h4>
+<div class="outline-text-4" id="text-9-11-2">
+<div class="org-src-container">
+<pre class="src src-yaml">uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_API_TOKEN }}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc2cb61e" class="outline-3">
+<h3 id="orgc2cb61e"><span class="section-number-3">9.12.</span> variables</h3>
+<div class="outline-text-3" id="text-9-12">
+<p>
+<a href="https://docs.github.com/en/actions/learn-github-actions/variables">https://docs.github.com/en/actions/learn-github-actions/variables</a>
+</p>
+
+
+<p>
+reffered as $GITHUB<sub>WORKSPACE</sub>:
+</p>
+<dl class="org-dl">
+<dt>GITHUB<sub>WORKSPACE</sub></dt><dd>The default working directory on the runner for steps, and the default location
+of your repository when using the checkout action.</dd>
+<dt>RUNNER<sub>OS</sub></dt><dd></dd>
+</dl>
+</div>
+
+<div id="outline-container-org7d09664" class="outline-4">
+<h4 id="org7d09664"><span class="section-number-4">9.12.1.</span> secrets</h4>
+<div class="outline-text-4" id="text-9-12-1">
+<ul class="org-ul">
+<li>Names must not start with the GITHUB_ prefix.</li>
+<li>Names must not start with a number.</li>
+<li>Names are case insensitive.</li>
+</ul>
+
+<p>
+${{ secrets.GITHUB<sub>TOKEN</sub> }} - special
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">with: # Set the secret as an input
+  super_secret: ${{ secrets.SuperSecret }}
+env: # Or as an environment variable
+  super_secret: ${{ secrets.SuperSecret }}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1334545" class="outline-3">
+<h3 id="org1334545"><span class="section-number-3">9.13.</span> runs-on</h3>
+<div class="outline-text-3" id="text-9-13">
+<p>
+Each job runs in a fresh instance of the virtual environment specified by runs-on.
+</p>
+</div>
+</div>
+<div id="outline-container-org31a70d0" class="outline-3">
+<h3 id="org31a70d0"><span class="section-number-3">9.14.</span> passing data between &#x2026;</h3>
+<div class="outline-text-3" id="text-9-14">
+<ul class="org-ul">
+<li>actions/upload-artifact and actions/download-artifact</li>
+<li>volumes - to share data between services or other steps in a job.</li>
+<li>outputs -  maximum of 1 MB. The total of all outputs in a workflow run can be a maximum of 50 MB.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org984f488" class="outline-3">
+<h3 id="org984f488"><span class="section-number-3">9.15.</span> release</h3>
+<div class="outline-text-3" id="text-9-15">
+<ol class="org-ol">
+<li>create new release
+<ul class="org-ul">
+<li><a href="https://github.com/elgohr/Github-Release-Action">https://github.com/elgohr/Github-Release-Action</a></li>
+<li>gh release create &#x2013;title "\({INPUT_TITLE}" --generate-notes "\)(date +%Y%m%d%H%M%S)"</li>
+</ul></li>
+<li>add asset to existent release
+<ul class="org-ul">
+<li>gh release upload ${{ github.ref<sub>name</sub> }} ./dist/*{.exe,.exe.sha512.txt}</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org45c0abf" class="outline-3">
+<h3 id="org45c0abf"><span class="section-number-3">9.16.</span> links</h3>
+<div class="outline-text-3" id="text-9-16">
+<ul class="org-ul">
+<li>main <a href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a></li>
+<li><a href="https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/">https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/</a></li>
+<li>file <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions">https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions</a></li>
+<li>env variables <a href="https://docs.github.com/en/actions/learn-github-actions/variables">https://docs.github.com/en/actions/learn-github-actions/variables</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1caf393" class="outline-2">
+<h2 id="org1caf393"><span class="section-number-2">10.</span> GitHub special files</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org4831489" class="outline-3">
+<h3 id="org4831489"><span class="section-number-3">10.1.</span> docs/CONTRIBUTING.md</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+README.md:
+</p>
+<pre class="example">
+[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+</pre>
+
+<p>
+or in your root directory
+</p>
+
+<p>
+think of it as a anchor for your project, around which you will build community and keep things
+ tidy. provides potential project contributors with a short guide to how they can help with your
+ project or study group
+</p>
+<ul class="org-ul">
+<li>Project contributors - users of the file who want to know items they're welcome to tackle, and
+tact they need in navigating the project/respecting those involved with the project</li>
+<li>Project consumers - users who want to build off the project to create their own project</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd3caf30" class="outline-3">
+<h3 id="orgd3caf30"><span class="section-number-3">10.2.</span> .git-blame-ignore-revs</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+Contains commit hashes with big refactorings that you don't want to be shown in history of review.
+</p>
+</div>
+</div>
+<div id="outline-container-org831ac6c" class="outline-3">
+<h3 id="org831ac6c"><span class="section-number-3">10.3.</span> .github/CODEOWNERS</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+notifications for pull requests, for feedback
+</p>
+
+<p>
+path		name of owner
+</p>
+</div>
+</div>
+<div id="outline-container-org90ac989" class="outline-3">
+<h3 id="org90ac989"><span class="section-number-3">10.4.</span> .github/SECURITY.md</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+Security Policy
+</p>
+
+<p>
+how to report
+</p>
+</div>
+</div>
+<div id="outline-container-org310ecf4" class="outline-3">
+<h3 id="org310ecf4"><span class="section-number-3">10.5.</span> .gitignore</h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>.gitignore - will be added to repository</li>
+<li>.git/info/exclude - without adding .gitignore to repo</li>
+<li>~/.gitignore<sub>global</sub> - global for all repositories</li>
+</ul>
+
+<p>
+remove ignored files from current repository:
+</p>
+<ul class="org-ul">
+<li>git rm -r &#x2013;cached .</li>
+<li>git add .</li>
+<li>git commit -am 'Drop files from .gitignore'</li>
+</ul>
+</div>
+
+<div id="outline-container-orgcfc0281" class="outline-4">
+<h4 id="orgcfc0281"><span class="section-number-4">10.5.1.</span> python .gitignore</h4>
+<div class="outline-text-4" id="text-10-5-1">
+<p>
+<a href="https://github.com/github/gitignore/blob/main/Python.gitignore">https://github.com/github/gitignore/blob/main/Python.gitignore</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-text"># Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b03b45" class="outline-3">
+<h3 id="org1b03b45"><span class="section-number-3">10.6.</span> <span class="todo TODO">TODO</span> .gitlab-ci.yml</h3>
+<div class="outline-text-3" id="text-10-6">
+<p>
+obsolate?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgea804a3" class="outline-2">
+<h2 id="orgea804a3"><span class="section-number-2">11.</span> Github search</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+<a href="https://github.com/search/advanced">https://github.com/search/advanced</a>
+<b>file</b>
+</p>
+<ul class="org-ul">
+<li>filename:my<sub>filename.txt</sub> or "path:**/your-file-name" or "path:your-file-name"</li>
+</ul>
+
+<p>
+<b>stars</b>
+</p>
+<ul class="org-ul">
+<li>cats stars:&gt;1000 matches repositories with the word "cats" that have more than 1000 stars.</li>
+</ul>
+
+<p>
+<b>filesize</b>
+</p>
+<ul class="org-ul">
+<li>cats size:&lt;10000 matches code with the word "cats" in files that are smaller than 10 KB.</li>
+</ul>
+
+<p>
+<b>dates</b>
+</p>
+<ul class="org-ul">
+<li>cats created:&gt;2016-04-29 matches issues with the word "cats" that were created after April 29, 2016.</li>
+</ul>
+
+<p>
+<b>label</b>
+</p>
+<ul class="org-ul">
+<li>build label:"bug fix"</li>
+</ul>
+
+<p>
+<b>issues</b>
+</p>
+<ul class="org-ul">
+<li>is:issue assignee:@me matches issues assigned to the person viewing the results</li>
+</ul>
+
+<p>
+exclude:
+</p>
+<ul class="org-ul">
+<li>-org:github - not in repositories in the GitHub organization.</li>
+<li>-language:javascript</li>
+<li>hello NOT world matches repositories that have the word "hello" but not the word "world."</li>
+</ul>
+
+<p>
+<b>in file</b>
+</p>
+<ul class="org-ul">
+<li>path:*.ipynb word</li>
+<li>content:*.py language:Python symbol:GigaChat-Pro</li>
+</ul>
+</div>
+<div id="outline-container-orgb1e2d5d" class="outline-3">
+<h3 id="orgb1e2d5d"><span class="section-number-3">11.1.</span> links</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+<a href="https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax">https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6342314" class="outline-2">
+<h2 id="org6342314"><span class="section-number-2">12.</span> install git</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>git config &#x2013;global user.email "&lt;larry@gentoo.org&gt;"</li>
+<li>git config &#x2013;global user.name "Larry the cow"</li>
+<li>git config &#x2013;global core.editor emacs</li>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb00483c" class="outline-2">
+<h2 id="orgb00483c"><span class="section-number-2">13.</span> Global settings: Author identity unknown, proxy</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+<div id="outline-container-org6ebe918" class="outline-3">
+<h3 id="org6ebe918"><span class="section-number-3">13.1.</span> global config files, Anonymous</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+.git/config [user] section:
+</p>
+<ul class="org-ul">
+<li>git config user.email ""</li>
+<li>git config user.name "(none)"</li>
+</ul>
+
+<p>
+~/.gitconfig
+git config &#x2013;global &#x2013;list
+git config &#x2013;list    - repository config
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga717706" class="outline-3">
+<h3 id="orga717706"><span class="section-number-3">13.2.</span> proxy</h3>
+<div class="outline-text-3" id="text-13-2">
+<p>
+git supported protocols:
+</p>
+<ul class="org-ul">
+<li>http: git clone <a href="http://domain.com/dir/repository.git">http://domain.com/dir/repository.git</a></li>
+<li>https: git clone <a href="https://domain.com/dir/repository.git">https://domain.com/dir/repository.git</a></li>
+<li>git: git clone git://domain.com/dir/repository.git</li>
+<li>git over ssh: git clone git+ssh://domain.com/dir/repository.git</li>
+</ul>
+
+<p>
+set proxy:
+</p>
+<pre class="example">
+git config --global http.proxy 'socks5://127.0.0.1:1081' # for http protocol  http://proxyuser:proxypwd@proxy.server.com:8080
+git config --global ssh.gitproxy /path/to/bin/git-proxy.sh # for git protocol
+</pre>
+
+
+<p>
+/path/to/bin/git-proxy.sh where $1 and $2 is remote host and port:
+</p>
+<pre class="example">
+nc -x 127.0.0.1:1081 $1 $2
+</pre>
+
+
+
+<p>
+git config &#x2013;list # should look like this:
+</p>
+<pre class="example">
+http.proxy=socks5://127.0.0.1:1081
+core.gitproxy=/home/user/git-proxy.sh
+</pre>
+
+
+<p>
+core.gitproxy is not working, idk why.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org95e8309" class="outline-3">
+<h3 id="org95e8309"><span class="section-number-3">13.3.</span> ssh</h3>
+<div class="outline-text-3" id="text-13-3">
+<p>
+Host github.com
+    ServerAliveInterval 55
+    ForwardAgent yes
+    CheckHostIP no
+    ProxyCommand nc -xlocalhost:9050 -X5 %h %p
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org15f5638" class="outline-2">
+<h2 id="org15f5638"><span class="section-number-2">14.</span> revisions</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<b>man gitrevisions</b>
+</p>
+<ul class="org-ul">
+<li>&lt;rev&gt; - revision - commit or blobs ("files") or trees ("directories of files") whis is conteined in commit.
+<ul class="org-ul">
+<li>&lt;sha1&gt; - extended SHA-1 syntax</li>
+</ul></li>
+<li>&lt;describeOutput&gt; Output from git describe; i.e. a closest tag, optionally followed by a dash and a number of commits,</li>
+<li>&lt;refname&gt;, e.g. master, heads/master, refs/heads/master</li>
+<li>[&lt;refname&gt;]@{&lt;date&gt;}</li>
+<li>&lt;refname&gt;@{&lt;n&gt;}, e.g. master@{1}
+<ul class="org-ul">
+<li>n-th prior value of that ref.</li>
+</ul></li>
+<li>@{&lt;n&gt;}, e.g. @{1}</li>
+<li>&lt;rev&gt;^[&lt;n&gt;], e.g. HEAD^, v1.5.1<sup>0</sup> - n-th parent
+<ul class="org-ul">
+<li>A suffix ^ to a revision parameter means the first parent up to tree of that commit object. &lt;rev&gt;^ is equivalent to &lt;rev&gt;<sup>1</sup></li>
+<li>A^&lt;n&gt; - mean &lt;n&gt; parent where a commit has <b>more than one parent</b></li>
+<li>A<sup>0</sup> = A</li>
+</ul></li>
+<li>&lt;rev&gt;~[&lt;n&gt;], e.g. HEAD~, master~3
+<ul class="org-ul">
+<li>A~2 - seond parent up to branch = A^^</li>
+</ul></li>
+<li>r1 .. r2 - revision range
+<ul class="org-ul">
+<li>r1..r3 = r2 r3 = r3 ^r1</li>
+<li>r1<sup>..r3</sup> = r1 r2 r3</li>
+</ul></li>
+<li>r1 &#x2026; r2 - all parents of both</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb12fa6a" class="outline-2">
+<h2 id="orgb12fa6a"><span class="section-number-2">15.</span> Definitions</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+<a href="http://www.vogella.com/tutorials/Git/article.html">http://www.vogella.com/tutorials/Git/article.html</a>
+<a href="https://www.tutorialspoint.com/git/git_basic_concepts.htm">https://www.tutorialspoint.com/git/git_basic_concepts.htm</a>
+</p>
+
+<p>
+<b>Version Control System</b> (VCS) [ˈvɜːʃən] is a software that helps software developers to work together and
+maintain a complete history of their work.
+</p>
+
+<p>
+Git - distributed version control system.
+</p>
+
+<p>
+Repository - software storage local or remote. contains the history and branches.
+</p>
+<ul class="org-ul">
+<li>Bare repository - git init &#x2013;bare For sharing in collaborating. repository without working
+tree. Not allow tocreate new versions. (commit i guess)</li>
+<li>Local Repository - .git folder at local machine</li>
+</ul>
+
+<p>
+areas
+</p>
+<ul class="org-ul">
+<li><b>Working tree</b> - folder for the repository (tracked and untracked).</li>
+<li><b>staging area</b> (Index) - <b>git add</b> list of files with sha1 of content - tracked files.</li>
+<li><b>Stagging or cached</b> - changes that will be included in next commit. (after git add)</li>
+</ul>
+
+<p>
+Checkout - Updates files(remove changes) in the working tree to match the version in the index or the specified branch.
+</p>
+
+<p>
+Commit
+1)commit the staged changes into Git repository
+2)commit object - uniquely identifies(SHA-1 hash) a revision(state) of the repository(content). Has pointer to parent commit.
+</p>
+
+<p>
+If commit has miltiple parent commits - was created by merging.
+</p>
+<ul class="org-ul">
+<li>First parent commit is the branch you were on when you merged A^, A<sup>2</sup> - second parent</li>
+</ul>
+
+
+<p>
+Version graph formed by all commits in the repository
+</p>
+
+<p>
+HEAD - symbolic reference. If you switch branches, the HEAD pointer points to
+the branch pointer which in turn points to a commit. If you checkout a specific
+commit, the HEAD points to this commit directly.
+</p>
+
+<p>
+.gitignore the root directory of your project, the ignore settings will be applied to all sub-directories automatically.
+</p>
+
+<p>
+Detached HEAD mode - If you checkout a commit or a tag
+</p>
+
+<p>
+ref - symbolic references (symrefs)
+</p>
+
+<p>
+Upstream branch - branch tracked on remote repository by your local remote "tracking" branches.
+</p>
+<ul class="org-ul">
+<li>Local remote "tracking" branches - local branches that has remote associatied in .git/config</li>
+<li>remote tracking branches - branches on remote version of local repository</li>
+<li>"remotes" - remote repository, configured in git remote. ex. origin</li>
+</ul>
+</div>
+<div id="outline-container-org856a8c7" class="outline-3">
+<h3 id="org856a8c7"><span class="section-number-3">15.1.</span> Pull</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+from remote repository instance to local one.
+</p>
+</div>
+</div>
+<div id="outline-container-org395af59" class="outline-3">
+<h3 id="org395af59"><span class="section-number-3">15.2.</span> Push</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+from local to remote
+</p>
+</div>
+</div>
+<div id="outline-container-org2aa9c3a" class="outline-3">
+<h3 id="org2aa9c3a"><span class="section-number-3">15.3.</span> Branch</h3>
+<div class="outline-text-3" id="text-15-3">
+<p>
+<a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</a>
+<a href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches">https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches</a>
+Branch - are local for the repository. A branch is a named pointer to a commit.
+</p>
+
+<p>
+Remote-tracking branches - there are remote branches. Looks like origin/master. not stored localy. but may be checkout.
+</p>
+<ul class="org-ul">
+<li>“Upstream Remote” - link to original repository, allowing you to fetch updates and track changes
+from the original repository.</li>
+<li>upstream branch - the branch which tracking branch tracks. Always Remote-tracking branches.</li>
+</ul>
+
+<p>
+local branches - looks like master. they are stored in local repository.
+</p>
+
+<p>
+To have an upstream branch(tracking branches) - &#x2013;track This configuration will
+tell git to show the relationship between the two branches in git status and git
+branch -v. If you clone a Git repository, your local master branch is created as
+a tracking branch for the master branch of the origin repository
+(short:<sub>origin</sub>/master_) by Git. Always local.
+</p>
+
+
+
+<p>
+Default branch - named _master
+</p>
+
+<p>
+<b>Setting Upstream Tracking</b> - bind branch to track remote branch added as “Upstream Remote”.
+</p>
+<ul class="org-ul">
+<li>when create new branch: git checkout -b my-local-branch origin/main</li>
+<li>after creation:
+<ul class="org-ul">
+<li>git branch &#x2013;set-upstream-to &lt;upstream&gt; &lt;local-branch&gt;</li>
+<li>git branch &#x2013;set-upstream-to upstream/main main-origin</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga932af5" class="outline-3">
+<h3 id="orga932af5"><span class="section-number-3">15.4.</span> TAG</h3>
+<div class="outline-text-3" id="text-15-4">
+<p>
+Tag - points to a commit.
+</p>
+
+<p>
+Lightweight tag - without properties,  annotated tag - with additional info
+</p>
+
+<p>
+Release tags - common applying of tag.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0c117f1" class="outline-3">
+<h3 id="org0c117f1"><span class="section-number-3">15.5.</span> .git/config, remote</h3>
+<div class="outline-text-3" id="text-15-5">
+<p>
+Fetchurl, Pushurl - the location of the repository
+</p>
+
+<p>
+Remote - remote repository pointer with properties e.g. URL, branches to fetch or branches to push.
+</p>
+
+<p>
+Origin - default name for remote. after clone
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb937e3" class="outline-3">
+<h3 id="orgfb937e3"><span class="section-number-3">15.6.</span> Submodule</h3>
+<div class="outline-text-3" id="text-15-6">
+<p>
+Git-submodule - via a .gitmodules file located at the root of the parent
+repository.  They’re too intrusive, requiring submodules to be initialised and
+updated. And switching between branches, which is where Git really shines,
+suddenly becomes painful because submodules don’t do what you expect.
+</p>
+
+<p>
+git merge
+git rebase - like merge but add current branch commits at the top of rebase branch
+</p>
+
+<p>
+git fetch - move local Remote-tracking branche to what at remote repository. it may add commits not existing in another local branches.
+</p>
+
+<p>
+By default you can only push to bare repositories.
+</p>
+
+<p>
+release tags are labeled based on the [major].[minor].[patch] naming scheme, for example "1.0.0". Several projects also use the "v" prefix.
+the minor version is incremented if new, backwards compatible functionality is introduced to the public API and the major version is incremented if any backwards incompatible changes are introduced to the public API.
+</p>
+
+<p>
+To get submodules for project:
+</p>
+<ul class="org-ul">
+<li>git checkout &#x2013;recurse-submodules</li>
+<li>git submodule update &#x2013;depth 1 &#x2013;init &#x2013;checkout &#x2013;recursive</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfbea875" class="outline-3">
+<h3 id="orgfbea875"><span class="section-number-3">15.7.</span> cherry-pick</h3>
+<div class="outline-text-3" id="text-15-7">
+<p>
+act of picking a commit from a branch and applying it to another.
+</p>
+
+<p>
+most of this can be made with git merge
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb13678b" class="outline-2">
+<h2 id="orgb13678b"><span class="section-number-2">16.</span> commands</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>git init/clone</li>
+
+<li>git stash - save working directory state and allow list saves</li>
+<li>git rm [file] - remove files from the index and maybe(&#x2013;cached) working tree</li>
+<li>git mv - move file, directory symlink, index updated, but changes must be commited</li>
+<li>git add - update the Index = add files and update check-sum.</li>
+<li>git clean - Remove untracked files from the working tree</li>
+
+<li>git log</li>
+<li>git reflog - local actions history - git reset HEAD@{index}</li>
+<li>git show</li>
+<li>git diff
+<ul class="org-ul">
+<li>git diff HEAD = git diff - between Staging Area and HEAD commit (git diff "s" HEAD - "s"=a, HEAD=b)</li>
+<li>git diff &#x2013;staged/cached HEAD - between Stagging and HEAD</li>
+</ul></li>
+<li>git branch</li>
+<li>git switch - switch branches</li>
+<li>git checkout -switch</li>
+<li>git commit
+<ul class="org-ul">
+<li>&#x2013;amend - replace last commit of current branch</li>
+</ul></li>
+<li>git merge - combines branches
+<ul class="org-ul">
+<li>git merge &#x2013;abort</li>
+</ul></li>
+
+<li>git revert - revert one commit and record new one</li>
+<li>git reset - sets HEAD to comment (and reset index and/or working tree)
+<ul class="org-ul">
+<li>&#x2013;mixed - reset index but not working tree</li>
+<li>&#x2013;soft - do not touch index and working tree</li>
+<li>&#x2013;hard - index and working, changes are lost</li>
+<li>&#x2013;merge - reset index and update files in working if they different in past commit</li>
+<li>&#x2013;keep - reset index and update files in working if they dont have local changes</li>
+</ul></li>
+<li>git reset file - reset file to HEAD</li>
+
+<li>git remote - manage remote repositories</li>
+<li>git fetch - harmless download changes</li>
+<li>git pull - download changes and change working tree</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org28db7e1" class="outline-2">
+<h2 id="org28db7e1"><span class="section-number-2">17.</span> GIT Branching Strategies</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li><b>Gitflow</b> - two main branches: master and develop. well for large projects with long release cycles</li>
+<li><b>Feature branching</b> - each new feature is developed on its own branch. easier to roll back changes
+if necessary. for small projects and teams.</li>
+<li><b>Release branching</b> - new branch for each release. final testing and bug fixing on the release
+branch before it is merged into the master branch for production. good option for projects with
+short release cycles.</li>
+<li><b>Trunk-based development</b> - single branch, often the master branch, feature flags to isolate new
+features until they are ready for release. move quickly and frequently release updates. requires a
+high level of discipline. challenging to maintain backward compatibility with older releases.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgecccc3e" class="outline-2">
+<h2 id="orgecccc3e"><span class="section-number-2">18.</span> branches</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+switch
+</p>
+<ul class="org-ul">
+<li>git switch branch name</li>
+</ul>
+
+<p>
+create
+</p>
+<ul class="org-ul">
+<li>git branch name	# create a branch from the current branch, do not switch to it</li>
+<li>git branch &lt;name&gt; &lt;hash&gt;    - &lt;hash&gt; is optional to which the branch pointer original points</li>
+<li>git checkout [[-b|-B|&#x2013;orphan] &lt;new<sub>branch</sub>&gt;] [&lt;start<sub>point</sub>&gt;] # git branch -f &lt;branch&gt; [&lt;start-point&gt;] ; git checkout &lt;branch&gt;
+<ul class="org-ul">
+<li>git checkout -b name		# new branch and start at the start poing</li>
+<li>-B	&lt;new-branch&gt;			# &lt;new-branch&gt; is created if it doesn’t exist otherwise, it is reset</li>
+</ul></li>
+<li>git switch -c new-branch		# git branch &lt;new-branch&gt; ; git switch &lt;new-branch&gt;</li>
+<li>git switch -c dev &#x2013;track master	# If the starting point is a local branch, you can force the tracking</li>
+</ul>
+
+<p>
+delete
+</p>
+<ul class="org-ul">
+<li>git branch -d testing     - delete local branch</li>
+<li>git branch -d -r origin/dev origin/stage origin/prod # delete  remote-tracking branches.</li>
+<li>git push [remote] &#x2013;delete [branch]        - delete branch in a remote repository</li>
+</ul>
+
+
+<p>
+list
+</p>
+<ul class="org-ul">
+<li>get branch -r 	# remote branches (red)</li>
+<li>git branch		# show local branches (green with * is current)</li>
+<li>git branch -a      - lists all branches including the remote branches</li>
+<li>git branch -r      - lists branches in the remote repositories</li>
+<li>git branch -v		- info of tracking branches</li>
+<li>git remote show origin     - show all remote and tracking branches for origin</li>
+<li>git branch -vv        - to see local tracking branches.</li>
+<li>git branch &#x2013;merged/&#x2013;no-merged [commit]	# Only list branches whose tips are reachable</li>
+</ul>
+
+<p>
+other
+</p>
+<ul class="org-ul">
+<li>git branch -D name	# delete a local copy of a branch.</li>
+<li>git checkout -b develop      -</li>
+<li>&#x2013;orphan		- no parents, totally disconnected. no commits before first</li>
+
+<li># tracking branches</li>
+<li>git checkout -b newbranch origin/newbranch - setup a tracking branch called newbrach which tracks origin/newbranch</li>
+<li>git branch [new<sub>branch</sub>] origin/master</li>
+
+<li>git checkout &#x2013;track origin/serverfix   - create local serverfix branch tracking remote one if remote exist.
+<ul class="org-ul">
+<li>git checkout serverfix   - the same</li>
+</ul></li>
+<li>git branch &#x2013;unset-upstream 		# Remove a current tracking relationship</li>
+<li>git push -u origin feature 		# Link a branch to an upstream branch</li>
+
+<li>git branch &#x2013;set-upstream-to 	# set remote tracking branch</li>
+</ul>
+</div>
+
+<div id="outline-container-orgbe840f1" class="outline-3">
+<h3 id="orgbe840f1"><span class="section-number-3">18.1.</span> theory</h3>
+<div class="outline-text-3" id="text-18-1">
+<p>
+upstream tracking branch: master ⇒ origin/master
+</p>
+
+<p>
+by default both “git merge” and “git rebase” will use the upstream tracking branch
+</p>
+
+<p>
+when you checkout a new branch and you are using a remote branch as the starting point, the upstream
+ tracking branch will be setup automatically.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d8dea8" class="outline-2">
+<h2 id="org8d8dea8"><span class="section-number-2">19.</span> remote branches, upstream braches and symrefs</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>git remote - show "remotes" whose branches you track</li>
+<li>git branch -r - remote tracking branches (branches on remote version of local repository)
+<ul class="org-ul">
+<li>* - currently viewing</li>
+<li>origin/HEAD -&gt; origin/master - default branch and current commit of origin. may be changed with: git remote set-head origin &lt;remote&gt; &lt;branch&gt;</li>
+<li>origin/master - remote branch</li>
+</ul></li>
+<li>cat .git/config
+<ul class="org-ul">
+<li>remote = origin - remote associated with branch (upstream configuration)</li>
+<li>merge = refs/heads/master - branch and HEAD on remote</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf3c69cf" class="outline-3">
+<h3 id="orgf3c69cf"><span class="section-number-3">19.1.</span> kinds of symrefs</h3>
+<div class="outline-text-3" id="text-19-1">
+<p>
+git symbolic-ref
+</p>
+<ul class="org-ul">
+<li>.git/HEAD, pointing at somewhere under refs/heads/ hierarchy;</li>
+<li>.git/refs/remotes/{some remote name}/HEAD, pointing at somewhere under refs/remotes/{the same remote name}/ hierarchy.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org574e24e" class="outline-2">
+<h2 id="org574e24e"><span class="section-number-2">20.</span> User/Password locally for repository (save password in repository)</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>git config credential.helper store</li>
+<li>after next push credentials will be saved</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0007fc7" class="outline-2">
+<h2 id="org0007fc7"><span class="section-number-2">21.</span> log</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+git log
+</p>
+<ul class="org-ul">
+<li>&#x2013;oneline -</li>
+<li>&#x2013;graph</li>
+<li>&#x2013;decorate[=short|full|auto|no] lenght of ref name - default short</li>
+</ul>
+
+
+<p>
+git log HEAD~4..HEAD
+git log HEAD~4     - the same
+git log testing..master   - list all commints in master but not in testing
+git log master&#x2026;testing   - commits reached by master or testing but not both
+</p>
+
+<p>
+git log HEAD &#x2013;
+git log -1 &#x2013; HEAD   - one last commit for HEAD file
+git log HEAD^  - one parent commit for HEAD
+</p>
+</div>
+</div>
+<div id="outline-container-org22ab645" class="outline-2">
+<h2 id="org22ab645"><span class="section-number-2">22.</span> diff</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+per file ++&#x2013; statistic
+git diff &#x2013;stat HEAD~10..HEAD
+</p>
+</div>
+</div>
+<div id="outline-container-orgb486dd5" class="outline-2">
+<h2 id="orgb486dd5"><span class="section-number-2">23.</span> merge</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+<b>fast-forward</b> is merge operation when Git moves the current branch HEAD pointer to the target local
+ branch HEAD pointer, without having extra commits.
+</p>
+
+<p>
+merge branch
+</p>
+<ul class="org-ul">
+<li>git checkout master</li>
+<li>git merge development</li>
+</ul>
+
+<p>
+if CONFLICT
+</p>
+<ol class="org-ol">
+<li>undo
+<ul class="org-ul">
+<li>git merge &#x2013;abort</li>
+<li>git merge &#x2013;continue</li>
+</ul></li>
+<li>resolve
+<ul class="org-ul">
+<li>open conflicted file to see</li>
+<li>remove &lt;&lt;&lt;&lt;&lt;, <code>==</code> amd &gt;&gt;&gt; lines to resolve conflict</li>
+<li>git add ./path/file ( if new)</li>
+<li>git commt -m "Merge development fixed conflict"</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2d5adf6" class="outline-2">
+<h2 id="org2d5adf6"><span class="section-number-2">24.</span> pull request - Best Practices <a id="org7ebbcf8"></a></h2>
+<div class="outline-text-2" id="text-24">
+<ol class="org-ol">
+<li>fork</li>
+<li>create branch from <b>develop</b> new “feature-X”
+<ul class="org-ul">
+<li>git checkout -b new-branch-name</li>
+</ul></li>
+<li>commit to feature-X</li>
+<li>submit a pull request on feature-X. In the PR title use tags [Fix], [Feature], [Refactor], [Release], [Hotfix]
+<ul class="org-ul">
+<li>Example: [Fix] Sitemap bug solved.</li>
+<li>git pull -r origin master</li>
+<li>git push origin new-branch-name</li>
+</ul></li>
+</ol>
+<p>
+links
+</p>
+<ul class="org-ul">
+<li><a href="https://gist.github.com/mikepea/863f63d6e37281e329f8">https://gist.github.com/mikepea/863f63d6e37281e329f8</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge1bc601" class="outline-2">
+<h2 id="orge1bc601"><span class="section-number-2">25.</span> markdown</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+GitHub Flavored Markdown with a few unique writing features (один из диалектов Markdown)
+</p>
+<ul class="org-ul">
+<li>file.md</li>
+</ul>
+</div>
+<div id="outline-container-org743ee8a" class="outline-3">
+<h3 id="org743ee8a"><span class="section-number-3">25.1.</span> headers</h3>
+<div class="outline-text-3" id="text-25-1">
+<div class="org-src-container">
+<pre class="src src-markdown"># A first-level heading
+## A second-level heading
+### A third-level heading
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b4ad76" class="outline-3">
+<h3 id="org3b4ad76"><span class="section-number-3">25.2.</span> code</h3>
+<div class="outline-text-3" id="text-25-2">
+<div class="org-src-container">
+<pre class="src src-markdown">one word: `nano`.
+
+frase: ``Use `code` in your Markdown file.``
+
+Blocks:
+```python
+import os
+```
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org507b248" class="outline-3">
+<h3 id="org507b248"><span class="section-number-3">25.3.</span> all</h3>
+<div class="outline-text-3" id="text-25-3">
+<div class="org-src-container">
+<pre class="src src-markdown">## The second largest heading
+###### The smallest heading
+**This is bold text**
+&gt; Text that is a quote
+Use `git status` to list all new or modified files that haven't yet been committed.
+```
+git status
+git add
+git commit
+```
+: This site was built using [GitHub Pages](https://pages.github.com/).
+: [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+: ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+: [![name](link to image on GH)](link to your URL)
+: &lt;https://www.markdownguide.org&gt;
+: &lt;fake@example.com&gt;
+: I love supporting the **[EFF](https://eff.org)**.
+
+List:
+- George Washington
+- John Adams
+- Thomas Jefferson
+
+To order your list:
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
+Nested Lists
+1. First list item
+   - First nested list item
+     - Second nested list item
+
+&lt;!-- This content will not appear in the rendered Markdown --&gt;
+
+
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Command | Description |
+| --- | --- |
+| `git status` | List all *new or modified* files |
+| `git diff` | Show file differences that **haven't been** staged |
+
+
+Align:
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb9b1eb2" class="outline-3">
+<h3 id="orgb9b1eb2"><span class="section-number-3">25.4.</span> links</h3>
+<div class="outline-text-3" id="text-25-4">
+<ul class="org-ul">
+<li>Markdown rus <a href="https://doka.guide/tools/markdown/">https://doka.guide/tools/markdown/</a></li>
+<li><a href="https://github.com/mattcone/markdown-guide/tree/master">https://github.com/mattcone/markdown-guide/tree/master</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb4cdca1" class="outline-2">
+<h2 id="orgb4cdca1"><span class="section-number-2">26.</span> pages</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+repo -&gt; Settings -&gt;pages
+</p>
+
+<p>
+Preview:
+</p>
+<ul class="org-ul">
+<li><a href="https://htmlpreview.github.io/?https://github.com/Anoncheg1/awesome-chinese/blob/main/index.html">https://htmlpreview.github.io/?https://github.com/Anoncheg1/awesome-chinese/blob/main/index.html</a></li>
+</ul>
+
+<p>
+HTML:
+</p>
+<ul class="org-ul">
+<li>touch .nojekyll</li>
+<li>/<sub>site</sub>/index.html
+<ul class="org-ul">
+<li>Settings -&gt; pages <a href="https://anoncheg1.github.io/awesome-chinese/">https://anoncheg1.github.io/awesome-chinese/</a></li>
+</ul></li>
+</ul>
+
+<p>
+pages
+</p>
+<ul class="org-ul">
+<li>GitHub Pages supports two Markdown processors: kramdown and GitHub's own Markdown processor, which
+is used to render GitHub Flavored Markdown (GFM)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd2a783a" class="outline-2">
+<h2 id="orgd2a783a"><span class="section-number-2">27.</span> decentralized share</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+/etc/conf.d/git-daemon
+</p>
+<ul class="org-ul">
+<li>GIT<sub>USER</sub>="t"</li>
+<li>GIT<sub>GROUP</sub>="t"</li>
+<li>GITDAEMON<sub>OPTS</sub>="&#x2013;syslog &#x2013;export-all &#x2013;enable=receive-pack &#x2013;base-path=/home/t/share"
+<ul class="org-ul">
+<li>If desired to accept git push and allow access all direct, it needs two options
+&#x2013;enable=receive-pack and &#x2013;export-all in GITDAEMON<sub>OPTS</sub></li>
+</ul></li>
+</ul>
+
+<p>
+or use sshfs to directly access folder
+</p>
+</div>
+</div>
+<div id="outline-container-orga68f2d5" class="outline-2">
+<h2 id="orga68f2d5"><span class="section-number-2">28.</span> branch metodology (rus)</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>Central Workflow - one master branch</li>
+<li>Forking Workflow - 1) original or main branch 2) fork branch owned by another contributor which going to suggest merges to main</li>
+<li>Developer Branch Workflow - one main and every developer has one or more own branches. finally forks will be merged to main.</li>
+<li>Github Flow - (good for agile teams) - extension  to provide high-level repository operations for Vincent Driessen's branching model
+<ul class="org-ul">
+<li>main branch - code works and ready to deploy at any time</li>
+<li>all brancches (features) - checked by leader of the team + one more specialist then merged to main</li>
+</ul></li>
+<li>Feature Branch Workflow -
+<ul class="org-ul">
+<li>main - stable</li>
+<li>dev -</li>
+<li>features branches - created from dev. finally merged to dev</li>
+</ul></li>
+<li>Git Flow - big projects
+<ul class="org-ul">
+<li>main branch or production - stable</li>
+<li>develop - may be not stable</li>
+<li>release1-9 branches - stabilization work take place here and merged to develop and master</li>
+<li>hotfix1-9 branches - for fast solving of critical problem of production branch. merged to develop and master.</li>
+</ul></li>
+<li>Issue Branch Workflow - like a "Feature Branch Workflow" but with for issues</li>
+</ul>
+</div>
+<div id="outline-container-org238927c" class="outline-3">
+<h3 id="org238927c"><span class="section-number-3">28.1.</span> link</h3>
+<div class="outline-text-3" id="text-28-1">
+<p>
+<a href="https://view.genial.ly/633ae76d9e26ed001866821c/interactive-content-dst-30-bonus-mdnandgitunit8">https://view.genial.ly/633ae76d9e26ed001866821c/interactive-content-dst-30-bonus-mdnandgitunit8</a>
+</p>
+<ul class="org-ul">
+<li>Vincent Driessen's branching model <a href="https://nvie.com/posts/a-successful-git-branching-model/">https://nvie.com/posts/a-successful-git-branching-model/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc57ee64" class="outline-2">
+<h2 id="orgc57ee64"><span class="section-number-2">29.</span> commit metodology</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+consist of
+</p>
+<ul class="org-ul">
+<li>action</li>
+<li>subject</li>
+<li>comments</li>
+</ul>
+
+<p>
+vocabulary:
+</p>
+<ul class="org-ul">
+<li>init — инициализация;</li>
+<li>add — добавление;</li>
+<li>delete — удаление;</li>
+<li>update — изменение;</li>
+<li>fix — исправление;</li>
+<li>refactor — рефакторинг кода приложения;</li>
+<li>style — исправление опечаток, форматирования;</li>
+<li>docs — всё, что касается документации;</li>
+<li>test — всё, что связано с тестированием;</li>
+<li>merged, fix conflict — слияние, решение конфликта.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd1c895" class="outline-2">
+<h2 id="orgfd1c895"><span class="section-number-2">30.</span> image upload</h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li>Just drag and drop your image from your local pc to github readme in editable mode.</li>
+<li>You can create a .github/images directory in your repo and add all your assets there. Assets added
+here will be available on</li>
+</ul>
+<pre class="example">
+https://raw.githubusercontent.com/{github_user_name}/{repo_name}/{branch}/.github/images/{asset_name}.{asset_extension}
+</pre>
+
+
+<p>
+Link in README.md:
+</p>
+<pre class="example">
+![Alt Text](/assets/{asset_name}.{asset_extension})
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbf94482" class="outline-2">
+<h2 id="orgbf94482"><span class="section-number-2">31.</span> EXAPLES</h2>
+<div class="outline-text-2" id="text-31">
+</div>
+<div id="outline-container-orgf044512" class="outline-3">
+<h3 id="orgf044512"><span class="section-number-3">31.1.</span> branch</h3>
+<div class="outline-text-3" id="text-31-1">
+<p>
+git checkout origin/another<sub>branch</sub>
+</p>
+
+<p>
+git checkout master
+git merge hotfix
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd43524e" class="outline-3">
+<h3 id="orgd43524e"><span class="section-number-3">31.2.</span> misstake</h3>
+<div class="outline-text-3" id="text-31-2">
+<p>
+git reset &#x2013;hard
+</p>
+
+<p>
+git commit &#x2013;amend -m "asd"
+</p>
+
+<p>
+git reset &#x2013;hard a43e2d13
+git push origin development &#x2013;force
+</p>
+</div>
+</div>
+<div id="outline-container-orgbd76045" class="outline-3">
+<h3 id="orgbd76045"><span class="section-number-3">31.3.</span> tags</h3>
+<div class="outline-text-3" id="text-31-3">
+<pre class="example">
+git tag 1.6.1 -m 'Release 1.6.1'
+</pre>
+
+<pre class="example">
+git push origin [tagname]
+</pre>
+
+<pre class="example">
+git push origin tag &lt;tagname&gt;
+</pre>
+
+<pre class="example">
+git push --tags
+</pre>
+
+<pre class="example">
+git push origin v0.1
+</pre>
+
+<pre class="example">
+git tag -d 1.7.0
+</pre>
+
+<pre class="example">
+git push origin :refs/tags/1.7.0
+</pre>
+
+
+<pre class="example">
+git show 1.6.1
+git chechout &lt;tag_name&gt;
+git tag -n
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb028b85" class="outline-3">
+<h3 id="orgb028b85"><span class="section-number-3">31.4.</span> all</h3>
+<div class="outline-text-3" id="text-31-4">
+<p>
+ref~ is shorthand for ref~1 and means the commit's first parent
+ref<sup>1</sup> ref<sup>2</sup> - two parents for merge commit
+</p>
+
+<p>
+git diff-tree &#x2013;name-only -r &lt;commit<sub>id</sub>&gt;
+git diff HEAD^ HEAD
+</p>
+
+<p>
+git blame -w -L 1,2 [filename]
+</p>
+
+<p>
+git shortlog
+git shortlog -s    - only users
+</p>
+
+<p>
+git pull = git fetch + git merge
+git pull &#x2013;rebase = git fetch + git rebase - clear changes
+</p>
+
+<p>
+git checkout  - reset file to latest commit or stagged state
+</p>
+
+<p>
+git status - Displays paths that have any differences
+</p>
+
+
+<p>
+git config &#x2013;global &#x2013;list
+git config &#x2013;list    - repository config
+</p>
+
+
+
+<p>
+git clone git://github.com/vogella/gitbook.git			git - default protocol 9148 port
+git clone <a href="http://github.com/vogella/gitbook.git">http://github.com/vogella/gitbook.git</a>   clone via HTTP
+git clone ssh://git@github.com/vogella/gitbook.git      git - name for ssh
+URL for remote: git@github.com/vogella/gitbook.git
+</p>
+
+<p>
+git remote show origin      - get a full list of Remote references are references (pointers) in your remote repositories, including branches, tags, and so on.
+git ls-remote origin   - like above
+git remote -v
+</p>
+
+
+<p>
+     ###  Stagging area  ###
+git add [path] -add to staging area
+git reset [path] -remove staging area
+git diff &#x2013;cached         -shows the differences between the staging area and the last commit
+git add -n .              - on’t actually add the file(s), just show if they exist and/or will be ignored.
+</p>
+
+<p>
+#clean
+git reset &#x2013;hard     - clean stagging area but do not touch untracked files
+git clean -fdx    - remove untracked files -f force -d directories -x hidden files
+</p>
+
+<p>
+#reset to origin
+git fetch origin
+git reset &#x2013;hard origin/master
+git checkout master
+</p>
+
+
+<p>
+git reset HEAD~1  - move HEAD and branch pointer - do nothing with untracked files
+Reset			Branch pointer		Working tree		Staging area
+soft			Yes					No					No
+mixed (default)	Yes					No					Yes
+hard			Yes					Yes					Yes
+</p>
+
+
+<p>
+git reflog - show HEAD movements and found reseted commits
+</p>
+
+<p>
+git show HEAD:./pom.xml   -show file
+</p>
+
+
+<p>
+Create patch:
+</p>
+
+<p>
+echo "new content for test01" &gt;test01
+</p>
+
+<p>
+git add .
+git diff -p &#x2013;stat &gt; 0001-First-commit-in-the-branch.patch
+</p>
+
+<p>
+git commit -m "first commit in the branch"
+</p>
+
+<p>
+git format-patch origin/master
+</p>
+
+<p>
+git format-patch -3 HEAD # for last 3 commits
+</p>
+
+<p>
+git checkout master
+</p>
+
+<p>
+git apply 0001-First-commit-in-the-branch.patch
+</p>
+
+<p>
+git add .
+git commit -m "apply patch"
+</p>
+
+<p>
+rm 0001-First-commit-in-the-branch.patch
+#short
+git am *.patch   -order in which the patches are applied by specifying them on the command line.
+</p>
+
+
+<p>
+#remove last commit
+git reset &#x2013;hard HEAD~
+git commit &#x2013;amend
+git push -f origin master
+</p>
+
+
+<p>
+#fix detached HEAD
+git checkout master
+</p>
+
+
+<p>
+#Subtree  <a href="https://help.github.com/articles/about-git-subtree-merges/">https://help.github.com/articles/about-git-subtree-merges/</a>
+git remote add -f test-subtree git@github.com:Anoncheg1/test-subtree.git
+#&#x2013;no-commit perform the merge but pretend the merge failed and  do not autocommit
+</p>
+
+<p>
+git merge -s ours &#x2013;squash &#x2013;no-commit &#x2013;allow-unrelated-histories test-subtree/master
+	git read-tree &#x2013;prefix=test-subtree/ -u test-subtree/master
+</p>
+
+<p>
+#pull changed subtree in parent
+git pull &#x2013;allow-unrelated-histories &#x2013;squash -s subtree test-subtree master
+</p>
+
+<p>
+#push subtree from parent
+???
+</p>
+
+
+<p>
+git submodule add [URL to Git repo]
+git submodule init
+git submodule update &#x2013;remote   -remote if you need branches. updates the working tree to the commit described by the branch
+cd [submodule directory]
+git checkout master
+git pull
+</p>
+
+<p>
+git clone &#x2013;recursive
+</p>
+
+<p>
+#push submodule from parent
+#cd submodule
+git status        - check that we on master
+git checkout master      - if detached HEAD mode
+commit submodule
+cd parent
+commit parent
+git submodule update
+</p>
+
+<p>
+#commit main
+git submodule update
+git commit
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga6afa4e" class="outline-2">
+<h2 id="orga6afa4e"><span class="section-number-2">32.</span> USE CASE</h2>
+<div class="outline-text-2" id="text-32">
+</div>
+<div id="outline-container-orgd4b593a" class="outline-3">
+<h3 id="orgd4b593a"><span class="section-number-3">32.1.</span> see changes</h3>
+<div class="outline-text-3" id="text-32-1">
+<ul class="org-ul">
+<li>git diff myfile.txt			#  haven't git added yet</li>
+<li>git diff &#x2013;cached myfile.txt	#  already added</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc08dba4" class="outline-3">
+<h3 id="orgc08dba4"><span class="section-number-3">32.2.</span> branches</h3>
+<div class="outline-text-3" id="text-32-2">
+<p>
+remove commits to another branch
+</p>
+<ul class="org-ul">
+<li>git checkout -b new</li>
+<li>git checkout old</li>
+<li>git reset &#x2013;hard commit</li>
+<li>git push origin &#x2013;force</li>
+</ul>
+
+<p>
+remove commits from remote branch
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<p>
+merge range of commits
+</p>
+<ul class="org-ul">
+<li>cherry-pick
+<ul class="org-ul">
+<li>git checkout old<sub>or</sub><sub>master</sub></li>
+<li>git checkout -b new<sub>branch</sub></li>
+<li>git cherry-pick a..e # from development</li>
+</ul></li>
+</ul>
+
+<p>
+update branch from master
+</p>
+<ol class="org-ol">
+<li>chechout + merge + push
+<ul class="org-ul">
+<li>git checkout b1</li>
+<li>git merge origin/master</li>
+<li>git push origin b1</li>
+</ul></li>
+<li>fetch + rebase
+<ul class="org-ul">
+<li>git fetch</li>
+<li>git rebase origin/master</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9629cdf" class="outline-3">
+<h3 id="org9629cdf"><span class="section-number-3">32.3.</span> explore unknown repo</h3>
+<div class="outline-text-3" id="text-32-3">
+<ul class="org-ul">
+<li>git branch -a  (all or -r remote)</li>
+<li>git log &#x2013;graph &#x2013;oneline</li>
+<li>fetch/push: git remote -v</li>
+<li>authors: git shortlog &#x2013;summary &#x2013;numbered &#x2013;email &#x2013;since "2 year ago" or git shortlog -sne</li>
+<li>git tag # get all tags and versons</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orged9a421" class="outline-3">
+<h3 id="orged9a421"><span class="section-number-3">32.4.</span> pull forced</h3>
+<div class="outline-text-3" id="text-32-4">
+<p>
+git reset &#x2013;hard
+git pull
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a2ce27" class="outline-3">
+<h3 id="org4a2ce27"><span class="section-number-3">32.5.</span> delete all hisotry / remove all commits</h3>
+<div class="outline-text-3" id="text-32-5">
+<ul class="org-ul">
+<li>git checkout &#x2013;orphan latest<sub>branch</sub></li>
+<li>git add -A</li>
+<li>git commit -am "commit message"</li>
+<li>git branch -D main</li>
+<li>git branch -m main</li>
+<li>git push -f origin main</li>
+</ul>
+
+
+
+
+<p>
+git checkout &#x2013;orphan latest<sub>branch</sub>
+git add -A
+git commit -am "commit message"
+git branch -D master
+git branch -m master      -rename current branch to master
+git push -f origin master
+git branch -u origin/master master   - to track remote
+</p>
+
+<p>
+git &#x2013;work-tree="." pull &#x2013;allow-unrelated-histories
+git merge
+git rebase
+</p>
+</div>
+</div>
+<div id="outline-container-org4284023" class="outline-3">
+<h3 id="org4284023"><span class="section-number-3">32.6.</span> delete commits after</h3>
+<div class="outline-text-3" id="text-32-6">
+<ul class="org-ul">
+<li>git reset &#x2013;hard commit</li>
+<li>git push origin HEAD &#x2013;force ??????</li>
+<li>git push origin +HEAD:development</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a6910c" class="outline-3">
+<h3 id="org1a6910c"><span class="section-number-3">32.7.</span> check if working tree has local changes</h3>
+<div class="outline-text-3" id="text-32-7">
+<p>
+one of:
+</p>
+<ul class="org-ul">
+<li>git status -s</li>
+<li>git diff &#x2013;name-only</li>
+</ul>
+
+<p>
+git diff HEAD
+</p>
+
+<p>
+git status -u - display untacked files
+</p>
+</div>
+</div>
+<div id="outline-container-orgfe3173d" class="outline-3">
+<h3 id="orgfe3173d"><span class="section-number-3">32.8.</span> seach</h3>
+<div class="outline-text-3" id="text-32-8">
+<p>
+<b>in files</b>
+git grep WHAT
+</p>
+<ul class="org-ul">
+<li>-n add line number</li>
+<li>&#x2013;count print only sum occurances</li>
+<li>&#x2013;heading &#x2013;break  - more readable</li>
+</ul>
+
+<p>
+<b>in content of commits</b>
+git log -S WHAT &#x2013;oneline
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0671ad1" class="outline-3">
+<h3 id="org0671ad1"><span class="section-number-3">32.9.</span> restore file to HEAD</h3>
+<div class="outline-text-3" id="text-32-9">
+<p>
+git restore file
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8cffaef" class="outline-3">
+<h3 id="org8cffaef"><span class="section-number-3">32.10.</span> get all authors</h3>
+<div class="outline-text-3" id="text-32-10">
+<ul class="org-ul">
+<li>git shortlog -sn &#x2013;since "2 year ago"</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge04fa39" class="outline-3">
+<h3 id="orge04fa39"><span class="section-number-3">32.11.</span> git move between commits</h3>
+<div class="outline-text-3" id="text-32-11">
+<ul class="org-ul">
+<li>git checkout HEAD^</li>
+<li>git switch - and/or git checkout master</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3397ed5" class="outline-3">
+<h3 id="org3397ed5"><span class="section-number-3">32.12.</span> How to Sync Your Fork with the Original Git Repository</h3>
+<div class="outline-text-3" id="text-32-12">
+<p>
+git remote add upstream <a href="https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git">https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">git remote add upstream https://github.com/&lt;aUser&gt;/&lt;aRepo.git&gt;
+git fetch upstream
+git checkout master
+git merge upstream/master
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd669744" class="outline-3">
+<h3 id="orgd669744"><span class="section-number-3">32.13.</span> replace remote history with local</h3>
+</div>
+<div id="outline-container-orgace125c" class="outline-3">
+<h3 id="orgace125c"><span class="section-number-3">32.14.</span> clone single branch and tags</h3>
+<div class="outline-text-3" id="text-32-14">
+<pre class="example">
+git clone --single-branch --branch main https://github.com/username/repository.git
+cd repository
+git fetch --tags
+</pre>
+</div>
+</div>
+<div id="outline-container-org77c9d54" class="outline-3">
+<h3 id="org77c9d54"><span class="section-number-3">32.15.</span> make fork with single main and sync tags</h3>
+<div class="outline-text-3" id="text-32-15">
+<pre class="example">
+git remote add upstream https://github.com/ORIGINAL-USERNAME/ORIGINAL-REPOSITORY.git
+git fetch upstream --tags
+git push origin --tags
+</pre>
+</div>
+</div>
+<div id="outline-container-org87a6e98" class="outline-3">
+<h3 id="org87a6e98"><span class="section-number-3">32.16.</span> tracking branch</h3>
+<div class="outline-text-3" id="text-32-16">
+<pre class="example">
+git checkout main
+git branch -c main main-origin
+git push origin main-origin
+git remote add upstream https://github.com/ORIGINAL-USERNAME/ORIGINAL-REPOSITORY.git
+git fetch upstream (may be not needed)
+git ls-remote --heads upstream
+git branch -u upstream/main main-origin
+git branch -vv
+</pre>
+</div>
+</div>
+<div id="outline-container-orged88af5" class="outline-3">
+<h3 id="orged88af5"><span class="section-number-3">32.17.</span> adding modifications at old commit</h3>
+<div class="outline-text-3" id="text-32-17">
+<p>
+Approach: old to new “stash apply”.
+</p>
+<pre class="example">
+git checkout -b old-branch 9578c2597e2d88b6f0b304b5a05864fd613ddcc1
+# made changed to old-branch
+git stash
+git checkout -b merge-branch main
+git stash apply
+git merge old-branch
+# resolve conficts
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org936fe91" class="outline-3">
+<h3 id="org936fe91"><span class="section-number-3">32.18.</span> patch creation and applying</h3>
+<div class="outline-text-3" id="text-32-18">
+<p>
+.patch file consist of:
+</p>
+<ul class="org-ul">
+<li>Header. If a line starts with a space, Git will treat it as a continuation of the previous line,
+rather than a new line. This is a common convention in email and other text formats, where a line
+starting with a space indicates that it's a continuation of the previous line.</li>
+<li>Diffs with one or more hunks.</li>
+<li>Trailer or Footer, may have Signed-off-by line.</li>
+</ul>
+<pre class="example">
+--
+2.45.2
+</pre>
+
+
+
+<p>
+Creation:
+</p>
+<pre class="example">
+commit and "git format-patch -1 HEAD" OR "git diff --stat -p &gt; patch.patch"
+</pre>
+
+
+<p>
+Applying patch:
+</p>
+<pre class="example">
+git apply --stat a_file.patch
+git apply --check a_file.patch # dry run
+git apply a_file.patch
+</pre>
+
+
+<p>
+Header.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb85ce17" class="outline-2">
+<h2 id="orgb85ce17"><span class="section-number-2">33.</span> WORKFLOWS</h2>
+<div class="outline-text-2" id="text-33">
+</div>
+<div id="outline-container-org5f7cedf" class="outline-3">
+<h3 id="org5f7cedf"><span class="section-number-3">33.1.</span> Merge changes in a big project</h3>
+<div class="outline-text-3" id="text-33-1">
+<p>
+Steps:
+</p>
+<ol class="org-ol">
+<li>Create a new dev branch</li>
+<li>Do your work on local dev branch</li>
+<li>Push dev branch from your local to central git repository</li>
+<li><p>
+Once your work is done, pull changes from master
+</p>
+<ul class="org-ul">
+<li>There is a race condition here, just as in CVS and Bazaar: if your mirror is not up-to-date</li>
+</ul>
+<p>
+because another developer has pushed since you last updated, your push will fail.
+</p></li>
+<li>merge dev branch to the master</li>
+<li>push changes</li>
+<li>Finally, delete the dev branch from both local and central git repository</li>
+</ol>
+
+<p>
+Commands:
+</p>
+<ol class="org-ol">
+<li>git checkout -b my<sub>branch</sub></li>
+<li>git commit -m " "</li>
+<li>git push &#x2013;set-upstream origin my<sub>branch</sub></li>
+<li>git checkout development</li>
+<li>git pull</li>
+<li>git merge my<sub>branch</sub></li>
+<li>git push</li>
+<li>git branch -d dev</li>
+<li>git branch -d -r origin/dev</li>
+</ol>
+
+
+<p>
+If the push fails because someone pushed since your last git pull, rebase on the latest master and push again:
+</p>
+<ol class="org-ol">
+<li>git pull &#x2013;rebase</li>
+<li>git push</li>
+</ol>
+
+<p>
+<a href="https://www.emacswiki.org/emacs/GitForEmacsDevs">https://www.emacswiki.org/emacs/GitForEmacsDevs</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0ccc0d3" class="outline-3">
+<h3 id="org0ccc0d3"><span class="section-number-3">33.2.</span> Back-porting Changes from Master to the Release Branch</h3>
+<div class="outline-text-3" id="text-33-2">
+<p>
+To do this, use the cherry-pick method:
+</p>
+<ol class="org-ol">
+<li>First use the git log command to find the commit you are looking for.</li>
+<li>Then switch to the release branch, update it, and do the cherry-pick:</li>
+<li>git pull</li>
+<li>git checkout release-25  # make sure you have the release branch checked-out</li>
+<li>git cherry-pick -xe COMMIT</li>
+<li>git show # Finally, review your back-port and push:</li>
+<li>git push</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org7388d20" class="outline-2">
+<h2 id="org7388d20"><span class="section-number-2">34.</span> join commits together, merge commits, squash commits, Squash commits into one</h2>
+<div class="outline-text-2" id="text-34">
+<p>
+merge two last commits together:
+</p>
+<pre class="example">
+git rebase --interactive HEAD~2
+</pre>
+
+<p>
+or
+</p>
+<pre class="example">
+git merge --squash bigix # Takes all commits from the bugfix branch and groups it for a 1 commit with your current branch.
+</pre>
+
+
+
+<p>
+merge in history:
+</p>
+<pre class="example">
+: git rebase -i &lt;commit_hash&gt; # after which others will be squashed
+select commits that will be squashed
+</pre>
+
+<p>
+; git push &#x2013;force-with-lease
+</p>
+</div>
+</div>
+<div id="outline-container-orgc42ea6a" class="outline-2">
+<h2 id="orgc42ea6a"><span class="section-number-2">35.</span> humor</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+when the Internet connection lost: "Looks like something went wrong!"
+</p>
+</div>
+</div>
+<div id="outline-container-orgc3720d0" class="outline-2">
+<h2 id="orgc3720d0"><span class="section-number-2">36.</span> Troubleshooting</h2>
+<div class="outline-text-2" id="text-36">
+</div>
+<div id="outline-container-orgd89cb09" class="outline-3">
+<h3 id="orgd89cb09"><span class="section-number-3">36.1.</span> You have divergent branches and need to specify how to reconcile them.</h3>
+<div class="outline-text-3" id="text-36-1">
+<ul class="org-ul">
+<li>There is a merge conflict, you should one of:
+<ul class="org-ul">
+<li>git merge or git pull &#x2013;no-ff # create merge</li>
+<li>git rebase or git pull &#x2013;rebase # temporarily removes commits from our local branch and do fast-forward</li>
+</ul></li>
+
+<li id="pull.rebase false"><p>
+Merge. This is the default setting. <b>git fetch</b> + <b>git merge</b> for pull
+</p>
+<ul class="org-ul">
+<li>When You're working on a team and need to preserve the commit history, including merge</li>
+</ul>
+<p>
+commits. with many merges and conflicts.
+</p>
+<ul class="org-ul">
+<li>This creates a new merge commit that combines the histories of both branches.</li>
+<li>If there are conflicts, you'll need to resolve them manually, then commit the merge.</li>
+<li>steps:
+<ul class="org-ul">
+<li>git config pull.rebase false</li>
+<li>git pull origin main</li>
+</ul></li>
+</ul></li>
+<li id="pull.rebase true"><b>git fetch</b> + <b>git rebase</b>. This means that your local changes will be
+replayed on top of the remote changes, creating a linear history with no merge commits. But
+requires a force push to update the remote branch.
+<ul class="org-ul">
+<li>Rewrites the commit history, which can cause problems if you've already shared your changes with others.</li>
+<li>May lose the context of merge commits, which can make it harder to understand the commit history.</li>
+<li>steps:
+<ul class="org-ul">
+<li>git config pull.rebase true</li>
+<li>git pull &#x2013;rebase origin main</li>
+<li>git push origin main &#x2013;force</li>
+</ul></li>
+</ul></li>
+<li id="pull.ff only">This configuration tells git pull to only perform fast-forward merges, which means
+that the local branch will be updated only if it can be fast-forwarded to the remote branch. If
+there are any divergent changes, git pull will fail and you will need to resolve the conflicts
+manually.
+<ul class="org-ul">
+<li>However, this will result in an error if a fast-forward is not possible, as indicated by the
+message fatal: Not possible to fast-forward, aborting</li>
+<li>steps: git config pull.ff only</li>
+</ul></li>
+</ul>
+
+<p>
+you can always set this configuration per-branch or per-repository, depending on your specific needs.
+</p>
+</div>
+<div id="outline-container-org24448b7" class="outline-4">
+<h4 id="org24448b7"><span class="section-number-4">36.1.1.</span> Merge strategy:</h4>
+<div class="outline-text-4" id="text-36-1-1">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Fetch the latest changes from the remote repository</span>
+git fetch origin
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Pull and merge the remote changes into your local branch</span>
+git pull origin main
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">If there are conflicts, resolve them and commit the merge</span>
+git add &lt;conflicted-file&gt;
+git merge --continue
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Push the updated branch to the remote repository</span>
+git push origin main
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgad84c11" class="outline-4">
+<h4 id="orgad84c11"><span class="section-number-4">36.1.2.</span> Rebase strategy</h4>
+<div class="outline-text-4" id="text-36-1-2">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Fetch the latest changes from the remote repository</span>
+git fetch origin
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Rebase your local changes on top of the remote branch</span>
+git rebase origin/main
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Resolve any conflicts during the rebase</span>
+git add &lt;conflicted-file&gt;
+git rebase --continue
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">Force push the updated branch to the remote repository</span>
+git push origin main --force
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0c4e7c0" class="outline-3">
+<h3 id="org0c4e7c0"><span class="section-number-3">36.2.</span> Your branch and 'origin/main' have diverged</h3>
+<div class="outline-text-3" id="text-36-2">
+<p>
+Git think it's unrelated histories.
+</p>
+<div class="org-src-container">
+<pre class="src src-text">---a---b---main
+        \      \
+          x x x x   diverged, cannot be merged anymore
+          \      \
+    ---?---?---?---c(origin/main)
+</pre>
+</div>
+
+<p>
+And finally, the simple resolution is: git reset &#x2013;hard origin/main, if you don't care the local changes, otherwise you will lost all your work.
+</p>
+
+<p>
+Or try
+</p>
+<pre class="example">
+git pull --depth=2.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3e92fd1" class="outline-3">
+<h3 id="org3e92fd1"><span class="section-number-3">36.3.</span> bare clone</h3>
+<div class="outline-text-3" id="text-36-3">
+<p>
+"error: src refspec refs/heads/master does not match any" or "from the remote, but no such ref was fetched"
+</p>
+<pre class="example">
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org0fd79ea" class="outline-3">
+<h3 id="org0fd79ea"><span class="section-number-3">36.4.</span> shallow update not allowed</h3>
+<div class="outline-text-3" id="text-36-4">
+<p>
+If your repository was cloned with the &#x2013;shallow option, it only includes a limited number of
+ commits, which can cause issues when pushing to a new remote. Solution:
+</p>
+<pre class="example">
+git fetch --unshallow
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org11ed019" class="outline-2">
+<h2 id="org11ed019"><span class="section-number-2">37.</span> status badge</h2>
+<div class="outline-text-2" id="text-37">
+<p>
+<a href="https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge">https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge</a>
+</p>
+
+
+<div id="orgfe5e9d6" class="figure">
+<p><img src="https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg" alt="badge.svg" class="org-svg" />
+</p>
+</div>
+
+<pre class="example">
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+</pre>
+
+
+<p>
+select branch:
+</p>
+<pre class="example">
+![example branch parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)
+</pre>
+
+
+<p>
+event:
+</p>
+<pre class="example">
+![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
+![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=release)
+</pre>
+</div>
+</div>
+<div id="outline-container-org8f3b5dc" class="outline-2">
+<h2 id="org8f3b5dc"><span class="section-number-2">38.</span> python bots</h2>
+<div class="outline-text-2" id="text-38">
+<ul class="org-ul">
+<li>python/miss-islington</li>
+<li>python/bedevere</li>
+<li>python/the-knights-who-say-ni</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6352d78" class="outline-2">
+<h2 id="org6352d78"><span class="section-number-2">39.</span> <a href="https://jonas.github.io/tig/">https://jonas.github.io/tig/</a></h2>
+<div class="outline-text-2" id="text-39">
+<dl class="org-dl">
+<dt>tig log    [options] [revisions] [&#x2013;] [paths]</dt><dd>.</dd>
+<dt>tig show   [options] [revisions] [&#x2013;] [paths]</dt><dd>Open diff view using the given git-show(1) options.</dd>
+<dt>tig reflog [options] [revisions]</dt><dd>.</dd>
+<dt>tig blame  [options] [rev] [&#x2013;] path</dt><dd>given file annotated by commits</dd>
+<dt>tig grep   [options] [pattern]</dt><dd>.</dd>
+<dt>tig refs   [options]</dt><dd>.</dd>
+<dt>tig stash  [options]</dt><dd></dd>
+
+<dt>tig status</dt><dd>.</dd>
+<dt>tig &lt;</dt><dd>.</dd>
+<dt>tig +N</dt><dd>show +2 = +1 commit from HEAD</dd>
+</dl>
+</div>
+<div id="outline-container-orgd593301" class="outline-3">
+<h3 id="orgd593301"><span class="section-number-3">39.1.</span> Keybindings</h3>
+<div class="outline-text-3" id="text-39-1">
+<p>
+View Switching
+</p>
+<ul class="org-ul">
+<li>m Switch to main view.</li>
+<li>d Switch to diff view.</li>
+<li>l Switch to log view.</li>
+<li>p Switch to pager view.</li>
+<li>t Switch to (directory) tree view.</li>
+<li>f Switch to (file) blob view.</li>
+<li>g Switch to grep view.</li>
+<li>b Switch to blame view.</li>
+<li>r Switch to refs view.</li>
+<li>y Switch to stash view.</li>
+<li>h Switch to help view</li>
+<li>s Switch to status view</li>
+<li>c Switch to stage view</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6aedc24" class="outline-2">
+<h2 id="org6aedc24"><span class="section-number-2">40.</span> Git local server and git init &#x2013;bare</h2>
+<div class="outline-text-2" id="text-40">
+<ul class="org-ul">
+<li>mkdir website.git</li>
+<li>git init &#x2013;bare</li>
+</ul>
+<p>
+equal:
+</p>
+<ul class="org-ul">
+<li>git clone ssh://user@git.example.com:/srv/git/my<sub>project</sub></li>
+<li>git clone user@git.example.com:/srv/git/my<sub>project.git</sub></li>
+<li>git clone user@git.example.com:/srv/git/my<sub>project</sub> ./my<sub>project</sub></li>
+<li>git remote add origin user@git.example.com:/srv/git/my<sub>project.git</sub></li>
+</ul>
+
+<p>
+&#x2013;bare - no working tree, repository is special
+</p>
+<ul class="org-ul">
+<li>&#x2013;share - Make the repository group-writable g+sx</li>
+</ul>
+
+<p>
+to clone local bare folder:
+</p>
+<ol class="org-ol">
+<li>git clone &#x2013;local proj-py.git # will crate proj-py folder</li>
+<li>touch .gitignore # create first commit to have branch</li>
+<li>git add .</li>
+<li>git commit -m "init"</li>
+<li>git push</li>
+</ol>
+
+<p>
+By convention, bare repository directory names end with the suffix .git.
+</p>
+<ul class="org-ul">
+<li>If a user SSHs into a server and has write access to the /srv/git/my<sub>project.git</sub> directory, they
+will also automatically have push access.</li>
+<li>git init &#x2013;bare -shared - add group write permissions to a repository properly</li>
+</ul>
+
+
+<p>
+The &#x2013;local option is not necessary when cloning a local repository, as Git will automatically use
+ hard links to share the object database between the two repositories.
+</p>
+
+<p>
+the 'master' branch is not created automatically when you initialize a Git repository. It's created
+ after you make your first commit. to solve this:
+</p>
+</div>
+</div>
+<div id="outline-container-org0009e33" class="outline-2">
+<h2 id="org0009e33"><span class="section-number-2">41.</span> migrate to codeberg</h2>
+<div class="outline-text-2" id="text-41">
+<p>
+<a href="https://dontreinventbicycle.com/github-to-codeberg-howto.html">https://dontreinventbicycle.com/github-to-codeberg-howto.html</a>
+</p>
+
+<ol class="org-ol">
+<li>create repository with same name.</li>
+<li>git remote set-url origin git@codeberg.org:username/repository.git</li>
+<li>git push -u origin main</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga2a0702" class="outline-2">
+<h2 id="orga2a0702"><span class="section-number-2">42.</span> CGIT - wtf is this?</h2>
+<div class="outline-text-2" id="text-42">
+<p>
+<b>How to find git clone link?</b>
+</p>
+<ul class="org-ul">
+<li>It is common known: git://site/repo</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf7539ee" class="outline-2">
+<h2 id="orgf7539ee"><span class="section-number-2">43.</span> Github Models</h2>
+<div class="outline-text-2" id="text-43">
+<p>
+<a href="https://docs.github.com/en/github-models">https://docs.github.com/en/github-models</a>
+</p>
+</div>
+<div id="outline-container-org026ecb7" class="outline-3">
+<h3 id="org026ecb7"><span class="section-number-3">43.1.</span> Rate limits</h3>
+<div class="outline-text-3" id="text-43-1">
+<p>
+Low
+</p>
+<ul class="org-ul">
+<li>Requests per minute 	15</li>
+<li>Requests per day 	150</li>
+</ul>
+
+<p>
+High
+</p>
+<ul class="org-ul">
+<li>Requests per minute 	10</li>
+<li>Requests per day 	50</li>
+</ul>
+
+<p>
+Tokens per request: 8000 in, 4000 out
+</p>
+</div>
+</div>
+<div id="outline-container-org17ef58d" class="outline-3">
+<h3 id="org17ef58d"><span class="section-number-3">43.2.</span> models</h3>
+<div class="outline-text-3" id="text-43-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Meta-Llama-3-70B-Instruct</td>
+<td class="org-left">70-billion</td>
+<td class="org-left">8k input · 4k output</td>
+</tr>
+
+<tr>
+<td class="org-left">"Mistral-large"</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">33k input · 4k output</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb40299c" class="outline-3">
+<h3 id="orgb40299c"><span class="section-number-3">43.3.</span> usage Meta-Llama-3-70B-Instruct</h3>
+<div class="outline-text-3" id="text-43-3">
+<p>
+export GITHUB<sub>TOKEN</sub>="&lt;your-github-token-goes-here&gt;"
+</p>
+
+<p>
+import ModelClient from "@azure-rest/ai-inference";
+import { AzureKeyCredential } from "@azure/core-auth";
+</p>
+
+<p>
+const token= process.env["GITHUB<sub>TOKEN</sub>"];
+const endpoint = "<a href="https://models.inference.ai.azure.com">https://models.inference.ai.azure.com</a>";
+const modelName = "Meta-Llama-3-70B-Instruct";
+</p>
+
+<p>
+export async function main() {
+</p>
+
+<p>
+const client = new ModelClient(
+  endpoint,
+  new AzureKeyCredential(token),
+);
+</p>
+
+<p>
+const response = await client.path("/chat/completions").post({
+  body: {
+    messages: [
+      { role: "system", content: "You are a helpful assistant." },
+      { role: "user", content: "What is the capital of France?" },
+      { role: "assistant", content: "The capital of France is Paris." },
+      { role: "user", content: "What about Spain?" },
+    ],
+    model: modelName,
+  }
+</p>
+</div>
+</div>
+<div id="outline-container-org27199fe" class="outline-3">
+<h3 id="org27199fe"><span class="section-number-3">43.4.</span> usage with curl</h3>
+<div class="outline-text-3" id="text-43-4">
+<div class="org-src-container">
+<pre class="src src-bash">curl -X POST <span style="color: #95e454;">"https://models.inference.ai.azure.com/chat/completions"</span> <span style="color: #95e454;">\</span>
+    -H <span style="color: #95e454;">"Content-Type: application/json"</span> <span style="color: #95e454;">\</span>
+    -H <span style="color: #95e454;">"Authorization: Bearer $GITHUB_TOKEN"</span> <span style="color: #95e454;">\</span>
+    -d <span style="color: #95e454;">'{</span>
+<span style="color: #95e454;">        "messages": [</span>
+<span style="color: #95e454;">            {</span>
+<span style="color: #95e454;">                "role": "system",</span>
+<span style="color: #95e454;">                "content": ""</span>
+<span style="color: #95e454;">            },</span>
+<span style="color: #95e454;">            {</span>
+<span style="color: #95e454;">                "role": "user",</span>
+<span style="color: #95e454;">                "content": "Can you explain the basics of machine learning?"</span>
+<span style="color: #95e454;">            }</span>
+<span style="color: #95e454;">        ],</span>
+<span style="color: #95e454;">        "model": "Mistral-large",</span>
+<span style="color: #95e454;">        "temperature": 0.8,</span>
+<span style="color: #95e454;">        "max_tokens": 2048,</span>
+<span style="color: #95e454;">        "top_p": 0.1</span>
+<span style="color: #95e454;">    }'</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org972c391" class="outline-2">
+<h2 id="org972c391"><span class="section-number-2">44.</span> Copilot Free</h2>
+<div class="outline-text-2" id="text-44">
+<p>
+vscode:extension/GitHub.copilot?referrer=docs-copilot-setup
+</p>
+</div>
+<div id="outline-container-org3add8bd" class="outline-3">
+<h3 id="org3add8bd"><span class="section-number-3">44.1.</span> What’s included</h3>
+<div class="outline-text-3" id="text-44-1">
+<ul class="org-ul">
+<li>2,000 intelligent code completions a month. Get context-aware code suggestions that draw
+context from your GitHub projects  and VS Code workspace.</li>
+<li>50 Copilot Chat messages a month. Ask Copilot for help understanding code, refactoring something, or debugging an issue.</li>
+<li>Choose your AI model. Pick between Claude 3.5 Sonnet or OpenAI GPT-4o.</li>
+<li>Make changes to multiple files with Copilot Edits. Tackle changes across multiple files with Copilot Edits.</li>
+<li>Support for the Copilot Extensions ecosystem. Access third-party agents designed for tasks such
+as querying Stack Overflow or searching the web with Perplexity.</li>
+<li>Choose where you build. Enjoy support in VS Code and across GitHub.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4c8a98f" class="outline-3">
+<h3 id="org4c8a98f"><span class="section-number-3">44.2.</span> VSCODE:</h3>
+<div class="outline-text-3" id="text-44-2">
+<ul class="org-ul">
+<li>“Use AI Features with Copilot for Free&#x2026;” - unified GitHub Copilot extension (installed by default)</li>
+<li>Sign in to Copilot</li>
+</ul>
+
+<p>
+<a href="https://code.visualstudio.com/docs/copilot/setup">https://code.visualstudio.com/docs/copilot/setup</a>
+</p>
+
+<p>
+GitHub Copilot: This is the official GitHub Copilot extension for VSCode
+</p>
+<ul class="org-ul">
+<li><a href="https://plugins.jetbrains.com/plugin/17718-github-copilot">https://plugins.jetbrains.com/plugin/17718-github-copilot</a></li>
+</ul>
+
+<p>
+Copilot Extension: This extension provides additional features and settings for GitHub Copilot, such
+ as customizable keyboard shortcuts, code snippet management, and more.
+</p>
+
+<p>
+third-party extensions that integrate with GitHub Copilot include:
+</p>
+<ul class="org-ul">
+<li>TabNine: This extension provides AI-powered code completion and code suggestions, and can be used
+in conjunction with GitHub Copilot.</li>
+<li>Kite: This extension offers AI-powered code completion, code suggestions, and code review, and can
+be used with GitHub Copilot.</li>
+<li>Codeium: This extension provides AI-powered code completion, code suggestions, and code review,
+and can be used with GitHub Copilot.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4cfa119" class="outline-3">
+<h3 id="org4cfa119"><span class="section-number-3">44.3.</span> build own:</h3>
+<div class="outline-text-3" id="text-44-3">
+<ul class="org-ul">
+<li><a href="https://github.com/features/copilot/extensions#resources">https://github.com/features/copilot/extensions#resources</a></li>
+<li><a href="https://github.com/copilot-extensions/skillset-example">https://github.com/copilot-extensions/skillset-example</a></li>
+</ul>
+
+
+<p>
+approaches:
+</p>
+<ul class="org-ul">
+<li>skillsets approach</li>
+<li>traditional agent</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2521618" class="outline-2">
+<h2 id="org2521618"><span class="section-number-2">45.</span> Git Large File Storage (LFS)</h2>
+<div class="outline-text-2" id="text-45">
+<p>
+<a href="https://github.com/git-lfs/git-lfs/wiki/Tutorial">https://github.com/git-lfs/git-lfs/wiki/Tutorial</a>
+</p>
+
+<p>
+to test if installed:
+</p>
+<pre class="example">
+git lfs install
+</pre>
+
+
+
+<pre class="example">
+git lfs track '*.bin'
+</pre>
+
+<p>
+List tracked patterns (from .gitattributes):
+</p>
+<pre class="example">
+git lfs track
+</pre>
+
+<p>
+List tracked files:
+</p>
+<pre class="example">
+git lfs ls-files
+</pre>
+
+
+<p>
+Maximum file size for GitHub Free: 2 GB
+</p>
+</div>
+<div id="outline-container-orgba4cccf" class="outline-3">
+<h3 id="orgba4cccf"><span class="section-number-3">45.1.</span> <span class="todo TODO">TODO</span> without git</h3>
+<div class="outline-text-3" id="text-45-1">
+<p>
+SSH version:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">!/usr/bin/</span><span style="color: #8ac6f2; font-weight: bold;">env</span><span style="color: #99968b; font-style: italic;"> bash</span>
+
+<span style="color: #cae682;">PROJECT</span>=<span style="color: #95e454;">"${1}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">your-company/or-repo/whatever</span>
+<span style="color: #cae682;">FILEPATH</span>=<span style="color: #95e454;">"${2}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">foo/bar.tar.gz</span>
+<span style="color: #cae682;">REF</span>=<span style="color: #95e454;">"${3:-master}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">branch</span>
+<span style="color: #cae682;">SSHID</span>=<span style="color: #95e454;">"${4:-$HOME/.ssh/ecdsa_id}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">like $HOME/.ssh/mycompany</span>
+
+<span style="color: #cae682;">OID</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">set -o pipefail; curl -fSL -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "https://gitlab.com/api/v4/projects/${PROJECT//\//%2F}/repository/files/${FILEPATH//\//%2F}/raw?ref=${REF}" -o - | grep '^oid' | cut -d: -f2</span><span style="color: #95e454;">)"</span>
+<span style="color: #cae682;">AUTH</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">set -o pipefail; ssh -o IdentitiesOnly=yes -o IdentityFile="${SSHID}" git@gitlab.com git-lfs-authenticate "${PROJECT}.git" download | jq -er '.header.Authorization'</span><span style="color: #95e454;">)"</span>
+mkdir -p <span style="color: #95e454;">"${FILEPATH%%/*}"</span>
+curl -H <span style="color: #95e454;">"Authorization: $AUTH"</span> <span style="color: #95e454;">"https://gitlab.com/${PROJECT}.git/gitlab-lfs/objects/${OID}"</span> -o <span style="color: #95e454;">"${FILEPATH}"</span>
+file <span style="color: #95e454;">"${FILEPATH}"</span>
+</pre>
+</div>
+
+<p>
+HTTP version:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #fa8072;">#</span><span style="color: #99968b; font-style: italic;">!/usr/bin/</span><span style="color: #8ac6f2; font-weight: bold;">env</span><span style="color: #99968b; font-style: italic;"> bash</span>
+
+<span style="color: #cae682;">PROJECT</span>=<span style="color: #95e454;">"${1}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">your-company/or-repo/whatever</span>
+<span style="color: #cae682;">FILEPATH</span>=<span style="color: #95e454;">"${2}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">foo/bar.tar.gz</span>
+<span style="color: #cae682;">BRANCH</span>=<span style="color: #95e454;">"${3:-master}"</span> <span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">branch</span>
+
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">get LFS file info</span>
+<span style="color: #cae682;">IFS</span>=$<span style="color: #95e454;">'\n'</span> <span style="color: #cae682;">LFS_OBJECT_INFO</span>=($(<span style="color: #fa8072;">curl -fsSL -H "PRIVATE-TOKEN: ${GITLAB_TOKEN}" "https://gitlab.com/api/v4/projects/${PROJECT//\//%2F}/repository/files/${FILEPATH//\//%2F}/raw?ref=${BRANCH}" -o -</span>))
+<span style="color: #cae682;">OID</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">echo "${LFS_OBJECT_INFO[@]}" | grep -oP "oid sha256:\K[^\s]+"</span><span style="color: #95e454;">)"</span>
+<span style="color: #cae682;">SIZE</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">echo "${LFS_OBJECT_INFO[@]}" | grep -oP "size \K[^\s]+"</span><span style="color: #95e454;">)"</span>
+<span style="color: #fa8072;"># </span><span style="color: #99968b; font-style: italic;">request actions for given lfs objects</span>
+<span style="color: #cae682;">LFS_OBJECT_REQUEST_JSON</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">jq -rnc --arg oid $OID --arg size $SIZE --arg ref "refs/heads/$BRANCH" '{"operation":"download","objects":[{"oid":$oid,"size":$size}],"transfers":["lfs-standalone-file","basic"],"ref":{"name": $ref }}'</span><span style="color: #95e454;">)"</span>
+<span style="color: #cae682;">LFS_OBJECT_ACTION_DOWNLOAD</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">set -o pipefail; curl -sSlf -H "Content-Type: application/json" -X POST -d "$JSON" "https://oauth2:${GITLAB_TOKEN}@gitlab.com/${PROJECT}.git/info/lfs/objects/batch" | jq -er '.objects[0].actions.download'</span><span style="color: #95e454;">)"</span>
+<span style="color: #cae682;">AUTH</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">echo "$LFS_OBJECT_ACTION_DOWNLOAD" | jq -er '.header.Authorization'</span><span style="color: #95e454;">)"</span>
+<span style="color: #cae682;">DOWNLOAD_URL</span>=<span style="color: #95e454;">"$(</span><span style="color: #fa8072;">echo "$LFS_OBJECT_ACTION_DOWNLOAD" | jq -er '.href'</span><span style="color: #95e454;">)"</span>
+mkdir -p <span style="color: #95e454;">"${FILEPATH%%/*}"</span>
+curl -H <span style="color: #95e454;">"Authorization: ${AUTH}"</span> <span style="color: #95e454;">"${DOWNLOAD_URL}"</span> -o <span style="color: #95e454;">"${FILEPATH}"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb98a2cf" class="outline-3">
+<h3 id="orgb98a2cf"><span class="section-number-3">45.2.</span> Alternatives</h3>
+<div class="outline-text-3" id="text-45-2">
+<ul class="org-ul">
+<li>git-annex</li>
+<li>git-bigfiles</li>
+<li>git-fat</li>
+<li>git-media</li>
+<li>git-bigstore</li>
+<li>git-sym</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

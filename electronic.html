@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge9ca41e">1. SD card</a></li>
+<li><a href="#org775de61">2. battery</a>
+<ul>
+<li><a href="#orgfb7fc2f">2.1. theory</a></li>
+<li><a href="#org7348e80">2.2. Lithium ion or LiON</a>
+<ul>
+<li><a href="#org12c7ea7">2.2.1. usage for laptop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9043e88">3. terms</a></li>
+<li><a href="#org3f0632f">4. circuit</a></li>
+<li><a href="#orgfbc352a">5. Printed circuit board or PBC</a></li>
+<li><a href="#orgdb2a2ce">6. Integrated circuit or chip or ICs</a>
+<ul>
+<li><a href="#org2bbf476">6.1. Pinout - cross-reference between the contacts, or pins and their functions</a></li>
+<li><a href="#orgcd59909">6.2. packages</a></li>
+<li><a href="#org3e68ce1">6.3. Dual in-line package</a></li>
+<li><a href="#orgcb51272">6.4. In-system programming (ISP)</a></li>
+<li><a href="#org4cde74f">6.5. Microcontroller MCU for microcontroller unit</a></li>
+</ul>
+</li>
+<li><a href="#org6784007">7. FLASH</a></li>
+<li><a href="#org867e3cb">8. Hard Drives</a>
+<ul>
+<li><a href="#org6867447">8.1. CMR vs. SMR</a></li>
+</ul>
+</li>
+<li><a href="#org7e8cc09">9. Coulomb's law</a></li>
+<li><a href="#org3acccde">10. Capacitor</a></li>
+<li><a href="#org0b8f227">11. <span class="todo TODO">TODO</span> induction motor or asynchronous motor - AC electric motor</a></li>
+<li><a href="#org7807f61">12. Ponoma 5250 Test Clip - For connecting to the bios chip.</a>
+<ul>
+<li><a href="#orgcf1ea21">12.1. Статическое электричество</a></li>
+<li><a href="#org2c02cd0">12.2. описание</a></li>
+<li><a href="#orgcc9c1f5">12.3. spec</a></li>
+</ul>
+</li>
+<li><a href="#orgec46e22">13. bios chip Macronix MX25L6406EM2I-12G</a></li>
+<li><a href="#org5690130">14. bios chip Winbond 25Q64CVSIG</a>
+<ul>
+<li><a href="#org96121cb">14.1. spec</a></li>
+</ul>
+</li>
+<li><a href="#orge495c9d">15. bios chip  Winbond flash chip "W25Q32.V"</a></li>
+<li><a href="#org949ebe2">16. flashrom</a></li>
+<li><a href="#org68ea97d">17. датчики магнитного поля</a></li>
+<li><a href="#org2e35f7f">18. Raspberry PI</a>
+<ul>
+<li><a href="#org1a74ffe">18.1. install</a>
+<ul>
+<li><a href="#org7c3f759">18.1.1. headless setup</a></li>
+</ul>
+</li>
+<li><a href="#orga4fb981">18.2. Raspberry Pi OS</a>
+<ul>
+<li><a href="#org957bb1d">18.2.1. raspberry commands</a></li>
+<li><a href="#org03f0f00">18.2.2. Useful Utilities</a></li>
+<li><a href="#org10f2439">18.2.3. apt</a></li>
+</ul>
+</li>
+<li><a href="#org63535f5">18.3. USECASES</a>
+<ul>
+<li><a href="#orga08074e">18.3.1. enable ssh</a></li>
+<li><a href="#org716b9e0">18.3.2. increase swap</a></li>
+<li><a href="#orgff9d344">18.3.3. as a wireless access point</a></li>
+</ul>
+</li>
+<li><a href="#org7185966">18.4. GPIO and the 40-pin Header</a>
+<ul>
+<li><a href="#org4c6516b">18.4.1. links</a></li>
+<li><a href="#orgdc35169">18.4.2. safe</a></li>
+</ul>
+</li>
+<li><a href="#org341bb82">18.5. links</a></li>
+</ul>
+</li>
+<li><a href="#org50342e8">19. Wifi USB</a>
+<ul>
+<li><a href="#orgc781b25">19.1. rtl8822bu - AC1300 USB</a>
+<ul>
+<li><a href="#org2f1f5a4">19.1.1. info</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgdcc7230">20. Banana Pi</a></li>
+<li><a href="#org5494492">21. GPGPU (General-Purpose computing on Graphics Processing Unit).</a></li>
+<li><a href="#org4ac3f47">22. radio RTL-SDR</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 120;-</b>-
+</p>
+
+<p>
+<a href="https://dip8.ru">https://dip8.ru</a>
+vitalij@gmx.com
+ckn3xp25q8TWUfOlhoOHL
+Заказ №144988 от 31.01.2022, 2 товара на сумму 2 846.28 руб.
+<a href="https://tmelectronics.ru">https://tmelectronics.ru</a>
+</p>
+
+
+<p>
+AC power (active power) or Instantaneous power or real power or just power
+</p>
+<ul class="org-ul">
+<li>P, watt(W) (joules per second)</li>
+<li>amount of energy transferred or converted per unit time</li>
+<li>P(t) = I(t)*V(t)</li>
+</ul>
+
+
+<p>
+Voltage
+</p>
+
+<p>
+Printed circuit board(PCB) -
+</p>
+<div id="outline-container-orge9ca41e" class="outline-2">
+<h2 id="orge9ca41e"><span class="section-number-2">1.</span> SD card</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="https://www.kingston.com/unitedstates/en/solutions/personal-storage/memory-card-speed-classes">https://www.kingston.com/unitedstates/en/solutions/personal-storage/memory-card-speed-classes</a>
+</p>
+
+<p>
+higher - lower
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Speed Class</td>
+<td class="org-right">10</td>
+<td class="org-right">10</td>
+<td class="org-right">10</td>
+<td class="org-right">10</td>
+<td class="org-right">6</td>
+<td class="org-right">4</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-left">UHC CLass</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Video Speed Class</td>
+<td class="org-right">V90</td>
+<td class="org-right">v60</td>
+<td class="org-right">V30</td>
+<td class="org-right">V10</td>
+<td class="org-right">V6</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org775de61" class="outline-2">
+<h2 id="org775de61"><span class="section-number-2">2.</span> battery</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgfb7fc2f" class="outline-3">
+<h3 id="orgfb7fc2f"><span class="section-number-3">2.1.</span> theory</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+types
+</p>
+<ul class="org-ul">
+<li>Литий-ионный  lithium-ion or Li-ion -  reversible intercalation of Li+ ions</li>
+<li>Гелевый</li>
+<li>Щелочный</li>
+<li>Свинцово-кислотный</li>
+</ul>
+
+<p>
+Принцип работы литий-ионного аккумулятора
+</p>
+
+<p>
+В литий-ионных аккумуляторах графит и оксид лития наносятся в виде покрытия на медную и алюминиевую фольгу. Способность
+ атомов отдавать свои электроны характеризуется электрохимическим потенциалом. В литий-ионных аккумуляторах используется
+ металл с наибольшим электрохимическим потенциалом — литий. Литий — химически активный металл, он вступает в реакцию
+ даже с водой и воздухом. Но активен только чистый литий, а вот его оксид, напротив, очень стабилен.
+</p>
+
+<p>
+Разряженный аккумулятор подключается к источнику питания. Положительный полюс начнет притягивать электроны, вытаскивая
+ их из оксида лития. Поскольку электроны не могут проникать через электролит, то они движутся по внешней цепи через
+ источник питания и в конце концов достигают графита. этот же самый момент положительные ионы лития притягиваются
+ отрицательным полюсом, проходя сквозь электролит и также попадают в графит, размещаясь между его слоями (<b>интеркаляция</b>).
+ Когда все ионы лития достигнут графита и будут захвачены его слоями, батарея будет полностью заряжена. В пространствах
+ кристаллической решётки графита запасается большое количество ионов лития. При этом сохраняются компактные
+ геометрические размеры благодаря слоистой и пористой структуре графита.
+</p>
+
+<p>
+intercalation is the reversible inclusion or insertion of a molecule (or ion) into layered materials with layered structures.
+</p>
+
+<p>
+Main components of of batteries:
+</p>
+<ul class="org-ul">
+<li>lithium and lithium cation Li+ (5-7% of the total cost),</li>
+<li>Cobalt, Nickel (20-25% of the total cost of manufacturing a lithium-ion battery),</li>
+<li>Graphite, Manganese.</li>
+</ul>
+
+<p>
+What are the key components of a lithium-ion battery?
+</p>
+<ul class="org-ul">
+<li>The key components include the anode (typically graphite), cathode (often containing lithium and other metals like
+cobalt, nickel, or manganese), electrolyte (a lithium salt in a solvent), and separator (to prevent short circuits).</li>
+</ul>
+
+
+<p>
+Factors affect the performance and lifespan of a lithium-ion battery:
+</p>
+<ol class="org-ol">
+<li>temperature 30-40%</li>
+<li>charge/discharge rates 20-30%</li>
+<li>depth of discharge 20-30%</li>
+<li>cycling frequency 10-20%</li>
+</ol>
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Intercalation_(chemistry)">https://en.wikipedia.org/wiki/Intercalation_(chemistry)</a></li>
+<li><a href="https://www.britannica.com/science/lithium-chemical-element">https://www.britannica.com/science/lithium-chemical-element</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lithium">https://en.wikipedia.org/wiki/Lithium</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lithium-ion_battery">https://en.wikipedia.org/wiki/Lithium-ion_battery</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7348e80" class="outline-3">
+<h3 id="org7348e80"><span class="section-number-3">2.2.</span> Lithium ion or LiON</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org12c7ea7" class="outline-4">
+<h4 id="org12c7ea7"><span class="section-number-4">2.2.1.</span> usage for laptop</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Memory effect
+</p>
+<ul class="org-ul">
+<li>plugged onto the charger long after it has been fully charged</li>
+<li>undercharging</li>
+<li>charging before the battery is fully drained</li>
+</ul>
+
+<p>
+Shallow cycling
+</p>
+<ul class="org-ul">
+<li>without allowing it to reach full charge status</li>
+</ul>
+
+<p>
+Cycle life - Laptop batteries have a finite lifespan
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<p>
+Keep Your Laptop Cool
+</p>
+<ul class="org-ul">
+<li>Lithium-ion batteries perform best when their temperature is between 15 °C and 35 °C</li>
+<li>When their temperature gets too low, their capacity is reduced</li>
+<li>When their temperature gets too high, a thermal failure may occur.</li>
+</ul>
+
+<p>
+Charge Between 30% and 80%
+</p>
+<ul class="org-ul">
+<li>ithium-ion batteries shouldn’t be charged above 80% and discharged below 30% of their maximum capacity to increase their lifespan.</li>
+<li>manually limit battery charging using TLP:
+<ul class="org-ul">
+<li>su -c 'echo 80 &gt; /sys/class/power<sub>supply</sub>/BAT0/charge<sub>stop</sub><sub>threshold</sub>'</li>
+</ul></li>
+</ul>
+
+
+<p>
+bad!!!!
+</p>
+<ul class="org-ul">
+<li>Take your laptop with your every day to school or work and use it until there’s no juice left.</li>
+<li>Take the fully discharged laptop home and use it for the rest of the day while it’s connected to a charger.</li>
+<li>Leave the laptop charging over night so that it’s charged to 100% next morning.</li>
+</ul>
+
+<p>
+battery has deteriorated so far (capacity). -  compare the energy-full and energy-full-design
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9043e88" class="outline-2">
+<h2 id="org9043e88"><span class="section-number-2">3.</span> terms</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Alternating current (AC) - переменный ток
+Direct current (DC) - постоянный ток
+</p>
+
+<ul class="org-ul">
+<li>insulating [ˈɪnsjʊleɪtɪŋ] - изоляционный</li>
+<li>insulator [ˈɪnsjʊleɪtə] or dielectric [daɪɪˈlektrɪk] - изолятор или диэлектрик (используется для подчёркивания
+способности материала к накоплению энергии посредством поляризации - polarisability.)</li>
+<li>conductive [kənˈdʌktɪv] - проводящий</li>
+<li>conductor [kənˈdʌktə] - проводник</li>
+<li>soldering - пайка, спаивание</li>
+<li>integrated circuit [ˈɪntɪgreɪtɪd ˈsɜːkɪt] or chip or microchip  - интегральная схема, микросхема</li>
+<li>Surface-mount technology (SMT) -</li>
+<li>Capacitor [kəˈpæsɪtə] - Конденсатор</li>
+<li>breadboard[ˈbredbɔːd] - Макетная плата</li>
+<li>terminal [ˈtɜːmɪnl] - клемма, соединение</li>
+<li>supply voltage</li>
+<li>current [ˈkʌrənt] - ток flow from the negative to the positive polarity of the voltage</li>
+<li>load [ləʊd] - нагрузка типа лампочки bulb</li>
+<li>to secure to a PCB - прикреплять, запаивать</li>
+<li>soldering - пайка solderless - беспаячный</li>
+<li>pin is to refer to electrical contacts of, specifically, the male gender</li>
+<li>Pinout - cross-reference between the contacts, or pins and their functions. no gender or female</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f0632f" class="outline-2">
+<h2 id="org3f0632f"><span class="section-number-2">4.</span> circuit</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>open/short circuits - electric circuit in which current does not flow or does flow</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfbc352a" class="outline-2">
+<h2 id="orgfbc352a"><span class="section-number-2">5.</span> Printed circuit board or PBC</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>sandwich structure of conductive and insulating layers</li>
+</ul>
+<p>
+for
+</p>
+<ul class="org-ul">
+<li>to affix electronic components</li>
+<li>to provide reliable electrical connections (and also reliable open circuits) between the component's terminals</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdb2a2ce" class="outline-2">
+<h2 id="orgdb2a2ce"><span class="section-number-2">6.</span> Integrated circuit or chip or ICs</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>smaller, faster, and less expensive than those constructed of discrete electronic components</li>
+<li>metal–oxide–silicon (MOS)</li>
+<li>die - small block of semiconducting material on which a given functional circuit is fabricated -  wafer is cut (diced)
+into many pieces, each containing one copy of the circuit. Each of these pieces is called a die.</li>
+<li>most dies are packaged in various forms.</li>
+</ul>
+</div>
+
+<div id="outline-container-org2bbf476" class="outline-3">
+<h3 id="org2bbf476"><span class="section-number-3">6.1.</span> Pinout - cross-reference between the contacts, or pins and their functions</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>Цоколёвка («распино́вка»), или разво́дка вы́водов</li>
+<li>basing diagram</li>
+<li>на схеме сторона помечается кружочком или выемкой</li>
+<li>обычно берется сторона где надписи и поворачивается по часовой на 45</li>
+</ul>
+<p>
+нумерация
+</p>
+<ul class="org-ul">
+<li>1 4</li>
+<li>2 5</li>
+<li>3 6</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd59909" class="outline-3">
+<h3 id="orgcd59909"><span class="section-number-3">6.2.</span> packages</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Integrated circuits are put into protective <b>packages</b> <a href="https://en.wikipedia.org/wiki/List_of_integrated_circuit_packaging_types">https://en.wikipedia.org/wiki/List_of_integrated_circuit_packaging_types</a>
+<ul class="org-ul">
+<li>Through-hole packages - uses holes drilled through the PCB for mounting the components.
+<ul class="org-ul">
+<li>dual in-line package (DIP or DIL) - rectangular housing and two parallel rows of electrical connecting pins</li>
+<li>Transistor, diode, small-pin-count IC packages</li>
+</ul></li>
+<li>Surface mount -Chip on board is a packaging technique that directly connects a die to a PCB, without an interposer
+or lead frame.  surface-mount technology (SMT)</li>
+<li>Chip carrier - rectangular package with contacts on all four edges.
+<ul class="org-ul">
+<li>plastic leaded chip carrier (PLCC)</li>
+</ul></li>
+<li>Pin grid arrays</li>
+<li>Flat packages
+<ul class="org-ul">
+<li>Small outline packages
+<ul class="org-ul">
+<li>small-outline integrated circuit (SOIC)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+Tube package - A tube is a rigid extruded plastic package designed to fit the profile of the part and protect the
+leads. Tubes ship with the exact number of parts ordered and a rubber plug or plastic peg in each end to prevent the
+parts from sliding out. Tubes are packaged according to the ESD (ElectroStatic Discharge) and MSL (Moisture Sensitivity
+Level) protection requirements determined by the manufacturer.
+</p>
+</div>
+</div>
+<div id="outline-container-org3e68ce1" class="outline-3">
+<h3 id="org3e68ce1"><span class="section-number-3">6.3.</span> Dual in-line package</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>DIPn, where n is the total number of pins</li>
+<li>plastic or ceramic packages</li>
+<li>secured to a PCB by inserting the pins through holes in the board and soldering them in place</li>
+<li>can be mounted either by through-hole soldering or in sockets or  point-to-point wiring ("dead bug style")</li>
+</ul>
+
+<p>
+zero insertion force (ZIF) mechanism - type of socket
+</p>
+</div>
+</div>
+<div id="outline-container-orgcb51272" class="outline-3">
+<h3 id="orgcb51272"><span class="section-number-3">6.4.</span> In-system programming (ISP)</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>or also called in-circuit serial programming (ICSP)</li>
+<li>no standard</li>
+<li>Typically, chips supporting ISP have internal circuitry to generate any necessary programming voltage from the
+system's normal supply voltage, and communicate with the programmer via a serial protocol.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4cde74f" class="outline-3">
+<h3 id="org4cde74f"><span class="section-number-3">6.5.</span> Microcontroller MCU for microcontroller unit</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>small computer on a single integrated circuit (IC) chip</li>
+<li>contains one or more CPUs (processor cores) along with memory and programmable input/output peripherals</li>
+<li>designed for embedded applications</li>
+<li>microcontroller is similar to, but less sophisticated than, a system on a chip (SoC). An SoC may include a
+microcontroller as one of its components</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6784007" class="outline-2">
+<h2 id="org6784007"><span class="section-number-2">7.</span> FLASH</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Non-Volatile and volatile
+types of flash memory
+</p>
+
+<ul class="org-ul">
+<li>NOR flash</li>
+<li>NAND flash</li>
+<li>The connections of the individual memory cells are different Флеш-память различается методом соединения ячеек в масси</li>
+<li>They differ at the circuit level depending on whether the state of the bit line or word lines is pulled high or
+low. In NAND flash, the relationship between the bit line and the word lines resembles a NAND gate; in NOR flash, it
+resembles a NOR gate.</li>
+<li>The interface provided for reading and writing the memory is different; NOR allows random access, while NAND allows
+only page access.</li>
+<li>Main application 	NAND - File storage 	NOR - Code execution</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org867e3cb" class="outline-2">
+<h2 id="org867e3cb"><span class="section-number-2">8.</span> Hard Drives</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-org6867447" class="outline-3">
+<h3 id="org6867447"><span class="section-number-3">8.1.</span> CMR vs. SMR</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
+<li>SMR drive costs less</li>
+<li>Conventional Magnetic Recording (CMR) drives write data on a hard disk in tracks that do not overlap</li>
+<li>Shingled Magnetic Recording (SMR) allows tracks to overlap, which results in higher data densities, but slower read
+and write times compared to CMR drives.</li>
+<li>CMR drives is faster.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e8cc09" class="outline-2">
+<h2 id="org7e8cc09"><span class="section-number-2">9.</span> Coulomb's law</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Закон Кулона
+</p>
+<ul class="org-ul">
+<li>Сила взаимодействия двух точечных зарядов в вакууме направлена вдоль прямой, соединяющей эти заряды, пропорциональна
+их величинам и обратно пропорциональна квадрату расстояния между ними. Она является силой притяжения, если знаки
+зарядов разные, и силой отталкивания, если эти знаки одинаковы.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3acccde" class="outline-2">
+<h2 id="org3acccde"><span class="section-number-2">10.</span> Capacitor</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+From Coulomb's law a charge on one conductor will exert a force on the charge carriers within the other conductor,
+attracting opposite polarity charge and repelling like polarity charges, thus an opposite polarity charge will be
+induced on the surface of the other conductor. The conductors thus hold equal and opposite charges on their facing
+surfaces,[22] and the dielectric develops an electric field.
+</p>
+
+<p>
+applications
+</p>
+<ul class="org-ul">
+<li>Capacitors are commonly used in electronic devices to maintain power supply while batteries are being changed. (This
+prevents loss of information in volatile memory.)</li>
+<li>Reservoir capacitors are used in power supplies where they smooth the output of a full or half wave rectifier. They
+can also be used in charge pump circuits as the energy storage element in the generation of higher voltages than the
+input voltage.</li>
+<li>Power factor correction</li>
+<li>Suppression and coupling</li>
+<li>Signal coupling - pass AC but block DC signals</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b8f227" class="outline-2">
+<h2 id="org0b8f227"><span class="section-number-2">11.</span> <span class="todo TODO">TODO</span> induction motor or asynchronous motor - AC electric motor</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Variable-frequency drive - systems to control AC motor speed and torque by varying motor input frequency and voltage.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7807f61" class="outline-2">
+<h2 id="org7807f61"><span class="section-number-2">12.</span> Ponoma 5250 Test Clip - For connecting to the bios chip.</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>для соединения с surface mounted SOIC &amp; SOJ chips body width from .150 to 350 wide</li>
+<li>8 pins .260 width</li>
+<li></li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgcf1ea21" class="outline-3">
+<h3 id="orgcf1ea21"><span class="section-number-3">12.1.</span> Статическое электричество</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+Перед тем как приступать к работе с чувствительной электроникой (микросхемы, микроконтроллеры, КМОП-компоненты и т.д.)
+нужно убрать такой паразитный и не несущий пользы заряд. Для этого достаточно коснуться руками какого-то массивного
+металлического предмета.
+</p>
+
+<p>
+антистатические браслеты - на запястье одной из рук а отвод накопившегося в теле паразитного заряда выполняется через
+подключенный к ней проводник, соединенный с помощью зажима "крокодильчика" с заземлением.
+</p>
+
+<p>
+Важно заметить что соединение "человек-заземление" - не прямое! В разрыве соединения "пластина-заземление" должен
+присутствовать резистор с сопротивлением в несколько мегаОм. Он необходим для уменьшения силы тока уходящего заряда, а
+также для безопасности при работе с электронными устройствами, питающимися от потребительской сети переменного
+напряжения.
+</p>
+</div>
+</div>
+<div id="outline-container-org2c02cd0" class="outline-3">
+<h3 id="org2c02cd0"><span class="section-number-3">12.2.</span> описание</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+Измерительный клипс SOICO8
+Производитель	POMONA
+Модель 5250
+</p>
+
+<ul class="org-ul">
+<li>Совместим с 8-контактными корпусами SMD (150 мил и 200 мил)</li>
+<li>Идеально подходит для программирования в системе, например, с помощью программатора REVELPROG-IS.</li>
+<li>совместим с системами в оболочках SO-8 (150 и 200 мил),</li>
+<li>совместим со всеми программаторами (позолоченные разъемы, растр 2,54 мм), например, с REVELPROG-IS,</li>
+<li>возможность зажима зажима на распаянной памяти (хотя и не рекомендуется - можно легко повредить контакты памяти и /
+или пластину зажима).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc9c1f5" class="outline-3">
+<h3 id="orgcc9c1f5"><span class="section-number-3">12.3.</span> spec</h3>
+<div class="outline-text-3" id="text-12-3">
+<p>
+<a href="https://www.digikey.com/en/products/detail/pomona-electronics/5250/745102">https://www.digikey.com/en/products/detail/pomona-electronics/5250/745102</a>
+<a href="https://eu.mouser.com/datasheet/2/159/d5250-54_5437_1_01_1-1513245.pdf">https://eu.mouser.com/datasheet/2/159/d5250-54_5437_1_01_1-1513245.pdf</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgec46e22" class="outline-2">
+<h2 id="orgec46e22"><span class="section-number-2">13.</span> bios chip Macronix MX25L6406EM2I-12G</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li><a href="https://www.macronix.com/Lists/Datasheet/Attachments/7370/MX25L6406E,%203V,%2064Mb,%20v1.9.pdf">https://www.macronix.com/Lists/Datasheet/Attachments/7370/MX25L6406E,%203V,%2064Mb,%20v1.9.pdf</a></li>
+</ul>
+
+<p>
+Package / Case - 8-SOIC
+Supplier Device Package - 8-SOP
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5690130" class="outline-2">
+<h2 id="org5690130"><span class="section-number-2">14.</span> bios chip Winbond 25Q64CVSIG</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<a href="https://github.com/nenadstoisavljevic/t420-coreboot-guide">https://github.com/nenadstoisavljevic/t420-coreboot-guide</a>
+<a href="https://www.instructables.com/Lenovo-T420-Coreboot-WRaspberry-Pi/">https://www.instructables.com/Lenovo-T420-Coreboot-WRaspberry-Pi/</a>
+<a href="https://tomvanveen.eu/flashing-bios-chip-raspberry-pi/">https://tomvanveen.eu/flashing-bios-chip-raspberry-pi/</a>
+<a href="https://nm-projects.de/2017/08/flashing-coreboot-on-the-t430-with-a-raspberry-pi/">https://nm-projects.de/2017/08/flashing-coreboot-on-the-t430-with-a-raspberry-pi/</a>
+</p>
+
+<p>
+coreboot config t440 , cannot boot <a href="https://blog.0xcb.dev/lenovo-t440p-coreboot/">https://blog.0xcb.dev/lenovo-t440p-coreboot/</a>
+t420 config <a href="https://www.reddit.com/r/coreboot/comments/fzuzch/t420_coreboot_installation_guide_0_guaranteed/">https://www.reddit.com/r/coreboot/comments/fzuzch/t420_coreboot_installation_guide_0_guaranteed/</a>
+</p>
+
+<ul class="org-ul">
+<li>SOP8</li>
+<li>3V 64M-BIT / 8M-byte</li>
+<li>W25Q64CV</li>
+<li>SERIAL FLASH MEMORY WITH DUAL AND QUAD SPI</li>
+<li>Standard SPI: CLK, /CS, DI, DO, /WP, /Hold</li>
+</ul>
+<p>
+– Dual SPI: CLK, /CS, IO0, IO1, /WP, /Hold
+– Quad SPI: CLK, /CS, IO0, IO1, IO2, IO3
+</p>
+
+
+<p>
+1 cs - 24
+2 MISO - 21
+3 -
+4 GND - 25 or  39
+5 MOSI - 19
+6 CLK - 23
+7 -
+8 VCC - 17
+</p>
+
+<ul class="org-ul">
+<li>test: flashrom -p linux<sub>spi</sub>:dev=/dev/spidev0.0,spispeed=2000</li>
+<li>flashrom -p linux<sub>spi</sub>:dev=/dev/spidev0.0,spispeed=1500 -c "W25Q64.V" -r factory1.rom</li>
+<li>flashrom -p linux<sub>spi</sub>:dev=/dev/spidev0.0,spispeed=2000 -c "W25Q64.V" -r factory2.rom</li>
+<li>flashrom -p linux<sub>spi</sub>:dev=/dev/spidev0.0,spispeed=2500 -c "W25Q64.V" -r factory3.rom</li>
+</ul>
+</div>
+
+<div id="outline-container-org96121cb" class="outline-3">
+<h3 id="org96121cb"><span class="section-number-3">14.1.</span> spec</h3>
+<div class="outline-text-3" id="text-14-1">
+<p>
+<a href="http://www.chipset-ic.com/datasheet/25Q64CVSIG-Flash-8M.pdf">http://www.chipset-ic.com/datasheet/25Q64CVSIG-Flash-8M.pdf</a>
+<a href="https://www.datasheetq.com/datasheet-download/840460/1/Winbond/25Q64FVSIG">https://www.datasheetq.com/datasheet-download/840460/1/Winbond/25Q64FVSIG</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge495c9d" class="outline-2">
+<h2 id="orge495c9d"><span class="section-number-2">15.</span> bios chip  Winbond flash chip "W25Q32.V"</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>4096 kB</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org949ebe2" class="outline-2">
+<h2 id="org949ebe2"><span class="section-number-2">16.</span> flashrom</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+sys-apps/flashrom
+</p>
+
+<p>
+read flash at PC:
+</p>
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<p>
+What can I do about /dev/mem errors?
+</p>
+<ul class="org-ul">
+<li>disable CONFIG<sub>IO</sub><sub>STRICT</sub><sub>DEVMEM</sub></li>
+<li>CONFIG<sub>IO</sub><sub>STRICT</sub><sub>DEVMEM</sub></li>
+</ul>
+
+
+<p>
+FLASH:
+</p>
+<ul class="org-ul">
+<li>Lower spispeeds will provide you with better reads. However,</li>
+<li>you can increase `spispeed=128` to a higher value such as</li>
+<li>512 for faster reads. An spispeed of 128 takes roughly</li>
+<li>10 min per read.</li>
+</ul>
+
+<p>
+<a href="https://www.flashrom.org/RaspberryPi">https://www.flashrom.org/RaspberryPi</a>
+</p>
+
+<p>
+raspberry bi - enable SPI
+</p>
+<ul class="org-ul">
+<li><a href="https://www.takaitra.com/spi-device-raspberry-pi/">https://www.takaitra.com/spi-device-raspberry-pi/</a></li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#spi-software">https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#spi-software</a></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org68ea97d" class="outline-2">
+<h2 id="org68ea97d"><span class="section-number-2">17.</span> датчики магнитного поля</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>Геркон</li>
+<li>Датчик Холла</li>
+
+<li>Униполярный – когда сила магнитного поля достигает определенной величины датчик срабатывает. Такие датчики откликаются только на один полюс. Если к датчику поднести магнит другим полюсом, то датчик на него не реагирует. Когда сила магнитного поля снижается датчик возвращается в исходное положение.</li>
+<li>Биполярный – в этом случае имеет значение полярность магнитного поля. Один полюс включает датчик, другой полюс выключает.</li>
+<li>Омниполярный датчик Холла – реагирует на любой магнитный полюс. Т.е. любой полюс может включать и выключать датчик. Это может быть, как южный, так и северный полюс.</li>
+</ul>
+
+<p>
+На два вывода датчика подается питание, которое может быть, как однополярным, так и двуполярным. Третий вывод сигнальный.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org2e35f7f" class="outline-2">
+<h2 id="org2e35f7f"><span class="section-number-2">18.</span> Raspberry PI</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+Raspberry Pi 3 Model B Rev 1.2
+</p>
+
+<p>
+4× Cortex-A53 1.2 GHz
+</p>
+
+<p>
+ARMv8-A 	Quad Core 1.2GHz Broadcom BCM2837 64bit CPU 	1G@LPDDR2
+</p>
+
+<p>
+arm7a - 32 mode
+</p>
+
+<p>
+BCM2835 Revision	: a02082
+</p>
+</div>
+<div id="outline-container-org1a74ffe" class="outline-3">
+<h3 id="org1a74ffe"><span class="section-number-3">18.1.</span> install</h3>
+<div class="outline-text-3" id="text-18-1">
+<ol class="org-ol">
+<li>download OS <a href="https://www.raspberrypi.com/software/operating-systems/">https://www.raspberrypi.com/software/operating-systems/</a></li>
+<li>check sum</li>
+<li>insert usb, lsblk -p</li>
+<li>write to SD Card:
+<ul class="org-ul">
+<li>sudo dd if=2021-10-30-raspios-bullseye-armhf.img of=/dev/sdX bs=4M conv=fsync</li>
+<li>unzip -p 2021-10-30-raspios-bullseye-armhf.zip | sudo dd of=/dev/sdX bs=4M conv=fsync status=progress</li>
+<li>Please note that block size set to 4M will work most of the time. If not, try 1M, although this will take
+considerably longer.</li>
+</ul></li>
+<li>sync</li>
+</ol>
+</div>
+<div id="outline-container-org7c3f759" class="outline-4">
+<h4 id="org7c3f759"><span class="section-number-4">18.1.1.</span> headless setup</h4>
+</div>
+</div>
+<div id="outline-container-orga4fb981" class="outline-3">
+<h3 id="orga4fb981"><span class="section-number-3">18.2.</span> Raspberry Pi OS</h3>
+<div class="outline-text-3" id="text-18-2">
+<ul class="org-ul">
+<li>is a free operating system based on Debian, optimised for the Raspberry Pi hardwar</li>
+<li>default login and password:
+<ul class="org-ul">
+<li>pi:raspberry</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org957bb1d" class="outline-4">
+<h4 id="org957bb1d"><span class="section-number-4">18.2.1.</span> raspberry commands</h4>
+<div class="outline-text-4" id="text-18-2-1">
+<ul class="org-ul">
+<li>rpi-update -  update your Raspberry Pi OS kernel and VideoCore firmware to the latest pre-release versions.</li>
+<li>pinout - GPIO refference</li>
+<li>sudo raspi-config - configuration tool - This may result in automated edits to /boot/config.txt and various standard
+Linux configuration files.</li>
+<li>raspinfo - full info</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org03f0f00" class="outline-4">
+<h4 id="org03f0f00"><span class="section-number-4">18.2.2.</span> Useful Utilities</h4>
+<div class="outline-text-4" id="text-18-2-2">
+<ul class="org-ul">
+<li>tvservice - HDMI video and audio.
+<ul class="org-ul">
+<li>-p, &#x2013;preferred Power on the HDMI output with preferred settings.</li>
+<li>-o, &#x2013;off Powers off the display output.</li>
+<li>-e, &#x2013;explicit="Group Mode Drive" Power on the HDMI with the specified settings Group can be one of CEA, DMT,
+CEA<sub>3D</sub><sub>SBS</sub>, CEA<sub>3D</sub><sub>TB</sub>, CEA<sub>3D</sub><sub>FP</sub>, CEA<sub>3D</sub><sub>FS</sub>. Mode is one of the modes returned from the -m, &#x2013;modes option. Drive
+can be one of HDMI, DVI.</li>
+<li>-t, &#x2013;ntsc Use 59.94Hz (NTSC frequency) rather than 60Hz for HDMI mode.</li>
+<li>-c, &#x2013;sdtvon="Mode Aspect [P]" Power on the SDTV (composite output) with the specified mode, PAL or NTSC, and the
+specified aspect, 4:3, 14:9, 16:9. The optional P parameter can be used to specify progressive mode.</li>
+<li>-m, &#x2013;modes=Group where Group is CEA or DMT. Shows a list of display modes available in the specified group.</li>
+<li>-M, &#x2013;monitor Monitors for any HDMI events, for example unplugging or attaching.</li>
+<li>-s, &#x2013;status Shows the current settings for the display mode, including mode, resolution, and frequency.</li>
+<li>-a, &#x2013;audio Shows the current settings for the audio mode, including channels, sample rate and sample size.</li>
+<li>-d, &#x2013;dumpid=filename Save the current EDID to the specified filename. You can then use edidparser &lt;filename&gt; to
+display the data in a human readable form.</li>
+<li>-n, &#x2013;name Extracts the display name from the EDID data and shows it.</li>
+<li>-l, &#x2013;list Lists all attached displays and their display ID.</li>
+<li>-v, &#x2013;device=display Specifies the ID of the device to use; see the output of &#x2013;list for available IDs.</li>
+</ul></li>
+<li>vcgencmd -  used to output information from the VideoCore GPU</li>
+<li>Thonny - Python 3 development environment in REPL (Read-Evaluate-Print-Loop),</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org10f2439" class="outline-4">
+<h4 id="org10f2439"><span class="section-number-4">18.2.3.</span> apt</h4>
+<div class="outline-text-4" id="text-18-2-3">
+<ul class="org-ul">
+<li>update:
+<ul class="org-ul">
+<li>sudo apt update</li>
+<li>sudo apt full-upgrade</li>
+</ul></li>
+<li>Searching for Software:
+<ul class="org-ul">
+<li>apt-cache search locomotive</li>
+</ul></li>
+<li>Installing a Package
+<ul class="org-ul">
+<li>sudo apt install tree</li>
+</ul></li>
+<li>uninstall
+<ul class="org-ul">
+<li>sudo apt remove tree or sudo apt purge tree</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org63535f5" class="outline-3">
+<h3 id="org63535f5"><span class="section-number-3">18.3.</span> USECASES</h3>
+<div class="outline-text-3" id="text-18-3">
+<p>
+reconnect HDMI
+</p>
+<ul class="org-ul">
+<li>uncomment these two lines to /boot/config.txt
+<ul class="org-ul">
+<li>hdmi<sub>force</sub><sub>hotplug</sub>=1</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orga08074e" class="outline-4">
+<h4 id="orga08074e"><span class="section-number-4">18.3.1.</span> enable ssh</h4>
+<div class="outline-text-4" id="text-18-3-1">
+<ol class="org-ol">
+<li>sudo raspi-config</li>
+<li>Interfacing Options -&gt; P2 SSH -&gt; YES</li>
+<li>sudo systemctl enable ssh</li>
+<li>ssh pi@[raspberrypi<sub>ip</sub><sub>address</sub>]</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org716b9e0" class="outline-4">
+<h4 id="org716b9e0"><span class="section-number-4">18.3.2.</span> increase swap</h4>
+<div class="outline-text-4" id="text-18-3-2">
+<ul class="org-ul">
+<li>sudo dphys-swapfile swapoff</li>
+<li>sudo nano /etc/dphys-swapfile
+<ul class="org-ul">
+<li>CONF<sub>SWAPSIZE</sub>=100</li>
+</ul></li>
+<li>sudo dphys-swapfile setup - delete the original swap file and recreate it to fit the newly defined size.</li>
+<li>sudo dphys-swapfile swapon</li>
+<li>reboot</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgff9d344" class="outline-4">
+<h4 id="orgff9d344"><span class="section-number-4">18.3.3.</span> as a wireless access point</h4>
+<div class="outline-text-4" id="text-18-3-3">
+<ul class="org-ul">
+<li>Install hostapd and dnsmasq</li>
+<li>nano /etc/dhcpcd.conf # Configure a static IP for the wlan0 interface
+<ul class="org-ul">
+<li>interface wlan0</li>
+<li>static ip<sub>address</sub>=192.168.0.10/24</li>
+<li>denyinterfaces eth0</li>
+<li>denyinterfaces wlan0</li>
+</ul></li>
+<li>Configure the DHCP server (dnsmasq)
+<ul class="org-ul">
+<li>sudo nano /etc/dnsmasq.conf
+<ul class="org-ul">
+<li>interface=wlan0</li>
+<li>dhcp-range=192.168.0.11,192.168.0.30,255.255.255.0,24h</li>
+</ul></li>
+</ul></li>
+<li>Configure the access point host software (hostapd)
+<ul class="org-ul">
+<li>sudo nano /etc/hostapd/hostapd.conf
+<ul class="org-ul">
+<li>interface=wlan0</li>
+<li>bridge=br0</li>
+<li>hw<sub>mode</sub>=g</li>
+<li>channel=7</li>
+<li>wmm<sub>enabled</sub>=0</li>
+<li>macaddr<sub>acl</sub>=0</li>
+<li>auth<sub>algs</sub>=1</li>
+<li>ignore<sub>broadcast</sub><sub>ssid</sub>=0</li>
+<li>wpa=2</li>
+<li>wpa<sub>key</sub><sub>mgmt</sub>=WPA-PSK</li>
+<li>wpa<sub>pairwise</sub>=TKIP</li>
+<li>rsn<sub>pairwise</sub>=CCMP</li>
+<li>ssid=NETWORK</li>
+<li>wpa<sub>passphrase</sub>=PASSWORD</li>
+</ul></li>
+<li>sudo nano /etc/default/hostapd
+<ul class="org-ul">
+<li>DAEMON<sub>CONF</sub>="/etc/hostapd/hostapd.conf"</li>
+</ul></li>
+</ul></li>
+<li>Set up traffic forwarding
+<ul class="org-ul">
+<li>sudo nano /etc/sysctl.conf
+<ul class="org-ul">
+<li>uncomment net.ipv4.ip<sub>forward</sub>=1</li>
+</ul></li>
+</ul></li>
+<li>Add a new iptables rule
+<ul class="org-ul">
+<li>sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</li>
+<li>sudo sh -c "iptables-save &gt; /etc/iptables.ipv4.nat"</li>
+<li>/etc/rc.local
+<ul class="org-ul">
+<li>iptables-restore &lt; /etc/iptables.ipv4.nat</li>
+</ul></li>
+</ul></li>
+<li>Enable internet connection -  to build a bridge that will pass all traffic between the wlan0 and eth0 interfaces.
+<ul class="org-ul">
+<li>sudo apt-get install bridge-utils</li>
+<li>sudo brctl addbr br0</li>
+<li>sudo brctl addif br0 eth0</li>
+<li>sudo nano /etc/network/interfaces
+<ul class="org-ul">
+<li>auto br0</li>
+<li>iface br0 inet manual</li>
+<li>bridge<sub>ports</sub> eth0 wlan0</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7185966" class="outline-3">
+<h3 id="org7185966"><span class="section-number-3">18.4.</span> GPIO and the 40-pin Header</h3>
+<div class="outline-text-3" id="text-18-4">
+<ul class="org-ul">
+<li>pull-up and pull-down resistors ???</li>
+<li>3V3 ??</li>
+
+<li>GPIO (general-purpose input/output)</li>
+<li>Any of the GPIO pins can be designated (in software) as an input or output pin and used for a wide range of purposes.</li>
+<li>Two 5V pins and two 3V3 pins are present on the board, as well as a number of ground pins (0V), which are
+unconfigurable. The remaining pins are all general purpose 3V3 pins, meaning outputs are set to 3V3 and inputs are
+3V3-tolerant.</li>
+<li>input and outputs can be set to high (3V3) or low (0V).</li>
+<li>Pins GPIO2 and GPIO3 have fixed pull-up resistors, but for other pins this can be configured in software.</li>
+<li>In order to use the GPIO ports your user must be a member of the gpio group. pi is already in</li>
+<li><a href="https://gpiozero.readthedocs.io/">https://gpiozero.readthedocs.io/</a> - Python lib for GPIO</li>
+</ul>
+
+<p>
+GPIO pins functions:
+</p>
+<ul class="org-ul">
+<li>I or O</li>
+<li>PWM (pulse-width modulation)</li>
+<li>SPI</li>
+<li>I2C</li>
+<li>Serial</li>
+</ul>
+
+<p>
+commands
+</p>
+<ul class="org-ul">
+<li>pinout</li>
+<li>raspi-gpio</li>
+</ul>
+</div>
+<div id="outline-container-org4c6516b" class="outline-4">
+<h4 id="org4c6516b"><span class="section-number-4">18.4.1.</span> links</h4>
+<div class="outline-text-4" id="text-18-4-1">
+<ul class="org-ul">
+<li><a href="https://ph0en1x.net/106-rpi-gpio-installation-working-with-inputs-outputs-interrupts.html">https://ph0en1x.net/106-rpi-gpio-installation-working-with-inputs-outputs-interrupts.html</a></li>
+<li>interactive pinout diagram. <a href="https://pinout.xyz/">https://pinout.xyz/</a>#</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdc35169" class="outline-4">
+<h4 id="orgdc35169"><span class="section-number-4">18.4.2.</span> safe</h4>
+<div class="outline-text-4" id="text-18-4-2">
+<p>
+<a href="https://ph0en1x.net/86-raspberry-pi-znakomstvo-s-gpio-perekluchatel-i-svetodiod.html">https://ph0en1x.net/86-raspberry-pi-znakomstvo-s-gpio-perekluchatel-i-svetodiod.html</a>
+важно помнить что:
+</p>
+<ul class="org-ul">
+<li>Внутренние буферы и ключи, которые подключены к пинам GPIO, НЕ защищены от перегрузки по напряжению и току;</li>
+<li>Пины питания с выходным напряжением +3.3В можно нагружать током не более 50мА;</li>
+<li>Пины с выходным напряжением 5В стараемся грузить током не более чем на 500мА (для Model A) и не более чем на 300мА (для Model B) - почему так, расскажу ниже.</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Перед работой стоит убрать с себя статический заряд, а еще лучше использовать антистатический браслет;</li>
+<li>Пайку электроники желательно выполнять с отключенным разъемом GPIO (чтобы не было прямого контакта "жало паяльника - пин");</li>
+<li>Не перегружать пины питания +5В (макс. ток 300-500мА) и +3.3В (50мА), не закорачивать их напрямую с другими пинами;</li>
+<li>Исключить протекание тока величиной более 8-15мА через пины GPIO;</li>
+<li>Исключить попадание напряжения выше +3.3В на пины GPIO;</li>
+<li>Подключать напрямую не более 3х светодиодов (по 2-15мА каждый) к Raspberry Pi;</li>
+<li>Перед подачей питания на схему и малинку внимательно проверить правильность всех подключений.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org341bb82" class="outline-3">
+<h3 id="org341bb82"><span class="section-number-3">18.5.</span> links</h3>
+<div class="outline-text-3" id="text-18-5">
+<p>
+doc  <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">https://www.raspberrypi.com/documentation/computers/getting-started.html</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org50342e8" class="outline-2">
+<h2 id="org50342e8"><span class="section-number-2">19.</span> Wifi USB</h2>
+<div class="outline-text-2" id="text-19">
+</div>
+<div id="outline-container-orgc781b25" class="outline-3">
+<h3 id="orgc781b25"><span class="section-number-3">19.1.</span> rtl8822bu - AC1300 USB</h3>
+<div class="outline-text-3" id="text-19-1">
+<ul class="org-ul">
+<li><a href="https://github.com/cilynx/rtl88x2bu">https://github.com/cilynx/rtl88x2bu</a></li>
+<li>7ya <a href="https://github.com/FomalhautWeisszwerg/rtl8822bu">https://github.com/FomalhautWeisszwerg/rtl8822bu</a></li>
+<li>2ya <a href="https://data.gpo.zugaina.org/menelkir/net-wireless/rtl8822bu/">https://data.gpo.zugaina.org/menelkir/net-wireless/rtl8822bu/</a>
+<ul class="org-ul">
+<li>4ya <a href="https://github.com/EntropicEffect/rtl8822bu.git">https://github.com/EntropicEffect/rtl8822bu.git</a></li>
+</ul></li>
+</ul>
+
+<p>
+modern all modes <a href="https://github.com/morrownr/88x2bu-20210702">https://github.com/morrownr/88x2bu-20210702</a>
+</p>
+<ul class="org-ul">
+<li>License  Realtek Corporation.</li>
+</ul>
+</div>
+<div id="outline-container-org2f1f5a4" class="outline-4">
+<h4 id="org2f1f5a4"><span class="section-number-4">19.1.1.</span> info</h4>
+<div class="outline-text-4" id="text-19-1-1">
+<ul class="org-ul">
+<li>Main chip: RTL8822BU</li>
+<li>Bluetooth description: Bluetooth version V5.0</li>
+<li>Interface type: USB3.0</li>
+<li>Transmission distance: 10 meters</li>
+<li>RF power: 10dBm (max)</li>
+<li>Antenna Gain: 5dBi</li>
+<li>Transmission speed: 3M/S</li>
+
+<li>Supported operating system: WIN7/WIN8/10/11 operating system</li>
+<li>Supported standards and protocols: IEEE 802.11n, IEEE 802.11g, IEEE 802.11b, IEEE 802.11a, IEEE 802.11ac</li>
+<li>Transmission speed: 2.4GHz 400Mbps 5.8GHz 867Mbps</li>
+</ul>
+
+<p>
+2
+</p>
+<ul class="org-ul">
+<li>Bluetooth version V5.0</li>
+<li>Interface type: USB3.0</li>
+<li>Transmission distance: 10 meters</li>
+<li>Antenna Gain: 5dBi</li>
+</ul>
+
+<p>
+3
+</p>
+
+<ul class="org-ul">
+<li>Wireless protocol: IEEE 802.11ac / a / b / g / n</li>
+<li>Free-driven applicable system (OS): Windows Vista / XP / 7/8/10/11 "</li>
+<li>Network Mode (Frequency): Dual Band 2.4GHz + 5.8GHz</li>
+<li>Network speed support (WiFi Speed ): 2.4GHz - 400MPBS 5.8GHz - 867MPBS</li>
+<li>Chipset: RTL8812BU</li>
+<li>1300Mbps USB 3.0 WiFi Bluetooth 5.0 Adapter 2in1 Dongle</li>
+<li>Product Specifications</li>
+<li>Main chip: RTL8822BU</li>
+<li>Bluetooth description: Bluetooth version V5.0</li>
+<li>Interface type: USB3.0</li>
+<li>Transmission distance: 10 meters</li>
+<li>RF power: 10dBm (max)</li>
+<li>Antenna Gain: 5dBi</li>
+<li>Transmission speed: 3M/S</li>
+<li>Supported operating system: WIN7/WIN8/10/11 operating system</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdcc7230" class="outline-2">
+<h2 id="orgdcc7230"><span class="section-number-2">20.</span> Banana Pi</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li><a href="https://aliexpress.ru/store/302756">https://aliexpress.ru/store/302756</a></li>
+<li>wiki.banana-pi.org</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5494492" class="outline-2">
+<h2 id="org5494492"><span class="section-number-2">21.</span> GPGPU (General-Purpose computing on Graphics Processing Unit).</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>обработка плотнозаполненных матриц для нейросетевых алгоритмов.</li>
+<li>поддерживается работа с разреженными матрицами.</li>
+<li>ориентируются на высокопроизводительные вычисления (HPC) и задачи искусственного интеллекта, но могут использоваться и
+для решения собственно задач обработки графики.</li>
+</ul>
+<p>
+GPGPU H100 (Hopper, 2022 год) снабжен командами поддержки алгоритмов динамического программирования, используемых в
+ комбинаторных задачах, решаемых методом перебора.
+</p>
+
+<p>
+Преимущества серверных процессоров AMD EPYC Rome и Milan архитектур Zen 2 и Zen 3 соответственно (а скоро ожидается и
+ Zen 4) над Intel Xeon широко известны,
+</p>
+
+<p>
+AMD Instinct MI100 ('Arcturus') на базе архитектуры CDNA (Compute Digital Network Architecture)
+</p>
+
+<p>
+Nvidia GPGPU H100 на технологии 4 нм с архитектурой Hopper ситуация может измениться.
+</p>
+
+<p>
+Формат команд как в практических процессорах, так и RISC–V соответствует концепции «load/store»,
+</p>
+
+<p>
+Выполняемые во всем мире разработки процессоров-ускорителей можно разделить на три группы:
+</p>
+<ul class="org-ul">
+<li>GPGPU (где сегодня лидируют Nvidia и AMD)</li>
+<li>специализированные процессоры в виде FPGA или специализированных СБИС от крупных производителей, например, Xilinx,
+Intel, IBM, Google, Amazon и др.;</li>
+<li>процессоры-ускорители, изобретаемые небольшими стартапами</li>
+<li>изделия, создаваемые в проектах силовых ведомств</li>
+</ul>
+
+<p>
+Intel PIUMA (программа DARPA HIVE), представляющего собой универсальный решатель для задач искусственного интеллекта,
+ эффективно работающий с большими графовыми структурами данных, но на три порядка энергоэффективнее всех существующих
+ GPGPU.
+</p>
+
+<p>
+<a href="https://www.osp.ru/os/2022/02/13056179">https://www.osp.ru/os/2022/02/13056179</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4ac3f47" class="outline-2">
+<h2 id="org4ac3f47"><span class="section-number-2">22.</span> radio RTL-SDR</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+a computer based radio scanner for receiving live radio signals
+</p>
+<ul class="org-ul">
+<li>~$30 USB dongle</li>
+<li>can receive freqquences 500 kHz up to 1.75 GHz</li>
+<li>cannot transmit.</li>
+</ul>
+
+<p>
+can:
+</p>
+<ul class="org-ul">
+<li>as a spectrum analyzer</li>
+<li>Receiving NOAA weather satellite images..</li>
+<li>Triangulating the source of a signal.</li>
+<li>Searching for RF noise sources.</li>
+<li>Listening to the ISS (International Space Station).</li>
+<li>Receiving images from Geostationary weather satellites.</li>
+<li>Decoding aircraft ACARS short messages.</li>
+<li>Tracking aircraft positions like a radar with ADSB decoding.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:41</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

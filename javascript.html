@@ -1,0 +1,3627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 12:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2fa09b9">1. HTTP concepts</a>
+<ul>
+<li><a href="#org3195319">1.1. Cross-Origin Resource Sharing (CORS)</a></li>
+<li><a href="#org82b78da">1.2. Same-origin policy - security</a></li>
+</ul>
+</li>
+<li><a href="#orgabffcc7">2. Key questions:</a></li>
+<li><a href="#orgfa77544">3. paradigms</a></li>
+<li><a href="#org8868c41">4. engines, runtime systems</a></li>
+<li><a href="#org5c7b32c">5. History</a></li>
+<li><a href="#orga7c74bd">6. types</a>
+<ul>
+<li><a href="#org341ed54">6.1. Classes - ES6</a></li>
+</ul>
+</li>
+<li><a href="#orgaa96a28">7. basis</a>
+<ul>
+<li><a href="#orgfcdc780">7.1. <span class="todo TODO">TODO</span> type juggling - automatic type conversion</a></li>
+</ul>
+</li>
+<li><a href="#org3f752d7">8. this</a></li>
+<li><a href="#org4c8f5ad">9. hoisting and closure terms</a></li>
+<li><a href="#org7ec8053">10. Concurrency</a>
+<ul>
+<li><a href="#org79ca7e8">10.1. Scheduling: setTimeout and setInterval</a></li>
+<li><a href="#org8027a61">10.2. job queue (aka Micro-task queue)</a></li>
+</ul>
+</li>
+<li><a href="#orgd0b734e">11. Prototypal inheritance (hidden property of all objects <span class="underline"><span class="underline">proto</span></span>)</a></li>
+<li><a href="#org25f2a36">12. Modules import export</a>
+<ul>
+<li><a href="#orgbeb1301">12.1. старые способы</a></li>
+<li><a href="#orgd702911">12.2. ECMAScript 6-th edition</a></li>
+</ul>
+</li>
+<li><a href="#org6f7b179">13. Scope</a></li>
+<li><a href="#org490cd20">14. in browser</a>
+<ul>
+<li><a href="#org2f4ead4">14.1. DOM</a>
+<ul>
+<li><a href="#org8c03b0c">14.1.1. terms</a></li>
+<li><a href="#org1ad5453">14.1.2. Standards</a></li>
+<li><a href="#org63ab59b">14.1.3. DOM доступен:</a></li>
+<li><a href="#orga2954d5">14.1.4. Finding, Changing, Adding</a></li>
+<li><a href="#orga1d87ba">14.1.5. commenting in &lt;script&gt;</a></li>
+</ul>
+</li>
+<li><a href="#org9760989">14.2. <span class="todo TODO">TODO</span> HTML and HTML5</a></li>
+<li><a href="#orga93d079">14.3. debug</a></li>
+<li><a href="#org4f330db">14.4. <span class="todo TODO">TODO</span> Web API</a></li>
+<li><a href="#org0dc8282">14.5. <span class="todo TODO">TODO</span> functions, events, etc</a></li>
+<li><a href="#org4aec5bf">14.6. Best practices</a></li>
+<li><a href="#org2a543b2">14.7. ways to execute javascript</a>
+<ul>
+<li><a href="#org18c0a0b">14.7.1. js file in header</a></li>
+<li><a href="#org4d25812">14.7.2. on HTML page load</a></li>
+<li><a href="#org0b3b414">14.7.3. button1</a></li>
+<li><a href="#org2a8c7c9">14.7.4. button2</a></li>
+<li><a href="#orgf3d36d3">14.7.5. button3</a></li>
+<li><a href="#orgabe588a">14.7.6. form submit event</a></li>
+</ul>
+</li>
+<li><a href="#orgd392ae0">14.8. console object</a></li>
+<li><a href="#org70725c2">14.9. under the hood</a></li>
+</ul>
+</li>
+<li><a href="#org5509f30">15. Node.js and NPM</a>
+<ul>
+<li><a href="#orgde115ab">15.1. NPM</a>
+<ul>
+<li><a href="#orga691a6b">15.1.1. Пример package.json</a></li>
+</ul>
+</li>
+<li><a href="#orgf3560f5">15.2. Node.js</a>
+<ul>
+<li><a href="#orgef5248e">15.2.1. Node.js vs Java</a></li>
+<li><a href="#org4579fd0">15.2.2. HTTP server</a></li>
+<li><a href="#org79047ee">15.2.3. consist of</a></li>
+<li><a href="#org3b5c666">15.2.4. Security</a></li>
+<li><a href="#orged05d35">15.2.5. NodeJS REPL</a></li>
+<li><a href="#orgf68f6ca">15.2.6. PHP vs Node.js</a></li>
+<li><a href="#org5f7c98c">15.2.7. hello world - take screenshots Firefox</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd466d6f">16. Node.js - MIT License</a>
+<ul>
+<li><a href="#org594d959">16.1. npm</a></li>
+</ul>
+</li>
+<li><a href="#org97f3323">17. Google Web Toolkit (GWT)</a></li>
+<li><a href="#orga31b448">18. web-fronted Frameworks</a>
+<ul>
+<li><a href="#orge50df62">18.1. Ext JS</a>
+<ul>
+<li><a href="#org814a530">18.1.1. CMD</a></li>
+<li><a href="#org594961d">18.1.2. Naming Conventions</a></li>
+<li><a href="#org02ba781">18.1.3. sencha generate -   quickly generate common MVC components</a></li>
+<li><a href="#orge72db20">18.1.4. Bootstart</a></li>
+<li><a href="#orga64c682">18.1.5. Запуск</a></li>
+<li><a href="#orgd9f3951">18.1.6. App Structure</a></li>
+<li><a href="#org7999d77">18.1.7. video introduction</a></li>
+<li><a href="#org9cede49">18.1.8. Поддерживает:</a></li>
+<li><a href="#org014e1b6">18.1.9. установка в Debian</a></li>
+<li><a href="#orgf107771">18.1.10. Лицензии</a></li>
+<li><a href="#org32a500c">18.1.11. Продукты</a></li>
+<li><a href="#orge60a845">18.1.12. Styling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb7e268f">19. Multithreading and scalability</a></li>
+<li><a href="#org10053d7">20. libs</a>
+<ul>
+<li><a href="#org0ed921a">20.1. Alternatives to Type script</a></li>
+</ul>
+</li>
+<li><a href="#orgdc6e831">21. Firefox</a>
+<ul>
+<li><a href="#orgb8f2455">21.1. ide</a></li>
+<li><a href="#org90e9bb7">21.2. keys</a></li>
+</ul>
+</li>
+<li><a href="#org176b5e4">22. <span class="todo TODO">TODO</span> Angular JS and Angular</a>
+<ul>
+<li><a href="#org35b6d10">22.1. History</a></li>
+<li><a href="#org1808b6d">22.2. bootstrap</a></li>
+<li><a href="#orgd9ba2cc">22.3. Features:</a></li>
+</ul>
+</li>
+<li><a href="#org99a1c58">23. Загрузка сайта</a>
+<ul>
+<li><a href="#orgdb35051">23.1. Скорость</a></li>
+<li><a href="#org3ddce08">23.2. &lt;script head vs body bottom</a></li>
+</ul>
+</li>
+<li><a href="#orgab9b080">24. jQuery</a>
+<ul>
+<li><a href="#org3c25c1c">24.1. ().load</a></li>
+<li><a href="#orgc5c7f08">24.2. jQuery.ajax()</a></li>
+<li><a href="#org4611b97">24.3. jQuery vs JavaScript</a></li>
+<li><a href="#org023d8d1">24.4. AJAX</a></li>
+<li><a href="#orgd01e4fd">24.5. Events</a></li>
+<li><a href="#org998c415">24.6. example</a></li>
+</ul>
+</li>
+<li><a href="#org74ccf77">25. AJAX  [ˈeɪdʒæks]</a>
+<ul>
+<li><a href="#org1a80a41">25.1. ex fetch API</a></li>
+<li><a href="#org96551dd">25.2. ex fetch API - upload file:</a></li>
+<li><a href="#org6faad6e">25.3. ex<sub>old</sub></a></li>
+<li><a href="#orgbed10b0">25.4. XMLHttpRequest Object Methods</a></li>
+<li><a href="#orgdf75625">25.5. XMLHttpRequest Object Properties</a></li>
+<li><a href="#orgfe8f87f">25.6. AHAH</a></li>
+<li><a href="#org9ac072f">25.7. errors</a></li>
+<li><a href="#org27e1702">25.8. links</a></li>
+</ul>
+</li>
+<li><a href="#org86c2a3f">26. <span class="todo TODO">TODO</span> Webpack</a>
+<ul>
+<li><a href="#orga899a11">26.1. concepts</a></li>
+<li><a href="#orgf6bfd39">26.2. install</a></li>
+</ul>
+</li>
+<li><a href="#orgc3c0c90">27. Emacs</a>
+<ul>
+<li><a href="#org75a0bef">27.1. HTML mode</a></li>
+</ul>
+</li>
+<li><a href="#org3de3fe7">28. JS Engine of browsers Firefox, Chrome, Edge, Safari</a></li>
+<li><a href="#orgb1db646">29. IDE Visual Studio Code</a>
+<ul>
+<li><a href="#org6670e25">29.1. features</a></li>
+<li><a href="#orga87be7d">29.2. TypeScript</a></li>
+</ul>
+</li>
+<li><a href="#org41b4b3e">30. JSDoc</a></li>
+<li><a href="#orgd84b9a6">31. Security</a>
+<ul>
+<li><a href="#orgb18fb1c">31.1. related techs</a></li>
+<li><a href="#orgcac28c1">31.2. Same-origin policy - concept</a></li>
+</ul>
+</li>
+<li><a href="#org209c20e">32. rare terms</a></li>
+<li><a href="#org2229e99">33. TypeScript 15</a>
+<ul>
+<li><a href="#orgd50c403">33.1. Features</a></li>
+<li><a href="#org56aab4e">33.2. history</a></li>
+<li><a href="#orge14cda9">33.3. libraries</a></li>
+<li><a href="#orge42afb1">33.4. Types</a>
+<ul>
+<li><a href="#org1521a0d">33.4.1. Type annotation, Interfaces, Aliases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc63eeeb">34. A simple stack for today's web hacks https://neugierig.org/software/blog/2022/12/simple-web-hacks.html</a></li>
+<li><a href="#orgfd9328a">35. JSON</a>
+<ul>
+<li><a href="#org51eb29f">35.1. links</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+<ul class="org-ul">
+<li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">https://addyosmani.com/resources/essentialjsdesignpatterns/book/</a></li>
+<li>book <a href="https://eloquentjavascript.net/">https://eloquentjavascript.net/</a></li>
+<li><a href="https://www.ecma-international.org/ecma-262/6.0/">https://www.ecma-international.org/ecma-262/6.0/</a></li>
+
+<li><b>Minification</b> - involves removing unnecessary characters like white spaces, comments, and line breaks to
+reduce file size and improve page load speed.</li>
+<li><b>Unminifying</b> code - reverse, restore readability</li>
+</ul>
+
+<div id="outline-container-org2fa09b9" class="outline-2">
+<h2 id="org2fa09b9"><span class="section-number-2">1.</span> HTTP concepts</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3195319" class="outline-3">
+<h3 id="org3195319"><span class="section-number-3">1.1.</span> Cross-Origin Resource Sharing (CORS)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than
+its own from which a browser should permit loading resources.
+</p>
+<ul class="org-ul">
+<li>the specification mandates that browsers "preflight" the request, soliciting supported methods from the
+server with the HTTP OPTIONS request method, and then, upon "approval" from the server</li>
+</ul>
+
+<p>
+CORS preflight request
+</p>
+<ul class="org-ul">
+<li>simple requests do not use  CORS preflight</li>
+<li>It is an OPTIONS request, using three HTTP request headers: Access-Control-Request-Method,
+Access-Control-Request-Headers, and the Origin header.</li>
+<li>For example, a client might be asking a server if it would allow a DELETE request, before sending a DELETE
+request, by using a preflight request
+<ul class="org-ul">
+<li>If the server allows it, then it will respond to the preflight request with an
+Access-Control-Allow-Methods response header, which lists DELETE</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org82b78da" class="outline-3">
+<h3 id="org82b78da"><span class="section-number-3">1.2.</span> Same-origin policy - security</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+critical security mechanism that restricts how a document or script loaded by one origin can interact with a resource from another origin.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgabffcc7" class="outline-2">
+<h2 id="orgabffcc7"><span class="section-number-2">2.</span> Key questions:</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Compilation vs. Interpretation
+<ul class="org-ul">
+<li>Interpreted Languages</li>
+</ul></li>
+<li>Dynamic Typing vs. Static Typing
+<ul class="org-ul">
+<li>Dynamic Typing</li>
+</ul></li>
+<li>Passing Parameters by Value vs. By Reference
+<ul class="org-ul">
+<li>Primitive Types: Passed by value, Reference Types: Passed by reference</li>
+</ul></li>
+<li>Object-Oriented vs. Functional Programming vs procedural
+<ul class="org-ul">
+<li>JS is equaly at all. functions as first-class citizens</li>
+</ul></li>
+<li>function overloading exist or not?
+<ul class="org-ul">
+<li>overloading is achieved through default parameters or arguments</li>
+</ul></li>
+<li>What is the Scope of Variables?
+<ul class="org-ul">
+<li>first-class functions</li>
+</ul></li>
+<li>What is the Scope of Variables?
+<ul class="org-ul">
+<li>var, let, const</li>
+</ul></li>
+<li>Supports multiple inheritance.
+<ul class="org-ul">
+<li>prototype-based inheritance. objects can inherit from other objects</li>
+<li>JavaScript classes can only inherit from one class (single inheritance)</li>
+<li>does not support multiple inheritance directly through classes. Compensated with mixins or by combining
+behaviors through object composition.</li>
+</ul></li>
+<li>Memory Management: Manual vs. Automatic Garbage Collection
+<ul class="org-ul">
+<li>gc</li>
+</ul></li>
+<li>one way to solve problem or many ways to solve?
+<ul class="org-ul">
+<li>"many ways to solve problems,"</li>
+</ul></li>
+<li>How Syntax structured with indentation or some characters?
+<ul class="org-ul">
+<li>blocks {}, statements ; (optional due to Automatic Semicolon Insertion (ASI))</li>
+</ul></li>
+<li>What paradigms supported? (e.g., imperative, declarative, procedural, functional).</li>
+<li>Event-Driven Concurrency (simple) vs Thread-Based Concurrency (compex)
+<ul class="org-ul">
+<li>event-driven, Asynchronous Programming</li>
+</ul></li>
+<li>Promises vs Async/Await
+<ul class="org-ul">
+<li>A promise (JavaScript) is an object that represents the eventual completion (or failure) of an asynchronous operation
+and its resulting value. It's a way to handle asynchronous operations in a more manageable way.</li>
+<li>Async/await is a syntax sugar on top of promises (or coroutines in Python)</li>
+</ul></li>
+<li>Error Handling: return codes vs handling exception objects
+<ul class="org-ul">
+<li>exception objects</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa77544" class="outline-2">
+<h2 id="orgfa77544"><span class="section-number-2">3.</span> paradigms</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+интерпритируемый, multi-paradigm:
+</p>
+<dl class="org-dl">
+<dt>prototype-based (прототипное программирование)</dt><dd>стиль ООП без класса, а наследование -
+клонирование(delegation) экземпляра объекта(prototype). Объекты - function object.</dd>
+<dt>dynamic</dt><dd>во время выполняния добавляет код, добавляя определения объекта или переопределяя
+типы, выполнять код из строки eval командой</dd>
+<dt>weakly typed</dt><dd>implicit type conversion at runtime. переменные общего типа</dd>
+<dt>imerative</dt><dd>statements that change a program's state, declarative - что должно получиться</dd>
+<dt>functional</dt><dd>у методов может быть параметр другой метод</dd>
+<dt>event-driven</dt><dd>.</dd>
+<dt>dynamic typing</dt><dd>varibles not bound to types.</dd>
+<dt>duck typing</dt><dd>.</dd>
+</dl>
+
+<p>
+JavaScript is a single-threaded programming language with a single call stack.
+</p>
+</div>
+</div>
+<div id="outline-container-org8868c41" class="outline-2">
+<h2 id="org8868c41"><span class="section-number-2">4.</span> engines, runtime systems</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><b>JavaScript engine</b> - executor,  used in browsers and runtime systems.
+<ul class="org-ul">
+<li>Chrome V8 (Google Chrome, Microsoft Edge, Opera)</li>
+<li>Spidermonkey (Firefox 120)</li>
+<li>Rhino - Mozilla</li>
+<li>Gekko,</li>
+<li>WebKit or JavaScriptCore (Apple Safari)</li>
+<li>Blink - Google fork of WebKit</li>
+</ul></li>
+<li><b>runtime system or run-time environment</b> -  server-side scripting
+<ul class="org-ul">
+<li>Node.js</li>
+<li>MongoBD</li>
+<li>Apache Sling</li>
+</ul></li>
+</ul>
+
+
+<p>
+Java introduced the javax.script package in version 6 that includes a JavaScript implementation based on
+ Mozilla Rhino. Thus, Java applications can host scripts that access the application's variables and objects,
+ much like Web browsers host scripts that access a webpage's Document Object Model (DOM).
+</p>
+
+<p>
+Adventages:
+</p>
+<ul class="org-ul">
+<li>very flexible</li>
+</ul>
+
+<p>
+Disadventages:
+</p>
+<ul class="org-ul">
+<li>Without a unified structure, code is difficult to understand, maintain, and re-use</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5c7b32c" class="outline-2">
+<h2 id="org5c7b32c"><span class="section-number-2">5.</span> History</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>1.6 	2005 	array extras, array and string generics, E4X</li>
+<li>1.7 	2006 	Pythonic generators, iterators, let</li>
+<li>1.8 	2008 	generator expressions + expression closures</li>
+<li>1.8.1 	native JSON support + minor updates</li>
+<li>1.8.2 2009 	minor updates</li>
+<li>1.8.5 2010 	new features for ECMA-262 5th edition compliance (last explicit versioning of JavaScript)</li>
+</ul>
+
+<p>
+ECMAScript( or ES) - стандарт языка JavaScript, interoperability of web pages across different web browsers.
+</p>
+
+<p>
+ECMAScript editions:
+</p>
+<ul class="org-ul">
+<li>3 - 1999</li>
+<li>4 - 2008</li>
+<li>5 - 2009 - ( ECMA-262)</li>
+<li>6 - 2015 - classes and modules - iterators and for/of loops, Python-style generators, arrow functions,
+binary data, typed arrays, collections (maps, sets and weak maps), promises, number and math enhancements,
+reflection, and proxies (metaprogramming for virtual objects and wrappers).</li>
+<li>7 - 2016</li>
+</ul>
+
+<p>
+Engines:
+</p>
+<ul class="org-ul">
+<li>Chakra 	Microsoft Edge 18 	100% 	96% 	100% 	58%</li>
+<li>SpiderMonkey 	Firefox 63 	100% 	98% 	100% 	78%</li>
+<li>Chrome V8 	Google Chrome 70, Opera 57 	100% 	98% 	100% 	100%</li>
+<li>JavaScriptCore (Nitro) 	Safari 12 	99% 	99% 	100% 	90%</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga7c74bd" class="outline-2">
+<h2 id="orga7c74bd"><span class="section-number-2">6.</span> types</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+identifier - fiers - a-Z_$Unicode. Subsequent - 0-9Unicode..
+</p>
+
+<p>
+Types:
+</p>
+<dl class="org-dl">
+<dt>number</dt><dd>123 or 123.23, Infinity, -Infinity and NaN</dd>
+<dt>string</dt><dd>"as", 'as', `can embed ${str}`</dd>
+<dt>boolean</dt><dd>true, false</dd>
+<dt>null</dt><dd>reference to a non-existing object</dd>
+<dt>undefined</dt><dd>[ˌʌndɪˈfaɪnd] value is not assigned</dd>
+</dl>
+
+<p>
+Objects:
+</p>
+<dl class="org-dl">
+<dt>function and object</dt><dd>not primitive</dd>
+<dt>array :: var cars = ["Saab", "Volvo", "BMW"]; cars[0]; - first</dt><dd>not primitive - object</dd>
+<dt>Booleans, Numbers, Strings</dt><dd>can be objects (if defined with the new keyword)</dd>
+</dl>
+</div>
+
+<div id="outline-container-org341ed54" class="outline-3">
+<h3 id="org341ed54"><span class="section-number-3">6.1.</span> Classes - ES6</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+отличия от Классов от Прототипов:
+</p>
+<ul class="org-ul">
+<li>not hoisted - не поднимаются</li>
+<li>strict mode - внутри класса</li>
+<li>методы класса не перечислимы -???  Object.defineProperty() ???</li>
+<li>вызов конструктора класса без оператора new приведет к ошибке</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1044;&#1086; ES6 - &#1055;&#1088;&#1086;&#1090;&#1086;&#1090;&#1080;&#1087;&#1099; and Function object</span>
+ <span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">SAnimal</span>(<span style="color: #cae682;">type</span>) {
+   <span style="color: #e5786d; font-weight: bold;">this</span>.type = type;
+  }
+
+  SAnimal.<span style="color: #e5786d; font-weight: bold;">prototype</span>.who = <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+   console.log(<span style="color: #e5786d; font-weight: bold;">this</span>.type);
+  }
+
+  <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">cat</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">SAnimal</span>(<span style="color: #95e454;">'&#1050;&#1086;&#1096;&#1082;&#1072;'</span>);
+  cat.who(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1050;&#1086;&#1096;&#1082;&#1072;</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1057;&#1077;&#1081;&#1095;&#1072;&#1089; &#1089; ES6 - &#1050;&#1083;&#1072;&#1089;&#1089;</span>
+ <span style="color: #8ac6f2; font-weight: bold;">class</span> SAnimal {
+   constructor(type) {
+    <span style="color: #e5786d; font-weight: bold;">this</span>.type = type;
+   }
+   who() {
+    console.log(<span style="color: #e5786d; font-weight: bold;">this</span>.type);
+   }
+  }
+
+  <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">cat</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">SAnimal</span>(<span style="color: #95e454;">'&#1050;&#1086;&#1096;&#1082;&#1072;'</span>);
+  cat.who();
+ console.log(<span style="color: #8ac6f2; font-weight: bold;">typeof</span> SAnimal); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">function</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1072;&#1085;&#1086;&#1085;&#1080;&#1084;&#1085;&#1099;&#1081; &#1082;&#1083;&#1072;&#1089;&#1089; 1)</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">SAnimal</span> = <span style="color: #8ac6f2; font-weight: bold;">class</span> {
+   constructor(type) {
+    <span style="color: #e5786d; font-weight: bold;">this</span>.type = type;
+   }
+   identify() {
+    console.log(<span style="color: #e5786d; font-weight: bold;">this</span>.type);
+   }
+  }
+
+    <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">duck</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">SAnimal</span>(<span style="color: #95e454;">'&#1059;&#1090;&#1082;&#1072;'</span>);
+
+  console.log(duck <span style="color: #8ac6f2; font-weight: bold;">instanceof</span> <span style="color: #92a65e; font-weight: bold;">SAnimal</span>); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">true</span>
+  console.log(duck <span style="color: #8ac6f2; font-weight: bold;">instanceof</span> <span style="color: #92a65e; font-weight: bold;">Object</span>); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">true</span>
+
+  console.log(<span style="color: #8ac6f2; font-weight: bold;">typeof</span> SAnimal); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">function</span>
+  console.log(<span style="color: #8ac6f2; font-weight: bold;">typeof</span> SAnimal.<span style="color: #e5786d; font-weight: bold;">prototype</span>); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">function</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1072;&#1085;&#1086;&#1085;&#1080;&#1084;&#1085;&#1099;&#1081; &#1082;&#1083;&#1072;&#1089;&#1089; 2)</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">app</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #8ac6f2; font-weight: bold;">class</span>{
+     constructor(name){
+      <span style="color: #e5786d; font-weight: bold;">this</span>.name = name;
+   }
+
+   start() {    console.log(<span style="color: #95e454;">`&#1047;&#1072;&#1087;&#1091;&#1089;&#1082; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; ${this.name}...`</span>);   }
+
+  }(<span style="color: #95e454;">'TodoList'</span>);
+
+  app.start(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1047;&#1072;&#1087;&#1091;&#1089;&#1082; &#1087;&#1088;&#1080;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; TodoList&#8230;</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1043;&#1077;&#1090;&#1090;&#1077;&#1088;&#1099; &#1080; &#1089;&#1077;&#1090;&#1090;&#1077;&#1088;&#1099;</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">class</span> Person {
+
+   constructor(firstName, lastName) {
+    <span style="color: #e5786d; font-weight: bold;">this</span>.firstName = firstName;
+    <span style="color: #e5786d; font-weight: bold;">this</span>.lastName = lastName;
+   }
+
+   get fullName() { <span style="color: #fa8072;">///</span><span style="color: #99968b; font-style: italic;">get!!!</span>
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">this</span>.firstName + <span style="color: #95e454;">' '</span> + <span style="color: #e5786d; font-weight: bold;">this</span>.lastName;
+   }
+
+   set fullName(str) { <span style="color: #fa8072;">///</span><span style="color: #99968b; font-style: italic;">set!!!</span>
+    <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">names</span> = str.split(<span style="color: #95e454;">' '</span>);
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> (names.length === 2) {
+     <span style="color: #e5786d; font-weight: bold;">this</span>.firstName = names[0];
+     <span style="color: #e5786d; font-weight: bold;">this</span>.lastName = names[1];
+    } <span style="color: #8ac6f2; font-weight: bold;">else</span> {
+     <span style="color: #8ac6f2; font-weight: bold;">throw</span> <span style="color: #95e454;">'&#1053;&#1077;&#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1099;&#1081; &#1092;&#1086;&#1088;&#1084;&#1072;&#1090; &#1080;&#1084;&#1077;&#1085;&#1080;'</span>;
+    }
+
+   }
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">name</span> = <span style="color: #95e454;">'fullName'</span>;
+
+get[name] { <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1084;&#1086;&#1078;&#1085;&#1086; &#1090;&#1072;&#1082;</span>
+set[name](str) {
+
+
+  }
+
+  <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">mary</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">Person</span>(<span style="color: #95e454;">'&#1052;&#1072;&#1088;&#1080;&#1103;'</span>, <span style="color: #95e454;">'&#1044;&#1086;&#1088;&#1086;&#1096;'</span>);
+  console.log(mary.fullName); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1052;&#1072;&#1088;&#1080;&#1103; &#1044;&#1086;&#1088;&#1086;&#1096;</span>
+
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1091;&#1089;&#1090;&#1072;&#1085;&#1072;&#1074;&#1083;&#1080;&#1074;&#1072;&#1077;&#1084; &#1085;&#1086;&#1074;&#1086;&#1077; &#1080;&#1084;&#1103;</span>
+  mary.fullName = <span style="color: #95e454;">'&#1052;&#1101;&#1088;&#1080; &#1059;&#1080;&#1083;&#1100;&#1103;&#1084;'</span>;
+  console.log(mary.fullName); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1052;&#1101;&#1088;&#1080; &#1059;&#1080;&#1083;&#1100;&#1103;&#1084;</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaa96a28" class="outline-2">
+<h2 id="orgaa96a28"><span class="section-number-2">7.</span> basis</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><a href="https://javascript.info/">https://javascript.info/</a>
+<ul class="org-ul">
+<li><i>/ccc and /* *</i> - comment</li>
+<li>console.log("Hello World!"); or console["log"]("");</li>
+<li>function declarations may be called before declaration, not fundtion expresion.</li>
+<li>primitives pass by value, f-object adn arrays pass by reference(but we cannot reassign (ref = ) ).</li>
+<li>Garbage collection is performed automatically. We cannot force or prevent it. Reachability.</li>
+<li>In constructor If return is called with object, then it is returned instead of this. If return is called
+with a primitive, it’s ignored.</li>
+<li>все функции в JavaScript — замыкания, так как все они имеют контекст.</li>
+<li>indentivicators - case-sensitive</li>
+<li>undefined (or uninitialized)  - default value</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-javascript">     <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">i</span> = 0; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">non-local, by reference, automatically moved to top</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">j</span> = 0; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">local</span>
+     <span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">a</span> = 0;       <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">local</span>
+     x = 0;             <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">like var</span>
+
+
+     <span style="color: #8ac6f2; font-weight: bold;">typeof</span> x; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">return string with name of type</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">user</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">Object</span>(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">"object constructor" syntax</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">user</span> = {};  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">"object literal" syntax and JSON</span>
+     <span style="color: #8ac6f2; font-weight: bold;">delete</span> user.age; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">remove property</span>
+     user[<span style="color: #95e454;">"likes birds"</span>] = <span style="color: #e5786d; font-weight: bold;">true</span>; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">just key with space. we add new one or change</span>
+
+     <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">function expression</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">sum</span> = <span style="color: #8ac6f2; font-weight: bold;">function</span>(<span style="color: #cae682;">a</span>, <span style="color: #cae682;">b</span>) {  };
+     sum.call(context, a, b); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">call with (obj, arg1, arg2) =&gt; inside this = obj</span>
+     <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Arrow function -  introduced in ES6.</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">sum</span> = (a, b) =&gt; a + b; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">expression a+b = return a + b;</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">sum</span> = (a, b) =&gt; {a + b; <span style="color: #8ac6f2; font-weight: bold;">return</span> 2;}
+     <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">function object</span>
+     <span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">Ball</span>(<span style="color: #cae682;">r</span>, <span style="color: #cae682;">c</span>) { <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">function declaration. Start with capital B.</span>
+         <span style="color: #e5786d; font-weight: bold;">this</span>.radius = r; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">local to the ball object</span>
+         <span style="color: #e5786d; font-weight: bold;">this</span>.show = <span style="color: #8ac6f2; font-weight: bold;">function</span>(){ <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">objects can contain functions</span>
+         }
+         <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">checkInt</span> = <span style="color: #8ac6f2; font-weight: bold;">function</span>(<span style="color: #cae682;">x</span>) { <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">inner function</span>
+         }
+     }
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">myBall</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">Ball</span>(5, 3); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">creates a new instance of the ball object</span>
+     myBall.show();
+
+     <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">single f-object</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">myBall</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">r</span>, <span style="color: #cae682;">c</span>) {
+         <span style="color: #e5786d; font-weight: bold;">this</span>.radius = r;
+         console.out(<span style="color: #8ac6f2; font-weight: bold;">new</span>.target); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">[Function] if without new = undefined</span>
+     }
+
+     <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Immediately-invoked function expressions</span>
+     <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">counter</span> = (<span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+         <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">i</span> = 0; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">private property</span>
+         <span style="color: #8ac6f2; font-weight: bold;">return</span> {   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">public methods</span>
+             <span style="color: #cae682; font-weight: bold;">get</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+                 alert(i);
+             },
+             <span style="color: #cae682; font-weight: bold;">set</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">value</span>) {
+                 i = value;
+             }
+         };
+     })(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">module</span>
+     counter.get();       <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">shows 0</span>
+     counter.set(6);
+
+     <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">"this"</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">user</span> = {
+       firstName: <span style="color: #95e454;">"John"</span>,
+       sayHi() {
+         console.log(<span style="color: #95e454;">`Hello, ${this.firstName}!`</span>);
+       }
+     };
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">a</span> = user.sayHi; a();   <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Hello, undefined!</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">aa</span> = () =&gt; a(); aa();  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Hello, undefined!</span>
+     user.sayHi(); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Hello, John!</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">b</span> = () =&gt; user.sayHi(); b();   <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">wrapped Hello, John!</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">c</span> = <span style="color: #8ac6f2; font-weight: bold;">function</span>(){user.sayHi()}; c();<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">wrapped Hello, John!</span>
+     setTimeout(a,0); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">undefined</span>
+     setTimeout(b,0); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">OK</span>
+     a.call(user); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Hello, John!</span>
+     <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">d</span> = a.bind(user); d(); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Hello, John!</span>
+
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Closure and counter problem</span>
+  <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">add</span> = (<span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+    <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">counter</span> = 0; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">private</span>
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> () {counter += 1; <span style="color: #8ac6f2; font-weight: bold;">return</span> counter} <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">it sees scope "above" only</span>
+  })();
+  add(); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">increase counter</span>
+  add();
+  add(); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">counter = 3</span>
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgfcdc780" class="outline-3">
+<h3 id="orgfcdc780"><span class="section-number-3">7.1.</span> <span class="todo TODO">TODO</span> type juggling - automatic type conversion</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+special rules that determine whether the result will be true or false
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f752d7" class="outline-2">
+<h2 id="org3f752d7"><span class="section-number-2">8.</span> this</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+In the global execution context, this holds a reference to the global object. In the browser, it’s a window
+object.
+</p>
+
+<p>
+in function
+</p>
+<ul class="org-ul">
+<li>is undefined(in strict mode)</li>
+<li>global object</li>
+<li>if method to that object</li>
+<li>in array function this is not bound at all. It just inherits from the parent execution context (callee).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4c8f5ad" class="outline-2">
+<h2 id="org4c8f5ad"><span class="section-number-2">9.</span> hoisting and closure terms</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Hoisting is just the process of assigning variable declarations a default value and placing function
+declarations into memory during the creation phase.
+</p>
+
+<p>
+Closure is a way to save the Lexical Environment of a function in the memory after its execution context is
+removed from the stack. A closure gives you access to an outer function’s Lexical Environment from an inner
+function.
+</p>
+</div>
+</div>
+<div id="outline-container-org7ec8053" class="outline-2">
+<h2 id="org7ec8053"><span class="section-number-2">10.</span> Concurrency</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>event table - data structure which maps registered callbacks to events, in our case onTimeout function to
+timeout event.</li>
+<li>event queue is a data structure which consists of callback functions (tasks) to be processed in the future.</li>
+<li>event loop, a constantly running loop, checks whether Call Stack is empty. If so the first added callback
+from the event queue is executed, hence moved to the call stack.</li>
+</ul>
+
+<p>
+JavaScript code is considered blocking - while processing stack frames
+</p>
+
+<p>
+Web API gives us a possibility to write non-blocking code via asynchronous callbacks: like setTimeout or fetch
+</p>
+<ul class="org-ul">
+<li>which runs in a separate thread</li>
+</ul>
+</div>
+<div id="outline-container-org79ca7e8" class="outline-3">
+<h3 id="org79ca7e8"><span class="section-number-3">10.1.</span> Scheduling: setTimeout and setInterval</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+all browsers and Node.JS. not a part of JavaScript specification. May Split CPU-hungry tasks.
+</p>
+
+<dl class="org-dl">
+<dt>setTimeout</dt><dd>allows to run a function once after the interval of time.</dd>
+<dt>setInterval</dt><dd>allows to run a function regularly with the interval between the runs.</dd>
+</dl>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">sayHi</span>(<span style="color: #cae682;">phrase</span>, <span style="color: #cae682;">who</span>) {
+  console.log( phrase + <span style="color: #95e454;">', '</span> + who );
+}
+setTimeout(sayHi, 1000, <span style="color: #95e454;">"Hello"</span>, <span style="color: #95e454;">"John"</span>); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">this is undefinded</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">timerId</span> = setTimeout(...);
+clearTimeout(timerId);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8027a61" class="outline-3">
+<h3 id="org8027a61"><span class="section-number-3">10.2.</span> job queue (aka Micro-task queue)</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>ECMAScript 2015</li>
+<li>Callbacks in the job queue have a higher priority of execution than callbacks in the event queue</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd0b734e" class="outline-2">
+<h2 id="orgd0b734e"><span class="section-number-2">11.</span> Prototypal inheritance (hidden property of all objects <span class="underline"><span class="underline">proto</span></span>)</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li><a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/">http://dmitrysoshnikov.com/ecmascript/javascript-the-core/</a></li>
+<li>нет множественного наследования - но есть примеси <b>Mixin</b></li>
+<li>Все что не примитивные типы -  subclass of the object type</li>
+<li><b>object</b> is a collection of properties and has a single prototype object <span class="underline"><span class="underline">proto</span></span></li>
+<li>default value for <span class="underline"><span class="underline">proto</span></span> is — <b>Object.prototype</b></li>
+<li><b>Constructor function</b> Foo - function Foo() { - здает два объекта - Foo и Foo.prototype</li>
+<li>Foo._<sub>proto</sub>__ =&gt; Function.prototype     ._<sub>proto</sub>__ =&gt; Object.prototype</li>
+<li>Foo.prototype._<sub>proto</sub>__ =&gt; Object.prototype</li>
+<li>Foo.prototype.constructor <code>=</code> Foo, // true</li>
+<li>Foo._<sub>parent</sub>__ =&gt; Parent  - если функция вложена в функцию</li>
+<li>Every time you try to access a property that does not exist in a particular object, the JavaScript engine
+will automatically look in its prototype. And prototype of prototype.</li>
+</ul>
+
+
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">user</span> = {
+  name: <span style="color: #95e454;">"John"</span>,
+  surname: <span style="color: #95e454;">"Smith"</span>,
+
+  set fullName(value) {
+    [<span style="color: #e5786d; font-weight: bold;">this</span>.name, <span style="color: #e5786d; font-weight: bold;">this</span>.surname] = value.split(<span style="color: #95e454;">" "</span>); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">this = admin</span>
+  },
+
+  get fullName() {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">`${this.name} ${this.surname}`</span>; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">this = admin</span>
+  }
+};
+
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">admin</span> = {
+  __proto__: user,
+  isAdmin: <span style="color: #e5786d; font-weight: bold;">true</span>
+};
+
+console.log(admin.fullName); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">John Smith (*)</span>
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">setter triggers!</span>
+admin.fullName = <span style="color: #95e454;">"Alice Cooper"</span>; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">(**)</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">ES5 way of inheritance</span>
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">bird</span> = Object.create(animal, { <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">anima - parant</span>
+    legs: 2,
+    <span style="color: #cae682; font-weight: bold;">fly</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+        console.log(<span style="color: #95e454;">'flying'</span>);
+    }
+});
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">-------------- Mixin ---------------</span>
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1087;&#1088;&#1080;&#1084;&#1077;&#1089;&#1100;</span>
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">sayHiMixin</span> = {
+  <span style="color: #cae682; font-weight: bold;">sayHi</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+    alert(<span style="color: #95e454;">"&#1055;&#1088;&#1080;&#1074;&#1077;&#1090; "</span> + <span style="color: #e5786d; font-weight: bold;">this</span>.name);
+  },
+  <span style="color: #cae682; font-weight: bold;">sayBye</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+    alert(<span style="color: #95e454;">"&#1055;&#1086;&#1082;&#1072; "</span> + <span style="color: #e5786d; font-weight: bold;">this</span>.name);
+  }
+};
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077;:</span>
+<span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">User</span>(<span style="color: #cae682;">name</span>) {
+  <span style="color: #e5786d; font-weight: bold;">this</span>.name = name;
+}
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1087;&#1077;&#1088;&#1077;&#1076;&#1072;&#1090;&#1100; &#1084;&#1077;&#1090;&#1086;&#1076;&#1099; &#1087;&#1088;&#1080;&#1084;&#1077;&#1089;&#1080;</span>
+<span style="color: #8ac6f2; font-weight: bold;">for</span>(<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">key</span> <span style="color: #8ac6f2; font-weight: bold;">in</span> sayHiMixin) User.<span style="color: #e5786d; font-weight: bold;">prototype</span>[key] = sayHiMixin[key];
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">User "&#1091;&#1084;&#1077;&#1077;&#1090;" sayHi</span>
+<span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">User</span>(<span style="color: #95e454;">"&#1042;&#1072;&#1089;&#1103;"</span>).sayHi(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1055;&#1088;&#1080;&#1074;&#1077;&#1090; &#1042;&#1072;&#1089;&#1103;</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org25f2a36" class="outline-2">
+<h2 id="org25f2a36"><span class="section-number-2">12.</span> Modules import export</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript</a></li>
+<li><a href="https://tuhub.ru/posts/javascript-moduli-rukovodstvo-dlya-nachinayushhih">https://tuhub.ru/posts/javascript-moduli-rukovodstvo-dlya-nachinayushhih</a></li>
+<li><a id="org9a8a986"></a> <img src="https://hsto.org/files/1b7/a3b/cb7/1b7a3bcb7dfd4b06b413104eb717eb93.png" alt="1b7a3bcb7dfd4b06b413104eb717eb93.png" /></li>
+<li><a href="https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc">https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc</a></li>
+</ul>
+<p>
+Модуль - файл
+</p>
+
+<p>
+Для загрузки не используется defer
+</p>
+
+
+<p>
+type="module" - для поддержки ECMAScript модулей в HTML
+</p>
+<pre class="example">
+&lt;script type="module" src="main.js"&gt;&lt;/script&gt;
+</pre>
+</div>
+
+<div id="outline-container-orgbeb1301" class="outline-3">
+<h3 id="orgbeb1301"><span class="section-number-3">12.1.</span> старые способы</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+всегда используется - <b>анонимные замыкания</b> - чтобы не загромождать переменными глобальную область
+</p>
+<pre class="example">
+(function () {    var myGrades = [93, 95, 88, 0, 55, 91]; }());
+</pre>
+
+
+<p>
+<b>Global import  Глобальный импорт</b> - globalVariable имеет в себе все. Применяется в jQuery.
+</p>
+<pre class="example">
+(function (globalVariable) { globalVariable.filter = "my global var";  }(globalVariable));
+</pre>
+
+
+<p>
+<b>Object interface Объектный интерфейс</b> в return {}
+</p>
+<pre class="example">
+var myGradesCalculate = (function () { return {  average: function() {},
+failing: function() {} }  })();
+myGradesCalculate.failing(); - public
+myGradesCalculate.average(); - public
+</pre>
+
+
+<p>
+<b>Revealing module pattern Паттерн "Раскрывающийся модуль"</b> в return { ссылки}
+</p>
+<pre class="example">
+var myGradesCalculate = (function () { return { average: average, failing: failing } })();
+</pre>
+
+
+<p>
+<b>CommonJS</b>
+</p>
+<pre class="example">
+function myModule() {}; module.exports = myModule; //1) module file
+var myModule = require('myModule'); //2) uses 1)
+var myModuleInstance = new myModule(); //2)
+</pre>
+
+
+<p>
+<b>AMD Asynchronous Module Definition</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd702911" class="outline-3">
+<h3 id="orgd702911"><span class="section-number-3">12.2.</span> ECMAScript 6-th edition</h3>
+<div class="outline-text-3" id="text-12-2">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">lib/counter.js</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">counter</span> = 1;
+
+<span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">increment</span>() {
+  counter++; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1080;&#1079;&#1084;&#1077;&#1085;&#1103;&#1077;&#1090; &#1087;&#1077;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1091;&#1102; &#1074;&#1085;&#1091;&#1090;&#1088;&#1080; &#1086;&#1088;&#1080;&#1075;&#1080;&#1085;&#1072;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086; &#1084;&#1086;&#1076;&#1091;&#1083;&#1103;.</span>
+}
+
+<span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">decrement</span>() {
+  counter--;
+}
+
+module.exports = {<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1087;&#1086; &#1082;&#1086;&#1087;&#1080;&#1080; &#1082;&#1072;&#1078;&#1076;&#1086;&#1075;&#1086; &#1086;&#1073;&#1098;&#1077;&#1082;&#1090;&#1072;. &#1074;&#1089;&#1077; &#1086;&#1085;&#1080; &#1076;&#1088;&#1091;&#1075; &#1086; &#1076;&#1088;&#1091;&#1075;&#1077; &#1085;&#1077; &#1079;&#1085;&#1072;&#1102;&#1090;.</span>
+  counter: counter,
+  increment: increment,
+  decrement: decrement
+};
+
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">src/main.js</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">counter</span> = require(<span style="color: #95e454;">'../../lib/counter'</span>);
+
+counter.increment();
+console.log(counter.counter); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">1</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">lib/counter.js</span>
+<span style="color: #8ac6f2; font-weight: bold;">export</span> <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">counter</span> = 1;
+
+<span style="color: #8ac6f2; font-weight: bold;">export</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> increment() {
+  counter++;
+}
+
+<span style="color: #8ac6f2; font-weight: bold;">export</span> <span style="color: #8ac6f2; font-weight: bold;">function</span> decrement() {
+  counter--;
+}
+
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">src/main.js</span>
+<span style="color: #8ac6f2; font-weight: bold;">import</span> * as counter from <span style="color: #95e454;">'../../counter'</span>;
+
+console.log(counter.counter); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">1</span>
+counter.increment();
+console.log(counter.counter); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">2</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f7b179" class="outline-2">
+<h2 id="org6f7b179"><span class="section-number-2">13.</span> Scope</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>in ECMAScript only a static scope is used</li>
+<li>this - context object - object in which context the execution context is activated</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">global "x"</span>
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">x</span> = 10;
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">global function</span>
+<span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">foo</span>() {
+  console.log(x);
+}
+
+(<span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">funArg</span>) {
+
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">local "x"</span>
+  <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">x</span> = 20;
+
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">there is no ambiguity,</span>
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">because we use global "x",</span>
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">which was statically saved in</span>
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">[[Scope]] of the "foo" function,</span>
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">but not the "x" of the caller's scope,</span>
+  <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">which activates the "funArg"</span>
+
+  funArg(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">10, but not 20</span>
+
+})(foo); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">pass "down" foo as a "funarg"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org490cd20" class="outline-2">
+<h2 id="org490cd20"><span class="section-number-2">14.</span> in browser</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li><a href="https://www.w3schools.com/js">https://www.w3schools.com/js</a></li>
+<li><a href="https://www.splessons.com/lesson/javascript-bom/">https://www.splessons.com/lesson/javascript-bom/</a></li>
+<li>веб-разработчику <a href="https://developer.mozilla.org/ru/docs/Web">https://developer.mozilla.org/ru/docs/Web</a></li>
+<li>онлайн веб редактор <a href="https://jsfiddle.net/kqbL0c4f/">https://jsfiddle.net/kqbL0c4f/</a></li>
+<li>онлайн веб редактор <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_object">https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_object</a></li>
+</ul>
+<p>
+In a web page, global variables belong to the window object.
+</p>
+<ul class="org-ul">
+<li><b>Browser Object Model (BOM)</b> - <b>window</b></li>
+</ul>
+
+<p>
+&lt;head&gt;&lt;script src="/my/script.js"&gt;&lt;/script&gt;
+</p>
+
+<p>
+&lt;head&gt;&lt;script type="text/javascript"&gt;     function count<sub>rabbits</sub>() {   &lt;/script&gt;&lt;/head&gt;
+</p>
+</div>
+
+<div id="outline-container-org2f4ead4" class="outline-3">
+<h3 id="org2f4ead4"><span class="section-number-3">14.1.</span> DOM</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li><a href="https://developer.mozilla.org/ru/docs/Web/API/Document">https://developer.mozilla.org/ru/docs/Web/API/Document</a></li>
+</ul>
+<p>
+<b>Document Object Model (DOM)</b> is a cross-platform and language-independent application programming
+  interface.
+</p>
+
+<p>
+<b>HTMLDocument интерфейс</b> - абстрактный DOM - в современных браузерах для text/html
+</p>
+
+<ul class="org-ul">
+<li>document.body - The body of the document</li>
+<li>document.documentElement - The full document</li>
+</ul>
+</div>
+
+<div id="outline-container-org8c03b0c" class="outline-4">
+<h4 id="org8c03b0c"><span class="section-number-4">14.1.1.</span> terms</h4>
+<div class="outline-text-4" id="text-14-1-1">
+<p>
+document.getElementById("demo").innerHTML
+</p>
+<ul class="org-ul">
+<li><b>objects</b> - elements -</li>
+<li><b>property</b> - innerHTML</li>
+<li><b>method</b> - getElementById</li>
+<li>DOM tree</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ad5453" class="outline-4">
+<h4 id="org1ad5453"><span class="section-number-4">14.1.2.</span> Standards</h4>
+<div class="outline-text-4" id="text-14-1-2">
+<p>
+Dom levels:
+</p>
+<ol class="org-ol">
+<li>for an entire HTML or XML document</li>
+<li>2000 - getElementById,  event model, XML namespaces and CSS</li>
+<li>2004 - XPath, keyboard event handling, serializing documents as XML</li>
+<li>2015 -</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org63ab59b" class="outline-4">
+<h4 id="org63ab59b"><span class="section-number-4">14.1.3.</span> DOM доступен:</h4>
+<div class="outline-text-4" id="text-14-1-3">
+<ul class="org-ul">
+<li><b>window.document</b> or just <b>document</b></li>
+<li>свойство contentDocument объекта iframe</li>
+<li>ответ responseXML объекта  XMLHttpRequest</li>
+<li>из элемента или узла - свойство <b>ownerDocument</b></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga2954d5" class="outline-4">
+<h4 id="orga2954d5"><span class="section-number-4">14.1.4.</span> Finding, Changing, Adding</h4>
+<div class="outline-text-4" id="text-14-1-4">
+<p>
+<a href="https://www.w3schools.com/js/js_htmldom_document.asp">https://www.w3schools.com/js/js_htmldom_document.asp</a>
+Finding:
+</p>
+<ul class="org-ul">
+<li>document.getElementById(id)</li>
+<li>document.getElementsByTagName(name)</li>
+<li>document.getElementsByClassName(name)</li>
+<li>document.querySelector("") - CSS selector</li>
+</ul>
+
+<p>
+Changing:
+</p>
+<ul class="org-ul">
+<li>.innerHTML = html</li>
+<li>.attribute =</li>
+<li>.setAttribute(attribute, value)</li>
+<li>.style.property</li>
+</ul>
+
+<p>
+Adding Events Handlers:
+</p>
+<ul class="org-ul">
+<li>document.getElementById(id).onclick = function(){code}</li>
+</ul>
+
+<p>
+Finding:
+</p>
+<ul class="org-ul">
+<li>document.links - all &lt;area&gt; and &lt;a&gt; elements that have a href attribute</li>
+<li>document.head</li>
+<li>document.images</li>
+<li>document.domain - domain name of the document server</li>
+</ul>
+
+<p>
+URL
+</p>
+<ul class="org-ul">
+<li>document.documentURI - URI of the document. - полный URL</li>
+<li>document.baseURI - меняется в &lt;head&gt; &lt;base href=</li>
+<li>document.URL - complete URL of the document.  Only HTML. - полный URL
+<a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_doc_baseuri">https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_doc_baseuri</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga1d87ba" class="outline-4">
+<h4 id="orga1d87ba"><span class="section-number-4">14.1.5.</span> commenting in &lt;script&gt;</h4>
+<div class="outline-text-4" id="text-14-1-5">
+<div class="org-src-container">
+<pre class="src src-html">      &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+         <span style="color: #fa8072;">&lt;!--</span>
+<span style="color: #99968b; font-style: italic;">            document.write("Hello World!")</span>
+<span style="color: #99968b; font-style: italic;">         //</span><span style="color: #fa8072;">--&gt;</span>
+      &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9760989" class="outline-3">
+<h3 id="org9760989"><span class="section-number-3">14.2.</span> <span class="todo TODO">TODO</span> HTML and HTML5</h3>
+</div>
+<div id="outline-container-orga93d079" class="outline-3">
+<h3 id="orga93d079"><span class="section-number-3">14.3.</span> debug</h3>
+<div class="outline-text-3" id="text-14-3">
+<ul class="org-ul">
+<li><b>console.log</b> works if the browser supports Web Workers API</li>
+<li><b>document.write</b> does not have any dependency on it. writes a string of text to a document stream opened by
+document.open()</li>
+<li>alert() - окно с сообщением и приостанавливает выполнение скрипта</li>
+<li>prompt, confirm - окна с вопросами</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-html"> &lt;<span style="color: #cae682; font-weight: bold;">p</span> <span style="color: #cae682;">id</span>=<span style="color: #95e454;">"demo"</span>&gt;&lt;/<span style="color: #cae682; font-weight: bold;">p</span>&gt;
+ &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+ document.getElementById("demo").innerHTML = x +"&lt;<span style="color: #cae682; font-weight: bold;">p</span>&gt;" + y + "&lt;<span style="color: #cae682; font-weight: bold;">p</span>&gt;" + z;
+
+
+      document.open();
+      document.write("&lt;<span style="color: #cae682; font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">&#1044;&#1086;&#1083;&#1086;&#1081; &#1089;&#1090;&#1072;&#1088;&#1086;&#1077;, &#1076;&#1072; &#1079;&#1076;&#1088;&#1072;&#1074;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1085;&#1086;&#1074;&#1086;&#1077;!</span>&lt;/<span style="color: #cae682; font-weight: bold;">h1</span>&gt;");
+      document.close();
+
+ &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4f330db" class="outline-3">
+<h3 id="org4f330db"><span class="section-number-3">14.4.</span> <span class="todo TODO">TODO</span> Web API</h3>
+<div class="outline-text-3" id="text-14-4">
+<ul class="org-ul">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API">https://developer.mozilla.org/en-US/docs/Web/API</a></li>
+<li><a href="https://developer.mozilla.org/ru/docs/Web/API">https://developer.mozilla.org/ru/docs/Web/API</a></li>
+</ul>
+
+<p>
+navigator.appName - client's browser name
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0dc8282" class="outline-3">
+<h3 id="org0dc8282"><span class="section-number-3">14.5.</span> <span class="todo TODO">TODO</span> functions, events, etc</h3>
+<div class="outline-text-3" id="text-14-5">
+<ul class="org-ul">
+<li><a href="https://www.w3schools.com/js/js_reserved.asp">https://www.w3schools.com/js/js_reserved.asp</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4aec5bf" class="outline-3">
+<h3 id="org4aec5bf"><span class="section-number-3">14.6.</span> Best practices</h3>
+<div class="outline-text-3" id="text-14-6">
+<ul class="org-ul">
+<li>Avoid Global Variables - closures.</li>
+<li>Always Declare Local Variables - var</li>
+<li>Declarations on Top (JavaScript Hoisting)</li>
+<li>Initialize Variables</li>
+<li>Never Declare Number, String, or Boolean Objects - low speed</li>
+<li>Don't Use new Object() - same</li>
+<li>Beware of Automatic Type Conversions</li>
+<li>Use <code>=</code> Comparison - operator always converts (to matching types) before comparison.</li>
+<li>Use Parameter Defaults  - function is called with a missing argument it set to <b>undefined</b>. function (a=1, b=1) {</li>
+<li>End Your Switches with Defaults</li>
+<li>Avoid Using eval()</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2a543b2" class="outline-3">
+<h3 id="org2a543b2"><span class="section-number-3">14.7.</span> ways to execute javascript</h3>
+<div class="outline-text-3" id="text-14-7">
+</div>
+<div id="outline-container-org18c0a0b" class="outline-4">
+<h4 id="org18c0a0b"><span class="section-number-4">14.7.1.</span> js file in header</h4>
+<div class="outline-text-4" id="text-14-7-1">
+<div class="org-src-container">
+<pre class="src src-html">    &lt;<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">script</span> type = <span style="color: #95e454;">"text/javascript"</span> <span style="color: #cae682;">src</span>=<span style="color: #95e454;">"function.js"</span>&gt;&lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    <span style="color: #fa8072;">&lt;!-- </span><span style="color: #99968b; font-style: italic;">or full script</span><span style="color: #fa8072;"> --&gt;</span>
+    &lt;/<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4d25812" class="outline-4">
+<h4 id="org4d25812"><span class="section-number-4">14.7.2.</span> on HTML page load</h4>
+<div class="outline-text-4" id="text-14-7-2">
+<p>
+Once your HTML page has finished loading
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Call JavaScript function from HTML</span>&lt;/<span style="color: #cae682; font-weight: bold;">h1</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    function test() {
+      alert("The function 'test' is executed");
+    }
+    window.addEventListener('load', event =&gt; {
+      test();
+    });
+  &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b3b414" class="outline-4">
+<h4 id="org0b3b414"><span class="section-number-4">14.7.3.</span> button1</h4>
+<div class="outline-text-4" id="text-14-7-3">
+<div class="org-src-container">
+<pre class="src src-html">    &lt;<span style="color: #cae682; font-weight: bold;">html</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">script</span> type = <span style="color: #95e454;">"text/javascript"</span>&gt;
+    functionmyfunction() {
+    alert("how are you");
+             }
+    &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    &lt;/<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">p</span>&gt;Click the following button to see the function in action&lt;/<span style="color: #cae682; font-weight: bold;">p</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">input</span> type = <span style="color: #95e454;">"button"</span> onclick = <span style="color: #95e454;">"myfunction()"</span> value = <span style="color: #95e454;">"Display"</span>&gt;
+    &lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+    &lt;/<span style="color: #cae682; font-weight: bold;">html</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a8c7c9" class="outline-4">
+<h4 id="org2a8c7c9"><span class="section-number-4">14.7.4.</span> button2</h4>
+<div class="outline-text-4" id="text-14-7-4">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">button</span> <span style="color: #cae682;">id</span>=<span style="color: #95e454;">"btn"</span>&gt;Click me&lt;/<span style="color: #cae682; font-weight: bold;">button</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    function test() {
+      alert("The function 'test' is executed");
+    }
+    let btn = document.getElementById("btn");
+    btn.addEventListener('click', event =&gt; {
+      test();
+    });
+  &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3d36d3" class="outline-4">
+<h4 id="orgf3d36d3"><span class="section-number-4">14.7.5.</span> button3</h4>
+<div class="outline-text-4" id="text-14-7-5">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">button</span> <span style="color: #cae682;">onclick</span>=<span style="color: #95e454;">"test()"</span>&gt;Click me&lt;/<span style="color: #cae682; font-weight: bold;">button</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    function test() {
+      alert("The function 'test' is executed");
+    }
+  &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgabe588a" class="outline-4">
+<h4 id="orgabe588a"><span class="section-number-4">14.7.6.</span> form submit event</h4>
+<div class="outline-text-4" id="text-14-7-6">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">form</span> <span style="color: #cae682;">onsubmit</span>=<span style="color: #95e454;">"test()"</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">label</span> <span style="color: #cae682;">for</span>=<span style="color: #95e454;">"username"</span>&gt;Enter username:&lt;/<span style="color: #cae682; font-weight: bold;">label</span>&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">input</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text"</span> <span style="color: #cae682;">name</span>=<span style="color: #95e454;">"username"</span> <span style="color: #cae682;">id</span>=<span style="color: #95e454;">"username"</span> /&gt;
+    &lt;<span style="color: #cae682; font-weight: bold;">input</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"submit"</span> /&gt;
+  &lt;/<span style="color: #cae682; font-weight: bold;">form</span>&gt;
+  &lt;<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+    function test() {
+      alert(`The function 'test' is executed`);
+    }
+  &lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">body</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd392ae0" class="outline-3">
+<h3 id="orgd392ae0"><span class="section-number-3">14.8.</span> console object</h3>
+<div class="outline-text-3" id="text-14-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Methods</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">console.assert()</td>
+<td class="org-left">Log a message and stack trace to console if the first argument is false.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.clear()</td>
+<td class="org-left">Clear the console.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.count()</td>
+<td class="org-left">Log the number of times this line has been called with the given label.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.countReset()</td>
+<td class="org-left">Resets the value of the counter with the given label.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.debug()</td>
+<td class="org-left">Outputs a message to the console with the log level debug.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.dir()</td>
+<td class="org-left">Displays an interactive listing of the properties of a specified JavaScript object.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.dirxml()</td>
+<td class="org-left">Displays an XML/HTML Element representation of the specified object if possible or the JavaScript Object view if it is not possible.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.error()</td>
+<td class="org-left">Outputs an error message. You may use string substitution and additional arguments with this method.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.group()</td>
+<td class="org-left">Creates a new inline group, indenting all following output by another level. To move back out a level, call groupEnd().</td>
+</tr>
+
+<tr>
+<td class="org-left">console.groupCollapsed()</td>
+<td class="org-left">Creates a new inline group, indenting all following output by another level.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.groupEnd()</td>
+<td class="org-left">Exits the current inline group.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.info()</td>
+<td class="org-left">Informative logging of information. You may use string substitution and additional arguments with this method.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.log()</td>
+<td class="org-left">For general output of logging information. You may use string substitution and additional arguments with this method.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.table()</td>
+<td class="org-left">Displays tabular data as a table.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.time()</td>
+<td class="org-left">Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.timeEnd()</td>
+<td class="org-left">Stops the specified timer and logs the elapsed time in milliseconds since it started.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.timeLog()</td>
+<td class="org-left">Logs the value of the specified timer to the console.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.trace()</td>
+<td class="org-left">Outputs a stack trace.</td>
+</tr>
+
+<tr>
+<td class="org-left">console.warn()</td>
+<td class="org-left">Outputs a warning message. You may use string substitution and additional arguments with this method.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+output: console.log(), console.info(), console.warn(), console.error(), or console.debug()
+</p>
+
+<p>
+Using string substitutions:
+</p>
+<ul class="org-ul">
+<li>%o or %O Outputs a JavaScript object.</li>
+<li>%d or %i Outputs an integer</li>
+<li>%s Outputs a string.</li>
+<li>%f Outputs a floating-point value</li>
+</ul>
+
+<p>
+ex:
+</p>
+<ul class="org-ul">
+<li>console.log("Foo %.2d", 1.1) =&gt; Foo 01</li>
+<li>console.log("Foo %.2f", 1.1) =&gt;Foo 1.10</li>
+</ul>
+<p>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/console">https://developer.mozilla.org/en-US/docs/Web/API/console</a>
+</p>
+
+<p>
+Styling console output %c:
+</p>
+<ul class="org-ul">
+<li>console.log("This is %cMy stylish message", "color: yellow; font-style: italic; background-color: blue;padding: 2px");</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org70725c2" class="outline-3">
+<h3 id="org70725c2"><span class="section-number-3">14.9.</span> under the hood</h3>
+<div class="outline-text-3" id="text-14-9">
+<p>
+V8 Javascript Engine — compilation steps, heap and memory management, and call stack.
+Browser runtime — concurrency models, event loops, and blocking and non-blocking code.
+</p>
+
+<p>
+V8 - written in C++ and used by Chromium-based browsers such as Chrome, Opera, and even Edge.
+</p>
+
+<p>
+Compilation just-in-time (JIT) compilation:
+</p>
+<ul class="org-ul">
+<li>transforms JS into an abstract syntax tree (AST)</li>
+<li>This tree is used by Ignition —an interpreter which produces bytecode.</li>
+<li>Bytecode is an abstraction of machine code able to be executed by compiling to non-optimized machine code.</li>
+</ul>
+
+<p>
+stack and heap
+</p>
+<ul class="org-ul">
+<li>Call Stack is the place in memory which consists of stack frames. Each stack frame corresponds to a call to a function</li>
+<li>Heap - Objects on the heap live on after we exit the function that allocated the memory.</li>
+</ul>
+
+
+<p>
+Browser runtime of Chrome is Blink. It’s a fork of WebCore which is a layout, rendering, and Document Object
+Model (DOM) library.
+</p>
+<ul class="org-ul">
+<li>implemented in C++</li>
+<li><p>
+exposes Web APIs like DOM elements and events, XMLHttpRequest, fetch, setTimeout, setInterval and so on,
+which are accessible via JavaScript.
+</p>
+
+<p>
+<a href="https://betterprogramming.pub/javascript-internals-under-the-hood-of-a-browser-f357378cc922">https://betterprogramming.pub/javascript-internals-under-the-hood-of-a-browser-f357378cc922</a>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5509f30" class="outline-2">
+<h2 id="org5509f30"><span class="section-number-2">15.</span> Node.js and NPM</h2>
+<div class="outline-text-2" id="text-15">
+</div>
+<div id="outline-container-orgde115ab" class="outline-3">
+<h3 id="orgde115ab"><span class="section-number-3">15.1.</span> NPM</h3>
+<div class="outline-text-3" id="text-15-1">
+<p>
+<a href="https://docs.npmjs.com/">https://docs.npmjs.com/</a>
+</p>
+
+<ul class="org-ul">
+<li>package in CommonJS format</li>
+<li>package.json file, each dependency can specify a range of valid versions using the semantic versioning
+scheme, allowing developers to auto-update their packages while at the same time avoiding unwanted breaking
+changes</li>
+<li>version-bumping tools for developers to tag their packages with a particular version??????????</li>
+<li>npm also provides the package-lock.json[35] file which has the entry of the exact version used by the project after evaluating semantic versioning in package.json</li>
+<li>npm is the pre-installed package manager for the Node.js server platform.</li>
+<li><b>modules</b>  www.npmjs.com</li>
+<li>each file is treated as a separate module.</li>
+<li>"dependencies": These packages are required by your application in production.</li>
+<li>"devDependencies": These packages are only needed for development and testing.</li>
+<li>package - folder with package.json</li>
+<li>npm install : install package and depenencies based on package.json</li>
+<li>npm start : "start" property of its "scripts" object or node server.js if not such</li>
+</ul>
+
+<p>
+proxy
+</p>
+<ul class="org-ul">
+<li>npm config set proxy <a href="http://srv-proxy:8080">http://srv-proxy:8080</a></li>
+<li>npm config set https-proxy <a href="http://srv-proxy:8080">http://srv-proxy:8080</a></li>
+</ul>
+</div>
+<div id="outline-container-orga691a6b" class="outline-4">
+<h4 id="orga691a6b"><span class="section-number-4">15.1.1.</span> Пример package.json</h4>
+<div class="outline-text-4" id="text-15-1-1">
+<div class="org-src-container">
+<pre class="src src-javascript"> {
+  <span style="color: #95e454;">"name"</span>: <span style="color: #95e454;">"my-awesome-package"</span>,
+  <span style="color: #95e454;">"version"</span>: <span style="color: #95e454;">"1.0.0"</span>
+  <span style="color: #95e454;">"scripts"</span>: {
+    <span style="color: #95e454;">"start"</span>: <span style="color: #95e454;">"grunt"</span>,
+    <span style="color: #95e454;">"build"</span>: <span style="color: #95e454;">"grunt build"</span>,
+    <span style="color: #95e454;">"lint"</span>: <span style="color: #95e454;">"grunt lint"</span>,
+    <span style="color: #95e454;">"deploy"</span>: <span style="color: #95e454;">"grunt deploy"</span>,
+    <span style="color: #95e454;">"test"</span>: <span style="color: #95e454;">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  },
+  <span style="color: #95e454;">"devDependencies"</span>: {
+    <span style="color: #95e454;">"eslint"</span>: <span style="color: #95e454;">"^5.1.0"</span>,
+    <span style="color: #95e454;">"eslint-plugin-openui5"</span>: <span style="color: #95e454;">"^0.1.0"</span>,
+    <span style="color: #95e454;">"grunt"</span>: <span style="color: #95e454;">"^1.0.3"</span>,
+    <span style="color: #95e454;">"grunt-openui5"</span>: <span style="color: #95e454;">"^0.14.0"</span>,
+ }
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3560f5" class="outline-3">
+<h3 id="orgf3560f5"><span class="section-number-3">15.2.</span> Node.js</h3>
+<div class="outline-text-3" id="text-15-2">
+<p>
+cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
+</p>
+<ul class="org-ul">
+<li>Common JS - module system</li>
+<li>MIT License</li>
+</ul>
+
+<p>
+V8 compiles JavaScript source code to native machine code
+</p>
+
+<p>
+JavaScript runtime built on Chrome's V8 JavaScript engine. designed to build scalable network applications.
+"JavaScript everywhere" paradigm, rather than different languages for server-side and client-side scripts.
+</p>
+<ul class="org-ul">
+<li>OpenJS Foundation - members included Google, Microsoft, IBM, PayPal, GoDaddy, and Joyent</li>
+<li>operates on a single-thread event loop, using non-blocking I/O calls
+<ul class="org-ul">
+<li>sharing a single thread among all the requests that use the observer pattern
+<ul class="org-ul">
+<li>long-lasting computations and other CPU-bound tasks freeze the entire event-loop until completion</li>
+</ul></li>
+</ul></li>
+<li>support: JavaScript, TypeScript, ClojureScript &#x2026;</li>
+</ul>
+
+<p>
+<b>Express.js</b> -  web app framework for Node.js
+</p>
+</div>
+
+
+<div id="outline-container-orgef5248e" class="outline-4">
+<h4 id="orgef5248e"><span class="section-number-4">15.2.1.</span> Node.js vs Java</h4>
+<div class="outline-text-4" id="text-15-2-1">
+<p>
+JavaScript run-time environment
+</p>
+<ul class="org-ul">
+<li>Ubiquity [juːbɪkwɪti] вездесущность -  server and in the browser</li>
+<li>easy migrate logic form browser to server and vice versa.</li>
+<li>simple build process (no XML)</li>
+<li>simple work with noSQL databases</li>
+<li>JSON</li>
+</ul>
+
+<p>
+Java:
+</p>
+<ul class="org-ul">
+<li>rock-solid foundation - less bugs.</li>
+<li>better for scientific work (Gregorian and Julian calendars)</li>
+<li>better IDE</li>
+<li>async calls in JS and Python are about are about 10x slower than concurrent call in java or C++</li>
+<li>accurate milti-threaded</li>
+<li>remote debugging</li>
+<li>more free libraries (Text indexing tools like Lucene and computer vision toolkits like OpenCV)</li>
+
+<li id="JavaScript engines like Rhino">run JavaScript inside your Java application where you can link to it</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4579fd0" class="outline-4">
+<h4 id="org4579fd0"><span class="section-number-4">15.2.2.</span> HTTP server</h4>
+<div class="outline-text-4" id="text-15-2-2">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">server.js</span>
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">http</span> = require(<span style="color: #95e454;">'http'</span>)
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">port</span> = 3000
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">requestHandler</span> = (request, response) =&gt; {
+    console.log(request.url)
+    response.end(<span style="color: #95e454;">'Hello Node.js Server!'</span>)
+}
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">server</span> = http.createServer(requestHandler)
+
+server.listen(port, (err) =&gt; {
+    <span style="color: #8ac6f2; font-weight: bold;">if</span> (err) {
+        <span style="color: #8ac6f2; font-weight: bold;">return</span> console.log(<span style="color: #95e454;">'something bad happened'</span>, err)
+    }
+
+    console.log(<span style="color: #95e454;">`server is listening on ${port}`</span>)
+})
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org79047ee" class="outline-4">
+<h4 id="org79047ee"><span class="section-number-4">15.2.3.</span> consist of</h4>
+<div class="outline-text-4" id="text-15-2-3">
+<ul class="org-ul">
+<li>libuv - to handle asynchronous events. is an abstraction layer for network and file system functionality on
+both Windows and POSIX-based systems
+<ul class="org-ul">
+<li>uses a fixed-sized thread pool that handles some of the non-blocking asynchronous I/O operations</li>
+</ul></li>
+<li>on top of Google's V8 JavaScript engine since it was open-sourced under the BSD license</li>
+<li>npm - package manager and web site (www.npmjs.com)</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3b5c666" class="outline-4">
+<h4 id="org3b5c666"><span class="section-number-4">15.2.4.</span> Security</h4>
+<div class="outline-text-4" id="text-15-2-4">
+<ul class="org-ul">
+<li>Node Security Platform (NSP) - reports</li>
+<li>need to utilize various third-party open-source packages through NPM (Node Package Manager) and
+unfortunately, as per a survey, 14% of the NPM ecosystem is vulnerable to security issues, and these
+indirectly account for 54% of the packages.</li>
+
+<li>Code injection - attacker explores the poorly handled and untrusted data to gain insights into your codebase.
+<ul class="org-ul">
+<li>improper input and output data validation</li>
+</ul></li>
+<li>Cross-site request forgery (CSRF) attack - forces the authenticated users to submit a request to a web
+application against which they are already authenticated
+<ul class="org-ul">
+<li>allows attackers to
+<ul class="org-ul">
+<li>access sensitive data</li>
+<li>comprise the privacy and integrity of web applications</li>
+</ul></li>
+</ul></li>
+<li>Default cookie names -</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org30a95e8"></a>links<br />
+<div class="outline-text-5" id="text-15-2-4-1">
+<ul class="org-ul">
+<li><a href="https://www.simform.com/blog/nodejs-security/">https://www.simform.com/blog/nodejs-security/</a></li>
+<li><a href="https://www.shiftleft.io/blog/node.js-vulnerability-cheatsheet/">https://www.shiftleft.io/blog/node.js-vulnerability-cheatsheet/</a></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orged05d35" class="outline-4">
+<h4 id="orged05d35"><span class="section-number-4">15.2.5.</span> NodeJS REPL</h4>
+<div class="outline-text-4" id="text-15-2-5">
+<p>
+.load C:\Users\Chepilev<sub>VS\Desktop\f\myjs\main.js</sub>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf68f6ca" class="outline-4">
+<h4 id="orgf68f6ca"><span class="section-number-4">15.2.6.</span> PHP vs Node.js</h4>
+<div class="outline-text-4" id="text-15-2-6">
+<p>
+PHP should be used in applications in which client does not have to interact with the server again and again
+and Node.js should be used for the applications which require a lot of interaction between client and server.
+</p>
+</div>
+</div>
+<div id="outline-container-org5f7c98c" class="outline-4">
+<h4 id="org5f7c98c"><span class="section-number-4">15.2.7.</span> hello world - take screenshots Firefox</h4>
+<div class="outline-text-4" id="text-15-2-7">
+<p>
+<a href="https://github.com/potch/foxshot">https://github.com/potch/foxshot</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd466d6f" class="outline-2">
+<h2 id="orgd466d6f"><span class="section-number-2">16.</span> Node.js - MIT License</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-org594d959" class="outline-3">
+<h3 id="org594d959"><span class="section-number-3">16.1.</span> npm</h3>
+</div>
+</div>
+<div id="outline-container-org97f3323" class="outline-2">
+<h2 id="org97f3323"><span class="section-number-2">17.</span> Google Web Toolkit (GWT)</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+java -&gt; JavaScript front-end (недостатки табличная верстка)
+</p>
+
+<p>
+<a href="https://www.javacodegeeks.com/2012/01/gwt-pros-and-cons.html">https://www.javacodegeeks.com/2012/01/gwt-pros-and-cons.html</a>
+</p>
+
+<p>
+Pros:
+</p>
+<ul class="org-ul">
+<li>Java only</li>
+<li>code reuse</li>
+<li>easy scalable</li>
+<li>browser compatibility</li>
+</ul>
+<p>
+Cons:
+</p>
+<ul class="org-ul">
+<li>Hard or impossible to debug</li>
+<li>Bigg network delay</li>
+<li>lost control over java Script</li>
+<li>особые требования для сервера</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga31b448" class="outline-2">
+<h2 id="orga31b448"><span class="section-number-2">18.</span> web-fronted Frameworks</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+<b>AngularJS or Angular</b>
+</p>
+
+<p>
+<b>Vue.js</b> open-source. single-page app. Successor of AngularJS - lightweight,
+</p>
+<ul class="org-ul">
+<li>user interfaces and single-page applications.</li>
+</ul>
+</div>
+<div id="outline-container-orge50df62" class="outline-3">
+<h3 id="orge50df62"><span class="section-number-3">18.1.</span> Ext JS</h3>
+<div class="outline-text-3" id="text-18-1">
+<p>
+Sencha, Inc.    "JavaScript-first", class-based, object-oriented framework
+</p>
+<ul class="org-ul">
+<li>docs <a href="https://docs.sencha.com/">https://docs.sencha.com/</a></li>
+<li>tutorial <a href="https://docs.sencha.com/extjs/6.6.0/guides/getting_started/getting_started.html">https://docs.sencha.com/extjs/6.6.0/guides/getting_started/getting_started.html</a></li>
+<li>SDK GPL3 <a href="https://www.sencha.com/legal/gpl/">https://www.sencha.com/legal/gpl/</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org814a530" class="outline-4">
+<h4 id="org814a530"><span class="section-number-4">18.1.1.</span> CMD</h4>
+<div class="outline-text-4" id="text-18-1-1">
+<ul class="org-ul">
+<li>tutorial <a href="https://docs.sencha.com/cmd/guides/touch/cmd_app.html">https://docs.sencha.com/cmd/guides/touch/cmd_app.html</a></li>
+<li>documentation <a href="https://docs.sencha.com/cmd/guides/advanced_cmd/cmd_reference.html">https://docs.sencha.com/cmd/guides/advanced_cmd/cmd_reference.html</a></li>
+</ul>
+
+<p>
+Features:
+</p>
+<ul class="org-ul">
+<li>app template gen and add components</li>
+<li>js obfuscation</li>
+<li>package mangement system</li>
+<li>build scripts for app and packages</li>
+<li>Cordova / PhoneGap Integration - mobile app stores</li>
+<li>Converts CSS3 features (such as border-radius and linear-gradient) into sprites for legacy browsers.</li>
+<li>Tuning tools:  determine common code across pages and partition shared code</li>
+<li>Update: sencha upgrade &#x2013;check &amp;&amp; sencha upgrade</li>
+<li>sencha app upgrade</li>
+</ul>
+
+<p>
+sencha [category] [command] [options&#x2026;] [arguments&#x2026;]
+</p>
+
+<p>
+sencha help [module] [action]
+</p>
+</div>
+</div>
+<div id="outline-container-org594961d" class="outline-4">
+<h4 id="org594961d"><span class="section-number-4">18.1.2.</span> Naming Conventions</h4>
+<div class="outline-text-4" id="text-18-1-2">
+<p>
+<b>Classes</b> - MyCompany - alphanumeric characters. Numbers are permitted but
+discouraged. CamelCased. Everything else should be all lower-cased
+</p>
+
+<p>
+Class names should be grouped into <b>packages</b>.  there should be one unique top-level <b>namespace</b>.
+</p>
+
+<p>
+Example: Ext.util.Observable is stored in path/to/src/Ext/util/Observable.js
+</p>
+</div>
+</div>
+<div id="outline-container-org02ba781" class="outline-4">
+<h4 id="org02ba781"><span class="section-number-4">18.1.3.</span> sencha generate -   quickly generate common MVC components</h4>
+<div class="outline-text-4" id="text-18-1-3">
+<p>
+<a href="https://docs.sencha.com/cmd/guides/extjs/cmd_app.html">https://docs.sencha.com/cmd/guides/extjs/cmd_app.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orge72db20" class="outline-4">
+<h4 id="orge72db20"><span class="section-number-4">18.1.4.</span> Bootstart</h4>
+<div class="outline-text-4" id="text-18-1-4">
+<ul class="org-ul">
+<li>bootstrap is not effected by changes to your JavaScript source code</li>
+<li>Occasionally changes to styling or movement and renaming of JavaScript code will invalidate this bootstrap
+information or the generated CSS needed to run your application.</li>
+</ul>
+
+<pre class="example">
+sencha app build development  -will perform a refresh
+sencha app refresh -updates the JavaScript portion of the bootstrap
+</pre>
+</div>
+</div>
+<div id="outline-container-orga64c682" class="outline-4">
+<h4 id="orga64c682"><span class="section-number-4">18.1.5.</span> Запуск</h4>
+<div class="outline-text-4" id="text-18-1-5">
+<ol class="org-ol">
+<li>Настройка:</li>
+</ol>
+<pre class="example">
+sencha app init --frameworks=~/sencha-sdks --ext@6.5.0 --modern MyApp
+sencha app init --classic MyApp
+</pre>
+
+<p>
+&#x2013;classic, &#x2013;modern or &#x2013;universal
+</p>
+<ol class="org-ol">
+<li>build &#x2013;dev, &#x2013;te and &#x2013;pkgproduction, -pkgp</li>
+</ol>
+<pre class="example">
+sencha app build --dev
+</pre>
+
+<ol class="org-ol">
+<li>run</li>
+</ol>
+<pre class="example">
+python -m SimpleHTTPServer 8080
+sencha app watch  #build and start web server
+</pre>
+
+
+<p>
+Config
+</p>
+<pre class="example">
+sencha config --prop sencha.sdk.path=~/sencha-sdks --save
+~/sencha config --list
+</pre>
+
+
+<pre class="example">
+~/sencha audit
+~/sencha help app buil
+</pre>
+</div>
+</div>
+<div id="outline-container-orgd9f3951" class="outline-4">
+<h4 id="orgd9f3951"><span class="section-number-4">18.1.6.</span> App Structure</h4>
+<div class="outline-text-4" id="text-18-1-6">
+<dl class="org-dl">
+<dt>.sencha/</dt><dd>config for cmd and plugins
+<dl class="org-dl">
+<dt>app/</dt><dd>.</dd>
+</dl></dd>
+<dt>touch/</dt><dd>A copy of the Sencha Touch SDK</dd>
+<dt>ext</dt><dd>Copy of SDK and Packages related to the Toolkits (Classic, Modern).
+<dl class="org-dl">
+<dt>cmd/sencha.cfg</dt><dd>Framework configuration file for Sencha Cmd</dd>
+</dl></dd>
+<dt>app/</dt><dd>Your application's source code in MVC structure (указывается в app.json в classpath)
+<dl class="org-dl">
+<dt>Application.js</dt><dd>The main view of the application::</dd>
+<dt>model, view, store</dt><dd>.</dd>
+</dl></dd>
+<dt>resources/</dt><dd>.
+<dl class="org-dl">
+<dt>css/app.css</dt><dd>main stylesheet, compiled from app.scss</dd>
+<dt>sass/app.scss</dt><dd>Sass file which compiles to app.css above</dd>
+<dt>icons</dt><dd>.</dd>
+<dt>loading</dt><dd>Application start-up screens for iOS devices. Like icons.</dd>
+<dt>images</dt><dd>.</dd>
+</dl></dd>
+<dt>index.html</dt><dd>Default web page.</dd>
+<dt>app.js</dt><dd>Contains application's initialization logic</dd>
+<dt>app.json</dt><dd>Application descriptor. How build and load has inline doc.</dd>
+<dt>packager.json</dt><dd>Configuration for native packaging. has inline doc.</dd>
+</dl>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7999d77" class="outline-4">
+<h4 id="org7999d77"><span class="section-number-4">18.1.7.</span> video introduction</h4>
+<div class="outline-text-4" id="text-18-1-7">
+<p>
+Core:
+</p>
+<ul class="org-ul">
+<li>Class/Loader</li>
+<li>DOM</li>
+<li>Data</li>
+<li>MVC/VM</li>
+<li>Utilities</li>
+</ul>
+
+<p>
+Views (components) - toolkit
+</p>
+<ul class="org-ul">
+<li>Classic - Desktop</li>
+<li>Modern - Touch</li>
+</ul>
+
+<p>
+packages:
+</p>
+<ul class="org-ul">
+<li>core package</li>
+<li>classic</li>
+<li>modern</li>
+<li>charts</li>
+<li>ux</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9cede49" class="outline-4">
+<h4 id="org9cede49"><span class="section-number-4">18.1.8.</span> Поддерживает:</h4>
+<div class="outline-text-4" id="text-18-1-8">
+<ul class="org-ul">
+<li>технологию AJAX</li>
+<li>анимацию</li>
+<li>работу с DOM</li>
+<li>реализацию таблиц</li>
+<li>вкладок</li>
+<li>обработку событий</li>
+<li>все новшества Web 2.0</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org014e1b6" class="outline-4">
+<h4 id="org014e1b6"><span class="section-number-4">18.1.9.</span> установка в Debian</h4>
+<div class="outline-text-4" id="text-18-1-9">
+<p>
+libjs-extjs
+</p>
+
+<p>
+sencha cmd:
+</p>
+
+<p>
+./sencha config &#x2013;prop sencha.sdk.path=/usr/share/javascript/extjs &#x2013;save
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7c5bd49"></a>Eclipse<br />
+<div class="outline-text-5" id="text-18-1-9-1">
+<p>
+<a href="http://files.zend.com/help/Zend-Studio-9/content/javascript_libraries.htm">http://files.zend.com/help/Zend-Studio-9/content/javascript_libraries.htm</a>
+<a href="https://www.eclipse.org/pdt/help/html/setting_the_javascript_build_path.htm">https://www.eclipse.org/pdt/help/html/setting_the_javascript_build_path.htm</a>
+</p>
+
+<p>
+<b>Spket plugin</b>
+<a href="https://ducquoc.wordpress.com/2011/02/16/eclipse-extjs-jquery/">https://ducquoc.wordpress.com/2011/02/16/eclipse-extjs-jquery/</a>
+</p>
+</div>
+</li>
+
+<li><a id="orga5f6d0d"></a>Emacs<br />
+<div class="outline-text-5" id="text-18-1-9-2">
+<p>
+<a href="https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html">https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html</a>
+<a href="http://www.unix-lab.org/posts/emacs-ide/">http://www.unix-lab.org/posts/emacs-ide/</a>
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf107771" class="outline-4">
+<h4 id="orgf107771"><span class="section-number-4">18.1.10.</span> Лицензии</h4>
+<div class="outline-text-4" id="text-18-1-10">
+<ul class="org-ul">
+<li>Commercial License - платит разработчик на каждое рабочее место, можно создавать продукт, но не библиотеку или development toolkit</li>
+<li>Open Source (GPLv3) License</li>
+<li>Trial Licensing</li>
+<li>Custom Use Licensing</li>
+<li>Extension Licensing.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org32a500c" class="outline-4">
+<h4 id="org32a500c"><span class="section-number-4">18.1.11.</span> Продукты</h4>
+<div class="outline-text-4" id="text-18-1-11">
+<ul class="org-ul">
+<li>ExtReact - ReactJS - разрабатывается и поддерживается Facebook, Instagram и сообществом отдельных
+разработчиков и корпораций. Свойства передаются от родительских компонентов к дочерним.«свойства вниз,
+события наверх». React, however, does not include any pre-built components. ExtReact offers more than 115
+pre-built UI components.</li>
+<li>Ext JS</li>
+<li>Sencha Test - unit and end-to-end testing solution for Ext JS, including support for end-to-end testing of
+ExtReact, React and Angular apps</li>
+<li>Sencha GXT - Java framework for building feature-rich web applications for both desktops and tablets = Java
+and GWT</li>
+<li>Sencha Touch - in March 2015, Ext JS and Sencha Touch were merged into Ext JS 6.0</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge60a845" class="outline-4">
+<h4 id="orge60a845"><span class="section-number-4">18.1.12.</span> Styling</h4>
+<div class="outline-text-4" id="text-18-1-12">
+<ol class="org-ol">
+<li>Theme - one of theme hierarchy</li>
+<li>UI config</li>
+<li>Application css</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb7e268f" class="outline-2">
+<h2 id="orgb7e268f"><span class="section-number-2">19.</span> Multithreading and scalability</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li><a href="https://habr.com/en/company/wrike/blog/302896/">https://habr.com/en/company/wrike/blog/302896/</a></li>
+<li>no multithreading natively.  single threaded language with asynchronous IO and event-driven model</li>
+<li>Функции из очереди добавляются в стек выполнения (выполняются) не раньше, чем стек вызовов закончит работу
+над текущей функцией.</li>
+<li>платим огромным числом обратных вызовов, блокированием основного потока и постоянными потерями контекста</li>
+</ul>
+
+<p>
+<b>browser</b>
+</p>
+<ul class="org-ul">
+<li><b>web worker</b> - script <code>var worker = new Worker("worker_script.js");</code> executed in background and receive
+events. Cannot touch the DOM, BOM and communicate through asynchronous message passing instead of shared
+memory. <a href="https://www.w3.org/TR/workers/">https://www.w3.org/TR/workers/</a></li>
+</ul>
+<p>
+-&#x2014;
+<b>platform</b> Several operations can happen simultaneously in JavaScript, as an example: while an AJAX operation
+is still in progress [and has yet to call your callback method], a database request can finish up and call
+your callback function
+</p>
+<ul class="org-ul">
+<li>Node.js - simplified model of event-driven programming. 1) cluster - listeners for signle port, 2)
+child<sub>process</sub> module provides the ability to spawn asynchronous child processes and use pipeline to parent.</li>
+</ul>
+
+<p>
+TODO:  yield,  о внутреннем устройстве промисов, асинков, авайтов, генераторов.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org10053d7" class="outline-2">
+<h2 id="org10053d7"><span class="section-number-2">20.</span> libs</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+<b>React</b> -  open source  providing views that are rendered using components specified as custom HTML
+</p>
+
+<p>
+<b>asm.js</b> is a subset of JavaScript that can be run in any JavaScript engine or run faster in an ahead-of-time (AOT) compiling engine
+</p>
+</div>
+
+<div id="outline-container-org0ed921a" class="outline-3">
+<h3 id="org0ed921a"><span class="section-number-3">20.1.</span> Alternatives to Type script</h3>
+<div class="outline-text-3" id="text-20-1">
+<p>
+<b>Babel or Babel.js</b> - developers can program using new ECMAScript 6 (ES6) language features by using Babel to
+ convert their source code into versions of JavaScript that evolving browsers are able to process
+</p>
+
+<p>
+<b>CoffeeScript</b> was a popular alternative with a terse syntax that compiles to sensible JavaScript code
+</p>
+
+<p>
+<b>Google's Dart language</b>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdc6e831" class="outline-2">
+<h2 id="orgdc6e831"><span class="section-number-2">21.</span> Firefox</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+<a href="https://firefox-source-docs.mozilla.org/devtools-user/keyboard_shortcuts/index.html#web_console">https://firefox-source-docs.mozilla.org/devtools-user/keyboard_shortcuts/index.html#web_console</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/console">https://developer.mozilla.org/en-US/docs/Web/API/console</a>
+<a href="https://firefox-source-docs.mozilla.org/devtools-user/browser_console/index.html">https://firefox-source-docs.mozilla.org/devtools-user/browser_console/index.html</a>
+</p>
+</div>
+<div id="outline-container-orgb8f2455" class="outline-3">
+<h3 id="orgb8f2455"><span class="section-number-3">21.1.</span> ide</h3>
+<div class="outline-text-3" id="text-21-1">
+<ul class="org-ul">
+<li>console	Ctrl+Shift+K</li>
+<li>Browser Console	Ctrl+Shift+J</li>
+<li>Page source code	Ctrl+u</li>
+</ul>
+<p>
+<a href="https://www.youtube.com/watch?v=yjQVG6ubUTA">https://www.youtube.com/watch?v=yjQVG6ubUTA</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org90e9bb7" class="outline-3">
+<h3 id="org90e9bb7"><span class="section-number-3">21.2.</span> keys</h3>
+<div class="outline-text-3" id="text-21-2">
+<ul class="org-ul">
+<li>toggle	Ctrl+Shift+C</li>
+<li>inspector	Ctrl+Shift+I</li>
+<li>console	Ctrl+Shift+K</li>
+<li>console-br	Ctrl+Shift+J</li>
+<li>debugger	Ctrl+Shift+S</li>
+<li>styles		Shift+F7</li>
+<li>network	Ctrl+Shift+E</li>
+<li>source	Ctrl+u</li>
+<li>mobile mode	Ctrl+Shift+M</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org176b5e4" class="outline-2">
+<h2 id="org176b5e4"><span class="section-number-2">22.</span> <span class="todo TODO">TODO</span> Angular JS and Angular</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>@license Angular v6.1.10 - main.*.js</li>
+</ul>
+
+<p>
+Angular is not AngularJS - is a TypeScript-based open-source full-stack web application framework.
+</p>
+</div>
+
+<div id="outline-container-org35b6d10" class="outline-3">
+<h3 id="org35b6d10"><span class="section-number-3">22.1.</span> History</h3>
+<div class="outline-text-3" id="text-22-1">
+<ul class="org-ul">
+<li>AngularJS was called "Angular 2"</li>
+<li>Angular 2 - 2014</li>
+<li>4 - 2016</li>
+<li>5 - 2017 - Progressive web applications (PWAs)</li>
+<li>6 - 2018 - ng update, ng add, Angular Elements, Angular Material + CDK Components, Angular Material Starter
+Components, CLI Workspaces, Library Support, Tree Shakable Providers, Animations Performance Improvements,
+and RxJS v6.</li>
+<li>7 - 2018</li>
+</ul>
+
+<p>
+All the major releases are supported for 18 months
+</p>
+</div>
+</div>
+<div id="outline-container-org1808b6d" class="outline-3">
+<h3 id="org1808b6d"><span class="section-number-3">22.2.</span> bootstrap</h3>
+</div>
+
+<div id="outline-container-orgd9ba2cc" class="outline-3">
+<h3 id="orgd9ba2cc"><span class="section-number-3">22.3.</span> Features:</h3>
+<div class="outline-text-3" id="text-22-3">
+<p>
+Angular recommends: TypeScript language
+</p>
+<ul class="org-ul">
+<li>Class-based Object Oriented Programming</li>
+<li>Static Typing</li>
+<li>Generics</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org99a1c58" class="outline-2">
+<h2 id="org99a1c58"><span class="section-number-2">23.</span> Загрузка сайта</h2>
+<div class="outline-text-2" id="text-23">
+</div>
+<div id="outline-container-orgdb35051" class="outline-3">
+<h3 id="orgdb35051"><span class="section-number-3">23.1.</span> Скорость</h3>
+<div class="outline-text-3" id="text-23-1">
+<ul class="org-ul">
+<li><a href="https://developers.google.com/speed/pagespeed/insights">https://developers.google.com/speed/pagespeed/insights</a></li>
+<li><a href="https://developers.google.com/web/tools/lighthouse/#devtools">https://developers.google.com/web/tools/lighthouse/#devtools</a></li>
+<li>mobile friendly <a href="https://search.google.com/test/mobile-friendly?utm_source=mft&amp;utm_medium=redirect&amp;utm_campaign=mft-redirect">https://search.google.com/test/mobile-friendly?utm_source=mft&amp;utm_medium=redirect&amp;utm_campaign=mft-redirect</a></li>
+<li>recomendations <a href="https://developers.google.com/speed/docs/insights/rules">https://developers.google.com/speed/docs/insights/rules</a></li>
+<li><img src="https://www.speedboost.xyz/blog/wp-content/uploads/2017/11/defer-async-js.png" alt="defer-async-js.png" /></li>
+</ul>
+
+<p>
+Элементы
+</p>
+<ol class="org-ol">
+<li>html parsing</li>
+<li>Script downloading</li>
+<li>script execution</li>
+</ol>
+
+<p>
+Варианты загрузки
+</p>
+<ul class="org-ul">
+<li>&lt;script&gt; - parsing will stop until 2) and 3)</li>
+<li>&lt;script async="async"&gt; - parsing will stop until 3)</li>
+<li>&lt;script defer="defer"&gt; - скрипт запустится только после полной загрузки страницы</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3ddce08" class="outline-3">
+<h3 id="org3ddce08"><span class="section-number-3">23.2.</span> &lt;script head vs body bottom</h3>
+<div class="outline-text-3" id="text-23-2">
+<ul class="org-ul">
+<li><a href="http://w3cgeek.com/javascript-head-body-or-jquery.html">http://w3cgeek.com/javascript-head-body-or-jquery.html</a></li>
+</ul>
+<p>
+Всегда в head до парсинга страницы: LESS / SASS, RequireJS, JS как платформа
+</p>
+
+<p>
+just before &lt;/body&gt;:
+</p>
+<ol class="org-ol">
+<li>I usually use a CMS or framework that handles putting the necessary scripts for a page in the head, pasting
+them into the body of individual pages makes it harder to keep track of them</li>
+<li>The problem caused by scripts is that they block parallel downloads. The HTTP/1.1 specification suggests that
+browsers download no more than two components in parallel per hostname. see <a href="#org9a8a986">3</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab9b080" class="outline-2">
+<h2 id="orgab9b080"><span class="section-number-2">24.</span> jQuery</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li><a href="https://api.jquery.com/Types/">https://api.jquery.com/Types/</a></li>
+<li>1 <a href="https://habr.com/en/post/38208/">https://habr.com/en/post/38208/</a></li>
+<li>2 <a href="https://habr.com/en/post/39440/">https://habr.com/en/post/39440/</a></li>
+<li>3 <a href="https://habr.com/en/post/42426/">https://habr.com/en/post/42426/</a></li>
+
+<li><b>PlainObject</b> - var o = {};</li>
+<li><b>CallBack</b> -  plain JavaScript function passed to some method as an argument or option</li>
+<li><b>jqXHR</b> - $.ajax() method returns the jqXHR object superset of the browser's native XMLHttpRequest object</li>
+<li><b>Context</b> - this</li>
+<li><b>Scope</b> - global scope, function scope, local scope</li>
+<li><b>Error</b> - throw new Error( "The argument provided is incorrect" ); or console.log</li>
+</ul>
+
+<p>
+Features
+</p>
+<ul class="org-ul">
+<li>HTML/DOM manipulation</li>
+<li>CSS manipulation</li>
+<li>HTML event methods</li>
+<li>Effects and animations</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+
+<p>
+CDN (Content Delivery Network) - Both Google and Microsoft host jQuery.
+</p>
+
+<p>
+2006 Features:
+</p>
+<ul class="org-ul">
+<li>handle Browser Incompatibilities and to simplify HTML DOM Manipulation</li>
+<li>Event Handling</li>
+<li>Animations</li>
+<li>Ajax</li>
+</ul>
+</div>
+
+<div id="outline-container-org3c25c1c" class="outline-3">
+<h3 id="org3c25c1c"><span class="section-number-3">24.1.</span> ().load</h3>
+<div class="outline-text-3" id="text-24-1">
+<p>
+load ( url [, data] [, complete(responseText, textStatus, XMLHttpRequest)
+</p>
+
+<p>
+data - POST.  в противном случае, GET.
+</p>
+
+<p>
+complete(responseText, textStatus, XMLHttpRequest) - Функция обратного действия, которая запустится после
+завершения запроса.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">$(document).ready(<span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+    <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1074;&#1077;&#1096;&#1072;&#1077;&#1084; &#1085;&#1072; &#1082;&#1083;&#1080;&#1082; &#1087;&#1086; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1091; &#1089; id = example-1</span>
+    $(<span style="color: #95e454;">'#aa'</span>).click(<span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1079;&#1072;&#1075;&#1088;&#1091;&#1079;&#1082;&#1091; HTML &#1082;&#1086;&#1076;&#1072; &#1080;&#1079; &#1092;&#1072;&#1081;&#1083;&#1072; example.html</span>
+        $(<span style="color: #e5786d; font-weight: bold;">this</span>).load(<span style="color: #95e454;">'example.html'</span>);
+        <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">console.log("22");</span>
+    })
+});
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc5c7f08" class="outline-3">
+<h3 id="orgc5c7f08"><span class="section-number-3">24.2.</span> jQuery.ajax()</h3>
+<div class="outline-text-3" id="text-24-2">
+<ul class="org-ul">
+<li><a href="https://api.jquery.com/JQuery.ajax/">https://api.jquery.com/JQuery.ajax/</a></li>
+</ul>
+<p>
+jQuery.ajax( url [, settings ] )
+</p>
+
+<p>
+<b>settings</b>. may be set to default - $.ajaxSetup(). (All settings are optional)
+</p>
+
+<ul class="org-ul">
+<li><b>contentType</b> - default - .  Content-Type: application/x-www-form-urlencoded; charset=utf-8 (false to tell
+jQuery to not set any content type header.)</li>
+<li><b>data</b> - PlainObject or String or Array - Data to be sent to the server.</li>
+<li><b>type</b> - default: 'GET'</li>
+<li><b>url</b> -</li>
+<li><b>accepts</b> - key/value pairs - Accept request header</li>
+<li><b>dataType</b>:"" -  type of data that you're expecting back from the server</li>
+<li><b>async</b> (default: true)</li>
+<li><b>beforeSend</b> -  Function</li>
+<li><b>cache</b> - (default: true, false for dataType 'script' and 'jsonp')  -requested pages not to be cached by the browser.</li>
+<li><b>complete</b> - Function - function to be called when the request finishes</li>
+<li><b>contents</b> -  string/regular-expression pairs - l parse the response -????????????</li>
+<li><b>context</b> -????????</li>
+<li><b>converters</b> default: {"* text": window.String, "text html": true, "text json": jQuery.parseJSON, "text
+xml": jQuery.parseXML} - returns the transformed value of the response</li>
+<li><b>crossDomain</b> - default: false for same-domain requests, true for cross-domain requests</li>
+<li><b>statusCode</b> - HTTP codes and functions to be called when the response has the corresponding code {404:
+function() {</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">menuId</span> = $( <span style="color: #95e454;">"ul.nav"</span> ).first().attr( <span style="color: #95e454;">"id"</span> );
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">request</span> = $.ajax({
+  url: <span style="color: #95e454;">"script.php"</span>,
+  method: <span style="color: #95e454;">"POST"</span>,
+  data: { id : menuId },
+  dataType: <span style="color: #95e454;">"html"</span>
+});
+
+request.done(<span style="color: #8ac6f2; font-weight: bold;">function</span>( <span style="color: #cae682;">msg</span> ) {
+  $( <span style="color: #95e454;">"#log"</span> ).html( msg );
+});
+
+request.fail(<span style="color: #8ac6f2; font-weight: bold;">function</span>( <span style="color: #cae682;">jqXHR</span>, <span style="color: #cae682;">textStatus</span> ) {
+  alert( <span style="color: #95e454;">"Request failed: "</span> + textStatus );
+});
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4611b97" class="outline-3">
+<h3 id="org4611b97"><span class="section-number-3">24.3.</span> jQuery vs JavaScript</h3>
+<div class="outline-text-3" id="text-24-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">jQuery</th>
+<th scope="col" class="org-left">JavaScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">var myElement = $("#id01");</td>
+<td class="org-left">document.getElementById("id01");</td>
+</tr>
+
+<tr>
+<td class="org-left">$("p")</td>
+<td class="org-left">getElementsByTagName("p")</td>
+</tr>
+
+<tr>
+<td class="org-left">var myText = myElement.text();</td>
+<td class="org-left">myElement.textContent or myElement.innerText</td>
+</tr>
+
+<tr>
+<td class="org-left">myElement.html("&lt;p&gt;Hello World&lt;/p&gt;");</td>
+<td class="org-left">myElement.innerHTML</td>
+</tr>
+
+<tr>
+<td class="org-left">myElement.hide();</td>
+<td class="org-left">myElement.style.display = "none";</td>
+</tr>
+
+<tr>
+<td class="org-left">myElement.show();</td>
+<td class="org-left">myElement.style.display = "";</td>
+</tr>
+
+<tr>
+<td class="org-left">myElement.css("font-size","35px");</td>
+<td class="org-left">myElement.style.fontSize = "35px";</td>
+</tr>
+
+<tr>
+<td class="org-left">$("#id").remove();</td>
+<td class="org-left">element.parentNode.removeChild(element);</td>
+</tr>
+
+<tr>
+<td class="org-left">myElement.parent();</td>
+<td class="org-left">myElement.parentNode;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org023d8d1" class="outline-3">
+<h3 id="org023d8d1"><span class="section-number-3">24.4.</span> AJAX</h3>
+<div class="outline-text-3" id="text-24-4">
+<div class="org-src-container">
+<pre class="src src-javascript">$.ajax({
+        type: <span style="color: #95e454;">'GET'</span>,
+        url: <span style="color: #95e454;">'send-ajax-data.php'</span>,
+        dataType: <span style="color: #95e454;">"JSON"</span>, <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">data type expected from server</span>
+        <span style="color: #cae682; font-weight: bold;">success</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">data</span>) {
+                console.log(data);
+        },
+        <span style="color: #cae682; font-weight: bold;">error</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+                console.log(<span style="color: #95e454;">'Error: '</span> + data);
+        }
+});
+
+
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">same code</span>
+$.get(<span style="color: #95e454;">'send-ajax-data.php'</span>).done(<span style="color: #8ac6f2; font-weight: bold;">function</span>(<span style="color: #cae682;">data</span>) {
+        console.log(data);
+}).fail(<span style="color: #8ac6f2; font-weight: bold;">function</span>(<span style="color: #cae682;">data</span>) {
+        console.log(<span style="color: #95e454;">'Error: '</span> + data);
+});
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd01e4fd" class="outline-3">
+<h3 id="orgd01e4fd"><span class="section-number-3">24.5.</span> Events</h3>
+<div class="outline-text-3" id="text-24-5">
+<ul class="org-ul">
+<li><img src="http://anton.shevchuk.name/wp-content/uploads/2008/10/events.png" alt="events.png" /></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1089;&#1086;&#1073;&#1099;&#1090;&#1080;&#1103; &#1083;&#1102;&#1073;&#1086;&#1075;&#1086; AJAX</span>
+$(<span style="color: #95e454;">"#loading"</span>).bind(<span style="color: #95e454;">"ajaxSend"</span>, <span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+    $(<span style="color: #e5786d; font-weight: bold;">this</span>).show(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1084; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;</span>
+}).bind(<span style="color: #95e454;">"ajaxComplete"</span>, <span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+    $(<span style="color: #e5786d; font-weight: bold;">this</span>).hide(); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">&#1089;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1084; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;</span>
+});
+
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">&#1089;&#1086;&#1073;&#1099;&#1090;&#1080;&#1103; &#1082;&#1086;&#1085;&#1082;&#1088;&#1077;&#1090;&#1085;&#1086;&#1075;&#1086; - &#1074; &#1074;&#1080;&#1076;&#1077; &#1077;&#1075;&#1086; &#1089;&#1074;&#1086;&#1081;&#1089;&#1090;&#1074;</span>
+$.ajax({
+    <span style="color: #cae682; font-weight: bold;">beforeSend</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Handle the beforeSend event</span>
+    },
+    <span style="color: #cae682; font-weight: bold;">complete</span>: <span style="color: #8ac6f2; font-weight: bold;">function</span>(){
+        <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Handle the complete event</span>
+    }
+    <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">...</span>
+});
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org998c415" class="outline-3">
+<h3 id="org998c415"><span class="section-number-3">24.6.</span> example</h3>
+<div class="outline-text-3" id="text-24-6">
+<p>
+habr
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #cae682; font-weight: bold;">head</span>&gt;
+&lt;<span style="color: #cae682; font-weight: bold;">script</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text/javascript"</span> <span style="color: #cae682;">src</span>=<span style="color: #95e454;">"jquery.js"</span>&gt;&lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+&lt;<span style="color: #cae682; font-weight: bold;">script</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"text/javascript"</span>&gt;
+        $("document").ready(function(){ //&#1082;&#1086;&#1075;&#1076;&#1072; DOM &#1073;&#1091;&#1076;&#1077;&#1090; &#1075;&#1086;&#1090;&#1086;&#1074; or $(function(){
+                $(".button").click(function(){
+                        $("#panel").slideDown("slow");//id="panel" &#1086;&#1087;&#1091;&#1089;&#1082;&#1072;&#1077;&#1090;&#1089;&#1103; &#1074;&#1085;&#1080;&#1079;
+                }
+        }
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org74ccf77" class="outline-2">
+<h2 id="org74ccf77"><span class="section-number-2">25.</span> AJAX  [ˈeɪdʒæks]</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+"Asynchronous JavaScript And XML" - programming concept on the client side to create asynchronous Web
+applications
+</p>
+<ul class="org-ul">
+<li>modern implementations commonly utilize <b>JSON</b> instead of XML</li>
+<li><b>XMLHttpRequest</b> object within JavaScript is commonly used.</li>
+<li>to load content onto the screen without refreshing the page</li>
+</ul>
+
+<p>
+<b>AHAH: Asynchronous HTML and HTTP</b> - simple tech to dynamically updating web pages using
+ <b>XMLHttpRequest</b> and javaScript
+</p>
+
+<p>
+fetch - new native JavaScript API:
+</p>
+<ul class="org-ul">
+<li>defalut credential policy - same-origin</li>
+<li>provides a single logical place to define Cross-Origin Resource Sharing (CORS) and extensions to HTTP</li>
+</ul>
+</div>
+<div id="outline-container-org1a80a41" class="outline-3">
+<h3 id="org1a80a41"><span class="section-number-3">25.1.</span> ex fetch API</h3>
+<div class="outline-text-3" id="text-25-1">
+<div class="org-src-container">
+<pre class="src src-js">fetch(<span style="color: #95e454;">'send-ajax-data.php'</span>)
+    .then(data =&gt; console.log(data))
+    .<span style="color: #8ac6f2; font-weight: bold;">catch</span> (error =&gt; console.log(<span style="color: #95e454;">'Error:'</span> + error));
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">firefox:</span>
+fetch(<span style="color: #95e454;">'http://example.com/movies.json'</span>)
+  .then((response) =&gt; response.json())
+  .then((data) =&gt; console.log(data));
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">credetnials</span>
+fetch(<span style="color: #95e454;">'https://example.com'</span>, {
+  credentials: <span style="color: #95e454;">'include'</span>
+});
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96551dd" class="outline-3">
+<h3 id="org96551dd"><span class="section-number-3">25.2.</span> ex fetch API - upload file:</h3>
+<div class="outline-text-3" id="text-25-2">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">formData</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">FormData</span>();
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">fileField</span> = document.querySelector(<span style="color: #95e454;">'input[type="file"]'</span>);
+
+formData.append(<span style="color: #95e454;">'username'</span>, <span style="color: #95e454;">'abc123'</span>);
+formData.append(<span style="color: #95e454;">'avatar'</span>, fileField.files[0]);
+
+fetch(<span style="color: #95e454;">'https://example.com/profile/avatar'</span>, {
+  method: <span style="color: #95e454;">'PUT'</span>,
+  body: formData
+})
+  .then((response) =&gt; response.json())
+  .then((result) =&gt; {
+    console.log(<span style="color: #95e454;">'Success:'</span>, result);
+  })
+  .<span style="color: #8ac6f2; font-weight: bold;">catch</span>((error) =&gt; {
+    console.error(<span style="color: #95e454;">'Error:'</span>, error);
+  });
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6faad6e" class="outline-3">
+<h3 id="org6faad6e"><span class="section-number-3">25.3.</span> ex<sub>old</sub></h3>
+<div class="outline-text-3" id="text-25-3">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">This is the client-side script.</span>
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Initialize the HTTP request.</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">xhr</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">XMLHttpRequest</span>();
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">define the request</span>
+xhr.open(<span style="color: #95e454;">'GET'</span>, <span style="color: #95e454;">'send-ajax-data.php'</span>);
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Track the state changes of the request.</span>
+xhr.onreadystatechange = <span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+        <span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">DONE</span> = 4; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">readyState 4 means the request is done.</span>
+        <span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">OK</span> = 200; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">status 200 is a successful return.</span>
+        <span style="color: #8ac6f2; font-weight: bold;">if</span> (xhr.readyState === DONE) {
+                <span style="color: #8ac6f2; font-weight: bold;">if</span> (xhr.status === OK) {
+                        console.log(xhr.responseText); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">'This is the output.'</span>
+                } <span style="color: #8ac6f2; font-weight: bold;">else</span> {
+                        console.log(<span style="color: #95e454;">'Error: '</span> + xhr.status); <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">An error occurred during the request.</span>
+                }
+        }
+};
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Send the request to send-ajax-data.php</span>
+xhr.send(<span style="color: #e5786d; font-weight: bold;">null</span>);
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbed10b0" class="outline-3">
+<h3 id="orgbed10b0"><span class="section-number-3">25.4.</span> XMLHttpRequest Object Methods</h3>
+<div class="outline-text-3" id="text-25-4">
+<ul class="org-ul">
+<li>abort()</li>
+<li>getAllResponseHeaders()</li>
+<li>getResponseHeader()</li>
+<li>open(method,url,async,uname,pswd)</li>
+<li>send(string) - string only for POST</li>
+<li>setRequestHeader() -  Adds a label/value pair to the header to be sent</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf75625" class="outline-3">
+<h3 id="orgdf75625"><span class="section-number-3">25.5.</span> XMLHttpRequest Object Properties</h3>
+<div class="outline-text-3" id="text-25-5">
+<dl class="org-dl">
+<dt>onreadystatechange</dt><dd>Stores a function (or the name of a function) to be called automatically each time the
+readyState property changes</dd>
+<dt>readyState</dt><dd>Holds the status of the XMLHttpRequest. Changes from 0 to 4:
+<ul class="org-ul">
+<li>0: request not initialized</li>
+<li>1: server connection established</li>
+<li>2: request received</li>
+<li>3: processing request</li>
+<li>4: request finished and response is ready</li>
+</ul></dd>
+<dt>responseText</dt><dd>Returns the response data as a string</dd>
+<dt>responseXML</dt><dd>Returns the response data as XML data</dd>
+<dt>status</dt><dd>Returns the status-number (e.g. "404" for "Not Found" or "200" for "OK")</dd>
+<dt>statusText</dt><dd>Returns the status-text (e.g. "Not Found" or "OK")</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgfe8f87f" class="outline-3">
+<h3 id="orgfe8f87f"><span class="section-number-3">25.6.</span> AHAH</h3>
+<div class="outline-text-3" id="text-25-6">
+<p>
+Send Request and Deal with the Response
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"> <span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">ahah</span>(<span style="color: #cae682;">url</span>, <span style="color: #cae682;">targetId</span>, <span style="color: #cae682;">onDone</span>) {
+       <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">targetElement</span> = document.getElementById(targetId);
+       targetElement.innerHTML = <span style="color: #95e454;">"Loading data..."</span>;
+
+       <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">request</span> = <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">XMLHttpRequest</span>();
+       reguest.open(<span style="color: #95e454;">'GET'</span>, <span style="color: #95e454;">'send-ahax-data.php'</span>);
+
+       request.onreadystatechange = <span style="color: #8ac6f2; font-weight: bold;">function</span>() {
+           <span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">DONE</span> = 4; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">readyState 4 means the request is done.</span>
+           <span style="color: #8ac6f2; font-weight: bold;">if</span> (request.readyState != OK) {
+              <span style="color: #8ac6f2; font-weight: bold;">return</span>;
+           }
+           <span style="color: #8ac6f2; font-weight: bold;">if</span> (request.status != 200 &amp;&amp; request.status != 304) {
+               targetElement.innerHTML = <span style="color: #95e454;">"ahah error:\n"</span> + request.statusText;
+               <span style="color: #8ac6f2; font-weight: bold;">return</span>;
+           }
+           targetElement.innerHTML = request.responseText;
+           onDone &amp;&amp; onDone(); <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">exists? then trigger</span>
+       }
+
+       request.send(<span style="color: #e5786d; font-weight: bold;">null</span>);
+   }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ac072f" class="outline-3">
+<h3 id="org9ac072f"><span class="section-number-3">25.7.</span> errors</h3>
+<div class="outline-text-3" id="text-25-7">
+<p>
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at ???. (Reason:
+CORS header ‘Access-Control-Allow-Origin’ missing).
+</p>
+<ul class="org-ul">
+<li>in response - missing the required Access-Control-Allow-Origin header</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org27e1702" class="outline-3">
+<h3 id="org27e1702"><span class="section-number-3">25.8.</span> links</h3>
+<div class="outline-text-3" id="text-25-8">
+<ul class="org-ul">
+<li>Mozilla Fetch API <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org86c2a3f" class="outline-2">
+<h2 id="org86c2a3f"><span class="section-number-2">26.</span> <span class="todo TODO">TODO</span> Webpack</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li><a href="https://webpack.js.org/guides/getting-started/">https://webpack.js.org/guides/getting-started/</a></li>
+<li><a href="https://habr.com/en/post/309306/">https://habr.com/en/post/309306/</a></li>
+</ul>
+<p>
+<b>static module bundler</b> primarily for JavaScript applications - require Node.js. - генерирует статические ресурсы.
+</p>
+
+
+<ul class="org-ul">
+<li>поиска, установки, удаления компонентов</li>
+<li>минификации, компиляции, юнит-тестирования, проверки кода</li>
+</ul>
+</div>
+<div id="outline-container-orga899a11" class="outline-3">
+<h3 id="orga899a11"><span class="section-number-3">26.1.</span> concepts</h3>
+</div>
+
+<div id="outline-container-orgf6bfd39" class="outline-3">
+<h3 id="orgf6bfd39"><span class="section-number-3">26.2.</span> install</h3>
+<div class="outline-text-3" id="text-26-2">
+<pre class="example">
+mkdir webpack-demo &amp;&amp; cd webpack-demo
+npm init -y
+npm install webpack webpack-cli --save-dev
+</pre>
+
+
+<ul class="org-ul">
+<li>webpack-cli@3.2.3</li>
+<li>webpack@4.29.5</li>
+</ul>
+
+<p>
+package.json:
+</p>
+<ul class="org-ul">
+<li>+   "private": true,</li>
+<li>-   "main": "index.js",</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc3c0c90" class="outline-2">
+<h2 id="orgc3c0c90"><span class="section-number-2">27.</span> Emacs</h2>
+<div class="outline-text-2" id="text-27">
+</div>
+<div id="outline-container-org75a0bef" class="outline-3">
+<h3 id="org75a0bef"><span class="section-number-3">27.1.</span> HTML mode</h3>
+<div class="outline-text-3" id="text-27-1">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/HTML-Mode.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/HTML-Mode.html</a></li>
+<li><a href="http://ergoemacs.org/emacs/emacs_html.html">http://ergoemacs.org/emacs/emacs_html.html</a></li>
+</ul>
+
+<p>
+Insert a close tag	C-c /
+delete tag		C-c C-d
+special characters	C-c C-n
+jumt to end tag		C-c C-f/b
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3de3fe7" class="outline-2">
+<h2 id="org3de3fe7"><span class="section-number-2">28.</span> JS Engine of browsers Firefox, Chrome, Edge, Safari</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>V8 is the JS Engine of Google Chrome (also used by Chromium, MongoDB among others).</li>
+<li>SpiderMonkey is the JS Engine of Firefox (also used by GNOME and Adobe as examples).</li>
+<li>Chakra is Microsoft's JS Engine, by Internet Explorer, old Edge (new one is Chromium based, and as such use V8) and some other Microsoft projects.</li>
+<li>JavaScriptCore is the built-in JavaScript engine for WebKit, browser engine developed by Apple and primarily
+used in its Safari web browser, as well as all iOS web browsers.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb1db646" class="outline-2">
+<h2 id="orgb1db646"><span class="section-number-2">29.</span> IDE Visual Studio Code</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>format, beautify	Alt+Shift+F</li>
+<li>terminal		Ctrl+`</li>
+</ul>
+
+<p>
+Emacs
+</p>
+<ul class="org-ul">
+<li>autocompletion	Ctrl+'</li>
+</ul>
+</div>
+<div id="outline-container-org6670e25" class="outline-3">
+<h3 id="org6670e25"><span class="section-number-3">29.1.</span> features</h3>
+<div class="outline-text-3" id="text-29-1">
+<ul class="org-ul">
+<li>Syntax highlighting</li>
+<li>Autocompletion</li>
+<li>Find and replace</li>
+<li>Code folding</li>
+<li>Rename refactoring</li>
+<li>Quickly extract code into separate function</li>
+<li>Code check and type check</li>
+</ul>
+
+<p>
+Libraries support: <a href="https://code.visualstudio.com/docs/languages/javascript#_intellisense">https://code.visualstudio.com/docs/languages/javascript#_intellisense</a>
+</p>
+<ul class="org-ul">
+<li><b>jsconfig.json</b> in root folder</li>
+<li>React, lodash, express</li>
+<li>ynode</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga87be7d" class="outline-3">
+<h3 id="orga87be7d"><span class="section-number-3">29.2.</span> TypeScript</h3>
+<div class="outline-text-3" id="text-29-2">
+<p>
+does not include the TypeScript compiler, <b>tsc</b>
+</p>
+<ul class="org-ul">
+<li>npm install -g typescript</li>
+<li>tsc &#x2013;version</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org41b4b3e" class="outline-2">
+<h2 id="org41b4b3e"><span class="section-number-2">30.</span> JSDoc</h2>
+<div class="outline-text-2" id="text-30">
+<p>
+in 1999 with the Netscape/Mozilla project Rhino
+</p>
+
+<ul class="org-ul">
+<li>@author 	Developer's name</li>
+<li>@constructor 	Marks a function as a constructor</li>
+<li>@deprecated 	Marks a method as deprecated</li>
+<li>@exception 	Synonym for @throws</li>
+<li>@exports 	Identifies a member that is exported by the module</li>
+<li>@param 	Documents a method parameter; a datatype indicator can be added between curly braces</li>
+<li>@private 	Signifies that a member is private</li>
+<li>@return 	Documents a return value</li>
+<li>@returns 	Synonym for @return</li>
+<li>@see 	Documents an association to another object</li>
+<li>@todo 	Documents something that is missing/open</li>
+<li>@this 	Specifies the type of the object to which the keyword "this" refers within a function.</li>
+<li>@throws 	Documents an exception thrown by a method</li>
+<li>@version 	Provides the version number of a library</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Creates an instance of Circle.</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * @constructor</span>
+<span style="color: #f08080; font-style: italic;"> * @author: moi</span>
+<span style="color: #f08080; font-style: italic;"> * @this {Circle}</span>
+<span style="color: #f08080; font-style: italic;"> * @param {number} r The desired radius of the circle.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+<span style="color: #8ac6f2; font-weight: bold;">function</span> <span style="color: #cae682; font-weight: bold;">Circle</span>(<span style="color: #cae682;">r</span>) {
+    <span style="color: #f08080; font-style: italic;">/** @private */</span> <span style="color: #e5786d; font-weight: bold;">this</span>.radius = r;
+    <span style="color: #f08080; font-style: italic;">/** @private */</span> <span style="color: #e5786d; font-weight: bold;">this</span>.circumference = 2 * Math.PI * r;
+}
+
+<span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Creates a new Circle from a diameter.</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * @param {number} d The desired diameter of the circle.</span>
+<span style="color: #f08080; font-style: italic;"> * @return {Circle} The new Circle object.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+Circle.fromDiameter = <span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">d</span>) {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #8ac6f2; font-weight: bold;">new</span> <span style="color: #92a65e; font-weight: bold;">Circle</span>(d / 2);
+};
+
+<span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Calculates the circumference of the Circle.</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * @deprecated</span>
+<span style="color: #f08080; font-style: italic;"> * @this {Circle}</span>
+<span style="color: #f08080; font-style: italic;"> * @return {number} The circumference of the circle.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+Circle.<span style="color: #e5786d; font-weight: bold;">prototype</span>.calculateCircumference = <span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> 2 * Math.PI * <span style="color: #e5786d; font-weight: bold;">this</span>.radius;
+};
+
+<span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Returns the pre-computed circumference of the Circle.</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * @this {Circle}</span>
+<span style="color: #f08080; font-style: italic;"> * @return {number} The circumference of the circle.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+Circle.<span style="color: #e5786d; font-weight: bold;">prototype</span>.getCircumference = <span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #e5786d; font-weight: bold;">this</span>.circumference;
+};
+
+<span style="color: #f08080; font-style: italic;">/**</span>
+<span style="color: #f08080; font-style: italic;"> * Find a String representation of the Circle.</span>
+<span style="color: #f08080; font-style: italic;"> *</span>
+<span style="color: #f08080; font-style: italic;"> * @override</span>
+<span style="color: #f08080; font-style: italic;"> * @this {Circle}</span>
+<span style="color: #f08080; font-style: italic;"> * @return {string} Human-readable representation of this Circle.</span>
+<span style="color: #f08080; font-style: italic;"> */</span>
+Circle.<span style="color: #e5786d; font-weight: bold;">prototype</span>.toString = <span style="color: #8ac6f2; font-weight: bold;">function</span> () {
+    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">"A Circle object with radius of "</span> + <span style="color: #e5786d; font-weight: bold;">this</span>.radius + <span style="color: #95e454;">"."</span>;
+};
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd84b9a6" class="outline-2">
+<h2 id="orgd84b9a6"><span class="section-number-2">31.</span> Security</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+cross-site scripting (XSS), which exploits the trust a user has for a particular site - Помещение своего HTML  кода на страницу.
+</p>
+
+<p>
+Cross-site request forgery (CSRF) exploits the trust that a site has in a user's browser.
+</p>
+</div>
+
+<div id="outline-container-orgb18fb1c" class="outline-3">
+<h3 id="orgb18fb1c"><span class="section-number-3">31.1.</span> related techs</h3>
+<div class="outline-text-3" id="text-31-1">
+<ul class="org-ul">
+<li>postMessage - HTML5, позволяет отсылать сообщения из одного окна в другое</li>
+<li>JSONP - JSON Padding</li>
+<li>CORS - XMLHTTPRequest 2</li>
+<li>document.domain methods</li>
+<li>window.name Transport - заключается в изменении свойста name у windows и передачи таким образом через текст
+свойства наших сериализованных данных</li>
+<li>Server-side proxy</li>
+<li>CRAZY IFRAME STUFF</li>
+<li>flash</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-html"><span style="color: #fa8072;">&lt;!-- </span><span style="color: #99968b; font-style: italic;">JSONP</span><span style="color: #fa8072;"> --&gt;</span>
+&lt;<span style="color: #cae682; font-weight: bold;">script</span> <span style="color: #cae682;">type</span>=<span style="color: #95e454;">"application/javascript"</span>
+        <span style="color: #cae682;">src</span>=<span style="color: #95e454;">"http://server.example.com/Users/1234?callback=parseResponse"</span>&gt;
+&lt;/<span style="color: #cae682; font-weight: bold;">script</span>&gt;
+parseResponse({"Name": "Foo", "Id": 1234, "Rank": 7}); // response
+
+//g jQuery to dynamically inject script element
+$.getScript("http://server.example.com/Users/192.168.73.96?callback=parseResponse");
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcac28c1" class="outline-3">
+<h3 id="orgcac28c1"><span class="section-number-3">31.2.</span> Same-origin policy - concept</h3>
+<div class="outline-text-3" id="text-31-2">
+<p>
+permits <b>scripts</b> contained in a first web page to access data in a second web page, but only if both web pages
+have the <b>same origin</b>:
+</p>
+<ul class="org-ul">
+<li>URI scheme</li>
+<li>host name</li>
+<li>port number</li>
+</ul>
+
+<p>
+document.domain - property
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org209c20e" class="outline-2">
+<h2 id="org209c20e"><span class="section-number-2">32.</span> rare terms</h2>
+<div class="outline-text-2" id="text-32">
+<dl class="org-dl">
+<dt>JavaScript Hoisting</dt><dd>default behavior of moving all declarations to the top of the current scope</dd>
+<dt>"use strict";</dt><dd>ставится в начале скрипта код - будет работать по современному стандарту ES5</dd>
+<dt>WebAssembly (Wasm)</dt><dd>binary format and assembly-like text format for executables used by web pages - 40
+programming languages - C/C++/Rust/Python - <a href="https://webassembly.org">https://webassembly.org</a></dd>
+<dt>first-class object</dt><dd>может использовать в качестве параметра функции и возвращаться</dd>
+<dt>transpiling</dt><dd>transforming it into another language with a <i>similar level of abstraction</i>.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org2229e99" class="outline-2">
+<h2 id="org2229e99"><span class="section-number-2">33.</span> TypeScript 15</h2>
+<div class="outline-text-2" id="text-33">
+<p>
+superset of JavaScript - Compiler written in TypeScript and compiled to JavaScript
+</p>
+</div>
+
+
+<div id="outline-container-orgd50c403" class="outline-3">
+<h3 id="orgd50c403"><span class="section-number-3">33.1.</span> Features</h3>
+<div class="outline-text-3" id="text-33-1">
+<p>
+Main:
+</p>
+<ul class="org-ul">
+<li>to make large-scale JavaScript programs manageable and maintainable</li>
+<li>reuse code between browser and server</li>
+</ul>
+<p>
+Features
+</p>
+<ul class="org-ul">
+<li>optional static typing - Type annotations and compile-time type checking - not planned in ES</li>
+<li>transcompiles to JavaScript</li>
+<li>Interfaces</li>
+<li>Enumerated types</li>
+<li>Generics - not planned in ES</li>
+<li>Namespaces</li>
+<li>Tuples</li>
+<li>Async/await</li>
+<li>Scopes - varibles not leak to global accidently [ˈæksɪdəntlɪ].</li>
+</ul>
+
+<p>
+Solve:
+</p>
+<ul class="org-ul">
+<li>naming conflicts</li>
+<li>substandard programming tools</li>
+<li>complex modularization</li>
+<li>unfamiliar prototypal inheritance  that makes it hard to reuse common design patterns easily</li>
+<li>difficulty keeping a readable and  maintainable code base</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org56aab4e" class="outline-3">
+<h3 id="org56aab4e"><span class="section-number-3">33.2.</span> history</h3>
+<div class="outline-text-3" id="text-33-2">
+<ul class="org-ul">
+<li>2004 Apache 2.0 License</li>
+<li>2016 TypeScript 2.0 release - optionally prevent variables from being assigned null values,</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge14cda9" class="outline-3">
+<h3 id="orge14cda9"><span class="section-number-3">33.3.</span> libraries</h3>
+<div class="outline-text-3" id="text-33-3">
+<ul class="org-ul">
+<li>jQuery</li>
+<li>D3.js -  Data-Driven Documents - producing dynamic, interactive data visualizations in web browsers
+<ul class="org-ul">
+<li>information dashboards for viewing data</li>
+<li>maps from GIS</li>
+<li>interactive graphics</li>
+</ul></li>
+</ul>
+
+<p>
+Frameworks:  Angular, Ionic, RxJs 5, and Dojo 2
+</p>
+</div>
+</div>
+<div id="outline-container-orge42afb1" class="outline-3">
+<h3 id="orge42afb1"><span class="section-number-3">33.4.</span> Types</h3>
+<div class="outline-text-3" id="text-33-4">
+<p>
+Primitive:
+</p>
+<ul class="org-ul">
+<li>string – a sequence of UTF-16 code units</li>
+<li>boolean – true or false</li>
+<li>number – a double-precision 64-bit floating point value</li>
+<li>symbol – a unique, immutable symbol, substitutable for a string as an object key</li>
+</ul>
+
+<p>
+Special:
+</p>
+<ul class="org-ul">
+<li><b>undefined</b> - varible  not been assigned a value</li>
+<li><b>null</b> - absence of an object value</li>
+<li><b>void</b> - function doesn’t return anything</li>
+<li><b>never</b> - represents an unreachable section of code, for example a function that throws an exception has the
+return type of never</li>
+<li><b>any</b> - dynamic type - can be used to represent literally any type.  used by the compiler in situations where it cannot infer
+the type automatically</li>
+</ul>
+
+<p>
+Other:
+</p>
+<ul class="org-ul">
+<li><b>interface</b> - can be generic (with type argument)</li>
+<li><b>Type alias</b> - type &#x2026;</li>
+<li><b>Literal type</b> - type &#x2026;</li>
+<li><b>Enum</b> - Enumerations. Constant enumeration - faster.</li>
+<li>union type - A | B</li>
+<li>intersection type - type A &amp; B - useful with mixins</li>
+</ul>
+</div>
+
+<div id="outline-container-org1521a0d" class="outline-4">
+<h4 id="org1521a0d"><span class="section-number-4">33.4.1.</span> Type annotation, Interfaces, Aliases</h4>
+<div class="outline-text-4" id="text-33-4-1">
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">array type annotation</span>
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">names</span>: string[] = [<span style="color: #95e454;">'James'</span>, <span style="color: #95e454;">'Nick'</span>, <span style="color: #95e454;">'Rebecca'</span>, <span style="color: #95e454;">'Lily'</span>];
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">function annotation with parameter type annotation and return type annotation</span>
+ <span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">sayHello</span>: (name: string) =&gt; string;
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">implementation of sayHello function</span>
+sayHello = <span style="color: #8ac6f2; font-weight: bold;">function</span> (<span style="color: #cae682;">name</span>) {    <span style="color: #8ac6f2; font-weight: bold;">return</span> <span style="color: #95e454;">'Hello '</span> + name; };
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">object type annotation</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">person</span>: {
+    name: string;
+    heightInCentimeters: number; };
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Implementation of a person object</span>
+ person = {
+    name: <span style="color: #95e454;">'Mark'</span>,
+    heightInCentimeters: 183 };
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Union type</span>
+<span style="color: #8ac6f2; font-weight: bold;">let</span> <span style="color: #cae682;">union</span>: <span style="color: #92a65e; font-weight: bold;">boolean</span> | number;
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Error: Type "string" is not assignable to type 'number | boolean'</span>
+union = <span style="color: #95e454;">'string'</span>;
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Intersection type</span>
+type A = Integer &amp; String;
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">--------   Type Alias ------</span>
+type PersonType = {
+    name: string;
+    heightInCentimeters: number; };
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">Literal type</span>
+type Randoms = <span style="color: #95e454;">'Text'</span> | 10 | <span style="color: #e5786d; font-weight: bold;">false</span>;
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">OK</span>
+random = <span style="color: #95e454;">'Text'</span>;
+random = 10;
+random = <span style="color: #e5786d; font-weight: bold;">false</span>;
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Error: Not assignable.</span>
+random = <span style="color: #95e454;">'Other String'</span>;
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">--------------- Interfaces -----------------</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">interface</span> PersonInterface {
+    name: string;
+    heightInCentimeters: number;  }
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">sherlock</span>: PersonInterface = {
+    name: <span style="color: #95e454;">'Bendict'</span>,
+    heightInCentimeters: 183 }
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">------------ Enumerations -----------------</span>
+
+<span style="color: #8ac6f2; font-weight: bold;">enum</span> VehicleType {    PedalCycle,    MotorCycle  }
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">split across multiple blocks</span>
+<span style="color: #8ac6f2; font-weight: bold;">enum</span> VehicleType {    XLarge,    XXLarge  }
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">type</span> = VehicleType.Lorry;
+
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #cae682;">typeName</span> = VehicleType[type]; <span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">'Lorry'</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">flagged &amp; constant enumeration</span>
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #8ac6f2; font-weight: bold;">enum</span> DiscFlags {
+    None = 0,
+    Drive = 1,
+    Influence = 2,
+    Steadiness = 4,
+    Conscientiousness = 8 }
+
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Using flags</span>
+<span style="color: #8ac6f2; font-weight: bold;">const</span> <span style="color: #8ac6f2; font-weight: bold;">var</span> personality = DiscFlags.Drive | DiscFlags.Conscientiousness;
+<span style="color: #fa8072;">// </span><span style="color: #99968b; font-style: italic;">Testing flags</span>
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">hasD</span> = (personality &amp; DiscFlags.Drive) == DiscFlags.Drive; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">true</span>
+<span style="color: #8ac6f2; font-weight: bold;">var</span> <span style="color: #cae682;">hasI</span> = (personality &amp; DiscFlags.Influence) == DiscFlags.Influence; <span style="color: #fa8072;">//</span><span style="color: #99968b; font-style: italic;">false</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc63eeeb" class="outline-2">
+<h2 id="orgc63eeeb"><span class="section-number-2">34.</span> A simple stack for today's web hacks <a href="https://neugierig.org/software/blog/2022/12/simple-web-hacks.html">https://neugierig.org/software/blog/2022/12/simple-web-hacks.html</a></h2>
+<div class="outline-text-2" id="text-34">
+<ul class="org-ul">
+<li>mkdir myproject</li>
+<li>cd myproject</li>
+<li>npm init -y - This generates package.json</li>
+<li>npm install typescript - self-contained dependency, the TypeScript compiler version pinned to the project,
+which makes it resilient to bitrotting as new TypeScript versions come out</li>
+<li>npx tsc &#x2013;init - generate a tsconfig.json, which configures the compiler. type-check and also convert .ts files to .js.</li>
+<li>uncommenting this line: "moduleResolution": "node", - if you intend to use any libraries from npm</li>
+<li>echo "document.write('hello, world');" &gt; main.ts</li>
+<li>echo "&lt;script src='main.js'&gt;&lt;/script&gt;" &gt; index.html</li>
+<li>npm install esbuild - a "bundler". webpack  is too complex</li>
+<li>npx esbuild &#x2013;bundle &#x2013;target=es2020 &#x2013;sourcemap &#x2013;outfile=main.js main.ts # to generate a single-file bundle main.js</li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd9328a" class="outline-2">
+<h2 id="orgfd9328a"><span class="section-number-2">35.</span> JSON</h2>
+<div class="outline-text-2" id="text-35">
+<p>
+Data serialization Format
+</p>
+
+<p>
+Object - an unordered collection
+</p>
+
+<p>
+<b>JavaScript Object Notation</b>  language-independent data format.
+</p>
+<pre class="example">
+{
+"name" : " aa"
+}
+</pre>
+
+
+<dl class="org-dl">
+<dt>Number</dt><dd>a signed decimal number that may contain a fractional part and may use exponential E notation</dd>
+<dt>String</dt><dd>a sequence of zero or more Unicode characters. ""</dd>
+<dt>Boolean</dt><dd>either of the values true or false</dd>
+<dt>Array</dt><dd>an ordered list of zero or more values "ar" : [\n],</dd>
+<dt>Object</dt><dd>like array but  associative arrays. Recomendated: all key unique. {</dd>
+<dt>null</dt><dd>An empty value, using the word null. Ex. "spouse": null
+Недостатки: нельзя бинарные объекты</dd>
+</dl>
+
+<p>
+No comments:
+</p>
+<pre class="example">
+{ "_comment": "comment text goes here...",
+</pre>
+</div>
+<div id="outline-container-org51eb29f" class="outline-3">
+<h3 id="org51eb29f"><span class="section-number-3">35.1.</span> links</h3>
+<div class="outline-text-3" id="text-35-1">
+<ul class="org-ul">
+<li><a href="https://www.json.org">https://www.json.org</a></li>
+<li>RFC 4627 The application/json Media Type for JavaScript Object Notation (JSON)
+<a href="http://www.ietf.org/rfc/rfc4627.txt">http://www.ietf.org/rfc/rfc4627.txt</a></li>
+<li>RFC 8259 The JavaScript Object Notation (JSON) Data Interchange Format (supercedes RFCs 4627, 7158, 7159)
+<a href="https://www.rfc-editor.org/rfc/rfc8259">https://www.rfc-editor.org/rfc/rfc8259</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 12:44</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

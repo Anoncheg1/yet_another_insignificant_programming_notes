@@ -1,0 +1,51 @@
+;-*- mode: Org; fill-column: 110;-*-
+* install debian
+- check OS version: cat /etc/*-release ;  lsb_release -a
+- check version https://packages.debian.org/search?keywords=golang
+- apt install golang
+
+* sources only
+ Go's dependency management is source-based - fetched directly from their version control repositories rather
+ than from a binary repository.
+
+ Commands like go get and go mod tidy ensure that dependencies are fetched and built from source. The *go mod
+ tidy* command, in particular, cleans up unused dependencies and ensures that only necessary packages are
+ included in the build[2][3][4].
+
+Go Modules - contains checksums of the dependencies.
+* install go from sources
+  https://go.dev/doc/install/source
+
+- wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz  or https://github.com/golang/go/tags
+- sha256sum go1.13.linux-amd64.tar.gz
+- compare with https://golang.org/dl/ or https://go.dev/dl/
+  - diff <(sha256sum go1.22.2.tar.gz ) <(echo "14b6790132eb63a02be3a33f556028dbe33c4d923df099976de8bd02be232be7  go1.22.2.tar.gz")
+- sudo tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+- to build Go required.
+- cd src
+- ./all.bash
+- echo $PATH | grep "/usr/local/src/go-go1.18.9/bin/" # to check
+- apt remove golang
+- apt autoremove
+- go version # to check
+
+** test
+Create a file named hello.go and put the following program in it:
+#+begin_src go :tangle /tmp/hello.go :results output :exports both
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Printf("hello, world\n")
+}
+#+end_src
+
+Then run it with the go tool:
+
+#+begin_src bash :results output
+go run /tmp/hello.go
+#+end_src
+
+#+RESULTS:
+: hello, world

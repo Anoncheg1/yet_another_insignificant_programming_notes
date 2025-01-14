@@ -1,0 +1,13 @@
+Microsoft 365
+- shedule meetings
+- transcribe meetings
+- keep commitments
+in:
+- email client
+
+** open source Julius
+- https://github.com/julius-speech/julius
+- http://julius.osdn.jp/en_index.php
+Open-Source Large Vocabulary Continuous Speech Recognition Engine
+- less than 32MBytes required for work area
+- Language and unit-dependent

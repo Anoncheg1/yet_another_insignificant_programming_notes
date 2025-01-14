@@ -1,0 +1,5008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-14 Tue 13:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org38098be">1. common operations</a>
+<ul>
+<li><a href="#org8005c44">1.1. get list of functions if file:</a></li>
+<li><a href="#orgef15d06">1.2. print list</a></li>
+</ul>
+</li>
+<li><a href="#org0de9a09">2. common structures</a></li>
+<li><a href="#orgf2bd7a3">3. Lisp - philosophy, patterns</a></li>
+<li><a href="#org6f0613d">4. features</a></li>
+<li><a href="#org85e76ca">5. compilation</a></li>
+<li><a href="#orged46d0f">6. symbols, special characters</a>
+<ul>
+<li><a href="#org72f7bc4">6.1. Steps for info:</a></li>
+<li><a href="#org1358f45">6.2. meaning with Backquote (`) macroses</a></li>
+</ul>
+</li>
+<li><a href="#org1c83de0">7. terms</a></li>
+<li><a href="#org2979144">8. advanced terms</a></li>
+<li><a href="#org90b006f">9. evaluation process and forms</a>
+<ul>
+<li><a href="#orgbe2ee59">9.1. Special Forms</a></li>
+</ul>
+</li>
+<li><a href="#orgc8a09c1">10. dialects</a>
+<ul>
+<li><a href="#org51c575e">10.1. <span class="todo TODO">TODO</span> Common lisp vs Emacs Lisp</a></li>
+</ul>
+</li>
+<li><a href="#org4969512">11. types</a>
+<ul>
+<li><a href="#org5a3e739">11.1. basic</a></li>
+<li><a href="#org6e8a10a">11.2. literals</a></li>
+<li><a href="#orgce6c9ba">11.3. lists</a>
+<ul>
+<li><a href="#orgdef3476">11.3.1. basic</a></li>
+<li><a href="#org7920e2a">11.3.2. Association Lists</a></li>
+<li><a href="#orgf8d8e5b">11.3.3. list operators</a></li>
+</ul>
+</li>
+<li><a href="#orgd29f926">11.4. symbol type</a></li>
+<li><a href="#org55f0167">11.5. nil and t - special symbols that always evaluate to themselves</a></li>
+<li><a href="#org3bff604">11.6. type conversion</a></li>
+<li><a href="#org08603e5">11.7. get type or find type</a></li>
+<li><a href="#org2622159">11.8. Basic Types Predicate</a></li>
+<li><a href="#org5622745">11.9. evaluation process</a></li>
+</ul>
+</li>
+<li><a href="#org440f8f0">12. char</a></li>
+<li><a href="#org3773949">13. strings</a>
+<ul>
+<li><a href="#orge55dfa9">13.1. ex</a></li>
+</ul>
+</li>
+<li><a href="#orgdac7603">14. comments</a>
+<ul>
+<li><a href="#orgffeaeb2">14.1. inside comments</a></li>
+<li><a href="#org5724530">14.2. conventies</a></li>
+</ul>
+</li>
+<li><a href="#org8386e81">15. symbols and strings</a></li>
+<li><a href="#org0bceadd">16. variables</a>
+<ul>
+<li><a href="#org312365a">16.1. terms</a></li>
+<li><a href="#org7652e26">16.2. usage</a>
+<ul>
+<li><a href="#orgb2d5317">16.2.1. global or global binding:</a></li>
+<li><a href="#org74b04a8">16.2.2. reference</a></li>
+<li><a href="#org9df4d9a">16.2.3. local:</a></li>
+</ul>
+</li>
+<li><a href="#orgf46335c">16.3. Dynamic Scoping (Local Variables) and lexical scoping</a></li>
+<li><a href="#org9f81099">16.4. Generalized Variables</a></li>
+<li><a href="#org6a344d4">16.5. ex</a></li>
+</ul>
+</li>
+<li><a href="#org460c5ef">17. Control structures: sequencing, conditions, Iteration</a>
+<ul>
+<li><a href="#orgfb76f1f">17.1. conditions</a>
+<ul>
+<li><a href="#org2b9221b">17.1.1. test-clause</a></li>
+<li><a href="#org5b9165b">17.1.2. if else</a></li>
+<li><a href="#org1df4cc8">17.1.3. comparison</a></li>
+<li><a href="#org928ea22">17.1.4. nil and empty</a></li>
+<li><a href="#org194164f">17.1.5. cond</a></li>
+</ul>
+</li>
+<li><a href="#org32f09c8">17.2. case</a>
+<ul>
+<li><a href="#orgb7a6982">17.2.1. cond</a></li>
+<li><a href="#org5de7406">17.2.2. cl-case </a></li>
+<li><a href="#org5949a4d">17.2.3. pcase</a></li>
+</ul>
+</li>
+<li><a href="#org79f49d2">17.3. loops</a>
+<ul>
+<li><a href="#org185b251">17.3.1. while</a></li>
+<li><a href="#orgc352072">17.3.2. cl-loop</a></li>
+<li><a href="#org7845be8">17.3.3. dolist</a></li>
+<li><a href="#org48e4f2b">17.3.4. dotimes</a></li>
+<li><a href="#orgaf2a056">17.3.5. usecase add-hook group of hooks</a></li>
+<li><a href="#orge04f2ab">17.3.6. links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf73fa83">18. Functions</a>
+<ul>
+<li><a href="#orgcdb8ed5">18.1. progn</a></li>
+<li><a href="#org6795b2f">18.2. defun</a></li>
+<li><a href="#orgfa09d0e">18.3. arguments</a></li>
+<li><a href="#org5198dd6">18.4. (&amp;rest args) unrolling</a></li>
+<li><a href="#orgeba5617">18.5. Function Calling</a></li>
+<li><a href="#orgfe83410">18.6. Named parameters:</a></li>
+<li><a href="#orge3eb40b">18.7. lambda</a>
+<ul>
+<li><a href="#orgde3a171">18.7.1. Inline Functions</a></li>
+<li><a href="#org307063b">18.7.2. Special Form: function function-object</a></li>
+</ul>
+</li>
+<li><a href="#org7d75387">18.8. closure</a></li>
+<li><a href="#orgba5f398">18.9. Interactive Functions</a>
+<ul>
+<li><a href="#org2d83f74">18.9.1. links</a></li>
+<li><a href="#org469425f">18.9.2. ex</a></li>
+</ul>
+</li>
+<li><a href="#orgf2af155">18.10. arguments</a></li>
+<li><a href="#orgefa6636">18.11. Functions with Property List argument</a></li>
+<li><a href="#org66bf8b7">18.12. return</a></li>
+<li><a href="#org1736a6a">18.13. by reference or by value?</a></li>
+<li><a href="#orgfb91377">18.14. functions that do nothin</a></li>
+</ul>
+</li>
+<li><a href="#orgc1eda10">19. Structures</a></li>
+<li><a href="#orgc639c5a">20. printing</a></li>
+<li><a href="#orgc8436c8">21. Macros</a>
+<ul>
+<li><a href="#org446d8bc">21.1. inline function</a></li>
+</ul>
+</li>
+<li><a href="#orgf1f8f03">22. regex</a>
+<ul>
+<li><a href="#org1edd8c9">22.1. characters:</a></li>
+<li><a href="#orga44c5af">22.2. commands</a>
+<ul>
+<li><a href="#orgb7bb6a1">22.2.1. rx</a></li>
+<li><a href="#org1c86107">22.2.2. search</a></li>
+<li><a href="#org758576c">22.2.3. <span class="todo TODO">TODO</span> matching</a></li>
+</ul>
+</li>
+<li><a href="#org5e363a2">22.3. special characters</a></li>
+<li><a href="#orga48d379">22.4. groups</a></li>
+<li><a href="#org7964f3e">22.5. links</a></li>
+</ul>
+</li>
+<li><a href="#org478ffc5">23. paths</a></li>
+<li><a href="#orga6cf5ba">24. Emacs Code Conventions</a>
+<ul>
+<li><a href="#org0ad48b5">24.1. variable name conventions</a></li>
+<li><a href="#org0a4853d">24.2. commands</a></li>
+<li><a href="#orgaa59ce6">24.3. recommendation</a></li>
+</ul>
+</li>
+<li><a href="#org6a330dd">25. examples</a></li>
+<li><a href="#org12d474d">26. USE CASES</a>
+<ul>
+<li><a href="#org9976ecf">26.1. measure time of execution of any function</a></li>
+<li><a href="#org840b747">26.2. working with tabular data</a></li>
+</ul>
+</li>
+<li><a href="#orgcab409f">27. Emacs Lisp</a>
+<ul>
+<li><a href="#org4adb8f8">27.1. help</a></li>
+<li><a href="#org839fa7a">27.2. Keys:</a></li>
+<li><a href="#org0977e09">27.3. Commands</a></li>
+<li><a href="#orgc8d1e2e">27.4. ask user input</a></li>
+<li><a href="#org67ece24">27.5. suppress messages by function and subfunctions</a></li>
+<li><a href="#orgc997e07">27.6. execute shell command</a></li>
+<li><a href="#org0acef8d">27.7. defcustom</a></li>
+<li><a href="#org48140fb">27.8. map</a></li>
+<li><a href="#org9dc669f">27.9. buffers</a></li>
+<li><a href="#org2d421d8">27.10. cl-loop</a></li>
+<li><a href="#orge152710">27.11. convetions and style guide</a></li>
+<li><a href="#orge8ca709">27.12. advices-reverence</a></li>
+<li><a href="#org7187c7e">27.13. functional programming - stream of data</a></li>
+<li><a href="#org7f25660">27.14. testing</a>
+<ul>
+<li><a href="#org9fb1def">27.14.1. ERT: Emacs Lisp Regression Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb838d1b">28. MELPA</a>
+<ul>
+<li><a href="#org2ad05fc">28.1. lint</a></li>
+<li><a href="#org77c9e50">28.2. byte-compile</a></li>
+</ul>
+</li>
+<li><a href="#org89c8782">29. errors handling - errors and throws and how to catch them</a>
+<ul>
+<li><a href="#orga05aa06">29.1. terms</a></li>
+<li><a href="#org899bbbd">29.2. error symbols</a></li>
+<li><a href="#orga627a25">29.3. functions</a></li>
+<li><a href="#orga65b1ed">29.4. condition case</a></li>
+<li><a href="#org6fc0466">29.5. catch and throw</a></li>
+<li><a href="#orgc5532da">29.6. unwind-protect</a></li>
+<li><a href="#orgc096db0">29.7. logging construction</a></li>
+<li><a href="#org8ea75dc">29.8. links</a></li>
+</ul>
+</li>
+<li><a href="#org679c8df">30. Error messages</a>
+<ul>
+<li><a href="#orgab403d0">30.1. wrong-type-argument</a></li>
+<li><a href="#orgce62b40">30.2. Lisp error: (invalid-function</a></li>
+<li><a href="#org1d0770e">30.3. nil in debugger, Why nil if it is not nil?</a></li>
+</ul>
+</li>
+<li><a href="#orgcc14d18">31. Emacs API</a>
+<ul>
+<li><a href="#orgae495c7">31.1. terms</a></li>
+<li><a href="#org0b6c957">31.2. Pointer</a></li>
+<li><a href="#org0224b90">31.3. Marker</a></li>
+<li><a href="#orgc9158cd">31.4. Buffers</a>
+<ul>
+<li><a href="#org51841f7">31.4.1. create temp copy</a></li>
+<li><a href="#org3eeddc8">31.4.2. get value from buffer</a></li>
+<li><a href="#orga7899fe">31.4.3. links</a></li>
+</ul>
+</li>
+<li><a href="#org559dd28">31.5. Windows</a>
+<ul>
+<li><a href="#org55f8609">31.5.1. side windows</a></li>
+</ul>
+</li>
+<li><a href="#org06c4378">31.6. Frames</a></li>
+<li><a href="#org6e3fb78">31.7. temporary files</a>
+<ul>
+<li><a href="#org82b3316">31.7.1. ex</a></li>
+<li><a href="#orgc9f0fc1">31.7.2. links</a></li>
+</ul>
+</li>
+<li><a href="#org16d33cc">31.8. lines</a></li>
+<li><a href="#orgc0ea46f">31.9. cleanup - temporary buffer</a></li>
+<li><a href="#org158a720">31.10. highlight character at point</a></li>
+<li><a href="#org786dfa4">31.11. modes</a></li>
+<li><a href="#org8247dd1">31.12. Call external asynchronous</a>
+<ul>
+<li><a href="#orga09ab48">31.12.1. async-shell-command</a></li>
+<li><a href="#org241eeb3">31.12.2. call-process-shell-command</a></li>
+<li><a href="#org5a323fa">31.12.3. <span class="todo TODO">TODO</span> https://github.com/tkf/python-epc</a></li>
+<li><a href="#orgb3e7667">31.12.4. <span class="todo TODO">TODO</span> https://www.gnu.org/software/emacs/manual/html_node/elisp/JSONRPC.html</a></li>
+</ul>
+</li>
+<li><a href="#orgd5ae159">31.13. Timer</a></li>
+<li><a href="#org62904b4">31.14. autoload</a></li>
+<li><a href="#orge32e392">31.15. links</a></li>
+</ul>
+</li>
+<li><a href="#orgfb75ef2">32. Libraries - popular</a>
+<ul>
+<li><a href="#orgab6b5e1">32.1. build in</a></li>
+</ul>
+</li>
+<li><a href="#org9bee06a">33. links</a></li>
+</ul>
+</div>
+</div>
+<p>
+;-<b>- mode: Org; fill-column: 110;-</b>-
+</p>
+<div id="outline-container-org38098be" class="outline-2">
+<h2 id="org38098be"><span class="section-number-2">1.</span> common operations</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org8005c44" class="outline-3">
+<h3 id="org8005c44"><span class="section-number-3">1.1.</span> get list of functions if file:</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+M-x occur RET defun RET
+</p>
+<ul class="org-ul">
+<li>M-s o</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgef15d06" class="outline-3">
+<h3 id="orgef15d06"><span class="section-number-3">1.2.</span> print list</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+(mapc 'print calendar-holidays)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0de9a09" class="outline-2">
+<h2 id="org0de9a09"><span class="section-number-2">2.</span> common structures</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+add "s" to every element of list "left-let":
+</p>
+<pre class="example">
+(setq fin (mapcar (lambda (x) (cons s x)) left-let))
+</pre>
+
+<p>
+flatten list by one level
+</p>
+<pre class="example">
+(apply 'append v)
+</pre>
+
+<p>
+all or every
+</p>
+<pre class="example">
+(defun all (l) (cl-every #'identity l))
+</pre>
+
+<p>
+all or every nil
+</p>
+<pre class="example">
+(defun allnil (l) (cl-every #'null l))
+</pre>
+
+<p>
+any t
+</p>
+<pre class="example">
+(defun any (l) (cl-some #'identity l))
+</pre>
+
+<p>
+any nil
+</p>
+<pre class="example">
+(defun anynil (l) (cl-some #'null l))
+</pre>
+
+
+<p>
+Apply map to every leaf of a tree like list
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">maptree</span> (f l)
+<span style="color: #f08080; font-style: italic;">"Apply map to every leaf of a list."</span>
+  (mapcar (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (x) (<span style="color: #8ac6f2; font-weight: bold;">if</span> (listp x)
+                          (maptree f x)
+                        <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">else</span>
+                        (funcall f x)
+                        )) <span style="color: #ccaa8f; font-weight: bold;">l))</span>
+</pre>
+</div>
+<p>
+Concatenate two lists
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> c1 '(1 (2) 3 4))
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> c2 '(1 2 3 (4)))
+(print (seq-concatenate 'list c1 c2))
+
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">add_one_to_another</span>(c1 c2)
+  (apply 'append (list c1 c2)))
+</pre>
+</div>
+
+<pre class="example">
+
+(1 (2) 3 4 1 2 3 (4))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf2bd7a3" class="outline-2">
+<h2 id="orgf2bd7a3"><span class="section-number-2">3.</span> Lisp - philosophy, patterns</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+everything is list, space is items separrator
+</p>
+
+<p>
+<a href="https://aartaka.me/lisp-design-patterns">https://aartaka.me/lisp-design-patterns</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org6f0613d" class="outline-2">
+<h2 id="org6f0613d"><span class="section-number-2">4.</span> features</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="https://www.tutorialspoint.com/lisp/index.htm">https://www.tutorialspoint.com/lisp/index.htm</a>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html</a>
+</p>
+
+<p>
+"Lots of Isolated Silly Parentheses"
+1958 by John McCarthy
+</p>
+
+<ul class="org-ul">
+<li>dynamic and strong typing, functional, reflective, meta</li>
+<li>advanced object-oriented programming</li>
+<li>prefix notation - operators are written before their operands</li>
+
+<li>machine-independent, such as word length etc.</li>
+<li>iterative design methodology, (easy extensibility ?)</li>
+<li>allow updating the program dynamically</li>
+<li>high level debugging</li>
+<li>advanced object-oriented programming</li>
+<li>convenient macro system?</li>
+<li>expression-based ?</li>
+<li>object-oriented condition system ?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85e76ca" class="outline-2">
+<h2 id="org85e76ca"><span class="section-number-2">5.</span> compilation</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+batch-byte-compile:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">emacs --quick -batch <span style="color: #95e454;">\</span>
+         -l pinyin-isearch-loaders.el <span style="color: #95e454;">\</span>
+         -l pinyin-isearch-pinyin.el <span style="color: #95e454;">\</span>
+         -l pinyin-isearch-chars.el <span style="color: #95e454;">\</span>
+         -l pinyin-isearch.el <span style="color: #95e454;">\</span>
+         --eval <span style="color: #95e454;">"(setq byte-compile-error-on-warn ${ERROR_ON_WARN})"</span> <span style="color: #95e454;">\</span>
+         -f batch-byte-compile <span style="color: #95e454;">\</span>
+         pinyin-isearch.el pinyin-isearch-loaders.el pinyin-isearch-chars.el pinyin-isearch-pinyin.el
+</pre>
+</div>
+
+<p>
+To prevent compilation of file:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Local Variables&#58;</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">no-byte-compile: t</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">End:</span>
+<span style="color: #fa8072;">;;; </span><span style="color: #99968b; font-style: italic;">test.el ends here</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orged46d0f" class="outline-2">
+<h2 id="orged46d0f"><span class="section-number-2">6.</span> symbols, special characters</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+(') is equal to (list) operator
+</p>
+
+<p>
+"#"
+</p>
+<pre class="example">
+(eq 'my-add #'my-add) -&gt; t
+</pre>
+
+<p>
+can be used in front of a lambda expression indicating to the byte-compiler that the following expression can be byte compiled
+</p>
+
+<p>
+used in the printed representation along with the left angle bracket (&lt;) to indicate that the object printed is a description
+</p>
+
+<p>
+":" A symbol whose name starts with a colon (‘:’) is called a “keyword symbol”. act as constants, and are
+ normally used only by comparing an unknown symbol with a few specific alternatives <a href="#orgfcde96c">17.2.2</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(print (list 1 2))
+(print #'(1 2))
+</pre>
+</div>
+
+<pre class="example">
+
+(1 2)
+
+(1 2)
+</pre>
+</div>
+
+<div id="outline-container-org72f7bc4" class="outline-3">
+<h3 id="org72f7bc4"><span class="section-number-3">6.1.</span> Steps for info:</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>F1 i or M-x info RET (open the info browser)</li>
+<li>d m elisp RET (open the elisp manual)</li>
+<li>I # RET (list the entries for # in the index)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1358f45" class="outline-3">
+<h3 id="org1358f45"><span class="section-number-3">6.2.</span> meaning with Backquote (`) macroses</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+<b>Backquote (`) and comma (,)</b>
+</p>
+<ul class="org-ul">
+<li>(`) character signals that in the expression that follows, every subexpression not preceded by a comma is
+to be quoted, and every subexpression preceded by a comma is to be evaluated.</li>
+<li>(`) and (,) used instead of (') to make exception in quoting and for better looking</li>
+<li>(`) and (,) used in macro definition for the same reason</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> v1 2)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> e 2)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> v2 2)
+(print `(<span style="color: #8ac6f2; font-weight: bold;">progn</span> (<span style="color: #8ac6f2; font-weight: bold;">setq</span> v1 ,@e) (<span style="color: #8ac6f2; font-weight: bold;">setq</span> ,v2 ,e)))
+<span style="color: #fa8072;">;;     </span><span style="color: #99968b; font-style: italic;">^ backquote,     ^          ^   ^ commas</span>
+
+(print '(progn (<span style="color: #8ac6f2; font-weight: bold;">setq</span> v1 e) `(<span style="color: #8ac6f2; font-weight: bold;">setq</span> ,v2 ,e)))
+</pre>
+</div>
+
+<pre class="example">
+
+(progn (setq v1 . 2) (setq 2 2))
+
+(progn (setq v1 e) `(setq ,v2 ,e))
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(')</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">my-macro-1</span> (arg1 arg2)
+      (list 'setq arg1 (list 'cons arg2 arg1)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(`) and (,)</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">my-macro-2</span> (arg1 arg2)
+      `(<span style="color: #8ac6f2; font-weight: bold;">setq</span> ,arg1 ,`(cons ,arg2 ,arg1)))
+</pre>
+</div>
+
+<p>
+<b>Comma-splice (`)(,@)</b>
+</p>
+<ul class="org-ul">
+<li>This is particularly useful when writing macros with an &amp;rest specifier.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> v  '(<span style="color: #95e454;">"oh boy"</span>))
+(print `(zap ,@v ,v))
+</pre>
+</div>
+
+<pre class="example">
+
+(zap "oh boy" ("oh boy"))
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">(`) (,)</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((list '(a b c d)))
+      `(elt1 ,list elt2))
+        =&gt; (elt1 (a b c d) elt2)
+<span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">(`) (,@)</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((list '(a b c d)))
+      `(elt1 ,@list elt2))
+        =&gt; (elt1 a b c d elt2)
+</pre>
+</div>
+
+<p>
+<b>Quote-comma (`)(',)</b> - insert sexp as a string without evaluation
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">explain-exp</span> (exp)
+  `(format <span style="color: #95e454;">"%s = %s"</span> ',exp ,exp))
+  <span style="color: #fa8072;">;;                 </span><span style="color: #99968b; font-style: italic;">^^</span>
+
+(print (explain-exp (+ 2 3)))
+
+</pre>
+</div>
+
+<pre class="example">
+
+"(+ 2 3) = 5"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c83de0" class="outline-2">
+<h2 id="org1c83de0"><span class="section-number-2">7.</span> terms</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+must know:
+</p>
+<ul class="org-ul">
+<li>whitespace and () - separators;</li>
+<li>() = nil = atom and list</li>
+<li>expressions = prefix notation = (+ 1 2)</li>
+<li>special operators = (+, (list, (if. (lambda</li>
+<li>anonymous function (lambda (arg) (+ arg 1) )</li>
+<li>function (defun foo "optional comment" (a b c) (+ a b c))</li>
+<li>function are case-insensitive</li>
+<li>constants = Numbers, letter t, nil</li>
+<li>true = t, false = nil</li>
+<li>certain kinds of atom(arrays) can be separated into parts but not like lists,l</li>
+<li><p>
+function names that end with a "p" often means it return true=t of false=nil = predicate
+</p>
+
+<p>
+terms:
+</p></li>
+<li id="Numbers">are provided in various forms and representations</li>
+<li id="Characters">represent printed glyphs such as letters or text formatting operations</li>
+<li id="atom">elemental entities, <b>number</b> <b>symbols</b> and <b>strings</b> (list 2 3), nil, (ab-a#221), ("asd asd")</li>
+<li id="symbols">are named data objects: + foo forward-line - atom type</li>
+<li id="list">sequence of atoms or lists in (), nil; unlist and unquote: (apply 'function '(12 23))</li>
+<li id="string">"asd" - arrays of characters</li>
+<li id="comment">;</li>
+<li id="form">any object meant to be evaluated (+ 3 4 1)</li>
+<li id="symbolic expression">printed representation of both atoms and lists</li>
+<li id="quote">'(+3 4 1) list without evaluation</li>
+<li id="function">first symbol in list (call)</li>
+<li id="variable"></li>
+
+<li id="special form"></li>
+
+<li id="macros">translate lisp expression into another lisp expression</li>
+<li id="Hash tables">Arithmetic
+<ul class="org-ul">
+<li>+-*/%</li>
+<li>(/ 7 2) ;3</li>
+<li>(/7 2.0) ; 3.5</li>
+<li>(expt 2 3) ; 2<sup>3</sup>=8</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2979144" class="outline-2">
+<h2 id="org2979144"><span class="section-number-2">8.</span> advanced terms</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+forms - a data object meant to be evaluated as a program to produce one or more values (which are also data
+ objects). One may request evaluation of any data object, but only certain ones are meaningful.
+</p>
+<ul class="org-ul">
+<li>symbols and lists are meaningful forms:
+<ul class="org-ul">
+<li>3, whose value is 3</li>
+<li>(+ 3 4), whose value is 7</li>
+</ul></li>
+<li><b>Meaningful forms</b> may be divided into three categories:
+<ul class="org-ul">
+<li>self-evaluating forms, such as numbers</li>
+<li>symbols, which stand for variables</li>
+<li>lists, may be divided into:
+<ul class="org-ul">
+<li>special forms</li>
+<li>macro calls</li>
+<li>function calls.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org90b006f" class="outline-2">
+<h2 id="org90b006f"><span class="section-number-2">9.</span> evaluation process and forms</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>file to s-expressions</li>
+<li>defines syntax of List <b>forms</b> that a built from s-expressions</li>
+<li>determines which s-expressions are LISP forms.</li>
+<li>Eval - Returns the result of evaluating an AutoLisp expression.
+<ul class="org-ul">
+<li>Syntax : (eval expr)</li>
+</ul></li>
+<li>when you evaluate a function call form such as (car x), Emacs first evaluates the argument (the subform
+x). After evaluating the argument, Emacs executes the function (car)</li>
+<li>Two tupes:
+<ul class="org-ul">
+<li>Self-Evaluating Forms '123   ⇒ 123, 123 ⇒ 123, (eval '123) =&gt; 123</li>
+<li>Symbol Forms (setq a 123) (eval 'a) =&gt; 123, a =&gt; 123</li>
+</ul></li>
+</ul>
+
+<p>
+LISP form could be:
+</p>
+<ul class="org-ul">
+<li>An atom</li>
+<li>An empty or non-list</li>
+<li>Any list that has a symbol as its first element</li>
+</ul>
+
+<p>
+<b>Special Forms</b> - is a primitive function specially marked so that its arguments are not all evaluated
+</p>
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Special-Forms.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Special-Forms.html</a></li>
+</ul>
+</div>
+<div id="outline-container-orgbe2ee59" class="outline-3">
+<h3 id="orgbe2ee59"><span class="section-number-3">9.1.</span> Special Forms</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+and
+</p>
+
+<p>
+    see Combining Conditions
+catch
+</p>
+
+<p>
+    see Catch and Throw
+cond
+</p>
+
+<p>
+    see Conditionals
+condition-case
+</p>
+
+<p>
+    see Handling Errors
+defconst
+</p>
+
+<p>
+    see Defining Variables
+defvar
+</p>
+
+<p>
+    see Defining Variables
+function
+</p>
+
+<p>
+    see Anonymous Functions
+if
+</p>
+
+<p>
+    see Conditionals
+interactive
+</p>
+
+<p>
+    see Interactive Call
+lambda
+</p>
+
+<p>
+    see Lambda Expressions
+let
+let*
+</p>
+
+<p>
+    see Local Variables <a href="#org8287aaf">2</a>
+or
+</p>
+
+<p>
+    see Combining Conditions
+prog1
+prog2
+progn
+</p>
+
+<p>
+    see Sequencing
+quote
+</p>
+
+<p>
+    see Quoting
+save-current-buffer
+</p>
+
+<p>
+    see Current Buffer
+save-excursion
+</p>
+
+<p>
+    see Excursions
+save-restriction
+</p>
+
+<p>
+    see Narrowing
+setq
+</p>
+
+<p>
+    see Setting Variables
+setq-default
+</p>
+
+<p>
+    see Creating Buffer-Local
+unwind-protect
+</p>
+
+<p>
+    see Nonlocal Exits
+while
+</p>
+
+<p>
+see Iteration
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc8a09c1" class="outline-2">
+<h2 id="orgc8a09c1"><span class="section-number-2">10.</span> dialects</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="https://en.wikipedia.org/wiki/Emacs_Lisp">https://en.wikipedia.org/wiki/Emacs_Lisp</a>
+</p>
+
+<ul class="org-ul">
+<li>Emacs Lisp or Elisp</li>
+<li>Common Lisp - for javaVM too</li>
+<li>Scheme - simple semantics and few different ways to form expressions. more minimalist design</li>
+<li>Clojure is a recent dialect . mainly the Java virtual machine</li>
+</ul>
+</div>
+<div id="outline-container-org51c575e" class="outline-3">
+<h3 id="org51c575e"><span class="section-number-3">10.1.</span> <span class="todo TODO">TODO</span> Common lisp vs Emacs Lisp</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/cl/Porting-Common-Lisp.html">https://www.gnu.org/software/emacs/manual/html_node/cl/Porting-Common-Lisp.html</a>
+</p>
+<ul class="org-ul">
+<li>Case-insensitivity for symbols
+<ul class="org-ul">
+<li>Common LISP expressions are case-insensitive - cos 45 or COS 45 are same</li>
+<li>Emacs lisp - case-sensitive</li>
+</ul></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4969512" class="outline-2">
+<h2 id="org4969512"><span class="section-number-2">11.</span> types</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org5a3e739" class="outline-3">
+<h3 id="org5a3e739"><span class="section-number-3">11.1.</span> basic</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+everything atom or list
+</p>
+
+<p>
+object - instance of type, object is a piece of data used and manipulated by Lisp programs
+</p>
+
+<p>
+Linked lists -  one of Lisp's major data structures
+</p>
+
+<p>
+s-expression or sexp - for code and data structure : (x y z) stands for (x . (y . (z . NIL)))
+</p>
+
+<p>
+Constants:
+</p>
+<ul class="org-ul">
+<li>Numbers</li>
+<li>The letter t, that stands for logical true.</li>
+<li>The value nil, that stands for logical false, as well as an empty list.</li>
+</ul>
+
+
+<p>
+atom - is a number or symbol or string in double quotation marks.
+</p>
+
+<p>
+symbol - string of contiguous character - can consist of any number of alphanumeric characters other
+than whitespace, open and closing parentheses, double and single quotes, backslash, comma, colon,
+semicolon and vertical bar. To use these characters in a name, you need to use escape character (\).
+</p>
+<ul class="org-ul">
+<li>hello-from-tutorials-point</li>
+<li>123008907</li>
+<li><b>hello</b></li>
+<li>Block#221</li>
+<li>abc123</li>
+<li>+1</li>
+<li>FOO                 ; A symbol named ‘FOO’, different from ‘foo’  for Emacs Lisp</li>
+</ul>
+
+<p>
+A string is a group of characters enclosed in double quotation marks. "Hello world!"
+</p>
+
+<p>
+primitive types:
+</p>
+<ul class="org-ul">
+<li>integer</li>
+<li>float</li>
+<li>cons</li>
+<li>symbol</li>
+<li>string</li>
+<li>vector</li>
+<li>hash-table</li>
+<li>subr</li>
+<li>byte-code function</li>
+<li>record</li>
+<li>plus several special types, such as buffer, that are related to editing</li>
+</ul>
+
+<p>
+single inheritance?
+</p>
+
+<p>
+each object belongs to one and only one primitive type
+</p>
+
+<p>
+single quote: (write '(* 2 3)) - atoms or lists literally and don't want them evaluated or treated as function calls.
+</p>
+<ul class="org-ul">
+<li>Quoting - '123, (quote (+ 1 2))</li>
+<li>Self-Evaluating Forms - evaluate to themselves '123 =&gt; 123 (eval '123) =&gt; 123</li>
+</ul>
+
+<p>
+types of types:
+</p>
+<ul class="org-ul">
+<li>Lisp programming types</li>
+<li>editing - unique to Emacs Lisp</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e8a10a" class="outline-3">
+<h3 id="org6e8a10a"><span class="section-number-3">11.2.</span> literals</h3>
+<div class="outline-text-3" id="text-11-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(print 1e3)
+(print 'this-a-symbol)
+(print 'vector-&gt;list)
+(print 'symbol?)
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Pair / Cons Cell</span>
+(print '(a . b))
+(print'(a . 2999))
+
+(print <span style="color: #95e454;">"list"</span>)
+(print'(+ 2 3 (3 4) (5 6 (+ 3 4)) 10 'a 'b <span style="color: #95e454;">"hello"</span> ))
+
+(print <span style="color: #95e454;">"vectors"</span>)
+(print [1 2 3 4 (+ 1 2 3 54)])
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce6c9ba" class="outline-3">
+<h3 id="orgce6c9ba"><span class="section-number-3">11.3.</span> lists</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+sequence
+</p>
+<ul class="org-ul">
+<li>list - not a single primitive object; it is made of cons cells, one cell per element</li>
+<li>array: vector, string, char-table, bool-vector - fixed-length object with a slot for each of its elements.</li>
+</ul>
+</div>
+<div id="outline-container-orgdef3476" class="outline-4">
+<h4 id="orgdef3476"><span class="section-number-4">11.3.1.</span> basic</h4>
+<div class="outline-text-4" id="text-11-3-1">
+<p>
+<b>list</b> is a Linked lists is a sequence of atoms and/or other lists enclosed in parentheses.
+</p>
+<ul class="org-ul">
+<li>Lists in Lisp are not a primitive data type they are built up from "cons cells"</li>
+<li>"cons cells" - ordered pair - (CAR CDR)</li>
+<li>each cell refers to the next one: CARs of the cons cells hold the elements of the list, and the CDRs are
+used to chain the list</li>
+<li>CDR of the last cons cell in a list is ‘nil’</li>
+</ul>
+
+<pre class="example">
+(setq bouquet '(rose violet buttercup))
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-text">     bouquet
+      |
+      |    --------------       ---------------       ----------------
+      |   | car   | cdr  |     | car    | cdr  |     | car     | cdr  |
+       --&gt;| rose  |   o-------&gt;| violet |   o-------&gt;| butter- |  nil |
+          |       |      |     |        |      |     | cup     |      |
+           --------------       ---------------       ----------------
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7920e2a" class="outline-4">
+<h4 id="org7920e2a"><span class="section-number-4">11.3.2.</span> Association Lists</h4>
+<div class="outline-text-4" id="text-11-3-2">
+<p>
+(alist-get key alist &amp;optional default remove testfn)
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org1e0d82a"></a>clist<br />
+<div class="outline-text-5" id="text-11-3-2-1">
+<p>
+values and the keys - may be any Lisp objects
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Lists</span>
+(print '(10 203 40 <span style="color: #95e454;">"hello"</span> () (<span style="color: #95e454;">"empty"</span> 65)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">alist</span>
+(print '((a . b) (x . y) (2 . 3) (4 . (1 2 3 4 5))))
+
+(print (cons 'a 'b))
+
+(print (cons 'a (cons 'b (cons 'c nil))))
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span>
+ vv
+ (list
+  (cons <span style="color: #95e454;">"aa"</span> 23)
+  (cons <span style="color: #95e454;">"bb"</span> 24)
+  (cons <span style="color: #95e454;">"cc"</span> 33)))
+(print vv)
+(print (alist-get <span style="color: #95e454;">"aa"</span> vv 999 nil 'string-equal))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">get the value with key "bb". if not found, return 999. use string-equal for comparison</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (alist-get "bb" xx 999 nil 'string-equal))</span>
+</pre>
+</div>
+
+<pre class="example">
+
+(("aa" . 23) ("bb" . 24) ("cc" . 33))
+
+23
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">let</span> (clist)
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> clist
+          (append (list (cons <span style="color: #95e454;">"sd"</span> <span style="color: #95e454;">"asd"</span>))
+                  clist))
+  (print clist)
+    )
+</pre>
+</div>
+
+<pre class="example">
+
+(("sd" . "asd"))
+</pre>
+</div>
+</li>
+
+<li><a id="org7892571"></a>alist - Association Lists<br />
+<div class="outline-text-5" id="text-11-3-2-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(print '((a  b) (x  y) (2  3) (4  (1 2 3 4 5))))
+(print (list (list 'a 'b) (list 'x 'y) (list 2 3) (list 2 '(1 2 3 4 5))))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org63c5094"></a>plist - Property Lists<br />
+<div class="outline-text-5" id="text-11-3-2-3">
+<p>
+requires less parenthesis and it is more human readable
+</p>
+
+<p>
+two types:
+</p>
+<ul class="org-ul">
+<li>Text Properties.</li>
+<li>Symbol Properties.</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orgd1843ae"></a>plist examples<br />
+<div class="outline-text-6" id="text-11-3-2-3-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> myvar '(<span style="color: #e5786d;">:key1</span> value1 <span style="color: #e5786d;">:key2</span> value2 <span style="color: #e5786d;">:key3</span> 1002.23 <span style="color: #e5786d;">:key4</span> (a b c d e)))
+(print (<span style="color: #8ac6f2; font-weight: bold;">cl-loop</span> for key in myvar by 'cddr
+               collecting key))
+
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(print '(<span style="color: #e5786d;">:key1</span> value1 <span style="color: #e5786d;">:key2</span> value2 <span style="color: #e5786d;">:key3</span> 1002.23 <span style="color: #e5786d;">:key4</span> (a b c d e)))
+(print '(
+<span style="color: #e5786d;">:key1</span>  value1
+<span style="color: #e5786d;">:key2</span>  value2
+<span style="color: #e5786d;">:key3</span>  value3
+<span style="color: #e5786d;">:key4</span>  (a b c d e )
+))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org51157c6"></a>functions<br />
+<div class="outline-text-6" id="text-11-3-2-3-2">
+<ul class="org-ul">
+<li>(plist-get plist property)</li>
+<li>(plist-member plist property ) ; check</li>
+<li>(plist-put plist property value)</li>
+<li>get list of keys: (print (cl-loop for key in myvar by 'cddr collecting key))</li>
+</ul>
+</div>
+</li>
+<li><a id="orgbf84ad5"></a>Symbol Properties<br />
+<div class="outline-text-6" id="text-11-3-2-3-3">
+<dl class="org-dl">
+<dt>get symbol property</dt><dd>get property from symbol. `eq' used, so any object is a legitimate property.</dd>
+<dt>put symbol property value</dt><dd>.</dd>
+<dt>symbol-plist symbol</dt><dd>.</dd>
+</dl>
+</div>
+</li>
+<li><a id="org11ea8f3"></a>text properties<br /></li>
+</ol>
+</li>
+
+<li><a id="org2fd6812"></a>examples plist, assoc, mapcar<br />
+<div class="outline-text-5" id="text-11-3-2-4">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> dict '((pine . cones)
+             (oak . acorns)
+             (maple . seeds)))
+
+(print dict)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Get a cell associated with a key</span>
+(print (assoc 'oak dict))
+(print (assoc 'wrong dict))
+
+(print (list
+       (car (assoc 'oak dict))
+       (cdr (assoc 'oak dict))
+       ))
+(print (car (assoc 'oak dict)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Get all keys</span>
+(print (mapcar #'car dict))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Get all values</span>
+(print (mapcar #'cdr dict))
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf8d8e5b" class="outline-4">
+<h4 id="orgf8d8e5b"><span class="section-number-4">11.3.3.</span> list operators</h4>
+<div class="outline-text-4" id="text-11-3-3">
+<ul class="org-ul">
+<li>cons		construct</li>
+<li>car		return first element of list</li>
+<li>cdr		return all elements of list except of first</li>
+<li>list		wrap to list ()</li>
+<li>length/seq-length - get length</li>
+<li>nthcdr n	without first n elements</li>
+<li>nth n	get n element, starting from 0</li>
+<li>last		last element of list</li>
+<li>reverse seq</li>
+<li>append, nconc add elements to list</li>
+<li>member, memq - check if there is memeber with equal or eq - like “in” in Python</li>
+<li>push		add element existing list</li>
+<li>(setf (alist-get &lt;key&gt; &lt;alist&gt;) &lt;value&gt;)- replace element of list</li>
+<li>copy-sequence/tree - make copy</li>
+<li>reverse/nreverse - non destructive and destructive</li>
+<li>seq-elt	get element at index 0 - (len-1)</li>
+<li>seq-drop	[n:]</li>
+<li>seq-take	[:n]</li>
+<li>seq-filter PRED SEQUENCE) Return a list of all the elements in SEQUENCE for which PRED returns non-nil.</li>
+<li>(add-to-ordered-list LIST-VAR ELEMENT 3) ; Add ELEMENT to the value of LIST-VAR if it isn’t there yet in position.</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orga27035b"></a>init, append<br />
+<div class="outline-text-5" id="text-11-3-3-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">cc</span> nil)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> cc (cons <span style="color: #95e454;">"asd2"</span> cc))
+(print cc)
+</pre>
+</div>
+
+<pre class="example">
+
+("asd2" "asd")
+</pre>
+</div>
+</li>
+
+<li><a id="org5f63b6c"></a>indexing<br />
+<div class="outline-text-5" id="text-11-3-3-2">
+<ul class="org-ul">
+<li>(assoc KEY ALIST &amp;optional TESTFN) - value is actually the first element of ALIST whose car equals KEY</li>
+<li>(assoc-string KEY LIST &amp;optional CASE-FOLD) - for strings</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defconst</span> <span style="color: #cae682;">sisheng-vowel-table</span>
+  '((<span style="color: #95e454;">"&#257;"</span> <span style="color: #95e454;">"a"</span> <span style="color: #95e454;">"&#257;"</span> <span style="color: #95e454;">"&#225;"</span> <span style="color: #95e454;">"&#462;"</span> <span style="color: #95e454;">"&#224;"</span>)
+    (<span style="color: #95e454;">"&#275;"</span> <span style="color: #95e454;">"e"</span> <span style="color: #95e454;">"&#275;"</span> <span style="color: #95e454;">"&#233;"</span> <span style="color: #95e454;">"&#283;"</span> <span style="color: #95e454;">"&#232;"</span>)
+    (<span style="color: #95e454;">"&#299;"</span> <span style="color: #95e454;">"i"</span> <span style="color: #95e454;">"&#299;"</span> <span style="color: #95e454;">"&#237;"</span> <span style="color: #95e454;">"&#464;"</span> <span style="color: #95e454;">"&#236;"</span>)
+    (<span style="color: #95e454;">"&#333;"</span> <span style="color: #95e454;">"o"</span> <span style="color: #95e454;">"&#333;"</span> <span style="color: #95e454;">"&#243;"</span> <span style="color: #95e454;">"&#466;"</span> <span style="color: #95e454;">"&#242;"</span>)
+    (<span style="color: #95e454;">"&#363;"</span> <span style="color: #95e454;">"u"</span> <span style="color: #95e454;">"&#363;"</span> <span style="color: #95e454;">"&#250;"</span> <span style="color: #95e454;">"&#468;"</span> <span style="color: #95e454;">"&#249;"</span>)
+    (<span style="color: #95e454;">"&#470;"</span> <span style="color: #95e454;">"v"</span> <span style="color: #95e454;">"&#470;"</span> <span style="color: #95e454;">"&#472;"</span> <span style="color: #95e454;">"&#474;"</span> <span style="color: #95e454;">"&#476;"</span>)
+    (<span style="color: #95e454;">"&#252;&#275;"</span> <span style="color: #95e454;">"ve"</span> <span style="color: #95e454;">"&#252;&#275;"</span> <span style="color: #95e454;">"&#252;&#233;"</span> <span style="color: #95e454;">"&#252;&#283;"</span> <span style="color: #95e454;">"&#252;&#232;"</span>)))
+
+(print (assoc-string <span style="color: #95e454;">"&#252;&#275;"</span> sisheng-vowel-table))
+</pre>
+</div>
+
+<pre class="example">
+
+("üē" "ve" "üē" "üé" "üě" "üè")
+</pre>
+</div>
+</li>
+
+<li><a id="org50ab10a"></a>cons, car, cdr<br />
+<div class="outline-text-5" id="text-11-3-3-3">
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (cons 'pine '(fir oak maple)))</span>
+(print (list
+ (cons 'pine '(fir oak maple))
+ (car '(rose violet daisy buttercup))
+ (cdr '(rose violet daisy buttercup))
+ ))
+</pre>
+</div>
+
+<pre class="example">
+
+((pine fir oak maple) rose (violet daisy buttercup))
+</pre>
+</div>
+</li>
+
+<li><a id="orgdcc1ac4"></a>nthcdr, nth, setcar, setcdr<br />
+<div class="outline-text-5" id="text-11-3-3-4">
+<div class="org-src-container">
+<pre class="src src-elisp">(list
+ (nthcdr 2 '(rose fir oak maple))
+ (nth 2 '(rose fir oak maple))
+ (nth 1 '(rose fir oak maple))
+ )
+</pre>
+</div>
+
+<p>
+setcar
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> animals (list 'antelope 'giraffe 'lion 'tiger))
+(print animals)
+(print (setcar animals 'hippopotamus) )
+(print animals)
+</pre>
+</div>
+
+<p>
+setcdr
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> animals (list 'antelope 'giraffe 'lion 'tiger))
+(print animals)
+(print (setcdr animals 'hippopotamus) )
+(print animals)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org014a811"></a>length, nth, cl-position, car, cdr, cons, reverse, append, remove-if-not, null, delq, push, pop<br />
+<div class="outline-text-5" id="text-11-3-3-5">
+<div class="org-src-container">
+<pre class="src src-elisp">(print (length '(1 2 3 4 5 6)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">nth element of a list</span>
+(print (list
+(nth 0 '(0 1 2 3 4 5))
+(nth 5 '(0 1 2 3 4 5))
+(nth 10 '(0 1 2 3 4 5))
+))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Position of list element (emacs 24.4 or later)</span>
+(print (cl-position 7 '(5 6 7 8)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">cdr - Removes first element of the list, returns the list tail.</span>
+(print  (cdr '(1 2 3 4 5)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">car - Returns the first list element</span>
+(print (car '(1 2 3 4 5)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">cons -  List constructor</span>
+
+(print (cons 10 '(1 2 3 4)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">reverse</span>
+(print (reverse '(1 2 3 4 5)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">append</span>
+(print (append '(1 <span style="color: #95e454;">"s"</span>) '( <span style="color: #95e454;">"a"</span> <span style="color: #95e454;">"b"</span> <span style="color: #95e454;">"c"</span> <span style="color: #95e454;">"d"</span>)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (remove-if-not (lambda (x) (&gt; x 2))     '(1 2 3 4 5 6 7 8 9 10)))</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(print (list
+        (null '(1 2 3 4 5))
+        (null '())
+        (null nil)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Drop the firsts n elements of a list</span>
+(print (nthcdr 2 '(1 2 3 4)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Delete an element of a list</span>
+(print (delq 1 '(1 2 3 4)))
+(print (delq '(5) '(1 2 (5) 3 4)))
+(print (delete '(5) '(1 2 (5) 3 4)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Convert Vector to List</span>
+(print (number-sequence 0 10 2))
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Modify list variables.</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> alist '(a b c d e))
+(print (<span style="color: #8ac6f2; font-weight: bold;">push</span> 'f alist))
+(print (<span style="color: #8ac6f2; font-weight: bold;">pop</span> alist))
+(print alist)
+(print <span style="color: #95e454;">"asd"</span>)
+</pre>
+</div>
+
+<pre class="example">
+
+(f a b c d e)
+
+f
+
+(a b c d e)
+
+"asd"
+</pre>
+</div>
+</li>
+
+<li><a id="orgcce4255"></a>nconc<br /></li>
+<li><a id="org98e3f60"></a>map<br />
+<div class="outline-text-5" id="text-11-3-3-7">
+<ul class="org-ul">
+<li>(mapcar function sequence)</li>
+<li>(seq-some PRED SEQUENCE) - nil or first non-nil value returned by PRED.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(print (mapcar #'1+ [1 2 3]))
+</pre>
+</div>
+
+<pre class="example">
+
+(2 3 4)
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> properties '((a . 1)
+                (b . 2)
+                (c . 3)))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print properties)</span>
+(seq-some (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (property) (print property)) properties)
+(seq-some (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (property)
+            (print (car property))
+            (<span style="color: #8ac6f2; font-weight: bold;">let</span>
+                  (print (car property)) )) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">predicate for every property</span>
+                 properties)
+</pre>
+</div>
+
+<pre class="example">
+
+(a . 1)
+
+a
+
+b
+
+c
+</pre>
+
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Mapping-Functions.html</a>
+</p>
+</div>
+</li>
+<li><a id="org071ecdf"></a>USECASE: remove elemets of one list from another<br />
+<div class="outline-text-5" id="text-11-3-3-8">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">a</span> '(2 3 45  4))
+(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">b</span> '(3 45 6))
+(mapc (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (x) (delq x a)) b )
+(print a)
+
+</pre>
+</div>
+
+<pre class="example">
+
+(2 4)
+</pre>
+</div>
+</li>
+
+<li><a id="org7f7b02d"></a>USECASE: find difference between lists<br />
+<div class="outline-text-5" id="text-11-3-3-9">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">a</span> '(2 3 45  4))
+(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">b</span> '(3 45 6))
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> a2 (copy-tree a))
+(seq-filter
+(print a)
+
+</pre>
+</div>
+
+<pre class="example">
+
+(2 4)
+</pre>
+</div>
+</li>
+
+<li><a id="orgb563272"></a>USECASE: get keys(), get values()<br />
+<div class="outline-text-5" id="text-11-3-3-10">
+<pre class="example">
+(mapcar 'car '((key1 . value1) (key2 . value2) ...))
+(mapcar 'cdr '((key1 . value1) (key2 . value2) ...))
+</pre>
+</div>
+</li>
+<li><a id="org9424df3"></a>s<br />
+<div class="outline-text-5" id="text-11-3-3-11">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">my-test</span> (a b)
+  (equal (car a) b))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (my-test '(a 3 4) )</span>
+
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">find-position</span> (i elt seq)
+  (seq-position seq elt (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (a b) (equal (nth i a) b))))
+
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">find-next</span> (i elt seq)
+    (nth (1+ (find-position i elt seq)) seq))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(defun find-next (elt seq)</span>
+<span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">(seq-position seq elt (lambda (a b) (equal (car a) b))))</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (find-position 0 'a '((a 3 4) (b 4 2) (c 5 6))))  ; Returns1</span>
+(print (find-next 0 'b '((a 3 4) (b 4 2) (c 5 6))))  <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Returns1</span>
+
+</pre>
+</div>
+
+<pre class="example">
+
+(c 5 6)
+</pre>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd29f926" class="outline-3">
+<h3 id="orgd29f926"><span class="section-number-3">11.4.</span> symbol type</h3>
+<div class="outline-text-3" id="text-11-4">
+<p>
+is literal (not evaluated).
+</p>
+
+<ul class="org-ul">
+<li>(symbolp sym) - Test if variable sym is a symbol</li>
+<li>(symbol-name 'sym) - ;; Get symbol as string</li>
+</ul>
+<p>
+Get value from a symbol
+</p>
+<ul class="org-ul">
+<li>(symbol-value 'sym)</li>
+<li>(symbol-function 'sym)</li>
+<li>(symbol-plist 'sym)</li>
+</ul>
+
+<p>
+Test if function is an elisp primitive
+</p>
+<pre class="example">
+(subrp (symbol-function 'goto-char))
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Convert a symbol to string</span>
+(print (symbol-name 'wombat))
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Convert a String to Symbol</span>
+(print (intern <span style="color: #95e454;">"wombat"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55f0167" class="outline-3">
+<h3 id="org55f0167"><span class="section-number-3">11.5.</span> nil and t - special symbols that always evaluate to themselves</h3>
+<div class="outline-text-3" id="text-11-5">
+<ul class="org-ul">
+<li>symbol nil has three separate meanings:
+<ul class="org-ul">
+<li>it is a symbol with the name ‘nil’;</li>
+<li>it is the logical truth value false;</li>
+<li>it is the empty list—the list of zero elements.</li>
+</ul></li>
+<li>When used as a variable, nil always has the value nil.</li>
+<li>we write () when we wish to emphasize that it means the empty list, and we write nil when we wish to
+emphasize that it means the truth value false.
+<ul class="org-ul">
+<li>(cons 'foo ())                ; Emphasize the empty list</li>
+<li>(setq foo-flag nil)           ; Emphasize the truth value false</li>
+</ul></li>
+<li>non-nil value is considered to be true</li>
+<li><b>t</b> is the preferred way to represent the truth value true</li>
+<li>The symbol t always has the value t.</li>
+</ul>
+
+<p>
+;;; Everything that is not "nil" is true:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3bff604" class="outline-3">
+<h3 id="org3bff604"><span class="section-number-3">11.6.</span> type conversion</h3>
+<div class="outline-text-3" id="text-11-6">
+<div class="org-src-container">
+<pre class="src src-elisp">(list
+ (cl-coerce '(a b c) 'vector)
+ (cl-coerce 7.2 'float)
+ (cl-coerce <span style="color: #95e454;">"a"</span> 'character)
+ (format <span style="color: #95e454;">"%s"</span> 33.2222)
+)
+
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Number &lt;-&gt; String</span>
+(print (number-to-string 1000))
+(print (string-to-number <span style="color: #95e454;">"200"</span>))
+
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Symbol &lt;-&gt; String</span>
+(print (symbol-name 'my-symbol))
+(print (symbol-name <span style="color: #e5786d;">:my-symbol</span>))
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">String to Symbol</span>
+(print (intern <span style="color: #95e454;">"some-symbol"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08603e5" class="outline-3">
+<h3 id="org08603e5"><span class="section-number-3">11.7.</span> get type or find type</h3>
+<div class="outline-text-3" id="text-11-7">
+<div class="org-src-container">
+<pre class="src src-elisp">(print (list
+ (type-of <span style="color: #95e454;">"a"</span>)
+ (type-of 7.2)
+ (type-of 'type-of)
+))
+
+(print (equal 'buffer (type-of (current-buffer))))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2622159" class="outline-3">
+<h3 id="org2622159"><span class="section-number-3">11.8.</span> Basic Types Predicate</h3>
+<div class="outline-text-3" id="text-11-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">Predicate</th>
+<th scope="col" class="org-left">Literal</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Nil</td>
+<td class="org-left">null</td>
+<td class="org-left">nil '()</td>
+<td class="org-left">Test if argument is nil</td>
+</tr>
+
+<tr>
+<td class="org-left">Number</td>
+<td class="org-left">numberp</td>
+<td class="org-left">100, 200e3</td>
+<td class="org-left">Test if it is number.</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">stringp</td>
+<td class="org-left">"hello"</td>
+<td class="org-left">Test if it is string</td>
+</tr>
+
+<tr>
+<td class="org-left">Symbol</td>
+<td class="org-left">symbolp</td>
+<td class="org-left">'sym :keyworkd</td>
+<td class="org-left">Test if it is a symbol.</td>
+</tr>
+
+<tr>
+<td class="org-left">Atom</td>
+<td class="org-left">atom</td>
+<td class="org-left">'x "h" :key 200</td>
+<td class="org-left">Everything that is not a list or pair is an atom.</td>
+</tr>
+
+<tr>
+<td class="org-left">List</td>
+<td class="org-left">listp</td>
+<td class="org-left">'(1 2 x y)</td>
+<td class="org-left">Test if it is a list</td>
+</tr>
+
+<tr>
+<td class="org-left">Pair</td>
+<td class="org-left">consp</td>
+<td class="org-left">'( a . 200)</td>
+<td class="org-left">Test if it is a pair (cons cell)</td>
+</tr>
+
+<tr>
+<td class="org-left">Vector</td>
+<td class="org-left">vectorp</td>
+<td class="org-left">[1 200 'sym]</td>
+<td class="org-left">Test if it is a vector</td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Object</th>
+<th scope="col" class="org-left">Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Buffer</td>
+<td class="org-left">bufferp</td>
+</tr>
+
+<tr>
+<td class="org-left">Window</td>
+<td class="org-left">windowp</td>
+</tr>
+
+<tr>
+<td class="org-left">Frame</td>
+<td class="org-left">framep</td>
+</tr>
+
+<tr>
+<td class="org-left">Process</td>
+<td class="org-left">processp</td>
+</tr>
+</tbody>
+</table>
+<div class="org-src-container">
+<pre class="src src-elisp">(print (atom 10))
+(print (null nil))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5622745" class="outline-3">
+<h3 id="org5622745"><span class="section-number-3">11.9.</span> evaluation process</h3>
+<div class="outline-text-3" id="text-11-9">
+<p>
+As said in <a href="https://stackoverflow.com/questions/48363798/how-are-arguments-passed-into-functions-in-elisp">https://stackoverflow.com/questions/48363798/how-are-arguments-passed-into-functions-in-elisp</a>
+ Passed by assignment, new variables created just like assignment works. Symbol of variable is evaluated first
+ and then assignment to new symbol. (We do
+</p>
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html</a>
+</p>
+
+<p>
+Mutability defines ability of functions to have side effect to argument.
+</p>
+
+<p>
+If there is exist a function in Emacs Lisp that may modify type of argument then this argument may be
+ considered as may be affected by side effect.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org440f8f0" class="outline-2">
+<h2 id="org440f8f0"><span class="section-number-2">12.</span> char</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+no way to distinguish integer from char.
+</p>
+
+<ul class="org-ul">
+<li>get char at postion in string: (aref "foo" 0)</li>
+<li>int/char to string: (char-to-string CHAR)</li>
+</ul>
+
+<pre class="example">
+(equal 97 ?a ) ;; t
+(equal 97 (string-to-char "a")) ;; t
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">let</span> (az)
+  (<span style="color: #8ac6f2; font-weight: bold;">dolist</span> (h (number-sequence 97 122)) (<span style="color: #8ac6f2; font-weight: bold;">setq</span> az (cons (char-to-string h) az)) )
+  (print az)
+  )
+</pre>
+</div>
+
+<pre class="example">
+
+("z" "y" "x" "w" "v" "u" "t" "s" "r" "q" "p" "o" "n" "m" "l" "k" "j" "i" "h" "g" "f" "e" "d" "c" "b" "a")
+</pre>
+
+
+<p>
+<a href="http://xahlee.info/emacs/emacs/elisp_char_datatype.html">http://xahlee.info/emacs/emacs/elisp_char_datatype.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3773949" class="outline-2">
+<h2 id="org3773949"><span class="section-number-2">13.</span> strings</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>(format "notify-send &#x2013;expire-time 5000 -i emacs '%s'" msg)</li>
+<li>(substring "abcdefg" 0 3)     ⇒ "abc"</li>
+<li>(concat "abc" "-def")     ⇒ "abc-def"</li>
+<li>(split-string "  two words " &amp;optional SEPARATORS OMIT-NULLS TRIM)   ⇒ ("two" "words")</li>
+<li>(length "abc");; 3</li>
+<li>(string-to-number "3")</li>
+<li>(number-to-string 3)</li>
+<li>(format "%d" 3)  ;; same as number-to-string but can also do format</li>
+<li>endswith: (string-suffix-p "ending" a)</li>
+<li>startswith: (string-prefix-p "beg" a)</li>
+<li>compare string insensitive: (string-equal-ignore-case "a" "b")</li>
+<li>replace substring: (defun string-replace (from-string to-string in-string)</li>
+<li>split string: split-string (string &amp;optional separators omit-nulls trim)</li>
+<li>combine-and-quote-strings (strings &amp;optional separator)</li>
+<li>to characters: (split-string "abc" "" t) =&gt; ("a" "b" "c")</li>
+<li>(number-to-string n) ; convert number to string</li>
+</ul>
+
+<p>
+search, or contains
+</p>
+<ul class="org-ul">
+<li>(string-match "ce" "central park") - find first occurance</li>
+<li>(string-match-p "ce" "central park") - test that contains</li>
+</ul>
+
+<p>
+libs:
+</p>
+<ul class="org-ul">
+<li>subr.el</li>
+</ul>
+
+<p>
+links
+</p>
+<ul class="org-ul">
+<li><a href="http://xahlee.info/emacs/emacs/elisp_string_functions.html">http://xahlee.info/emacs/emacs/elisp_string_functions.html</a></li>
+</ul>
+</div>
+<div id="outline-container-orge55dfa9" class="outline-3">
+<h3 id="orge55dfa9"><span class="section-number-3">13.1.</span> ex</h3>
+<div class="outline-text-3" id="text-13-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(print (mapconcat 'identity '(<span style="color: #95e454;">"aaa"</span> <span style="color: #95e454;">"bbb"</span> <span style="color: #95e454;">"ccc"</span>) <span style="color: #95e454;">","</span>))
+(print (split-string <span style="color: #95e454;">"aaa,bbb,ccc"</span> <span style="color: #95e454;">","</span>))
+(print (string-match <span style="color: #95e454;">"ce"</span> <span style="color: #95e454;">"central park"</span>))
+(print (make-string 5 ?x))
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">S-expression from String</span>
+(print (read-from-string
+            <span style="color: #95e454;">"(</span>
+<span style="color: #95e454;">               (POINT1  (X  10.2323)  (Y   20.2323))</span>
+<span style="color: #95e454;">               (POINT2  (x  0.2)          (Y 923.23))</span>
+<span style="color: #95e454;">               (POINT3  (x -10.5)       (Y 78,23))</span>
+<span style="color: #95e454;">             )"</span>))
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> raw <span style="color: #95e454;">"(:x 10 :y 20 :z 30 :w \"hello world\")"</span>)
+(print (read raw))
+(print (plist-get (read raw) <span style="color: #e5786d;">:x</span>))
+
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">Serialize a s-expression</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> sexp '(<span style="color: #e5786d;">:x</span> 10 <span style="color: #e5786d;">:y</span> 20 <span style="color: #e5786d;">:z</span> 30 <span style="color: #e5786d;">:w</span> <span style="color: #95e454;">"hello world"</span>))
+(print (prin1-to-string sexp))
+</pre>
+</div>
+
+<pre class="example" id="org6e6af7b">
+
+"aaa,bbb,ccc"
+
+("aaa" "bbb" "ccc")
+
+0
+
+"xxxxx"
+
+(((POINT1 (X 10.2323) (Y 20.2323)) (POINT2 (x 0.2) (Y 923.23)) (POINT3 (x -10.5) (Y 78 (\, 23)))) . 174)
+
+(:x 10 :y 20 :z 30 :w "hello world")
+
+10
+
+"(:x 10 :y 20 :z 30 :w \"hello world\")"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdac7603" class="outline-2">
+<h2 id="orgdac7603"><span class="section-number-2">14.</span> comments</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+<div id="outline-container-orgffeaeb2" class="outline-3">
+<h3 id="orgffeaeb2"><span class="section-number-3">14.1.</span> inside comments</h3>
+<div class="outline-text-3" id="text-14-1">
+<ul class="org-ul">
+<li>(`) backquoted comment</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5724530" class="outline-3">
+<h3 id="org5724530"><span class="section-number-3">14.2.</span> conventies</h3>
+<div class="outline-text-3" id="text-14-2">
+<ul class="org-ul">
+<li>;; - for full line</li>
+<li>; - for after line</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8386e81" class="outline-2">
+<h2 id="org8386e81"><span class="section-number-2">15.</span> symbols and strings</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>(symbol-name 'some-symbol) -&gt; "some-symbol"</li>
+<li>(make-symbol "foo") -&gt; 'foo</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0bceadd" class="outline-2">
+<h2 id="org0bceadd"><span class="section-number-2">16.</span> variables</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+<div id="outline-container-org312365a" class="outline-3">
+<h3 id="org312365a"><span class="section-number-3">16.1.</span> terms</h3>
+<div class="outline-text-3" id="text-16-1">
+<p>
+a <b>symbol</b> with a value or a function definition attached to it. variable is a symbol that has a value, not
+ function. use of a symbol as a variable is independent of its use as a function name.
+</p>
+
+<p>
+<b>scoping rule</b> - default <b>dynamic scoping</b> - current binding as the innermost local binding, or the global
+ binding if there is no local binding.
+</p>
+<ul class="org-ul">
+<li><b>lexical scoping</b> - .all Emacs Lisp source files and the <b>scratch</b> buffer use lexical scoping. ( can be
+enabled on a per-buffer basis. buffer-local variable ‘lexical-binding’ to a non-nil value. or ;; -<b>-
+lexical-binding: t -</b>- in library)</li>
+</ul>
+
+<p>
+local
+</p>
+<ul class="org-ul">
+<li>function arguments</li>
+<li><b>local bindings</b></li>
+</ul>
+
+<p>
+<b>Generalized Variables</b> - special places that accept assignment with <b>setf</b>. (setf (car a) b)
+</p>
+</div>
+</div>
+<div id="outline-container-org7652e26" class="outline-3">
+<h3 id="org7652e26"><span class="section-number-3">16.2.</span> usage</h3>
+<div class="outline-text-3" id="text-16-2">
+</div>
+<div id="outline-container-orgb2d5317" class="outline-4">
+<h4 id="orgb2d5317"><span class="section-number-4">16.2.1.</span> global or global binding:</h4>
+<div class="outline-text-4" id="text-16-2-1">
+<ul class="org-ul">
+<li>(setq x '(a b)) - evaluate only second, set global,  replaces the variable</li>
+<li>(setq-default [VAR VALUE]&#x2026;) - If a variable is buffer-local, then setq sets its local value in the current
+buffer. setq-default sets the global default value.</li>
+<li>(setf PLACE VAL PLACE VAL &#x2026;) - macro</li>
+<li>(set 'x '(a b)) - both evaluated first ( same effect as setq). Function.</li>
+<li><b>defvar</b> symbol [value [doc-string]] - global, announces your intention
+<ul class="org-ul">
+<li>(defvar bar 23 "The normal weight of a bar.")</li>
+<li>for
+<ul class="org-ul">
+<li>it informs people that is <span class="underline">intended</span> to be used as a variable</li>
+<li>it informs the Lisp system of this, optionally supplying an initial value and a documentation string.</li>
+<li>it provides information to programming tools such as ‘etags’, allowing them to find where the variable was defined.</li>
+</ul></li>
+</ul></li>
+<li><b>defconst</b> symbol value [doc-string] - variant for constants, constant is not enforced, may be changed!
+<ul class="org-ul">
+<li>(defconst zsh-shell "/usr/bin/zsh")</li>
+</ul></li>
+<li><b>setq-default</b> - for buffer, macro: set-default</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">a</span> 3)
+(print a)
+(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">a</span> 4) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">second ignored</span>
+(print a)
+</pre>
+</div>
+
+<pre class="example">
+
+3
+
+3
+</pre>
+</div>
+</div>
+<div id="outline-container-org74b04a8" class="outline-4">
+<h4 id="org74b04a8"><span class="section-number-4">16.2.2.</span> reference</h4>
+<div class="outline-text-4" id="text-16-2-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> a 3)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> v 'a)
+(set v 2) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">v is evaluated first</span>
+(print a)
+</pre>
+</div>
+
+<pre class="example">
+
+2
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9df4d9a" class="outline-4">
+<h4 id="org9df4d9a"><span class="section-number-4">16.2.3.</span> local:</h4>
+<div class="outline-text-4" id="text-16-2-3">
+<ul class="org-ul">
+<li><b>setq-local</b> - macro: ? + make-local-variable</li>
+<li><b>let</b> (bindings…) forms… -  The local bindings set up by let will be in effect only within the body of forms. <a id="org8287aaf"></a>
+<ul class="org-ul">
+<li>bindigs - set of symbols, the order of <span class="underline">bindings</span> is unspecified.</li>
+<li>value-forms - are evaluated in the order they appear and before binding any of the symbols to them.</li>
+<li>return: value is the value of the last form in forms.</li>
+<li>ex. (let ((x 2)(y 'b)(z 'c)) (print x))</li>
+</ul></li>
+<li>let* - like let, but it binds each variable right after computing its local value, with order.</li>
+<li>(boundp 'sym) - Test if variable is defined</li>
+<li><b>symbolp</b> Test if variable sym is a symbol</li>
+<li><b>symbol-value</b> - returns the value stored in SYMBOL’s value cell.
+<ul class="org-ul">
+<li>(symbol-value 'abracadabra)</li>
+</ul></li>
+<li><b>defvar-local</b> - buffer-local variable, macro: defvar + make-variable-buffer-local</li>
+<li><b>buffer-local-value</b> - get buffer-local variable from another buffer</li>
+<li>setq-default</li>
+<li>(setq-default left-margin-width 10 right-margin-width 8)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defvar</span> <span style="color: #cae682;">ssss</span> (+ 1 1))
+(print ssss)
+</pre>
+</div>
+
+<pre class="example">
+
+2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf46335c" class="outline-3">
+<h3 id="orgf46335c"><span class="section-number-3">16.3.</span> Dynamic Scoping (Local Variables) and lexical scoping</h3>
+<div class="outline-text-3" id="text-16-3">
+<ul class="org-ul">
+<li>(makunbound 'x)        ; Void the local binding.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(print (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((x 1) (y 10)) (+ (* 4 x) (* 5 y)) ))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print x) ;; Symbol's value as variable is void: x</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print y)</span>
+</pre>
+</div>
+
+<p>
+Problem of dynamic scoping, that lexical scoping is fixing:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">getx</span> ()
+  x)            <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">x is used free in this function.</span>
+
+(<span style="color: #8ac6f2; font-weight: bold;">let</span> ((x 1))    <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">x is lexically bound.</span>
+  (getx)) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">error&#8594; Symbol's value as variable is void: x</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f81099" class="outline-3">
+<h3 id="org9f81099"><span class="section-number-3">16.4.</span> Generalized Variables</h3>
+<div class="outline-text-3" id="text-16-4">
+<p>
+setf [place form] &#x2026;
+</p>
+
+<dl class="org-dl">
+<dt>aref</dt><dd>Return the element of ARRAY at index IDX. ARRAY: vector, a string, a char-table, a bool-vector, a record,</dd>
+</dl>
+<p>
+or a byte-code object.
+</p>
+<dl class="org-dl">
+<dt>car</dt><dd>first element of list</dd>
+<dt>caar</dt><dd>(car (car</dd>
+<dt>cadr</dt><dd>(car (cdr</dd>
+<dt>cdr</dt><dd>second and left of list</dd>
+<dt>cdar</dt><dd>(cdr (car</dd>
+<dt>cddr</dt><dd>(cdr (cdr</dd>
+<dt>elt</dt><dd>Return element of SEQUENCE at index N.</dd>
+<dt>get</dt><dd>Return the value of SYMBOL’s PROPNAME property.</dd>
+<dt>gethash</dt><dd>Look up KEY in TABLE and return its associated value.</dd>
+<dt>nth</dt><dd>Return the Nth element of LIST.</dd>
+<dt>nthcdr</dt><dd>Take cdr N times on LIST, return the result.</dd>
+<dt>symbol-function</dt><dd>Return SYMBOL’s function definition, or nil if that is void.</dd>
+<dt>symbol-plist</dt><dd>.</dd>
+<dt>symbol-value</dt><dd>.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org6a344d4" class="outline-3">
+<h3 id="org6a344d4"><span class="section-number-3">16.5.</span> ex</h3>
+<div class="outline-text-3" id="text-16-5">
+<p>
+z is bound to the old value of y, which is 2, not the new value of y, which is 1.
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> y 2)
+(<span style="color: #8ac6f2; font-weight: bold;">let</span> ((y 1) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">define y</span>
+      (z y)) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">define z</span>
+  (list y z)) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">evaluate</span>
+(list y z) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">error z is not defined</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">let</span> (aaa) (<span style="color: #8ac6f2; font-weight: bold;">setq</span> aaa 2) (list aaa))
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org460c5ef" class="outline-2">
+<h2 id="org460c5ef"><span class="section-number-2">17.</span> Control structures: sequencing, conditions, Iteration</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Control-Structures.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Control-Structures.html</a>
+</p>
+</div>
+<div id="outline-container-orgfb76f1f" class="outline-3">
+<h3 id="orgfb76f1f"><span class="section-number-3">17.1.</span> conditions</h3>
+<div class="outline-text-3" id="text-17-1">
+<ul class="org-ul">
+<li>cond (cond   (test1    action1)   (test2    action2) (condition body-forms…) &#x2026; )
+<ul class="org-ul">
+<li>(condition body-forms…)</li>
+</ul></li>
+<li>when (when (test-clause) (action1) (action2) &#x2026; ) - alternative to if without else and requirement for (progn</li>
+<li>if (if (test-clause) (then-action1) (else-action2))</li>
+<li>case (case  (keyform) ((key1)   (action1   action2 &#x2026;) ((key2)   (action1   action2 &#x2026;) ) &#x2026; )</li>
+<li>(not),</li>
+<li>(and), If no arg yields nil, return the last arg’s value.</li>
+<li>(or), (xor)</li>
+<li>(unless cond - (when nil</li>
+</ul>
+</div>
+
+<div id="outline-container-org2b9221b" class="outline-4">
+<h4 id="org2b9221b"><span class="section-number-4">17.1.1.</span> test-clause</h4>
+<div class="outline-text-4" id="text-17-1-1">
+<ul class="org-ul">
+<li>(null nil/t)</li>
+<li>Comparison Operations
+<ul class="org-ul">
+<li>= 	Checks if the values of the operands are all equal or not, if yes then condition becomes true. 	(= A B) is not true.</li>
+<li>/= 	Checks if the values of the operands are all different or not, if values are not equal then condition becomes true. 	(/= A B) is true.</li>
+<li>&gt; 	Checks if the values of the operands are monotonically decreasing. 	(&gt; A B) is not true.</li>
+<li>&lt; 	Checks if the values of the operands are monotonically increasing. 	(&lt; A B) is true.</li>
+<li>&gt;= 	Checks if the value of any left operand is greater than or equal to the value of next right operand, if yes then condition becomes true. 	(&gt;= A B) is not true.</li>
+<li>&lt;= 	Checks if the value of any left operand is less than or equal to the value of its right operand, if yes then condition becomes true. 	(&lt;= A B) is true.</li>
+<li>max 	It compares two or more arguments and returns the maximum value. 	(max A B) returns 20</li>
+<li>min 	It compares two or more arguments and returns the minimum value. 	(min A B) returns 10</li>
+</ul></li>
+<li>Logical Operations
+<ul class="org-ul">
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ul></li>
+<li>any: (not (cl-every 'null))</li>
+<li>all:</li>
+<li>(cl-every 'booleanp) ; nil or t</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">a</th>
+<th scope="col" class="org-left">b</th>
+<th scope="col" class="org-left">eq</th>
+<th scope="col" class="org-left">eql</th>
+<th scope="col" class="org-left">\=</th>
+<th scope="col" class="org-left">string=</th>
+<th scope="col" class="org-left">equal</th>
+<th scope="col" class="org-left">equalp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">5</td>
+<td class="org-left">5</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+<td class="org-left">error</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">5</td>
+<td class="org-left">5.0</td>
+<td class="org-left">nil</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+<td class="org-left">error</td>
+<td class="org-left">nil</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">“a”</td>
+<td class="org-left">“a”</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+<td class="org-left">error</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">“a”</td>
+<td class="org-left">‘a</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+<td class="org-left">error</td>
+<td class="org-left">t</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+</tr>
+
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">a</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+<td class="org-left">error</td>
+<td class="org-left">error</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">“a”</td>
+<td class="org-left">“A”</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+<td class="org-left">error</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">(1 2)</td>
+<td class="org-left">(1 2)</td>
+<td class="org-left">nil</td>
+<td class="org-left">nil</td>
+<td class="org-left">error</td>
+<td class="org-left">error</td>
+<td class="org-left">t</td>
+<td class="org-left">t</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5b9165b" class="outline-4">
+<h4 id="org5b9165b"><span class="section-number-4">17.1.2.</span> if else</h4>
+<div class="outline-text-4" id="text-17-1-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">if</span> (&gt; 3 5)
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">if case</span>
+    (print <span style="color: #95e454;">"&lt; 3 5"</span>)
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">else case</span>
+    (print <span style="color: #95e454;">"&gt;= 3 5"</span>)
+    (print <span style="color: #95e454;">"else again"</span>)
+    )
+
+<span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">else if:</span>
+(<span style="color: #8ac6f2; font-weight: bold;">if</span>  (&gt; 3 5) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">test-expression1</span>
+    (print <span style="color: #95e454;">"&gt; 3 5"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">then-expression1</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">if</span> (= 3 5) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">test-expression2</span>
+        (print <span style="color: #95e454;">"== 3 5"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">then-expression2</span>
+        (print <span style="color: #95e454;">"/= 3 5"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">else-expression2</span>
+      )
+    )
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">; else if 2:</span>
+(<span style="color: #8ac6f2; font-weight: bold;">cond</span> ( (= 1 0) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">test-expression1 ; if true - Any remaining clauses are ignored.</span>
+       (print <span style="color: #95e454;">"=x 1 0"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">then-expression1</span>
+       )
+      ((&gt;  3 3) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">test-expression2</span>
+       <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">then-expression2</span>
+       (print <span style="color: #95e454;">"&gt; 3 3"</span>)
+       )
+      (t (print <span style="color: #95e454;">"default"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">else-expression2 or default expression</span>
+       )
+      )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1df4cc8" class="outline-4">
+<h4 id="org1df4cc8"><span class="section-number-4">17.1.3.</span> comparison</h4>
+<div class="outline-text-4" id="text-17-1-3">
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Compare Numbers</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> a 2)
+(print (= 2 (+ a 1)))
+(print (= 2 (+ 1 1)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Compare Symbols and Numbers</span>
+(print (eq a 2))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Compare Elements of a List</span>
+(print (equal (list 1 2 3 4) (list 1 2 3 4)))
+
+(print <span style="color: #95e454;">"Compare Strings"</span>)
+(print (string= <span style="color: #95e454;">"hello"</span> <span style="color: #95e454;">"hello"</span>))
+
+</pre>
+</div>
+
+<pre class="example" id="orgeefbfce">
+
+nil
+
+t
+
+t
+
+t
+
+"Compare Strings"
+
+t
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org928ea22" class="outline-4">
+<h4 id="org928ea22"><span class="section-number-4">17.1.4.</span> nil and empty</h4>
+<div class="outline-text-4" id="text-17-1-4">
+<p>
+nil is equivalent to the boolean value false, there is no need to compare to it explicitly.
+</p>
+
+<p>
+empty list is equivalent to nil
+</p>
+
+<p>
+invert true to false: (null) or (not)
+</p>
+<ul class="org-ul">
+<li>(null '()) =&gt;  T</li>
+<li>(null nil) =&gt;  T</li>
+<li>(null t) =&gt;  NIL</li>
+<li>(null 1) =&gt;  NIL</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">if</span> nil
+    (print 'true)
+  'very-false)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org194164f" class="outline-4">
+<h4 id="org194164f"><span class="section-number-4">17.1.5.</span> cond</h4>
+<div class="outline-text-4" id="text-17-1-5">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">cond</span>
+     (win (select-window win))
+     (alive-p (switch-to-buffer last-buffer))
+     (t (dired (cdr item))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org32f09c8" class="outline-3">
+<h3 id="org32f09c8"><span class="section-number-3">17.2.</span> case</h3>
+<div class="outline-text-3" id="text-17-2">
+</div>
+<div id="outline-container-orgb7a6982" class="outline-4">
+<h4 id="orgb7a6982"><span class="section-number-4">17.2.1.</span> cond</h4>
+<div class="outline-text-4" id="text-17-2-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> x <span style="color: #95e454;">"s"</span>)
+(<span style="color: #8ac6f2; font-weight: bold;">cond</span> ((numberp x) (print x))
+      ((stringp x) (print <span style="color: #95e454;">"wtf"</span>))
+)
+</pre>
+</div>
+
+<pre class="example">
+
+"wtf"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5de7406" class="outline-4">
+<h4 id="org5de7406"><span class="section-number-4">17.2.2.</span> cl-case <a id="orgfcde96c"></a></h4>
+<div class="outline-text-4" id="text-17-2-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">test-cl-case</span> (operation x y)
+  (<span style="color: #8ac6f2; font-weight: bold;">cl-case</span> operation
+    (<span style="color: #e5786d;">:mul</span> (* x y))
+    (<span style="color: #e5786d;">:add</span> (+ x y))
+    (<span style="color: #e5786d;">:sub</span> (- x y))
+    (<span style="color: #e5786d;">:div</span> (/ x y))
+    (otherwise nil)))
+
+(print (test-cl-case <span style="color: #e5786d;">:mul</span> 2 10))
+(print (test-cl-case <span style="color: #e5786d;">:sub</span> 10 2))
+(print (test-cl-case <span style="color: #e5786d;">:add</span> 10 2))
+(print (test-cl-case <span style="color: #e5786d;">:div</span> 10 2))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5949a4d" class="outline-4">
+<h4 id="org5949a4d"><span class="section-number-4">17.2.3.</span> pcase</h4>
+<div class="outline-text-4" id="text-17-2-3">
+<div class="org-src-container">
+<pre class="src src-elisp">
+(<span style="color: #8ac6f2; font-weight: bold;">pcase</span> <span style="color: #95e454;">"string here"</span>
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">string</span>
+  ((<span style="color: #8ac6f2; font-weight: bold;">and</span> (pred stringp) msg)
+   (message <span style="color: #95e454;">"%s"</span> msg))
+
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">symbol</span>
+  ('success       (message <span style="color: #95e454;">"Done!"</span>))
+  ('would-block   (message <span style="color: #95e454;">"Sorry, can't do it now"</span>))
+  ('read-only     (message <span style="color: #95e454;">"The shmliblick is read-only"</span>))
+  ('access-denied (message <span style="color: #95e454;">"You do not have the needed rights"</span>))
+
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">default</span>
+  (code           (message <span style="color: #95e454;">"Unknown return code %S"</span> code)))
+
+</pre>
+</div>
+
+<pre class="example">
+string here
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79f49d2" class="outline-3">
+<h3 id="org79f49d2"><span class="section-number-3">17.3.</span> loops</h3>
+<div class="outline-text-3" id="text-17-3">
+</div>
+<div id="outline-container-org185b251" class="outline-4">
+<h4 id="org185b251"><span class="section-number-4">17.3.1.</span> while</h4>
+<div class="outline-text-4" id="text-17-3-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> num 0)
+(<span style="color: #8ac6f2; font-weight: bold;">while</span> (&lt; num 4)
+  (print (format <span style="color: #95e454;">"Iteration %d."</span> num))
+  (<span style="color: #8ac6f2; font-weight: bold;">setq</span> num (1+ num))
+  )
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc352072" class="outline-4">
+<h4 id="orgc352072"><span class="section-number-4">17.3.2.</span> cl-loop</h4>
+<div class="outline-text-4" id="text-17-3-2">
+<ul class="org-ul">
+<li>require 'cl-lib</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">cl-loop</span> for n from 2 below 9 by 1
+      do (print n))
+</pre>
+</div>
+
+<pre class="example" id="org1343922">
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+</pre>
+
+<p>
+Cycle with enumeration:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">cl-loop</span> for pair in clist
+           for i from 1
+           when (string-equal (cdr pair) value)
+           do (<span style="color: #8ac6f2; font-weight: bold;">cl-return</span> (nth i clist))
+           finally return nil))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7845be8" class="outline-4">
+<h4 id="org7845be8"><span class="section-number-4">17.3.3.</span> dolist</h4>
+<div class="outline-text-4" id="text-17-3-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">dolist</span> (h (number-sequence 4 6))
+        (print h)
+)
+
+</pre>
+</div>
+
+<pre class="example">
+
+4
+
+5
+
+6
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">dolist</span> (h '(a b c))
+  (print h))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(dolist (h string("abc"))</span>
+<span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">(print h))</span>
+(print (string-to-char <span style="color: #95e454;">"asd"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org48e4f2b" class="outline-4">
+<h4 id="org48e4f2b"><span class="section-number-4">17.3.4.</span> dotimes</h4>
+<div class="outline-text-4" id="text-17-3-4">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">dotimes</span> (i 3) (print i))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(do (variable-definition*)
+    (end-test-form result-form*)
+  statement*)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf2a056" class="outline-4">
+<h4 id="orgaf2a056"><span class="section-number-4">17.3.5.</span> usecase add-hook group of hooks</h4>
+<div class="outline-text-4" id="text-17-3-5">
+<div class="org-src-container">
+<pre class="src src-elisp">
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge04f2ab" class="outline-4">
+<h4 id="orge04f2ab"><span class="section-number-4">17.3.6.</span> links</h4>
+<div class="outline-text-4" id="text-17-3-6">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/Loops-_0026-Recursion.html">https://www.gnu.org/software/emacs/manual/html_node/eintr/Loops-_0026-Recursion.html</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf73fa83" class="outline-2">
+<h2 id="orgf73fa83"><span class="section-number-2">18.</span> Functions</h2>
+<div class="outline-text-2" id="text-18">
+</div>
+<div id="outline-container-orgcdb8ed5" class="outline-3">
+<h3 id="orgcdb8ed5"><span class="section-number-3">18.1.</span> progn</h3>
+<div class="outline-text-3" id="text-18-1">
+<ul class="org-ul">
+<li>(progn BODY&#x2026;) - Eval BODY forms sequentially and return value of last one.</li>
+<li>prog1 for instance evaluates all expressions and returns the value of the first</li>
+<li>prog2 evaluates all expressions and returns the value of the second</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6795b2f" class="outline-3">
+<h3 id="org6795b2f"><span class="section-number-3">18.2.</span> defun</h3>
+<div class="outline-text-3" id="text-18-2">
+<ul class="org-ul">
+<li>defines the symbol name as a function with argument list args</li>
+<li>Neither name nor args should be quoted.</li>
+<li>The return value of defun is undefined.</li>
+<li>Careful! defun redefines even primitive functions such as car without any hesitation or notification.</li>
+<li>fmakunbound - undefine</li>
+</ul>
+
+<p>
+(defun function-name (a &amp;optional b &amp;rest c)
+  "optional-documentation&#x2026;"
+  (interactive argument-passing-info)
+  (indent indent-spec) ; declare Form
+  body&#x2026;)
+</p>
+</div>
+</div>
+<div id="outline-container-orgfa09d0e" class="outline-3">
+<h3 id="orgfa09d0e"><span class="section-number-3">18.3.</span> arguments</h3>
+<div class="outline-text-3" id="text-18-3">
+<p>
+arguments can have clauses or markers: (required-vars…  [&amp;optional [optional-vars…]]  [&amp;rest rest-var])
+</p>
+<ul class="org-ul">
+<li>&amp;optional</li>
+<li>&amp;rest - list of arguemnts</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">a</span> (<span style="color: #92a65e; font-weight: bold;">&amp;optional</span> v)
+       (print v)
+)
+(a)
+</pre>
+</div>
+
+<pre class="example">
+
+nil
+</pre>
+
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org5198dd6" class="outline-3">
+<h3 id="org5198dd6"><span class="section-number-3">18.4.</span> (&amp;rest args) unrolling</h3>
+<div class="outline-text-3" id="text-18-4">
+<pre class="example">
+(seq-let (managed-major-mode project class contact language-id) (car args) ... )
+</pre>
+</div>
+</div>
+<div id="outline-container-orgeba5617" class="outline-3">
+<h3 id="orgeba5617"><span class="section-number-3">18.5.</span> Function Calling</h3>
+<div class="outline-text-3" id="text-18-5">
+<ul class="org-ul">
+<li>funcall (function &amp;rest arguments)</li>
+<li>apply (function &amp;rest arguments) - last arg as list of args</li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Argument-List.html</a></li>
+<li>funcall-interactively</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(print (funcall 'list '(1 2 3)))
+(print (apply 'list '(1 2 3)))
+</pre>
+</div>
+
+<pre class="example">
+
+((1 2 3))
+
+(1 2 3)
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">a</span> (<span style="color: #92a65e; font-weight: bold;">&amp;optional</span> v foo  c d <span style="color: #92a65e; font-weight: bold;">&amp;rest</span> e)
+       (<span style="color: #8ac6f2; font-weight: bold;">interactive</span>)
+       (print (list v foo c d e)))
+(a 1 2 3 4 5)
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">b</span> (<span style="color: #92a65e; font-weight: bold;">&amp;rest</span> e)
+       <span style="color: #f08080; font-style: italic;">"function proxy"</span>
+       (<span style="color: #8ac6f2; font-weight: bold;">interactive</span>)
+       (<span style="color: #8ac6f2; font-weight: bold;">if</span> (interactive-p)
+           <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(funcall-interactively 'a e)</span>
+           <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(call-interactively 'a)</span>
+           (apply 'funcall-interactively 'a e)
+         <span style="color: #fa8072;">;;</span><span style="color: #99968b; font-style: italic;">else</span>
+         (apply 'a e))
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print e)</span>
+)
+(print (vector (list 1 2 3 4) (list 1 2 3 4)))
+(call-interactively 'a)
+(call-interactively 'b)
+(b 1 2 3 4 5)
+(print <span style="color: #95e454;">"----"</span>)
+(funcall-interactively 'a 1 2 3 4 5)
+(funcall-interactively 'b 1 2 3 4 5)
+</pre>
+</div>
+
+<pre class="example" id="orge8a2c5b">
+
+(1 2 3 4 (5))
+
+[(1 2 3 4) (1 2 3 4)]
+
+(nil nil nil nil nil)
+
+(nil nil nil nil nil)
+
+(1 2 3 4 (5))
+
+"----"
+
+(1 2 3 4 (5))
+
+(1 2 3 4 (5))
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">averagenum</span> (n1 n2 n3 n4)
+  (/ ( + n1 n2 n3 n4) 4)
+  )
+(averagenum 2 3 4 10 )
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">4</span>
+
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> f 'list)
+<span style="color: #fa8072;">;;     </span><span style="color: #99968b; font-style: italic;">&#8658; list</span>
+
+(funcall f 'x 'y 'z)
+  <span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">&#8658; (x y z)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">bar</span> (n) (+ n 2))
+(symbol-function 'bar)
+<span style="color: #fa8072;">;;     </span><span style="color: #99968b; font-style: italic;">&#8658; (lambda (n) (+ n 2))</span>
+
+(fset 'baz 'bar)
+  <span style="color: #fa8072;">;;   </span><span style="color: #99968b; font-style: italic;">&#8658; bar</span>
+
+(symbol-function 'baz)
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">&#8658; bar</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfe83410" class="outline-3">
+<h3 id="orgfe83410"><span class="section-number-3">18.6.</span> Named parameters:</h3>
+<div class="outline-text-3" id="text-18-6">
+<p>
+To be able to supply arguments by name, we need to
+</p>
+<ul class="org-ul">
+<li>declare them with <b>&amp;key &lt;name&gt;</b></li>
+<li>we set them with <b>:name &lt;value&gt;</b></li>
+</ul>
+
+<p>
+Default values to key parameters:
+</p>
+<ul class="org-ul">
+<li><b>&amp;key (&lt;name&gt; &lt;value&gt;)</b></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">hello</span> (name <span style="color: #92a65e; font-weight: bold;">&amp;key</span> happy)())
+(hello <span style="color: #95e454;">"me"</span> <span style="color: #e5786d;">:happy</span> t)
+
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">hello</span> (<span style="color: #92a65e; font-weight: bold;">&amp;optional</span> name <span style="color: #92a65e; font-weight: bold;">&amp;key</span> happy)())
+(hello <span style="color: #95e454;">"me"</span> <span style="color: #e5786d;">:happy</span> t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge3eb40b" class="outline-3">
+<h3 id="orge3eb40b"><span class="section-number-3">18.7.</span> lambda</h3>
+<div class="outline-text-3" id="text-18-7">
+<ul class="org-ul">
+<li>A lambda expression, by itself, has no name; it is an anonymous function.</li>
+<li>result is a closure object</li>
+<li>they are more commonly associated with symbols to make named functions</li>
+<li>A lambda form cannot be evaluated and it must appear only where LISP expects to find a function.</li>
+</ul>
+
+
+<p>
+Macro: lambda args [doc] [interactive] body…
+</p>
+
+<p>
+(lambda (x) (* x x))
+     ⇒ (lambda (x) (* x x))
+</p>
+</div>
+<div id="outline-container-orgde3a171" class="outline-4">
+<h4 id="orgde3a171"><span class="section-number-4">18.7.1.</span> Inline Functions</h4>
+<div class="outline-text-4" id="text-18-7-1">
+<ul class="org-ul">
+<li>just like an ordinary function, except for one thing: when you byte-compile a call to the function the</li>
+</ul>
+<p>
+function’s definition is expanded into the caller.
+</p>
+<ul class="org-ul">
+<li>calls run faster</li>
+<li>it reduces flexibility; if you change the definition of the function, calls already inlined still use the
+old definition until you recompile them.</li>
+</ul>
+
+<p>
+defsubst name args [doc] [declare] [interactive] body…
+</p>
+</div>
+</div>
+<div id="outline-container-org307063b" class="outline-4">
+<h4 id="org307063b"><span class="section-number-4">18.7.2.</span> Special Form: function function-object</h4>
+<div class="outline-text-4" id="text-18-7-2">
+<ul class="org-ul">
+<li>returns function-object without evaluating it</li>
+<li>it is similar to quote</li>
+<li>function-object is a valid lambda expression, this has two effects
+<ul class="org-ul">
+<li>When the code is byte-compiled, function-object is compiled into a byte-code function object</li>
+<li>When lexical binding is enabled, function-object is converted into a closure</li>
+</ul></li>
+</ul>
+
+<p>
+All equal:
+(lambda (x) (* x x))
+(function (lambda (x) (* x x)))
+#'(lambda (x) (* x x))
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d75387" class="outline-3">
+<h3 id="org7d75387"><span class="section-number-3">18.8.</span> closure</h3>
+<div class="outline-text-3" id="text-18-8">
+<p>
+A closure is a function that also carries a record of the lexical environment that existed when the function
+ was defined. When it is invoked, any lexical variable references within its definition use the retained
+ lexical environment.
+</p>
+
+<p>
+Lambda macro or the function special form or the #' syntax (see Anonymous Functions), is automatically
+ converted into a closure When lexical binding is enabled.
+</p>
+</div>
+</div>
+<div id="outline-container-orgba5f398" class="outline-3">
+<h3 id="orgba5f398"><span class="section-number-3">18.9.</span> Interactive Functions</h3>
+<div class="outline-text-3" id="text-18-9">
+<ul class="org-ul">
+<li>A Lisp function becomes a command when its body contains, at top level, a form that calls the
+special form `(interactive&#x2026;)’.</li>
+<li>This special form does nothing when executed, but its presence in the function definition
+indicates that interactive calling is permitted.</li>
+<li>Its argument controls the reading of the function arguments in an interactive call.</li>
+<li>In interactive function all arguments should be after &amp;optional or &amp;rest to be called with (call-interactively</li>
+</ul>
+
+<p>
+(interactive &amp;optional arg-descriptor &amp;rest modes)
+</p>
+<ul class="org-ul">
+<li>arg-descriptor: a string,  sequence of elements separated by newlines
+<ul class="org-ul">
+<li>P - raw prefix</li>
+<li>p - numeric prefix</li>
+</ul></li>
+</ul>
+
+<p>
+(call-interactive mode) - will switch off mode if mode is on.
+</p>
+</div>
+<div id="outline-container-org2d83f74" class="outline-4">
+<h4 id="org2d83f74"><span class="section-number-4">18.9.1.</span> links</h4>
+<div class="outline-text-4" id="text-18-9-1">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Interactive-Codes.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Interactive-Codes.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Command-Arguments.html</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org469425f" class="outline-4">
+<h4 id="org469425f"><span class="section-number-4">18.9.2.</span> ex</h4>
+<div class="outline-text-4" id="text-18-9-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">hello</span> ()
+       <span style="color: #f08080; font-style: italic;">"Hello World and you can call it via M-x hello."</span>
+       (<span style="color: #8ac6f2; font-weight: bold;">interactive</span>)
+       (print <span style="color: #95e454;">"Hello World!"</span>))
+(call-interactively 'hello)
+</pre>
+</div>
+
+<pre class="example">
+
+"Hello World!"
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">hello</span> (<span style="color: #92a65e; font-weight: bold;">&amp;optional</span> arg arg2)
+       (<span style="color: #8ac6f2; font-weight: bold;">interactive</span> <span style="color: #95e454;">"P\np"</span>)
+       <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print "%s" arg)</span>
+       (<span style="color: #8ac6f2; font-weight: bold;">if</span>  (eq arg2 4)
+           (print <span style="color: #95e454;">"asd"</span>))
+       (print (list arg arg2 arg3))
+)
+(funcall-interactively 'hello '(1) 2 3)
+(apply 'funcall-interactively 'hello '(nil 2))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">use: C-u M-x hello</span>
+</pre>
+</div>
+
+<pre class="example">
+
+((1) 2 (3))
+
+(nil 2 nil)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf2af155" class="outline-3">
+<h3 id="orgf2af155"><span class="section-number-3">18.10.</span> arguments</h3>
+<div class="outline-text-3" id="text-18-10">
+<ul class="org-ul">
+<li>(lambda (a b c) (+ a b c)) - 3 arguments</li>
+<li>keyword &amp;optional before the optional arguments</li>
+<li>To specify a list of zero or more extra arguments, include the keyword &amp;rest before one final argument.</li>
+<li>(a b &amp;optional c d &amp;rest e) - here c and d optional and e is a list</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgefa6636" class="outline-3">
+<h3 id="orgefa6636"><span class="section-number-3">18.11.</span> Functions with Property List argument</h3>
+<div class="outline-text-3" id="text-18-11">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">make-shell-interface</span> (<span style="color: #92a65e; font-weight: bold;">&amp;rest</span> params)
+  <span style="color: #f08080; font-style: italic;">"</span>
+<span style="color: #f08080; font-style: italic;">  Create a shell interface.</span>
+
+<span style="color: #f08080; font-style: italic;">  Possible parameters:</span>
+
+<span style="color: #f08080; font-style: italic;">    :name      Name of shell</span>
+<span style="color: #f08080; font-style: italic;">    :type      ['sh, 'bash, ...]</span>
+<span style="color: #f08080; font-style: italic;">    :path      Path to program</span>
+<span style="color: #f08080; font-style: italic;">    :buffer    Name of buffer</span>
+
+<span style="color: #f08080; font-style: italic;">  "</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">let</span>
+       ((name   (plist-get params <span style="color: #e5786d;">:name</span> ))
+        (type   (plist-get params <span style="color: #e5786d;">:type</span>))
+        (path   (plist-get params <span style="color: #e5786d;">:path</span>))
+        (buffer (plist-get params <span style="color: #e5786d;">:buffer</span>)))
+    (list
+     (cons 'name buffer)
+     (cons 'type type)
+     (cons 'path path)
+     (cons 'buffer buffer))))
+
+
+(print (make-shell-interface <span style="color: #e5786d;">:name</span> <span style="color: #95e454;">"pylaucher"</span> <span style="color: #e5786d;">:path</span> <span style="color: #95e454;">"/usr/bin/python"</span> <span style="color: #e5786d;">:type</span> 'sh <span style="color: #e5786d;">:buffer</span> <span style="color: #95e454;">"pyshell"</span>))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name . "pyshell")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type . sh)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path . "/usr/bin/python")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer . "pyshell"))</span>
+
+(print (make-shell-interface <span style="color: #e5786d;">:name</span> <span style="color: #95e454;">"pylaucher"</span> <span style="color: #e5786d;">:path</span> <span style="color: #95e454;">"/usr/bin/python"</span> <span style="color: #e5786d;">:type</span> 'sh))
+(print (make-shell-interface <span style="color: #e5786d;">:name</span> <span style="color: #95e454;">"pylaucher"</span> <span style="color: #e5786d;">:path</span> <span style="color: #95e454;">"/usr/bin/python"</span> <span style="color: #e5786d;">:type</span> 'bash))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type . bash)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path . "/usr/bin/python")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer))</span>
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">ELISP&gt; (make-shell-interface :name "pylaucher" :path "/usr/bin/python")</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path . "/usr/bin/python")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer))</span>
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">ELISP&gt; (make-shell-interface :name "pylaucher" )</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer))</span>
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">ELISP&gt; (make-shell-interface  )</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer))</span>
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">ELISP&gt; (make-shell-interface :buffer "pyshell"  :path "/usr/bin/python" :type 'sh :name "pylaucher")</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">((name . "pyshell")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(type . sh)</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(path . "/usr/bin/python")</span>
+<span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">(buffer . "pyshell"))</span>
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org66bf8b7" class="outline-3">
+<h3 id="org66bf8b7"><span class="section-number-3">18.12.</span> return</h3>
+<div class="outline-text-3" id="text-18-12">
+<p>
+(info "(elisp) Nonlocal Exits").
+</p>
+<ul class="org-ul">
+<li>Throw</li>
+<li>block (info "(cl) Blocks and Exits")</li>
+<li>cl-defun</li>
+<li>defun*</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">my-func</span> ()
+  <span style="color: #f08080; font-style: italic;">"Simplistic `</span><span style="color: #e5786d; font-weight: bold; font-style: italic;">catch</span><span style="color: #f08080; font-style: italic;">'/`</span><span style="color: #e5786d; font-weight: bold; font-style: italic;">throw</span><span style="color: #f08080; font-style: italic;">' example."</span>
+  (<span style="color: #8ac6f2; font-weight: bold;">catch</span> '<span style="color: #e5786d; font-weight: bold;">my-early-return</span>
+    (<span style="color: #8ac6f2; font-weight: bold;">when</span> t
+      (<span style="color: #8ac6f2; font-weight: bold;">throw</span> '<span style="color: #e5786d; font-weight: bold;">my-early-return</span> <span style="color: #95e454;">"this is the short-circuit result of catch"</span>))
+    <span style="color: #95e454;">"this is the fallback result of catch"</span>))
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1736a6a" class="outline-3">
+<h3 id="org1736a6a"><span class="section-number-3">18.13.</span> by reference or by value?</h3>
+<div class="outline-text-3" id="text-18-13">
+<p>
+Passed by assignment, new reference created at argument.
+</p>
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Mutability.html</a>
+</p>
+
+<p>
+Mutability defines ability of functions to have side effect to argument.
+</p>
+
+<p>
+If there is exist a function that may modify object then it may be considered as may be affected by side effect.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfb91377" class="outline-3">
+<h3 id="orgfb91377"><span class="section-number-3">18.14.</span> functions that do nothin</h3>
+<div class="outline-text-3" id="text-18-14">
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Calling-Functions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Calling-Functions.html</a>
+</p>
+
+<ul class="org-ul">
+<li>identity argument -&gt; argument</li>
+<li>ignore &amp;rest arguments -&gt; nil</li>
+<li>always &amp;rest arguments -&gt; t</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc1eda10" class="outline-2">
+<h2 id="orgc1eda10"><span class="section-number-2">19.</span> Structures</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li><b>Records</b> is to allow programmers to create objects with new types that are not built into Emacs.  They are
+used as the underlying representation of cl-defstruct and defclass instances.</li>
+<li>defclass</li>
+<li>cl-defstruct</li>
+<li><b>vectors</b> are there if you need random access and also occupy less space.  general-purpose array whose elements can be any Lisp objects
+<ul class="org-ul">
+<li>used as internal structure for: kbd, symbols, byte-compiled function</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc639c5a" class="outline-2">
+<h2 id="orgc639c5a"><span class="section-number-2">20.</span> printing</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>print - Print a newline at end.</li>
+<li>princ - does not add newline at end.  intended to produce output that is readable by people</li>
+<li>prin1 - does not add newline at end.</li>
+<li>format</li>
+<li>message - Print a Format String to the Messages Buffer.</li>
+<li>insert - Instert string to current buffer, at cursor position.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(princ '(<span style="color: #95e454;">"as"</span> <span style="color: #95e454;">"asd"</span>))
+(print '(<span style="color: #95e454;">"as"</span> <span style="color: #95e454;">"asd"</span>))
+(pp '(<span style="color: #95e454;">"as"</span> <span style="color: #95e454;">"asd"</span>))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> xbuff (generate-new-buffer <span style="color: #95e454;">"*my output*"</span>))
+
+(print <span style="color: #95e454;">"something"</span> xbuff)
+
+(switch-to-buffer xbuff )
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8436c8" class="outline-2">
+<h2 id="orgc8436c8"><span class="section-number-2">21.</span> Macros</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>expansion - Lisp expression which will in turn compute the value.</li>
+</ul>
+
+<p>
+macro cannot be called with <i>apply</i>, <i>mapcar</i> and so on
+</p>
+
+
+<p>
+(macroexpand - expands form, if it is a macro call. If the result is another macro call, it is expanded in
+ turn, until something which is not a macro call results
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">inc</span> (var)
+   (list 'setq var (list '1+ var)))
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> x 2)
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">z</span>(c)
+    (inc c))
+(inc x)
+(z 3)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">
+(<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">setq2</span> (v1 v2 e)
+  (list 'progn (list 'setq v1 e) (list 'setq v2 e)))
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> z 1)
+
+(setq2 x y (+ z 3))
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defmacro</span> <span style="color: #cae682; font-weight: bold;">setq2</span> (v1 v2 e)
+  (list 'progn (list 'setq v1 e) (list 'setq v2 e)))
+
+(print (macroexpand '(setq2 x y (+ x 2)) ) )
+</pre>
+</div>
+
+<pre class="example">
+
+(progn (setq x (+ x 2)) (setq y (+ x 2)))
+</pre>
+</div>
+
+<div id="outline-container-org446d8bc" class="outline-3">
+<h3 id="org446d8bc"><span class="section-number-3">21.1.</span> inline function</h3>
+<div class="outline-text-3" id="text-21-1">
+<p>
+function’s definition is expanded into the caller
+</p>
+<pre class="example">
+defsubst name args [doc] [declare] [interactive] body…
+</pre>
+
+
+<p>
+inline it as a compiler macro - more efficient.
+</p>
+<pre class="example">
+define-inline name args [doc] [declare] body… ¶
+</pre>
+
+<ul class="org-ul">
+<li>(inline-quote expression) -</li>
+<li>inline-letevals (bindings…) body…  - This provides a convenient way to ensure that the arguments to an inlined function are evaluated exactly once, as well as to create local variables.</li>
+<li>inline-const-p expression - Return non-nil if the value of expression is already known.</li>
+<li>inline-const-val expression - Return the value of expression.</li>
+<li>inline-error format &amp;rest args - Signal an error, formatting args according to format.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">define-inline</span> <span style="color: #cae682; font-weight: bold;">myaccessor</span> (obj)
+  (inline-letevals (obj)
+    (inline-quote (<span style="color: #8ac6f2; font-weight: bold;">if</span> (foo-p ,obj) (aref (cdr ,obj) 3) (aref ,obj 2)))))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">equal to:</span>
+(<span style="color: #8ac6f2; font-weight: bold;">defsubst</span> <span style="color: #cae682; font-weight: bold;">myaccessor</span> (obj)
+  (<span style="color: #8ac6f2; font-weight: bold;">if</span> (foo-p obj) (aref (cdr obj) 3) (aref obj 2)))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf1f8f03" class="outline-2">
+<h2 id="orgf1f8f03"><span class="section-number-2">22.</span> regex</h2>
+<div class="outline-text-2" id="text-22">
+</div>
+<div id="outline-container-org1edd8c9" class="outline-3">
+<h3 id="org1edd8c9"><span class="section-number-3">22.1.</span> characters:</h3>
+<div class="outline-text-3" id="text-22-1">
+<ul class="org-ul">
+<li>special</li>
+<li>ordinary</li>
+</ul>
+
+<p>
+normal escaping \[, for lisp: "\\[", also:"\n", "[ [:space:] ]"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga44c5af" class="outline-3">
+<h3 id="orga44c5af"><span class="section-number-3">22.2.</span> commands</h3>
+<div class="outline-text-3" id="text-22-2">
+</div>
+<div id="outline-container-orgb7bb6a1" class="outline-4">
+<h4 id="orgb7bb6a1"><span class="section-number-4">22.2.1.</span> rx</h4>
+<div class="outline-text-4" id="text-22-2-1">
+<ul class="org-ul">
+<li>(rx &#x2026;</li>
+<li>replace-regexp is for interactive use.</li>
+<li>In elisp you should use re-search-forward and replace-match to do things</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(print (<span style="color: #8ac6f2; font-weight: bold;">rx</span> bol
+  (zero-or-more blank)
+  (one-or-more digit)
+  <span style="color: #95e454;">":"</span>))
+</pre>
+</div>
+
+<pre class="example">
+
+"^[[:blank:]]*[[:digit:]]+:"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org1c86107" class="outline-4">
+<h4 id="org1c86107"><span class="section-number-4">22.2.2.</span> search</h4>
+<div class="outline-text-4" id="text-22-2-2">
+<ul class="org-ul">
+<li>search-forward</li>
+<li>re-search-forward</li>
+<li>string-match</li>
+<li>(looking-at "" ) - after point matches regular, does update the <b>match data</b></li>
+<li>(looking-back "\n\\** ?" 2) - before point matches regular</li>
+</ul>
+
+<p>
+Every successful <b>search</b> sets the <b>match data</b>. Match data normally describe the most recent search only.
+</p>
+<ul class="org-ul">
+<li>(match-string NUM &amp;optional STRING)
+<ul class="org-ul">
+<li>NUM=0 - entire match</li>
+<li>NUM&gt;0 - subexpression ‘\(…\)’ in match</li>
+</ul></li>
+<li>replace-match</li>
+<li>match-data</li>
+<li>set-match-data</li>
+<li>string-match-p - do not modify match-data</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(match-string NUM <span style="color: #92a65e; font-weight: bold;">&amp;optional</span> STRING)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org758576c" class="outline-4">
+<h4 id="org758576c"><span class="section-number-4">22.2.3.</span> <span class="todo TODO">TODO</span> matching</h4>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5e363a2" class="outline-3">
+<h3 id="org5e363a2"><span class="section-number-3">22.3.</span> special characters</h3>
+<div class="outline-text-3" id="text-22-3">
+<ul class="org-ul">
+<li>.        any character (but newline)</li>
+<li>*        previous character or group, repeated 0 or more time</li>
+<li>+        previous character or group, repeated 1 or more time</li>
+<li>?        previous character or group, repeated 0 or 1 time</li>
+<li>*?, +?, and ?? are non-greedy versions of *, +, and ?</li>
+<li>^        start of line</li>
+<li>$        end of line</li>
+<li>[&#x2026;]    any character between brackets</li>
+<li>[^..]    any character not in the brackets</li>
+<li>[a-z]    any character between a and z</li>
+<li>\        prevents interpretation of following special char</li>
+<li>\|       or</li>
+<li>\w       word constituent</li>
+<li>\b       word boundary</li>
+<li>\sc      character with c syntax (e.g. \s- for whitespace char)</li>
+<li>\( \)    start/end of group</li>
+<li>\&amp;lt; \&amp;gt;    start/end of word (faulty rendering: backslash + less-than and backslash + greater-than)</li>
+<li>\_&lt; \_&gt;  start/end of symbol</li>
+<li>\` \'    start/end of buffer/string</li>
+<li>\1       string matched by the first group</li>
+<li>\n       string matched by the nth group</li>
+<li>\{3\}    previous character or group, repeated 3 times</li>
+<li>\{3,\}   previous character or group, repeated 3 or more times</li>
+<li>\{3,6\}  previous character or group, repeated 3 to 6 times</li>
+<li>\=       match succeeds if it is located at point</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga48d379" class="outline-3">
+<h3 id="orga48d379"><span class="section-number-3">22.4.</span> groups</h3>
+<div class="outline-text-3" id="text-22-4">
+<p>
+C-u C-x = to display the category of the character under the cursor.
+</p>
+<ul class="org-ul">
+<li>\ca      ascii character</li>
+<li>\Ca      non-ascii character (newline included)</li>
+<li>\cl      latin character</li>
+<li>\cg      greek character</li>
+<li>[:digit:]  a digit, same as [0-9]</li>
+<li>[:alpha:]  a letter (an alphabetic character)</li>
+<li>[:alnum:]  a letter or a digit (an alphanumeric character)</li>
+<li>[:upper:]  a letter in uppercase</li>
+<li>[:lower:]  a letter in lowercase</li>
+<li>[:graph:]  a visible character</li>
+<li>[:print:]  a visible character plus the space character</li>
+<li>[:space:]  a whitespace character, as defined by the syntax table, but typically  [ \t\r\n\v\f ], which includes the newline character</li>
+<li>[:blank:]  a space or tab character</li>
+<li>[:xdigit:] an hexadecimal digit</li>
+<li>[:cntrl:]  a control character</li>
+<li>[:ascii:]  an ascii character</li>
+<li>[:nonascii:]  any non ascii character</li>
+<li>\s-   whitespace character</li>
+<li>\sw   word constituent</li>
+<li>\s_   symbol constituent</li>
+<li>\s.   punctuation character</li>
+<li>\s(   open delimiter character</li>
+<li>\s)   close delimiter character</li>
+<li>\s"   string quote character</li>
+<li>\s\   escape character</li>
+<li>\s/   character quote character</li>
+<li>\s$   paired delimiter</li>
+<li>\s'   expression prefix</li>
+<li>\s&lt;   comment starter</li>
+<li>\s&gt;   comment ender</li>
+<li>\s!   generic comment delimiter</li>
+<li>\s|   generic string delimiter</li>
+<li>\W, \B, and \Sc match any character that does not match \w, \b, and \sc.</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (string-match-p "^[:print:]+" "fsd"))</span>
+(print (string-match-p <span style="color: #95e454;">"^[[:print:]]$"</span> <span style="color: #95e454;">"f"</span>))
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(print (string-match-p "^a+" "fsd"))</span>
+</pre>
+</div>
+
+<pre class="example">
+
+0
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org7964f3e" class="outline-3">
+<h3 id="org7964f3e"><span class="section-number-3">22.5.</span> links</h3>
+<div class="outline-text-3" id="text-22-5">
+<ul class="org-ul">
+<li><a href="https://www.emacswiki.org/emacs/RegularExpression">https://www.emacswiki.org/emacs/RegularExpression</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Regexps.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org478ffc5" class="outline-2">
+<h2 id="org478ffc5"><span class="section-number-2">23.</span> paths</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+<b>default-directory</b> - buffer-local variable with directory of current buffer file.
+</p>
+</div>
+</div>
+<div id="outline-container-orga6cf5ba" class="outline-2">
+<h2 id="orga6cf5ba"><span class="section-number-2">24.</span> Emacs Code Conventions</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>M-x checkdoc.</li>
+</ul>
+</div>
+<div id="outline-container-org0ad48b5" class="outline-3">
+<h3 id="org0ad48b5"><span class="section-number-3">24.1.</span> variable name conventions</h3>
+<div class="outline-text-3" id="text-24-1">
+<p>
+‘&#x2026;-hook’
+     The variable is a normal hook (*note Hooks::).
+</p>
+
+<p>
+‘&#x2026;-function’
+     The value is a function.
+</p>
+
+<p>
+‘&#x2026;-functions’
+     The value is a list of functions.
+</p>
+
+<p>
+‘&#x2026;-form’
+     The value is a form (an expression).
+</p>
+
+<p>
+‘&#x2026;-forms’
+     The value is a list of forms (expressions).
+</p>
+
+<p>
+‘&#x2026;-predicate’
+     The value is a predicate—a function of one argument that returns
+     non-‘nil’ for success and ‘nil’ for failure.
+</p>
+
+<p>
+‘&#x2026;-flag’
+     The value is significant only as to whether it is ‘nil’ or not.
+     Since such variables often end up acquiring more values over time,
+     this convention is not strongly recommended.
+</p>
+
+<p>
+‘&#x2026;-program’
+     The value is a program name.
+</p>
+
+<p>
+‘&#x2026;-command’
+     The value is a whole shell command.
+</p>
+
+<p>
+‘&#x2026;-switches’
+     The value specifies options for a command.
+</p>
+
+<p>
+‘PREFIX&#x2013;&#x2026;’
+     The variable is intended for internal use and is defined in the
+     file ‘PREFIX.el’.  (Emacs code contributed before 2018 may follow
+     other conventions, which are being phased out.)
+</p>
+
+<p>
+‘&#x2026;-internal’
+     The variable is intended for internal use and is defined in C code.
+     (Emacs code contributed before 2018 may follow other conventions,
+     which are being phased out.)
+</p>
+</div>
+</div>
+<div id="outline-container-org0a4853d" class="outline-3">
+<h3 id="org0a4853d"><span class="section-number-3">24.2.</span> commands</h3>
+<div class="outline-text-3" id="text-24-2">
+<ul class="org-ul">
+<li>(;) - comment on the same line</li>
+<li>(;;) - comment on the new line</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa59ce6" class="outline-3">
+<h3 id="orgaa59ce6"><span class="section-number-3">24.3.</span> recommendation</h3>
+<div class="outline-text-3" id="text-24-3">
+<ul class="org-ul">
+<li>All the variables should be let-bound; otherwise, you're altering global values.</li>
+<li>Code is not indented and hard to read.  Normally, sexp indentation in Emacs is aggressive enough that it
+takes effort to make code look like this, rather than to make it right.</li>
+<li>Use when instead of if, progn.</li>
+
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html</a></li>
+<li><a href="https://github.com/bbatsov/emacs-lisp-style-guide">https://github.com/bbatsov/emacs-lisp-style-guide</a></li>
+<li>C mostly <a href="https://www.gnu.org/prep/standards/standards.html">https://www.gnu.org/prep/standards/standards.html</a></li>
+<li><a href="https://www.math.utah.edu/docs/info/elisp_38.html">https://www.math.utah.edu/docs/info/elisp_38.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6a330dd" class="outline-2">
+<h2 id="org6a330dd"><span class="section-number-2">25.</span> examples</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+1s
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp"> (list 1 2 (quote foo))
+ (setq x (+ x 1)) = (incf x)
+
+
+ <span style="color: #fa8072;">;;;; </span><span style="color: #99968b; font-style: italic;">COMMENT-EXAMPLE function</span>
+ <span style="color: #fa8072;">;;; </span><span style="color: #99968b; font-style: italic;">This function is useless</span>
+ <span style="color: #fa8072;">;;; </span><span style="color: #99968b; font-style: italic;">except demonstrate comments.</span>
+
+ (<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">asdas</span> (x y)     <span style="color: #99968b; font-style: italic;">;X is anything</span>
+         <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">X is now not a list</span>
+         ((sumbolp x)
+
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org12d474d" class="outline-2">
+<h2 id="org12d474d"><span class="section-number-2">26.</span> USE CASES</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+sort numbers:
+</p>
+<ul class="org-ul">
+<li>(sort '(1 2 3) '(lambda (a b) (&lt; a b)))</li>
+<li>(sort '(2 4 7 3 9 1 5 4 6 3 8) #'&lt;)</li>
+</ul>
+</div>
+<div id="outline-container-org9976ecf" class="outline-3">
+<h3 id="org9976ecf"><span class="section-number-3">26.1.</span> measure time of execution of any function</h3>
+<div class="outline-text-3" id="text-26-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">my/time-call</span> (time-call <span style="color: #92a65e; font-weight: bold;">&amp;rest</span> args)
+  (message <span style="color: #95e454;">"Ohai %s"</span> args)
+  (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((start-time (float-time))
+        (org-babel-python-command <span style="color: #95e454;">"/usr/bin/timeout 15 python"</span>)
+        )
+    (apply time-call args)
+    (message <span style="color: #95e454;">"Call took %f seconds"</span> (- (float-time) start-time)))
+  )
+(advice-add 'org-babel-python-evaluate-external-process <span style="color: #e5786d;">:around</span> #'my/time-call)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org840b747" class="outline-3">
+<h3 id="org840b747"><span class="section-number-3">26.2.</span> working with tabular data</h3>
+<div class="outline-text-3" id="text-26-2">
+<p>
+Save to .org file
+</p>
+<table id="orge42085f" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Math</th>
+<th scope="col" class="org-left">English</th>
+<th scope="col" class="org-left">Science</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Alice</td>
+<td class="org-left">A</td>
+<td class="org-left">B</td>
+<td class="org-left">C</td>
+</tr>
+
+<tr>
+<td class="org-left">Bob</td>
+<td class="org-left">B</td>
+<td class="org-left">A</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-left">Charlie</td>
+<td class="org-left">C</td>
+<td class="org-left">A</td>
+<td class="org-left">A</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(mapc (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (student)
+        (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((name (car student))
+              (math (nth 1 student))
+              (english (nth 2 student))
+              (science (nth 3 student)))
+        (<span style="color: #8ac6f2; font-weight: bold;">with-temp-buffer</span>
+          (insert (concat <span style="color: #95e454;">"Name: "</span> name <span style="color: #95e454;">"\n"</span>))
+          (insert (concat <span style="color: #95e454;">"Math: "</span> math <span style="color: #95e454;">"\nEnglish: "</span> english <span style="color: #95e454;">"\nScience: "</span> science <span style="color: #95e454;">"\n"</span>))
+          (write-region (point-min) (point-max) (concat name <span style="color: #95e454;">".org"</span>))
+          <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">Export PDF</span>
+          <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(find-file (concat name ".org"))</span>
+          <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(org-latex-export-to-pdf)</span>
+          )))
+      students)
+(print <span style="color: #95e454;">"Operation finished."</span>)
+</pre>
+</div>
+
+<pre class="example">
+
+"Operation finished."
+</pre>
+
+
+<pre class="example">
+Wrote /home/u/tmp/Alice.org
+Wrote /home/u/tmp/Bob.org
+Wrote /home/u/tmp/Charlie.org
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcab409f" class="outline-2">
+<h2 id="orgcab409f"><span class="section-number-2">27.</span> Emacs Lisp</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+s
+</p>
+<ul class="org-ul">
+<li>introduction <a href="https://www.gnu.org/software/emacs/manual/html_mono/eintr.html">https://www.gnu.org/software/emacs/manual/html_mono/eintr.html</a></li>
+<li>short <a href="http://ergoemacs.org/emacs/elisp_basics.html">http://ergoemacs.org/emacs/elisp_basics.html</a></li>
+
+<li>function may reference local varibles in the scope it is called from, but not in the scope it was defined.</li>
+<li>REPL mode: M-x ielm</li>
+<li>cl.el</li>
+<li>.elc  - byte compiled code</li>
+<li>(message "hi %d")    ; %d number, %s string %S - lisp expression. - to buffer "<b>Messages</b>" C-h e</li>
+<li>(if nil "yes" "no") ; "no" ; (), '(), (list)</li>
+<li>(if t "yes" "no") ; "yes"; 0, "", [] - vector of 0 elements</li>
+<li>(not (and (or (&lt; (&lt;= (&gt;= (= (/= not equal. Comparing strings: (equal (string-equal</li>
+<li>(equal - if same type and value</li>
+<li>(eq - if same Lisp object</li>
+</ul>
+</div>
+
+<div id="outline-container-org4adb8f8" class="outline-3">
+<h3 id="org4adb8f8"><span class="section-number-3">27.1.</span> help</h3>
+<div class="outline-text-3" id="text-27-1">
+<ul class="org-ul">
+<li>get help:
+<ul class="org-ul">
+<li>F1 f</li>
+<li>F1 S - descrybe symbol</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org839fa7a" class="outline-3">
+<h3 id="org839fa7a"><span class="section-number-3">27.2.</span> Keys:</h3>
+<div class="outline-text-3" id="text-27-2">
+<ul class="org-ul">
+<li>&lt;TAB&gt;	Indent line</li>
+<li>M-C-\	Indent region</li>
+<li>M-;	Comment</li>
+<li>C-x ;	Set comment column</li>
+<li>&lt;ESC&gt; &lt;TAB&gt; Completion for Symbol Names</li>
+</ul>
+<p>
+Info:
+</p>
+<ul class="org-ul">
+<li>C-h S	Info documentation for symbol</li>
+<li>M-x woman or man   for operation system command, library function or system call.</li>
+<li>C-h f	Emacs Lisp functions</li>
+<li>c-h v	Emacs Lisp variable</li>
+<li>C-x C-e	eval-last-sexp - Evaluate the expression to the left of cursor.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0977e09" class="outline-3">
+<h3 id="org0977e09"><span class="section-number-3">27.3.</span> Commands</h3>
+<div class="outline-text-3" id="text-27-3">
+<ul class="org-ul">
+<li>C-M-x (eval-defun)</li>
+<li>M-: (eval-expression)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc8d1e2e" class="outline-3">
+<h3 id="orgc8d1e2e"><span class="section-number-3">27.4.</span> ask user input</h3>
+<div class="outline-text-3" id="text-27-4">
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #8ac6f2; font-weight: bold;">if</span> (y-or-n-p <span style="color: #95e454;">"Do it?"</span>)
+    (<span style="color: #8ac6f2; font-weight: bold;">progn</span>
+      <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">code to do something here</span>
+    )
+  (<span style="color: #8ac6f2; font-weight: bold;">progn</span>
+    <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">code if user answered no.</span>
+  )
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org67ece24" class="outline-3">
+<h3 id="org67ece24"><span class="section-number-3">27.5.</span> suppress messages by function and subfunctions</h3>
+<div class="outline-text-3" id="text-27-5">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">suppress-messages</span> (old-fun <span style="color: #92a65e; font-weight: bold;">&amp;rest</span> args)
+  (<span style="color: #8ac6f2; font-weight: bold;">cl-flet</span> ((silence (<span style="color: #92a65e; font-weight: bold;">&amp;rest</span> args1) (ignore)))
+    (advice-add 'message <span style="color: #e5786d;">:around</span> #'silence)
+    (<span style="color: #8ac6f2; font-weight: bold;">unwind-protect</span>
+         (apply old-fun args)
+      (advice-remove 'message #'silence))))
+(advice-add 'server-execute <span style="color: #e5786d;">:around</span> #'suppress-messages)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc997e07" class="outline-3">
+<h3 id="orgc997e07"><span class="section-number-3">27.6.</span> execute shell command</h3>
+<div class="outline-text-3" id="text-27-6">
+<p>
+<a href="https://www.eigenbahn.com/2020/01/19/painless-emacs-shell-commands">https://www.eigenbahn.com/2020/01/19/painless-emacs-shell-commands</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0acef8d" class="outline-3">
+<h3 id="org0acef8d"><span class="section-number-3">27.7.</span> defcustom</h3>
+<div class="outline-text-3" id="text-27-7">
+<p>
+right way to set it in .emacs:
+</p>
+<ul class="org-ul">
+<li>(setopt global-subword-mode t)  if you have emacs 29 or later                                                                           Wed</li>
+<li>or (customize-set-variable global-subword-mode t)</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defcustom</span> <span style="color: #cae682;">text-mode-hook</span> nil
+  <span style="color: #f08080; font-style: italic;">"Normal hook run when entering Text mode and many related modes."</span>
+  <span style="color: #e5786d;">:type</span> 'hook <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">tells Emacs the kind of data to which text-mode-hook should be set and how to display the value in a Customization buffer.</span>
+  <span style="color: #e5786d;">:options</span> '(turn-on-auto-fill flyspell-mode) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">keyword specifies a suggested list of values for the variable</span>
+  <span style="color: #e5786d;">:group</span> 'wp) <span style="color: #fa8072;">;;  </span><span style="color: #99968b; font-style: italic;">in which group the variable is located.</span>
+
+# Emacs automaically manage this with M-x customize
+(custom-set-variables  '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org48140fb" class="outline-3">
+<h3 id="org48140fb"><span class="section-number-3">27.8.</span> map</h3>
+<div class="outline-text-3" id="text-27-8">
+<p>
+src/fns.c
+</p>
+
+<p>
+(mapc FUNCTION SEQUENCE)	Apply FUNCTION to each element of SEQUENCE for side effects only.
+</p>
+
+<p>
+(mapcar FUNCTION SEQUENCE)	Apply FUNCTION to each element of SEQUENCE, and make a list of the results.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">setq</span> full-range '(1 2 3 4))
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> re (mapcar (<span style="color: #8ac6f2; font-weight: bold;">lambda</span> (arg) (/ arg 2)) full-range))
+(print re)
+</pre>
+</div>
+
+<pre class="example">
+
+(0 1 1 2)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9dc669f" class="outline-3">
+<h3 id="org9dc669f"><span class="section-number-3">27.9.</span> buffers</h3>
+<div class="outline-text-3" id="text-27-9">
+<ul class="org-ul">
+<li>buffer-string - get buffer text as string with properties</li>
+<li>(buffer-substring-no-properties (point-min) (point-max)</li>
+<li>(buffer-name)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d421d8" class="outline-3">
+<h3 id="org2d421d8"><span class="section-number-3">27.10.</span> cl-loop</h3>
+<div class="outline-text-3" id="text-27-10">
+<p>
+cl-macs.el
+</p>
+
+<p>
+(cl-loop for handler in some<sub>list</sub>
+   until (condition-case &#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-orge152710" class="outline-3">
+<h3 id="orge152710"><span class="section-number-3">27.11.</span> convetions and style guide</h3>
+<div class="outline-text-3" id="text-27-11">
+<p>
+comments:
+</p>
+<ul class="org-ul">
+<li>; - used at the end of line</li>
+<li>;; - used in code as separate line</li>
+<li>;;; We use them for comments that should be considered a heading by Outline minor mode.</li>
+<li>on’t end headings with a colon : or any other punctuation.</li>
+</ul>
+
+<p>
+naming:
+</p>
+<ul class="org-ul">
+<li>Prefix unused local (lexically scoped) variables with _. (lambda (x _y) x)</li>
+<li>&#x2013; to denote private top-level definitions . <code>projectile--private-fun</code></li>
+<li>lowercas with - separator: some-var</li>
+<li>name of program as a prefix with ‘-’ separator
+<ul class="org-ul">
+<li>exceptions: ‘list-prefix’, ‘define-&#x2026;-prefix-&#x2026;’</li>
+<li>you may use two or three alternative common prefixes</li>
+</ul></li>
+</ul>
+
+<p>
+functions:
+</p>
+<ul class="org-ul">
+<li>“xxx-p” - check if true</li>
+<li>Constructs that define a function or variable should be macros, not functions, and their names should start
+with ‘define-’.</li>
+<li>Use <code>lambdas</code> for local bindings and function calls, not for hooks or global variables.</li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Coding-Conventions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Coding-Conventions.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html</a></li>
+<li><a href="https://github.com/bbatsov/emacs-lisp-style-guide">https://github.com/bbatsov/emacs-lisp-style-guide</a></li>
+</ul>
+
+
+<p>
+naming variables:
+</p>
+<ul class="org-ul">
+<li>if the purpose of a variable is to store a single function, give it a name that ends in ‘-function’</li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips-for-Defining.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips-for-Defining.html</a></li>
+</ul>
+
+<p>
+major mode: <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Major-Mode-Conventions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Major-Mode-Conventions.html</a>
+</p>
+
+<p>
+minor mode: <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Mode-Conventions.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Minor-Mode-Conventions.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge8ca709" class="outline-3">
+<h3 id="orge8ca709"><span class="section-number-3">27.12.</span> advices-reverence</h3>
+<div class="outline-text-3" id="text-27-12">
+<p>
+Look at apply, all after FUNCTION is arguments that FUNCTION should handle. r = &amp;rest args
+</p>
+<ul class="org-ul">
+<li>:around        (lambda (&amp;rest r) (apply FUNCTION <b>OLDFUN</b> r))</li>
+<li>:before        (lambda (&amp;rest r) (apply FUNCTION r) (apply <b>OLDFUN</b> r))</li>
+<li>:after         (lambda (&amp;rest r) (prog1 (apply OLDFUN r) (apply FUNCTION r)))</li>
+<li>:override      (lambda (&amp;rest r) (apply FUNCTION r))</li>
+<li>:after-until   (lambda (&amp;rest r) (or (apply OLDFUN r) (apply FUNCTION r)))</li>
+<li>:after-while   (lambda (&amp;rest r) (and (apply OLDFUN r) (apply FUNCTION r)))</li>
+<li>:before-until  (lambda (&amp;rest r) (or (apply FUNCTION r) (apply OLDFUN r)))</li>
+<li>:before-while  (lambda (&amp;rest r) (and (apply FUNCTION r) (apply OLDFUN r)))</li>
+<li>:filter-args   (lambda (&amp;rest r) (apply OLDFUN (funcall FUNCTION r)))</li>
+<li>:filter-return (lambda (&amp;rest r) (funcall FUNCTION (apply OLDFUN r)))</li>
+</ul>
+
+<p>
+:around
+</p>
+<ul class="org-ul">
+<li>(orig-fun &amp;rest args)</li>
+</ul>
+
+<p>
+:override
+</p>
+<ul class="org-ul">
+<li>(&amp;rest args)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7187c7e" class="outline-3">
+<h3 id="org7187c7e"><span class="section-number-3">27.13.</span> functional programming - stream of data</h3>
+<div class="outline-text-3" id="text-27-13">
+<p>
+Transducers <a href="https://codeberg.org/fosskers/transducers.el">https://codeberg.org/fosskers/transducers.el</a>
+</p>
+<ul class="org-ul">
+<li>change calls</li>
+</ul>
+
+<p>
+cl-lib, dash - alternatives
+</p>
+
+<p>
+elpa stream - orthogonal
+</p>
+
+<p>
+seq/generics
+</p>
+</div>
+</div>
+<div id="outline-container-org7f25660" class="outline-3">
+<h3 id="org7f25660"><span class="section-number-3">27.14.</span> testing</h3>
+<div class="outline-text-3" id="text-27-14">
+</div>
+<div id="outline-container-org9fb1def" class="outline-4">
+<h4 id="org9fb1def"><span class="section-number-4">27.14.1.</span> ERT: Emacs Lisp Regression Testing</h4>
+<div class="outline-text-4" id="text-27-14-1">
+<p>
+build-in <a href="file:///usr/share/emacs/29.1/lisp/emacs-lisp/ert.el">file:///usr/share/emacs/29.1/lisp/emacs-lisp/ert.el</a>
+</p>
+<ul class="org-ul">
+<li>C-h i m ert RET</li>
+<li>$info ert</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org32c3ddf"></a>ex<br />
+<div class="outline-text-5" id="text-27-14-1-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">require</span> '<span style="color: #e5786d; font-weight: bold;">ert</span>)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">(require 'tested-module)</span>
+(<span style="color: #8ac6f2; font-weight: bold;">ert-deftest</span> <span style="color: #cae682; font-weight: bold;">csv-tests-end-of-field</span> ()
+  (with-temp-buffe
+   (should (= (+ 1 2) 4)))
+)
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">execute test programmatically</span>
+(ert-run-tests-interactively <span style="color: #95e454;">"csv-tests-end-of-field"</span>)
+</pre>
+</div>
+</div>
+</li>
+
+
+<li><a id="org4409016"></a>links<br />
+<div class="outline-text-5" id="text-27-14-1-2">
+<p>
+<a href="https://www.emacswiki.org/emacs/UnitTesting">https://www.emacswiki.org/emacs/UnitTesting</a>
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb838d1b" class="outline-2">
+<h2 id="orgb838d1b"><span class="section-number-2">28.</span> MELPA</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+<a href="https://github.com/melpa/melpa">https://github.com/melpa/melpa</a>
+</p>
+
+<ul class="org-ul">
+<li>M-x package-recipe-mode</li>
+<li>M-x package-build-current-recipie</li>
+<li>fork <a href="https://github.com/melpa/melpa/">https://github.com/melpa/melpa/</a></li>
+<li>git clone own/melpa</li>
+<li>git branch recipe</li>
+<li>git checkout recipe</li>
+<li>git cp ~/recipe own/melpa/recipies/</li>
+<li>git add</li>
+<li>git push</li>
+</ul>
+</div>
+<div id="outline-container-org2ad05fc" class="outline-3">
+<h3 id="org2ad05fc"><span class="section-number-3">28.1.</span> lint</h3>
+<div class="outline-text-3" id="text-28-1">
+<ul class="org-ul">
+<li><a href="http://github.com/purcell/package-lint">http://github.com/purcell/package-lint</a></li>
+</ul>
+
+<p>
+M-x package-install package-lint
+</p>
+
+<p>
+usage: package-lint-current-buffer
+</p>
+</div>
+</div>
+<div id="outline-container-org77c9e50" class="outline-3">
+<h3 id="org77c9e50"><span class="section-number-3">28.2.</span> byte-compile</h3>
+<div class="outline-text-3" id="text-28-2">
+<p>
+M-x byte-compile-file
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org89c8782" class="outline-2">
+<h2 id="org89c8782"><span class="section-number-2">29.</span> errors handling - errors and throws and how to catch them</h2>
+<div class="outline-text-2" id="text-29">
+</div>
+<div id="outline-container-orga05aa06" class="outline-3">
+<h3 id="orga05aa06"><span class="section-number-3">29.1.</span> terms</h3>
+<div class="outline-text-3" id="text-29-1">
+<ul class="org-ul">
+<li>signal and error - exception. Errors can be signaled only by Lisp primitives (including <b>signal</b> and <b>error</b>
+functions)</li>
+<li>cleanup expressions - catch for exception</li>
+<li>error symbol - describes what kind of error it is, and which describes also a list of condition name. Each
+error symbol has a set of parent <b>error conditions</b> that is a list of symbols:  error symbol itself and the symbol <b>error</b>.
+<ul class="org-ul">
+<li>error symbol may and may not "error conditions".</li>
+</ul></li>
+</ul>
+
+<p>
+<b>unwind-protect</b> - expressions to be evaluated in case of error.
+</p>
+
+<p>
+<b>condition-case</b> - error handlers to recover control in case of error.
+</p>
+<ul class="org-ul">
+<li>ignore-errors</li>
+</ul>
+<p>
+<b>CONDITION-NAME</b> - in condition-case part of handlers
+</p>
+</div>
+</div>
+<div id="outline-container-org899bbbd" class="outline-3">
+<h3 id="org899bbbd"><span class="section-number-3">29.2.</span> error symbols</h3>
+<div class="outline-text-3" id="text-29-2">
+<p>
+(define-error
+</p>
+
+<p>
+Properties:
+</p>
+<ul class="org-ul">
+<li>error-conditions</li>
+<li>error-message</li>
+</ul>
+
+<p>
+Main errors:
+</p>
+<ul class="org-ul">
+<li>error - also condition for almost all errors.</li>
+<li>quit - don't have <b>error</b> condition</li>
+<li>minibuffer-quit - don't have <b>error</b> condition</li>
+</ul>
+
+<p>
+some errors:
+</p>
+<ul class="org-ul">
+<li>args-out-of-range</li>
+<li>wrong-type-argument</li>
+<li>wrong-number-of-arguments</li>
+<li>void-variable</li>
+<li>void-function</li>
+<li>user-error</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga627a25" class="outline-3">
+<h3 id="orga627a25"><span class="section-number-3">29.3.</span> functions</h3>
+<div class="outline-text-3" id="text-29-3">
+<ul class="org-ul">
+<li>(error STRING &amp;rest ARGS) - make error with 'error symbol.</li>
+<li>(signal ERROR-SYMBOL DATA) - An error symbol is a symbol with DATA.</li>
+<li>(user-error FORMAT &amp;rest ARGS) - like error but use symbol 'user-error
+‘error-conditions’ property that is a list of condition names.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga65b1ed" class="outline-3">
+<h3 id="orga65b1ed"><span class="section-number-3">29.4.</span> condition case</h3>
+<div class="outline-text-3" id="text-29-4">
+<p>
+(condition-case VAR BODYFORM &amp;rest HANDLERS) - Regain control when an error is signaled. When a handler
+ handles an error, control returns to the ‘condition-case’ and it executes the handler’s BODY&#x2026; with VAR
+ bound to (ERROR-SYMBOL . SIGNAL-DATA) from the error.
+</p>
+<ul class="org-ul">
+<li><b>protected-form</b> - body</li>
+<li><b>handlers</b> -  (CONDITION-NAME BODY&#x2026;) or (:success BODY&#x2026;)
+<ul class="org-ul">
+<li>condition - <b>condition name</b> of t matches any condition.</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(define-error 'new-error <span style="color: #95e454;">"A new error"</span>)
+(<span style="color: #8ac6f2; font-weight: bold;">condition-case</span> e
+  (<span style="color: #ccaa8f; font-weight: bold;">signal</span> 'wrong-type-argument <span style="color: #95e454;">"wtf"</span>)
+  ('out-of-range (print <span style="color: #95e454;">"aa"</span>))
+  <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">('error (print "tf"))</span>
+  ('wrong-type-argument (print <span style="color: #95e454;">"cc"</span>))
+)
+(print (get 'wrong-type-argument 'error-conditions))
+(print (get 'wrong-type-argument 'error-message))
+</pre>
+</div>
+
+<pre class="example">
+
+"cc"
+
+(wrong-type-argument error)
+
+"Wrong type argument"
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">catching any error and return nil if an error occurs:</span>
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">handl erros that was thrown for ex. with ~(error "On last item")~</span>
+(<span style="color: #8ac6f2; font-weight: bold;">condition-case</span> nil
+    (load <span style="color: #95e454;">"asd"</span>)
+  (<span style="color: #ccaa8f; font-weight: bold;">error</span> nil))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">catch error and print</span>
+(<span style="color: #8ac6f2; font-weight: bold;">condition-case</span> nil
+    (load <span style="color: #95e454;">"asd"</span>)
+  (<span style="color: #ccaa8f; font-weight: bold;">error</span> (print <span style="color: #95e454;">"error!"</span>)))
+
+<span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">debug and any error:</span>
+(<span style="color: #8ac6f2; font-weight: bold;">condition-case</span> nil
+    (load <span style="color: #95e454;">"asd"</span>)
+  ((debug error) nil))
+
+(<span style="color: #8ac6f2; font-weight: bold;">ignore-errors</span>  (load <span style="color: #95e454;">"asd"</span>))
+</pre>
+</div>
+
+<pre class="example">
+
+"error!"
+</pre>
+</div>
+</div>
+<div id="outline-container-org6fc0466" class="outline-3">
+<h3 id="org6fc0466"><span class="section-number-3">29.5.</span> catch and throw</h3>
+<div class="outline-text-3" id="text-29-5">
+<p>
+entirely <b>separate!</b> from errors and conditions.
+</p>
+<ul class="org-ul">
+<li>catch tag body</li>
+<li>throw tag value,  value is used as the value to return from that catch.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">foo-outer</span> ()
+  (<span style="color: #8ac6f2; font-weight: bold;">catch</span> '<span style="color: #e5786d; font-weight: bold;">foo</span>
+    (foo-inner)
+    )
+)
+
+(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">foo-inner</span> ()
+  (<span style="color: #8ac6f2; font-weight: bold;">throw</span> '<span style="color: #e5786d; font-weight: bold;">foo</span> t))
+(foo-outer)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc5532da" class="outline-3">
+<h3 id="orgc5532da"><span class="section-number-3">29.6.</span> unwind-protect</h3>
+<div class="outline-text-3" id="text-29-6">
+<p>
+(unwind-protect BODYFORM UNWINDFORMS&#x2026;)
+</p>
+<ul class="org-ul">
+<li>executes body-form with a guarantee that the cleanup-forms will be evaluated if control leaves</li>
+<li>it permits you to make the data consistent again in the event of an <b>error</b> or <b>throw</b>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc096db0" class="outline-3">
+<h3 id="orgc096db0"><span class="section-number-3">29.7.</span> logging construction</h3>
+<div class="outline-text-3" id="text-29-7">
+<p>
+Open <b>Warnings</b> buffer and output error there:
+#+begin<sub>src</sub> elisp :results output :exports both :eval no
+(condition-case err
+    (eval '(car) t)
+  (error
+   (display-warning
+    (format "Error: %s\n"
+            err)
+    :error)
+   nil))
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ea75dc" class="outline-3">
+<h3 id="org8ea75dc"><span class="section-number-3">29.8.</span> links</h3>
+<div class="outline-text-3" id="text-29-8">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Errors.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Errors.html</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Standard-Errors.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Standard-Errors.html</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org679c8df" class="outline-2">
+<h2 id="org679c8df"><span class="section-number-2">30.</span> Error messages</h2>
+<div class="outline-text-2" id="text-30">
+</div>
+<div id="outline-container-orgab403d0" class="outline-3">
+<h3 id="orgab403d0"><span class="section-number-3">30.1.</span> wrong-type-argument</h3>
+<div class="outline-text-3" id="text-30-1">
+<p>
+symbol hello, not a number:
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">condition-case</span> a
+    (+ 2 nil)
+  (<span style="color: #ccaa8f; font-weight: bold;">error</span> (print a)))
+
+
+</pre>
+</div>
+
+<pre class="example">
+
+(wrong-type-argument number-or-marker-p nil)
+</pre>
+
+
+<pre class="example">
+
+</pre>
+
+
+<p>
+Wrong type argument: listp, notmuch-show-save-part
+</p>
+
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/eintr/Wrong-Type-of-Argument.html">https://www.gnu.org/software/emacs/manual/html_node/eintr/Wrong-Type-of-Argument.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgce62b40" class="outline-3">
+<h3 id="orgce62b40"><span class="section-number-3">30.2.</span> Lisp error: (invalid-function</h3>
+</div>
+
+<div id="outline-container-org1d0770e" class="outline-3">
+<h3 id="org1d0770e"><span class="section-number-3">30.3.</span> nil in debugger, Why nil if it is not nil?</h3>
+<div class="outline-text-3" id="text-30-3">
+<pre class="example">
+Debugger entered--Lisp error: (wrong-type-argument number-or-marker-p nil)
+* ediff-recenter-one-window(B)
+</pre>
+
+
+<p>
+Error is actually in defsubst inside of this function, it is like a bug because of inline function.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc14d18" class="outline-2">
+<h2 id="orgcc14d18"><span class="section-number-2">31.</span> Emacs API</h2>
+<div class="outline-text-2" id="text-31">
+</div>
+<div id="outline-container-orgae495c7" class="outline-3">
+<h3 id="orgae495c7"><span class="section-number-3">31.1.</span> terms</h3>
+<div class="outline-text-3" id="text-31-1">
+<ul class="org-ul">
+<li>Emacs Terminology 	Description</li>
+<li>Point 	Cursor position, number of characters from beggining of the buffer to current cursor position.</li>
+<li>Mark 	Beginning of the selected area.</li>
+<li>Region 	Selected area/ text</li>
+<li>Buffer 	Place where the user edit something. Not all buffers are bound to a file.</li>
+<li>Frame 	The current window of emacs. Windows are grouped into frames. Each frame contains at least one window.</li>
+<li>Windows Each frame can be split in sections that Emacs documentation calls windows. subdivide a frame into
+multiple, non-overlapping windows.</li>
+<li>Fill 	Word Wrap</li>
+<li>Yank 	Copy</li>
+<li>Kill Region 	Cut</li>
+<li>Kill Ring 	Clipboard</li>
+<li>Kill Buffer 	Close Buffer</li>
+<li>Mode Line 	Status Bar</li>
+<li>Font Locking 	Syntax Coloring</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b6c957" class="outline-3">
+<h3 id="org0b6c957"><span class="section-number-3">31.2.</span> Pointer</h3>
+<div class="outline-text-3" id="text-31-2">
+<ul class="org-ul">
+<li>(point) - current position</li>
+<li>(goto-char position)</li>
+<li>(line-beginning-position &amp;optional N) scan forward N - 1 lines first.</li>
+<li>(beginning-of-line) - move cursor</li>
+<li>(forward-line)</li>
+<li>(next-line)</li>
+<li>(current-column) - get position from begining of line</li>
+<li>(current-indentation) - get position from begining of line where text exist (not white spaces)</li>
+</ul>
+<p>
+(count-lines ? ?)
+</p>
+
+<p>
+<a href="http://xahlee.info/emacs/emacs/elisp_all_about_lines.html">http://xahlee.info/emacs/emacs/elisp_all_about_lines.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0224b90" class="outline-3">
+<h3 id="org0224b90"><span class="section-number-3">31.3.</span> Marker</h3>
+<div class="outline-text-3" id="text-31-3">
+<p>
+The idea is that a marker positioned between two characters remains between those two characters despite
+ insertion and deletion elsewhere in the buffer.
+Marker:
+</p>
+<dl class="org-dl">
+<dt>the marker position</dt><dd>position in buffer at the begining -  Insertion and deletion of text in the buffer relocate the marker.</dd>
+<dt>the marker buffer</dt><dd>.</dd>
+<dt>the insertion type</dt><dd>define behavion when text was inserter right at marker position.</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgc9158cd" class="outline-3">
+<h3 id="orgc9158cd"><span class="section-number-3">31.4.</span> Buffers</h3>
+<div class="outline-text-3" id="text-31-4">
+<ul class="org-ul">
+<li>(current-buffer)</li>
+<li>(with-current-buffer BUFFER-OR-NAME &amp;rest BODY) ;; Temporarily make a buffer current.</li>
+<li>(set-buffer BUFFER-OR-NAME) - Make a buffer current. (but does not make it visible.) Return that buffer object. switch-to-buffer or pop-to-buffer.</li>
+<li>(save-current-buffer &amp;rest BODY) - Execute BODY, then restore the current buffer that is before this function call.</li>
+<li>(with-temp-buffer &amp;rest BODY) - Create a temporary buffer, and evaluate BODY, return the last expression.</li>
+<li>(buffer-name BUFFER) - Return the name of BUFFER, as a string.</li>
+<li>(buffer-live-p b) - Return t if OBJECT is a buffer which has not been killed.</li>
+</ul>
+<p>
+<a href="http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html">http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html</a>
+</p>
+</div>
+
+<div id="outline-container-org51841f7" class="outline-4">
+<h4 id="org51841f7"><span class="section-number-4">31.4.1.</span> create temp copy</h4>
+<div class="outline-text-4" id="text-31-4-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">ss</span> ()
+  (<span style="color: #8ac6f2; font-weight: bold;">let</span> ((buffer (get-buffer-create <span style="color: #95e454;">" *temp*"</span>))
+        (orbuf (current-buffer))
+        (p (point)))
+    (<span style="color: #8ac6f2; font-weight: bold;">save-excursion</span>
+      (<span style="color: #8ac6f2; font-weight: bold;">with-current-buffer</span> buffer
+        (insert (<span style="color: #8ac6f2; font-weight: bold;">with-current-buffer</span> orbuf (buffer-string))) <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">insert text from orbuf to this</span>
+        (goto-char p)
+        <span style="color: #fa8072;">;; </span><span style="color: #99968b; font-style: italic;">now we are at the copy</span>
+        (print (point))
+))))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3eeddc8" class="outline-4">
+<h4 id="org3eeddc8"><span class="section-number-4">31.4.2.</span> get value from buffer</h4>
+<div class="outline-text-4" id="text-31-4-2">
+<p>
+two ways:
+</p>
+<ul class="org-ul">
+<li>(provided-mode-derived-p (buffer-local-value 'major-mode (current-buffer)) 'dired-mode)</li>
+<li>(with-current-buffer (current-buffer) (derived-mode-p 'dired-mode))</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga7899fe" class="outline-4">
+<h4 id="orga7899fe"><span class="section-number-4">31.4.3.</span> links</h4>
+<div class="outline-text-4" id="text-31-4-3">
+<p>
+<a href="http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html">http://xahlee.info/emacs/emacs/elisp_buffer_file_functions.html</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org559dd28" class="outline-3">
+<h3 id="org559dd28"><span class="section-number-3">31.5.</span> Windows</h3>
+<div class="outline-text-3" id="text-31-5">
+<ul class="org-ul">
+<li>(window-prev-buffers) - Return buffers previously shown in WINDOW.</li>
+<li><b>window tree</b> - Windows on the same frame</li>
+<li><b>root window</b> - The root node of a window tree.</li>
+<li><b>live window</b> -  leaf nodes, acutally showing buffer. returned by (window-list)</li>
+<li><b>selected window</b> - one of leaf nodes that is active.</li>
+<li><b>internal window</b> - organizing the relationships between live windows</li>
+<li><b>minibuffer window</b> - not part of its frame’s window tree, but is sibling window of the frame’s root window</li>
+<li><b>Window Parameters</b> - associated additional information with window.</li>
+<li><b>window-point/pos</b> - saved state of (point) in window, by default used by <b>window-in-direction</b> as reference.</li>
+<li><b>reference position</b> - used as a source to decide a target in direction.</li>
+<li><b>main-window</b> - used to distinguish window from windows marked as window-side/slot, returned by
+(window-main-window). is either a “normal” live window or specifies the area containing all the normal
+windows.</li>
+<li><b>display-start or just start</b> - buffer position that specifies where in the buffer display should start to display text at screen.</li>
+</ul>
+</div>
+<div id="outline-container-org55f8609" class="outline-4">
+<h4 id="org55f8609"><span class="section-number-4">31.5.1.</span> side windows</h4>
+<div class="outline-text-4" id="text-31-5-1">
+<p>
+C-x w s	window-toggle-side-windows
+(scroll-right)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org06c4378" class="outline-3">
+<h3 id="org06c4378"><span class="section-number-3">31.6.</span> Frames</h3>
+<div class="outline-text-3" id="text-31-6">
+<p>
+<a href="https://elpa.gnu.org/packages/posframe.html">https://elpa.gnu.org/packages/posframe.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org6e3fb78" class="outline-3">
+<h3 id="org6e3fb78"><span class="section-number-3">31.7.</span> temporary files</h3>
+<div class="outline-text-3" id="text-31-7">
+<ul class="org-ul">
+<li>(make-temp-file) - This function creates a temporary file or directory and returns its name, and may insert
+text in it.</li>
+
+<li>org-babel-temp-file - Create a temporary file</li>
+<li>org-babel-process-file-name - Prepare NAME to be used in an external process and return new name</li>
+<li>org-babel-eval-read-file - Return the contents of FILE as a string.</li>
+
+<li>with-temp-file file body - evaluates the BODY forms with a temporary buffer as the current buffer; then, at the end,
+it writes the buffer contents into file FILE.</li>
+<li>append-to-file - This function appends the contents of the region delimited by START and END in the current
+buffer to the end of file FILENAME.</li>
+<li>write-region - This function writes the region delimited by START and END in the current buffer into the
+file specified by FILENAME. or write string.</li>
+</ul>
+
+<p>
+Notes
+</p>
+<ul class="org-ul">
+<li>‘append-to-file’ and ‘write-region’ - Don’t use these functions to write to files that are being visited</li>
+</ul>
+</div>
+<div id="outline-container-org82b3316" class="outline-4">
+<h4 id="org82b3316"><span class="section-number-4">31.7.1.</span> ex</h4>
+<div class="outline-text-4" id="text-31-7-1">
+<div class="org-src-container">
+<pre class="src src-elisp">(make-temp-file
+            (expand-file-name PREFIX
+                              (<span style="color: #8ac6f2; font-weight: bold;">or</span> small-temporary-file-directory
+                                  temporary-file-directory)))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(write-region &lt;STRING&gt; nil &lt;FILENAME&gt; 'append)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">defun</span> <span style="color: #cae682; font-weight: bold;">my-append-string-to-file</span> (s filename)
+  (<span style="color: #8ac6f2; font-weight: bold;">with-temp-buffer</span>
+    (insert s)
+    (write-region (point-min) (point-max) filename t)))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9f0fc1" class="outline-4">
+<h4 id="orgc9f0fc1"><span class="section-number-4">31.7.2.</span> links</h4>
+<div class="outline-text-4" id="text-31-7-2">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Unique-File-Names">elisp#Unique File Names</a></li>
+<li><a href="https://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Writing-to-Files">elisp#Writing to Files</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org16d33cc" class="outline-3">
+<h3 id="org16d33cc"><span class="section-number-3">31.8.</span> lines</h3>
+<div class="outline-text-3" id="text-31-8">
+<p>
+(count-lines (point-min) (point-max))
+</p>
+</div>
+</div>
+<div id="outline-container-orgc0ea46f" class="outline-3">
+<h3 id="orgc0ea46f"><span class="section-number-3">31.9.</span> cleanup - temporary buffer</h3>
+<div class="outline-text-3" id="text-31-9">
+<p>
+<b>unwind-protect</b> executes <b>body-form</b> with a guarantee that the <b>cleanup-forms</b> will be evaluated if control leaves
+ body-form,
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">let</span> ((buffer (get-buffer-create <span style="color: #95e454;">" *temp*"</span>)))
+  (<span style="color: #8ac6f2; font-weight: bold;">with-current-buffer</span> buffer
+    (<span style="color: #8ac6f2; font-weight: bold;">unwind-protect</span>
+        (insert <span style="color: #95e454;">"asd"</span>) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">body-frm</span>
+      (kill-buffer buffer) <span style="color: #fa8072;">; </span><span style="color: #99968b; font-style: italic;">cleanup-form</span>
+      )))
+</pre>
+</div>
+
+<p>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Cleanups.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Cleanups.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org158a720" class="outline-3">
+<h3 id="org158a720"><span class="section-number-3">31.10.</span> highlight character at point</h3>
+<div class="outline-text-3" id="text-31-10">
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #8ac6f2; font-weight: bold;">let</span> ((ol (make-overlay (point) (1+ (point)))))
+  (overlay-put ol 'face '(<span style="color: #e5786d;">:background</span> <span style="color: #95e454;">"dark red"</span>)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org786dfa4" class="outline-3">
+<h3 id="org786dfa4"><span class="section-number-3">31.11.</span> modes</h3>
+<div class="outline-text-3" id="text-31-11">
+<p>
+variables:
+</p>
+<ul class="org-ul">
+<li>mode-name - name of current major mode: "Help"</li>
+<li>major-mode - name of current major mode: help-mode</li>
+<li>mode-line-buffer-identification</li>
+</ul>
+
+<p>
+minor mode is buffer-local or global:
+</p>
+<pre class="example">
+(local-variable-if-set-p 'show-paren-mode)
+</pre>
+
+
+<p>
+there's nothing stopping you giving a global mode a buffer-local value(to check really global):
+</p>
+<pre class="example">
+(with-temp-buffer
+  (local-variable-if-set-p 'show-paren-mode))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8247dd1" class="outline-3">
+<h3 id="org8247dd1"><span class="section-number-3">31.12.</span> Call external asynchronous</h3>
+<div class="outline-text-3" id="text-31-12">
+</div>
+<div id="outline-container-orga09ab48" class="outline-4">
+<h4 id="orga09ab48"><span class="section-number-4">31.12.1.</span> async-shell-command</h4>
+<div class="outline-text-4" id="text-31-12-1">
+<p>
+(async-shell-command COMMAND &amp;optional OUTPUT-BUFFER ERROR-BUFFER)
+</p>
+<ul class="org-ul">
+<li>OUTPUT-BUFFER is default of `shell-command-buffer-name-async' variable - name of a buffer or buffer or nil. That buffer is in shell mode.</li>
+<li>To not display buffer: To run COMMAND without displaying the output in a window you can</li>
+</ul>
+<p>
+configure ‘display-buffer-alist’ to use the action
+‘display-buffer-no-window’ for the buffer given by
+‘shell-command-buffer-name-async’.
+</p>
+</div>
+</div>
+<div id="outline-container-org241eeb3" class="outline-4">
+<h4 id="org241eeb3"><span class="section-number-4">31.12.2.</span> call-process-shell-command</h4>
+<div class="outline-text-4" id="text-31-12-2">
+<p>
+(call-process-shell-command (concat "timeout 15 bash -c \"while true; do " play-sound "; sleep 2.9 ; done \"") nil 0)
+without return
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a323fa" class="outline-4">
+<h4 id="org5a323fa"><span class="section-number-4">31.12.3.</span> <span class="todo TODO">TODO</span> <a href="https://github.com/tkf/python-epc">https://github.com/tkf/python-epc</a></h4>
+<div class="outline-text-4" id="text-31-12-3">
+<p>
+Allow to create server.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb3e7667" class="outline-4">
+<h4 id="orgb3e7667"><span class="section-number-4">31.12.4.</span> <span class="todo TODO">TODO</span> <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/JSONRPC.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/JSONRPC.html</a></h4>
+</div>
+</div>
+<div id="outline-container-orgd5ae159" class="outline-3">
+<h3 id="orgd5ae159"><span class="section-number-3">31.13.</span> Timer</h3>
+<div class="outline-text-3" id="text-31-13">
+<p>
+(current-time) Elisp is a way to represent the number of seconds since the epoch (January 1, 1970, 00:00:00
+ UTC)
+</p>
+<ul class="org-ul">
+<li>HIGH: This represents the upper bits of the timestamp, typically the higher 16 bits of a 32-bit integer.</li>
+<li>LOW: This represents the lower bits of the timestamp, typically the lower 16 bits of a 32-bit integer.</li>
+<li>USEC: This represents the microseconds (millionths of a second) since the epoch.</li>
+<li>PSEC: This represents the picoseconds (trillionths of a second) since the epoch.</li>
+</ul>
+
+<p>
+To show epoch in seconds:
+</p>
+<pre class="example">
+(print (time-convert (current-time) 'integer))
+</pre>
+
+<p>
+To show saved Timer (run-at-time) in epoch:
+</p>
+<pre class="example">
+(print (time-convert '(26277 20928) 'integer))
+</pre>
+
+<p>
+To show saved Timer as readable string:
+</p>
+<pre class="example">
+(print (current-time-string (time-convert '(26277 20928) 'integer)))
+</pre>
+</div>
+</div>
+<div id="outline-container-org62904b4" class="outline-3">
+<h3 id="org62904b4"><span class="section-number-3">31.14.</span> autoload</h3>
+</div>
+<div id="outline-container-orge32e392" class="outline-3">
+<h3 id="orge32e392"><span class="section-number-3">31.15.</span> links</h3>
+<div class="outline-text-3" id="text-31-15">
+<ul class="org-ul">
+<li><a href="http://www.blogbyben.com/2011/04/10-concepts-emacs-newbie-should-master.html">http://www.blogbyben.com/2011/04/10-concepts-emacs-newbie-should-master.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfb75ef2" class="outline-2">
+<h2 id="orgfb75ef2"><span class="section-number-2">32.</span> Libraries - popular</h2>
+<div class="outline-text-2" id="text-32">
+<ul class="org-ul">
+<li>DamienCassou/hierarchy: Emacs library to create, query, navigate and display</li>
+<li>magnars/dash.el: A modern list library for Emacs hierarchy structures</li>
+</ul>
+</div>
+
+<div id="outline-container-orgab6b5e1" class="outline-3">
+<h3 id="orgab6b5e1"><span class="section-number-3">32.1.</span> build in</h3>
+<div class="outline-text-3" id="text-32-1">
+<ul class="org-ul">
+<li>seq.el</li>
+<li>map.el</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9bee06a" class="outline-2">
+<h2 id="org9bee06a"><span class="section-number-2">33.</span> links</h2>
+<div class="outline-text-2" id="text-33">
+<ul class="org-ul">
+<li>Common Lisp the Language, 2nd Edition <a href="https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node1.html">https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node1.html</a></li>
+<li><a href="https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html">https://caiorss.github.io/Emacs-Elisp-Programming/Elisp_Programming.html</a></li>
+<li>free books <a href="https://www.linuxlinks.com/excellent-free-books-learn-lisp/">https://www.linuxlinks.com/excellent-free-books-learn-lisp/</a></li>
+<li>free tutorials <a href="https://www.linuxlinks.com/excellent-free-tutorials-learn-lisp/">https://www.linuxlinks.com/excellent-free-tutorials-learn-lisp/</a></li>
+<li><a href="http://landoflisp.com/">http://landoflisp.com/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-14 Tue 13:10</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
